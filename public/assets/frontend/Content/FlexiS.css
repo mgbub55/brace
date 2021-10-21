@@ -1,0 +1,7 @@
+/* Font-face Icons */
+@font-face {
+    font-family: 'flexslider-icon';
+    src: url('flexslider-icon.woff') format('woff');
+    font-weight: normal;
+	font-style: normal;
+}
