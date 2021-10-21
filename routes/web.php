@@ -159,7 +159,7 @@ Route::name('frontend.en.commercial')->prefix('frontend/en/commercial')->group(f
 			})->name('.remote');
 			Route::get('/virtual', function () {
 				return view('frontend.en.commercial.treasury-services.manage-receivables.virtual-account-management.index');
-			})->name('virtual');
+			})->name('.virtual');
 			Route::get('/', function () {
 				return view('frontend.en.commercial.treasury-services.manage-receivables.index');
 			})->name('');
@@ -195,7 +195,7 @@ Route::name('frontend.en.pages')->prefix('frontend/en/pages')->group(function ()
 			})->name('');
 		});
 		//community
-		Route::name('.community')->prefix('/careers')->group(function () {
+		Route::name('.community')->prefix('/community')->group(function () {
 			Route::name('.community')->prefix('/careers')->group(function () {
 				Route::get('/jacks', function () {
 					return view('frontend.en.pages.about-us.community.celebration.jacks-bash.index');
