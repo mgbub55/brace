@@ -1,77 +1,19 @@
 
+@extends('frontend.layouts.app')
 
-<!DOCTYPE html>
-<html lang="en">
-
-<!-- Mirrored from www.firstpremier.com/en/pages/about-us/ by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 30 Jun 2021 12:30:44 GMT -->
-<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
-<head>
-
-    <!--shape-->
-    <script type="text/javascript" src="../../../../cds-sdkcfg.onlineaccess1.com/common0df9.js?async"
-            async></script>
-
-
-    <meta charset="utf-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=10; IE=11" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="msvalidate.01" content="B1160176C00496054ECCB3B27B970C87" />
-    
-    <title>About First PREMIER Bank - South Dakota Bank | firstpremier.com</title>
-            <meta name="description" content="First PREMIER Bank offers banking, financial, wealth, and trust services on a local, regional and national level. We&#39;re high tech and high touch, serving individuals from all walks of life, businesses and organizations of every size. Read more about us here." />
-    <link rel="shortcut icon" href="../../../favicon.ico" type="image/x-icon" />
-
-    <link href="index.html" rel="canonical" />
-    
-    <link href="../../../Static/bootstrap/css/bootstrap.css" rel="stylesheet"/>
-<link href="../../../Static/bootstrap/css/bootstrap-responsive.css" rel="stylesheet"/>
-<link href="../../../Static/bootstrap/css/bootstrap.offcanvas.min.css" rel="stylesheet"/>
-<link href="../../../Static/css/pushy.css" rel="stylesheet"/>
-<link href="../../../Content/font-awesome.css" rel="stylesheet"/>
-<link href="../../../Static/css/Site_20201214_V1_35.css" rel="stylesheet"/>
-<link href="../../../Static/css/Blocks_20202302_v61.css" rel="stylesheet"/>
-<link href="../../../Static/css/Forms_20201214.css" rel="stylesheet"/>
-
-    <script src="../../../Static/js/jquery.min.js"></script>
-<script src="../../../Static/js/cookieconsent.js"></script>
-<script src="../../../Static/bootstrap/js/bootstrap3.min.js"></script>
-
-    
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-4688536-5"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'UA-4688536-5');
-</script>
-
- 
-
-    <style>
-        
-    </style>
-    <!-- Google Tag Manager (noscript) body tag -->
-    <noscript>
-        <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MWXZNLB" height="0" width="0" style="display:none;visibility:hidden"></iframe>
-    </noscript>
-    <!-- End Google Tag Manager (noscript) -->
-    <!--L&S Script-->
-    <script type="text/javascript" src="../../../../cdn.mantl.com/assets/first_premier_bank/production-scripts/first-premier-bank-analytics-pixel.html"></script>
-<script type="text/javascript">var appInsights=window.appInsights||function(config){function t(config){i[config]=function(){var t=arguments;i.queue.push(function(){i[config].apply(i,t)})}}var i={config:config},u=document,e=window,o="script",s="AuthenticatedUserContext",h="start",c="stop",l="Track",a=l+"Event",v=l+"Page",r,f;setTimeout(function(){var t=u.createElement(o);t.src=config.url||"https://az416426.vo.msecnd.net/scripts/a/ai.0.js";u.getElementsByTagName(o)[0].parentNode.appendChild(t)});try{i.cookie=u.cookie}catch(y){}for(i.queue=[],r=["Event","Exception","Metric","PageView","Trace","Dependency"];r.length;)t("track"+r.pop());return t("set"+s),t("clear"+s),t(h+a),t(c+a),t(h+v),t(c+v),t("flush"),config.disableExceptionTracking||(r="onerror",t("_"+r),f=e[r],e[r]=function(config,t,u,e,o){var s=f&&f(config,t,u,e,o);return s!==!0&&i["_"+r](config,t,u,e,o),s}),i}({instrumentationKey:"b7dfb9a2-b012-4c83-a87f-ac7e41ce3cac",sdkExtension:"a"});window.appInsights=appInsights;appInsights.queue&&appInsights.queue.length===0&&appInsights.trackPageView();</script></head>
-
-<body class="eupopup eupopup-bottom  about-us  parent-5384 page-about-us page-about-us parent-10">
-
-
-
-    
-    
+@section('content')
     <div class="container">
+            <!--start responsive menu-->
+    @include('frontend.layouts.components.header')
+    <!-- Main Header -->
+    @include('frontend.layouts.components.navbar')
+
+<div class="container">
 
 
 
 <!--start responsive menu-->
-<nav class="pushy pushy-right">
+{{-- <nav class="pushy pushy-right">
     <div class="pushy-content">
         <button class="pushy-link close-b">X</button>
 
@@ -93,7 +35,7 @@
                                 </div>
                                     <div class="panel">
                                         <a data-toggle="collapse" data-parent="#accordion21" href="#collapse11">
-                                            
+
 Checking                                            <i class="fa fa-chevron-down pull-right" aria-hidden="true"></i>
                                         </a>
                                         <div id="collapse11" class="panel-collapse collapse">
@@ -114,7 +56,7 @@ Checking                                            <i class="fa fa-chevron-down
                                     </div>
                                     <div class="panel">
                                         <a data-toggle="collapse" data-parent="#accordion21" href="#collapse12">
-                                            
+
 Online &amp; Mobile                                            <i class="fa fa-chevron-down pull-right" aria-hidden="true"></i>
                                         </a>
                                         <div id="collapse12" class="panel-collapse collapse">
@@ -139,7 +81,7 @@ Online &amp; Mobile                                            <i class="fa fa-c
                                     </div>
                                     <div class="panel">
                                         <a data-toggle="collapse" data-parent="#accordion21" href="#collapse13">
-                                            
+
 Savings &amp; CDs                                            <i class="fa fa-chevron-down pull-right" aria-hidden="true"></i>
                                         </a>
                                         <div id="collapse13" class="panel-collapse collapse">
@@ -160,7 +102,7 @@ Savings &amp; CDs                                            <i class="fa fa-che
                                     </div>
                                     <div class="panel">
                                         <a data-toggle="collapse" data-parent="#accordion21" href="#collapse14">
-                                            
+
 Loans &amp; Credit Lines                                            <i class="fa fa-chevron-down pull-right" aria-hidden="true"></i>
                                         </a>
                                         <div id="collapse14" class="panel-collapse collapse">
@@ -183,7 +125,7 @@ Loans &amp; Credit Lines                                            <i class="fa
                                     </div>
                                     <div class="panel">
                                         <a data-toggle="collapse" data-parent="#accordion21" href="#collapse15">
-                                            
+
 Mortgages                                            <i class="fa fa-chevron-down pull-right" aria-hidden="true"></i>
                                         </a>
                                         <div id="collapse15" class="panel-collapse collapse">
@@ -202,7 +144,7 @@ Mortgages                                            <i class="fa fa-chevron-dow
                                     </div>
                                     <div class="panel">
                                         <a data-toggle="collapse" data-parent="#accordion21" href="#collapse16">
-                                            
+
 Investing                                            <i class="fa fa-chevron-down pull-right" aria-hidden="true"></i>
                                         </a>
                                         <div id="collapse16" class="panel-collapse collapse">
@@ -221,7 +163,7 @@ Investing                                            <i class="fa fa-chevron-dow
                                     </div>
                                     <div class="panel">
                                         <a data-toggle="collapse" data-parent="#accordion21" href="#collapse17">
-                                            
+
 Wealth Management                                            <i class="fa fa-chevron-down pull-right" aria-hidden="true"></i>
                                         </a>
                                         <div id="collapse17" class="panel-collapse collapse">
@@ -242,7 +184,7 @@ Wealth Management                                            <i class="fa fa-che
                                     </div>
                                     <div class="panel">
                                         <a data-toggle="collapse" data-parent="#accordion21" href="#collapse18">
-                                            
+
 Students &amp; Parents                                            <i class="fa fa-chevron-down pull-right" aria-hidden="true"></i>
                                         </a>
                                         <div id="collapse18" class="panel-collapse collapse">
@@ -277,7 +219,7 @@ Students &amp; Parents                                            <i class="fa f
                                 </div>
                                     <div class="panel">
                                         <a data-toggle="collapse" data-parent="#accordion21" href="#collapse21">
-                                            
+
 Checking                                            <i class="fa fa-chevron-down pull-right" aria-hidden="true"></i>
                                         </a>
                                         <div id="collapse21" class="panel-collapse collapse">
@@ -304,7 +246,7 @@ Checking                                            <i class="fa fa-chevron-down
                                     </div>
                                     <div class="panel">
                                         <a data-toggle="collapse" data-parent="#accordion21" href="#collapse22">
-                                            
+
 Online &amp; Mobile                                            <i class="fa fa-chevron-down pull-right" aria-hidden="true"></i>
                                         </a>
                                         <div id="collapse22" class="panel-collapse collapse">
@@ -327,7 +269,7 @@ Online &amp; Mobile                                            <i class="fa fa-c
                                     </div>
                                     <div class="panel">
                                         <a data-toggle="collapse" data-parent="#accordion21" href="#collapse23">
-                                            
+
 Savings &amp; CDs                                            <i class="fa fa-chevron-down pull-right" aria-hidden="true"></i>
                                         </a>
                                         <div id="collapse23" class="panel-collapse collapse">
@@ -344,7 +286,7 @@ Savings &amp; CDs                                            <i class="fa fa-che
                                     </div>
                                     <div class="panel">
                                         <a data-toggle="collapse" data-parent="#accordion21" href="#collapse24">
-                                            
+
 Loans &amp; Credit Lines                                            <i class="fa fa-chevron-down pull-right" aria-hidden="true"></i>
                                         </a>
                                         <div id="collapse24" class="panel-collapse collapse">
@@ -363,7 +305,7 @@ Loans &amp; Credit Lines                                            <i class="fa
                                     </div>
                                     <div class="panel">
                                         <a data-toggle="collapse" data-parent="#accordion21" href="#collapse25">
-                                            
+
 Business Services                                            <i class="fa fa-chevron-down pull-right" aria-hidden="true"></i>
                                         </a>
                                         <div id="collapse25" class="panel-collapse collapse">
@@ -390,7 +332,7 @@ Business Services                                            <i class="fa fa-che
                                     </div>
                                     <div class="panel">
                                         <a data-toggle="collapse" data-parent="#accordion21" href="#collapse26">
-                                            
+
 Asset Management &amp; Trust                                            <i class="fa fa-chevron-down pull-right" aria-hidden="true"></i>
                                         </a>
                                         <div id="collapse26" class="panel-collapse collapse">
@@ -413,7 +355,7 @@ Asset Management &amp; Trust                                            <i class
                                     </div>
                                     <div class="panel">
                                         <a data-toggle="collapse" data-parent="#accordion21" href="#collapse27">
-                                            
+
 Ag Banking                                            <i class="fa fa-chevron-down pull-right" aria-hidden="true"></i>
                                         </a>
                                         <div id="collapse27" class="panel-collapse collapse">
@@ -442,7 +384,7 @@ Ag Banking                                            <i class="fa fa-chevron-do
                                 </div>
                                     <div class="panel">
                                         <a data-toggle="collapse" data-parent="#accordion21" href="#collapse31">
-                                            
+
 Checking                                            <i class="fa fa-chevron-down pull-right" aria-hidden="true"></i>
                                         </a>
                                         <div id="collapse31" class="panel-collapse collapse">
@@ -469,7 +411,7 @@ Checking                                            <i class="fa fa-chevron-down
                                     </div>
                                     <div class="panel">
                                         <a data-toggle="collapse" data-parent="#accordion21" href="#collapse32">
-                                            
+
 Savings &amp; CDs                                            <i class="fa fa-chevron-down pull-right" aria-hidden="true"></i>
                                         </a>
                                         <div id="collapse32" class="panel-collapse collapse">
@@ -486,7 +428,7 @@ Savings &amp; CDs                                            <i class="fa fa-che
                                     </div>
                                     <div class="panel">
                                         <a data-toggle="collapse" data-parent="#accordion21" href="#collapse33">
-                                            
+
 Financing                                            <i class="fa fa-chevron-down pull-right" aria-hidden="true"></i>
                                         </a>
                                         <div id="collapse33" class="panel-collapse collapse">
@@ -507,7 +449,7 @@ Financing                                            <i class="fa fa-chevron-dow
                                     </div>
                                     <div class="panel">
                                         <a data-toggle="collapse" data-parent="#accordion21" href="#collapse34">
-                                            
+
 Treasury Services                                            <i class="fa fa-chevron-down pull-right" aria-hidden="true"></i>
                                         </a>
                                         <div id="collapse34" class="panel-collapse collapse">
@@ -533,7 +475,7 @@ Treasury Services                                            <i class="fa fa-che
                                     </div>
                                     <div class="panel">
                                         <a data-toggle="collapse" data-parent="#accordion21" href="#collapse35">
-                                            
+
 Asset Management &amp; Trust                                            <i class="fa fa-chevron-down pull-right" aria-hidden="true"></i>
                                         </a>
                                         <div id="collapse35" class="panel-collapse collapse">
@@ -563,7 +505,7 @@ Asset Management &amp; Trust                                            <i class
 
 
 
-       
+
 
                 <div class="panel-heading">
                     <h4 class="panel-title">
@@ -586,7 +528,7 @@ Asset Management &amp; Trust                                            <i class
                 <ul class="footer-mobile-link">
                     <li class="number-bg">800-501-6535</li>
                     <li><a href="../quick-links/locations/index.html">Locations</a></li><li><a href="index.html">About Us</a></li><li><a href="careers/index.html">Careers</a></li><li><a href="../quick-links/customer-care/index.html">Customer Care</a></li>
-                    
+
                 </ul>
             </div>
         </div>
@@ -609,7 +551,7 @@ Asset Management &amp; Trust                                            <i class
 
                                 <li id="signInSection" class="bg-dropdown" onmouseover="ShowSignInOption()" onmouseout="ShowSignInOption()">
                                     <a href="#" class="signin">Sign In </a>
-                                    
+
                                     <div id="signInHoverSection" class="b1sign-in-hover" data-present="present" style="display:none;">
                                         <p><a href="https://www.mypremiercreditcard.com/login.aspx" data-type="" id="SIcreditcardpayment">Credit Card</a><br /></p>
                                         <p><a href="https://online.firstpremier.com/FirstPremierBankOnline/uux.aspx" data-type="actionitem" id="SIpersonalbanking">Personal Banking</a><br /></p>
@@ -664,7 +606,7 @@ Asset Management &amp; Trust                                            <i class
             </article>
         </div>
     </div>
-</section>
+</section> --}}
 
 <script>
 
@@ -761,8 +703,8 @@ Asset Management &amp; Trust                                            <i class
         var searchText = $('#txtheadsearch').attr('data-val') || '';
         $('#txtheadsearch').val(searchText);
     }
-</script>        
-<div class="row equal-height"><div class="block b47block  col-md-12"><style>    
+</script>
+<div class="row equal-height"><div class="block b47block  col-md-12"><style>
     .b47hero_banner_text2 h2 {font-size:5px; font-family: &#39;Prompt-SemiBold&#39;; float:left; width:100%; text-shadow:1px 1px 1px #000, 0 0 0.8em #000, 0 0 0.1em #000;}
     .b47hero_banner_text2 p {color:#ffffff; font-family: &#39;Prompt-Medium&#39;; font-size:20px; float:left; width:80%; margin:1% 0 3% 0;}
 </style>
@@ -772,8 +714,8 @@ Asset Management &amp; Trust                                            <i class
     <form method="get">
         <div class="b47hero_banner2">
             <div class="b47hero_coverM2"></div>
-            
-            <img class="b47hero-img2" src="../../../contentassets/b3bde2e16fbb446ab2896c711e0ba0a6/0.5_b-46-hero_skylinenight-min.png" alt="downtown Sioux Falls South Dakota">
+
+            <img class="b47hero-img2" src="{{asset('assets/frontend/contentassets/b3bde2e16fbb446ab2896c711e0ba0a6/0.5_b-46-hero_skylinenight-min.png')}}" alt="downtown Sioux Falls South Dakota">
             <div class="b47banner-desc2">
                 <div class="container">
                     <div class="b47hero_banner_text2">
@@ -811,7 +753,7 @@ Asset Management &amp; Trust                                            <i class
             <h2>The PREMIER Family</h2>
             <p>United National Corporation, the holding company for First PREMIER Bank and PREMIER Bankcard, has been consistently ranked as one of the top-performing S-Corp banks with assets between $100 million and $3 billion by American Banking Association's Banking Journal.</p>
             <div class="b3premier_family col-md-6">
-                <div class="b3premier_family_left"><img src="../../../contentassets/2ee53b07413e4df181de542c359cf2b5/1.8_b-03-premierbank-min.png" alt="First PREMIER Bank" class="img-responsive"></div>
+                <div class="b3premier_family_left"><img src="{{asset('assets/frontend/contentassets/2ee53b07413e4df181de542c359cf2b5/1.8_b-03-premierbank-min.png')}}" alt="First PREMIER Bank" class="img-responsive"></div>
                 <div class="b3premier_family_right">
                     <span><a href="about-first-premier-bank/index.html">First PREMIER Bank</a></span>
                     <div class="xhtml"><p>As a regional bank with a strong national reputation, we&rsquo;re high tech and high touch. We serve individuals from all walks of life and businesses and organizations of every size, offering comprehensive banking, financial, treasury, wealth and trust services.</p></div>
@@ -820,7 +762,7 @@ Asset Management &amp; Trust                                            <i class
 
 
             <div class="b3premier_family col-md-6">
-                <div class="b3premier_family_left"><img src="../../../contentassets/2ee53b07413e4df181de542c359cf2b5/1.8_b-03-premierbankcard-min.png" alt="PREMIER Bankcard" class="img-responsive"></div>
+                <div class="b3premier_family_left"><img src="{{asset('assets/frontend/contentassets/2ee53b07413e4df181de542c359cf2b5/1.8_b-03-premierbankcard-min.png')}}" alt="PREMIER Bankcard" class="img-responsive"></div>
                 <div class="b3premier_family_right">
                     <span><a href="{{route('frontend.en.pages.about.about-premier')}}">PREMIER Bankcard</a></span>
                     <div class="xhtml"><p>Low credit scores, caused by past financial problems, job loss, divorce and other factors impact millions of consumers today. As the 12th largest issuer of Mastercard&reg;, we help people who may otherwise be turned down to obtain a credit card.</p></div>
@@ -866,7 +808,7 @@ Asset Management &amp; Trust                                            <i class
         </div>
     </div>
 </section></div><div class="block b59block  col-md-12"><style>
-    
+
 </style>
 <section class="row">
     <div class="clearfix"></div>
@@ -912,12 +854,12 @@ Asset Management &amp; Trust                                            <i class
             <div class="container">
                 <div class="row">
                     <div class="col-lg-12 b11firstpremier_box_main">
-<div class='item active'><div class='col-md-4 col-sm-6 b11anytime_box'><a href='careers/index.html'><img src='../../../globalassets/images/secondary-icons/blue/places/blue-places-secondary-icon-10.png' alt='buildings' border='0' /></a><span><a href='careers/index.html'>PREMIER Careers</a></span><div class="xhtml"><p>At First PREMIER Bank and PREMIER Bankcard, we&rsquo;re hiring! Enjoy great pay and benefits at one of the &ldquo;Best Banks to Work For.&rdquo;</p></div></div><div class='col-md-4 col-sm-6 b11anytime_box'><a href='the-premier-way/index.html'><img src='../../../globalassets/images/secondary-icons/gold/user/gold-user-secondary-icon-6.png' alt='shadow of person' border='0' /></a><span><a href='the-premier-way/index.html'>The PREMIER Way</a></span><div class="xhtml"><p>Proactive, relational, excellence, making a difference, eager to serve and representing well&hellip; it&rsquo;s the PREMIER Way.</p></div></div><div class='col-md-4 col-sm-6 b11anytime_box'><a href='community/celebration/index.html'><img src='../../../globalassets/images/secondary-icons/bright/comments-chat/bright-comments-_-chat-secondary-icon-11.png' alt='award' border='0' /></a><span><a href='community/celebration/index.html'>Team Celebrations</a></span><div class="xhtml"><p>Showing appreciation and celebrating the accomplishments of our associates is an important part of business.</p></div></div></div>                    </div>
+<div class='item active'><div class='col-md-4 col-sm-6 b11anytime_box'><a href='careers/index.html'><img src='{{asset('assets/frontend/globalassets/images/secondary-icons/blue/places/blue-places-secondary-icon-10.png')}}' alt='buildings' border='0' /></a><span><a href='careers/index.html'>PREMIER Careers</a></span><div class="xhtml"><p>At First PREMIER Bank and PREMIER Bankcard, we&rsquo;re hiring! Enjoy great pay and benefits at one of the &ldquo;Best Banks to Work For.&rdquo;</p></div></div><div class='col-md-4 col-sm-6 b11anytime_box'><a href='the-premier-way/index.html'><img src='{{asset('assets/frontend/globalassets/images/secondary-icons/gold/user/gold-user-secondary-icon-6.png')}}' alt='shadow of person' border='0' /></a><span><a href='the-premier-way/index.html'>The PREMIER Way</a></span><div class="xhtml"><p>Proactive, relational, excellence, making a difference, eager to serve and representing well&hellip; it&rsquo;s the PREMIER Way.</p></div></div><div class='col-md-4 col-sm-6 b11anytime_box'><a href='community/celebration/index.html'><img src='{{asset('assets/frontend/globalassets/images/secondary-icons/bright/comments-chat/bright-comments-_-chat-secondary-icon-11.png')}}' alt='award' border='0' /></a><span><a href='community/celebration/index.html'>Team Celebrations</a></span><div class="xhtml"><p>Showing appreciation and celebrating the accomplishments of our associates is an important part of business.</p></div></div></div>                    </div>
                 </div>
             </div>
         </div>
 
-        
+
     </section>
 </div></div><div class="block b18block  col-md-12">
 
@@ -932,7 +874,7 @@ Asset Management &amp; Trust                                            <i class
 	.b18great_feature_left {
 		padding-bottom: 0px;
 	}
-	
+
 	.b18great_feature_main .b18detail {
 		margin-top: 0px;
 	}
@@ -984,7 +926,7 @@ Asset Management &amp; Trust                                            <i class
                     <div class="pop_main_container_board">
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                             <span aria-hidden="true">
-                                <img class="close_icon" src="../../../static/img/closebutton.png" alt="First PREMIER Bank" style="height:17px !important;width:17px !important;">
+                                <img class="close_icon" src="{{asset('assets/frontend/static/img/closebutton.png')}}" alt="First PREMIER Bank" style="height:17px !important;width:17px !important;">
                             </span>
                         </button>
                         <div class="pop_main_container">
@@ -993,7 +935,7 @@ Asset Management &amp; Trust                                            <i class
                                     <div class="col-md-12" style="padding-left:40px;">
                                         <h4 class="Blue"></h4>
                                         <div class="b46Blue" style="text-align:left;">
-                                            
+
                                             <p><br /><a target="_blank"></a></p>
                                         </div>
                                     </div>
@@ -1012,7 +954,7 @@ Asset Management &amp; Trust                                            <i class
                     <div class="pop_main_container_board">
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                             <span aria-hidden="true">
-                                <img class="close_icon" src="../../../static/img/closebutton.png" alt="First PREMIER Bank" style="height:17px !important;width:17px !important;">
+                                <img class="close_icon" src="{{asset('assets/frontend/static/img/closebutton.png')}}" alt="First PREMIER Bank" style="height:17px !important;width:17px !important;">
                             </span>
                         </button>
                         <div class="pop_main_container">
@@ -1021,7 +963,7 @@ Asset Management &amp; Trust                                            <i class
                                     <div class="col-md-12" style="padding-left:40px;">
                                         <h4 class="Blue"></h4>
                                         <div class="b46Blue" style="text-align:left;">
-                                            
+
                                             <p><br /><a target="_blank"></a></p>
                                         </div>
                                     </div>
@@ -1040,7 +982,7 @@ Asset Management &amp; Trust                                            <i class
                     <div class="pop_main_container_board">
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                             <span aria-hidden="true">
-                                <img class="close_icon" src="../../../static/img/closebutton.png" alt="First PREMIER Bank" style="height:17px !important;width:17px !important;">
+                                <img class="close_icon" src="{{asset('assets/frontend/static/img/closebutton.png')}}" alt="First PREMIER Bank" style="height:17px !important;width:17px !important;">
                             </span>
                         </button>
                         <div class="pop_main_container">
@@ -1050,7 +992,7 @@ Asset Management &amp; Trust                                            <i class
                                     <div class="col-md-12" style="padding-left:40px;">
                                         <h4 class="Blue"></h4>
                                         <div class="b46Blue" style="text-align:left;">
-                                            
+
                                             <p><br /><a href="#" target="_blank"></a></p>
                                         </div>
                                     </div>
@@ -1075,7 +1017,7 @@ Asset Management &amp; Trust                                            <i class
         background: none !important;
     }
     .b26line_credit_main .carousel-inner { ; }
-    
+
     .white-background h2, .white-background .xhtml, .white-background .xhtml p,
     .grey-background h2, .grey-background .xhtml, .grey-background .xhtml p
     {
@@ -1110,7 +1052,7 @@ Asset Management &amp; Trust                                            <i class
                 <div class="col-md-12 hidden-xs hidden-sm">
                     <div class="carousel" id="myCarousel-" data-interval="false">
                         <div class="carousel-inner">
-                            <div class='item active'><div class='col-lg-4 col-md-12 col-sm-12 col-xs-12 b26line_credit_loans no-pad'><div class='b26line_credit_loans_left'><img src='../../../contentassets/4ecf786f90774a318f5bb9ce6bf62c89/ymabii-about_b26_alt7_community.png' alt='PREMIER Softball Complex'></div><div class='b26line_credit_loans_right'><div class="b26titlerow"><a href='community/index.html'><h3 class='deckspan'>Our Community</h3></a></div><h3><br clear='all'/><div class="xhtml"><p>Learn how PREMIER actively partners with business, government and non-profit organizations to positively impact our region.</p></div></h3></div></div><div class='col-lg-4 col-md-12 col-sm-12 col-xs-12 b26line_credit_loans b26line_personal_loans no-pad'><div class='b26line_credit_loans_left'><img src='../../../contentassets/7e2308f5afce4bd9bb0596e58aa4d30f/ymabii-about_b26_alt1_ph-min.png' alt='children in classroom'></div><div class='b26line_credit_loans_right'><div class="b26titlerow"><a href='community/philanthropic-giving/index.html'><h3 class='deckspan'>Philanthropic Giving</h3></a></div><h3><br clear='all'/><div class="xhtml"><p>Learn how PREMIER contributions have benefited organizations throughout our region.</p></div></h3></div></div><div class='col-lg-4 col-md-12 col-sm-12 col-xs-12 b26line_credit_loans no-pad last'><div class='b26line_credit_loans_left'><img src='../../../contentassets/42e0a4ba9712456cb5c8369c0ade74c1/ymabii-about_b26_alt3_colsupport-min.png' alt='college students'></div><div class='b26line_credit_loans_right'><div class="b26titlerow"><a href='community/collegiate-support/index.html'><h3 class='deckspan'>Collegiate Support</h3></a></div><h3><br clear='all'/><div class="xhtml"><p>Learn how PREMIER supports schools, colleges, universities and students to secure a brighter future!</p></div></h3></div></div></div><div class='item'><div class='col-lg-4 col-md-12 col-sm-12 col-xs-12 b26line_credit_loans no-pad'><div class='b26line_credit_loans_left'><img src='../../../contentassets/7bde9901f8b04998828c7da54743f12c/ymabii-about_b26_alt2_comserv-min.png' alt='two men talking'></div><div class='b26line_credit_loans_right'><div class="b26titlerow"><a href='community/community-service/index.html'><h3 class='deckspan'>Community Service</h3></a></div><h3><br clear='all'/><div class="xhtml"><p>See how PREMIER associates actively serve within our community!</p></div></h3></div></div><div class='col-lg-4 col-md-12 col-sm-12 col-xs-12 b26line_credit_loans b26line_personal_loans no-pad'><div class='b26line_credit_loans_left'><img src='../../../contentassets/3151f5b1184b4ebea41405944bc85cac/ymabii-about_b26_alt4_sponsor-min.png' alt='woman and lemur at Great Plains Zoo'></div><div class='b26line_credit_loans_right'><div class="b26titlerow"><a href='community/sponsorship/index.html'><h3 class='deckspan'>Sponsorships</h3></a></div><h3><br clear='all'/><div class="xhtml"><p>We actively sponsor teams, events, athletics and other activities throughout our community.</p></div></h3></div></div><div class='col-lg-4 col-md-12 col-sm-12 col-xs-12 b26line_credit_loans no-pad last'><div class='b26line_credit_loans_left'><img src='../../../contentassets/633f8f168e964d89823d68253c83c3bf/ymabii-about_b26_alt6_intern.png' alt='students in classroom clapping'></div><div class='b26line_credit_loans_right'><div class="b26titlerow"><a href='community/collegiate-support/scholarship-and-internships/index.html'><h3 class='deckspan'>Scholarships & Internships</h3></a></div><h3><br clear='all'/><div class="xhtml"><p>Learn how PREMIER supports students with paid internships and an array of scholarship offerings!</p></div></h3></div></div></div><div class='item'><div class='col-lg-4 col-md-12 col-sm-12 col-xs-12 b26line_credit_loans no-pad'><div class='b26line_credit_loans_left'><img src='../../../contentassets/9ea8aad9972348dba81e33302c8658a5/ymabii-about_b26_alt5_celebrate-min.png' alt='Luke Bryan at Dana J Dykhouse Stadium'></div><div class='b26line_credit_loans_right'><div class="b26titlerow"><a href='community/celebration/index.html'><h3 class='deckspan'>Celebrations & Appreciations</h3></a></div><h3><br clear='all'/><div class="xhtml"><p>Taking time to celebrate the contributions of our employees is important at PREMIER!</p></div></h3></div></div></div>
+                            <div class='item active'><div class='col-lg-4 col-md-12 col-sm-12 col-xs-12 b26line_credit_loans no-pad'><div class='b26line_credit_loans_left'><img src='{{asset('assets/frontend/contentassets/4ecf786f90774a318f5bb9ce6bf62c89/ymabii-about_b26_alt7_community.png')}}' alt='PREMIER Softball Complex'></div><div class='b26line_credit_loans_right'><div class="b26titlerow"><a href='community/index.html'><h3 class='deckspan'>Our Community</h3></a></div><h3><br clear='all'/><div class="xhtml"><p>Learn how PREMIER actively partners with business, government and non-profit organizations to positively impact our region.</p></div></h3></div></div><div class='col-lg-4 col-md-12 col-sm-12 col-xs-12 b26line_credit_loans b26line_personal_loans no-pad'><div class='b26line_credit_loans_left'><img src='{{asset('assets/frontend/contentassets/7e2308f5afce4bd9bb0596e58aa4d30f/ymabii-about_b26_alt1_ph-min.png')}}' alt='children in classroom'></div><div class='b26line_credit_loans_right'><div class="b26titlerow"><a href='community/philanthropic-giving/index.html'><h3 class='deckspan'>Philanthropic Giving</h3></a></div><h3><br clear='all'/><div class="xhtml"><p>Learn how PREMIER contributions have benefited organizations throughout our region.</p></div></h3></div></div><div class='col-lg-4 col-md-12 col-sm-12 col-xs-12 b26line_credit_loans no-pad last'><div class='b26line_credit_loans_left'><img src='{{asset('assets/frontend/contentassets/42e0a4ba9712456cb5c8369c0ade74c1/ymabii-about_b26_alt3_colsupport-min.png')}}' alt='college students'></div><div class='b26line_credit_loans_right'><div class="b26titlerow"><a href='community/collegiate-support/index.html'><h3 class='deckspan'>Collegiate Support</h3></a></div><h3><br clear='all'/><div class="xhtml"><p>Learn how PREMIER supports schools, colleges, universities and students to secure a brighter future!</p></div></h3></div></div></div><div class='item'><div class='col-lg-4 col-md-12 col-sm-12 col-xs-12 b26line_credit_loans no-pad'><div class='b26line_credit_loans_left'><img src='{{asset('assets/frontend/contentassets/7bde9901f8b04998828c7da54743f12c/ymabii-about_b26_alt2_comserv-min.png')}}' alt='two men talking'></div><div class='b26line_credit_loans_right'><div class="b26titlerow"><a href='community/community-service/index.html'><h3 class='deckspan'>Community Service</h3></a></div><h3><br clear='all'/><div class="xhtml"><p>See how PREMIER associates actively serve within our community!</p></div></h3></div></div><div class='col-lg-4 col-md-12 col-sm-12 col-xs-12 b26line_credit_loans b26line_personal_loans no-pad'><div class='b26line_credit_loans_left'><img src='{{asset('assets/frontend/contentassets/3151f5b1184b4ebea41405944bc85cac/ymabii-about_b26_alt4_sponsor-min.png')}}' alt='woman and lemur at Great Plains Zoo'></div><div class='b26line_credit_loans_right'><div class="b26titlerow"><a href='community/sponsorship/index.html'><h3 class='deckspan'>Sponsorships</h3></a></div><h3><br clear='all'/><div class="xhtml"><p>We actively sponsor teams, events, athletics and other activities throughout our community.</p></div></h3></div></div><div class='col-lg-4 col-md-12 col-sm-12 col-xs-12 b26line_credit_loans no-pad last'><div class='b26line_credit_loans_left'><img src='{{asset('assets/frontend/contentassets/633f8f168e964d89823d68253c83c3bf/ymabii-about_b26_alt6_intern.png')}}' alt='students in classroom clapping'></div><div class='b26line_credit_loans_right'><div class="b26titlerow"><a href='community/collegiate-support/scholarship-and-internships/index.html'><h3 class='deckspan'>Scholarships & Internships</h3></a></div><h3><br clear='all'/><div class="xhtml"><p>Learn how PREMIER supports students with paid internships and an array of scholarship offerings!</p></div></h3></div></div></div><div class='item'><div class='col-lg-4 col-md-12 col-sm-12 col-xs-12 b26line_credit_loans no-pad'><div class='b26line_credit_loans_left'><img src='{{asset('assets/frontend/contentassets/9ea8aad9972348dba81e33302c8658a5/ymabii-about_b26_alt5_celebrate-min.png')}}' alt='Luke Bryan at Dana J Dykhouse Stadium'></div><div class='b26line_credit_loans_right'><div class="b26titlerow"><a href='community/celebration/index.html'><h3 class='deckspan'>Celebrations & Appreciations</h3></a></div><h3><br clear='all'/><div class="xhtml"><p>Taking time to celebrate the contributions of our employees is important at PREMIER!</p></div></h3></div></div></div>
                         </div>
                     </div>
                 </div>
@@ -1122,8 +1064,8 @@ Asset Management &amp; Trust                                            <i class
                     </center>
                 </div>
 
-                    <a class="left carousel-control" href="#myCarousel-" data-slide="prev"><img src="../../../Static/img/CustomBlocks/B26/left_arrow.png" alt="First PREMIER Bank"></a>
-                    <a class="right carousel-control" href="#myCarousel-" data-slide="next"><img src="../../../Static/img/CustomBlocks/B26/right_arrow.png" alt="First PREMIER Bank"></a>
+                    <a class="left carousel-control" href="#myCarousel-" data-slide="prev"><img src="{{asset('assets/frontend/Static/img/CustomBlocks/B26/left_arrow.png')}}" alt="First PREMIER Bank"></a>
+                    <a class="right carousel-control" href="#myCarousel-" data-slide="next"><img src="{{asset('assets/frontend/Static/img/CustomBlocks/B26/right_arrow.png')}}" alt="First PREMIER Bank"></a>
             </div>
         </div>
     </div>
@@ -1132,120 +1074,120 @@ Asset Management &amp; Trust                                            <i class
 
 </div></div>
 
- 
+
 
 <div class="row-full footer">
     <div class="container">
         <div class="row">
             <div class="col-md-3 col-sm-3 col-xs-12 footerCol1">
                 <div class="footerHeader">Company</div>
-                
+
 <ul>
-    
+
         <li>
-            <a href="index.html">About Us</a> 
+            <a href="index.html">About Us</a>
         </li>
-    
+
         <li>
-            <a href="../../index.html">First PREMIER Bank</a> 
+            <a href="../../index.html">First PREMIER Bank</a>
         </li>
-    
+
         <li>
-            <a href="https://www.mypremiercreditcard.com/">PREMIER Bankcard</a> 
+            <a href="https://www.mypremiercreditcard.com/">PREMIER Bankcard</a>
         </li>
-    
+
         <li>
-            <a href="leadership-team/index.html">Leadership</a> 
+            <a href="leadership-team/index.html">Leadership</a>
         </li>
-    
+
         <li>
-            <a href="community/index.html">Community</a> 
+            <a href="community/index.html">Community</a>
         </li>
-    
+
         <li>
-            <a href="careers/index.html">Careers</a> 
+            <a href="careers/index.html">Careers</a>
         </li>
-    
+
 </ul>
                 <br />
             </div>
             <div class="col-md-3 col-sm-3 col-xs-12 footerCol2">
                 <div class="footerHeader">Customers</div>
-                
+
 <ul>
-    
+
         <li>
-            <a href="../../index.html">Personal Banking</a> 
+            <a href="../../index.html">Personal Banking</a>
         </li>
-    
+
         <li>
-            <a href="../../small-business/index.html">Small Business</a> 
+            <a href="../../small-business/index.html">Small Business</a>
         </li>
-    
+
         <li>
-            <a href="../../commercial/index.html">Commercial</a> 
+            <a href="../../commercial/index.html">Commercial</a>
         </li>
-    
+
 </ul>
                 <br />
             </div>
             <div class="col-md-3 col-sm-3 col-xs-12 footerCol3">
                 <div class="footerHeader">Help &amp; Contact</div>
-                
+
 <ul>
-    
+
         <li>
-            <a href="../quick-links/customer-care/index.html">Customer Care</a> 
+            <a href="../quick-links/customer-care/index.html">Customer Care</a>
         </li>
-    
+
         <li>
-            <a href="../quick-links/locations/index.html">Locations</a> 
+            <a href="../quick-links/locations/index.html">Locations</a>
         </li>
-    
+
         <li>
-            <a href="../quick-links/customer-care/index.html">BANK: 800-501-6535</a> 
+            <a href="../quick-links/customer-care/index.html">BANK: 800-501-6535</a>
         </li>
-    
+
         <li>
-            <a href="https://www.mypremiercreditcard.com/">CREDIT CARD: 800-987-5521</a> 
+            <a href="https://www.mypremiercreditcard.com/">CREDIT CARD: 800-987-5521</a>
         </li>
-    
+
         <li>
-            <a href="../../index.html">Routing Number: 091408598</a> 
+            <a href="../../index.html">Routing Number: 091408598</a>
         </li>
-    
+
 </ul>
                 <br />
             </div>
             <div class="col-md-3 col-sm-3 col-xs-12 footerCol4">
                 <div class="footerHeader">Legal Notices</div>
-                
+
 <ul>
-    
+
         <li>
-            <a href="../resources/first-premier-privacy-statement-2020/index.html">Privacy Notice &amp; Statement</a> 
+            <a href="../resources/first-premier-privacy-statement-2020/index.html">Privacy Notice &amp; Statement</a>
         </li>
-    
+
         <li>
-            <a href="../resources/legal-disclosures/index.html">Legal Disclosures</a> 
+            <a href="../resources/legal-disclosures/index.html">Legal Disclosures</a>
         </li>
-    
+
         <li>
-            <a href="../resources/cookie-policy/index.html">Cookie Policy</a> 
+            <a href="../resources/cookie-policy/index.html">Cookie Policy</a>
         </li>
-    
+
 </ul>
             </div>
         </div>
         <div class="row">
             <div class="col-md-12" style="padding-top:50px;">
- <p>Member FDIC | <img src="../../../Static/img/equalhousinglender.png" alt="Equal Housing Lender" title="Equal Housing Lender" />Equal Housing Lender</p>            </div>
+ <p>Member FDIC | <img src="{{asset('assets/frontend/Static/img/equalhousinglender.png')}}" alt="Equal Housing Lender" title="Equal Housing Lender" />Equal Housing Lender</p>            </div>
         </div>
     </div>
 </div>
-<style>   
+<style>
     /* CHROME SAFARI FIX */
-    .form-control:hover, .form-control:active, .form-control:focus { box-shadow: none !important; -moz-box-shadow: none !important; -webkit-box-shadow: none !important; } 
+    .form-control:hover, .form-control:active, .form-control:focus { box-shadow: none !important; -moz-box-shadow: none !important; -webkit-box-shadow: none !important; }
     .form-control:hover, .form-control:active, .form-control:focus { box-shadow: none !important; -moz-box-shadow: none !important; -webkit-box-shadow: none !important; }
     a:focus, a:active {outline:none!important; border: none!important; }
     input:focus, input:active { outline: none !important; }
@@ -1297,7 +1239,7 @@ Asset Management &amp; Trust                                            <i class
         }
     });
 </script>    </div>
-    <div class="smallLogo"><a href="../../index.html" title="First PREMIER Bank - Home"><img src="../../../Static/gfx/Logo.png" style="max-width:100%;" /></a></div>
+    <div class="smallLogo"><a href="../../index.html" title="First PREMIER Bank - Home"><img src="{{asset('assets/frontend/Static/gfx/Logo.png')}}" style="max-width:100%;" /></a></div>
     <script type="text/javascript" src="../../../../dl.episerver.net/13.4.4.1/epi-util/find.js"></script>
 <script type="text/javascript">
 if(FindApi){var api = new FindApi();api.setApplicationUrl('../../../index.html');api.setServiceApiBaseUrl('../../../find_v2/index.html');api.processEventFromCurrentUri();api.bindWindowEvents();api.bindAClickEvent();api.sendBufferedEvents();}
@@ -1305,7 +1247,5 @@ if(FindApi){var api = new FindApi();api.setApplicationUrl('../../../index.html')
 
     <script type="text/javascript" src="../../../Static/js/pushy.js"></script>
     <script type="text/javascript" src="../../../Static/js/Blocks_2019062002.js"></script>
-</body>
 
-<!-- Mirrored from www.firstpremier.com/en/pages/about-us/ by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 30 Jun 2021 12:31:04 GMT -->
-</html>
+    @endsection

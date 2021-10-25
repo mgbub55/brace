@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Admin\UserController;
 use Illuminate\Support\Facades\Route;
 /*
 |--------------------------------------------------------------------------
@@ -222,6 +223,170 @@ Route::name('frontend.en.pages')->prefix('frontend/en/pages')->group(function ()
 		});
 	});
 });
+
+
+// PERSONAL
+//  /** PERSONAL CHECkING*/
+        Route::name('frontend.en.personal.personal-checking')->prefix('frontend/en/personal/personal-checking')->group(function () {
+            Route::get('/', function () {
+                return view('frontend.en.personal.personal-checking.index');
+            })->name('');
+            // Route::name('.personal')->prefix('/personal')->group(function () {
+                // Route::get('/free/checking', function () {
+                //     return view('frontend.en.personal.personal-checking.free-plus-checking.index');
+                // })->name('.free.checking');
+                // Route::get('/business/trust', function () {
+                //     return view('frontend.en.commercial.asset-management-and-trust.business-trust-services.index');
+                // })->name('.business.trust');
+                // Route::get('/business/employee', function () {
+                //     return view('frontend.en.commercial.asset-management-and-trust.employee-benefits.index');
+                // })->name('.business.employee');
+                // Route::get('/business/first', function () {
+                //     return view('frontend.en.commercial.asset-management-and-trust.first-premier-at-work.index');
+                // })->name('.business.first');
+                // Route::get('/group', function () {
+                //     return view('frontend.en.commercial.asset-management-and-trust.group-retirement-plans.index');
+                // })->name('.group');
+                // Route::get('/', function () {
+                //     return view('frontend.en.commercial.asset-management-and-trust.index');
+                // })->name('');
+            // });
+
+        });
+        Route::name('frontend.en.personal.personal-checking.free-plus-checking')->prefix('frontend/en/personal/personal-checking/free-plus-checking')->group(function () {
+            Route::get('/', function () {
+                return view('frontend.en.personal.personal-checking.free-plus-checking.index');
+            });
+        });
+        Route::name('frontend.en.personal.personal-checking.debit-card')->prefix('frontend/en/personal/personal-checking/debit-card')->group(function () {
+            Route::get('/', function () {
+                return view('frontend.en.personal.personal-checking.debit-card.index');
+            });
+        });
+        Route::name('frontend.en.personal.personal-checking.overdraft-protection')->prefix('frontend/en/personal/personal-checking/overdraft-protection')->group(function () {
+            Route::get('/', function () {
+                return view('frontend.en.personal.personal-checking.overdraft-protection.index');
+            });
+        });
+        Route::name('frontend.en.personal.personal-checking.reward-checking')->prefix('frontend/en/personal/personal-checking/reward-checking')->group(function () {
+            Route::get('/', function () {
+                return view('frontend.en.personal.personal-checking.reward-checking.index');
+            });
+        });
+        Route::name('frontend.en.personal.personal-checking.security-and-fraud-protection')->prefix('frontend/en/personal/personal-checking/security-and-fraud-protection')->group(function () {
+            Route::get('/', function () {
+                return view('frontend.en.personal.personal-checking.security-and-fraud-protection.index');
+            });
+        });
+
+
+
+
+
+        // ONline and Mobile
+        Route::name('frontend.en.personal.online-and-mobile')->prefix('frontend/en/personal/online-and-mobile')->group(function () {
+            Route::get('/', function () {
+                return view('frontend.en.personal.online-and-mobile.index');
+            })->name('');
+        });
+        Route::name('frontend.en.personal.online-and-mobile.online-banking')->prefix('frontend/en/personal/online-and-mobile/online-banking')->group(function () {
+            Route::get('/', function () {
+                return view('frontend.en.personal.online-and-mobile.online-banking.index');
+            })->name('');
+        });
+        Route::name('frontend.en.personal.online-and-mobile.mobile-banking')->prefix('frontend/en/personal/online-and-mobile/mobile-banking')->group(function () {
+            Route::get('/', function () {
+                return view('frontend.en.personal.online-and-mobile.mobile-banking.index');
+            })->name('');
+        });
+        Route::name('frontend.en.personal.online-and-mobile.mobile-wallet')->prefix('frontend/en/personal/online-and-mobile/mobile-wallet')->group(function () {
+            Route::get('/', function () {
+                return view('frontend.en.personal.online-and-mobile.mobile-wallet.index');
+            })->name('');
+        });
+
+
+
+
+        // Savings & CDs
+        Route::name('frontend.en.personal.savings-and-cds')->prefix('frontend/en/personal/savings-and-cds')->group(function () {
+            Route::get('/', function () {
+                return view('frontend.en.personal.savings-and-cds.index');
+            })->name('');
+        });
+
+        // Loans and Credit Lines
+        Route::name('frontend.en.personal.loans-and-credit-lines')->prefix('frontend/en/personal/loans-and-credit-lines')->group(function () {
+            Route::get('/', function () {
+                return view('frontend.en.personal.loans-and-credit-lines.index');
+            })->name('');
+        });
+
+         // Mortages
+         Route::name('frontend.en.personal.mortgages')->prefix('frontend/en/personal/mortgages')->group(function () {
+            Route::get('/', function () {
+                return view('frontend.en.personal.mortgages.index');
+            })->name('');
+        });
+
+         // Investing
+         Route::name('frontend.en.personal.investing')->prefix('frontend/en/personal/investing')->group(function () {
+            Route::get('/', function () {
+                return view('frontend.en.personal.investing.index');
+            })->name('');
+        });
+
+        // Wealth Management
+        Route::name('frontend.en.personal.wealth-management')->prefix('frontend/en/personal/wealth-management')->group(function () {
+            Route::get('/', function () {
+                return view('frontend.en.personal.wealth-management.index');
+            })->name('');
+        });
+
+        // Student & Parents
+        Route::name('frontend.en.personal.students-and-parents')->prefix('frontend/en/personal/students-and-parents')->group(function () {
+            Route::get('/', function () {
+                return view('frontend.en.personal.students-and-parents.index');
+            })->name('');
+        });
+
+        // navbar routes
+        Route::name('frontend.en')->prefix('frontend/en')->group(function () {
+            Route::get('/', function () {
+                return view('frontend.en.index');
+            })->name('');
+        });
+
+        Route::name('frontend')->prefix('frontend')->group(function () {
+            Route::get('/', function () {
+                return view('frontend.index');
+            });
+        });
+
+        Route::name('frontend.en.small-business')->prefix('frontend/en/small-business')->group(function () {
+            Route::get('/', function () {
+                return view('frontend.en.small-business.index');
+            });
+        });
+
+        Route::name('frontend.en.pages.quick-links.locations')->prefix('frontend/en/pages/quick-links/locations')->group(function () {
+            Route::get('/', function () {
+                return view('frontend.en.pages.quick-links.locations.index');
+            });
+        });
+
+        Route::name('frontend.en.pages.about-us')->prefix('frontend/en/pages/about-us')->group(function () {
+            Route::get('/', function () {
+                return view('frontend.en.pages.about-us.index');
+            });
+        });
+
+
+
+
+
+
+
 
 // // {{route('frontend.en.pages.about.about-first')}}
 // // {{route('frontend.en.pages.about.community')}}

@@ -1,77 +1,17 @@
+@extends('frontend.layouts.app')
 
-
-<!DOCTYPE html>
-<html lang="en">
-
-<!-- Mirrored from www.firstpremier.com/en/personal/personal-checking/debit-card/ by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 30 Jun 2021 12:02:48 GMT -->
-<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
-<head>
-
-    <!--shape-->
-    <script type="text/javascript" src="../../../../../cds-sdkcfg.onlineaccess1.com/common0df9.js?async"
-            async></script>
-
-
-    <meta charset="utf-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=10; IE=11" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="msvalidate.01" content="B1160176C00496054ECCB3B27B970C87" />
-    
-    <title>Mastercard&#174; Debit Card - Personal Checking | First PREMIER Bank</title>
-            <meta name="description" content="First PREMIER Bank personal debit Mastercards&#174; are easy to use, compatible with mobile wallet technology, and give you access to 33,000+ surcharge-free MoneyPass&#174; ATMs nationwide. With available instant issue, our debit cards can be locked or unlocked via online and mobile banking if lost or stolen, and come with Zero Liability&#174; Fraud Protection. " />
-    <link rel="shortcut icon" href="../../../../favicon.ico" type="image/x-icon" />
-
-    <link href="index.html" rel="canonical" />
-    
-    <link href="../../../../Static/bootstrap/css/bootstrap.css" rel="stylesheet"/>
-<link href="../../../../Static/bootstrap/css/bootstrap-responsive.css" rel="stylesheet"/>
-<link href="../../../../Static/bootstrap/css/bootstrap.offcanvas.min.css" rel="stylesheet"/>
-<link href="../../../../Static/css/pushy.css" rel="stylesheet"/>
-<link href="../../../../Content/font-awesome.css" rel="stylesheet"/>
-<link href="../../../../Static/css/Site_20201214_V1_35.css" rel="stylesheet"/>
-<link href="../../../../Static/css/Blocks_20202302_v61.css" rel="stylesheet"/>
-<link href="../../../../Static/css/Forms_20201214.css" rel="stylesheet"/>
-
-    <script src="../../../../Static/js/jquery.min.js"></script>
-<script src="../../../../Static/js/cookieconsent.js"></script>
-<script src="../../../../Static/bootstrap/js/bootstrap3.min.js"></script>
-
-    
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-4688536-5"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'UA-4688536-5');
-</script>
-
- 
-
-    <style>
-        
-    </style>
-    <!-- Google Tag Manager (noscript) body tag -->
-    <noscript>
-        <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MWXZNLB" height="0" width="0" style="display:none;visibility:hidden"></iframe>
-    </noscript>
-    <!-- End Google Tag Manager (noscript) -->
-    <!--L&S Script-->
-    <script type="text/javascript" src="../../../../../cdn.mantl.com/assets/first_premier_bank/production-scripts/first-premier-bank-analytics-pixel.html"></script>
-<script type="text/javascript">var appInsights=window.appInsights||function(config){function t(config){i[config]=function(){var t=arguments;i.queue.push(function(){i[config].apply(i,t)})}}var i={config:config},u=document,e=window,o="script",s="AuthenticatedUserContext",h="start",c="stop",l="Track",a=l+"Event",v=l+"Page",r,f;setTimeout(function(){var t=u.createElement(o);t.src=config.url||"https://az416426.vo.msecnd.net/scripts/a/ai.0.js";u.getElementsByTagName(o)[0].parentNode.appendChild(t)});try{i.cookie=u.cookie}catch(y){}for(i.queue=[],r=["Event","Exception","Metric","PageView","Trace","Dependency"];r.length;)t("track"+r.pop());return t("set"+s),t("clear"+s),t(h+a),t(c+a),t(h+v),t(c+v),t("flush"),config.disableExceptionTracking||(r="onerror",t("_"+r),f=e[r],e[r]=function(config,t,u,e,o){var s=f&&f(config,t,u,e,o);return s!==!0&&i["_"+r](config,t,u,e,o),s}),i}({instrumentationKey:"b7dfb9a2-b012-4c83-a87f-ac7e41ce3cac",sdkExtension:"a"});window.appInsights=appInsights;appInsights.queue&&appInsights.queue.length===0&&appInsights.trackPageView();</script></head>
-
-<body class="eupopup eupopup-bottom    page-debit-card parent-6094">
-
-
-
-    
-    
+@section('content')
     <div class="container">
+
+        <!--start responsive menu-->
+        @include('frontend.layouts.components.header')
+        <!-- Main Header -->
+        @include('frontend.layouts.components.navbar')
 
 
 
 <!--start responsive menu-->
-<nav class="pushy pushy-right">
+{{-- <nav class="pushy pushy-right">
     <div class="pushy-content">
         <button class="pushy-link close-b">X</button>
 
@@ -93,7 +33,7 @@
                                 </div>
                                     <div class="panel">
                                         <a data-toggle="collapse" data-parent="#accordion21" href="#collapse11">
-                                            
+
 Checking                                            <i class="fa fa-chevron-down pull-right" aria-hidden="true"></i>
                                         </a>
                                         <div id="collapse11" class="panel-collapse collapse">
@@ -101,11 +41,11 @@ Checking                                            <i class="fa fa-chevron-down
                                                 <a href="../index.html">Personal Checking</a>
                                             </div>
                                                 <div class="panel-body">
-<a href="../free-plus-checking/index.html">FREE+ Checking</a>                                                </div>
+<a href="index.html">FREE+ Checking</a>                                                </div>
                                                 <div class="panel-body">
 <a href="../reward-checking/index.html">Reward Checking</a>                                                </div>
                                                 <div class="panel-body">
-<a href="index.html">Debit Card</a>                                                </div>
+<a href="../debit-card/index.html">Debit Card</a>                                                </div>
                                                 <div class="panel-body">
 <a href="../overdraft-protection/index.html">Overdraft Protection</a>                                                </div>
                                                 <div class="panel-body">
@@ -114,7 +54,7 @@ Checking                                            <i class="fa fa-chevron-down
                                     </div>
                                     <div class="panel">
                                         <a data-toggle="collapse" data-parent="#accordion21" href="#collapse12">
-                                            
+
 Online &amp; Mobile                                            <i class="fa fa-chevron-down pull-right" aria-hidden="true"></i>
                                         </a>
                                         <div id="collapse12" class="panel-collapse collapse">
@@ -139,7 +79,7 @@ Online &amp; Mobile                                            <i class="fa fa-c
                                     </div>
                                     <div class="panel">
                                         <a data-toggle="collapse" data-parent="#accordion21" href="#collapse13">
-                                            
+
 Savings &amp; CDs                                            <i class="fa fa-chevron-down pull-right" aria-hidden="true"></i>
                                         </a>
                                         <div id="collapse13" class="panel-collapse collapse">
@@ -160,7 +100,7 @@ Savings &amp; CDs                                            <i class="fa fa-che
                                     </div>
                                     <div class="panel">
                                         <a data-toggle="collapse" data-parent="#accordion21" href="#collapse14">
-                                            
+
 Loans &amp; Credit Lines                                            <i class="fa fa-chevron-down pull-right" aria-hidden="true"></i>
                                         </a>
                                         <div id="collapse14" class="panel-collapse collapse">
@@ -183,7 +123,7 @@ Loans &amp; Credit Lines                                            <i class="fa
                                     </div>
                                     <div class="panel">
                                         <a data-toggle="collapse" data-parent="#accordion21" href="#collapse15">
-                                            
+
 Mortgages                                            <i class="fa fa-chevron-down pull-right" aria-hidden="true"></i>
                                         </a>
                                         <div id="collapse15" class="panel-collapse collapse">
@@ -202,7 +142,7 @@ Mortgages                                            <i class="fa fa-chevron-dow
                                     </div>
                                     <div class="panel">
                                         <a data-toggle="collapse" data-parent="#accordion21" href="#collapse16">
-                                            
+
 Investing                                            <i class="fa fa-chevron-down pull-right" aria-hidden="true"></i>
                                         </a>
                                         <div id="collapse16" class="panel-collapse collapse">
@@ -221,7 +161,7 @@ Investing                                            <i class="fa fa-chevron-dow
                                     </div>
                                     <div class="panel">
                                         <a data-toggle="collapse" data-parent="#accordion21" href="#collapse17">
-                                            
+
 Wealth Management                                            <i class="fa fa-chevron-down pull-right" aria-hidden="true"></i>
                                         </a>
                                         <div id="collapse17" class="panel-collapse collapse">
@@ -242,7 +182,7 @@ Wealth Management                                            <i class="fa fa-che
                                     </div>
                                     <div class="panel">
                                         <a data-toggle="collapse" data-parent="#accordion21" href="#collapse18">
-                                            
+
 Students &amp; Parents                                            <i class="fa fa-chevron-down pull-right" aria-hidden="true"></i>
                                         </a>
                                         <div id="collapse18" class="panel-collapse collapse">
@@ -277,7 +217,7 @@ Students &amp; Parents                                            <i class="fa f
                                 </div>
                                     <div class="panel">
                                         <a data-toggle="collapse" data-parent="#accordion21" href="#collapse21">
-                                            
+
 Checking                                            <i class="fa fa-chevron-down pull-right" aria-hidden="true"></i>
                                         </a>
                                         <div id="collapse21" class="panel-collapse collapse">
@@ -304,7 +244,7 @@ Checking                                            <i class="fa fa-chevron-down
                                     </div>
                                     <div class="panel">
                                         <a data-toggle="collapse" data-parent="#accordion21" href="#collapse22">
-                                            
+
 Online &amp; Mobile                                            <i class="fa fa-chevron-down pull-right" aria-hidden="true"></i>
                                         </a>
                                         <div id="collapse22" class="panel-collapse collapse">
@@ -327,7 +267,7 @@ Online &amp; Mobile                                            <i class="fa fa-c
                                     </div>
                                     <div class="panel">
                                         <a data-toggle="collapse" data-parent="#accordion21" href="#collapse23">
-                                            
+
 Savings &amp; CDs                                            <i class="fa fa-chevron-down pull-right" aria-hidden="true"></i>
                                         </a>
                                         <div id="collapse23" class="panel-collapse collapse">
@@ -344,7 +284,7 @@ Savings &amp; CDs                                            <i class="fa fa-che
                                     </div>
                                     <div class="panel">
                                         <a data-toggle="collapse" data-parent="#accordion21" href="#collapse24">
-                                            
+
 Loans &amp; Credit Lines                                            <i class="fa fa-chevron-down pull-right" aria-hidden="true"></i>
                                         </a>
                                         <div id="collapse24" class="panel-collapse collapse">
@@ -363,7 +303,7 @@ Loans &amp; Credit Lines                                            <i class="fa
                                     </div>
                                     <div class="panel">
                                         <a data-toggle="collapse" data-parent="#accordion21" href="#collapse25">
-                                            
+
 Business Services                                            <i class="fa fa-chevron-down pull-right" aria-hidden="true"></i>
                                         </a>
                                         <div id="collapse25" class="panel-collapse collapse">
@@ -390,7 +330,7 @@ Business Services                                            <i class="fa fa-che
                                     </div>
                                     <div class="panel">
                                         <a data-toggle="collapse" data-parent="#accordion21" href="#collapse26">
-                                            
+
 Asset Management &amp; Trust                                            <i class="fa fa-chevron-down pull-right" aria-hidden="true"></i>
                                         </a>
                                         <div id="collapse26" class="panel-collapse collapse">
@@ -413,7 +353,7 @@ Asset Management &amp; Trust                                            <i class
                                     </div>
                                     <div class="panel">
                                         <a data-toggle="collapse" data-parent="#accordion21" href="#collapse27">
-                                            
+
 Ag Banking                                            <i class="fa fa-chevron-down pull-right" aria-hidden="true"></i>
                                         </a>
                                         <div id="collapse27" class="panel-collapse collapse">
@@ -442,7 +382,7 @@ Ag Banking                                            <i class="fa fa-chevron-do
                                 </div>
                                     <div class="panel">
                                         <a data-toggle="collapse" data-parent="#accordion21" href="#collapse31">
-                                            
+
 Checking                                            <i class="fa fa-chevron-down pull-right" aria-hidden="true"></i>
                                         </a>
                                         <div id="collapse31" class="panel-collapse collapse">
@@ -469,7 +409,7 @@ Checking                                            <i class="fa fa-chevron-down
                                     </div>
                                     <div class="panel">
                                         <a data-toggle="collapse" data-parent="#accordion21" href="#collapse32">
-                                            
+
 Savings &amp; CDs                                            <i class="fa fa-chevron-down pull-right" aria-hidden="true"></i>
                                         </a>
                                         <div id="collapse32" class="panel-collapse collapse">
@@ -486,7 +426,7 @@ Savings &amp; CDs                                            <i class="fa fa-che
                                     </div>
                                     <div class="panel">
                                         <a data-toggle="collapse" data-parent="#accordion21" href="#collapse33">
-                                            
+
 Financing                                            <i class="fa fa-chevron-down pull-right" aria-hidden="true"></i>
                                         </a>
                                         <div id="collapse33" class="panel-collapse collapse">
@@ -507,7 +447,7 @@ Financing                                            <i class="fa fa-chevron-dow
                                     </div>
                                     <div class="panel">
                                         <a data-toggle="collapse" data-parent="#accordion21" href="#collapse34">
-                                            
+
 Treasury Services                                            <i class="fa fa-chevron-down pull-right" aria-hidden="true"></i>
                                         </a>
                                         <div id="collapse34" class="panel-collapse collapse">
@@ -533,7 +473,7 @@ Treasury Services                                            <i class="fa fa-che
                                     </div>
                                     <div class="panel">
                                         <a data-toggle="collapse" data-parent="#accordion21" href="#collapse35">
-                                            
+
 Asset Management &amp; Trust                                            <i class="fa fa-chevron-down pull-right" aria-hidden="true"></i>
                                         </a>
                                         <div id="collapse35" class="panel-collapse collapse">
@@ -563,7 +503,7 @@ Asset Management &amp; Trust                                            <i class
 
 
 
-       
+
 
                 <div class="panel-heading">
                     <h4 class="panel-title">
@@ -586,7 +526,7 @@ Asset Management &amp; Trust                                            <i class
                 <ul class="footer-mobile-link">
                     <li class="number-bg">800-501-6535</li>
                     <li><a href="../../../pages/quick-links/locations/index.html">Locations</a></li><li><a href="../../../pages/about-us/index.html">About Us</a></li><li><a href="{{route('frontend.en.pages.about.careers')}}">Careers</a></li><li><a href="../../../pages/quick-links/customer-care/index.html">Customer Care</a></li>
-                    
+
                 </ul>
             </div>
         </div>
@@ -609,7 +549,7 @@ Asset Management &amp; Trust                                            <i class
 
                                 <li id="signInSection" class="bg-dropdown" onmouseover="ShowSignInOption()" onmouseout="ShowSignInOption()">
                                     <a href="#" class="signin">Sign In </a>
-                                    
+
                                     <div id="signInHoverSection" class="b1sign-in-hover" data-present="present" style="display:none;">
                                         <p><a href="https://www.mypremiercreditcard.com/login.aspx" data-type="" id="SIcreditcardpayment">Credit Card</a><br /></p>
                                         <p><a href="https://online.firstpremier.com/FirstPremierBankOnline/uux.aspx" data-type="actionitem" id="SIpersonalbanking">Personal Banking</a><br /></p>
@@ -675,7 +615,7 @@ Asset Management &amp; Trust                                            <i class
                                                         <div class="">
                                                             <div class="menu_left_section_main bg-menu_left_section_main col-md-12 col-sm-12 col-xs-12">
                                                                     <div class="bg-menu_left_section col-md-6 col-xs-12 col-sm-6">
-                                                                        <div class="subsubitem"><a href="../free-plus-checking/index.html">FREE+ Checking</a></div>
+                                                                        <div class="subsubitem"><a href="index.html">FREE+ Checking</a></div>
                                                                         <p>Our FREE+ Checking account comes with no hidden surprises, hassles or monthly maintenance fees.</p>
                                                                         <hr>
                                                                     </div>
@@ -685,7 +625,7 @@ Asset Management &amp; Trust                                            <i class
                                                                         <hr>
                                                                     </div>
                                                                     <div class="bg-menu_left_section col-md-6 col-xs-12 col-sm-6">
-                                                                        <div class="subsubitem"><a href="index.html">Debit Card</a></div>
+                                                                        <div class="subsubitem"><a href="../debit-card/index.html">Debit Card</a></div>
                                                                         <p>This secure and easy payment method gives you access to 33,000+ surcharge-free ATMs nationwide.</p>
                                                                         <hr>
                                                                     </div>
@@ -1043,7 +983,7 @@ Asset Management &amp; Trust                                            <i class
             </article>
         </div>
     </div>
-</section>
+</section> --}}
 
 <script>
 
@@ -1140,7 +1080,7 @@ Asset Management &amp; Trust                                            <i class
         var searchText = $('#txtheadsearch').attr('data-val') || '';
         $('#txtheadsearch').val(searchText);
     }
-</script>        
+</script>
 <div class="row equal-height"><div class="block b46block  col-md-12">
 
 <style>
@@ -1154,20 +1094,69 @@ Asset Management &amp; Trust                                            <i class
 </style>
 <style>
     .pop_main_container_board .pop_main_container ol li ol li {  }
-    .b46productpage { float:left; width:100%; padding:80px 0px 50px 0px; text-align:center; background:#fff url(../../../../globalassets/images/backgrounds/grey-2.svg) no-repeat;}
+    .b46productpage { float:left; width:100%; padding:80px 0px 50px 0px; text-align:center; background:#fff url(../../../../contentassets/2a5630ce44964421b7e1a5b3961b5931/grey-2.svg) no-repeat;}
 </style>
 <section class="row-full">
     <div class="b46productpage">
         <div class="container">
-            <h1>Free Debit Mastercard&#174;</h1>
-                <img src="../../../../contentassets/cbe8719beca5408d847649b1c1a30e6f/header-debit-card.jpg" alt="First PREMIER Bank">
-                            <h2>Spending Options + Added Benefits</h2>
-            <p style="text-align: center;">Reach for your First PREMIER Bank Debit Mastercard when you&rsquo;re buying online, in the store or using your favorite P2P, store loyalty or mobile wallet app. Purchase with peace of mind knowing you&rsquo;re protected with the latest security technology and 24/7 real time fraud monitoring on debit card purchases.</p>
+            <h1>FREE+ Checking</h1>
+                <img src="{{asset('assets/frontend/contentassets/2a5630ce44964421b7e1a5b3961b5931/header-free-checking.jpg')}}" alt="First PREMIER Bank">
+                            <h2>A Bank Account + So Much More</h2>
+            <p style="text-align: center;">First PREMIER Bank&rsquo;s FREE+ Checking has what you want, without the hidden fees and unpleasant surprises. PLUS, it comes with our PREMIER banking experience that includes local Customer Care, fraud monitoring, a debit Mastercard with additional free benefits, and a team of people to help you on your financial journey. <br /><br />Apply online in about four minutes! You must be a resident of South Dakota, Iowa, Nebraska or Minnesota to apply online.</p>
 <p style="text-align: center;">&nbsp;</p>
+
+                        <a href="../../../pages/resources/forms/apply-now/index.html" class="b46button">Apply Now</a>
+
+
+                <div id="myModal" class="modal fade" role="dialog">
+                    <div class="modal-dialog pop_board">
+                        <div class="modal-content">
+                            <div class="modal-body">
+                                <div class="pop_main_container_board">
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                        <span aria-hidden="true">
+                                            <img class="close_icon" src="{{asset('assets/frontend/Static/img/closebutton.png')}}" alt="First PREMIER Bank" style="height:17px !important;width:17px !important;">
+                                        </span>
+                                    </button>
+                                    <div class="pop_main_container">
+                                        <h2>FREE + Checking Deposit Account Rate</h2>
+                                        <p style="text-align: center;">June 1, 2021<br /><br /></p>
 <p style="text-align: center;">&nbsp;</p>
+<div class="table_rate_modal">
+<table style="height: 73px; width: 100%; border-collapse: collapse;" border="1">
+<tbody>
+<tr style="height: 54px;">
+<td style="width: 20.8819%; height: 54px; text-align: center; font-size: 14px;">Account<br />Product <br />Name</td>
+<td style="width: 11.9517%; text-align: center; height: 54px; font-size: 14px;">Minimum <br />Opening <br />Deposit</td>
+<td style="width: 22.6791%; text-align: center; font-size: 14px; height: 54px;">Minimum Balance to Obtain <br />Annual Percentage Yield<br /><br /></td>
+<td style="width: 11.6537%; text-align: center; height: 54px; font-size: 14px;">Interest <br />Rate<br /><br /></td>
+<td style="width: 12.8336%; text-align: center; height: 54px; font-size: 14px;">Annual <br />Percentage <br />Yield</td>
+</tr>
+<tr style="height: 19px;">
+<td style="width: 20.8819%; height: 19px; text-align: center;">FREE+ Checking<sup>1</sup></td>
+<td style="width: 11.9517%; text-align: center; height: 19px;">$50.00</td>
+<td style="width: 22.6791%; text-align: center; height: 19px;">$500.00<sup>2</sup></td>
+<td style="width: 11.6537%; text-align: center; height: 19px;">0.01%</td>
+<td style="width: 12.8336%; text-align: center; height: 19px;">0.01%</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p><br /><br /></p>
+<p style="text-align: left;"><sup>1</sup>The interest rate and annual percentage yield may change after account opening</p>
+<p style="text-align: left;"><sup>2</sup>Daily balance. The amount of the principal in the account each day.</p>
+<p style="text-align: left;">&nbsp;</p>
+<p style="text-align: left;">Fees could reduce the earnings on the account<br />Interest Rates and Annual Percentage Yields are current as of June 1, 2021<br />For current rate information, call (605) 357-3000</p>
+<p style="text-align: left;">&nbsp;</p>
+<p style="text-align: left;">Member <br />FDIC</p>
 
+                                    </div>
+                                </div>
 
-
+                            </div>
+                        </div>
+                    </div>
+                </div>
         </div>
     </div>
 </section></div><div class="block b16block  col-md-12">
@@ -1226,21 +1215,22 @@ Asset Management &amp; Trust                                            <i class
                 <div class="container">
                     <div class="b16basic_box b16basic_box_position">
                         <div class="b16basic_box_right" style="padding-right:50px;">
-                            <div class="b16imgcrop"><img src="../../../../contentassets/a8fd3e271dfa4d13b177806ea044994e/1.1.3_b-16-list-01-alternating-1_ladykeeper-min-right.png" title="Card Features" alt="cashier taking credit card"></div>
+                            <div class="b16imgcrop"><img src="{{asset('assets/frontend/contentassets/409d1aded10d46c5aaf526e0d256d5f4/free-checking-the-basics.jpg')}}" title="The Basics" alt="woman writing check"></div>
+                                <a href="#" class="edit_icon edit_icon_bottom_left">
+                                    <img class="edit_icon edit_icon_bottom_left" src="{{asset('assets/frontend/globalassets/images/secondary-icons/gold/business-finance/gold-business-_-finance-secondary-icon-12.png')}}" alt="check" style="width:141px;height:141px;">
+                                </a>
                         </div>
                         <div class="b16basic_box_left">
-                                <h2>Card Features</h2>
+                                <h2>The Basics</h2>
 
                                 <div class="xhtml"><ul>
-<li>Use for everyday purchases online or in store</li>
-<li>Instantly issued at most branches<sup>1</sup></li>
-<li>Manage your card and account via <a title="online and mobile banking" href="../../online-and-mobile/index.html">Online and Mobile Banking</a></li>
-<li>Access to 33,000+ surcharge-free <a href="../../../pages/quick-links/locations/index.html">MoneyPass ATMs</a></li>
-<li>Compatible with <a href="../../online-and-mobile/mobile-wallet/index.html">mobile wallet</a> and P2P apps</li>
-<li>Available <a href="../overdraft-protection/index.html">Overdraft Protection</a></li>
+<li>$50 minimum opening balance</li>
+<li>No minimum balance thereafter</li>
+<li>No monthly fee</li>
+<li>Earn interest on balances of $500 or more<sup>1</sup></li>
 </ul></div>
                             <!-- Button and Footer Links go here ... -->
-                                        <a href="../../../pages/quick-links/customer-care/index.html" class="b16readmore">Contact Us</a>
+                                        <a href="#" data-toggle="modal" data-target="#myModal" class="b16readmore">View Rate</a>
                             <!-- Button and Footer Links go here ... -->
                         </div>
                     </div>
@@ -1307,102 +1297,22 @@ Asset Management &amp; Trust                                            <i class
                 <div class="container">
                     <div class="b16basic_box">
                         <div class="b16basic_box_right">
-                            <div class="b16imgcrop" style="margin-left:90px;"><img src="../../../../contentassets/7f13341bf4b4402f8cc557813a546772/1.1.3_b-16-list-01-alternating-2_seriousoper-min-left.png" title="Fraud Prevention" alt="man wearing headset"></div>
+                            <div class="b16imgcrop" style="margin-left:90px;"><img src="{{asset('assets/frontend/contentassets/e7d27ac5d52e49a7b122c54806567744/free-checking-free-features.jpg')}}" title="FREE Features" alt="woman looking at mobile phone"></div>
 
+                                <a href="#" class="card_icon card_icon_bottom_right"> <img class="card_icon card_icon_bottom_right" src="{{asset('assets/frontend/globalassets/images/secondary-icons/blue/content/blue-content-secondary-icon-8.png')}}" alt="file folder" style="width:141px;height:141px;"> </a>
                         </div>
                         <div class="b16basic_box_left payIcon-space">
-                            <h2 style="padding-top:0px !important;">Fraud Prevention</h2>
+                            <h2 style="padding-top:0px !important;">FREE Features</h2>
                                 <div class="xhtml"><ul>
-<li>24/7 real time fraud monitoring on debit card purchases</li>
-<li>EMV chip technology for fraud protection</li>
-<li>Zero Liability&reg; Protection for debit card purchases</li>
-<li>Set up account alerts and monitor spending and activity via the mobile app</li>
-<li>Instantly lock/unlock lost or stolen cards via <a title="online or mobile banking" href="../../online-and-mobile/index.html">Online or Mobile Banking</a></li>
-<li>Quick and easy replacement support</li>
+<li><a href="../../online-and-mobile/index.html">Online and Mobile</a> Banking</li>
+<li><a href="../../online-and-mobile/mobile-deposit/index.html">Mobile Deposit</a>, <a href="../../online-and-mobile/bill-pay/index.html">Bill Pay</a> and <a href="../../online-and-mobile/estatements/index.html">eStatements</a></li>
+<li>Instant-Issue <a href="../debit-card/index.html">Debit Mastercard</a>&reg;</li>
+<li><a href="../../online-and-mobile/personal-financial-management/index.html">Spending analysis and budgeting tools</a></li>
+<li>Access to 33,000+ surcharge-free <a title="Moneypass" href="../../../pages/quick-links/locations/index.html" target="_top">MoneyPass&reg; ATMs</a></li>
 </ul></div>
 
                             <!-- Button and Footer Links go here ... -->
-                                        <a href="../security-and-fraud-protection/index.html" class="b16readmore">Learn More</a>
-                            <!-- Button and Footer Links go here ... -->
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-</section>
-
-<!-- View Rate [3] (within container)-->
-<!-- View Rate [3] (within container)-->
-</div><div class="block b16block  col-md-12">
-
-<!-- VIEW RATE / SPEED BUMP [2] -->
-<style>
-    /* Changes to Functionality -> Adding the ability to add one or more links after the main button */
-    .b16basic_box_left a.b16readmore { display: inline-block; letter-spacing: 1px; background: #42967d; color: #fff; font-size: 13px; font-family: 'Prompt-Bold'; text-transform: uppercase; padding: 12px 60px; border-radius: 50px; margin-top: 25px; margin-bottom: 0px; margin-right: 30px; text-align: center; margin-left:20px !important;}
-    .b16basic_box_left a.b16readmore:hover { text-decoration: none; }
-    .b16confidence_links a { text-transform: uppercase; letter-spacing: 1px; font-family: 'Prompt-SemiBold'; font-size: 13px; margin-top: 10px; color: #42967d; padding-right: 12px;    background: url(../../../../Static/img/CustomBlocks/B14/arrow_small.png) no-repeat right center; }
-    .b16confidence_links_multiple { float:left; padding-left:30px; }
-    .b16confidence_links_multiple ul { display:inline-block; margin:0; padding-top:10px; /* For IE, the outcast */ zoom:1; *display:inline; }
-    .b16confidence_links_multiple li { float:left; padding:2px 5px; margin-right:20px; }
-    .b16confidence_links_multiple li > a { text-transform: uppercase; letter-spacing: 1px; font-family: 'Prompt-SemiBold'; font-size: 13px; margin-top: 10px; color: #42967d; padding-right: 12px; background: url(../../../../Static/img/CustomBlocks/B14/arrow_small.png) no-repeat right center; }
-
-    /* CHANGING SHADING FUNCTIONALITY */
-    /*.b16wrapper{ min-height:455px;}*/
-    .b16wrapper{ min-height:400px;}
-    .b16wrapper .FirstBlock { width: 100%; background-color: #f9f9f9; height: 70px; position: absolute; bottom: -24px; z-index: 1; overflow:hidden; }
-    .ThirdBlock{ width:100%; background-color:#f9f9f9; height:70px; position:relative; z-index:2; }
-    .b16basic_box_right { position:relative; z-index:99; }
-    .b16basic_box_background{ margin-bottom:14px; }
-    .b16basic_box_left { padding-left:100px; }
-    .b16basic_box_left h2 { padding-top: 35px; }
-    .b16basic_box_main .b16basic_box .b16basic_box_left .xhtml { padding-top:10px; }
-    .b16basic_box_main .b16basic_box .b16basic_box_left .xhtml > p { margin-left:0px !important; }
-    .card_icon_bottom_right {right:15px !important;}
-	.Overdraft.Protection { width:50%;}
-
-    @media only screen and (max-width:767px) {
-        .b16confidence_links {
-            align-items: center;
-            display: flex;
-            flex-direction: column;
-        }
-        .b16confidence_links a {
-            margin-top: 20px;
-        }
-    }
-
-    @media only screen and (max-width:375px) {
-        div.b16basic_box_grey {
-            background-color: #fff !important;
-        }
-    }
-</style>
-<style>
-    .b16basic_box_right .b16imgcrop {  }
-</style>
-<!-- VIEW RATE / SPEED BUMP [2] -->
-
-<section class="row-full b16wrapper">
-
-        <div class="b16basic_box_left_content b16basic_box_background">
-            <div class="b16basic_box_main">
-                <div class="container">
-                    <div class="b16basic_box b16basic_box_position">
-                        <div class="b16basic_box_right" style="padding-right:50px;">
-                            <div class="b16imgcrop"><img src="../../../../contentassets/120e26a23b8b48c2a8ccfb7112d3b66e/debit-card-circle2-images.jpg" title="Additional Mastercard&#174; Benefit" alt="man wearing headset"></div>
-                        </div>
-                        <div class="b16basic_box_left">
-                                <h2>Additional Mastercard&#174; Benefit</h2>
-
-                                <div class="xhtml"><ul>
-<li>Mastercard&reg; ID Theft Protection&trade;</li>
-<li>Extended Warranty</li>
-<li>Satisfaction Guarantee</li>
-<li>Mastercard Global Service</li>
-<li>Mastercard Airport Concierge&trade;</li>
-</ul></div>
-                            <!-- Button and Footer Links go here ... -->
-                                        <a href="../../../../globalassets/documents/mastercard-debit-card-guide-to-benefits.pdf" class="b16readmore">Learn More</a>
+                                        <a href="../../../pages/about-us/teams/personal-banking-sioux-falls-team/index.html" class="b16readmore">CONTACT US</a>
                             <!-- Button and Footer Links go here ... -->
                         </div>
                     </div>
@@ -1464,23 +1374,27 @@ Asset Management &amp; Trust                                            <i class
 
 <section class="row-full b16wrapper">
 
-        <div class="b16basic_box_right_content b16basic_box_background">
-            <div class="b16basic_box_main b16basic_box_grey">
+        <div class="b16basic_box_left_content b16basic_box_background">
+            <div class="b16basic_box_main">
                 <div class="container">
-                    <div class="b16basic_box">
-                        <div class="b16basic_box_right">
-                            <div class="b16imgcrop" style="margin-left:90px;"><img src="../../../../contentassets/f1507e03c8aa4864bcbe65df7078a959/1.1.3_b-16-list-01-alternating-3_atmhand.png" title="Extensive ATM Network" alt="ATM Machine"></div>
-
+                    <div class="b16basic_box b16basic_box_position">
+                        <div class="b16basic_box_right" style="padding-right:50px;">
+                            <div class="b16imgcrop"><img src="{{asset('assets/frontend/contentassets/9c6bc8fa687d4adfb0ad4f2b66471419/free-checking-fraud-protection.jpg')}}" title="Fraud Protection" alt="man wearing headset"></div>
+                                <a href="#" class="edit_icon edit_icon_top_left">
+                                    <img class="edit_icon edit_icon_top_left" src="{{asset('assets/frontend/globalassets/images/secondary-icons/green/content/green-content-secondary-icon-10.png')}}" alt="shield" style="width:141px;height:141px;">
+                                </a>
                         </div>
-                        <div class="b16basic_box_left payIcon-space">
-                            <h2 style="padding-top:0px !important;">Extensive ATM Network</h2>
-                                <div class="xhtml"><ul>
-<li>Use your debit card to access cash at one of 33,000+ surcharge-free <a title="Moneypass" href="../../../pages/quick-links/locations/index.html" target="_top">MoneyPass&reg; ATMs</a></li>
-<li>Find at ATM online</li>
-</ul>
-<p>&nbsp;</p></div>
+                        <div class="b16basic_box_left">
+                                <h2>Fraud Protection</h2>
 
+                                <div class="xhtml"><ul>
+<li>24/7 debit card fraud monitoring</li>
+<li>EMV debit cards with chip technology</li>
+<li>Zero Liability&reg; Protection for debit card purchases</li>
+<li>Instantly lock/unlock lost or stolen debit cards</li>
+</ul></div>
                             <!-- Button and Footer Links go here ... -->
+                                        <a href="../security-and-fraud-protection/index.html" class="b16readmore">Learn More</a>
                             <!-- Button and Footer Links go here ... -->
                         </div>
                     </div>
@@ -1491,7 +1405,47 @@ Asset Management &amp; Trust                                            <i class
 
 <!-- View Rate [3] (within container)-->
 <!-- View Rate [3] (within container)-->
-</div><div class="block b18block  col-md-12">
+</div><div class="block b25block  col-md-12">
+<script>
+    $(document).ready(function () {
+
+        if ('/Static/img/CustomBlocks/B25/Background.png' != 'null' && '/Static/img/CustomBlocks/B25/Background.png' != '') {
+            $(".b25disclosure").css("background", "#245251 url(/Static/img/CustomBlocks/B25/Background.png) no-repeat");
+            if (screen.width > 1000) {
+                $(".b25need_help_main").css("background", "#245251 url(/Static/img/CustomBlocks/B25/Background.png) no-repeat");
+            }
+
+        }
+
+    });
+</script>
+<style>
+    /*.b25need_help_main .White { margin-bottom: 20px !important; }
+    */
+    .b25need_help_main .xhtml h2 {
+        color: #e4cb34;
+    }
+    /*.b25need_help_main { margin-top: -24px; } */
+    @media only screen and (max-width:1024px){
+        .b25need_help_main {background-color:#245251 !important;}
+        .page-about-us .b25need_help_main, .parent-5384 .b25need_help_main { background-color:#1f3848 !important; }
+    }
+</style>
+<section class="row-full">
+
+        <div class="b25need_help_main">
+            <div class="container">
+                <h2 class="White">Got four minutes? Apply Online.</h2>
+                <div class="xhtml"><p>It doesn&rsquo;t take long to open your First PREMIER FREE+ Checking account. You must be a resident of South Dakota, Iowa, Nebraska or Minnesota to apply online.</p></div>
+                <div class="b25bottom" style="">
+                    <center>
+                    <a href="../../../pages/resources/forms/apply-now/index.html" class="b25mainanchor">APPLY NOW</a><br clear="all"/>
+                    </center>
+                </div>
+            </div>
+        </div>
+
+</section></div><div class="block b18block  col-md-12">
 
 <style>
     .pop_main_container_board .pop_main_container ol li ol li {  }
@@ -1504,7 +1458,7 @@ Asset Management &amp; Trust                                            <i class
 	.b18great_feature_left {
 		padding-bottom: 0px;
 	}
-	
+
 	.b18great_feature_main .b18detail {
 		margin-top: 0px;
 	}
@@ -1528,16 +1482,14 @@ Asset Management &amp; Trust                                            <i class
 
 <section>
     <div class="b18great_feature_main">
-        <h2> Important Details </h2>
+        <h2> More Great Features </h2>
         <div class="b18great_feature_left">
-                <span>Lost or Stolen Debit Card?</span>
-                            <div class="b18detail xhtml"><p>Lock or unlock lost or stolen debit cards via Online and Mobile Banking. To replace your card simply walk into a branch<sup>1</sup> to request replacement or call <a title="Customer Care" href="../../../pages/quick-links/customer-care/index.html">Customer Care</a>.<br /><br /></p>
-<p>Call (800) 501-6535 M-F 7 am &ndash; 10 pm; SAT 9 am &ndash; 5 pm</p></div>
+                <span>Available Overdraft Protection</span>
+                            <div class="b18detail xhtml"><p>Learn more about&nbsp;<a href="../overdraft-protection/index.html">Overdraft Protection</a> using your First PREMIER savings or line of credit for extra flexibility and protection from declined debit card transactions.</p></div>
                                 </div>
         <div class="b18great_feature_left b18great_feature_right payIcon-space">
-                <span>Traveling Out of State?</span>
-                            <div class="b18detail xhtml"><p>To minimize interruptions on transactions, let us know if you&rsquo;re traveling. Call <a title="Customer Care" href="../../../pages/quick-links/customer-care/index.html">Customer Care</a> and we'll adjust your fraud monitoring to ease you on your way.</p>
-<p>Simply call (800) 501-6535 M-F 7 am &ndash; 10 pm; SAT 9 am &ndash; 5 pm</p></div>
+                <span>Compatible with Mobile Wallet</span>
+                            <div class="b18detail xhtml"><p>Add your debit card to popular <a href="../../online-and-mobile/mobile-wallet/index.html">mobile wallet</a> apps to speed your way through checkout using any mobile devices.</p></div>
                                 </div>
         <div class="clearfix">
             <center>
@@ -1545,24 +1497,24 @@ Asset Management &amp; Trust                                            <i class
         </div>
 
     </div>
-    <div id="a41445004" class="modal fade" role="dialog">
+    <div id="a50324327" class="modal fade" role="dialog">
         <div class="modal-dialog pop_board">
             <div class="modal-content">
                 <div class="modal-body">
                     <div class="pop_main_container_board">
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                             <span aria-hidden="true">
-                                <img class="close_icon" src="../../../../static/img/closebutton.png" alt="First PREMIER Bank" style="height:17px !important;width:17px !important;">
+                                <img class="close_icon" src="{{asset('assets/frontend/static/img/closebutton.png')}}" alt="First PREMIER Bank" style="height:17px !important;width:17px !important;">
                             </span>
                         </button>
                         <div class="pop_main_container">
-                                <h2>Lost or Stolen Debit Card?</h2>
+                                <h2>Available Overdraft Protection</h2>
                             <div class="pop_board_white">
                                 <div class="row">
                                     <div class="col-md-12" style="padding-left:40px;">
                                         <h4 class="Blue"></h4>
                                         <div class="b46Blue" style="text-align:left;">
-                                            
+
                                             <p><br /><a target="_blank"></a></p>
                                         </div>
                                     </div>
@@ -1574,24 +1526,24 @@ Asset Management &amp; Trust                                            <i class
             </div>
         </div>
     </div>
-    <div id="b41445004" class="modal fade" role="dialog">
+    <div id="b50324327" class="modal fade" role="dialog">
         <div class="modal-dialog pop_board">
             <div class="modal-content">
                 <div class="modal-body">
                     <div class="pop_main_container_board">
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                             <span aria-hidden="true">
-                                <img class="close_icon" src="../../../../static/img/closebutton.png" alt="First PREMIER Bank" style="height:17px !important;width:17px !important;">
+                                <img class="close_icon" src="{{asset('assets/frontend/static/img/closebutton.png')}}" alt="First PREMIER Bank" style="height:17px !important;width:17px !important;">
                             </span>
                         </button>
                         <div class="pop_main_container">
-                                <h2>Traveling Out of State?</h2>
+                                <h2>Compatible with Mobile Wallet</h2>
                             <div class="pop_board_white">
                                 <div class="row">
                                     <div class="col-md-12" style="padding-left:40px;">
                                         <h4 class="Blue"></h4>
                                         <div class="b46Blue" style="text-align:left;">
-                                            
+
                                             <p><br /><a target="_blank"></a></p>
                                         </div>
                                     </div>
@@ -1603,24 +1555,24 @@ Asset Management &amp; Trust                                            <i class
             </div>
         </div>
     </div>
-    <div id="c41445004" class="modal fade" role="dialog">
+    <div id="c50324327" class="modal fade" role="dialog">
         <div class="modal-dialog pop_board">
             <div class="modal-content">
                 <div class="modal-body">
                     <div class="pop_main_container_board">
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                             <span aria-hidden="true">
-                                <img class="close_icon" src="../../../../static/img/closebutton.png" alt="First PREMIER Bank" style="height:17px !important;width:17px !important;">
+                                <img class="close_icon" src="{{asset('assets/frontend/static/img/closebutton.png')}}" alt="First PREMIER Bank" style="height:17px !important;width:17px !important;">
                             </span>
                         </button>
                         <div class="pop_main_container">
-                                <h2>Important Details</h2>
+                                <h2>More Great Features</h2>
                             <div class="pop_board_white">
                                 <div class="row">
                                     <div class="col-md-12" style="padding-left:40px;">
                                         <h4 class="Blue"></h4>
                                         <div class="b46Blue" style="text-align:left;">
-                                            
+
                                             <p><br /><a href="#" target="_blank"></a></p>
                                         </div>
                                     </div>
@@ -1688,46 +1640,97 @@ Asset Management &amp; Trust                                            <i class
 
     <div class="b17free_mobile_banking ">
         <div class="container">
-            <h2>More for Students</h2> 
+            <h2>FREE Debit Mastercard®</h2>
 
             <div class="b17free_mobile_banking_right">
-                    <h3><p>University Debit Mastercards&reg;</p></h3>
-                                <div class="xhtml"><p>Show your school pride with a Dakota State University or University of South Dakota branded First PREMIER Bank Debit Mastercard&reg;. The debit card is free with any First PREMIER checking account. Choose either USD or DSU in our online account opening or visit a First PREMIER Branch.</p></div>
+                    <h3><p><strong>Spending Flexibility + More </strong></p></h3>
+                                <div class="xhtml"><p>With your First PREMIER Bank Debit Mastercard&reg;, you can access up to 33,000+ surcharge-free MoneyPass&reg; ATMs, enjoy Zero Liability&reg; fraud protection and use our lock/unlock feature to instantly suspend or deactivate your card if lost or stolen. Get spending flexibility by connecting it to your online shopping carts or using it in your favorite mobile wallet. Your First PREMIER Bank debit card also comes with added features from Mastercard at no additional charge to you.</p></div>
                 <div class="b17PayLinks payIcon-space">
                 </div>
 
                 <!-- Button and Footer Links go here ... -->
-                        <div class="b17ButtonLinksSingle">
-                                <a href="../../students-and-parents/university-debit-cards/index.html" class="b17readmore">Learn More</a>
-                            <a class="b17link" href="../../../pages/quick-links/locations/index.html">Find a Branch</a>                        </div>
+                                <a href="../debit-card/index.html" class="b17readmore">Learn More</a>
             </div>
 
                 <div class="b17free_mobile_banking_left right">
-                    <img class="img-responsive" id="imgMainImage" style="border-radius:50%" src="../../../../contentassets/88fd55ab1ad04721a61f8ff25c01e6e3/university-debit-cards-promo-01.jpg" alt="First PREMIER Bank">
+                    <img class="img-responsive" id="imgMainImage" style="border-radius:50%" src="{{asset('assets/frontend/contentassets/6212acad83cc4cd8b4c458e2dc4b4ef8/debit-card-circle-images.jpg')}}" alt="First PREMIER Bank">
                 </div>
         </div>
     </div>
 
+        <div class="b15benfits_main_box b17cards">
+            <div class="container">
+                            <div class="b15student_parent_main_content b15-bg-student_parent_main_content">
+                                <div class="b15avtar">
+                                <img src="{{asset('assets/frontend/contentassets/022a21acab6f4078b56fcc19c79f1a12/everfi-money-basics.png')}}" title="Financial Foundations" alt="mastercard" width="116px" height="116px"></div>
+                                <div class="b15avtar_content">
+                                    <h3>Financial Foundations</h3>
+                                    <p>Our interactive module will help you understand key financial concepts and make better money management decisions.</p>
+                                    <div class="clearfix"></div><br />
+                                            <a href="#" data-toggle="modal" data-target="#a627790930K" data-backdrop="false" class="b15learnmore">Learn More</a>
+                                            <div id="a627790930K" class="modal fade" role="dialog">
+                                                <div class="modal-dialog pop_board">
+                                                    <div class="modal-content">
+                                                        <div class="modal-body">
+                                                            <div class="pop_main_container_board">
+                                                                <button type="button" class="close" data-dismiss="modal" area-label="Close">
+                                                                    <span aria-hidden="true">
+                                                                        <img class="close_icon" src="{{asset('assets/frontend/Static/img/closebutton-2.png')}}" alt="First PREMIER Bank" style="height:17px !important; width:17px !important;" />
+                                                                    </span>
+                                                                </button>
+                                                                <div class="pop_main_container">
+                                                                        <h2>Financial Foundations</h2>
+                                                                    <div class="pop_board_white">
+                                                                        <div class="row">
+                                                                            <div class="col-md-12" style="padding-left:40px;">
+                                                                                <h4 class="Blue">You will be leaving firstpremier.com</h4>
+                                                                                <div class="b46Blue" style="text-align:left;">
+                                                                                    <p style="text-align: left;">Please note, by clicking &ldquo;continue&rdquo; you will be redirected to a website that is not operated or controlled by PREMIER. PREMIER is not responsible for the content, links, privacy policy or security of that website. Your use of that website is subject to its terms of use and privacy policy. Thank you for visiting firstpremier.com. If you continue, we hope you find the information presented educational and useful.</p>
+                                                                                    <p><br /><a href="https://firstpremier.everfi-next.net/student/dashboard/financialeducation-achieve/financial-foundations" target="_blank">Continue</a></p>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                </div>
+                            </div>
+                            <div class="b15student_parent_main_content b15-bg-student_parent_main_content">
+                                <div class="b15avtar">
+                                <img src="{{asset('assets/frontend/globalassets/images/secondary-icons/bright/user/bright-user-secondary-icon-17.png')}}" title="For Students &amp; Parents" alt="mastercard" width="116px" height="116px"></div>
+                                <div class="b15avtar_content">
+                                    <h3>For Students &amp; Parents</h3>
+                                    <p>Stay connected, monitor spending and easily transfer money between linked accounts.</p>
+                                    <div class="clearfix"></div><br />
+                                            <a href="../../students-and-parents/index.html">Learn More</a>
+                                </div>
+                            </div>
+            </div>
+        </div>
 
-    <div id="a56436996" class="modal fade" role="dialog">
+    <div id="a62779093" class="modal fade" role="dialog">
         <div class="modal-dialog pop_board">
             <div class="modal-content">
                 <div class="modal-body">
                     <div class="pop_main_container_board">
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                             <span aria-hidden="true">
-                                <img class="close_icon" src="../../../../static/img/closebutton.png" alt="First PREMIER Bank" style="height:17px !important;width:17px !important;">
+                                <img class="close_icon" src="{{asset('assets/frontend/static/img/closebutton.png')}}" alt="First PREMIER Bank" style="height:17px !important;width:17px !important;">
                             </span>
                         </button>
                         <div class="pop_main_container">
-                                <h2>More for Students</h2>
+                                <h2>FREE Debit Mastercard&#174;</h2>
                             <div class="pop_board_white">
                                 <div class="row">
                                     <div class="col-md-12" style="padding-left:40px;">
                                         <h4 class="Blue"></h4>
                                         <div class="b46Blue" style="text-align:left;">
-                                            
-                                            <p><br /><a href="../../students-and-parents/university-debit-cards/index.html" target="_blank"></a></p>
+
+                                            <p><br /><a href="../debit-card/index.html" target="_blank"></a></p>
                                         </div>
                                     </div>
                                 </div>
@@ -1744,32 +1747,14 @@ Asset Management &amp; Trust                                            <i class
 <!-- View Rate [3] (within container)-->
 <script>
     $('.modal-backdrop').remove();
-</script></div><div class="block b12block  col-md-12">        <style>
-            .b12faq_main { float: left; width: 100%; padding:0px 0px 50px 0px !important; text-align: left; background: #fff; }
-        </style>
-        <div class="b12faq_main">
-            <div class="b12container">
-                <h2>Frequently Asked Questions</h2>
-                <!-- tabs left -->
-                <div class="tabbable">
-                    <div class="tab-content col-md-7">
-                        <div class="tab-pane active" id="A"><span>What do I do if my debit card is lost or stolen?</span><p><p>You can&nbsp;temporarily&nbsp;suspend and then reactivate or&nbsp;permanently&nbsp;deactivate your active First PREMIER Bank Debit Mastercard&reg; within the&nbsp;Online Banking&nbsp;system or Mobile Banking app. Go to the Menu, choose "Services" and click on "Card Services." You can also call our Customer Care Center 800-501-6535. To report your card lost or stolen after normal business hours, please call 888-297-3416.</p></p></div><div class="tab-pane" id="B"><span>How can I change the limit on my debit card?</span><p><p>To request a change on your daily limit on your debit card, call Customer Care at 800-501-6535.</p></p></div><div class="tab-pane" id="C"><span>What should I do if I notice a suspicious transaction on my account?</span><p><p>If you notice a suspicous transaction, please contact Customer Care right away at 800-501-6535.</p></p></div><div class="tab-pane" id="D"><span>I'm traveling out of state, should I let the bank know?</span><p><p>It is important that you let us know when you're traveling out of state to ensure that there is not a disruption with using your debit card. You can call Customer Care during normal business hours or send us a secure message through Online Banking/Mobile Banking by selecting the "Messages" menu to let us know when and where you'll be traveling.</p></p></div>
-                    </div>
-                    <ul class="nav nav-pills nav-stacked col-md-5">
-                        <li class="active"><a href="#A" data-toggle="tab">What do I do if my debit card is lost or stolen?</a></li><li><a href="#B" data-toggle="tab">How can I change the limit on my debit card?</a></li><li><a href="#C" data-toggle="tab">What should I do if I notice a suspicious transaction on my account?</a></li><li><a href="#D" data-toggle="tab">I'm traveling out of state, should I let the bank know?</a></li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-
-</div><div class="block b13block  col-md-12">
+</script></div><div class="block b13block  col-md-12">
 
 <style>
 
     .b13what_you_know_main ol li p { padding: 0 10px 0 34px; list-style: none;  margin: 0px 0px 0px 0px; font-size:14px; text-align:left;}
     .b13what_you_know_main ol li { width:100% }
-    .b13what_you_know_main ol li ol li{ width:50%; }
-    .b13what_you_know_main_white ol li ol li { width:50%; }
+    .b13what_you_know_main ol li ol li{ width:100%; }
+    .b13what_you_know_main_white ol li ol li { width:100%; }
 </style>
 <script>
     $(document).ready(function () {
@@ -1780,11 +1765,10 @@ Asset Management &amp; Trust                                            <i class
 <section class="row-full">
         <div class="b13what_you_know_main">
             <div class="container" style="background-color:#182e39 !important;">
-                
+
                 <h4> Disclosure </h4>
                 <div class="b13points">
-                    <p>{1} Instant issue is not available at the following branches: Wakonda, Lake Norden, Castlewood, Kranzburg, and Watertown on 5th Street.</p>
-<p>&nbsp;</p>
+                    <p>{1} Interest not paid on days balance falls below $500</p>
 <p>&nbsp;</p>
                 </div>
             </div>
@@ -1798,7 +1782,7 @@ Asset Management &amp; Trust                                            <i class
         background: none !important;
     }
     .b26line_credit_main .carousel-inner { min-height:520px !important;; }
-    
+
     .white-background h2, .white-background .xhtml, .white-background .xhtml p,
     .grey-background h2, .grey-background .xhtml, .grey-background .xhtml p
     {
@@ -1832,20 +1816,20 @@ Asset Management &amp; Trust                                            <i class
                 <div class="col-md-12 hidden-xs hidden-sm">
                     <div class="carousel" id="myCarousel-" data-interval="false">
                         <div class="carousel-inner">
-                            <div class='item active'><div class='col-lg-4 col-md-12 col-sm-12 col-xs-12 b26line_credit_loans no-pad'><div class='b26line_credit_loans_left'><img src='../../../../globalassets/ymabii/personal/b-17-promo-01-loans-credit.png' alt='couple shaking hands with banker'></div><div class='b26line_credit_loans_right'><div class="b26titlerow"><h3 class='deckspanNoCaret'>Loans & Credit Lines</h3></div><h3><br clear='all'/><div class="xhtml"><p>Competitive rates on loans of all sizes, lines of credit and more. We make our lending decisions locally.</p>
+                            <div class='item active'><div class='col-lg-4 col-md-12 col-sm-12 col-xs-12 b26line_credit_loans no-pad'><div class='b26line_credit_loans_left'><img src='{{asset('assets/frontend/globalassets/ymabii/personal/b-17-promo-01-loans-credit.png')}}' alt='couple shaking hands with banker'></div><div class='b26line_credit_loans_right'><div class="b26titlerow"><h3 class='deckspanNoCaret'>Loans & Credit Lines</h3></div><h3><br clear='all'/><div class="xhtml"><p>Competitive rates on loans of all sizes, lines of credit and more. We make our lending decisions locally.</p>
 <ul>
 <li><a href="../../loans-and-credit-lines/personal-loans/index.html">Personal Loans</a></li>
 <li><a href="../../loans-and-credit-lines/personal-lines-of-credit/index.html">Personal Lines of Credit</a></li>
-</ul></div></h3></div></div><div class='col-lg-4 col-md-12 col-sm-12 col-xs-12 b26line_credit_loans b26line_personal_loans no-pad'><div class='b26line_credit_loans_left'><img src='../../../../globalassets/ymabii/personal/b-17-promo-01-save-future.png' alt='couple looking over document'></div><div class='b26line_credit_loans_right'><div class="b26titlerow"><h3 class='deckspanNoCaret'>Save for the Future</h3></div><h3><br clear='all'/><div class="xhtml"><p>We can help you invest wisely with solid investment advice and access to an array of funds.</p>
+</ul></div></h3></div></div><div class='col-lg-4 col-md-12 col-sm-12 col-xs-12 b26line_credit_loans b26line_personal_loans no-pad'><div class='b26line_credit_loans_left'><img src='{{asset('assets/frontend/globalassets/ymabii/personal/b-17-promo-01-save-future.png')}}' alt='couple looking over document'></div><div class='b26line_credit_loans_right'><div class="b26titlerow"><h3 class='deckspanNoCaret'>Save for the Future</h3></div><h3><br clear='all'/><div class="xhtml"><p>We can help you invest wisely with solid investment advice and access to an array of funds.</p>
 <ul>
 <li><a href="../../savings-and-cds/index.html">Savings &amp; CDs</a></li>
 <li><a href="../../investing/index.html">Investing</a></li>
 <li><a href="../../investing/retirement-planning/index.html">Retirement Planning</a></li>
-</ul></div></h3></div></div><div class='col-lg-4 col-md-12 col-sm-12 col-xs-12 b26line_credit_loans no-pad last'><div class='b26line_credit_loans_left'><img src='../../../../globalassets/ymabii/personal/b-17-promo-01-online-mobile.png' alt='woman looking at tablet'></div><div class='b26line_credit_loans_right'><div class="b26titlerow"><h3 class='deckspanNoCaret'>FREE Online & Mobile</h3></div><h3><br clear='all'/><div class="xhtml"><p>FREE Online and Mobile Banking with Bill Pay, eStatements, Mobile Deposit and much more!</p>
+</ul></div></h3></div></div><div class='col-lg-4 col-md-12 col-sm-12 col-xs-12 b26line_credit_loans no-pad last'><div class='b26line_credit_loans_left'><img src='{{asset('assets/frontend/globalassets/ymabii/personal/b-17-promo-01-why-bank-with-us.png')}}' alt='Sioux Falls South Dakota'></div><div class='b26line_credit_loans_right'><div class="b26titlerow"><h3 class='deckspanNoCaret'>Why Bank with Us?</h3></div><h3><br clear='all'/><div class="xhtml"><p>As one of the nation&rsquo;s strongest capitalized banks, we&rsquo;re also debt-free. Learn more!</p>
 <ul>
-<li><a href="../../online-and-mobile/online-banking/index.html">Online Banking</a></li>
-<li><a href="../../online-and-mobile/mobile-banking/index.html">Mobile Banking</a></li>
-<li><a href="../../online-and-mobile/mobile-wallet/index.html">Mobile Wallet</a></li>
+<li><a href="../../../pages/about-us/index.html">About Us</a></li>
+<li><a href="../../../pages/about-us/the-premier-way/index.html">The PREMIER Way</a></li>
+<li><a href="../../../pages/resources/sanford-health/first-premier-bank-sanford-partnership-offers/index.html">Giving Back to Community</a></li>
 </ul></div></h3></div></div></div>
                         </div>
                     </div>
@@ -1853,20 +1837,20 @@ Asset Management &amp; Trust                                            <i class
                 <div class="b26Mobile col-sm-6 hidden-md hidden-lg" style="left:-8px;">
                     <center>
                     <div class="b26MobileCard" style="width:345px;min-height:700px;">
-                        <div class='item'><div class='col-xs-12 col-sm-12 b26AltClass b26line_credit_loans b26line_personal_loans no-pad '><div><img src='../../../../globalassets/ymabii/personal/b-17-promo-01-loans-credit.png' alt='couple shaking hands with banker'></div><div class='b26line_credit_loans_right'><div class="b26titlerow"><h3 class='deckspanNoCaret'>Loans & Credit Lines</h3></div><h3><br clear='all'/><div class="xhtml"><p>Competitive rates on loans of all sizes, lines of credit and more. We make our lending decisions locally.</p>
+                        <div class='item'><div class='col-xs-12 col-sm-12 b26AltClass b26line_credit_loans b26line_personal_loans no-pad '><div><img src='{{asset('assets/frontend/globalassets/ymabii/personal/b-17-promo-01-loans-credit.png')}}' alt='couple shaking hands with banker'></div><div class='b26line_credit_loans_right'><div class="b26titlerow"><h3 class='deckspanNoCaret'>Loans & Credit Lines</h3></div><h3><br clear='all'/><div class="xhtml"><p>Competitive rates on loans of all sizes, lines of credit and more. We make our lending decisions locally.</p>
 <ul>
 <li><a href="../../loans-and-credit-lines/personal-loans/index.html">Personal Loans</a></li>
 <li><a href="../../loans-and-credit-lines/personal-lines-of-credit/index.html">Personal Lines of Credit</a></li>
-</ul></div></h3></div></div></div><div class='item'><div class='col-xs-12 col-sm-12 b26AltClass b26line_credit_loans b26line_personal_loans no-pad '><div><img src='../../../../globalassets/ymabii/personal/b-17-promo-01-save-future.png' alt='couple looking over document'></div><div class='b26line_credit_loans_right'><div class="b26titlerow"><h3 class='deckspanNoCaret'>Save for the Future</h3></div><h3><br clear='all'/><div class="xhtml"><p>We can help you invest wisely with solid investment advice and access to an array of funds.</p>
+</ul></div></h3></div></div></div><div class='item'><div class='col-xs-12 col-sm-12 b26AltClass b26line_credit_loans b26line_personal_loans no-pad '><div><img src='{{asset('assets/frontend/globalassets/ymabii/personal/b-17-promo-01-save-future.png')}}' alt='couple looking over document'></div><div class='b26line_credit_loans_right'><div class="b26titlerow"><h3 class='deckspanNoCaret'>Save for the Future</h3></div><h3><br clear='all'/><div class="xhtml"><p>We can help you invest wisely with solid investment advice and access to an array of funds.</p>
 <ul>
 <li><a href="../../savings-and-cds/index.html">Savings &amp; CDs</a></li>
 <li><a href="../../investing/index.html">Investing</a></li>
 <li><a href="../../investing/retirement-planning/index.html">Retirement Planning</a></li>
-</ul></div></h3></div></div></div><div class='item'><div class='col-xs-12 col-sm-12 b26AltClass b26line_credit_loans b26line_personal_loans no-pad '><div><img src='../../../../globalassets/ymabii/personal/b-17-promo-01-online-mobile.png' alt='woman looking at tablet'></div><div class='b26line_credit_loans_right'><div class="b26titlerow"><h3 class='deckspanNoCaret'>FREE Online & Mobile</h3></div><h3><br clear='all'/><div class="xhtml"><p>FREE Online and Mobile Banking with Bill Pay, eStatements, Mobile Deposit and much more!</p>
+</ul></div></h3></div></div></div><div class='item'><div class='col-xs-12 col-sm-12 b26AltClass b26line_credit_loans b26line_personal_loans no-pad '><div><img src='{{asset('assets/frontend/globalassets/ymabii/personal/b-17-promo-01-why-bank-with-us.png')}}' alt='Sioux Falls South Dakota'></div><div class='b26line_credit_loans_right'><div class="b26titlerow"><h3 class='deckspanNoCaret'>Why Bank with Us?</h3></div><h3><br clear='all'/><div class="xhtml"><p>As one of the nation&rsquo;s strongest capitalized banks, we&rsquo;re also debt-free. Learn more!</p>
 <ul>
-<li><a href="../../online-and-mobile/online-banking/index.html">Online Banking</a></li>
-<li><a href="../../online-and-mobile/mobile-banking/index.html">Mobile Banking</a></li>
-<li><a href="../../online-and-mobile/mobile-wallet/index.html">Mobile Wallet</a></li>
+<li><a href="../../../pages/about-us/index.html">About Us</a></li>
+<li><a href="../../../pages/about-us/the-premier-way/index.html">The PREMIER Way</a></li>
+<li><a href="../../../pages/resources/sanford-health/first-premier-bank-sanford-partnership-offers/index.html">Giving Back to Community</a></li>
 </ul></div></h3></div></div></div>
                     </div>
                     </center>
@@ -1880,120 +1864,120 @@ Asset Management &amp; Trust                                            <i class
 
 </div></div>
 
- 
+
 
 <div class="row-full footer">
     <div class="container">
         <div class="row">
             <div class="col-md-3 col-sm-3 col-xs-12 footerCol1">
                 <div class="footerHeader">Company</div>
-                
+
 <ul>
-    
+
         <li>
-            <a href="../../../pages/about-us/index.html">About Us</a> 
+            <a href="../../../pages/about-us/index.html">About Us</a>
         </li>
-    
+
         <li>
-            <a href="../../../index.html">First PREMIER Bank</a> 
+            <a href="../../../index.html">First PREMIER Bank</a>
         </li>
-    
+
         <li>
-            <a href="https://www.mypremiercreditcard.com/">PREMIER Bankcard</a> 
+            <a href="https://www.mypremiercreditcard.com/">PREMIER Bankcard</a>
         </li>
-    
+
         <li>
-            <a href="../../../pages/about-us/leadership-team/index.html">Leadership</a> 
+            <a href="../../../pages/about-us/leadership-team/index.html">Leadership</a>
         </li>
-    
+
         <li>
-            <a href="../../../pages/about-us/community/index.html">Community</a> 
+            <a href="../../../pages/about-us/community/index.html">Community</a>
         </li>
-    
+
         <li>
-            <a href="{{route('frontend.en.pages.about.careers')}}">Careers</a> 
+            <a href="{{route('frontend.en.pages.about.careers')}}">Careers</a>
         </li>
-    
+
 </ul>
                 <br />
             </div>
             <div class="col-md-3 col-sm-3 col-xs-12 footerCol2">
                 <div class="footerHeader">Customers</div>
-                
+
 <ul>
-    
+
         <li>
-            <a href="../../../index.html">Personal Banking</a> 
+            <a href="../../../index.html">Personal Banking</a>
         </li>
-    
+
         <li>
-            <a href="../../../small-business/index.html">Small Business</a> 
+            <a href="../../../small-business/index.html">Small Business</a>
         </li>
-    
+
         <li>
-            <a href="../../../commercial/index.html">Commercial</a> 
+            <a href="../../../commercial/index.html">Commercial</a>
         </li>
-    
+
 </ul>
                 <br />
             </div>
             <div class="col-md-3 col-sm-3 col-xs-12 footerCol3">
                 <div class="footerHeader">Help &amp; Contact</div>
-                
+
 <ul>
-    
+
         <li>
-            <a href="../../../pages/quick-links/customer-care/index.html">Customer Care</a> 
+            <a href="../../../pages/quick-links/customer-care/index.html">Customer Care</a>
         </li>
-    
+
         <li>
-            <a href="../../../pages/quick-links/locations/index.html">Locations</a> 
+            <a href="../../../pages/quick-links/locations/index.html">Locations</a>
         </li>
-    
+
         <li>
-            <a href="../../../pages/quick-links/customer-care/index.html">BANK: 800-501-6535</a> 
+            <a href="../../../pages/quick-links/customer-care/index.html">BANK: 800-501-6535</a>
         </li>
-    
+
         <li>
-            <a href="https://www.mypremiercreditcard.com/">CREDIT CARD: 800-987-5521</a> 
+            <a href="https://www.mypremiercreditcard.com/">CREDIT CARD: 800-987-5521</a>
         </li>
-    
+
         <li>
-            <a href="../../../index.html">Routing Number: 091408598</a> 
+            <a href="../../../index.html">Routing Number: 091408598</a>
         </li>
-    
+
 </ul>
                 <br />
             </div>
             <div class="col-md-3 col-sm-3 col-xs-12 footerCol4">
                 <div class="footerHeader">Legal Notices</div>
-                
+
 <ul>
-    
+
         <li>
-            <a href="../../../pages/resources/first-premier-privacy-statement-2020/index.html">Privacy Notice &amp; Statement</a> 
+            <a href="../../../pages/resources/first-premier-privacy-statement-2020/index.html">Privacy Notice &amp; Statement</a>
         </li>
-    
+
         <li>
-            <a href="../../../pages/resources/legal-disclosures/index.html">Legal Disclosures</a> 
+            <a href="../../../pages/resources/legal-disclosures/index.html">Legal Disclosures</a>
         </li>
-    
+
         <li>
-            <a href="../../../pages/resources/cookie-policy/index.html">Cookie Policy</a> 
+            <a href="../../../pages/resources/cookie-policy/index.html">Cookie Policy</a>
         </li>
-    
+
 </ul>
             </div>
         </div>
         <div class="row">
             <div class="col-md-12" style="padding-top:50px;">
- <p>Member FDIC | <img src="../../../../Static/img/equalhousinglender.png" alt="Equal Housing Lender" title="Equal Housing Lender" />Equal Housing Lender</p>            </div>
+ <p>Member FDIC | <img src="{{asset('assets/frontend/Static/img/equalhousinglender.png')}}" alt="Equal Housing Lender" title="Equal Housing Lender" />Equal Housing Lender</p>            </div>
         </div>
     </div>
 </div>
-<style>   
+<style>
     /* CHROME SAFARI FIX */
-    .form-control:hover, .form-control:active, .form-control:focus { box-shadow: none !important; -moz-box-shadow: none !important; -webkit-box-shadow: none !important; } 
+    .form-control:hover, .form-control:active, .form-control:focus { box-shadow: none !important; -moz-box-shadow: none !important; -webkit-box-shadow: none !important; }
     .form-control:hover, .form-control:active, .form-control:focus { box-shadow: none !important; -moz-box-shadow: none !important; -webkit-box-shadow: none !important; }
     a:focus, a:active {outline:none!important; border: none!important; }
     input:focus, input:active { outline: none !important; }
@@ -2045,7 +2029,7 @@ Asset Management &amp; Trust                                            <i class
         }
     });
 </script>    </div>
-    <div class="smallLogo"><a href="../../../index.html" title="First PREMIER Bank - Home"><img src="../../../../Static/gfx/Logo.png" style="max-width:100%;" /></a></div>
+    <div class="smallLogo"><a href="../../../index.html" title="First PREMIER Bank - Home"><img src="{{asset('assets/frontend/Static/gfx/Logo.png')}}" style="max-width:100%;" /></a></div>
     <script type="text/javascript" src="../../../../../dl.episerver.net/13.4.4.1/epi-util/find.js"></script>
 <script type="text/javascript">
 if(FindApi){var api = new FindApi();api.setApplicationUrl('../../../../index.html');api.setServiceApiBaseUrl('../../../../find_v2/index.html');api.processEventFromCurrentUri();api.bindWindowEvents();api.bindAClickEvent();api.sendBufferedEvents();}
@@ -2053,7 +2037,6 @@ if(FindApi){var api = new FindApi();api.setApplicationUrl('../../../../index.htm
 
     <script type="text/javascript" src="../../../../Static/js/pushy.js"></script>
     <script type="text/javascript" src="../../../../Static/js/Blocks_2019062002.js"></script>
-</body>
 
-<!-- Mirrored from www.firstpremier.com/en/personal/personal-checking/debit-card/ by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 30 Jun 2021 12:03:08 GMT -->
-</html>
+
+@endsection

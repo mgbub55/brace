@@ -11,8 +11,8 @@
                         <ul id="maintopMenu" class="menu-right">
                             <li class="navItem">800-501-6535</li>
                             <li class="navItem"><a
-                                    href="en/pages/quick-links/locations/index.html">Locations</a></li>
-                            <li class="navItem"><a href="en/pages/about-us/index.html">About Us</a></li>
+                                    href="{{ route('frontend.en.pages.quick-links.locations') }}">Locations</a></li>
+                            <li class="navItem"><a href="{{('frontend.en.pages.about-us')}}">About Us</a></li>
                             <li class="navItem"><a href="{{route('frontend.en.pages.about.careers')}}">Careers</a>
                             </li>
                             <li class="navItem"><a
@@ -62,17 +62,17 @@
                 </article>
                 <article class="header-box">
                     <article class="logo">
-                        <a href="en/index.html" title="First PREMIER Bank - Home"><img
+                        <a href="{{ route('frontend') }}" title="First PREMIER Bank - Home"><img
                                 src="{{ asset('assets/frontend/Static/gfx/LogoStack.png') }}"
                                 style="max-width:100%;" /></a>
                     </article>
                     <article class="small-menu">
                         <ul>
                             <li class="CustomerTypePadding active">
-                                <a href="en/index.html" title="First PREMIER Bank - Home">Personal</a>
+                                <a href="{{ route('frontend.en') }}" title="First PREMIER Bank - Home">Personal</a>
                             </li>
-                            <li><a href="en/small-business/index.html">Small Business</a></li>
-                            <li><a href="en/commercial/index.html">Commercial</a></li>
+                            <li><a href="{{ route('frontend.en.small-business') }}">Small Business</a></li>
+                            <li><a href="{{ route('frontend.en.commercial') }}">Commercial</a></li>
                         </ul>
                     </article>
                     <div class="card-btn">
@@ -92,7 +92,7 @@
                         <ul id="ulPremierMainMenu">
                             <li class="SubMenu">
 
-                                <a href="en/personal/personal-checking/index.html">Checking</a>
+                                <a href="{{  route('frontend.en.personal.personal-checking')  }}">Checking</a>
                                 <div id="subdiv_PersonalChecking"
                                     style="display:none;width: 100vw;margin-left: -50vw;left: 50%;"
                                     class="menu_dropdown_main menu-left bg-dropdown-menu-details">
@@ -104,7 +104,7 @@
                                                     <p>Flexible personal checking accounts with FREE Online and
                                                         Mobile Banking, Bill Pay, eStatements, Mobile Deposit
                                                         and more.</p>
-                                                    <a href="en/personal/personal-checking/index.html"
+                                                    <a href="{{  route('frontend.en.personal.personal-checking')  }}"
                                                         style="font-size:12px;padding-bottom:0px;">Learn
                                                         More</a>
                                                 </div>
@@ -116,7 +116,7 @@
                                                     class="menu_left_section_main bg-menu_left_section_main col-md-12 col-sm-12 col-xs-12">
                                                     <div class="bg-menu_left_section col-md-6 col-xs-12 col-sm-6">
                                                         <div class="subsubitem"><a
-                                                                href="en/personal/personal-checking/free-plus-checking/index.html">FREE+
+                                                                href="{{  route('frontend.en.personal.personal-checking.free-plus-checking')  }}">FREE+
                                                                 Checking</a></div>
                                                         <p>Our FREE+ Checking account comes with no hidden
                                                             surprises, hassles or monthly maintenance fees.</p>
@@ -124,7 +124,7 @@
                                                     </div>
                                                     <div class="bg-menu_left_section col-md-6 col-xs-12 col-sm-6">
                                                         <div class="subsubitem"><a
-                                                                href="en/personal/personal-checking/reward-checking/index.html">Reward
+                                                                href="{{ route('frontend.en.personal.personal-checking.reward-checking') }}">Reward
                                                                 Checking</a></div>
                                                         <p>Maintain a total monthly deposit relationship of
                                                             $15,000 and gain benefits like free checks, reward
@@ -133,7 +133,7 @@
                                                     </div>
                                                     <div class="bg-menu_left_section col-md-6 col-xs-12 col-sm-6">
                                                         <div class="subsubitem"><a
-                                                                href="en/personal/personal-checking/debit-card/index.html">Debit
+                                                                href="{{  route('frontend.en.personal.personal-checking.debit-card')  }}">Debit
                                                                 Card</a></div>
                                                         <p>This secure and easy payment method gives you access
                                                             to 33,000+ surcharge-free ATMs nationwide.</p>
@@ -141,7 +141,7 @@
                                                     </div>
                                                     <div class="bg-menu_left_section col-md-6 col-xs-12 col-sm-6">
                                                         <div class="subsubitem"><a
-                                                                href="en/personal/personal-checking/overdraft-protection/index.html">Overdraft
+                                                                href="{{ route('frontend.en.personal.personal-checking.overdraft-protection') }}">Overdraft
                                                                 Protection</a></div>
                                                         <p>Ensure your personal checking account has sufficient
                                                             funds to cover payments and purchases.</p>
@@ -149,7 +149,7 @@
                                                     </div>
                                                     <div class="bg-menu_left_section col-md-6 col-xs-12 col-sm-6">
                                                         <div class="subsubitem"><a
-                                                                href="en/personal/personal-checking/security-and-fraud-protection/index.html">Security
+                                                                href="{{ route('frontend.en.personal.personal-checking.security-and-fraud-protection')}}">Security
                                                                 &amp; Fraud Protection</a></div>
                                                         <p>Learn how First PREMIER protects you and how to
                                                             protect yourself from security breaches and fraud.
@@ -164,7 +164,7 @@
                             </li>
                             <li class="SubMenu">
 
-                                <a href="en/personal/online-and-mobile/index.html">Online &amp; Mobile</a>
+                                <a href="{{ route('frontend.en.personal.online-and-mobile') }}">Online &amp; Mobile</a>
                                 <div id="subdiv_Online&amp;Mobile"
                                     style="display:none;width: 100vw;margin-left: -50vw;left: 50%;"
                                     class="menu_dropdown_main menu-left bg-dropdown-menu-details">
@@ -176,7 +176,7 @@
                                                     <p>First PREMIER Online and Mobile Banking are FREE and
                                                         feature-rich, giving you 24/7 access and control over
                                                         your accounts.</p>
-                                                    <a href="en/personal/online-and-mobile/index.html"
+                                                    <a href="{{ route('frontend.en.personal.online-and-mobile') }}"
                                                         style="font-size:12px;padding-bottom:0px;">Learn
                                                         More</a>
                                                 </div>
@@ -188,7 +188,7 @@
                                                     class="menu_left_section_main bg-menu_left_section_main col-md-12 col-sm-12 col-xs-12">
                                                     <div class="bg-menu_left_section col-md-6 col-xs-12 col-sm-6">
                                                         <div class="subsubitem"><a
-                                                                href="en/personal/online-and-mobile/online-banking/index.html">Online
+                                                                href="{{ route('frontend.en.personal.online-and-mobile.online-banking') }}">Online
                                                                 Banking</a></div>
                                                         <p>Check balances, transfer funds, pay bills, view
                                                             eStatements any time.</p>
@@ -196,7 +196,7 @@
                                                     </div>
                                                     <div class="bg-menu_left_section col-md-6 col-xs-12 col-sm-6">
                                                         <div class="subsubitem"><a
-                                                                href="en/personal/online-and-mobile/mobile-banking/index.html">Mobile
+                                                                href="{{ route('frontend.en.personal.online-and-mobile.mobile-banking') }}">Mobile
                                                                 Banking</a></div>
                                                         <p>Our mobile app puts the features of Online Banking in
                                                             the palm of your hand.</p>
@@ -228,7 +228,7 @@
                                                     </div>
                                                     <div class="bg-menu_left_section col-md-6 col-xs-12 col-sm-6">
                                                         <div class="subsubitem"><a
-                                                                href="en/personal/online-and-mobile/mobile-wallet/index.html">Mobile
+                                                                href="{{ route('frontend.en.personal.online-and-mobile.mobile-wallet') }}">Mobile
                                                                 Wallet</a></div>
                                                         <p>Link your debit card to a Mobile Wallet to speed your
                                                             way through checkout.</p>
@@ -250,7 +250,7 @@
                             </li>
                             <li class="SubMenu">
 
-                                <a href="en/personal/savings-and-cds/index.html">Savings &amp; CDs</a>
+                                <a href="{{ route('frontend.en.personal.savings-and-cds') }}">Savings &amp; CDs</a>
                                 <div id="subdiv_Savings&amp;CDs"
                                     style="display:none;width: 100vw;margin-left: -50vw;left: 50%;"
                                     class="menu_dropdown_main menu-left bg-dropdown-menu-details">
@@ -261,7 +261,7 @@
                                                     <h3>Savings & CDs</h3>
                                                     <p>Keep ready cash on hand with an array of savings options
                                                         from First PREMIER Bank.</p>
-                                                    <a href="en/personal/savings-and-cds/index.html"
+                                                    <a href="{{ route('frontend.en.personal.savings-and-cds') }}"
                                                         style="font-size:12px;padding-bottom:0px;">Learn
                                                         More</a>
                                                 </div>
@@ -319,7 +319,7 @@
                             </li>
                             <li class="SubMenu">
 
-                                <a href="en/personal/loans-and-credit-lines/index.html">Loans &amp; Credit
+                                <a href="{{ route('frontend.en.personal.loans-and-credit-lines')}}">Loans &amp; Credit
                                     Lines</a>
                                 <div id="subdiv_Loans&amp;CreditLines"
                                     style="display:none;width: 100vw;margin-left: -50vw;left: 50%;"
@@ -332,7 +332,7 @@
                                                     <p>Planning a large purchase or consolidating debt? We have
                                                         competitive rates on personal loans and flexible lines
                                                         of credit!</p>
-                                                    <a href="en/personal/loans-and-credit-lines/index.html"
+                                                    <a href="{{ route('frontend.en.personal.loans-and-credit-lines')}}"
                                                         style="font-size:12px;padding-bottom:0px;">Learn
                                                         More</a>
                                                 </div>
@@ -400,7 +400,7 @@
                             </li>
                             <li class="SubMenu">
 
-                                <a href="en/personal/mortgages/index.html">Mortgages</a>
+                                <a href="{{ route('frontend.en.personal.mortgages') }}">Mortgages</a>
                                 <div id="subdiv_Mortgages"
                                     style="display:none;width: 100vw;margin-left: -50vw;left: 50%;"
                                     class="menu_dropdown_main menu-left bg-dropdown-menu-details">
@@ -411,7 +411,7 @@
                                                     <h3>Mortgages</h3>
                                                     <p>Competitive rates for home mortgages, construction loans,
                                                         refinancing and more.</p>
-                                                    <a href="en/personal/mortgages/index.html"
+                                                    <a href="{{ route('frontend.en.personal.mortgages') }}"
                                                         style="font-size:12px;padding-bottom:0px;">Learn
                                                         More</a>
                                                 </div>
@@ -464,7 +464,7 @@
                             </li>
                             <li class="SubMenu">
 
-                                <a href="en/personal/investing/index.html">Investing</a>
+                                <a href="{{ route('frontend.en.personal.investing') }}">Investing</a>
                                 <div id="subdiv_Investing"
                                     style="display:none;width: 100vw;margin-left: -50vw;left: 50%;"
                                     class="menu_dropdown_main menu-left bg-dropdown-menu-details">
@@ -476,7 +476,7 @@
                                                     <p>Simple-to-complex investing, financial and retirement
                                                         planning and investment management for investors at any
                                                         life stage.</p>
-                                                    <a href="en/personal/investing/index.html"
+                                                    <a href="{{ route('frontend.en.personal.investing') }}"
                                                         style="font-size:12px;padding-bottom:0px;">Learn
                                                         More</a>
                                                 </div>
@@ -526,7 +526,7 @@
                             </li>
                             <li class="SubMenu">
 
-                                <a href="en/personal/wealth-management/index.html">Wealth Management</a>
+                                <a href="{{ route('frontend.en.personal.wealth-management') }}">Wealth Management</a>
                                 <div id="subdiv_WealthManagement"
                                     style="display:none;width: 100vw;margin-left: -50vw;left: 50%;"
                                     class="menu_dropdown_main menu-left bg-dropdown-menu-details">
@@ -538,7 +538,7 @@
                                                     <p>Private banking, hands-on financial and investment
                                                         planning, portfolio management, estate planning and
                                                         personal trust services.</p>
-                                                    <a href="en/personal/wealth-management/index.html"
+                                                    <a href="{{ route('frontend.en.personal.wealth-management') }}"
                                                         style="font-size:12px;padding-bottom:0px;">Learn
                                                         More</a>
                                                 </div>
@@ -598,7 +598,7 @@
                             </li>
                             <li class="SubMenu">
 
-                                <a href="en/personal/students-and-parents/index.html">Students &amp; Parents</a>
+                                <a href="{{ route('frontend.en.personal.students-and-parents') }}">Students &amp; Parents</a>
                                 <div id="subdiv_Students&amp;Parents"
                                     style="display:none;width: 100vw;margin-left: -50vw;left: 50%;"
                                     class="menu_dropdown_main menu-left bg-dropdown-menu-details">
@@ -610,7 +610,7 @@
                                                     <p>Explore our unique offerings for students and parents.
                                                         From college checking accounts to paid internships and
                                                         scholarships.</p>
-                                                    <a href="en/personal/students-and-parents/index.html"
+                                                    <a href="{{ route('frontend.en.personal.students-and-parents') }}"
                                                         style="font-size:12px;padding-bottom:0px;">Learn
                                                         More</a>
                                                 </div>

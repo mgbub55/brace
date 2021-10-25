@@ -84,14 +84,16 @@
 
                             sessionStorage.setItem(b01title, wt);
                             sessionStorage.setItem(b01msg, wm);
-                            sessionStorage.setItem(b01heroimage, '../../contentassets/ff24904b95014a8e8f84aaa316689356/fpb_hero_summer_our_size_is_strength.jpg');
+                            sessionStorage.setItem(b01heroimage,
+                            "{{asset('assets/frontend/contentassets/ff24904b95014a8e8f84aaa316689356/fpb_hero_summer_our_size_is_strength.jpg')}}"
+                            );
                             sessionStorage.setItem(b01linkname, 'Learn More');
                             sessionStorage.setItem(b01linkurl, 'treasury-services/index.html');
                             sessionStorage.setItem(b01titlemobile, wtm);
                             sessionStorage.setItem(b01messagemobile, wmm);
                             WelcomeObj.title = wt;
                             WelcomeObj.msg = wm;
-                            WelcomeObj.heroimage = '../../contentassets/ff24904b95014a8e8f84aaa316689356/fpb_hero_summer_our_size_is_strength.jpg';
+                            WelcomeObj.heroimage = "{{asset('assets/frontend/contentassets/ff24904b95014a8e8f84aaa316689356/fpb_hero_summer_our_size_is_strength.jpg')}}";
                             WelcomeObj.linkname = 'Learn More';
                             WelcomeObj.linkurl = 'treasury-services/index.html';
                             WelcomeObj.titlemobile = wtm;                   // These are the mobile title
@@ -227,14 +229,14 @@
                                                     </div>
                                                 </div>
                                                 <div id="loginLine" class="text-center b1smallLine">
-                                                    <img src="../../Static/img/CustomBlocks/B1/small_line.png" alt="">
+                                                    <img src="{{asset('assets/frontend/Static/img/CustomBlocks/B1/small_line.png')}}" alt="">
                                                 </div>
 
                                                 <button class="b1btn-login"> Login </button>
                                             </form>
                                             <a class="b1link_access" href="../pages/resources/enrollment/index.html">Set
                                                 up online access <img
-                                                    src="../../Static/img/CustomBlocks/B1/arrow_line.png"
+                                                    src="{{asset('assets/frontend/Static/img/CustomBlocks/B1/arrow_line.png')}}"
                                                     style="height:11px;" /></a>
 
                                         </div>
@@ -335,11 +337,11 @@
 
                                 <div class="col-lg-8 col-md-12 col-sm-12 b9student_parent_main no-pad ">
                                     <div class="b9student_parent_main_img"><img
-                                            src="../../contentassets/47328a63aadd4df4b89ee94ca2928d37/keith_miller_luke_tibbets_lewis.jpg"
+                                            src="{{asset('assets/frontend/contentassets/47328a63aadd4df4b89ee94ca2928d37/keith_miller_luke_tibbets_lewis.jpg')}}"
                                             alt="woman business owner"></div>
                                     <div class="b9student_parent_main_content">
                                         <div class="b9avtar"><img
-                                                src="../../globalassets/images/_replace/_filled/round1.png"
+                                                src="{{asset('assets/frontend/globalassets/images/_replace/_filled/round1.png')}}"
                                                 title="Commercial Banking" alt="check"></div>
                                         <div class="b9avtar_content">
                                             <span> Commercial Banking</span>
@@ -356,7 +358,7 @@
                                         <div class="b9small_growth_boxtext b9student_parent_main no-pad">
                                             <div class="b9student_parent_main_content">
                                                 <div class="b9avtar"><img
-                                                        src="../../globalassets/images/_replace/_filled/round1.png"
+                                                        src="{{asset('assets/frontend/globalassets/images/_replace/_filled/round1.png')}}"
                                                         alt="Commercial Banking"></div>
                                                 <div class="b9avtar_content">
                                                     <a href="business-checking/index.html">Commercial Banking</a>
@@ -461,7 +463,7 @@
                                 <div
                                     class="col-lg-4 col-md-12 col-sm-12 b9student_parent_main no-pad b9small_growth_box">
                                     <div class="b9student_parent_main_img"><img
-                                            src="../../contentassets/47328a63aadd4df4b89ee94ca2928d37/conf_img1.jpg"
+                                            src="{{asset('assets/frontend/contentassets/47328a63aadd4df4b89ee94ca2928d37/conf_img1.jpg')}}"
                                             title="Finance Growth" alt="male contractors looking at blueprints"></div>
                                     <div class="b9student_parent_main_content finance_growth">
                                         <div class="b9glow_content" style="min-height:33px;">
@@ -497,7 +499,7 @@
                                 <div
                                     class="col-lg-4 col-md-12 col-sm-12 b9student_parent_main no-pad b9small_growth_box">
                                     <div class="b9student_parent_main_img"><img
-                                            src="../../contentassets/47328a63aadd4df4b89ee94ca2928d37/conf_img2.jpg"
+                                            src="{{asset('assets/frontend/contentassets/47328a63aadd4df4b89ee94ca2928d37/conf_img2.jpg')}}"
                                             title="Finance Growth" alt="business woman"></div>
                                     <div class="b9student_parent_main_content finance_growth">
                                         <div class="b9glow_content" style="min-height:33px;">
@@ -534,7 +536,7 @@
                                 <div
                                     class="col-lg-4 col-md-12 col-sm-12 b9student_parent_main no-pad b9small_growth_box last">
                                     <div class="b9student_parent_main_img"><img
-                                            src="../../contentassets/47328a63aadd4df4b89ee94ca2928d37/conf_img3.jpg"
+                                            src="{{asset('assets/frontend/contentassets/47328a63aadd4df4b89ee94ca2928d37/conf_img3.jpg')}}"
                                             title="Protect Your Assets" alt="male meeting with banker"></div>
                                     <div class="b9student_parent_main_content finance_growth">
                                         <div class="b9glow_content" style="min-height:33px;">
@@ -648,7 +650,7 @@
 
                             <div class="b17free_mobile_banking_left right">
                                 <img class="img-responsive" id="imgMainImage" style="border-radius:50%"
-                                    src="../../contentassets/5361b85864674586ba157dfd4db88f1b/2.2.1_b-17_promo_woman.png"
+                                    src="{{asset('assets/frontend/contentassets/5361b85864674586ba157dfd4db88f1b/2.2.1_b-17_promo_woman.png')}}"
                                     alt="First PREMIER Bank">
                             </div>
                         </div>
@@ -658,7 +660,7 @@
                         <div class="container">
                             <div class="b15student_parent_main_content b15-bg-student_parent_main_content">
                                 <div class="b15avtar">
-                                    <img src="../../globalassets/images/primary-icons/blue/bookmarks-tags/blue-bookmarks-_-tags-primary-icon-2.png"
+                                    <img src="{{asset('assets/frontend/globalassets/images/primary-icons/blue/bookmarks-tags/blue-bookmarks-_-tags-primary-icon-2.png')}}"
                                         title="Integrated Receivables" alt="woman looking at laptop" width="116px"
                                         height="116px">
                                 </div>
@@ -673,7 +675,7 @@
                             </div>
                             <div class="b15student_parent_main_content b15-bg-student_parent_main_content">
                                 <div class="b15avtar">
-                                    <img src="../../globalassets/images/primary-icons/bright/business-finance/bright-business-_-finance-primary-icon-11.png"
+                                    <img src="{{asset('assets/frontend/globalassets/images/primary-icons/bright/business-finance/bright-business-_-finance-primary-icon-11.png')}}"
                                         title="Payables &amp; Payroll" alt="woman looking at laptop" width="116px"
                                         height="116px">
                                 </div>
@@ -696,7 +698,7 @@
                                     <div class="pop_main_container_board">
                                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                             <span aria-hidden="true">
-                                                <img class="close_icon" src="../../static/img/closebutton.png"
+                                                <img class="close_icon" src="{{asset('assets/frontend/static/img/closebutton.png')}}"
                                                     alt="First PREMIER Bank"
                                                     style="height:17px !important;width:17px !important;">
                                             </span>
@@ -998,7 +1000,7 @@
                 </div>
                 <div class="row">
                     <div class="col-md-12" style="padding-top:50px;">
-                        <p>Member FDIC | <img src="../../Static/img/equalhousinglender.png" alt="Equal Housing Lender"
+                        <p>Member FDIC | <img src="{{asset('assets/frontend/Static/img/equalhousinglender.png')}}" alt="Equal Housing Lender"
                                 title="Equal Housing Lender" />Equal Housing Lender</p>
                     </div>
                 </div>

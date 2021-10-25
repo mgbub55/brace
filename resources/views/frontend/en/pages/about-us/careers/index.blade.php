@@ -50,7 +50,7 @@
                             <div class="b47hero_coverM2"></div>
 
                             <img class="b47hero-img2"
-                                src="../../../../contentassets/7d34ea4a50a7402a99d6de698b9aeb9c/hero-careers-alternative2020.jpg"
+                                src="{{asset('assets/frontend/contentassets/7d34ea4a50a7402a99d6de698b9aeb9c/hero-careers-alternative2020.jpg')}}"
                                 alt="Customer Service Rep">
                             <div class="b47banner-desc2">
                                 <div class="container">
@@ -435,7 +435,7 @@
                                 <div class="b16basic_box b16basic_box_position">
                                     <div class="b16basic_box_right" style="padding-right:50px;">
                                         <div class="b16imgcrop"><img
-                                                src="../../../../contentassets/725d0791495e4fb68efeb60e049a34fe/0.5.15_b-16-alt1_culture-min.png"
+                                                src="{{asset('assets/frontend/contentassets/725d0791495e4fb68efeb60e049a34fe/0.5.15_b-16-alt1_culture-min.png')}}"
                                                 title="Our Culture" alt="business woman in meeting smiling"></div>
                                     </div>
                                     <div class="b16basic_box_left">
@@ -618,7 +618,7 @@
                                 <div class="b16basic_box">
                                     <div class="b16basic_box_right">
                                         <div class="b16imgcrop" style="margin-left:90px;"><img
-                                                src="../../../../contentassets/0ab883a727c84a99a6e4ec0d2e0143d5/0.5.15_b-16-alt2_benefits-min.png"
+                                                src="{{asset('assets/frontend/contentassets/0ab883a727c84a99a6e4ec0d2e0143d5/0.5.15_b-16-alt2_benefits-min.png')}}"
                                                 title="Our Benefits" alt="two people looking at tablet"></div>
 
                                     </div>
@@ -805,7 +805,7 @@
                                 <div class="b16basic_box b16basic_box_position">
                                     <div class="b16basic_box_right" style="padding-right:50px;">
                                         <div class="b16imgcrop"><img
-                                                src="../../../../contentassets/4a5a98d68dfb4fd4ba8023f8b49d3cfb/0.5.15_b-16-alt3_bestbank.png"
+                                                src="{{asset('assets/frontend/contentassets/4a5a98d68dfb4fd4ba8023f8b49d3cfb/0.5.15_b-16-alt3_bestbank.png')}}"
                                                 title="A &quot;Best Bank&quot; to Work For" alt="woman smiling"></div>
                                     </div>
                                     <div class="b16basic_box_left">
@@ -986,7 +986,7 @@
                 </div>
                 <div class="row">
                     <div class="col-md-12" style="padding-top:50px;">
-                        <p>Member FDIC | <img src="../../../../Static/img/equalhousinglender.png"
+                        <p>Member FDIC | <img src="{{asset('assets/frontend/Static/img/equalhousinglender.png')}}"
                                 alt="Equal Housing Lender" title="Equal Housing Lender" />Equal Housing Lender</p>
                     </div>
                 </div>

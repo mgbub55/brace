@@ -1,79 +1,18 @@
+@extends('frontend.layouts.app')
 
+@section('content')
 
-<!DOCTYPE html>
-<html lang="en">
-
-<!-- Mirrored from www.firstpremier.com/en/personal/loans-and-credit-lines/ by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 30 Jun 2021 12:06:27 GMT -->
-<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
-<head>
-
-    <!--shape-->
-    <script type="text/javascript" src="../../../../cds-sdkcfg.onlineaccess1.com/common0df9.js?async"
-            async></script>
-
-
-    <meta charset="utf-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=10; IE=11" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="msvalidate.01" content="B1160176C00496054ECCB3B27B970C87" />
-    
-    <title>Loans &amp; Credit Lines | Personal Banking</title>
-            <meta name="description" content="Whether you&#39;re remodeling, paying for a large purchase or consolidating debt, First PREMIER has access to an array of competitive lending products. Our personal bankers can help you find a competitive rate on the right loan for your needs, with fast turnaround and personal support you can trust." />
-    <link rel="shortcut icon" href="../../../favicon.ico" type="image/x-icon" />
-
-    <link href="index.html" rel="canonical" />
-    
-    <link href="../../../Static/bootstrap/css/bootstrap.css" rel="stylesheet"/>
-<link href="../../../Static/bootstrap/css/bootstrap-responsive.css" rel="stylesheet"/>
-<link href="../../../Static/bootstrap/css/bootstrap.offcanvas.min.css" rel="stylesheet"/>
-<link href="../../../Static/css/pushy.css" rel="stylesheet"/>
-<link href="../../../Content/font-awesome.css" rel="stylesheet"/>
-<link href="../../../Static/css/Site_20201214_V1_35.css" rel="stylesheet"/>
-<link href="../../../Static/css/Blocks_20202302_v61.css" rel="stylesheet"/>
-<link href="../../../Static/css/Forms_20201214.css" rel="stylesheet"/>
-
-    <script src="../../../Static/js/jquery.min.js"></script>
-<script src="../../../Static/js/cookieconsent.js"></script>
-<script src="../../../Static/bootstrap/js/bootstrap3.min.js"></script>
-
-    
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-4688536-5"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'UA-4688536-5');
-</script>
-
- 
-
-    <style>
-        .b18great_feature_main{display:block;margin-top:-100px !important;}
-.b20consumer-loans .b20consumer-loans-left {padding-left:100px !important;}
-.b15benfits_main_box {padding-top:20px;}
-    </style>
-    <!-- Google Tag Manager (noscript) body tag -->
-    <noscript>
-        <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MWXZNLB" height="0" width="0" style="display:none;visibility:hidden"></iframe>
-    </noscript>
-    <!-- End Google Tag Manager (noscript) -->
-    <!--L&S Script-->
-    <script type="text/javascript" src="../../../../cdn.mantl.com/assets/first_premier_bank/production-scripts/first-premier-bank-analytics-pixel.html"></script>
-<script type="text/javascript">var appInsights=window.appInsights||function(config){function t(config){i[config]=function(){var t=arguments;i.queue.push(function(){i[config].apply(i,t)})}}var i={config:config},u=document,e=window,o="script",s="AuthenticatedUserContext",h="start",c="stop",l="Track",a=l+"Event",v=l+"Page",r,f;setTimeout(function(){var t=u.createElement(o);t.src=config.url||"https://az416426.vo.msecnd.net/scripts/a/ai.0.js";u.getElementsByTagName(o)[0].parentNode.appendChild(t)});try{i.cookie=u.cookie}catch(y){}for(i.queue=[],r=["Event","Exception","Metric","PageView","Trace","Dependency"];r.length;)t("track"+r.pop());return t("set"+s),t("clear"+s),t(h+a),t(c+a),t(h+v),t(c+v),t("flush"),config.disableExceptionTracking||(r="onerror",t("_"+r),f=e[r],e[r]=function(config,t,u,e,o){var s=f&&f(config,t,u,e,o);return s!==!0&&i["_"+r](config,t,u,e,o),s}),i}({instrumentationKey:"b7dfb9a2-b012-4c83-a87f-ac7e41ce3cac",sdkExtension:"a"});window.appInsights=appInsights;appInsights.queue&&appInsights.queue.length===0&&appInsights.trackPageView();</script></head>
-
-<body class="eupopup eupopup-bottom    page-loans-and-credit-lines parent-14">
-
-
-
-    
-    
     <div class="container">
+
+     <!--start responsive menu-->
+    @include('frontend.layouts.components.header')
+    <!-- Main Header -->
+    @include('frontend.layouts.components.navbar')
 
 
 
 <!--start responsive menu-->
-<nav class="pushy pushy-right">
+{{-- <nav class="pushy pushy-right">
     <div class="pushy-content">
         <button class="pushy-link close-b">X</button>
 
@@ -553,7 +492,7 @@ Asset Management &amp; Trust                                            <i class
                                                 <div class="panel-body">
 <a href="{{route('frontend.en.commercial.asset.business.first')}}">First PREMIER at Work</a>                                                </div>
                                                 <div class="panel-body">
-<a href="{{route('frontend.en.commercial.asset.south')}}">Trusts in South Dakota</a>                                                </div>
+<a href="">Trusts in South Dakota</a>                                                </div>
                                         </div>
                                     </div>
 
@@ -593,9 +532,9 @@ Asset Management &amp; Trust                                            <i class
             </div>
         </div>
     </div>
-</nav>
+</nav> --}}
 <!-- Main Header -->
-<section class="header-wrap" id="container">
+{{-- <section class="header-wrap" id="container">
     <article class="container">
 
         <article class="row">
@@ -1045,9 +984,9 @@ Asset Management &amp; Trust                                            <i class
             </article>
         </div>
     </div>
-</section>
+</section> --}}
 
-<script>
+{{-- <script>
 
     $(document).ready(function () {
 
@@ -1180,34 +1119,34 @@ Asset Management &amp; Trust                                            <i class
         }
     });
 
-</script>
+</script> --}}
 
 
 <div class="b19landingpage row-full" style="padding-bottom:0px;">
     <div class="container">
-        <h1>Loans &amp; Credit Lines</h1>
+        <h1 style="color: #25455a;">Loans &amp; Credit Lines</h1>
         <div class="xhtml"></div>
         <div class="b19landingpage_box_main">
 
         <div class="col-md-4 col-sm-6 b19landingpage_box">
-            <a href="personal-loans/index.html"><img src="../../../globalassets/images/_replace/_filled/round6.png" title="Personal Loans" alt="money" border="0" /></a>
+            <a href="personal-loans/index.html"><img src="{{ asset('assets/frontend/globalassets/images/_replace/_filled/round6.png') }}" title="Personal Loans" alt="money" border="0" /></a>
             <div class="clearfix"></div>
-                <span><a href="personal-loans/index.html">Personal Loans</a></span>
-            <div class="xhtml"><p>Consolidating debt, financing a special purchase or remodeling your home? Let us help.</p></div>
+                <span><a href="personal-loans/index.html" style="color: #25455a;">Personal Loans</a></span>
+            <div class="xhtml"><p style="color: #25455a;">Consolidating debt, financing a special purchase or remodeling your home? Let us help.</p></div>
         </div>
 
         <div class="col-md-4 col-sm-6 b19landingpage_box">
-            <a href="personal-lines-of-credit/index.html"><img src="../../../globalassets/images/_replace/_filled/round7.png" title="Personal Lines of Credit" alt="cash" border="0"></a>
+            <a href="personal-lines-of-credit/index.html"><img src="{{ asset('assets/frontend/globalassets/images/_replace/_filled/round7.png') }}" title="Personal Lines of Credit" alt="cash" border="0"></a>
             <div class="clearfix"></div>
-                <span><a href="personal-lines-of-credit/index.html">Personal Lines of Credit</a></span>
-            <div class="xhtml"><p>Gain instant access to ready cash when you need it. We offer both personal and home equity lines of credit.</p></div>
+                <span><a href="personal-lines-of-credit/index.html" style="color: #25455a;">Personal Lines of Credit</a></span>
+            <div class="xhtml"><p style="color: #25455a;">Gain instant access to ready cash when you need it. We offer both personal and home equity lines of credit.</p></div>
         </div>
 
         <div class="col-md-4 col-sm-6 b19landingpage_box">
-            <a href="../mortgages/index.html"><img src="../../../globalassets/images/primary-icons/gold/places/gold-places-primary-icon-14.png" title="Home Mortgage" alt="house" border="0"></a>
+            <a href="../mortgages/index.html"><img src="{{ asset('assets/frontend/globalassets/images/primary-icons/gold/places/gold-places-primary-icon-14.png') }}" title="Home Mortgage" alt="house" border="0"></a>
             <div class="clearfix"></div>
-                <span><a href="../mortgages/index.html">Home Mortgage</a></span>
-            <div class="xhtml"><p>Whether it's your first-time or forever home, we offer competitive financing with local decision making.</p></div>
+                <span><a href="../mortgages/index.html" style="color: #25455a;">Home Mortgage</a></span>
+            <div class="xhtml"><p style="color: #25455a;">Whether it's your first-time or forever home, we offer competitive financing with local decision making.</p></div>
         </div>
 
         </div>
@@ -1276,7 +1215,7 @@ Asset Management &amp; Trust                                            <i class
                 <h2>Lending is Always Personal</h2>
 
 
-                    <div class="b20consumer-loans-right"><img id="imgMainRight" src="../../../contentassets/f656f76b55584dd29a81c5b3b85c369e/1.4_b-20_promo_01_billslady-min.png" alt="woman working with papers and laptop" class="img-responsive"></div>
+                    <div class="b20consumer-loans-right"><img id="imgMainRight" src="{{ asset('assets/frontend/contentassets/f656f76b55584dd29a81c5b3b85c369e/1.4_b-20_promo_01_billslady-min.png') }}" alt="woman working with papers and laptop" class="img-responsive"></div>
         <div class="b20consumer-loans-left">
                             <div class="xhtml"><ul>
 <li>Competitive fixed rates</li>
@@ -1380,7 +1319,7 @@ Asset Management &amp; Trust                                            <i class
                                 <a href="personal-lines-of-credit/index.html" class="b20mainanchorL">Learn More</a>
             </div>
         </div>
-                    <div class="b20consumer-loans-right"><img id="imgMainRight" alt="couple looking at receipts" src="../../../contentassets/dbed55fba49142b6919198a18b68d42c/1.4_b-20-promo_02_couplepaperwork-min.png" class="img-responsive"></div>
+                    <div class="b20consumer-loans-right"><img id="imgMainRight" alt="couple looking at receipts" src="{{ asset('assets/frontend/contentassets/dbed55fba49142b6919198a18b68d42c/1.4_b-20-promo_02_couplepaperwork-min.png') }}" class="img-responsive"></div>
         </div>
     </div>
 </section>
@@ -1390,7 +1329,7 @@ Asset Management &amp; Trust                                            <i class
 <section style="padding-left:0px;">
     <div class="b15benfits_main_box">
         <div class="container">
-            <div class="b15student_parent_main_content b15-bg-student_parent_main_content">  <div class="b15avtar"><img src="../../../contentassets/cb6319a21d01411bbd2b8a3f5f67e7d8/everfi-loans-and-payments.png" title="Loans & Payments" alt="coins falling into hand" height ="116px" width="116px"></div>  <div class="b15avtar_content">    <h3>Loans & Payments</h3><p>Are you looking to better understand payment options for your lifestyle? Our interactive module will help you understand different payment and payoff options.</p>    <div class="clearfix"></div><br/>      <a href="#" data-toggle="modal" data-target="#a22817800Q8" class="b15learnmore">Learn More</a>      <div id="a22817800Q8" class="modal fade" role="dialog">         <div class="modal-dialog pop_board">            <div class="modal-content">               <div class="modal-body">                  <div class="pop_main_container_board">                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">                        <span aria-hidden="true">                           <img class="close_icon" src="../../../static/img/closebutton.png" alt="First PREMIER Bank" style="height:17px !important;width:17px !important;">                        </span>                     </button>                     <div class="pop_main_container">                    <h2>Loans & Payments</h2>                        <div class="pop_board_white">                           <div class="row">                              <div class="col-md-12" style="padding-left:40px;">                                 <h4 class="Blue">You will be leaving firstpremier.com</h4>                                 <div class="b13points b46Blue" style="text-align:left;"><p>Please note, by clicking &ldquo;continue&rdquo; you will be redirected to a website that is not operated or controlled by PREMIER. PREMIER is not responsible for the content, links, privacy policy or security of that website. Your use of that website is subject to its terms of use and privacy policy. Thank you for visiting firstpremier.com. If you continue, we hope you find the information presented educational and useful.</p>                                    <p><br/><a href="https://firstpremier.everfi-next.net/student/dashboard/financialeducation-achieve/financial-foundations/1687#car-loans/getting-started" target="_blank">Continue</a></p>                                 </div>                              </div>                           </div>                        </div>                     </div>                  </div>               </div>            </div>         </div>      </div>  </div></div><div class="b15student_parent_main_content b15-bg-student_parent_main_content">  <div class="b15avtar"><img src="../../../globalassets/images/secondary-icons/gold/places/gold-places-secondary-icon-14.png" title="Home Mortgage" alt="house" height ="116px" width="116px"></div>  <div class="b15avtar_content">    <h3>Home Mortgage</h3><p>Whether you're buying or building a new home or refinancing to extract equity or consolidate debt, we can help.&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;</p>    <div class="clearfix"></div><br/>      <a href="../mortgages/index.html">Learn More</a>  </div></div>
+            <div class="b15student_parent_main_content b15-bg-student_parent_main_content">  <div class="b15avtar"><img src="{{ asset('assets/frontend/contentassets/cb6319a21d01411bbd2b8a3f5f67e7d8/everfi-loans-and-payments.png') }}" title="Loans & Payments" alt="coins falling into hand" height ="116px" width="116px"></div>  <div class="b15avtar_content">    <h3>Loans & Payments</h3><p>Are you looking to better understand payment options for your lifestyle? Our interactive module will help you understand different payment and payoff options.</p>    <div class="clearfix"></div><br/>      <a href="#" data-toggle="modal" data-target="#a22817800Q8" class="b15learnmore">Learn More</a>      <div id="a22817800Q8" class="modal fade" role="dialog">         <div class="modal-dialog pop_board">            <div class="modal-content">               <div class="modal-body">                  <div class="pop_main_container_board">                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">                        <span aria-hidden="true">                           <img class="close_icon" src="../../../static/img/closebutton.png" alt="First PREMIER Bank" style="height:17px !important;width:17px !important;">                        </span>                     </button>                     <div class="pop_main_container">                    <h2>Loans & Payments</h2>                        <div class="pop_board_white">                           <div class="row">                              <div class="col-md-12" style="padding-left:40px;">                                 <h4 class="Blue">You will be leaving firstpremier.com</h4>                                 <div class="b13points b46Blue" style="text-align:left;"><p>Please note, by clicking &ldquo;continue&rdquo; you will be redirected to a website that is not operated or controlled by PREMIER. PREMIER is not responsible for the content, links, privacy policy or security of that website. Your use of that website is subject to its terms of use and privacy policy. Thank you for visiting firstpremier.com. If you continue, we hope you find the information presented educational and useful.</p>                                    <p><br/><a href="https://firstpremier.everfi-next.net/student/dashboard/financialeducation-achieve/financial-foundations/1687#car-loans/getting-started" target="_blank">Continue</a></p>                                 </div>                              </div>                           </div>                        </div>                     </div>                  </div>               </div>            </div>         </div>      </div>  </div></div><div class="b15student_parent_main_content b15-bg-student_parent_main_content">  <div class="b15avtar"><img src="{{ asset('assets/frontend/globalassets/images/secondary-icons/gold/places/gold-places-secondary-icon-14.png') }}" title="Home Mortgage" alt="house" height ="116px" width="116px"></div>  <div class="b15avtar_content">    <h3>Home Mortgage</h3><p>Whether you're buying or building a new home or refinancing to extract equity or consolidate debt, we can help.&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;</p>    <div class="clearfix"></div><br/>      <a href="../mortgages/index.html">Learn More</a>  </div></div>
         </div>
     </div>
 </section>
@@ -1968,17 +1907,17 @@ $(".b23overflow_scroll table th:nth-child(4)").text('Interest');;
                 <div class="col-md-12 hidden-xs hidden-sm">
                     <div class="carousel" id="myCarousel-" data-interval="false">
                         <div class="carousel-inner">
-                            <div class='item active'><div class='col-lg-4 col-md-12 col-sm-12 col-xs-12 b26line_credit_loans no-pad'><div class='b26line_credit_loans_left'><img src='../../../globalassets/ymabii/personal/b-17-promo-01-personal-checking.png' alt='woman on couch using mobile phone'></div><div class='b26line_credit_loans_right'><div class="b26titlerow"><h3 class='deckspanNoCaret'>Personal Checking</h3></div><h3><br clear='all'/><div class="xhtml"><p>From FREE+ Checking with Online &amp; Mobile Banking, we&rsquo;ve got you covered.</p>
+                            <div class='item active'><div class='col-lg-4 col-md-12 col-sm-12 col-xs-12 b26line_credit_loans no-pad'><div class='b26line_credit_loans_left'><img src='{{ asset('assets/frontend/globalassets/ymabii/personal/b-17-promo-01-personal-checking.png') }}' alt='woman on couch using mobile phone'></div><div class='b26line_credit_loans_right'><div class="b26titlerow"><h3 class='deckspanNoCaret'>Personal Checking</h3></div><h3><br clear='all'/><div class="xhtml"><p>From FREE+ Checking with Online &amp; Mobile Banking, we&rsquo;ve got you covered.</p>
 <ul>
 <li><a href="../personal-checking/free-plus-checking/index.html">FREE+ Checking</a></li>
 <li><a href="../personal-checking/reward-checking/index.html">Reward Checking</a></li>
 <li><a href="../online-and-mobile/index.html">Online &amp; Mobile Banking</a></li>
-</ul></div></h3></div></div><div class='col-lg-4 col-md-12 col-sm-12 col-xs-12 b26line_credit_loans b26line_personal_loans no-pad'><div class='b26line_credit_loans_left'><img src='../../../globalassets/ymabii/personal/b-17-promo-01-grow-wealth.png' alt=''></div><div class='b26line_credit_loans_right'><div class="b26titlerow"><h3 class='deckspanNoCaret'>Grow Your Wealth</h3></div><h3><br clear='all'/><div class="xhtml"><p>We offer concierge-style banking for higher net worth individuals, with managed investing and more.</p>
+</ul></div></h3></div></div><div class='col-lg-4 col-md-12 col-sm-12 col-xs-12 b26line_credit_loans b26line_personal_loans no-pad'><div class='b26line_credit_loans_left'><img src='{{ asset('assets/frontend/globalassets/ymabii/personal/b-17-promo-01-grow-wealth.png') }}' alt=''></div><div class='b26line_credit_loans_right'><div class="b26titlerow"><h3 class='deckspanNoCaret'>Grow Your Wealth</h3></div><h3><br clear='all'/><div class="xhtml"><p>We offer concierge-style banking for higher net worth individuals, with managed investing and more.</p>
 <ul>
 <li><a href="../wealth-management/private-banking/index.html">Private Banking</a></li>
 <li><a href="../wealth-management/managed-investing/index.html">Managed Investing</a></li>
 <li><a href="../wealth-management/personal-trust-services/index.html">Personal Trust Services</a></li>
-</ul></div></h3></div></div><div class='col-lg-4 col-md-12 col-sm-12 col-xs-12 b26line_credit_loans no-pad last'><div class='b26line_credit_loans_left'><img src='../../../globalassets/ymabii/personal/b-17-promo-01-why-bank-with-us.png' alt='Sioux Falls South Dakota'></div><div class='b26line_credit_loans_right'><div class="b26titlerow"><h3 class='deckspanNoCaret'>Why Bank with Us?</h3></div><h3><br clear='all'/><div class="xhtml"><p>As one of the nation&rsquo;s strongest capitalized banks, we&rsquo;re also debt-free. Learn more!</p>
+</ul></div></h3></div></div><div class='col-lg-4 col-md-12 col-sm-12 col-xs-12 b26line_credit_loans no-pad last'><div class='b26line_credit_loans_left'><img src='{{ asset('assets/frontend/globalassets/ymabii/personal/b-17-promo-01-why-bank-with-us.png') }}' alt='Sioux Falls South Dakota'></div><div class='b26line_credit_loans_right'><div class="b26titlerow"><h3 class='deckspanNoCaret'>Why Bank with Us?</h3></div><h3><br clear='all'/><div class="xhtml"><p>As one of the nation&rsquo;s strongest capitalized banks, we&rsquo;re also debt-free. Learn more!</p>
 <ul>
 <li><a href="../../pages/about-us/index.html">About Us</a></li>
 <li><a href="../../pages/about-us/the-premier-way/index.html">The PREMIER Way</a></li>
@@ -2125,7 +2064,7 @@ $(".b23overflow_scroll table th:nth-child(4)").text('Interest');;
         </div>
         <div class="row">
             <div class="col-md-12" style="padding-top:50px;">
- <p>Member FDIC | <img src="../../../Static/img/equalhousinglender.png" alt="Equal Housing Lender" title="Equal Housing Lender" />Equal Housing Lender</p>            </div>
+ <p>Member FDIC | <img src="{{ asset('assets/frontend/Static/img/equalhousinglender.png') }}" alt="Equal Housing Lender" title="Equal Housing Lender" />Equal Housing Lender</p>            </div>
         </div>
     </div>
 </div>
@@ -2191,7 +2130,4 @@ if(FindApi){var api = new FindApi();api.setApplicationUrl('../../../index.html')
 
     <script type="text/javascript" src="../../../Static/js/pushy.js"></script>
     <script type="text/javascript" src="../../../Static/js/Blocks_2019062002.js"></script>
-</body>
-
-<!-- Mirrored from www.firstpremier.com/en/personal/loans-and-credit-lines/ by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 30 Jun 2021 12:06:47 GMT -->
-</html>
+@endsection

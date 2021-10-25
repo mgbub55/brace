@@ -709,7 +709,7 @@
                     });
 
                     $(".b1learn_more").html(
-                        "Learn more <img src='asset('frontend/Static/img/CustomBlocks/B1/arrow_line.png')' style='height:11px;'>");
+                        "Learn more <img src='asset('assets/frontend/Static/img/CustomBlocks/B1/arrow_line.png')' style='height:11px;'>");
                     $(".alert").removeClass('alert-danger');
                     $(".alertblock").addClass('row-full');;
                 </script>

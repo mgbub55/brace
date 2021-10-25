@@ -25,7 +25,7 @@
                                 </a>
                                 <div id="collapse11" class="panel-collapse collapse">
                                     <div class="panel-body">
-                                        <a href="en/personal/personal-checking/index.html">Personal Checking</a>
+                                        <a href="en/personal/personal-checking/index.htmlx">Personal Checking</a>
                                     </div>
                                     <div class="panel-body">
                                         <a href="en/personal/personal-checking/free-plus-checking/index.html">FREE+

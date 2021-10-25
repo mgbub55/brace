@@ -1,76 +1,18 @@
+@extends('frontend.layouts.app')
 
-
-<!DOCTYPE html>
-<html lang="en">
-
-<!-- Mirrored from www.firstpremier.com/en/personal/online-and-mobile/ by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 30 Jun 2021 12:03:35 GMT -->
-<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
-<head>
-
-    <!--shape-->
-    <script type="text/javascript" src="../../../../cds-sdkcfg.onlineaccess1.com/common0df9.js?async"
-            async></script>
-
-
-    <meta charset="utf-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=10; IE=11" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="msvalidate.01" content="B1160176C00496054ECCB3B27B970C87" />
-    
-    <title>First PREMIER Online &amp; Mobile Banking - Free Bill Pay, Mobile Deposit &amp; Mobile Wallet | Personal Banking</title>
-            <meta name="description" content="First PREMIER offers FREE, feature-rich Online &amp; Mobile Banking tools for personal banking customers. Learn more about Bill Pay, eStatements, Mobile Deposit, Mobile Wallets, Personal Financial Management Tools, Debit Card Lock/Unlock and much more. We also offer phone-based banking, for those times when a call is just easier. " />
-    <link rel="shortcut icon" href="../../../favicon.ico" type="image/x-icon" />
-
-    <link href="index.html" rel="canonical" />
-    
-    <link href="../../../Static/bootstrap/css/bootstrap.css" rel="stylesheet"/>
-<link href="../../../Static/bootstrap/css/bootstrap-responsive.css" rel="stylesheet"/>
-<link href="../../../Static/bootstrap/css/bootstrap.offcanvas.min.css" rel="stylesheet"/>
-<link href="../../../Static/css/pushy.css" rel="stylesheet"/>
-<link href="../../../Content/font-awesome.css" rel="stylesheet"/>
-<link href="../../../Static/css/Site_20201214_V1_35.css" rel="stylesheet"/>
-<link href="../../../Static/css/Blocks_20202302_v61.css" rel="stylesheet"/>
-<link href="../../../Static/css/Forms_20201214.css" rel="stylesheet"/>
-
-    <script src="../../../Static/js/jquery.min.js"></script>
-<script src="../../../Static/js/cookieconsent.js"></script>
-<script src="../../../Static/bootstrap/js/bootstrap3.min.js"></script>
-
-    
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-4688536-5"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'UA-4688536-5');
-</script>
+@section('content')
 
  
-
-    <style>
-        .b54main h2{color:#fff;}
-    </style>
-    <!-- Google Tag Manager (noscript) body tag -->
-    <noscript>
-        <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MWXZNLB" height="0" width="0" style="display:none;visibility:hidden"></iframe>
-    </noscript>
-    <!-- End Google Tag Manager (noscript) -->
-    <!--L&S Script-->
-    <script type="text/javascript" src="../../../../cdn.mantl.com/assets/first_premier_bank/production-scripts/first-premier-bank-analytics-pixel.html"></script>
-<script type="text/javascript">var appInsights=window.appInsights||function(config){function t(config){i[config]=function(){var t=arguments;i.queue.push(function(){i[config].apply(i,t)})}}var i={config:config},u=document,e=window,o="script",s="AuthenticatedUserContext",h="start",c="stop",l="Track",a=l+"Event",v=l+"Page",r,f;setTimeout(function(){var t=u.createElement(o);t.src=config.url||"https://az416426.vo.msecnd.net/scripts/a/ai.0.js";u.getElementsByTagName(o)[0].parentNode.appendChild(t)});try{i.cookie=u.cookie}catch(y){}for(i.queue=[],r=["Event","Exception","Metric","PageView","Trace","Dependency"];r.length;)t("track"+r.pop());return t("set"+s),t("clear"+s),t(h+a),t(c+a),t(h+v),t(c+v),t("flush"),config.disableExceptionTracking||(r="onerror",t("_"+r),f=e[r],e[r]=function(config,t,u,e,o){var s=f&&f(config,t,u,e,o);return s!==!0&&i["_"+r](config,t,u,e,o),s}),i}({instrumentationKey:"b7dfb9a2-b012-4c83-a87f-ac7e41ce3cac",sdkExtension:"a"});window.appInsights=appInsights;appInsights.queue&&appInsights.queue.length===0&&appInsights.trackPageView();</script></head>
-
-<body class="eupopup eupopup-bottom    page-online-and-mobile parent-14">
-
-
-
-    
-    
-    <div class="container">
+<div class="container">
+  <!--start responsive menu-->
+  @include('frontend.layouts.components.header')
+  <!-- Main Header -->
+  @include('frontend.layouts.components.navbar')
 
 
 
 <!--start responsive menu-->
+{{-- 
 <nav class="pushy pushy-right">
     <div class="pushy-content">
         <button class="pushy-link close-b">X</button>
@@ -119,22 +61,22 @@ Online &amp; Mobile                                            <i class="fa fa-c
                                         </a>
                                         <div id="collapse12" class="panel-collapse collapse">
                                             <div class="panel-body">
-                                                <a href="index.html">Online &amp; Mobile</a>
+                                                <a href="../online-and-mobile/index.html">Online &amp; Mobile</a>
                                             </div>
                                                 <div class="panel-body">
-<a href="online-banking/index.html">Online Banking</a>                                                </div>
+<a href="../online-and-mobile/online-banking/index.html">Online Banking</a>                                                </div>
                                                 <div class="panel-body">
-<a href="mobile-banking/index.html">Mobile Banking</a>                                                </div>
+<a href="../online-and-mobile/mobile-banking/index.html">Mobile Banking</a>                                                </div>
                                                 <div class="panel-body">
-<a href="bill-pay/index.html">Bill Pay</a>                                                </div>
+<a href="../online-and-mobile/bill-pay/index.html">Bill Pay</a>                                                </div>
                                                 <div class="panel-body">
-<a href="mobile-deposit/index.html">Mobile Deposit</a>                                                </div>
+<a href="../online-and-mobile/mobile-deposit/index.html">Mobile Deposit</a>                                                </div>
                                                 <div class="panel-body">
-<a href="estatements/index.html">eStatements</a>                                                </div>
+<a href="../online-and-mobile/estatements/index.html">eStatements</a>                                                </div>
                                                 <div class="panel-body">
-<a href="mobile-wallet/index.html">Mobile Wallet</a>                                                </div>
+<a href="../online-and-mobile/mobile-wallet/index.html">Mobile Wallet</a>                                                </div>
                                                 <div class="panel-body">
-<a href="personal-financial-management/index.html">Personal Financial Management</a>                                                </div>
+<a href="../online-and-mobile/personal-financial-management/index.html">Personal Financial Management</a>                                                </div>
                                         </div>
                                     </div>
                                     <div class="panel">
@@ -207,16 +149,16 @@ Investing                                            <i class="fa fa-chevron-dow
                                         </a>
                                         <div id="collapse16" class="panel-collapse collapse">
                                             <div class="panel-body">
-                                                <a href="../investing/index.html">Investing</a>
+                                                <a href="index.html">Investing</a>
                                             </div>
                                                 <div class="panel-body">
-<a href="../investing/brokerage-services/index.html">Brokerage Services</a>                                                </div>
+<a href="brokerage-services/index.html">Brokerage Services</a>                                                </div>
                                                 <div class="panel-body">
-<a href="../investing/retirement-planning/index.html">Retirement Planning</a>                                                </div>
+<a href="retirement-planning/index.html">Retirement Planning</a>                                                </div>
                                                 <div class="panel-body">
-<a href="../investing/insurance/index.html">Insurance</a>                                                </div>
+<a href="insurance/index.html">Insurance</a>                                                </div>
                                                 <div class="panel-body">
-<a href="../investing/financial-and-investing-resources/index.html">Financial &amp; Investing Resources</a>                                                </div>
+<a href="financial-and-investing-resources/index.html">Financial &amp; Investing Resources</a>                                                </div>
                                         </div>
                                     </div>
                                     <div class="panel">
@@ -551,8 +493,8 @@ Asset Management &amp; Trust                                            <i class
                                                 <div class="panel-body">
 <a href="{{route('frontend.en.commercial.asset.business.first')}}">First PREMIER at Work</a>                                                </div>
                                                 <div class="panel-body">
-<a href="{{route('frontend.en.commercial.asset.south')}}">Trusts in South Dakota</a>                                                </div>
-                                        </div>
+{{-- <a href="{{route('frontend.en.commercial.asset.south')}}">Trusts in South Dakota</a>                                                </div> --}}
+                                        {{-- </div>
                                     </div>
 
                             </div>
@@ -705,9 +647,9 @@ Asset Management &amp; Trust                                            <i class
                                             </div>
                                         </div>
                                     </li>
-                                    <li class="SubMenu active">
+                                    <li class="SubMenu">
 
-                                        <a href="index.html">Online &amp; Mobile</a>
+                                        <a href="../online-and-mobile/index.html">Online &amp; Mobile</a>
                                         <div id="subdiv_Online&amp;Mobile" style="display:none;width: 100vw;margin-left: -50vw;left: 50%;" class="menu_dropdown_main menu-left bg-dropdown-menu-details">
                                             <div class="row-full">
                                                 <div class="container">
@@ -715,7 +657,7 @@ Asset Management &amp; Trust                                            <i class
                                                                 <div class="menu-details-wrapper col-md-12 col-sm-12 col-xs-12">
                                                                     <h3>Online & Mobile</h3>
                                                                     <p>First PREMIER Online and Mobile Banking are FREE and feature-rich, giving you 24/7 access and control over your accounts.</p>
-                                                                    <a href="index.html" style="font-size:12px;padding-bottom:0px;">Learn More</a>
+                                                                    <a href="../online-and-mobile/index.html" style="font-size:12px;padding-bottom:0px;">Learn More</a>
                                                                 </div>
                                                             </div>
 
@@ -723,37 +665,37 @@ Asset Management &amp; Trust                                            <i class
                                                         <div class="">
                                                             <div class="menu_left_section_main bg-menu_left_section_main col-md-12 col-sm-12 col-xs-12">
                                                                     <div class="bg-menu_left_section col-md-6 col-xs-12 col-sm-6">
-                                                                        <div class="subsubitem"><a href="online-banking/index.html">Online Banking</a></div>
+                                                                        <div class="subsubitem"><a href="../online-and-mobile/online-banking/index.html">Online Banking</a></div>
                                                                         <p>Check balances, transfer funds, pay bills, view eStatements any time.</p>
                                                                         <hr>
                                                                     </div>
                                                                     <div class="bg-menu_left_section col-md-6 col-xs-12 col-sm-6">
-                                                                        <div class="subsubitem"><a href="mobile-banking/index.html">Mobile Banking</a></div>
+                                                                        <div class="subsubitem"><a href="../online-and-mobile/mobile-banking/index.html">Mobile Banking</a></div>
                                                                         <p>Our mobile app puts the features of Online Banking in the palm of your hand.</p>
                                                                         <hr>
                                                                     </div>
                                                                     <div class="bg-menu_left_section col-md-6 col-xs-12 col-sm-6">
-                                                                        <div class="subsubitem"><a href="bill-pay/index.html">Bill Pay</a></div>
+                                                                        <div class="subsubitem"><a href="../online-and-mobile/bill-pay/index.html">Bill Pay</a></div>
                                                                         <p>Schedule and make payments simply and securely Online or via Moble Banking.</p>
                                                                         <hr>
                                                                     </div>
                                                                     <div class="bg-menu_left_section col-md-6 col-xs-12 col-sm-6">
-                                                                        <div class="subsubitem"><a href="mobile-deposit/index.html">Mobile Deposit</a></div>
+                                                                        <div class="subsubitem"><a href="../online-and-mobile/mobile-deposit/index.html">Mobile Deposit</a></div>
                                                                         <p>Use our Mobile Banking app to make deposits using your mobile phone.</p>
                                                                         <hr>
                                                                     </div>
                                                                     <div class="bg-menu_left_section col-md-6 col-xs-12 col-sm-6">
-                                                                        <div class="subsubitem"><a href="estatements/index.html">eStatements</a></div>
+                                                                        <div class="subsubitem"><a href="../online-and-mobile/estatements/index.html">eStatements</a></div>
                                                                         <p>Secure electronic statements you can print, download and use for record keeping.</p>
                                                                         <hr>
                                                                     </div>
                                                                     <div class="bg-menu_left_section col-md-6 col-xs-12 col-sm-6">
-                                                                        <div class="subsubitem"><a href="mobile-wallet/index.html">Mobile Wallet</a></div>
+                                                                        <div class="subsubitem"><a href="../online-and-mobile/mobile-wallet/index.html">Mobile Wallet</a></div>
                                                                         <p>Link your debit card to a Mobile Wallet to speed your way through checkout.</p>
                                                                         <hr>
                                                                     </div>
                                                                     <div class="bg-menu_left_section col-md-6 col-xs-12 col-sm-6">
-                                                                        <div class="subsubitem"><a href="personal-financial-management/index.html">Personal Financial Management</a></div>
+                                                                        <div class="subsubitem"><a href="../online-and-mobile/personal-financial-management/index.html">Personal Financial Management</a></div>
                                                                         <p>Analyze spending patterns, plan a budget and more with these free tools.</p>
                                                                         <hr>
                                                                     </div>
@@ -907,9 +849,9 @@ Asset Management &amp; Trust                                            <i class
                                             </div>
                                         </div>
                                     </li>
-                                    <li class="SubMenu">
+                                    <li class="SubMenu active">
 
-                                        <a href="../investing/index.html">Investing</a>
+                                        <a href="index.html">Investing</a>
                                         <div id="subdiv_Investing" style="display:none;width: 100vw;margin-left: -50vw;left: 50%;" class="menu_dropdown_main menu-left bg-dropdown-menu-details">
                                             <div class="row-full">
                                                 <div class="container">
@@ -917,7 +859,7 @@ Asset Management &amp; Trust                                            <i class
                                                                 <div class="menu-details-wrapper col-md-12 col-sm-12 col-xs-12">
                                                                     <h3>Investing</h3>
                                                                     <p>Simple-to-complex investing, financial and retirement planning and investment management for investors at any life stage.</p>
-                                                                    <a href="../investing/index.html" style="font-size:12px;padding-bottom:0px;">Learn More</a>
+                                                                    <a href="index.html" style="font-size:12px;padding-bottom:0px;">Learn More</a>
                                                                 </div>
                                                             </div>
 
@@ -925,22 +867,22 @@ Asset Management &amp; Trust                                            <i class
                                                         <div class="">
                                                             <div class="menu_left_section_main bg-menu_left_section_main col-md-12 col-sm-12 col-xs-12">
                                                                     <div class="bg-menu_left_section col-md-6 col-xs-12 col-sm-6">
-                                                                        <div class="subsubitem"><a href="../investing/brokerage-services/index.html">Brokerage Services</a></div>
+                                                                        <div class="subsubitem"><a href="brokerage-services/index.html">Brokerage Services</a></div>
                                                                         <p>Investing made easy, with turnkey online access and personal advice and support.</p>
                                                                         <hr>
                                                                     </div>
                                                                     <div class="bg-menu_left_section col-md-6 col-xs-12 col-sm-6">
-                                                                        <div class="subsubitem"><a href="../investing/retirement-planning/index.html">Retirement Planning</a></div>
+                                                                        <div class="subsubitem"><a href="retirement-planning/index.html">Retirement Planning</a></div>
                                                                         <p>Retirement plans and plan rollover support for individual investors.</p>
                                                                         <hr>
                                                                     </div>
                                                                     <div class="bg-menu_left_section col-md-6 col-xs-12 col-sm-6">
-                                                                        <div class="subsubitem"><a href="../investing/insurance/index.html">Insurance</a></div>
+                                                                        <div class="subsubitem"><a href="insurance/index.html">Insurance</a></div>
                                                                         <p>Protect yourself and provide for loved ones with life and disability insurance.</p>
                                                                         <hr>
                                                                     </div>
                                                                     <div class="bg-menu_left_section col-md-6 col-xs-12 col-sm-6">
-                                                                        <div class="subsubitem"><a href="../investing/financial-and-investing-resources/index.html">Financial &amp; Investing Resources</a></div>
+                                                                        <div class="subsubitem"><a href="financial-and-investing-resources/index.html">Financial &amp; Investing Resources</a></div>
                                                                         <p>An array of helpful articles, videos, presentations and tools.</p>
                                                                         <hr>
                                                                     </div>
@@ -1043,9 +985,9 @@ Asset Management &amp; Trust                                            <i class
             </article>
         </div>
     </div>
-</section>
-
-<script>
+</section> --}}
+ 
+{{-- <script>
 
     $(document).ready(function () {
 
@@ -1141,9 +1083,6 @@ Asset Management &amp; Trust                                            <i class
         $('#txtheadsearch').val(searchText);
     }
 </script>        
-    <style>
-        .b54main h2{color:#fff;}
-    </style>
 <div class="row equal-height"><div class="block b19block  col-md-12">
 
 <style>
@@ -1176,34 +1115,34 @@ Asset Management &amp; Trust                                            <i class
         }
     });
 
-</script>
+</script> --}}
 
 
 <div class="b19landingpage row-full" style="padding-bottom:0px;">
     <div class="container">
-        <h1>FREE Online &amp; Mobile Banking</h1>
+        <h1 class="" style="color: #25455a;">Personal Investing</h1>
         <div class="xhtml"></div>
         <div class="b19landingpage_box_main">
 
         <div class="col-md-4 col-sm-6 b19landingpage_box">
-            <a href="online-banking/index.html"><img src="../../../globalassets/images/primary-icons/gold/hardware/gold-hardware-primary-icon-5.png" title="Online Banking" alt="computer mouse" border="0" /></a>
+            <a href="../savings-and-cds/index.html"><img src="{{ asset('assets/frontend/globalassets/images/primary-icons/green/business-finance/green-business-_-finance-primary-icon-31.png') }}" title="Savings &amp; CDs" alt="money" border="0" /></a>
             <div class="clearfix"></div>
-                <span><a href="online-banking/index.html">Online Banking</a></span>
-            <div class="xhtml"><p>Our state-of-the art Online Banking gives you 24/7 secure access to your accounts, Bill Pay, eStatements &amp; more.</p></div>
+                <span><a href="../savings-and-cds/index.html" style="color: #25455a;">Savings &amp; CDs</a></span>
+            <div class="xhtml"><p style="color: #25455a;">Put your money to work with FDIC Insured savings and certificates of deposit (CDs).</p></div>
         </div>
 
         <div class="col-md-4 col-sm-6 b19landingpage_box">
-            <a href="mobile-banking/index.html"><img src="../../../globalassets/images/primary-icons/bright/hardware/bright-hardware-primary-icon-12.png" title="Mobile Banking" alt="mobile phone" border="0"></a>
+            <a href="brokerage-services/index.html"><img src="{{ asset('assets/frontend/globalassets/images/primary-icons/blue/business-finance/blue-business-_-finance-primary-icon-11.png') }}" title="Brokerage Services" alt="growth chart" border="0"></a>
             <div class="clearfix"></div>
-                <span><a href="mobile-banking/index.html">Mobile Banking</a></span>
-            <div class="xhtml"><p>Download our App and enjoy banking flexibility on-the-go! Check balances, pay bills and deposit checks by snapping a photo.</p></div>
+                <span><a href="brokerage-services/index.html" style="color: #25455a;">Brokerage Services</a></span>
+            <div class="xhtml"><p style="color: #25455a;">Simple investing for life and retirement powered by solid advice and the latest in financial technology.</p></div>
         </div>
 
         <div class="col-md-4 col-sm-6 b19landingpage_box">
-            <a href="mobile-wallet/index.html"><img src="../../../globalassets/images/primary-icons/blue/business-finance/blue-business-_-finance-primary-icon-25.png" title="Mobile Wallet" alt="credit card" border="0"></a>
+            <a href="../wealth-management/index.html"><img src="{{ asset('assets/frontend/globalassets/images/primary-icons/gold/business-finance/gold-business-_-finance-primary-icon-22.png') }}" title="Wealth Management" alt="pie chart" border="0"></a>
             <div class="clearfix"></div>
-                <span><a href="mobile-wallet/index.html">Mobile Wallet</a></span>
-            <div class="xhtml"><p>Speed your way through checkout with your mobile device. Add your First PREMIER Bank debit card to a popular mobile wallet app.</p></div>
+                <span><a href="../wealth-management/index.html" style="color: #25455a;">Wealth Management</a></span>
+            <div class="xhtml"><p style="color: #25455a;">Tailored, comprehensive banking, credit, investment and trust solutions addressing all your financial needs.</p></div>
         </div>
 
         </div>
@@ -1269,142 +1208,127 @@ Asset Management &amp; Trust                                            <i class
     <div class="b20consumer-loans ">
         <div class="container">
 
-                <h2>FREE Online Banking</h2>
+                <h2>Saving For the Future</h2>
 
 
         <div class="b20consumer-loans-left b20showright"  style="float:right;">
             
-                            <div class="xhtml"><ul>
-<li>Enjoy secure, 24/7 access to your accounts</li>
-<li>Check balances and transfer funds with ease</li>
-<li>Schedule and make payments with <a title="Online Bill Pay" href="bill-pay/index.html">Online Bill Pay</a></li>
-<li>Receive paperless monthly <a title="Electronic Statements" href="estatements/index.html">eStatements&nbsp;</a></li>
-<li>Plan your budget with free <a href="personal-financial-management/index.html">spending analysis tools</a></li>
-<li>Lock and unlock lost or stolen <a title="Debit Card" href="../personal-checking/debit-card/index.html" target="_top">debit cards</a></li>
-<li>Monitor spending and balances&nbsp;<br /><br /></li>
+                            <div class="xhtml"><p>First PREMIER Bank Savings and CDs offer an FDIC insured environment to grow your nest egg.</p>
+<ul>
+<li>A simple, easy and convenient way to save</li>
+<li>Keep funds safe and within reach</li>
+<li>Savings options available for all life stages, from college to retirement</li>
+<li>Competitive interest rates and terms</li>
+<li>Personal bankers available to help find the best plan for you<br /><br /></li>
 </ul></div>
                 <br />
 
             <div class="b20consumer_btn_center">
                 <!-- b20mainanchorL -->
-                                <a href="online-banking/index.html" class="b20mainanchorL">Learn More</a>
-                            <span class="b20mainlinkspan">
-<a class="b20mainlink" href="https://online.firstpremier.com/FirstPremierBankOnline_AutoEnroll/enroll.html">Online Banking Enrollment</a>                            </span>
+                                <a href="../savings-and-cds/index.html" class="b20mainanchorL">Learn More</a>
             </div>
         </div>
-                    <div class="b20consumer-loans-right"><img id="imgMainRight" alt="woman looking at credit card" src="../../../contentassets/beadf40cc16f4f3b956dfb8a5820f672/1.2-b-20-content-01-product-benefits-1-womancard-min1.png" class="img-responsive"></div>
+                    <div class="b20consumer-loans-right"><img id="imgMainRight" alt="father filling out papers with daughter on his lap" src="{{ asset('assets/frontend/contentassets/4fd6263e21944171a7b69622b0a3adeb/1.6_b-20-1_dad-min.png') }}" class="img-responsive"></div>
         </div>
     </div>
 </section>
 
 <!-- View Rate [3] (within container)-->
-<!-- View Rate [3] (within container)--></div><div class="block b20block  col-md-12">
+<!-- View Rate [3] (within container)--></div><div class="block b56block  col-md-12">
 
-
-<!-- VIEW RATE / SPEED BUMP [2] -->
-<script>
-    $(document).ready(function () {
-        if ($('#imgMainRight').length <= 0) {
-            $('.b20consumer-loans-left').css('width', '100%');
-        }
-    });
-</script>
 <style>
     .pop_main_container_board .pop_main_container ol li ol li {  }
 </style>
 <style>
-    .b20consumer-loans-left {
-        padding-top: 0px !important;
-    }
-
-        .b20consumer-loans-left .xhtml p {
-            padding-top: 0px !important;
-        }
-
-    .b17basic_box_grey {
-        background-color: #f9f9f9 !important;
-        background-image: none;
-    }
-
-    .b17basic_box_white {
-        background-color: #fff !important;
-        background-image: none;
-    }
-
-    .b20consumer-loans p.sub-header {
-        padding: 0px 0px 26px 0px;
-        text-align: center;
-    }
-    @media only screen and (max-width: 767px)
-    {
-        .b20consumer_btn_center {
-            width: 100%;
-        }
-    }
-
-    @media only screen and (max-width: 470px) {
-        .b20consumer-loans .b20consumer-loans-left {
-            padding-left: 0px !important;
-        }
-    }
-    @media only screen and (max-width: 470px) {
-       .b20showright a.b20mainanchorL {
-           margin-left: 25%
-        }
-    }
+    .tab_h4 { display: inline !important;}
 </style>
-<!-- VIEW RATE / SPEED BUMP [2] -->
-<section class="row-full">
 
-    <div class="b20consumer-loans ">
+<section>
+    <div class="b56lines-credit-main">
         <div class="container">
+            <h2>Which IRA Is Best For You?</h2>
+            <div class="b56lines-credit-table-sectopn b56mobile_section">
+                <table class="b56lines-credit-table">
+                    <tr>
+                        <td style="vertical-align:bottom;"><h4 class="tab_h4" style="float:right;"><p></p></h4></td>
+                        <th>
+                                <h3>Traditional IRA</h3>
+                            <p>Make contributions with money that you may be able to deduct on your tax return. Earnings would grow tax-deferred until retirement withdrawal.</p>
+                        </th>
+                        <th>
+                                <h3>Roth IRA</h3>
+                            <p>Make contributions with money on which you've already paid taxes. Funds can potentially grow tax-free until retirement when certain conditions apply.</p>
+                        </th>
+                    </tr>
+                    <tr><td><h4><p style="text-align: right;">TAX BENEFITS</p></h4></td><td><p>Tax-deferred growth with tax-deductible contributions.</p></td><td><p>Tax-free growth with tax-free qualified withdrawals.</p></td></tr><tr><td><h4><p style="text-align: right;">CONTRIBUTION RESTRICTIONS</p></h4></td><td><p>Contribute until you're 70&frac12;.</p></td><td><p>Contribute at any age</p></td></tr><tr><td><h4><p style="text-align: right;">INCOME REQUIREMENTS</p></h4></td><td><p>Income does not determine how much you can contribute</p></td><td><p>Income impacts how much you may contribute</p></td></tr><tr><td><h4><p style="text-align: right;">WITHDRAWAL TAXES</p></h4></td><td><p>Pay taxes when you withdraw pre-tax contributions and/or when you withdraw any earnings.</p></td><td><p>No taxes when you withdraw your contributions or earnings, as long as the five-year aging requirement has been met.</p></td></tr><tr><td><h4><p style="text-align: right;">EARLY WITHDRAWAL PENALTIES</p></h4></td><td><p>Making withdrawals before age 59&frac12; may result in a 10% penalty.</p></td><td><p>Make withdrawals before you're 59&frac12; and you may pay taxes on your earnings plus a 10% additional tax.</p></td></tr>
+                </table>
 
-                <h2>FREE Mobile Banking</h2>
+                <!--Mobile table Starts-->
+                <table class="b56lines-credit-table b56mobile_lines-credit-table">
+                    <tr>
+                        <td>
+                                <h3>Traditional IRA</h3>
+                            <p>Make contributions with money that you may be able to deduct on your tax return. Earnings would grow tax-deferred until retirement withdrawal.</p>
+                        </td>
+                    </tr>
+                    <tr><td><hr /></td></tr>
+                    <tr>
+                        <td>
+                            <table>
+                                <tr><td class='odd'><p style="text-align: right;">TAX BENEFITS</p></td></tr><tr><td><p>Tax-deferred growth with tax-deductible contributions.</p></td></tr><tr><td class='odd'><p style="text-align: right;">CONTRIBUTION RESTRICTIONS</p></td></tr><tr><td><p>Contribute until you're 70&frac12;.</p></td></tr><tr><td class='odd'><p style="text-align: right;">INCOME REQUIREMENTS</p></td></tr><tr><td><p>Income does not determine how much you can contribute</p></td></tr><tr><td class='odd'><p style="text-align: right;">WITHDRAWAL TAXES</p></td></tr><tr><td><p>Pay taxes when you withdraw pre-tax contributions and/or when you withdraw any earnings.</p></td></tr><tr><td class='odd'><p style="text-align: right;">EARLY WITHDRAWAL PENALTIES</p></td></tr><tr><td><p>Making withdrawals before age 59&frac12; may result in a 10% penalty.</p></td></tr>
+                            </table>
+                        </td>
+                    </tr>
+                    <tr><td>&nbsp;</td></tr>
+                    <tr>
+                        <td>
+                                <h3>Roth IRA</h3>
+                            <p>Make contributions with money on which you've already paid taxes. Funds can potentially grow tax-free until retirement when certain conditions apply.</p>
+                        </td>
+                    </tr>
+                    <tr><td><hr /></td></tr>
+                    <tr>
+                        <td>
+                            <table>
+                                <tr><td class='odd'><p style="text-align: right;">TAX BENEFITS</p></td></tr><tr><td><p>Tax-free growth with tax-free qualified withdrawals.</p></td></tr><tr><td class='odd'><p style="text-align: right;">CONTRIBUTION RESTRICTIONS</p></td></tr><tr><td><p>Contribute at any age</p></td></tr><tr><td class='odd'><p style="text-align: right;">INCOME REQUIREMENTS</p></td></tr><tr><td><p>Income impacts how much you may contribute</p></td></tr><tr><td class='odd'><p style="text-align: right;">WITHDRAWAL TAXES</p></td></tr><tr><td><p>No taxes when you withdraw your contributions or earnings, as long as the five-year aging requirement has been met.</p></td></tr><tr><td class='odd'><p style="text-align: right;">EARLY WITHDRAWAL PENALTIES</p></td></tr><tr><td><p>Make withdrawals before you're 59&frac12; and you may pay taxes on your earnings plus a 10% additional tax.</p></td></tr>
+                            </table>
+                        </td>
+                    </tr>
+                    <tr><td>&nbsp;</td></tr>
+                </table>
+                <!--Mobile table Ends-->
+            </div>
 
-
-                    <div class="b20consumer-loans-right"><img id="imgMainRight" src="../../../contentassets/e988605e48b9488fbef9b3e35e1f63cb/1.2-b-20-content-01-product-benefits-2-womanphone-min.png" alt="woman looking at mobile phone" class="img-responsive"></div>
-        <div class="b20consumer-loans-left">
-                            <div class="xhtml"><ul>
-<li>User friendly mobile app available for iOS and Android</li>
-<li>Enjoy all the features of <a href="online-banking/index.html">Online Banking</a> outlined above</li>
-<li>Pay anyone with a mobile number or email address<sup>1</sup></li>
-<li>Deposit checks using free <a href="mobile-deposit/index.html">Mobile Deposit</a></li>
-<li>Configure multiple <a href="mobile-wallet/index.html">Mobile Wallet</a> apps to streamline checkout</li>
-</ul>
-<p>&nbsp;<br /><a title="Download on the App Store" href="https://itunes.apple.com/us/app/first-premier-bank-south-dakota/id727332747?mt=8" target="_blank" rel="noopener"><img src="../../../globalassets/images/store_apple-min.png" alt="" width="192" height="57" /></a><a title="Download on Google Play" href="https://play.google.com/store/apps/details?id=com.firstpremierbank3390.mobile" target="_blank" rel="noopener"><img src="../../../globalassets/images/store_google-min.png" alt="" width="194" height="58" /></a></p></div>
-                <br />
-                            <div class="b20consumer_btn_center">
-                                <a href="mobile-banking/index.html" class="b20mainanchor">LEARN MORE</a>
-                </div>
-        </div>
         </div>
     </div>
 </section>
 
 <!-- View Rate [3] (within container)-->
-<!-- View Rate [3] (within container)--></div><div class="block b54block  col-md-12"><section class="b54block row-full">
-        <div class="b54blue">Bank by Phone</div>
-                <div class="b54main"><h2 style="text-align: center;">Call us at <br />800-315-6350</h2>
-<p style="text-align: center;">Bank-by-Phone is another free, convenient and secure way to access your First PREMIER Bank accounts wherever and whenever you want. You can make transfers or loan payments, check balances and more.</p></div>
-</section></div><div class="block b12block  col-md-12">        <style>
-            .b12faq_main { float: left; width: 100%; padding:100px 0px 50px 0px !important; text-align: left; background: #fff; }
-        </style>
-        <div class="b12faq_main">
-            <div class="b12container">
-                <h2>Frequently Asked Questions</h2>
-                <!-- tabs left -->
-                <div class="tabbable">
-                    <div class="tab-content col-md-7">
-                        <div class="tab-pane active" id="A"><span>What is Online Banking?</span><p><p>Online Banking is a FREE service that allows you to access your First PREMIER Bank account information 24 hours a day, 7 days a week. With Online Banking, you can view transactions made on your accounts, transfer funds between accounts, make payments to certain types of loans, and even export account information to software like Microsoft Money&reg; or Quicken&reg;.</p></p></div><div class="tab-pane" id="B"><span>Do I need to enroll for Online Banking before enrolling in Mobile Banking?</span><p><p>No, you can download our Mobile Banking App from one of the App Stores and enroll directly by choosing the "For New Online Customer Enrollment Only" link.</p></p></div><div class="tab-pane" id="C"><span>How often is my account information updated within Online Banking?</span><p><p>Debit card transactions and ATM activity will reflect as a pending transaction&nbsp;near real-time&nbsp;within online banking. All other account activity will update nightly Monday through Friday, with the exception of Federal holidays.</p></p></div>
-                    </div>
-                    <ul class="nav nav-pills nav-stacked col-md-5">
-                        <li class="active"><a href="#A" data-toggle="tab">What is Online Banking?</a></li><li><a href="#B" data-toggle="tab">Do I need to enroll for Online Banking before enrolling in Mobile Banking?</a></li><li><a href="#C" data-toggle="tab">How often is my account information updated within Online Banking?</a></li>
-                    </ul>
+<!-- View Rate [3] (within container)-->
+</div><div class="block b11block  col-md-12"><script>
+    $('#b11Carousel').carousel({
+        interval: 80000,
+    })
+</script>
+
+
+
+<div class="b11section">
+    <section class="container">
+        <div class="b11first_premier_main">
+            <div class="container">
+                <h2>Investing Made Easy</h2>
+                <div class="row">
+                    <div class="col-lg-12 b11firstpremier_box_main">
+<div class='item active'><div class='col-md-4 col-sm-6 b11anytime_box'><a href='brokerage-services/index.html'>
+    <img src='{{asset('assets/frontend/globalassets/images/secondary-icons/bright/business-finance/bright-business-_-finance-secondary-icon-22.png')}}' alt='pie chart' border='0' /></a><span><a href='brokerage-services/index.html'>Brokerage Services</a></span><div class="xhtml"><p>Investing made easy, combining personal advice and turnkey online access.<sup>1</sup><br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;</p></div></div><div class='col-md-4 col-sm-6 b11anytime_box'><a href='insurance/index.html'><img src='{{asset('assets/frontend/globalassets/images/secondary-icons/gold/business-finance/gold-business-_-finance-secondary-icon-24.png')}}' alt='growth chart' border='0' /></a><span><a href='insurance/index.html'>Insurance</a></span><div class="xhtml"><p>Protect your investments and provide for the future with a disability and life insurance.<sup>1</sup><br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;</p></div></div><div class='col-md-4 col-sm-6 b11anytime_box'><a href='retirement-planning/index.html'><img src='{{ asset('assets/frontend/globalassets/images/secondary-icons/blue/places/blue-places-secondary-icon-5.png')}}' alt='beach umbrella' border='0' /></a><span><a href='retirement-planning/index.html'>Retirement Planning</a></span><div class="xhtml"><p>Build your retirement nest egg with a 401(k) plan, traditional and Roth IRAs, IRA Savings or CD.<br /><br /></p></div></div></div>                    </div>
                 </div>
             </div>
         </div>
 
-</div><div class="block b17block  col-md-12">﻿
+        
+    </section>
+</div></div><div class="block b17block  col-md-12">﻿
 <!-- VIEW RATE / SPEED BUMP [2] -->
 <style>
     .pop_main_container_board .pop_main_container ol li ol li {  }
@@ -1456,31 +1380,85 @@ Asset Management &amp; Trust                                            <i class
 
     <div class="b17free_mobile_banking ">
         <div class="container">
-            <h2>Mobile Wallet</h2> 
+            <h2>Managing Your Wealth</h2> 
 
             <div class="b17free_mobile_banking_right">
-                    <h3><p>Faster Checkout with Your Mobile Device</p></h3>
-                                <div class="xhtml"><p>Speed your way through checkout by linking your First PREMIER Bank Debit Mastercard&reg; to popular mobile wallet apps and streamline checkout with your phone or mobile device. We support:</p>
+                                <div class="xhtml"><p>Our Wealth Management team excels in financial planning, investment and portfolio management.</p>
 <ul>
-<li>&nbsp;<a title="Samsung Pay" href="../../small-business/online-and-mobile/mobile-wallet/samsung-pay/index.html">Samsung Pay</a></li>
-<li>&nbsp;<a title="Android Pay" href="../../small-business/online-and-mobile/mobile-wallet/google-pay/index.html">Google Pay</a></li>
-<li>&nbsp;<a title="Apple Pay" href="../../small-business/online-and-mobile/mobile-wallet/apple-pay/index.html">Apple Pay</a></li>
+<li>Customized, banking, credit and investing solutions</li>
+<li>Concierge banking for higher net worth individuals</li>
+<li>Comprehensive financial planning</li>
+<li>Managed investing with a dedicated wealth professional</li>
+<li>Preserve your legacy with estate and succession planning</li>
 </ul></div>
                 <div class="b17PayLinks payIcon-space">
-<a href="https://www.apple.com/apple-pay/"><img src="../../../Static/img/PayIcons/apple-pay-icon.png" border="0" /></a><a href="https://pay.google.com/about/"><img src="../../../Static/img/PayIcons/android-pay-icon.png" border="0" class="payIcon" /></a><a href="https://www.samsung.com/us/samsung-pay/"><img src="../../../Static/img/PayIcons/samsung-pay-icon.png" border="0" class="payIcon" /></a>                </div>
+                </div>
 
                 <!-- Button and Footer Links go here ... -->
-                                <a href="../../small-business/online-and-mobile/mobile-wallet/index.html" class="b17readmore">Learn More</a>
+                                <a href="../wealth-management/index.html" class="b17readmore">LEARN MORE</a>
             </div>
 
                 <div class="b17free_mobile_banking_left right">
-                    <img class="img-responsive" id="imgMainImage" style="border-radius:50%" src="../../../contentassets/b140f48dc3fa4b7491e42cd9f6169bfb/fpb_mobile_wallet.png" alt="First PREMIER Bank">
+                    <img class="img-responsive" id="imgMainImage" style="border-radius:50%" src="{{ asset('assets/frontend/contentassets/2c368a7dac70490bb0aabf6fac7893b3/1.6_b-17-promo_advisor-min.png') }}" alt="First PREMIER Bank">
                 </div>
         </div>
     </div>
 
+        <div class="b15benfits_main_box b17cards">
+            <div class="container">
+                            <div class="b15student_parent_main_content b15-bg-student_parent_main_content">
+                                <div class="b15avtar">
+                                <img src="{{asset('assets/frontend/globalassets/images/secondary-icons/blue/business-finance/blue-business-_-finance-secondary-icon-36.png')}}" title="Planning for Retirement" alt="banker talking to people" width="116px" height="116px"></div>
+                                <div class="b15avtar_content">
+                                    <h3>Planning for Retirement</h3>
+                                    <p>Are you planning for retirement? Our interactive module will help you plan today for the life you want in retirement.</p>
+                                    <div class="clearfix"></div><br />
+                                            <a href="#" data-toggle="modal" data-target="#a604506284T" data-backdrop="false" class="b15learnmore">Learn More</a>
+                                            <div id="a604506284T" class="modal fade" role="dialog">
+                                                <div class="modal-dialog pop_board">
+                                                    <div class="modal-content">
+                                                        <div class="modal-body">
+                                                            <div class="pop_main_container_board">
+                                                                <button type="button" class="close" data-dismiss="modal" area-label="Close">
+                                                                    <span aria-hidden="true">
+                                                                        <img class="close_icon" src="../../../Static/img/closebutton-2.png" alt="First PREMIER Bank" style="height:17px !important; width:17px !important;" />
+                                                                    </span>
+                                                                </button>
+                                                                <div class="pop_main_container">
+                                                                        <h2>Planning for Retirement</h2>
+                                                                    <div class="pop_board_white">
+                                                                        <div class="row">
+                                                                            <div class="col-md-12" style="padding-left:40px;">
+                                                                                <h4 class="Blue">You will be leaving firstpremier.com</h4>
+                                                                                <div class="b46Blue" style="text-align:left;">
+                                                                                    <p>Please note, by clicking &ldquo;continue&rdquo; you will be redirected to a website that is not operated or controlled by PREMIER. PREMIER is not responsible for the content, links, privacy policy or security of that website. Your use of that website is subject to its terms of use and privacy policy. Thank you for visiting firstpremier.com. If you continue, we hope you find the information presented educational and useful. </p>
+                                                                                    <p><br /><a href="https://firstpremier.everfi-next.net/student/dashboard/financialeducation-achieve/investing-in-your-future" target="_blank">Continue</a></p>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                </div>
+                            </div>
+                            <div class="b15student_parent_main_content b15-bg-student_parent_main_content">
+                                <div class="b15avtar">
+                                <img src="{{asset('assets/frontend/globalassets/images/secondary-icons/bright/business-finance/bright-business-_-finance-secondary-icon-11.png')}}" title="Managed Investing" alt="banker talking to people" width="116px" height="116px"></div>
+                                <div class="b15avtar_content">
+                                    <h3>Managed Investing</h3>
+                                    <p>Investment and portfolio management support for busy, hard-working individuals and families.</p>
+                                    <div class="clearfix"></div><br />
+                                            <a href="../wealth-management/managed-investing/index.html">Learn More</a>
+                                </div>
+                            </div>
+            </div>
+        </div>
 
-    <div id="a31917527" class="modal fade" role="dialog">
+    <div id="a60450628" class="modal fade" role="dialog">
         <div class="modal-dialog pop_board">
             <div class="modal-content">
                 <div class="modal-body">
@@ -1491,14 +1469,14 @@ Asset Management &amp; Trust                                            <i class
                             </span>
                         </button>
                         <div class="pop_main_container">
-                                <h2>Mobile Wallet</h2>
+                                <h2>Managing Your Wealth</h2>
                             <div class="pop_board_white">
                                 <div class="row">
                                     <div class="col-md-12" style="padding-left:40px;">
                                         <h4 class="Blue"></h4>
                                         <div class="b46Blue" style="text-align:left;">
                                             
-                                            <p><br /><a href="../../small-business/online-and-mobile/mobile-wallet/index.html" target="_blank"></a></p>
+                                            <p><br /><a href="../wealth-management/index.html" target="_blank"></a></p>
                                         </div>
                                     </div>
                                 </div>
@@ -1515,96 +1493,42 @@ Asset Management &amp; Trust                                            <i class
 <!-- View Rate [3] (within container)-->
 <script>
     $('.modal-backdrop').remove();
-</script></div><div class="block b26block  col-md-12">
-
-
+</script></div><div class="block b13block  col-md-12">
 
 <style>
-    .carousel-control:focus, .carousel-control:hover, .carousel-control.left, .carousel-control.right {
-        background: none !important;
-    }
-    .b26line_credit_main .carousel-inner { min-height:520px !important;; }
-    
-    .white-background h2, .white-background .xhtml, .white-background .xhtml p,
-    .grey-background h2, .grey-background .xhtml, .grey-background .xhtml p
-    {
-        color: #000;
-    }
+
+    .b13what_you_know_main ol li p { padding: 0 10px 0 34px; list-style: none;  margin: 0px 0px 0px 0px; font-size:14px; text-align:left;}
+    .b13what_you_know_main ol li { width:100% }
+    .b13what_you_know_main ol li ol li{ width:50%; }
+    .b13what_you_know_main_white ol li ol li { width:50%; }
 </style>
 <script>
-    var alternateBackground = "True";
     $(document).ready(function () {
-        $('#myCarousel-').carousel({
-            interval: 16000
-        })
-
-        if (alternateBackground.toLowerCase() == "true") {
-            $("#b26linecredit").addClass("alternate_background");
-        } else {
-            $("#b26linecredit").addClass("primary_background");
-        }
+        //GetDisclosurePoints();
+        GetDisclosurePointsBrackets();
     });
-
 </script>
-
 <section class="row-full">
-    <div class="b26line_credit_main" id="b26linecredit">
-        <div class="container">
-
-                <h2>You May Also Be Interested In</h2>
-
-
-            <div class="row">
-                <div class="col-md-12 hidden-xs hidden-sm">
-                    <div class="carousel" id="myCarousel-" data-interval="false">
-                        <div class="carousel-inner">
-                            <div class='item active'><div class='col-lg-4 col-md-12 col-sm-12 col-xs-12 b26line_credit_loans no-pad'><div class='b26line_credit_loans_left'><img src='../../../globalassets/ymabii/personal/b-17-promo-01-personal-checking.png' alt='woman on couch using mobile phone'></div><div class='b26line_credit_loans_right'><div class="b26titlerow"><h3 class='deckspanNoCaret'>Personal Checking</h3></div><h3><br clear='all'/><div class="xhtml"><p>From FREE+ Checking with Online &amp; Mobile Banking, we&rsquo;ve got you covered.</p>
+        <div class="b13what_you_know_main">
+            <div class="container" style="background-color:#182e39 !important;">
+                
+                <h4> Disclosure </h4>
+                <div class="b13points">
+                    <p>{1} Securities and insurance products are offered through Cetera Investment Services LLC (doing insurance business in CA as CFGIS Insurance Agency), member <a href="http://www.sipc.org/" target="_blank" rel="noopener">FINRA/SIPC</a>. Advisory services are offered through Cetera Investment Advisers LLC. Neither firm is affiliated with the financial institution where investment services are offered. Investments are:</p>
 <ul>
-<li><a href="../personal-checking/free-plus-checking/index.html">FREE+ Checking</a></li>
-<li><a href="../personal-checking/reward-checking/index.html">Reward Checking</a></li>
-<li><a href="index.html">Online &amp; Mobile Banking</a></li>
-</ul></div></h3></div></div><div class='col-lg-4 col-md-12 col-sm-12 col-xs-12 b26line_credit_loans b26line_personal_loans no-pad'><div class='b26line_credit_loans_left'><img src='../../../globalassets/ymabii/personal/b-17-promo-01-loans-credit.png' alt='couple shaking hands with banker'></div><div class='b26line_credit_loans_right'><div class="b26titlerow"><h3 class='deckspanNoCaret'>Loans & Credit Lines</h3></div><h3><br clear='all'/><div class="xhtml"><p>Competitive rates on loans of all sizes, lines of credit and more. We make our lending decisions locally.</p>
-<ul>
-<li><a href="../loans-and-credit-lines/personal-loans/index.html">Personal Loans</a></li>
-<li><a href="../loans-and-credit-lines/personal-lines-of-credit/index.html">Personal Lines of Credit</a></li>
-</ul></div></h3></div></div><div class='col-lg-4 col-md-12 col-sm-12 col-xs-12 b26line_credit_loans no-pad last'><div class='b26line_credit_loans_left'><img src='../../../globalassets/ymabii/personal/b-17-promo-01-save-future.png' alt='couple looking over document'></div><div class='b26line_credit_loans_right'><div class="b26titlerow"><h3 class='deckspanNoCaret'>Save for the Future</h3></div><h3><br clear='all'/><div class="xhtml"><p>We can help you invest wisely with solid investment advice and access to an array of funds.</p>
-<ul>
-<li><a href="../savings-and-cds/index.html">Savings &amp; CDs</a></li>
-<li><a href="../investing/index.html">Investing</a></li>
-<li><a href="../investing/retirement-planning/index.html">Retirement Planning</a></li>
-</ul></div></h3></div></div></div>
-                        </div>
-                    </div>
+<li>Not FDIC/NCUSIF insured</li>
+<li>May lose value</li>
+<li>Not financial institution guaranteed</li>
+<li>Not a deposit</li>
+<li>Not insured by any federal government agency.</li>
+</ul>
+<p><br />Check the background of our investment professionals on FINRA&rsquo;s <a href="http://brokercheck.finra.org/" target="_blank" rel="noopener">BrokerCheck</a></p>
+<p>Click here to view Cetera Investment Services <a href="https://myceterasmartworks.com/Public/Portal/Content.aspx?ContentId=29714177" target="_blank" rel="noopener">Privacy Policy</a>, other <a href="https://www.ceterafinancialinstitutions.com/clients/Non-Deposit-Disclosure" target="_blank" rel="noopener">Important Information</a> and <a href="https://myceterasmartworks.com/Public/Portal/Content.aspx?ContentId=30050055" target="_blank" rel="noopener">Business Continuity Plan</a>.</p>
+<p>This site is published for residents of the United States only. Registered Representatives of Cetera Investment Services LLC may only conduct business with residents of the states and/or jurisdictions in which they are properly registered. Not all of the products and services referenced on this site may be available in every state and through every advisor listed. For additional information please contact the advisor(s) listed on the site or visit the Cetera Investment Services LLC site at <a href="http://www.ceterainvestmentservices.com/" target="_blank" rel="noopener">www.ceterainvestmentservices.com</a>.</p>
                 </div>
-                <div class="b26Mobile col-sm-6 hidden-md hidden-lg" style="left:-8px;">
-                    <center>
-                    <div class="b26MobileCard" style="width:345px;min-height:700px;">
-                        <div class='item'><div class='col-xs-12 col-sm-12 b26AltClass b26line_credit_loans b26line_personal_loans no-pad '><div><img src='../../../globalassets/ymabii/personal/b-17-promo-01-personal-checking.png' alt='woman on couch using mobile phone'></div><div class='b26line_credit_loans_right'><div class="b26titlerow"><h3 class='deckspanNoCaret'>Personal Checking</h3></div><h3><br clear='all'/><div class="xhtml"><p>From FREE+ Checking with Online &amp; Mobile Banking, we&rsquo;ve got you covered.</p>
-<ul>
-<li><a href="../personal-checking/free-plus-checking/index.html">FREE+ Checking</a></li>
-<li><a href="../personal-checking/reward-checking/index.html">Reward Checking</a></li>
-<li><a href="index.html">Online &amp; Mobile Banking</a></li>
-</ul></div></h3></div></div></div><div class='item'><div class='col-xs-12 col-sm-12 b26AltClass b26line_credit_loans b26line_personal_loans no-pad '><div><img src='../../../globalassets/ymabii/personal/b-17-promo-01-loans-credit.png' alt='couple shaking hands with banker'></div><div class='b26line_credit_loans_right'><div class="b26titlerow"><h3 class='deckspanNoCaret'>Loans & Credit Lines</h3></div><h3><br clear='all'/><div class="xhtml"><p>Competitive rates on loans of all sizes, lines of credit and more. We make our lending decisions locally.</p>
-<ul>
-<li><a href="../loans-and-credit-lines/personal-loans/index.html">Personal Loans</a></li>
-<li><a href="../loans-and-credit-lines/personal-lines-of-credit/index.html">Personal Lines of Credit</a></li>
-</ul></div></h3></div></div></div><div class='item'><div class='col-xs-12 col-sm-12 b26AltClass b26line_credit_loans b26line_personal_loans no-pad '><div><img src='../../../globalassets/ymabii/personal/b-17-promo-01-save-future.png' alt='couple looking over document'></div><div class='b26line_credit_loans_right'><div class="b26titlerow"><h3 class='deckspanNoCaret'>Save for the Future</h3></div><h3><br clear='all'/><div class="xhtml"><p>We can help you invest wisely with solid investment advice and access to an array of funds.</p>
-<ul>
-<li><a href="../savings-and-cds/index.html">Savings &amp; CDs</a></li>
-<li><a href="../investing/index.html">Investing</a></li>
-<li><a href="../investing/retirement-planning/index.html">Retirement Planning</a></li>
-</ul></div></h3></div></div></div>
-                    </div>
-                    </center>
-                </div>
-
             </div>
         </div>
-    </div>
-</section>
-
-
-</div></div>
+</section></div></div>
 
  
 
@@ -1713,7 +1637,7 @@ Asset Management &amp; Trust                                            <i class
         </div>
         <div class="row">
             <div class="col-md-12" style="padding-top:50px;">
- <p>Member FDIC | <img src="../../../Static/img/equalhousinglender.png" alt="Equal Housing Lender" title="Equal Housing Lender" />Equal Housing Lender</p>            </div>
+ <p><img src="{{ asset('assets/frontend/Static/img/equalhousinglender.png')}}" alt="Equal Housing Lender" title="Equal Housing Lender" />Equal Housing Lender</p>             </div>
         </div>
     </div>
 </div>
@@ -1779,7 +1703,4 @@ if(FindApi){var api = new FindApi();api.setApplicationUrl('../../../index.html')
 
     <script type="text/javascript" src="../../../Static/js/pushy.js"></script>
     <script type="text/javascript" src="../../../Static/js/Blocks_2019062002.js"></script>
-</body>
-
-<!-- Mirrored from www.firstpremier.com/en/personal/online-and-mobile/ by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 30 Jun 2021 12:03:53 GMT -->
-</html>
+@endsection

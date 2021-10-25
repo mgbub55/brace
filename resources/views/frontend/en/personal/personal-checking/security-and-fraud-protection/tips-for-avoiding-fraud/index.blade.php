@@ -1,12 +1,7 @@
 
+@extends('frontend.layouts.app')
 
-<!DOCTYPE html>
-<html lang="en">
-
-<!-- Mirrored from www.firstpremier.com/en/personal/personal-checking/security-and-fraud-protection/responding-to-id-theft-and-fraud/ by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 30 Jun 2021 12:33:41 GMT -->
-<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
-<head>
-
+@section('content')
     <!--shape-->
     <script type="text/javascript" src="../../../../../../cds-sdkcfg.onlineaccess1.com/common0df9.js?async"
             async></script>
@@ -16,12 +11,12 @@
     <meta http-equiv="X-UA-Compatible" content="IE=10; IE=11" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="msvalidate.01" content="B1160176C00496054ECCB3B27B970C87" />
-    
-    <title>Responding to ID Theft &amp; Fraud - Personal Checking |First PREMIER Bank</title>
+
+    <title>Tips for Avoiding Fraud - Personal Checking |First PREMIER Bank</title>
         <link rel="shortcut icon" href="../../../../../favicon.ico" type="image/x-icon" />
 
     <link href="index.html" rel="canonical" />
-    
+
     <link href="../../../../../Static/bootstrap/css/bootstrap.css" rel="stylesheet"/>
 <link href="../../../../../Static/bootstrap/css/bootstrap-responsive.css" rel="stylesheet"/>
 <link href="../../../../../Static/bootstrap/css/bootstrap.offcanvas.min.css" rel="stylesheet"/>
@@ -35,7 +30,7 @@
 <script src="../../../../../Static/js/cookieconsent.js"></script>
 <script src="../../../../../Static/bootstrap/js/bootstrap3.min.js"></script>
 
-    
+
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-4688536-5"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
@@ -45,10 +40,10 @@
   gtag('config', 'UA-4688536-5');
 </script>
 
- 
+
 
     <style>
-        
+
     </style>
     <!-- Google Tag Manager (noscript) body tag -->
     <noscript>
@@ -59,12 +54,12 @@
     <script type="text/javascript" src="../../../../../../cdn.mantl.com/assets/first_premier_bank/production-scripts/first-premier-bank-analytics-pixel.html"></script>
 <script type="text/javascript">var appInsights=window.appInsights||function(config){function t(config){i[config]=function(){var t=arguments;i.queue.push(function(){i[config].apply(i,t)})}}var i={config:config},u=document,e=window,o="script",s="AuthenticatedUserContext",h="start",c="stop",l="Track",a=l+"Event",v=l+"Page",r,f;setTimeout(function(){var t=u.createElement(o);t.src=config.url||"https://az416426.vo.msecnd.net/scripts/a/ai.0.js";u.getElementsByTagName(o)[0].parentNode.appendChild(t)});try{i.cookie=u.cookie}catch(y){}for(i.queue=[],r=["Event","Exception","Metric","PageView","Trace","Dependency"];r.length;)t("track"+r.pop());return t("set"+s),t("clear"+s),t(h+a),t(c+a),t(h+v),t(c+v),t("flush"),config.disableExceptionTracking||(r="onerror",t("_"+r),f=e[r],e[r]=function(config,t,u,e,o){var s=f&&f(config,t,u,e,o);return s!==!0&&i["_"+r](config,t,u,e,o),s}),i}({instrumentationKey:"b7dfb9a2-b012-4c83-a87f-ac7e41ce3cac",sdkExtension:"a"});window.appInsights=appInsights;appInsights.queue&&appInsights.queue.length===0&&appInsights.trackPageView();</script></head>
 
-<body class="eupopup eupopup-bottom    page-responding-to-id-theft-and-fraud parent-6296">
+<body class="eupopup eupopup-bottom    page-tips-for-avoiding-fraud parent-6296">
 
 
 
-    
-    
+
+
     <div class="container">
 
 
@@ -92,7 +87,7 @@
                                 </div>
                                     <div class="panel">
                                         <a data-toggle="collapse" data-parent="#accordion21" href="#collapse11">
-                                            
+
 Checking                                            <i class="fa fa-chevron-down pull-right" aria-hidden="true"></i>
                                         </a>
                                         <div id="collapse11" class="panel-collapse collapse">
@@ -113,7 +108,7 @@ Checking                                            <i class="fa fa-chevron-down
                                     </div>
                                     <div class="panel">
                                         <a data-toggle="collapse" data-parent="#accordion21" href="#collapse12">
-                                            
+
 Online &amp; Mobile                                            <i class="fa fa-chevron-down pull-right" aria-hidden="true"></i>
                                         </a>
                                         <div id="collapse12" class="panel-collapse collapse">
@@ -138,7 +133,7 @@ Online &amp; Mobile                                            <i class="fa fa-c
                                     </div>
                                     <div class="panel">
                                         <a data-toggle="collapse" data-parent="#accordion21" href="#collapse13">
-                                            
+
 Savings &amp; CDs                                            <i class="fa fa-chevron-down pull-right" aria-hidden="true"></i>
                                         </a>
                                         <div id="collapse13" class="panel-collapse collapse">
@@ -159,7 +154,7 @@ Savings &amp; CDs                                            <i class="fa fa-che
                                     </div>
                                     <div class="panel">
                                         <a data-toggle="collapse" data-parent="#accordion21" href="#collapse14">
-                                            
+
 Loans &amp; Credit Lines                                            <i class="fa fa-chevron-down pull-right" aria-hidden="true"></i>
                                         </a>
                                         <div id="collapse14" class="panel-collapse collapse">
@@ -182,7 +177,7 @@ Loans &amp; Credit Lines                                            <i class="fa
                                     </div>
                                     <div class="panel">
                                         <a data-toggle="collapse" data-parent="#accordion21" href="#collapse15">
-                                            
+
 Mortgages                                            <i class="fa fa-chevron-down pull-right" aria-hidden="true"></i>
                                         </a>
                                         <div id="collapse15" class="panel-collapse collapse">
@@ -201,7 +196,7 @@ Mortgages                                            <i class="fa fa-chevron-dow
                                     </div>
                                     <div class="panel">
                                         <a data-toggle="collapse" data-parent="#accordion21" href="#collapse16">
-                                            
+
 Investing                                            <i class="fa fa-chevron-down pull-right" aria-hidden="true"></i>
                                         </a>
                                         <div id="collapse16" class="panel-collapse collapse">
@@ -220,7 +215,7 @@ Investing                                            <i class="fa fa-chevron-dow
                                     </div>
                                     <div class="panel">
                                         <a data-toggle="collapse" data-parent="#accordion21" href="#collapse17">
-                                            
+
 Wealth Management                                            <i class="fa fa-chevron-down pull-right" aria-hidden="true"></i>
                                         </a>
                                         <div id="collapse17" class="panel-collapse collapse">
@@ -241,7 +236,7 @@ Wealth Management                                            <i class="fa fa-che
                                     </div>
                                     <div class="panel">
                                         <a data-toggle="collapse" data-parent="#accordion21" href="#collapse18">
-                                            
+
 Students &amp; Parents                                            <i class="fa fa-chevron-down pull-right" aria-hidden="true"></i>
                                         </a>
                                         <div id="collapse18" class="panel-collapse collapse">
@@ -276,7 +271,7 @@ Students &amp; Parents                                            <i class="fa f
                                 </div>
                                     <div class="panel">
                                         <a data-toggle="collapse" data-parent="#accordion21" href="#collapse21">
-                                            
+
 Checking                                            <i class="fa fa-chevron-down pull-right" aria-hidden="true"></i>
                                         </a>
                                         <div id="collapse21" class="panel-collapse collapse">
@@ -303,7 +298,7 @@ Checking                                            <i class="fa fa-chevron-down
                                     </div>
                                     <div class="panel">
                                         <a data-toggle="collapse" data-parent="#accordion21" href="#collapse22">
-                                            
+
 Online &amp; Mobile                                            <i class="fa fa-chevron-down pull-right" aria-hidden="true"></i>
                                         </a>
                                         <div id="collapse22" class="panel-collapse collapse">
@@ -326,7 +321,7 @@ Online &amp; Mobile                                            <i class="fa fa-c
                                     </div>
                                     <div class="panel">
                                         <a data-toggle="collapse" data-parent="#accordion21" href="#collapse23">
-                                            
+
 Savings &amp; CDs                                            <i class="fa fa-chevron-down pull-right" aria-hidden="true"></i>
                                         </a>
                                         <div id="collapse23" class="panel-collapse collapse">
@@ -343,7 +338,7 @@ Savings &amp; CDs                                            <i class="fa fa-che
                                     </div>
                                     <div class="panel">
                                         <a data-toggle="collapse" data-parent="#accordion21" href="#collapse24">
-                                            
+
 Loans &amp; Credit Lines                                            <i class="fa fa-chevron-down pull-right" aria-hidden="true"></i>
                                         </a>
                                         <div id="collapse24" class="panel-collapse collapse">
@@ -362,7 +357,7 @@ Loans &amp; Credit Lines                                            <i class="fa
                                     </div>
                                     <div class="panel">
                                         <a data-toggle="collapse" data-parent="#accordion21" href="#collapse25">
-                                            
+
 Business Services                                            <i class="fa fa-chevron-down pull-right" aria-hidden="true"></i>
                                         </a>
                                         <div id="collapse25" class="panel-collapse collapse">
@@ -389,7 +384,7 @@ Business Services                                            <i class="fa fa-che
                                     </div>
                                     <div class="panel">
                                         <a data-toggle="collapse" data-parent="#accordion21" href="#collapse26">
-                                            
+
 Asset Management &amp; Trust                                            <i class="fa fa-chevron-down pull-right" aria-hidden="true"></i>
                                         </a>
                                         <div id="collapse26" class="panel-collapse collapse">
@@ -412,7 +407,7 @@ Asset Management &amp; Trust                                            <i class
                                     </div>
                                     <div class="panel">
                                         <a data-toggle="collapse" data-parent="#accordion21" href="#collapse27">
-                                            
+
 Ag Banking                                            <i class="fa fa-chevron-down pull-right" aria-hidden="true"></i>
                                         </a>
                                         <div id="collapse27" class="panel-collapse collapse">
@@ -441,7 +436,7 @@ Ag Banking                                            <i class="fa fa-chevron-do
                                 </div>
                                     <div class="panel">
                                         <a data-toggle="collapse" data-parent="#accordion21" href="#collapse31">
-                                            
+
 Checking                                            <i class="fa fa-chevron-down pull-right" aria-hidden="true"></i>
                                         </a>
                                         <div id="collapse31" class="panel-collapse collapse">
@@ -468,7 +463,7 @@ Checking                                            <i class="fa fa-chevron-down
                                     </div>
                                     <div class="panel">
                                         <a data-toggle="collapse" data-parent="#accordion21" href="#collapse32">
-                                            
+
 Savings &amp; CDs                                            <i class="fa fa-chevron-down pull-right" aria-hidden="true"></i>
                                         </a>
                                         <div id="collapse32" class="panel-collapse collapse">
@@ -485,7 +480,7 @@ Savings &amp; CDs                                            <i class="fa fa-che
                                     </div>
                                     <div class="panel">
                                         <a data-toggle="collapse" data-parent="#accordion21" href="#collapse33">
-                                            
+
 Financing                                            <i class="fa fa-chevron-down pull-right" aria-hidden="true"></i>
                                         </a>
                                         <div id="collapse33" class="panel-collapse collapse">
@@ -506,7 +501,7 @@ Financing                                            <i class="fa fa-chevron-dow
                                     </div>
                                     <div class="panel">
                                         <a data-toggle="collapse" data-parent="#accordion21" href="#collapse34">
-                                            
+
 Treasury Services                                            <i class="fa fa-chevron-down pull-right" aria-hidden="true"></i>
                                         </a>
                                         <div id="collapse34" class="panel-collapse collapse">
@@ -532,7 +527,7 @@ Treasury Services                                            <i class="fa fa-che
                                     </div>
                                     <div class="panel">
                                         <a data-toggle="collapse" data-parent="#accordion21" href="#collapse35">
-                                            
+
 Asset Management &amp; Trust                                            <i class="fa fa-chevron-down pull-right" aria-hidden="true"></i>
                                         </a>
                                         <div id="collapse35" class="panel-collapse collapse">
@@ -562,7 +557,7 @@ Asset Management &amp; Trust                                            <i class
 
 
 
-       
+
 
                 <div class="panel-heading">
                     <h4 class="panel-title">
@@ -585,7 +580,7 @@ Asset Management &amp; Trust                                            <i class
                 <ul class="footer-mobile-link">
                     <li class="number-bg">800-501-6535</li>
                     <li><a href="../../../../pages/quick-links/locations/index.html">Locations</a></li><li><a href="../../../../pages/about-us/index.html">About Us</a></li><li><a href="{{route('frontend.en.pages.about.careers')}}">Careers</a></li><li><a href="../../../../pages/quick-links/customer-care/index.html">Customer Care</a></li>
-                    
+
                 </ul>
             </div>
         </div>
@@ -608,7 +603,7 @@ Asset Management &amp; Trust                                            <i class
 
                                 <li id="signInSection" class="bg-dropdown" onmouseover="ShowSignInOption()" onmouseout="ShowSignInOption()">
                                     <a href="#" class="signin">Sign In </a>
-                                    
+
                                     <div id="signInHoverSection" class="b1sign-in-hover" data-present="present" style="display:none;">
                                         <p><a href="https://www.mypremiercreditcard.com/login.aspx" data-type="" id="SIcreditcardpayment">Credit Card</a><br /></p>
                                         <p><a href="https://online.firstpremier.com/FirstPremierBankOnline/uux.aspx" data-type="actionitem" id="SIpersonalbanking">Personal Banking</a><br /></p>
@@ -1139,7 +1134,7 @@ Asset Management &amp; Trust                                            <i class
         var searchText = $('#txtheadsearch').attr('data-val') || '';
         $('#txtheadsearch').val(searchText);
     }
-</script>        
+</script>
 <div class="row equal-height"><div class="block b44block  col-md-12">
 <style>
     .b44header  { min-height:245px;width:100%; background:#fff url(../../../../../Static/img/CustomBlocks/B44/leader_bg.jpg) no-repeat; float:left; padding-top:60px;}
@@ -1147,22 +1142,22 @@ Asset Management &amp; Trust                                            <i class
 <section class="row-full">
     <div class="b44header">
         <div class="container">
-            <h1>Responding to Fraud &amp; Identity Theft</h1>
-            
+            <h1>Tips for Avoiding Fraud</h1>
+
 <ul>
-    
+
         <li>
-            <a href="../../index.html">Personal Checking</a> 
+            <a href="../../index.html" title="Personal Checking">Personal Checking</a>
         </li>
-    
+
         <li>
-            <a href="../index.html">Security &amp; Fraud Protection</a> 
+            <a href="../index.html" title="Security &amp; Fraud Protection">Security &amp; Fraud Protection</a>
         </li>
-    
+
         <li>
-            <a href="index.html">Responding</a> 
+            <a href="index.html" title="Tips for Avoiding Fraud">Tips for Avoiding Fraud</a>
         </li>
-    
+
 </ul>
                                                     <p>&nbsp;</p>
                 <p>&nbsp;</p>
@@ -1175,40 +1170,65 @@ float:left !important;</style>
     <div class="container">
         <div class="b4anywhere_banking" style="width:100%; ">
                                         <div class="xhtml"><p>&nbsp;</p>
-<p>If your personal information has been lost, stolen or compromised, First PREMIER Bank can help minimize loss by closing your accounts, changing account information or taking other appropriate measures.&nbsp;If you suspect fraud, please contact our Customer Care Team at (800) 501-6535 immediately. The sooner we know what happened, the sooner we can assist you.&nbsp;We recommend following these additional steps when responding to fraud or identity theft:</p>
-<p><strong><br /><br />1. IMMEDIATELY CHANGE YOUR PASSWORDS</strong><br />Change passwords for the accounts you feel have been compromised. Here are some best practices for password management:<br /><br />Always:</p>
+<p><strong>Be proactive. Protect your personal identify and financial data by taking these precautions:&nbsp;</strong></p>
+<p>&nbsp;</p>
 <ul>
-<li>Create passwords with more than eight alphanumeric characters</li>
-<li>Mix capital, lowercase and symbols</li>
-<li>Sign out when finished with online banking</li>
-<li>Password-protect your computer and mobile devices</li>
-<li>Use different passwords across devices and services</li>
-<li>Verify that you are on a trusted site before providing your information</li>
+<li>Keep personal documents, bank and card statements and credit cards in a secure location.</li>
+<li>Shred financial documents and papers that contain sensitive information before discarding.</li>
+<li>If you receive an email or text message requesting sensitive information, do not click any links or respond:&nbsp; Report it to your bank and forward a copy if requested &ndash; then delete it.</li>
+<li>Be attentive to bank scams and phishing, where criminals attempt to trick you into revealing your personal or account information by phone, unencrypted email, text, chat or social media.&nbsp;&nbsp;
+<ul>
+<li>First PREMIER Bank will never request your card, password, pin or secure information in an unsolicited manner.</li>
+<li>Never provide sensitive information in response to an unsolicited call, email, text or message.</li>
+</ul>
+</li>
+<li>Check your credit report frequently, using a credit report service such as <a href="http://www.annualcreditreport.com/" target="_blank" rel="noopener">annualcreditreport.com</a> or <a title="freecreditreport.com" href="http://www.freecreditreport.com/" target="_blank" rel="noopener">freecreditreport.com</a> or creditkarma.com.</li>
+<li>Review your account and identify odd charges - even a small fraudulent charge is significant.
+<ul>
+<li>Memorize your Debit PIN number and/or store it securely and separately from your card.</li>
+<li>Actively lock and unlock lost or stolen debit cards via online or mobile banking.</li>
+</ul>
+</li>
+<li>Use account spending and balance alerts/notifications to monitor your account for suspicious activity.</li>
+<li>Place outgoing U.S. mail in a secure collection box or U.S. post office mail slot.</li>
+<li>Use firewalls and anti-virus software to protect your computer from hacking and malware.</li>
+<li>Immediately download and install operating system and security updates as they become available.</li>
+<li>Utilize fingerprint and/or facial recognition protection on your devices if available.</li>
+<li>Never carry your social security card, and provide the number only when justifiably necessary.<br /><br /><br /></li>
+</ul>
+<p><br /><br /><br /><br /><br /><br /><strong>Leverage best practices for maintaining the security of your online IDs and passwords:</strong><br /><br /></p>
+<ul>
+<li>Never share your User ID, Account Information, Password, or SSN with others.</li>
+<li>Ensure each assigned administrator has a unique access account (ID and password).</li>
+<li>Password-protect computers and mobile devices.</li>
+<li>Sign out of online banking when your session is complete.</li>
+<li>Verify that you are on a trusted site before providing your information.</li>
+<li>Never include your password, account or sensitive info over non-secure email.</li>
+<li>Change passwords frequently. Here are some best practices:&nbsp; &nbsp;
+<ul>
+<li>Create passwords with more than eight alphanumeric characters.</li>
+<li>Mix capital, lowercase and symbols.&nbsp;</li>
+<li>Use different passwords across devices and services.</li>
+<li>Do not include guessable words, like "password&rdquo;, family or pet names.</li>
+<li>Never use your birthdate or phone number as your password.<br /><br /></li>
+</ul>
+</li>
 </ul>
 <p>&nbsp;</p>
-<p>Never:</p>
+<p><strong>Proactively utilize First PREMIER Bank's</strong><strong>&nbsp;tools &amp; resources:</strong><br /><br /></p>
 <ul>
-<li>Share your User ID, Account Information, Password, or SSN with others</li>
-<li>Include your password, account or sensitive information over non-secure email</li>
-<li>Share sensitive information in response to an inquiry you did not initiate</li>
-<li>Include guessable words, like "password&rdquo;, family or pet names</li>
-<li>Use your birthdate or phone number as your password</li>
-<li>Keep pins and passwords in the open<br /><br /><br /><br /></li>
+<li><a title="Online &amp; Mobile Banking" href="../../../online-and-mobile/index.html" target="_top">FREE Online and Mobile Banking</a> helps you actively access and monitor accounts.</li>
+<li><a title="eStatement" href="../../../online-and-mobile/estatements/index.html" target="_top">FREE eStatements</a> help reduce mail fraud while giving a robust online archive and PDF Downloads.</li>
+<li><a title="Bill Pay" href="../../../online-and-mobile/bill-pay/index.html" target="_top">FREE Bill Pay</a> helps reduce mail fraud, allowing you to send payments more securely and expediently.</li>
+<li>Businesses should consider these additional products:&nbsp;
+<ul>
+<li>Use <a title="Positive Pay" href="../../../../small-business/business-services/positive-pay/index.html" target="_top">Positive Pay</a>, a powerful, affordable fraud monitoring solution for small and large businesses.</li>
+<li>Leverage <a title="ACH Online" href="../../../../small-business/business-services/make-payments/index.html" target="_top">ACH Online</a> to streamline, automate and secure employee payroll and vendor payments.</li>
+<li>Consider <a title="Remote Deposit" href="../../../../small-business/business-services/remote-deposit/index.html" target="_top">Remote Deposit</a> for depositing large numbers of checks securely, accurately and efficiently.</li>
 </ul>
-<p><strong>2. CONTACT THE AUTHORITIES</strong><br />If you have been a victim of identity theft or fraud online, by phone or through the mail, contact your local police and file a police report. Filing this report will help you with creditors and agencies who may want proof that a crime occurred.</p>
-<p><br /><br /></p>
-<p><strong>3. CONTACT CREDIT REPORTING AGENCIES</strong>&nbsp;<br />Credit reporting agencies can assist you in filing the appropriate fraud alert depending on the type of fraud or identity theft that occurs. Call one of the three following agencies if you&rsquo;re a victim of fraud, ID theft or don&rsquo;t recognize a creditor on your credit report:</p>
-<p style="padding-left: 30px;"><br />Experian:&nbsp; &nbsp; &nbsp; &nbsp; 1-888-397-3742 or <a href="http://www.experian.com/" target="_blank" rel="noopener">www.experian.com</a><br />Equifax:&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 1-800-525-6285 or <a href="http://www.equifax.com/" target="_blank" rel="noopener">www.equifax.com</a><br />TransUnion:&nbsp; &nbsp; 1-800-916-8800 or <a href="http://www.transunion.com/" target="_blank" rel="noopener">www.transunion.com</a></p>
-<p><br /><br /></p>
-<p><strong>4. CONTACT OTHER FRAUD PROTECTION AGENCIES</strong><br />You can also report fraud or identity theft crimes to the following agencies and local prevention organizations:</p>
-<p style="padding-left: 30px;"><br />National Fraud Information Center: <a href="http://www.fraud.org/" target="_blank" rel="noopener">www.fraud.org </a></p>
-<p style="padding-left: 30px;"><br />Better Business Bureau (serving South Dakota, Nebraska and southwest Iowa): <br />(605) 271-2066 or <a href="http://www.bbbsouthdakota.org/" target="_blank" rel="noopener">www.bbbsouthdakota.org</a></p>
-<p><strong><br /><br />5. OTHER ACTIONS YOU CAN TAKE</strong></p>
-<p>To minimize the risk of future fraud or identity theft, here are some additional actions you can take:</p>
-<p style="padding-left: 30px;"><strong><br />Add Your Number to the National Do Not Call Registry</strong> <br />Call 1-888-382-1222 or visit <a href="http://www.donotcall.gov/" target="_blank" rel="noopener">www.donotcall.gov</a> to register your phone number and eliminate telemarketing calls. Companies are prohibited from making unsolicited calls to these numbers. However, political and charitable calls may continue.</p>
-<p style="padding-left: 30px;"><strong><br />Opt Out of Credit Card Offers</strong> <br />Call 1-888-5-OPTOUT (1-888-567-8688) to remove your name from a list of pre-approved credit and insurance offers. Credit bureaus will be prohibited from sharing your name and credit information for these offers.</p>
-<p style="padding-left: 30px;"><strong><br />Get a Free Credit Report</strong> <br />Look for any indication of ID theft or fraud and make sure your credit is being accurately reported by calling 1-877-322-8228 or visiting <a href="http://www.annualcreditreport.com/" target="_blank" rel="noopener">www.annualcreditreport.com</a> or <a href="http://www.creditkarma.com/" target="_blank" rel="noopener">www.creditkarma.com</a> for a free credit report. You can request a free report from each of the three reporting agencies annual and stagger throughout the year.</p>
-<p style="padding-left: 30px;"><strong><br />Consider Credit Monitoring</strong> <br />If you discover your account has been compromised, or if you have been notified of a data breach, credit monitoring is advisable. In the cases where there was a corporate or government breach (e.g. Anthem, Experian or the U.S. Office of Personnel Management), some credit monitoring may be provided to you at no charge. While no solution is 100% bullet proof, a credit and/or identity monitoring service can provide an extra layer of security by monitoring your social security number and accounts for activity, actions, new account openings, police records and more. Many also offer issue resolution support.</p>
+</li>
+</ul>
+<p>&nbsp;</p>
 <p>&nbsp;</p>
 <p>&nbsp;</p>
 <p>&nbsp;</p>
@@ -1240,108 +1260,108 @@ float:left !important;</style>
     }
 </style></div></div>
 
- 
+
 
 <div class="row-full footer">
     <div class="container">
         <div class="row">
             <div class="col-md-3 col-sm-3 col-xs-12 footerCol1">
                 <div class="footerHeader">Company</div>
-                
+
 <ul>
-    
+
         <li>
-            <a href="../../../../pages/about-us/index.html">About Us</a> 
+            <a href="../../../../pages/about-us/index.html">About Us</a>
         </li>
-    
+
         <li>
-            <a href="../../../../index.html">First PREMIER Bank</a> 
+            <a href="../../../../index.html">First PREMIER Bank</a>
         </li>
-    
+
         <li>
-            <a href="https://www.mypremiercreditcard.com/">PREMIER Bankcard</a> 
+            <a href="https://www.mypremiercreditcard.com/">PREMIER Bankcard</a>
         </li>
-    
+
         <li>
-            <a href="../../../../pages/about-us/leadership-team/index.html">Leadership</a> 
+            <a href="../../../../pages/about-us/leadership-team/index.html">Leadership</a>
         </li>
-    
+
         <li>
-            <a href="../../../../pages/about-us/community/index.html">Community</a> 
+            <a href="../../../../pages/about-us/community/index.html">Community</a>
         </li>
-    
+
         <li>
-            <a href="{{route('frontend.en.pages.about.careers')}}">Careers</a> 
+            <a href="{{route('frontend.en.pages.about.careers')}}">Careers</a>
         </li>
-    
+
 </ul>
                 <br />
             </div>
             <div class="col-md-3 col-sm-3 col-xs-12 footerCol2">
                 <div class="footerHeader">Customers</div>
-                
+
 <ul>
-    
+
         <li>
-            <a href="../../../../index.html">Personal Banking</a> 
+            <a href="../../../../index.html">Personal Banking</a>
         </li>
-    
+
         <li>
-            <a href="../../../../small-business/index.html">Small Business</a> 
+            <a href="../../../../small-business/index.html">Small Business</a>
         </li>
-    
+
         <li>
-            <a href="../../../../commercial/index.html">Commercial</a> 
+            <a href="../../../../commercial/index.html">Commercial</a>
         </li>
-    
+
 </ul>
                 <br />
             </div>
             <div class="col-md-3 col-sm-3 col-xs-12 footerCol3">
                 <div class="footerHeader">Help &amp; Contact</div>
-                
+
 <ul>
-    
+
         <li>
-            <a href="../../../../pages/quick-links/customer-care/index.html">Customer Care</a> 
+            <a href="../../../../pages/quick-links/customer-care/index.html">Customer Care</a>
         </li>
-    
+
         <li>
-            <a href="../../../../pages/quick-links/locations/index.html">Locations</a> 
+            <a href="../../../../pages/quick-links/locations/index.html">Locations</a>
         </li>
-    
+
         <li>
-            <a href="../../../../pages/quick-links/customer-care/index.html">BANK: 800-501-6535</a> 
+            <a href="../../../../pages/quick-links/customer-care/index.html">BANK: 800-501-6535</a>
         </li>
-    
+
         <li>
-            <a href="https://www.mypremiercreditcard.com/">CREDIT CARD: 800-987-5521</a> 
+            <a href="https://www.mypremiercreditcard.com/">CREDIT CARD: 800-987-5521</a>
         </li>
-    
+
         <li>
-            <a href="../../../../index.html">Routing Number: 091408598</a> 
+            <a href="../../../../index.html">Routing Number: 091408598</a>
         </li>
-    
+
 </ul>
                 <br />
             </div>
             <div class="col-md-3 col-sm-3 col-xs-12 footerCol4">
                 <div class="footerHeader">Legal Notices</div>
-                
+
 <ul>
-    
+
         <li>
-            <a href="../../../../pages/resources/first-premier-privacy-statement-2020/index.html">Privacy Notice &amp; Statement</a> 
+            <a href="../../../../pages/resources/first-premier-privacy-statement-2020/index.html">Privacy Notice &amp; Statement</a>
         </li>
-    
+
         <li>
-            <a href="../../../../pages/resources/legal-disclosures/index.html">Legal Disclosures</a> 
+            <a href="../../../../pages/resources/legal-disclosures/index.html">Legal Disclosures</a>
         </li>
-    
+
         <li>
-            <a href="../../../../pages/resources/cookie-policy/index.html">Cookie Policy</a> 
+            <a href="../../../../pages/resources/cookie-policy/index.html">Cookie Policy</a>
         </li>
-    
+
 </ul>
             </div>
         </div>
@@ -1351,9 +1371,9 @@ float:left !important;</style>
         </div>
     </div>
 </div>
-<style>   
+<style>
     /* CHROME SAFARI FIX */
-    .form-control:hover, .form-control:active, .form-control:focus { box-shadow: none !important; -moz-box-shadow: none !important; -webkit-box-shadow: none !important; } 
+    .form-control:hover, .form-control:active, .form-control:focus { box-shadow: none !important; -moz-box-shadow: none !important; -webkit-box-shadow: none !important; }
     .form-control:hover, .form-control:active, .form-control:focus { box-shadow: none !important; -moz-box-shadow: none !important; -webkit-box-shadow: none !important; }
     a:focus, a:active {outline:none!important; border: none!important; }
     input:focus, input:active { outline: none !important; }
@@ -1413,7 +1433,4 @@ if(FindApi){var api = new FindApi();api.setApplicationUrl('../../../../../index.
 
     <script type="text/javascript" src="../../../../../Static/js/pushy.js"></script>
     <script type="text/javascript" src="../../../../../Static/js/Blocks_2019062002.js"></script>
-</body>
-
-<!-- Mirrored from www.firstpremier.com/en/personal/personal-checking/security-and-fraud-protection/responding-to-id-theft-and-fraud/ by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 30 Jun 2021 12:33:44 GMT -->
-</html>
+@endsection

@@ -1,92 +1,16 @@
 
+@extends('frontend.layouts.app')
 
-<!DOCTYPE html>
-<html lang="en">
-
-<!-- Mirrored from www.firstpremier.com/en/small-business/ by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 30 Jun 2021 12:11:47 GMT -->
-<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
-<head>
-
-    <!--shape-->
-    <script type="text/javascript" src="../../../cds-sdkcfg.onlineaccess1.com/common0df9.js?async"
-            async></script>
-
-
-    <meta charset="utf-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=10; IE=11" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="msvalidate.01" content="B1160176C00496054ECCB3B27B970C87" />
-    
-    <title>First PREMIER Small Business Banking - Account Management, Payment Collection, Loans, Ag Banking &amp; More </title>
-            <meta name="description" content="First PREMIER Bank offers a rich array of small business banking, lending, investment, wealth and trust services. We partner with your business to provide competitive, tech-enabled banking services and accessible, personal support you can trust. " />
-    <link rel="shortcut icon" href="../../favicon.ico" type="image/x-icon" />
-
-    <link href="index.html" rel="canonical" />
-    
-    <link href="../../Static/bootstrap/css/bootstrap.css" rel="stylesheet"/>
-<link href="../../Static/bootstrap/css/bootstrap-responsive.css" rel="stylesheet"/>
-<link href="../../Static/bootstrap/css/bootstrap.offcanvas.min.css" rel="stylesheet"/>
-<link href="../../Static/css/pushy.css" rel="stylesheet"/>
-<link href="../../Content/font-awesome.css" rel="stylesheet"/>
-<link href="../../Static/css/Site_20201214_V1_35.css" rel="stylesheet"/>
-<link href="../../Static/css/Blocks_20202302_v61.css" rel="stylesheet"/>
-<link href="../../Static/css/Forms_20201214.css" rel="stylesheet"/>
-
-    <script src="../../Static/js/jquery.min.js"></script>
-<script src="../../Static/js/cookieconsent.js"></script>
-<script src="../../Static/bootstrap/js/bootstrap3.min.js"></script>
-
-    
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-4688536-5"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'UA-4688536-5');
-</script>
-
- 
-
-    <style>
-                @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
-            /* IE 10 &amp; 11 CSS styles go here */
-            #signInHoverSection {
-                position:fixed;
-                z-index:9999;
-                right:auto;
-                top:48px;
-            }
-        }
-        @supports (-ms-accelerator:true) {
-          /* IE Edge 12+ CSS styles go here */ 
-            #signInHoverSection {
-                position:absolute;
-                z-index:9999;
-            }
-        }
-    </style>
-    <!-- Google Tag Manager (noscript) body tag -->
-    <noscript>
-        <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MWXZNLB" height="0" width="0" style="display:none;visibility:hidden"></iframe>
-    </noscript>
-    <!-- End Google Tag Manager (noscript) -->
-    <!--L&S Script-->
-    <script type="text/javascript" src="../../../cdn.mantl.com/assets/first_premier_bank/production-scripts/first-premier-bank-analytics-pixel.html"></script>
-<script type="text/javascript">var appInsights=window.appInsights||function(config){function t(config){i[config]=function(){var t=arguments;i.queue.push(function(){i[config].apply(i,t)})}}var i={config:config},u=document,e=window,o="script",s="AuthenticatedUserContext",h="start",c="stop",l="Track",a=l+"Event",v=l+"Page",r,f;setTimeout(function(){var t=u.createElement(o);t.src=config.url||"https://az416426.vo.msecnd.net/scripts/a/ai.0.js";u.getElementsByTagName(o)[0].parentNode.appendChild(t)});try{i.cookie=u.cookie}catch(y){}for(i.queue=[],r=["Event","Exception","Metric","PageView","Trace","Dependency"];r.length;)t("track"+r.pop());return t("set"+s),t("clear"+s),t(h+a),t(c+a),t(h+v),t(c+v),t("flush"),config.disableExceptionTracking||(r="onerror",t("_"+r),f=e[r],e[r]=function(config,t,u,e,o){var s=f&&f(config,t,u,e,o);return s!==!0&&i["_"+r](config,t,u,e,o),s}),i}({instrumentationKey:"b7dfb9a2-b012-4c83-a87f-ac7e41ce3cac",sdkExtension:"a"});window.appInsights=appInsights;appInsights.queue&&appInsights.queue.length===0&&appInsights.trackPageView();</script></head>
-
-<body class="eupopup eupopup-bottom    page-small-business parent-5">
-
-
-
-    
-    
+@section('content')
     <div class="container">
-
+            <!--start responsive menu-->
+    @include('frontend.layouts.components.header')
+    <!-- Main Header -->
+    @include('frontend.layouts.components.navbar')
 
 
 <!--start responsive menu-->
-<nav class="pushy pushy-right">
+{{-- <nav class="pushy pushy-right">
     <div class="pushy-content">
         <button class="pushy-link close-b">X</button>
 
@@ -108,7 +32,7 @@
                                 </div>
                                     <div class="panel">
                                         <a data-toggle="collapse" data-parent="#accordion21" href="#collapse11">
-                                            
+
 Checking                                            <i class="fa fa-chevron-down pull-right" aria-hidden="true"></i>
                                         </a>
                                         <div id="collapse11" class="panel-collapse collapse">
@@ -129,7 +53,7 @@ Checking                                            <i class="fa fa-chevron-down
                                     </div>
                                     <div class="panel">
                                         <a data-toggle="collapse" data-parent="#accordion21" href="#collapse12">
-                                            
+
 Online &amp; Mobile                                            <i class="fa fa-chevron-down pull-right" aria-hidden="true"></i>
                                         </a>
                                         <div id="collapse12" class="panel-collapse collapse">
@@ -154,7 +78,7 @@ Online &amp; Mobile                                            <i class="fa fa-c
                                     </div>
                                     <div class="panel">
                                         <a data-toggle="collapse" data-parent="#accordion21" href="#collapse13">
-                                            
+
 Savings &amp; CDs                                            <i class="fa fa-chevron-down pull-right" aria-hidden="true"></i>
                                         </a>
                                         <div id="collapse13" class="panel-collapse collapse">
@@ -175,7 +99,7 @@ Savings &amp; CDs                                            <i class="fa fa-che
                                     </div>
                                     <div class="panel">
                                         <a data-toggle="collapse" data-parent="#accordion21" href="#collapse14">
-                                            
+
 Loans &amp; Credit Lines                                            <i class="fa fa-chevron-down pull-right" aria-hidden="true"></i>
                                         </a>
                                         <div id="collapse14" class="panel-collapse collapse">
@@ -198,7 +122,7 @@ Loans &amp; Credit Lines                                            <i class="fa
                                     </div>
                                     <div class="panel">
                                         <a data-toggle="collapse" data-parent="#accordion21" href="#collapse15">
-                                            
+
 Mortgages                                            <i class="fa fa-chevron-down pull-right" aria-hidden="true"></i>
                                         </a>
                                         <div id="collapse15" class="panel-collapse collapse">
@@ -217,7 +141,7 @@ Mortgages                                            <i class="fa fa-chevron-dow
                                     </div>
                                     <div class="panel">
                                         <a data-toggle="collapse" data-parent="#accordion21" href="#collapse16">
-                                            
+
 Investing                                            <i class="fa fa-chevron-down pull-right" aria-hidden="true"></i>
                                         </a>
                                         <div id="collapse16" class="panel-collapse collapse">
@@ -236,7 +160,7 @@ Investing                                            <i class="fa fa-chevron-dow
                                     </div>
                                     <div class="panel">
                                         <a data-toggle="collapse" data-parent="#accordion21" href="#collapse17">
-                                            
+
 Wealth Management                                            <i class="fa fa-chevron-down pull-right" aria-hidden="true"></i>
                                         </a>
                                         <div id="collapse17" class="panel-collapse collapse">
@@ -257,7 +181,7 @@ Wealth Management                                            <i class="fa fa-che
                                     </div>
                                     <div class="panel">
                                         <a data-toggle="collapse" data-parent="#accordion21" href="#collapse18">
-                                            
+
 Students &amp; Parents                                            <i class="fa fa-chevron-down pull-right" aria-hidden="true"></i>
                                         </a>
                                         <div id="collapse18" class="panel-collapse collapse">
@@ -292,7 +216,7 @@ Students &amp; Parents                                            <i class="fa f
                                 </div>
                                     <div class="panel">
                                         <a data-toggle="collapse" data-parent="#accordion21" href="#collapse21">
-                                            
+
 Checking                                            <i class="fa fa-chevron-down pull-right" aria-hidden="true"></i>
                                         </a>
                                         <div id="collapse21" class="panel-collapse collapse">
@@ -319,7 +243,7 @@ Checking                                            <i class="fa fa-chevron-down
                                     </div>
                                     <div class="panel">
                                         <a data-toggle="collapse" data-parent="#accordion21" href="#collapse22">
-                                            
+
 Online &amp; Mobile                                            <i class="fa fa-chevron-down pull-right" aria-hidden="true"></i>
                                         </a>
                                         <div id="collapse22" class="panel-collapse collapse">
@@ -342,7 +266,7 @@ Online &amp; Mobile                                            <i class="fa fa-c
                                     </div>
                                     <div class="panel">
                                         <a data-toggle="collapse" data-parent="#accordion21" href="#collapse23">
-                                            
+
 Savings &amp; CDs                                            <i class="fa fa-chevron-down pull-right" aria-hidden="true"></i>
                                         </a>
                                         <div id="collapse23" class="panel-collapse collapse">
@@ -359,7 +283,7 @@ Savings &amp; CDs                                            <i class="fa fa-che
                                     </div>
                                     <div class="panel">
                                         <a data-toggle="collapse" data-parent="#accordion21" href="#collapse24">
-                                            
+
 Loans &amp; Credit Lines                                            <i class="fa fa-chevron-down pull-right" aria-hidden="true"></i>
                                         </a>
                                         <div id="collapse24" class="panel-collapse collapse">
@@ -378,7 +302,7 @@ Loans &amp; Credit Lines                                            <i class="fa
                                     </div>
                                     <div class="panel">
                                         <a data-toggle="collapse" data-parent="#accordion21" href="#collapse25">
-                                            
+
 Business Services                                            <i class="fa fa-chevron-down pull-right" aria-hidden="true"></i>
                                         </a>
                                         <div id="collapse25" class="panel-collapse collapse">
@@ -405,7 +329,7 @@ Business Services                                            <i class="fa fa-che
                                     </div>
                                     <div class="panel">
                                         <a data-toggle="collapse" data-parent="#accordion21" href="#collapse26">
-                                            
+
 Asset Management &amp; Trust                                            <i class="fa fa-chevron-down pull-right" aria-hidden="true"></i>
                                         </a>
                                         <div id="collapse26" class="panel-collapse collapse">
@@ -428,7 +352,7 @@ Asset Management &amp; Trust                                            <i class
                                     </div>
                                     <div class="panel">
                                         <a data-toggle="collapse" data-parent="#accordion21" href="#collapse27">
-                                            
+
 Ag Banking                                            <i class="fa fa-chevron-down pull-right" aria-hidden="true"></i>
                                         </a>
                                         <div id="collapse27" class="panel-collapse collapse">
@@ -457,7 +381,7 @@ Ag Banking                                            <i class="fa fa-chevron-do
                                 </div>
                                     <div class="panel">
                                         <a data-toggle="collapse" data-parent="#accordion21" href="#collapse31">
-                                            
+
 Checking                                            <i class="fa fa-chevron-down pull-right" aria-hidden="true"></i>
                                         </a>
                                         <div id="collapse31" class="panel-collapse collapse">
@@ -484,7 +408,7 @@ Checking                                            <i class="fa fa-chevron-down
                                     </div>
                                     <div class="panel">
                                         <a data-toggle="collapse" data-parent="#accordion21" href="#collapse32">
-                                            
+
 Savings &amp; CDs                                            <i class="fa fa-chevron-down pull-right" aria-hidden="true"></i>
                                         </a>
                                         <div id="collapse32" class="panel-collapse collapse">
@@ -501,7 +425,7 @@ Savings &amp; CDs                                            <i class="fa fa-che
                                     </div>
                                     <div class="panel">
                                         <a data-toggle="collapse" data-parent="#accordion21" href="#collapse33">
-                                            
+
 Financing                                            <i class="fa fa-chevron-down pull-right" aria-hidden="true"></i>
                                         </a>
                                         <div id="collapse33" class="panel-collapse collapse">
@@ -522,7 +446,7 @@ Financing                                            <i class="fa fa-chevron-dow
                                     </div>
                                     <div class="panel">
                                         <a data-toggle="collapse" data-parent="#accordion21" href="#collapse34">
-                                            
+
 Treasury Services                                            <i class="fa fa-chevron-down pull-right" aria-hidden="true"></i>
                                         </a>
                                         <div id="collapse34" class="panel-collapse collapse">
@@ -548,7 +472,7 @@ Treasury Services                                            <i class="fa fa-che
                                     </div>
                                     <div class="panel">
                                         <a data-toggle="collapse" data-parent="#accordion21" href="#collapse35">
-                                            
+
 Asset Management &amp; Trust                                            <i class="fa fa-chevron-down pull-right" aria-hidden="true"></i>
                                         </a>
                                         <div id="collapse35" class="panel-collapse collapse">
@@ -578,7 +502,7 @@ Asset Management &amp; Trust                                            <i class
 
 
 
-       
+
 
                 <div class="panel-heading">
                     <h4 class="panel-title">
@@ -601,7 +525,7 @@ Asset Management &amp; Trust                                            <i class
                 <ul class="footer-mobile-link">
                     <li class="number-bg">800-501-6535</li>
                     <li><a href="../pages/quick-links/locations/index.html">Locations</a></li><li><a href="../pages/about-us/index.html">About Us</a></li><li><a href="{{route('frontend.en.pages.about.careers')}}">Careers</a></li><li><a href="../pages/quick-links/customer-care/index.html">Customer Care</a></li>
-                    
+
                 </ul>
             </div>
         </div>
@@ -624,7 +548,7 @@ Asset Management &amp; Trust                                            <i class
 
                                 <li id="signInSection" class="bg-dropdown" onmouseover="ShowSignInOption()" onmouseout="ShowSignInOption()">
                                     <a href="#" class="signin">Sign In </a>
-                                    
+
                                     <div id="signInHoverSection" class="b1sign-in-hover" data-present="present" style="display:none;">
                                         <p><a href="https://www.mypremiercreditcard.com/login.aspx" data-type="" id="SIcreditcardpayment">Credit Card</a><br /></p>
                                         <p><a href="https://online.firstpremier.com/FirstPremierBankOnline/uux.aspx" data-type="actionitem" id="SIpersonalbanking">Personal Banking</a><br /></p>
@@ -1011,7 +935,7 @@ Asset Management &amp; Trust                                            <i class
             </article>
         </div>
     </div>
-</section>
+</section> --}}
 
 <script>
 
@@ -1108,7 +1032,7 @@ Asset Management &amp; Trust                                            <i class
         var searchText = $('#txtheadsearch').attr('data-val') || '';
         $('#txtheadsearch').val(searchText);
     }
-</script>        
+</script>
     <style>
                 @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
             /* IE 10 & 11 CSS styles go here */
@@ -1120,7 +1044,7 @@ Asset Management &amp; Trust                                            <i class
             }
         }
         @supports (-ms-accelerator:true) {
-          /* IE Edge 12+ CSS styles go here */ 
+          /* IE Edge 12+ CSS styles go here */
             #signInHoverSection {
                 position:absolute;
                 z-index:9999;
@@ -1181,14 +1105,16 @@ Asset Management &amp; Trust                                            <i class
 
             sessionStorage.setItem(b01title, wt);
             sessionStorage.setItem(b01msg, wm);
-            sessionStorage.setItem(b01heroimage, '../../contentassets/613ffd6c1af74cda9bb62b96e88cac56/fpbcares-act-hero.jpg');
+            sessionStorage.setItem(b01heroimage, 
+            "{{ asset('assets/frontend/contentassets/613ffd6c1af74cda9bb62b96e88cac56/fpbcares-act-hero.jpg') }}"
+            );
             sessionStorage.setItem(b01linkname, 'Learn More');
             sessionStorage.setItem(b01linkurl, 'loans-and-credit-lines/small-business-loans/index.html');
             sessionStorage.setItem(b01titlemobile, wtm);
             sessionStorage.setItem(b01messagemobile, wmm);
             WelcomeObj.title = wt;
             WelcomeObj.msg = wm;
-            WelcomeObj.heroimage = '../../contentassets/613ffd6c1af74cda9bb62b96e88cac56/fpbcares-act-hero.jpg';
+            WelcomeObj.heroimage = "{{ asset('assets/frontend/contentassets/613ffd6c1af74cda9bb62b96e88cac56/fpbcares-act-hero.jpg') }}";
             WelcomeObj.linkname = 'Learn More';
             WelcomeObj.linkurl = 'loans-and-credit-lines/small-business-loans/index.html';
             WelcomeObj.titlemobile = wtm;                   // These are the mobile title
@@ -1248,7 +1174,7 @@ Asset Management &amp; Trust                                            <i class
                             <h1 class="White"></h1>
                             <h3 class="White"></h3>
                             <a id="HeroButton"></a>
-                            
+
                         </div>
                     </div>
 
@@ -1285,21 +1211,21 @@ Asset Management &amp; Trust                                            <i class
                                         </div>
                                     </div>
                                     <div id="loginLine" class="text-center b1smallLine">
-                                        <img src="../../Static/img/CustomBlocks/B1/small_line.png" alt="">
+                                        <img src="{{asset('assets/frontend/Static/img/CustomBlocks/B1/small_line.png')}}" alt="">
                                     </div>
 
                                     <button class="b1btn-login"> Login </button>
                                 </form>
-                                    <a class="b1link_access" href="../pages/resources/enrollment/index.html">Set up online access <img src="../../Static/img/CustomBlocks/B1/arrow_line.png" style="height:11px;" /></a>
+                                    <a class="b1link_access" href="../pages/resources/enrollment/index.html">Set up online access <img src="{{asset('assets/frontend/Static/img/CustomBlocks/B1/arrow_line.png')}}" style="height:11px;" /></a>
 
                             </div>
 
                             <div class="b1offerbox_lg">
                                 <div class="b1banner_flex_img">
-                                    <img src="../../Static/img/CustomBlocks/B1/money_vector.png" alt="Respond to a credit card offer">
+                                    <img src="{{asset('assets/frontend/Static/img/CustomBlocks/B1/money_vector.png')}}" alt="Respond to a credit card offer">
                                 </div>
                                 <div class="b1banner_flex_text">
-                                    <h3>Respond to a Credit Card Offer  <a class="b1learn_more" href="https://www.premiercardoffer.net/?mkt=8&amp;submkt=3025&amp;pid=009&amp;ptc=VCL&amp;dsc=W218">Learn more <img src="../../Static/img/CustomBlocks/B1/arrow_line.png" style="height:11px;">  </a></h3>
+                                    <h3>Respond to a Credit Card Offer  <a class="b1learn_more" href="https://www.premiercardoffer.net/?mkt=8&amp;submkt=3025&amp;pid=009&amp;ptc=VCL&amp;dsc=W218">Learn more <img src="{{asset('assets/frontend/Static/img/CustomBlocks/B1/arrow_line.png')}}" style="height:11px;">  </a></h3>
                                 </div>
                             </div>
                         </div>
@@ -1309,10 +1235,10 @@ Asset Management &amp; Trust                                            <i class
                     <div class="b1offerbox col-xs-12 col-sm-12 col-md-12">
                         <div class="b1login_Box_2">
                             <div class="b1banner_flex_img">
-                                <img src="../../Static/img/CustomBlocks/B1/money_vector.png" alt="Respond to a credit card offer">
+                                <img src="{{asset('assets/frontend/Static/img/CustomBlocks/B1/money_vector.png')}}" alt="Respond to a credit card offer">
                             </div>
                             <div class="b1banner_flex_text">
-                                <h2>Respond to a Credit Card Offer <a class="b1learn_more" href="https://www.premiercardoffer.net/?mkt=8&amp;submkt=3025&amp;pid=009&amp;ptc=VCL&amp;dsc=W218">Learn more<img src="../../Static/img/CustomBlocks/B1/arrow_line.png"></a></h2>
+                                <h2>Respond to a Credit Card Offer <a class="b1learn_more" href="https://www.premiercardoffer.net/?mkt=8&amp;submkt=3025&amp;pid=009&amp;ptc=VCL&amp;dsc=W218">Learn more<img src="{{asset('assets/frontend/Static/img/CustomBlocks/B1/arrow_line.png')}}"></a></h2>
                             </div>
                         </div>
                     </div>
@@ -1389,12 +1315,12 @@ Asset Management &amp; Trust                                            <i class
         <div class="container">
             <div class="col-lg-12 b9student_parent_main_section no-pad">
 
-                
+
 
                 <div class="col-lg-8 col-md-12 col-sm-12 b9student_parent_main no-pad ">
-                    <div class="b9student_parent_main_img"><img src="../../contentassets/5ec1a3341efd49889c1a4631099a266c/jordan_huisman_think3d.jpg" alt="woman small business owner in her shop"></div>
+                    <div class="b9student_parent_main_img"><img src="{{asset('assets/frontend/contentassets/5ec1a3341efd49889c1a4631099a266c/jordan_huisman_think3d.jpg')}}" alt="woman small business owner in her shop"></div>
                     <div class="b9student_parent_main_content">
-                        <div class="b9avtar"><img src="../../globalassets/images/_replace/_filled/round1.png" title="Bank with Confidence" alt="check"></div>
+                        <div class="b9avtar"><img src="{{asset('assets/frontend/globalassets/images/_replace/_filled/round1.png')}}" title="Bank with Confidence" alt="check"></div>
                         <div class="b9avtar_content">
                             <span> Bank with Confidence</span>
 
@@ -1404,29 +1330,29 @@ Asset Management &amp; Trust                                            <i class
                     <div class="b9small_growth_box_overlay">
                         <div class="b9small_growth_boxtext b9student_parent_main no-pad">
                             <div class="b9student_parent_main_content">
-                                <div class="b9avtar"><img src="../../globalassets/images/_replace/_filled/round1.png" alt="Bank with Confidence"></div>
+                                <div class="b9avtar"><img src="{{asset('assets/frontend/globalassets/images/_replace/_filled/round1.png')}}" alt="Bank with Confidence"></div>
                                 <div class="b9avtar_content">
-                                    <a href="business-checking/index.html">Bank with Confidence</a>                                  
+                                    <a href="business-checking/index.html">Bank with Confidence</a>
 
-<p>First PREMIER Bank provides powerful banking solutions for businesses of every size, standing beside owners and their companies as they grow and thrive.</p>                                    
+<p>First PREMIER Bank provides powerful banking solutions for businesses of every size, standing beside owners and their companies as they grow and thrive.</p>
 <ul>
-    
+
         <li>
-            <a href="business-checking/index.html">Business Checking</a> 
+            <a href="business-checking/index.html">Business Checking</a>
         </li>
-    
+
         <li>
-            <a href="business-checking/overdraft-protection/index.html">Overdraft Protection</a> 
+            <a href="business-checking/overdraft-protection/index.html">Overdraft Protection</a>
         </li>
-    
+
         <li>
-            <a href="savings-and-cds/index.html">Savings &amp; CDs</a> 
+            <a href="savings-and-cds/index.html">Savings &amp; CDs</a>
         </li>
-    
+
         <li>
-            <a href="business-checking/security-and-fraud-protection/index.html">Security &amp; Fraud Prevention</a> 
+            <a href="business-checking/security-and-fraud-protection/index.html">Security &amp; Fraud Prevention</a>
         </li>
-    
+
 </ul>                                    <div class="b9confidence_links">
                                         <a href="business-checking/compare-business-checking/index.html" class="b9readmore">Compare Checking</a>
                                         <a href="#"></a>
@@ -1440,49 +1366,49 @@ Asset Management &amp; Trust                                            <i class
                     <div class="payments_section">
                         <span> Accept Payments</span>
 
-                        
+
 <ul>
-    
+
         <li>
-            <a href="business-services/merchant-card-services/index.html">Merchant Card Services</a> 
+            <a href="business-services/merchant-card-services/index.html">Merchant Card Services</a>
         </li>
-    
+
         <li>
-            <a href="business-services/lockbox-services/index.html">Lockbox Services</a> 
+            <a href="business-services/lockbox-services/index.html">Lockbox Services</a>
         </li>
-    
+
         <li>
-            <a href="business-services/remote-deposit/index.html">Remote Deposit</a> 
+            <a href="business-services/remote-deposit/index.html">Remote Deposit</a>
         </li>
-    
+
         <li>
-            <a href="online-and-mobile/mobile-deposit/index.html">Mobile Deposit</a> 
+            <a href="online-and-mobile/mobile-deposit/index.html">Mobile Deposit</a>
         </li>
-    
+
 </ul>
                     </div>
                     <div class="payments_section">
                         <span>Make Payments</span>
 
-                        
+
 <ul>
-    
+
         <li>
-            <a href="business-services/make-payments/index.html">ACH Payroll &amp; Account Management</a> 
+            <a href="business-services/make-payments/index.html">ACH Payroll &amp; Account Management</a>
         </li>
-    
+
         <li>
-            <a href="business-services/business-rewards-mastercard/index.html">Business Rewards Mastercard</a> 
+            <a href="business-services/business-rewards-mastercard/index.html">Business Rewards Mastercard</a>
         </li>
-    
+
         <li>
-            <a href="business-checking/business-debit-mastercard/index.html">Business Debit Card</a> 
+            <a href="business-checking/business-debit-mastercard/index.html">Business Debit Card</a>
         </li>
-    
+
         <li>
-            <a href="online-and-mobile/bill-pay/index.html">Online Bill Pay</a> 
+            <a href="online-and-mobile/bill-pay/index.html">Online Bill Pay</a>
         </li>
-    
+
 </ul>
 
                     </div>
@@ -1490,7 +1416,7 @@ Asset Management &amp; Trust                                            <i class
             </div>
             <div class="col-lg-12 b9student_parent_main_section no-pad">
                 <div class="col-lg-4 col-md-12 col-sm-12 b9student_parent_main no-pad b9small_growth_box">
-                    <div class="b9student_parent_main_img"><img src="../../contentassets/5ec1a3341efd49889c1a4631099a266c/conf_img1.jpg" title="Finance Growth" alt="two men with hardhats looking at blueprints"></div>
+                    <div class="b9student_parent_main_img"><img src="{{asset('assets/frontend/contentassets/5ec1a3341efd49889c1a4631099a266c/conf_img1.jpg')}}" title="Finance Growth" alt="two men with hardhats looking at blueprints"></div>
                     <div class="b9student_parent_main_content finance_growth">
                         <div class="b9glow_content" style="min-height:33px;">
                             <h3> Finance Growth</h3>
@@ -1499,27 +1425,27 @@ Asset Management &amp; Trust                                            <i class
                     <div class="b9small_growth_box_overlay b9bg-box-overlay">
                         <div class="b9small_growth_boxtext">
                             <h3>Finance Growth</h3>
-                            
+
 <ul>
-    
+
         <li>
-            <a href="loans-and-credit-lines/small-business-loans/index.html">Small Business Loans</a> 
+            <a href="loans-and-credit-lines/small-business-loans/index.html">Small Business Loans</a>
         </li>
-    
+
         <li>
-            <a href="loans-and-credit-lines/business-lines-of-credit/index.html">Business Lines of Credit</a> 
+            <a href="loans-and-credit-lines/business-lines-of-credit/index.html">Business Lines of Credit</a>
         </li>
-    
+
         <li>
-            <a href="loans-and-credit-lines/commercial-real-estate/index.html">Commercial Real Estate</a> 
+            <a href="loans-and-credit-lines/commercial-real-estate/index.html">Commercial Real Estate</a>
         </li>
-    
+
 </ul>
                         </div>
                     </div>
                 </div>
                 <div class="col-lg-4 col-md-12 col-sm-12 b9student_parent_main no-pad b9small_growth_box">
-                    <div class="b9student_parent_main_img"><img src="../../contentassets/5ec1a3341efd49889c1a4631099a266c/conf_img2.jpg" title="Finance Growth" alt="up close image of woman"></div>
+                    <div class="b9student_parent_main_img"><img src="{{asset('assets/frontend/contentassets/5ec1a3341efd49889c1a4631099a266c/conf_img2.jpg')}}" title="Finance Growth" alt="up close image of woman"></div>
                     <div class="b9student_parent_main_content finance_growth">
                         <div class="b9glow_content" style="min-height:33px;">
                             <h3>Protect Your Assets</h3>
@@ -1528,27 +1454,27 @@ Asset Management &amp; Trust                                            <i class
                     <div class="b9small_growth_box_overlay b9bg-box-overlay">
                         <div class="b9small_growth_boxtext">
                             <h3>Protect Your Assets</h3>
-                            
+
 <ul>
-    
+
         <li>
-            <a href="../personal/investing/insurance/index.html">Insurance</a> 
+            <a href="../personal/investing/insurance/index.html">Insurance</a>
         </li>
-    
+
         <li>
-            <a href="asset-management-and-trust/employee-benefits/index.html">Employee Benefits</a> 
+            <a href="asset-management-and-trust/employee-benefits/index.html">Employee Benefits</a>
         </li>
-    
+
         <li>
-            <a href="business-checking/security-and-fraud-protection/index.html">Security &amp; Fraud Protection</a> 
+            <a href="business-checking/security-and-fraud-protection/index.html">Security &amp; Fraud Protection</a>
         </li>
-    
+
 </ul>
                         </div>
                     </div>
                 </div>
                 <div class="col-lg-4 col-md-12 col-sm-12 b9student_parent_main no-pad b9small_growth_box last">
-                    <div class="b9student_parent_main_img"><img src="../../contentassets/5ec1a3341efd49889c1a4631099a266c/conf_img3.jpg" title="Invest for the Future" alt="two business men looking at laptop"></div>
+                    <div class="b9student_parent_main_img"><img src="{{asset('assets/frontend/contentassets/5ec1a3341efd49889c1a4631099a266c/conf_img3.jpg')}}" title="Invest for the Future" alt="two business men looking at laptop"></div>
                     <div class="b9student_parent_main_content finance_growth">
                         <div class="b9glow_content" style="min-height:33px;">
                             <h3>Invest for the Future</h3>
@@ -1557,21 +1483,21 @@ Asset Management &amp; Trust                                            <i class
                     <div class="b9small_growth_box_overlay b9bg-box-overlay">
                         <div class="b9small_growth_boxtext">
                             <h3>Invest for the Future</h3>
-                            
+
 <ul>
-    
+
         <li>
-            <a href="asset-management-and-trust/business-planning-investment/index.html">Business Planning &amp; Investment</a> 
+            <a href="asset-management-and-trust/business-planning-investment/index.html">Business Planning &amp; Investment</a>
         </li>
-    
+
         <li>
-            <a href="asset-management-and-trust/group-retirement-plans/index.html">Group Retirement Plans</a> 
+            <a href="asset-management-and-trust/group-retirement-plans/index.html">Group Retirement Plans</a>
         </li>
-    
+
         <li>
-            <a href="asset-management-and-trust/first-premier-at-work/index.html">PREMIER at Work</a> 
+            <a href="asset-management-and-trust/first-premier-at-work/index.html">PREMIER at Work</a>
         </li>
-    
+
 </ul>
 
                         </div>
@@ -1608,7 +1534,7 @@ Asset Management &amp; Trust                                            <i class
     .glyphicon-chevron-left img, .glyphicon-chevron-right img{width:100%;}
     .b06carousel-inner{height:320px;}
     /*#endregion*/
-    }    
+    }
     @media screen and (max-width: 767px) {
     /*#region B-6*/
     .b06carousel-inner{height:300px;}
@@ -1627,12 +1553,12 @@ Asset Management &amp; Trust                                            <i class
 
 <section class="row-full">
     <div class="b6featured_quote_main">
-            <img src="../../Static/img/CustomBlocks/B6/featured_bg.png" class="b6featured_bg" alt="First PREMIER Bank">
-            <img src="../../Static/img/CustomBlocks/B6/featured_bg_small.png" class="b6featured_bg_small_bg" alt="First PREMIER Bank">
+            <img src="{{ asset('assets/frontend/Static/img/CustomBlocks/B6/featured_bg.png')}}" class="b6featured_bg" alt="First PREMIER Bank">
+            <img src="{{ asset('assets/frontend/Static/img/CustomBlocks/B6/featured_bg_small.png')}}" class="b6featured_bg_small_bg" alt="First PREMIER Bank">
         <div class="b6featured_bg_small carousel" id="b06Carousel" data-ride="carousel">
             <div class="">
                 <div class="carousel-inner b06carousel-inner">
-                    <div class="item active"><div class="row b6mypadding"><div class="b6featured_quote_img col-lg-5 col-md-5"><img src=../../contentassets/47b9a906e4ae4d9586caaaad5e248d9d/quote_luke_tibbetts.jpg class="b6featured_img" alt="Luke Tibbetts VP of Business Banking"></div><div class="b6featured_quote col-lg-7 col-md-7"><p>First PREMIER helps give small businesses a competitive edge by making the management of accounts payable and receivable  -- and even payroll -- a whole lot easier.</p><div class="clearfix"></div><span> - Luke Tibbetts, VP, Business Banking</span></div></div></div>
+                    <div class="item active"><div class="row b6mypadding"><div class="b6featured_quote_img col-lg-5 col-md-5"><img src="{{asset('assets/frontend/contentassets/47b9a906e4ae4d9586caaaad5e248d9d/quote_luke_tibbetts.jpg')}}" class="b6featured_img" alt="Luke Tibbetts VP of Business Banking"></div><div class="b6featured_quote col-lg-7 col-md-7"><p>First PREMIER helps give small businesses a competitive edge by making the management of accounts payable and receivable  -- and even payroll -- a whole lot easier.</p><div class="clearfix"></div><span> - Luke Tibbetts, VP, Business Banking</span></div></div></div>
 
                 </div>
             </div>
@@ -1655,16 +1581,16 @@ Asset Management &amp; Trust                                            <i class
             <div class="container">
                 <div class="row">
                     <div class="col-lg-12 b11firstpremier_box_main">
-<div class='item active'><div class='col-md-4 col-sm-6 b11anytime_box'><a href='ag-banking/index.html'><img src='../../globalassets/images/secondary-icons/bright/nature/bright-nature-secondary-icon-5.png' alt='Growing Plant' border='0' /></a><span><a href='ag-banking/index.html'>We Know Agribusiness</a></span><div class="xhtml"><p>&nbsp;</p>
+<div class='item active'><div class='col-md-4 col-sm-6 b11anytime_box'><a href='ag-banking/index.html'><img src='{{asset('assets/frontend/globalassets/images/secondary-icons/bright/nature/bright-nature-secondary-icon-5.png')}}' alt='Growing Plant' border='0' /></a><span><a href='ag-banking/index.html'>We Know Agribusiness</a></span><div class="xhtml"><p>&nbsp;</p>
 <p>Whether you run a small family farm or a large agricultural operation, our Ag Bankers know how to bring the banking, finance, insurance and treasury solutions to help.</p>
-<p>&nbsp;</p></div></div><div class='col-md-4 col-sm-6 b11anytime_box'><a href='business-services/business-rewards-mastercard/index.html'><img src='../../globalassets/images/secondary-icons/blue/business-finance/blue-business-_-finance-secondary-icon-25.png' alt='Mastercard' border='0' /></a><span><a href='business-services/business-rewards-mastercard/index.html'>Business Rewards Mastercard®</a></span><div class="xhtml"><p>A great way to streamline expense management, while reaping some nice rewards like 1% cash back for qualified purchases, rental car and purchase insurance and more.</p></div></div><div class='col-md-4 col-sm-6 b11anytime_box'><a href='business-services/make-payments/index.html'><img src='../../globalassets/images/secondary-icons/gold/business-finance/gold-business-_-finance-secondary-icon-31.png' alt='Money' border='0' /></a><span><a href='business-services/make-payments/index.html'>Employee Payroll</a></span><div class="xhtml"><p>&nbsp;</p>
+<p>&nbsp;</p></div></div><div class='col-md-4 col-sm-6 b11anytime_box'><a href='business-services/business-rewards-mastercard/index.html'><img src='{{asset('assets/frontend/globalassets/images/secondary-icons/blue/business-finance/blue-business-_-finance-secondary-icon-25.png')}}' alt='Mastercard' border='0' /></a><span><a href='business-services/business-rewards-mastercard/index.html'>Business Rewards Mastercard®</a></span><div class="xhtml"><p>A great way to streamline expense management, while reaping some nice rewards like 1% cash back for qualified purchases, rental car and purchase insurance and more.</p></div></div><div class='col-md-4 col-sm-6 b11anytime_box'><a href='business-services/make-payments/index.html'><img src='{{asset('assets/frontend/globalassets/images/secondary-icons/gold/business-finance/gold-business-_-finance-secondary-icon-31.png')}}' alt='Money' border='0' /></a><span><a href='business-services/make-payments/index.html'>Employee Payroll</a></span><div class="xhtml"><p>&nbsp;</p>
 <p>With ACH online, you can affordably set up direct deposit and manage employee payroll, tax payments and expense reimbursement electronically.</p>
 <p>&nbsp;</p></div></div></div>                    </div>
                 </div>
             </div>
         </div>
 
-        
+
     </section>
 </div></div><div class="block b10block  col-md-12">
 
@@ -1721,120 +1647,120 @@ $(".b11firstpremier_box_main .b11anytime_box:nth-child(2) span a").html('Busines
     }
 </style></div></div>
 
- 
+
 
 <div class="row-full footer">
     <div class="container">
         <div class="row">
             <div class="col-md-3 col-sm-3 col-xs-12 footerCol1">
                 <div class="footerHeader">Company</div>
-                
+
 <ul>
-    
+
         <li>
-            <a href="../pages/about-us/index.html">About Us</a> 
+            <a href="../pages/about-us/index.html">About Us</a>
         </li>
-    
+
         <li>
-            <a href="../index.html">First PREMIER Bank</a> 
+            <a href="../index.html">First PREMIER Bank</a>
         </li>
-    
+
         <li>
-            <a href="https://www.mypremiercreditcard.com/">PREMIER Bankcard</a> 
+            <a href="https://www.mypremiercreditcard.com/">PREMIER Bankcard</a>
         </li>
-    
+
         <li>
-            <a href="../pages/about-us/leadership-team/index.html">Leadership</a> 
+            <a href="../pages/about-us/leadership-team/index.html">Leadership</a>
         </li>
-    
+
         <li>
-            <a href="../pages/about-us/community/index.html">Community</a> 
+            <a href="../pages/about-us/community/index.html">Community</a>
         </li>
-    
+
         <li>
-            <a href="{{route('frontend.en.pages.about.careers')}}">Careers</a> 
+            <a href="{{route('frontend.en.pages.about.careers')}}">Careers</a>
         </li>
-    
+
 </ul>
                 <br />
             </div>
             <div class="col-md-3 col-sm-3 col-xs-12 footerCol2">
                 <div class="footerHeader">Customers</div>
-                
+
 <ul>
-    
+
         <li>
-            <a href="../index.html">Personal Banking</a> 
+            <a href="../index.html">Personal Banking</a>
         </li>
-    
+
         <li>
-            <a href="index.html">Small Business</a> 
+            <a href="index.html">Small Business</a>
         </li>
-    
+
         <li>
-            <a href="../commercial/index.html">Commercial</a> 
+            <a href="../commercial/index.html">Commercial</a>
         </li>
-    
+
 </ul>
                 <br />
             </div>
             <div class="col-md-3 col-sm-3 col-xs-12 footerCol3">
                 <div class="footerHeader">Help &amp; Contact</div>
-                
+
 <ul>
-    
+
         <li>
-            <a href="../pages/quick-links/customer-care/index.html">Customer Care</a> 
+            <a href="../pages/quick-links/customer-care/index.html">Customer Care</a>
         </li>
-    
+
         <li>
-            <a href="../pages/quick-links/locations/index.html">Locations</a> 
+            <a href="../pages/quick-links/locations/index.html">Locations</a>
         </li>
-    
+
         <li>
-            <a href="../pages/quick-links/customer-care/index.html">BANK: 800-501-6535</a> 
+            <a href="../pages/quick-links/customer-care/index.html">BANK: 800-501-6535</a>
         </li>
-    
+
         <li>
-            <a href="https://www.mypremiercreditcard.com/">CREDIT CARD: 800-987-5521</a> 
+            <a href="https://www.mypremiercreditcard.com/">CREDIT CARD: 800-987-5521</a>
         </li>
-    
+
         <li>
-            <a href="../index.html">Routing Number: 091408598</a> 
+            <a href="../index.html">Routing Number: 091408598</a>
         </li>
-    
+
 </ul>
                 <br />
             </div>
             <div class="col-md-3 col-sm-3 col-xs-12 footerCol4">
                 <div class="footerHeader">Legal Notices</div>
-                
+
 <ul>
-    
+
         <li>
-            <a href="../pages/resources/first-premier-privacy-statement-2020/index.html">Privacy Notice &amp; Statement</a> 
+            <a href="../pages/resources/first-premier-privacy-statement-2020/index.html">Privacy Notice &amp; Statement</a>
         </li>
-    
+
         <li>
-            <a href="../pages/resources/legal-disclosures/index.html">Legal Disclosures</a> 
+            <a href="../pages/resources/legal-disclosures/index.html">Legal Disclosures</a>
         </li>
-    
+
         <li>
-            <a href="../pages/resources/cookie-policy/index.html">Cookie Policy</a> 
+            <a href="../pages/resources/cookie-policy/index.html">Cookie Policy</a>
         </li>
-    
+
 </ul>
             </div>
         </div>
         <div class="row">
             <div class="col-md-12" style="padding-top:50px;">
- <p>Member FDIC | <img src="../../Static/img/equalhousinglender.png" alt="Equal Housing Lender" title="Equal Housing Lender" />Equal Housing Lender</p>            </div>
+ <p>Member FDIC | <img src="{{asset('assets/frontend/Static/img/equalhousinglender.png')}}" alt="Equal Housing Lender" title="Equal Housing Lender" />Equal Housing Lender</p>            </div>
         </div>
     </div>
 </div>
-<style>   
+<style>
     /* CHROME SAFARI FIX */
-    .form-control:hover, .form-control:active, .form-control:focus { box-shadow: none !important; -moz-box-shadow: none !important; -webkit-box-shadow: none !important; } 
+    .form-control:hover, .form-control:active, .form-control:focus { box-shadow: none !important; -moz-box-shadow: none !important; -webkit-box-shadow: none !important; }
     .form-control:hover, .form-control:active, .form-control:focus { box-shadow: none !important; -moz-box-shadow: none !important; -webkit-box-shadow: none !important; }
     a:focus, a:active {outline:none!important; border: none!important; }
     input:focus, input:active { outline: none !important; }
@@ -1886,7 +1812,7 @@ $(".b11firstpremier_box_main .b11anytime_box:nth-child(2) span a").html('Busines
         }
     });
 </script>    </div>
-    <div class="smallLogo"><a href="../index.html" title="First PREMIER Bank - Home"><img src="../../Static/gfx/Logo.png" style="max-width:100%;" /></a></div>
+    <div class="smallLogo"><a href="../index.html" title="First PREMIER Bank - Home"><img src="{{asset('assets/frontend/Static/gfx/Logo.png')}}" style="max-width:100%;" /></a></div>
     <script type="text/javascript" src="../../../dl.episerver.net/13.4.4.1/epi-util/find.js"></script>
 <script type="text/javascript">
 if(FindApi){var api = new FindApi();api.setApplicationUrl('../../index.html');api.setServiceApiBaseUrl('../../find_v2/index.html');api.processEventFromCurrentUri();api.bindWindowEvents();api.bindAClickEvent();api.sendBufferedEvents();}
@@ -1894,7 +1820,5 @@ if(FindApi){var api = new FindApi();api.setApplicationUrl('../../index.html');ap
 
     <script type="text/javascript" src="../../Static/js/pushy.js"></script>
     <script type="text/javascript" src="../../Static/js/Blocks_2019062002.js"></script>
-</body>
 
-<!-- Mirrored from www.firstpremier.com/en/small-business/ by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 30 Jun 2021 12:12:05 GMT -->
-</html>
+    @endsection
