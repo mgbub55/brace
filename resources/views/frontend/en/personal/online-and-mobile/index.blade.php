@@ -1,7 +1,7 @@
 @extends('frontend.layouts.app')
 
 @section('content')
-    
+
 
 
     <div class="container">
@@ -35,7 +35,7 @@
                                 </div>
                                     <div class="panel">
                                         <a data-toggle="collapse" data-parent="#accordion21" href="#collapse11">
-                                            
+
 Checking                                            <i class="fa fa-chevron-down pull-right" aria-hidden="true"></i>
                                         </a>
                                         <div id="collapse11" class="panel-collapse collapse">
@@ -56,7 +56,7 @@ Checking                                            <i class="fa fa-chevron-down
                                     </div>
                                     <div class="panel">
                                         <a data-toggle="collapse" data-parent="#accordion21" href="#collapse12">
-                                            
+
 Online &amp; Mobile                                            <i class="fa fa-chevron-down pull-right" aria-hidden="true"></i>
                                         </a>
                                         <div id="collapse12" class="panel-collapse collapse">
@@ -81,7 +81,7 @@ Online &amp; Mobile                                            <i class="fa fa-c
                                     </div>
                                     <div class="panel">
                                         <a data-toggle="collapse" data-parent="#accordion21" href="#collapse13">
-                                            
+
 Savings &amp; CDs                                            <i class="fa fa-chevron-down pull-right" aria-hidden="true"></i>
                                         </a>
                                         <div id="collapse13" class="panel-collapse collapse">
@@ -102,7 +102,7 @@ Savings &amp; CDs                                            <i class="fa fa-che
                                     </div>
                                     <div class="panel">
                                         <a data-toggle="collapse" data-parent="#accordion21" href="#collapse14">
-                                            
+
 Loans &amp; Credit Lines                                            <i class="fa fa-chevron-down pull-right" aria-hidden="true"></i>
                                         </a>
                                         <div id="collapse14" class="panel-collapse collapse">
@@ -125,7 +125,7 @@ Loans &amp; Credit Lines                                            <i class="fa
                                     </div>
                                     <div class="panel">
                                         <a data-toggle="collapse" data-parent="#accordion21" href="#collapse15">
-                                            
+
 Mortgages                                            <i class="fa fa-chevron-down pull-right" aria-hidden="true"></i>
                                         </a>
                                         <div id="collapse15" class="panel-collapse collapse">
@@ -144,7 +144,7 @@ Mortgages                                            <i class="fa fa-chevron-dow
                                     </div>
                                     <div class="panel">
                                         <a data-toggle="collapse" data-parent="#accordion21" href="#collapse16">
-                                            
+
 Investing                                            <i class="fa fa-chevron-down pull-right" aria-hidden="true"></i>
                                         </a>
                                         <div id="collapse16" class="panel-collapse collapse">
@@ -163,7 +163,7 @@ Investing                                            <i class="fa fa-chevron-dow
                                     </div>
                                     <div class="panel">
                                         <a data-toggle="collapse" data-parent="#accordion21" href="#collapse17">
-                                            
+
 Wealth Management                                            <i class="fa fa-chevron-down pull-right" aria-hidden="true"></i>
                                         </a>
                                         <div id="collapse17" class="panel-collapse collapse">
@@ -184,7 +184,7 @@ Wealth Management                                            <i class="fa fa-che
                                     </div>
                                     <div class="panel">
                                         <a data-toggle="collapse" data-parent="#accordion21" href="#collapse18">
-                                            
+
 Students &amp; Parents                                            <i class="fa fa-chevron-down pull-right" aria-hidden="true"></i>
                                         </a>
                                         <div id="collapse18" class="panel-collapse collapse">
@@ -219,7 +219,7 @@ Students &amp; Parents                                            <i class="fa f
                                 </div>
                                     <div class="panel">
                                         <a data-toggle="collapse" data-parent="#accordion21" href="#collapse21">
-                                            
+
 Checking                                            <i class="fa fa-chevron-down pull-right" aria-hidden="true"></i>
                                         </a>
                                         <div id="collapse21" class="panel-collapse collapse">
@@ -246,7 +246,7 @@ Checking                                            <i class="fa fa-chevron-down
                                     </div>
                                     <div class="panel">
                                         <a data-toggle="collapse" data-parent="#accordion21" href="#collapse22">
-                                            
+
 Online &amp; Mobile                                            <i class="fa fa-chevron-down pull-right" aria-hidden="true"></i>
                                         </a>
                                         <div id="collapse22" class="panel-collapse collapse">
@@ -269,7 +269,7 @@ Online &amp; Mobile                                            <i class="fa fa-c
                                     </div>
                                     <div class="panel">
                                         <a data-toggle="collapse" data-parent="#accordion21" href="#collapse23">
-                                            
+
 Savings &amp; CDs                                            <i class="fa fa-chevron-down pull-right" aria-hidden="true"></i>
                                         </a>
                                         <div id="collapse23" class="panel-collapse collapse">
@@ -286,7 +286,7 @@ Savings &amp; CDs                                            <i class="fa fa-che
                                     </div>
                                     <div class="panel">
                                         <a data-toggle="collapse" data-parent="#accordion21" href="#collapse24">
-                                            
+
 Loans &amp; Credit Lines                                            <i class="fa fa-chevron-down pull-right" aria-hidden="true"></i>
                                         </a>
                                         <div id="collapse24" class="panel-collapse collapse">
@@ -305,7 +305,7 @@ Loans &amp; Credit Lines                                            <i class="fa
                                     </div>
                                     <div class="panel">
                                         <a data-toggle="collapse" data-parent="#accordion21" href="#collapse25">
-                                            
+
 Business Services                                            <i class="fa fa-chevron-down pull-right" aria-hidden="true"></i>
                                         </a>
                                         <div id="collapse25" class="panel-collapse collapse">
@@ -332,7 +332,7 @@ Business Services                                            <i class="fa fa-che
                                     </div>
                                     <div class="panel">
                                         <a data-toggle="collapse" data-parent="#accordion21" href="#collapse26">
-                                            
+
 Asset Management &amp; Trust                                            <i class="fa fa-chevron-down pull-right" aria-hidden="true"></i>
                                         </a>
                                         <div id="collapse26" class="panel-collapse collapse">
@@ -355,7 +355,7 @@ Asset Management &amp; Trust                                            <i class
                                     </div>
                                     <div class="panel">
                                         <a data-toggle="collapse" data-parent="#accordion21" href="#collapse27">
-                                            
+
 Ag Banking                                            <i class="fa fa-chevron-down pull-right" aria-hidden="true"></i>
                                         </a>
                                         <div id="collapse27" class="panel-collapse collapse">
@@ -384,7 +384,7 @@ Ag Banking                                            <i class="fa fa-chevron-do
                                 </div>
                                     <div class="panel">
                                         <a data-toggle="collapse" data-parent="#accordion21" href="#collapse31">
-                                            
+
 Checking                                            <i class="fa fa-chevron-down pull-right" aria-hidden="true"></i>
                                         </a>
                                         <div id="collapse31" class="panel-collapse collapse">
@@ -411,7 +411,7 @@ Checking                                            <i class="fa fa-chevron-down
                                     </div>
                                     <div class="panel">
                                         <a data-toggle="collapse" data-parent="#accordion21" href="#collapse32">
-                                            
+
 Savings &amp; CDs                                            <i class="fa fa-chevron-down pull-right" aria-hidden="true"></i>
                                         </a>
                                         <div id="collapse32" class="panel-collapse collapse">
@@ -428,7 +428,7 @@ Savings &amp; CDs                                            <i class="fa fa-che
                                     </div>
                                     <div class="panel">
                                         <a data-toggle="collapse" data-parent="#accordion21" href="#collapse33">
-                                            
+
 Financing                                            <i class="fa fa-chevron-down pull-right" aria-hidden="true"></i>
                                         </a>
                                         <div id="collapse33" class="panel-collapse collapse">
@@ -449,7 +449,7 @@ Financing                                            <i class="fa fa-chevron-dow
                                     </div>
                                     <div class="panel">
                                         <a data-toggle="collapse" data-parent="#accordion21" href="#collapse34">
-                                            
+
 Treasury Services                                            <i class="fa fa-chevron-down pull-right" aria-hidden="true"></i>
                                         </a>
                                         <div id="collapse34" class="panel-collapse collapse">
@@ -475,7 +475,7 @@ Treasury Services                                            <i class="fa fa-che
                                     </div>
                                     <div class="panel">
                                         <a data-toggle="collapse" data-parent="#accordion21" href="#collapse35">
-                                            
+
 Asset Management &amp; Trust                                            <i class="fa fa-chevron-down pull-right" aria-hidden="true"></i>
                                         </a>
                                         <div id="collapse35" class="panel-collapse collapse">
@@ -506,7 +506,7 @@ Asset Management &amp; Trust                                            <i class
 
 
 
-       
+
 
                 <div class="panel-heading">
                     <h4 class="panel-title">
@@ -529,7 +529,7 @@ Asset Management &amp; Trust                                            <i class
                 <ul class="footer-mobile-link">
                     <li class="number-bg">800-501-6535</li>
                     <li><a href="../../pages/quick-links/locations/index.html">Locations</a></li><li><a href="../../pages/about-us/index.html">About Us</a></li><li><a href="{{route('frontend.en.pages.about.careers')}}">Careers</a></li><li><a href="../../pages/quick-links/customer-care/index.html">Customer Care</a></li>
-                    
+
                 </ul>
             </div>
         </div>
@@ -552,7 +552,7 @@ Asset Management &amp; Trust                                            <i class
 
                                 <li id="signInSection" class="bg-dropdown" onmouseover="ShowSignInOption()" onmouseout="ShowSignInOption()">
                                     <a href="#" class="signin">Sign In </a>
-                                    
+
                                     <div id="signInHoverSection" class="b1sign-in-hover" data-present="present" style="display:none;">
                                         <p><a href="https://www.mypremiercreditcard.com/login.aspx" data-type="" id="SIcreditcardpayment">Credit Card</a><br /></p>
                                         <p><a href="https://online.firstpremier.com/FirstPremierBankOnline/uux.aspx" data-type="actionitem" id="SIpersonalbanking">Personal Banking</a><br /></p>
@@ -988,7 +988,7 @@ Asset Management &amp; Trust                                            <i class
     </div>
 </section> --}}
 
-{{-- <script>
+ <script>
 
     $(document).ready(function () {
 
@@ -1083,7 +1083,7 @@ Asset Management &amp; Trust                                            <i class
         var searchText = $('#txtheadsearch').attr('data-val') || '';
         $('#txtheadsearch').val(searchText);
     }
-</script>        
+</script>
     <style>
         .b54main h2{color:#fff;}
     </style>
@@ -1104,7 +1104,7 @@ Asset Management &amp; Trust                                            <i class
             $('.b19landingpage').css('background-color', '#1b3e43');
         }
         else {
-            $('.b19landingpage').css('background', 'url(/Static/img/svg/green-2.svg) no-repeat');
+            $('.b19landingpage').css('background', 'url({{asset("assets/frontend/Static/img/svg/green-1.svg")}}) no-repeat');
         }
     });
 
@@ -1115,38 +1115,38 @@ Asset Management &amp; Trust                                            <i class
             $('.b19landingpage').css('background-color', '#1b3e43');
         }
         else {
-            $('.b19landingpage').css('background', 'url(/Static/img/svg/green-2.svg) no-repeat');
+            $('.b19landingpage').css('background', 'url({{asset("assets/frontend/Static/img/svg/green-1.svg")}}) no-repeat');
         }
     });
 
-</script> --}}
+</script>
 
 
 <div class="b19landingpage row-full" style="padding-bottom:0px;">
     <div class="container">
-        <h1 style="color: #25455a;">FREE Online &amp; Mobile Banking</h1>
+        <h1>FREE Online &amp; Mobile Banking</h1>
         <div class="xhtml"></div>
         <div class="b19landingpage_box_main">
 
         <div class="col-md-4 col-sm-6 b19landingpage_box">
             <a href="online-banking/index.html"><img src="{{ asset('assets/frontend/globalassets/images/primary-icons/gold/hardware/gold-hardware-primary-icon-5.png') }}" title="Online Banking" alt="computer mouse" border="0" /></a>
             <div class="clearfix"></div>
-                <span><a href="online-banking/index.html" style="color: #25455a;">Online Banking</a></span>
-            <div class="xhtml"><p style="color: #25455a;">Our state-of-the art Online Banking gives you 24/7 secure access to your accounts, Bill Pay, eStatements &amp; more.</p></div>
+                <span><a href="online-banking/index.html">Online Banking</a></span>
+            <div class="xhtml"><p>Our state-of-the art Online Banking gives you 24/7 secure access to your accounts, Bill Pay, eStatements &amp; more.</p></div>
         </div>
 
         <div class="col-md-4 col-sm-6 b19landingpage_box">
             <a href="mobile-banking/index.html"><img src="{{ asset('assets/frontend/globalassets/images/primary-icons/bright/hardware/bright-hardware-primary-icon-12.png') }}" title="Mobile Banking" alt="mobile phone" border="0"></a>
             <div class="clearfix"></div>
-                <span><a href="mobile-banking/index.html" style="color: #25455a;">Mobile Banking</a></span>
-            <div class="xhtml"><p style="color: #25455a;">Download our App and enjoy banking flexibility on-the-go! Check balances, pay bills and deposit checks by snapping a photo.</p></div>
+                <span><a href="mobile-banking/index.html">Mobile Banking</a></span>
+            <div class="xhtml"><p>Download our App and enjoy banking flexibility on-the-go! Check balances, pay bills and deposit checks by snapping a photo.</p></div>
         </div>
 
         <div class="col-md-4 col-sm-6 b19landingpage_box">
             <a href="mobile-wallet/index.html"><img src="{{ asset('assets/frontend/globalassets/images/primary-icons/blue/business-finance/blue-business-_-finance-primary-icon-25.png') }}" title="Mobile Wallet" alt="credit card" border="0"></a>
             <div class="clearfix"></div>
-                <span><a href="mobile-wallet/index.html" style="color: #25455a;">Mobile Wallet</a></span>
-            <div class="xhtml"><p style="color: #25455a;">Speed your way through checkout with your mobile device. Add your First PREMIER Bank debit card to a popular mobile wallet app.</p></div>
+                <span><a href="mobile-wallet/index.html">Mobile Wallet</a></span>
+            <div class="xhtml"><p>Speed your way through checkout with your mobile device. Add your First PREMIER Bank debit card to a popular mobile wallet app.</p></div>
         </div>
 
         </div>
@@ -1216,7 +1216,7 @@ Asset Management &amp; Trust                                            <i class
 
 
         <div class="b20consumer-loans-left b20showright"  style="float:right;">
-            
+
                             <div class="xhtml"><ul>
 <li>Enjoy secure, 24/7 access to your accounts</li>
 <li>Check balances and transfer funds with ease</li>
@@ -1399,7 +1399,7 @@ Asset Management &amp; Trust                                            <i class
 
     <div class="b17free_mobile_banking ">
         <div class="container">
-            <h2>Mobile Wallet</h2> 
+            <h2>Mobile Wallet</h2>
 
             <div class="b17free_mobile_banking_right">
                     <h3><p>Faster Checkout with Your Mobile Device</p></h3>
@@ -1440,7 +1440,7 @@ Asset Management &amp; Trust                                            <i class
                                     <div class="col-md-12" style="padding-left:40px;">
                                         <h4 class="Blue"></h4>
                                         <div class="b46Blue" style="text-align:left;">
-                                            
+
                                             <p><br /><a href="../../small-business/online-and-mobile/mobile-wallet/index.html" target="_blank"></a></p>
                                         </div>
                                     </div>
@@ -1467,7 +1467,7 @@ Asset Management &amp; Trust                                            <i class
         background: none !important;
     }
     .b26line_credit_main .carousel-inner { min-height:520px !important;; }
-    
+
     .white-background h2, .white-background .xhtml, .white-background .xhtml p,
     .grey-background h2, .grey-background .xhtml, .grey-background .xhtml p
     {
@@ -1549,108 +1549,108 @@ Asset Management &amp; Trust                                            <i class
 
 </div></div>
 
- 
+
 
 <div class="row-full footer">
     <div class="container">
         <div class="row">
             <div class="col-md-3 col-sm-3 col-xs-12 footerCol1">
                 <div class="footerHeader">Company</div>
-                
+
 <ul>
-    
+
         <li>
-            <a href="../../pages/about-us/index.html">About Us</a> 
+            <a href="../../pages/about-us/index.html">About Us</a>
         </li>
-    
+
         <li>
-            <a href="../../index.html">First PREMIER Bank</a> 
+            <a href="../../index.html">First PREMIER Bank</a>
         </li>
-    
+
         <li>
-            <a href="https://www.mypremiercreditcard.com/">PREMIER Bankcard</a> 
+            <a href="https://www.mypremiercreditcard.com/">PREMIER Bankcard</a>
         </li>
-    
+
         <li>
-            <a href="../../pages/about-us/leadership-team/index.html">Leadership</a> 
+            <a href="../../pages/about-us/leadership-team/index.html">Leadership</a>
         </li>
-    
+
         <li>
-            <a href="../../pages/about-us/community/index.html">Community</a> 
+            <a href="../../pages/about-us/community/index.html">Community</a>
         </li>
-    
+
         <li>
-            <a href="{{route('frontend.en.pages.about.careers')}}">Careers</a> 
+            <a href="{{route('frontend.en.pages.about.careers')}}">Careers</a>
         </li>
-    
+
 </ul>
                 <br />
             </div>
             <div class="col-md-3 col-sm-3 col-xs-12 footerCol2">
                 <div class="footerHeader">Customers</div>
-                
+
 <ul>
-    
+
         <li>
-            <a href="../../index.html">Personal Banking</a> 
+            <a href="../../index.html">Personal Banking</a>
         </li>
-    
+
         <li>
-            <a href="../../small-business/index.html">Small Business</a> 
+            <a href="../../small-business/index.html">Small Business</a>
         </li>
-    
+
         <li>
-            <a href="../../commercial/index.html">Commercial</a> 
+            <a href="../../commercial/index.html">Commercial</a>
         </li>
-    
+
 </ul>
                 <br />
             </div>
             <div class="col-md-3 col-sm-3 col-xs-12 footerCol3">
                 <div class="footerHeader">Help &amp; Contact</div>
-                
+
 <ul>
-    
+
         <li>
-            <a href="../../pages/quick-links/customer-care/index.html">Customer Care</a> 
+            <a href="../../pages/quick-links/customer-care/index.html">Customer Care</a>
         </li>
-    
+
         <li>
-            <a href="../../pages/quick-links/locations/index.html">Locations</a> 
+            <a href="../../pages/quick-links/locations/index.html">Locations</a>
         </li>
-    
+
         <li>
-            <a href="../../pages/quick-links/customer-care/index.html">BANK: 800-501-6535</a> 
+            <a href="../../pages/quick-links/customer-care/index.html">BANK: 800-501-6535</a>
         </li>
-    
+
         <li>
-            <a href="https://www.mypremiercreditcard.com/">CREDIT CARD: 800-987-5521</a> 
+            <a href="https://www.mypremiercreditcard.com/">CREDIT CARD: 800-987-5521</a>
         </li>
-    
+
         <li>
-            <a href="../../index.html">Routing Number: 091408598</a> 
+            <a href="../../index.html">Routing Number: 091408598</a>
         </li>
-    
+
 </ul>
                 <br />
             </div>
             <div class="col-md-3 col-sm-3 col-xs-12 footerCol4">
                 <div class="footerHeader">Legal Notices</div>
-                
+
 <ul>
-    
+
         <li>
-            <a href="../../pages/resources/first-premier-privacy-statement-2020/index.html">Privacy Notice &amp; Statement</a> 
+            <a href="../../pages/resources/first-premier-privacy-statement-2020/index.html">Privacy Notice &amp; Statement</a>
         </li>
-    
+
         <li>
-            <a href="../../pages/resources/legal-disclosures/index.html">Legal Disclosures</a> 
+            <a href="../../pages/resources/legal-disclosures/index.html">Legal Disclosures</a>
         </li>
-    
+
         <li>
-            <a href="../../pages/resources/cookie-policy/index.html">Cookie Policy</a> 
+            <a href="../../pages/resources/cookie-policy/index.html">Cookie Policy</a>
         </li>
-    
+
 </ul>
             </div>
         </div>
@@ -1660,9 +1660,9 @@ Asset Management &amp; Trust                                            <i class
         </div>
     </div>
 </div>
-<style>   
+<style>
     /* CHROME SAFARI FIX */
-    .form-control:hover, .form-control:active, .form-control:focus { box-shadow: none !important; -moz-box-shadow: none !important; -webkit-box-shadow: none !important; } 
+    .form-control:hover, .form-control:active, .form-control:focus { box-shadow: none !important; -moz-box-shadow: none !important; -webkit-box-shadow: none !important; }
     .form-control:hover, .form-control:active, .form-control:focus { box-shadow: none !important; -moz-box-shadow: none !important; -webkit-box-shadow: none !important; }
     a:focus, a:active {outline:none!important; border: none!important; }
     input:focus, input:active { outline: none !important; }

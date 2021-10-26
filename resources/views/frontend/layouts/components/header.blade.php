@@ -16,7 +16,7 @@
                             <li class="navItem"><a href="{{route('frontend.en.pages.about.careers')}}">Careers</a>
                             </li>
                             <li class="navItem"><a
-                                    href="en/pages/quick-links/customer-care/index.html">Customer Care</a></li>
+                                    href="{{ route('frontend.en.pages.quick-links.customer-care') }}">Customer Care</a></li>
 
                             <li id="signInSection" class="bg-dropdown" onmouseover="ShowSignInOption()"
                                 onmouseout="ShowSignInOption()">
@@ -204,7 +204,7 @@
                                                     </div>
                                                     <div class="bg-menu_left_section col-md-6 col-xs-12 col-sm-6">
                                                         <div class="subsubitem"><a
-                                                                href="en/personal/online-and-mobile/bill-pay/index.html">Bill
+                                                                href="{{ route('frontend.en.personal.online-and-mobile.bill-pay') }}">Bill
                                                                 Pay</a></div>
                                                         <p>Schedule and make payments simply and securely Online
                                                             or via Moble Banking.</p>
@@ -212,7 +212,7 @@
                                                     </div>
                                                     <div class="bg-menu_left_section col-md-6 col-xs-12 col-sm-6">
                                                         <div class="subsubitem"><a
-                                                                href="en/personal/online-and-mobile/mobile-deposit/index.html">Mobile
+                                                                href="{{ route('frontend.en.personal.online-and-mobile.mobile-deposit') }}">Mobile
                                                                 Deposit</a></div>
                                                         <p>Use our Mobile Banking app to make deposits using
                                                             your mobile phone.</p>
@@ -220,7 +220,7 @@
                                                     </div>
                                                     <div class="bg-menu_left_section col-md-6 col-xs-12 col-sm-6">
                                                         <div class="subsubitem"><a
-                                                                href="en/personal/online-and-mobile/estatements/index.html">eStatements</a>
+                                                                href="{{ route('frontend.en.personal.online-and-mobile.estatements') }}">eStatements</a>
                                                         </div>
                                                         <p>Secure electronic statements you can print, download
                                                             and use for record keeping.</p>
@@ -236,7 +236,7 @@
                                                     </div>
                                                     <div class="bg-menu_left_section col-md-6 col-xs-12 col-sm-6">
                                                         <div class="subsubitem"><a
-                                                                href="en/personal/online-and-mobile/personal-financial-management/index.html">Personal
+                                                                href="{{ route('frontend.en.personal.online-and-mobile.personal-financial-management') }}">Personal
                                                                 Financial Management</a></div>
                                                         <p>Analyze spending patterns, plan a budget and more
                                                             with these free tools.</p>
@@ -273,7 +273,7 @@
                                                     class="menu_left_section_main bg-menu_left_section_main col-md-12 col-sm-12 col-xs-12">
                                                     <div class="bg-menu_left_section col-md-6 col-xs-12 col-sm-6">
                                                         <div class="subsubitem"><a
-                                                                href="en/personal/savings-and-cds/regular-savings/index.html">Regular
+                                                                href="{{ route('frontend.en.personal.savings-and-cds.regular-savings') }}">Regular
                                                                 Savings</a></div>
                                                         <p>A traditional, FDIC-insured savings option with free
                                                             Online and Mobile Banking.</p>

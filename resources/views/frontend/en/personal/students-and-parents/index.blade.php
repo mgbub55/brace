@@ -1541,7 +1541,7 @@
             </div>
         </section> --}}
 
-        {{-- <script>
+        <script>
 
             $(document).ready(function () {
 
@@ -1636,7 +1636,7 @@
                 var searchText = $('#txtheadsearch').attr('data-val') || '';
                 $('#txtheadsearch').val(searchText);
             }
-        </script> --}}
+        </script>
         <div class="row equal-height">
             <div class="block b46block  col-md-12">
 
@@ -1650,7 +1650,7 @@
 
                     .b46mainlink {
                         color: #268d6e;
-                        background: url(../../../Static/img/CustomBlocks/B20/arrow_green.png) no-repeat right 3px;
+                        background: url("{{asset('assets/frontend/Static/img/CustomBlocks/B20/arrow_green.png')}}") no-repeat right 3px;
                         padding: 0px 15px 0px 25px;
                         vertical-align: text-bottom;
                         margin-right: 20px;
@@ -1659,7 +1659,7 @@
 
                     .b46mainanchor {
                         color: #268d6e;
-                        background: url(../../../Static/img/CustomBlocks/B20/arrow_green.png) no-repeat right 3px;
+                        background: url("{{asset('assets/frontend/Static/img/CustomBlocks/B20/arrow_green.png')}}") no-repeat right 3px;
                         float: left;
                         padding: 0px 15px 0px 25px;
                         vertical-align: text-bottom;
@@ -1694,7 +1694,7 @@
                         width: 100%;
                         padding: 80px 0px 50px 0px;
                         text-align: center;
-                        background: #fff url(../../../globalassets/images/backgrounds/grey-2.svg) no-repeat;
+                        background: #fff url("{{asset('assets/frontend/globalassets/images/backgrounds/grey-2.svg')}}") no-repeat;
                     }
                 </style>
                 <section class="row-full">
@@ -1749,7 +1749,7 @@
                         margin-top: 10px;
                         color: #42967d;
                         padding-right: 12px;
-                        background: url(../../../Static/img/CustomBlocks/B14/arrow_small.png) no-repeat right center;
+                        background: url("{{asset('asset/frontend/Static/img/CustomBlocks/B14/arrow_small.png')}}") no-repeat right center;
                     }
 
                     .b16confidence_links_multiple {
@@ -1780,7 +1780,7 @@
                         margin-top: 10px;
                         color: #42967d;
                         padding-right: 12px;
-                        background: url(../../../Static/img/CustomBlocks/B14/arrow_small.png) no-repeat right center;
+                        background: url("{{asset('assets/frontend/Static/img/CustomBlocks/B14/arrow_small.png')}}") no-repeat right center;
                     }
 
                     /* CHANGING SHADING FUNCTIONALITY */
@@ -2282,10 +2282,10 @@
                 <script>
                     $(document).ready(function () {
 
-                        if ('/Static/img/CustomBlocks/B25/Background.png' != 'null' && '/Static/img/CustomBlocks/B25/Background.png' != '') {
-                            $(".b25disclosure").css("background", "#245251 url(/Static/img/CustomBlocks/B25/Background.png) no-repeat");
+                        if ('{{("assets/frontend/Static/img/CustomBlocks/B25/Background.png")}}' != 'null' && '{{("assets/frontend/Static/img/CustomBlocks/B25/Background.png")}}' != '') {
+                            $(".b25disclosure").css("background", "#245251 url({{asset('assets/frontend/Static/img/CustomBlocks/B25/Background.png')}}) no-repeat");
                             if (screen.width > 1000) {
-                                $(".b25need_help_main").css("background", "#245251 url(/Static/img/CustomBlocks/B25/Background.png) no-repeat");
+                                $(".b25need_help_main").css("background", "#245251 url({{asset('assets/frontend/Static/img/CustomBlocks/B25/Background.png')}}) no-repeat");
                             }
 
                         }

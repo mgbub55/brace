@@ -1085,8 +1085,8 @@ Asset Management &amp; Trust                                            <i class
 
 <style>
     .b46mainlinkspan { height:50px; margin-top:24px; text-align:center;width:100%;}
-    .b46mainlink { color: #268d6e; background: url(../../../../Static/img/CustomBlocks/B20/arrow_green.png) no-repeat right 3px; padding: 0px 15px 0px 25px; vertical-align:text-bottom; margin-right: 20px; letter-spacing:1px; }
-    .b46mainanchor { color: #268d6e; background: url(../../../../Static/img/CustomBlocks/B20/arrow_green.png) no-repeat right 3px; float:left; padding: 0px 15px 0px 25px; vertical-align:text-bottom; letter-spacing:1px; }
+    .b46mainlink { color: #268d6e; background: url("{{asset('assets/frontendStatic/img/CustomBlocks/B20/arrow_green.png')}}") no-repeat right 3px; padding: 0px 15px 0px 25px; vertical-align:text-bottom; margin-right: 20px; letter-spacing:1px; }
+    .b46mainanchor { color: #268d6e; background: url("{{asset('asset/frontend/Static/img/CustomBlocks/B20/arrow_green.png')}}") no-repeat right 3px; float:left; padding: 0px 15px 0px 25px; vertical-align:text-bottom; letter-spacing:1px; }
     .b46multianchor { text-align:center; }
     .b46multianchor ul { display:inline-block; margin:0; padding:0; /* For IE, the outcast */ zoom:1; *display:inline;}
     .b46multianchor li { float:left; padding:2px 5px; }
@@ -1094,7 +1094,7 @@ Asset Management &amp; Trust                                            <i class
 </style>
 <style>
     .pop_main_container_board .pop_main_container ol li ol li {  }
-    .b46productpage { float:left; width:100%; padding:80px 0px 50px 0px; text-align:center; background:#fff url(../../../../contentassets/2a5630ce44964421b7e1a5b3961b5931/grey-2.svg) no-repeat;}
+    .b46productpage { float:left; width:100%; padding:80px 0px 50px 0px; text-align:center; background:#fff url("{{asset('assets/frontend/contentassets/2a5630ce44964421b7e1a5b3961b5931/grey-2.svg')}}") no-repeat;}
 </style>
 <section class="row-full">
     <div class="b46productpage">
@@ -1409,10 +1409,10 @@ Asset Management &amp; Trust                                            <i class
 <script>
     $(document).ready(function () {
 
-        if ('/Static/img/CustomBlocks/B25/Background.png' != 'null' && '/Static/img/CustomBlocks/B25/Background.png' != '') {
-            $(".b25disclosure").css("background", "#245251 url(/Static/img/CustomBlocks/B25/Background.png) no-repeat");
+        if ('{{asset("assets/frontend/Static/img/CustomBlocks/B25/Background.png")}}' != 'null' && '{{asset("assets/frontend/Static/img/CustomBlocks/B25/Background.png")}}' != '') {
+            $(".b25disclosure").css("background", "#245251 url({{asset('assets/frontend/Static/img/CustomBlocks/B25/Background.png')}}) no-repeat");
             if (screen.width > 1000) {
-                $(".b25need_help_main").css("background", "#245251 url(/Static/img/CustomBlocks/B25/Background.png) no-repeat");
+                $(".b25need_help_main").css("background", "#245251 url({{asset('assets/frontend/Static/img/CustomBlocks/B25/Background.png')}}) no-repeat");
             }
 
         }

@@ -12,7 +12,7 @@
    @include('frontend.layouts.components.navbar')
 
 <!--start responsive menu-->
-{{-- <nav class="pushy pushy-right">
+{{-- {{-- <nav class="pushy pushy-right">
     <div class="pushy-content">
         <button class="pushy-link close-b">X</button>
 
@@ -492,7 +492,7 @@ Asset Management &amp; Trust                                            <i class
                                                 <div class="panel-body">
 <a href="{{route('frontend.en.commercial.asset.business.first')}}">First PREMIER at Work</a>                                                </div>
                                                 <div class="panel-body"> --}}
-                                                    
+
 {{-- <a href="{{route('frontend.en.commercial.asset.south')}}">Trusts in South Dakota</a>                                                </div> --}}
 {{-- <a href="">Trusts in South Dakota</a>                                                </div>
                                         </div>
@@ -986,164 +986,164 @@ Asset Management &amp; Trust                                            <i class
             </article>
         </div>
     </div>
-</section>
+</section> --}}
 
 <script>
 
     $(document).ready(function () {
- --}}
 
-{{-- 
+
+
         //$('#AccessAccountDropdown option[id!=selectaccount]').each(function (index, value) {
         //    $('#signInHoverSection').append('<p>' + $(value).text() + '</p>');
         //});
 
-//         if ($(window).width() == 1024) {
-//             $('#ulPremierMainMenu li.SubMenu > a').on('click touchend', function (e) {
-//                 $(this).find('div[id*=subdiv]').hide();
-//                 $(this).attr('href', 'javascript:void(0)');
-//                 ShowMenu(this);
-//             }).focusout(function () {
-//                 ShowMenu(this);
-//             });
-//         }
-//         else {
+         if ($(window).width() == 1024) {
+             $('#ulPremierMainMenu li.SubMenu > a').on('click touchend', function (e) {
+                 $(this).find('div[id*=subdiv]').hide();
+                 $(this).attr('href', 'javascript:void(0)');
+                 ShowMenu(this);
+             }).focusout(function () {
+                 ShowMenu(this);
+             });
+         }
+         else {
 
-//             var timeoutId;
-//             $("#ulPremierMainMenu li.SubMenu > a").hover(function () {
-//                 var self = this;
-//                 if (!timeoutId) {
-//                     timeoutId = window.setTimeout(function () {
-//                         timeoutId = null;
-//                         ShowMenu(self);
-//                     }, 50);
-//                 }
-//             },
-//                 function () {
-//                     if (timeoutId) {
-//                         window.clearTimeout(timeoutId);
-//                         timeoutId = null;
-//                     }
-//                 });
-//         }
+             var timeoutId;
+             $("#ulPremierMainMenu li.SubMenu > a").hover(function () {
+                 var self = this;
+                 if (!timeoutId) {
+                     timeoutId = window.setTimeout(function () {
+                         timeoutId = null;
+                         ShowMenu(self);
+                     }, 50);
+                 }
+             },
+                 function () {
+                     if (timeoutId) {
+                         window.clearTimeout(timeoutId);
+                         timeoutId = null;
+                     }
+                 });
+         }
 
-//         if (sessionStorage.getItem('isClosed') == "true") {
-//             $(".alert").hide();
-//         }
+         if (sessionStorage.getItem('isClosed') == "true") {
+             $(".alert").hide();
+         }
 
-//         var lastID = null;
+         var lastID = null;
 
-//         var handleMouseover = function (e) {
-//             var target = e.target || e.srcElement;
-//             lastID = target.id;
-//             className = target.className;
-//             tagName = target.localName;
-//             if (lastID != "ulPremierMainMenu" && lastID != "") {
-//                 $('div[id*=subdiv]').slideUp(500);
-//                 $('.SubMenuItems li > a').css('color', '#fff').css('border-bottom', '');
-//             }
-//             if (className == "col-md-8 col-xs-12 col-sm-6" || className == "b1banner_text" || className == "b1login_Box" || className == "b1banner-desc" || className == "row b1mobile" || className == "b1banner_text" || className == "White" || className == "b1access" || className == "header-box" || tagName == "img" || tagName == "body") {
-//                 $('div[id*=subdiv]').slideUp(500);
-//                 $('.SubMenuItems li > a').css('color', '#fff').css('border-bottom', '');;
-//             }
+         var handleMouseover = function (e) {
+             var target = e.target || e.srcElement;
+             lastID = target.id;
+             className = target.className;
+             tagName = target.localName;
+             if (lastID != "ulPremierMainMenu" && lastID != "") {
+                 $('div[id*=subdiv]').slideUp(500);
+                 $('.SubMenuItems li > a').css('color', '#fff').css('border-bottom', '');
+             }
+             if (className == "col-md-8 col-xs-12 col-sm-6" || className == "b1banner_text" || className == "b1login_Box" || className == "b1banner-desc" || className == "row b1mobile" || className == "b1banner_text" || className == "White" || className == "b1access" || className == "header-box" || tagName == "img" || tagName == "body") {
+                 $('div[id*=subdiv]').slideUp(500);
+                 $('.SubMenuItems li > a').css('color', '#fff').css('border-bottom', '');;
+             }
 
-//         };
+         };
 
-//         if (document.addEventListener) {
-//             document.addEventListener('mouseover', handleMouseover, false);
-//             document.addEventListener('mouseover', handleMouseover, false);
-//         }
-//         else {
-//             document.attachEvent('onmouseover', handleMouseover);
-//         }
+         if (document.addEventListener) {
+             document.addEventListener('mouseover', handleMouseover, false);
+             document.addEventListener('mouseover', handleMouseover, false);
+         }
+         else {
+             document.attachEvent('onmouseover', handleMouseover);
+         }
 
-//     });
-//     function ShowMenu(element) {
-//         if ($(element).next('div[id*=subdiv]').filter(function () { return $(this).css('display') === 'block'; }).length == 0) {
-//             $('div[id*=subdiv]').hide();
-//             $(element).next('div[id*=subdiv]').slideDown(500);
-//             $('.SubMenuItems li > a').css('color', '#fff').css('border-bottom', '');
-//             $(element).css('color', '#e4cb3f').css({
-//                 "border-bottom-color": "#e4cb3f",
-//                 "border-bottom-width": "3px",
-//                 "border-bottom-style": "solid"
-//             });
-//         }
-//     }
-//     function ShowSignInOption() {
-//         if ($('#signInHoverSection').attr('data-present') == "present") {
-//             $('#signInHoverSection').toggle();
-//         }
-//     }
-//     function SearchOut() {
-//         $('#txtheadsearch').attr('data-val', $('#txtheadsearch').val());
-//         $('#txtheadsearch').val(null);
-//     }
-//     function SearchIn() {
-//         var searchText = $('#txtheadsearch').attr('data-val') || '';
-//         $('#txtheadsearch').val(searchText);
-//     }
-// </script>
-// <div class="row equal-height"><div class="block b19block  col-md-12">
+     });
+     function ShowMenu(element) {
+         if ($(element).next('div[id*=subdiv]').filter(function () { return $(this).css('display') === 'block'; }).length == 0) {
+             $('div[id*=subdiv]').hide();
+             $(element).next('div[id*=subdiv]').slideDown(500);
+             $('.SubMenuItems li > a').css('color', '#fff').css('border-bottom', '');
+             $(element).css('color', '#e4cb3f').css({
+                 "border-bottom-color": "#e4cb3f",
+                 "border-bottom-width": "3px",
+                 "border-bottom-style": "solid"
+             });
+         }
+     }
+     function ShowSignInOption() {
+         if ($('#signInHoverSection').attr('data-present') == "present") {
+             $('#signInHoverSection').toggle();
+         }
+     }
+     function SearchOut() {
+         $('#txtheadsearch').attr('data-val', $('#txtheadsearch').val());
+         $('#txtheadsearch').val(null);
+     }
+     function SearchIn() {
+         var searchText = $('#txtheadsearch').attr('data-val') || '';
+         $('#txtheadsearch').val(searchText);
+     }
+ </script>
+ <div class="row equal-height"><div class="block b19block  col-md-12">
 
-// <style>
-//     .b19landingpage {
-//         height: auto;
-//         padding: 40px 0px;
-//     }
-// </style>
-// <script> --}}
-{{-- 
-//     $(document).ready(function () {
-//         if (screen.width < 767) {
-//             $('.b19landingpage').css('height', '628px');
-//             $('.b19landingpage').css('background', '');
-//             $('.b19landingpage').css('background-color', '#1b3e43');
-//         }
-//         else {
-//             $('.b19landingpage').css('background', 'url(/Static/img/svg/green-3.svg) no-repeat');
-//         }
-//     });
+ <style>
+     .b19landingpage {
+         height: auto;
+         padding: 40px 0px;
+     }
+ </style>
+ <script>
 
-//     $(window).resize(function () {
-//         if (screen.width < 767) {
-//             $('.b19landingpage').css('height', '628px');
-//             $('.b19landingpage').css('background', '');
-//             $('.b19landingpage').css('background-color', '#1b3e43');
-//         }
-//         else {
-//             $('.b19landingpage').css('background', 'url(/Static/img/svg/green-3.svg) no-repeat');
-//         }
-//     });
+     $(document).ready(function () {
+         if (screen.width < 767) {
+             $('.b19landingpage').css('height', '628px');
+             $('.b19landingpage').css('background', '');
+             $('.b19landingpage').css('background-color', '#1b3e43');
+         }
+         else {
+             $('.b19landingpage').css('background', 'url({{asset("assets/frontend/Static/img/svg/green-1.svg")}}) no-repeat');
+         }
+     });
 
-// </script> --}}
+     $(window).resize(function () {
+         if (screen.width < 767) {
+             $('.b19landingpage').css('height', '628px');
+             $('.b19landingpage').css('background', '');
+             $('.b19landingpage').css('background-color', '#1b3e43');
+         }
+         else {
+             $('.b19landingpage').css('background', 'url({{asset("assets/frontend/Static/img/svg/green-1.svg")}}) no-repeat');
+         }
+     });
+
+ </script>
 
 
 <div class="b19landingpage row-full" style="padding-bottom:0px;">
     <div class="container">
-        <h1 style="color: #25455a;">Personal Checking</h1>
+        <h1>Personal Checking</h1>
         <div class="xhtml"></div>
         <div class="b19landingpage_box_main">
 
         <div class="col-md-4 col-sm-6 b19landingpage_box">
             <a href="free-plus-checking/index.html"><img src="{{ asset('assets/frontend/globalassets/images/primary-icons/green/business-finance/green-business-_-finance-primary-icon-12.png') }}" title="FREE+ Checking" alt="Check" border="0" /></a>
             <div class="clearfix"></div>
-                <span><a href="free-plus-checking/index.html" style="color: #25455a;">FREE+ Checking</a></span>
-            <div class="xhtml"><p style="color: #25455a;">No surprises, no monthly fees, plus earn interest on balances of $500 and more.</p></div>
+                <span><a href="free-plus-checking/index.html">FREE+ Checking</a></span>
+            <div class="xhtml"><p>No surprises, no monthly fees, plus earn interest on balances of $500 and more.</p></div>
         </div>
 
         <div class="col-md-4 col-sm-6 b19landingpage_box">
             <a href="debit-card/index.html"><img src="{{ asset('assets/frontend/globalassets/images/primary-icons/blue/business-finance/blue-business-_-finance-primary-icon-25.png') }}" title="FREE Debit Card" alt="Credit Card" border="0"></a>
             <div class="clearfix"></div>
-                <span><a href="debit-card/index.html" style="color: #25455a;">FREE Debit Card</a></span>
-            <div class="xhtml"><p style="color: #25455a;">With Zero Liability&reg; Protection, 33,000+ surcharge-free MoneyPass&reg; ATMs, Apple Pay and more.</p></div>
+                <span><a href="debit-card/index.html">FREE Debit Card</a></span>
+            <div class="xhtml"><p>With Zero Liability&reg; Protection, 33,000+ surcharge-free MoneyPass&reg; ATMs, Apple Pay and more.</p></div>
         </div>
 
         <div class="col-md-4 col-sm-6 b19landingpage_box">
             <a href="../online-and-mobile/index.html"><img src="{{ asset('assets/frontend/globalassets/images/primary-icons/gold/hardware/gold-hardware-primary-icon-12.png')}}" title="Online &amp; Mobile Tools" alt="Mobile Phone" border="0"></a>
             <div class="clearfix"></div>
-                <span><a href="../online-and-mobile/index.html" style="color: #25455a;">Online &amp; Mobile Tools</a></span>
-            <div class="xhtml"><p style="color: #25455a;">FREE 24/7 account access with our easy-to-use, feature rich Online and Mobile Banking.</p></div>
+                <span><a href="../online-and-mobile/index.html">Online &amp; Mobile Tools</a></span>
+            <div class="xhtml"><p>FREE 24/7 account access with our easy-to-use, feature rich Online and Mobile Banking.</p></div>
         </div>
 
         </div>
@@ -1372,7 +1372,7 @@ Asset Management &amp; Trust                                            <i class
                     <h3><h3>Instantly Issued, Just for You</h3></h3>
                                 <div class="xhtml"><p>We can issue your First PREMIER Bank Debit Mastercard&reg; instantly at most branches.<sup>3</sup> Your debit card gives you access to 33,000+ surcharge-free Moneypass&reg; ATMs. Enjoy Zero Liabilty&reg; Protection on purchases, setup easy account notifications and alerts and lock or unlock your card if lost or stolen via <a title="Online &amp; Mobile Banking" href="../online-and-mobile/index.html">Online and Mobile Banking</a>. You can even set up your card on popular <a title="Mobile Wallet" href="../online-and-mobile/mobile-wallet/index.html">mobile wallet</a> apps to speed your way through checkout.</p></div>
                 <div class="b17PayLinks payIcon-space">
-<a href="https://www.apple.com/apple-pay/"><img src="{{ asset('assets/frontend/Static/img/PayIcons/apple-pay-icon.png') }}" border="0" /></a><a href="https://pay.google.com/about/"><img src="{{ asset('assets/frontend/Static/img/PayIcons/android-pay-icon.png') }}" border="0" class="payIcon" /></a><a href="https://www.samsung.com/us/samsung-pay/"><img src="{{ asset('assets/frontend/Static/img/PayIcons/samsung-pay-icon.png') }}" border="0" class="payIcon" /></a>                </div>
+<a href="https:www.apple.com/apple-pay/"><img src="{{ asset('assets/frontend/Static/img/PayIcons/apple-pay-icon.png') }}" border="0" /></a><a href="https://pay.google.com/about/"><img src="{{ asset('assets/frontend/Static/img/PayIcons/android-pay-icon.png') }}" border="0" class="payIcon" /></a><a href="https://www.samsung.com/us/samsung-pay/"><img src="{{ asset('assets/frontend/Static/img/PayIcons/samsung-pay-icon.png') }}" border="0" class="payIcon" /></a>                </div>
 
                 <!-- Button and Footer Links go here ... -->
                                 <a href="debit-card/index.html" class="b17readmore">Learn More</a>

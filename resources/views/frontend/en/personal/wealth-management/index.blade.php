@@ -6,7 +6,7 @@
     @include('frontend.layouts.components.header')
     <!-- Main Header -->
     @include('frontend.layouts.components.navbar')
-{{-- 
+{{--
         <!--start responsive menu-->
         <nav class="pushy pushy-right">
             <div class="pushy-content">
@@ -1539,7 +1539,7 @@
             </div>
         </section> --}}
 
-        {{-- <script>
+         <script>
 
             $(document).ready(function () {
 
@@ -1653,7 +1653,7 @@
                             $('.b19landingpage').css('background-color', '#1b3e43');
                         }
                         else {
-                            $('.b19landingpage').css('background', 'url(/Static/img/svg/green-3.svg) no-repeat');
+                            $('.b19landingpage').css('background', 'url({{asset("assets/frontend/Static/img/svg/green-1.svg")}}) no-repeat');
                         }
                     });
 
@@ -1664,16 +1664,16 @@
                             $('.b19landingpage').css('background-color', '#1b3e43');
                         }
                         else {
-                            $('.b19landingpage').css('background', 'url(/Static/img/svg/green-3.svg) no-repeat');
+                            $('.b19landingpage').css('background', 'url({{asset("assets/frontend/Static/img/svg/green-1.svg")}}) no-repeat');
                         }
                     });
 
-                </script> --}}
+                </script>
 
 
                 <div class="b19landingpage row-full" style="padding-bottom:0px;">
                     <div class="container">
-                        <h1 style="color: #25455a;">Wealth Management</h1>
+                        <h1>Wealth Management</h1>
                         <div class="xhtml"></div>
                         <div class="b19landingpage_box_main">
 
@@ -1682,9 +1682,9 @@
                                         src="{{ asset('assets/frontend/globalassets/images/primary-icons/blue/business-finance/blue-business-_-finance-primary-icon-36.png') }}"
                                         title="Private Banking" alt="bag of money" border="0" /></a>
                                 <div class="clearfix"></div>
-                                <span><a href="private-banking/index.html" style="color: #25455a;">Private Banking</a></span>
+                                <span><a href="private-banking/index.html">Private Banking</a></span>
                                 <div class="xhtml">
-                                    <p style="color: #25455a;">Concierge-style banking solutions for higher income individuals and families.</p>
+                                    <p>Concierge-style banking solutions for higher income individuals and families.</p>
                                 </div>
                             </div>
 
@@ -1693,9 +1693,9 @@
                                         src="{{ asset('assets/frontend/globalassets/images/primary-icons/gold/business-finance/gold-business-_-finance-primary-icon-22.png') }}"
                                         title="Managed Investing" alt="pie chart" border="0"></a>
                                 <div class="clearfix"></div>
-                                <span><a href="managed-investing/index.html" style="color: #25455a;">Managed Investing</a></span>
+                                <span><a href="managed-investing/index.html">Managed Investing</a></span>
                                 <div class="xhtml">
-                                    <p style="color: #25455a;">Personalized financial planning, investment support and portfolio management.</p>
+                                    <p>Personalized financial planning, investment support and portfolio management.</p>
                                 </div>
                             </div>
 
@@ -1704,9 +1704,9 @@
                                         src="{{ asset('assets/frontend/globalassets/images/primary-icons/bright/business-finance/bright-business-_-finance-primary-icon-2.png') }}"
                                         title="Trust Services" alt="coins dropping into hand" border="0"></a>
                                 <div class="clearfix"></div>
-                                <span><a href="personal-trust-services/index.html" style="color: #25455a;">Trust Services</a></span>
+                                <span><a href="personal-trust-services/index.html">Trust Services</a></span>
                                 <div class="xhtml">
-                                    <p style="color: #25455a;">Manage your wealth through life's transitions with estate and trust planning
+                                    <p>Manage your wealth through life's transitions with estate and trust planning
                                         services.</p>
                                 </div>
                             </div>

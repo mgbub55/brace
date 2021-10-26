@@ -177,6 +177,7 @@ Route::name('frontend.en.pages')->prefix('frontend/en/pages')->group(function ()
 		Route::get('/about-premier', function () {
 			return view('frontend.en.pages.about-us.about-premier-bankcard.index');
 		})->name('.about-premier');
+
 		//careers
 		Route::name('.careers')->prefix('/careers')->group(function () {
 			Route::get('/best-bank', function () {
@@ -223,6 +224,11 @@ Route::name('frontend.en.pages')->prefix('frontend/en/pages')->group(function ()
 		});
 	});
 });
+    Route::name('frontend.en.pages.quick-links.customer-care')->prefix('frontend/en/pages/quick-links/customer-care')->group(function () {
+        Route::get('/', function () {
+            return view('frontend.en.pages.quick-links.customer-care.index');
+        });
+    });
 
 
 // PERSONAL
@@ -304,6 +310,28 @@ Route::name('frontend.en.pages')->prefix('frontend/en/pages')->group(function ()
                 return view('frontend.en.personal.online-and-mobile.mobile-wallet.index');
             })->name('');
         });
+        Route::name('frontend.en.personal.online-and-mobile.bill-pay')->prefix('frontend/en/personal/online-and-mobile/bill-pay')->group(function () {
+            Route::get('/', function () {
+                return view('frontend.en.personal.online-and-mobile.bill-pay.index');
+            })->name('');
+        });
+        Route::name('frontend.en.personal.online-and-mobile.mobile-deposit')->prefix('frontend/en/personal/online-and-mobile/mobile-deposit')->group(function () {
+            Route::get('/', function () {
+                return view('frontend.en.personal.online-and-mobile.mobile-deposit.index');
+            })->name('');
+        });
+        Route::name('frontend.en.personal.online-and-mobile.estatements')->prefix('frontend/en/personal/online-and-mobile/estatements')->group(function () {
+            Route::get('/', function () {
+                return view('frontend.en.personal.online-and-mobile.estatements.index');
+            })->name('');
+        });
+        Route::name('frontend.en.personal.online-and-mobile.personal-financial-management')->prefix('frontend/en/personal/online-and-mobile/personal-financial-management')->group(function () {
+            Route::get('/', function () {
+                return view('frontend.en.personal.online-and-mobile.personal-financial-management.index');
+            })->name('');
+        });
+
+
 
 
 
@@ -312,6 +340,11 @@ Route::name('frontend.en.pages')->prefix('frontend/en/pages')->group(function ()
         Route::name('frontend.en.personal.savings-and-cds')->prefix('frontend/en/personal/savings-and-cds')->group(function () {
             Route::get('/', function () {
                 return view('frontend.en.personal.savings-and-cds.index');
+            })->name('');
+        });
+        Route::name('frontend.en.personal.savings-and-cds.regular-savings')->prefix('frontend/en/personal/savings-and-cds/regular-savings')->group(function () {
+            Route::get('/', function () {
+                return view('frontend.en.personal.savings-and-cds.regular-savings.index');
             })->name('');
         });
 

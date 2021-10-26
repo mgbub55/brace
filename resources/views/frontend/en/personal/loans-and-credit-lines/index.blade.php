@@ -34,7 +34,7 @@
                                 </div>
                                     <div class="panel">
                                         <a data-toggle="collapse" data-parent="#accordion21" href="#collapse11">
-                                            
+
 Checking                                            <i class="fa fa-chevron-down pull-right" aria-hidden="true"></i>
                                         </a>
                                         <div id="collapse11" class="panel-collapse collapse">
@@ -55,7 +55,7 @@ Checking                                            <i class="fa fa-chevron-down
                                     </div>
                                     <div class="panel">
                                         <a data-toggle="collapse" data-parent="#accordion21" href="#collapse12">
-                                            
+
 Online &amp; Mobile                                            <i class="fa fa-chevron-down pull-right" aria-hidden="true"></i>
                                         </a>
                                         <div id="collapse12" class="panel-collapse collapse">
@@ -80,7 +80,7 @@ Online &amp; Mobile                                            <i class="fa fa-c
                                     </div>
                                     <div class="panel">
                                         <a data-toggle="collapse" data-parent="#accordion21" href="#collapse13">
-                                            
+
 Savings &amp; CDs                                            <i class="fa fa-chevron-down pull-right" aria-hidden="true"></i>
                                         </a>
                                         <div id="collapse13" class="panel-collapse collapse">
@@ -101,7 +101,7 @@ Savings &amp; CDs                                            <i class="fa fa-che
                                     </div>
                                     <div class="panel">
                                         <a data-toggle="collapse" data-parent="#accordion21" href="#collapse14">
-                                            
+
 Loans &amp; Credit Lines                                            <i class="fa fa-chevron-down pull-right" aria-hidden="true"></i>
                                         </a>
                                         <div id="collapse14" class="panel-collapse collapse">
@@ -124,7 +124,7 @@ Loans &amp; Credit Lines                                            <i class="fa
                                     </div>
                                     <div class="panel">
                                         <a data-toggle="collapse" data-parent="#accordion21" href="#collapse15">
-                                            
+
 Mortgages                                            <i class="fa fa-chevron-down pull-right" aria-hidden="true"></i>
                                         </a>
                                         <div id="collapse15" class="panel-collapse collapse">
@@ -143,7 +143,7 @@ Mortgages                                            <i class="fa fa-chevron-dow
                                     </div>
                                     <div class="panel">
                                         <a data-toggle="collapse" data-parent="#accordion21" href="#collapse16">
-                                            
+
 Investing                                            <i class="fa fa-chevron-down pull-right" aria-hidden="true"></i>
                                         </a>
                                         <div id="collapse16" class="panel-collapse collapse">
@@ -162,7 +162,7 @@ Investing                                            <i class="fa fa-chevron-dow
                                     </div>
                                     <div class="panel">
                                         <a data-toggle="collapse" data-parent="#accordion21" href="#collapse17">
-                                            
+
 Wealth Management                                            <i class="fa fa-chevron-down pull-right" aria-hidden="true"></i>
                                         </a>
                                         <div id="collapse17" class="panel-collapse collapse">
@@ -183,7 +183,7 @@ Wealth Management                                            <i class="fa fa-che
                                     </div>
                                     <div class="panel">
                                         <a data-toggle="collapse" data-parent="#accordion21" href="#collapse18">
-                                            
+
 Students &amp; Parents                                            <i class="fa fa-chevron-down pull-right" aria-hidden="true"></i>
                                         </a>
                                         <div id="collapse18" class="panel-collapse collapse">
@@ -218,7 +218,7 @@ Students &amp; Parents                                            <i class="fa f
                                 </div>
                                     <div class="panel">
                                         <a data-toggle="collapse" data-parent="#accordion21" href="#collapse21">
-                                            
+
 Checking                                            <i class="fa fa-chevron-down pull-right" aria-hidden="true"></i>
                                         </a>
                                         <div id="collapse21" class="panel-collapse collapse">
@@ -245,7 +245,7 @@ Checking                                            <i class="fa fa-chevron-down
                                     </div>
                                     <div class="panel">
                                         <a data-toggle="collapse" data-parent="#accordion21" href="#collapse22">
-                                            
+
 Online &amp; Mobile                                            <i class="fa fa-chevron-down pull-right" aria-hidden="true"></i>
                                         </a>
                                         <div id="collapse22" class="panel-collapse collapse">
@@ -268,7 +268,7 @@ Online &amp; Mobile                                            <i class="fa fa-c
                                     </div>
                                     <div class="panel">
                                         <a data-toggle="collapse" data-parent="#accordion21" href="#collapse23">
-                                            
+
 Savings &amp; CDs                                            <i class="fa fa-chevron-down pull-right" aria-hidden="true"></i>
                                         </a>
                                         <div id="collapse23" class="panel-collapse collapse">
@@ -285,7 +285,7 @@ Savings &amp; CDs                                            <i class="fa fa-che
                                     </div>
                                     <div class="panel">
                                         <a data-toggle="collapse" data-parent="#accordion21" href="#collapse24">
-                                            
+
 Loans &amp; Credit Lines                                            <i class="fa fa-chevron-down pull-right" aria-hidden="true"></i>
                                         </a>
                                         <div id="collapse24" class="panel-collapse collapse">
@@ -304,7 +304,7 @@ Loans &amp; Credit Lines                                            <i class="fa
                                     </div>
                                     <div class="panel">
                                         <a data-toggle="collapse" data-parent="#accordion21" href="#collapse25">
-                                            
+
 Business Services                                            <i class="fa fa-chevron-down pull-right" aria-hidden="true"></i>
                                         </a>
                                         <div id="collapse25" class="panel-collapse collapse">
@@ -331,7 +331,7 @@ Business Services                                            <i class="fa fa-che
                                     </div>
                                     <div class="panel">
                                         <a data-toggle="collapse" data-parent="#accordion21" href="#collapse26">
-                                            
+
 Asset Management &amp; Trust                                            <i class="fa fa-chevron-down pull-right" aria-hidden="true"></i>
                                         </a>
                                         <div id="collapse26" class="panel-collapse collapse">
@@ -354,7 +354,7 @@ Asset Management &amp; Trust                                            <i class
                                     </div>
                                     <div class="panel">
                                         <a data-toggle="collapse" data-parent="#accordion21" href="#collapse27">
-                                            
+
 Ag Banking                                            <i class="fa fa-chevron-down pull-right" aria-hidden="true"></i>
                                         </a>
                                         <div id="collapse27" class="panel-collapse collapse">
@@ -383,7 +383,7 @@ Ag Banking                                            <i class="fa fa-chevron-do
                                 </div>
                                     <div class="panel">
                                         <a data-toggle="collapse" data-parent="#accordion21" href="#collapse31">
-                                            
+
 Checking                                            <i class="fa fa-chevron-down pull-right" aria-hidden="true"></i>
                                         </a>
                                         <div id="collapse31" class="panel-collapse collapse">
@@ -410,7 +410,7 @@ Checking                                            <i class="fa fa-chevron-down
                                     </div>
                                     <div class="panel">
                                         <a data-toggle="collapse" data-parent="#accordion21" href="#collapse32">
-                                            
+
 Savings &amp; CDs                                            <i class="fa fa-chevron-down pull-right" aria-hidden="true"></i>
                                         </a>
                                         <div id="collapse32" class="panel-collapse collapse">
@@ -427,7 +427,7 @@ Savings &amp; CDs                                            <i class="fa fa-che
                                     </div>
                                     <div class="panel">
                                         <a data-toggle="collapse" data-parent="#accordion21" href="#collapse33">
-                                            
+
 Financing                                            <i class="fa fa-chevron-down pull-right" aria-hidden="true"></i>
                                         </a>
                                         <div id="collapse33" class="panel-collapse collapse">
@@ -448,7 +448,7 @@ Financing                                            <i class="fa fa-chevron-dow
                                     </div>
                                     <div class="panel">
                                         <a data-toggle="collapse" data-parent="#accordion21" href="#collapse34">
-                                            
+
 Treasury Services                                            <i class="fa fa-chevron-down pull-right" aria-hidden="true"></i>
                                         </a>
                                         <div id="collapse34" class="panel-collapse collapse">
@@ -474,7 +474,7 @@ Treasury Services                                            <i class="fa fa-che
                                     </div>
                                     <div class="panel">
                                         <a data-toggle="collapse" data-parent="#accordion21" href="#collapse35">
-                                            
+
 Asset Management &amp; Trust                                            <i class="fa fa-chevron-down pull-right" aria-hidden="true"></i>
                                         </a>
                                         <div id="collapse35" class="panel-collapse collapse">
@@ -504,7 +504,7 @@ Asset Management &amp; Trust                                            <i class
 
 
 
-       
+
 
                 <div class="panel-heading">
                     <h4 class="panel-title">
@@ -527,7 +527,7 @@ Asset Management &amp; Trust                                            <i class
                 <ul class="footer-mobile-link">
                     <li class="number-bg">800-501-6535</li>
                     <li><a href="../../pages/quick-links/locations/index.html">Locations</a></li><li><a href="../../pages/about-us/index.html">About Us</a></li><li><a href="{{route('frontend.en.pages.about.careers')}}">Careers</a></li><li><a href="../../pages/quick-links/customer-care/index.html">Customer Care</a></li>
-                    
+
                 </ul>
             </div>
         </div>
@@ -550,7 +550,7 @@ Asset Management &amp; Trust                                            <i class
 
                                 <li id="signInSection" class="bg-dropdown" onmouseover="ShowSignInOption()" onmouseout="ShowSignInOption()">
                                     <a href="#" class="signin">Sign In </a>
-                                    
+
                                     <div id="signInHoverSection" class="b1sign-in-hover" data-present="present" style="display:none;">
                                         <p><a href="https://www.mypremiercreditcard.com/login.aspx" data-type="" id="SIcreditcardpayment">Credit Card</a><br /></p>
                                         <p><a href="https://online.firstpremier.com/FirstPremierBankOnline/uux.aspx" data-type="actionitem" id="SIpersonalbanking">Personal Banking</a><br /></p>
@@ -986,7 +986,7 @@ Asset Management &amp; Trust                                            <i class
     </div>
 </section> --}}
 
-{{-- <script>
+ <script>
 
     $(document).ready(function () {
 
@@ -1081,7 +1081,7 @@ Asset Management &amp; Trust                                            <i class
         var searchText = $('#txtheadsearch').attr('data-val') || '';
         $('#txtheadsearch').val(searchText);
     }
-</script>        
+</script>
     <style>
         .b18great_feature_main{display:block;margin-top:-100px !important;}
 .b20consumer-loans .b20consumer-loans-left {padding-left:100px !important;}
@@ -1104,7 +1104,7 @@ Asset Management &amp; Trust                                            <i class
             $('.b19landingpage').css('background-color', '#1b3e43');
         }
         else {
-            $('.b19landingpage').css('background', 'url(/Static/img/svg/green-2.svg) no-repeat');
+            $('.b19landingpage').css('background', 'url({{asset("assets/frontend/Static/img/svg/green-1.svg")}}) no-repeat');
         }
     });
 
@@ -1115,38 +1115,38 @@ Asset Management &amp; Trust                                            <i class
             $('.b19landingpage').css('background-color', '#1b3e43');
         }
         else {
-            $('.b19landingpage').css('background', 'url(/Static/img/svg/green-2.svg) no-repeat');
+            $('.b19landingpage').css('background', 'url({{asset("assets/frontend/Static/img/svg/green-1.svg")}}) no-repeat');
         }
     });
 
-</script> --}}
+</script>
 
 
 <div class="b19landingpage row-full" style="padding-bottom:0px;">
     <div class="container">
-        <h1 style="color: #25455a;">Loans &amp; Credit Lines</h1>
+        <h1>Loans &amp; Credit Lines</h1>
         <div class="xhtml"></div>
         <div class="b19landingpage_box_main">
 
         <div class="col-md-4 col-sm-6 b19landingpage_box">
             <a href="personal-loans/index.html"><img src="{{ asset('assets/frontend/globalassets/images/_replace/_filled/round6.png') }}" title="Personal Loans" alt="money" border="0" /></a>
             <div class="clearfix"></div>
-                <span><a href="personal-loans/index.html" style="color: #25455a;">Personal Loans</a></span>
-            <div class="xhtml"><p style="color: #25455a;">Consolidating debt, financing a special purchase or remodeling your home? Let us help.</p></div>
+                <span><a href="personal-loans/index.html">Personal Loans</a></span>
+            <div class="xhtml"><p>Consolidating debt, financing a special purchase or remodeling your home? Let us help.</p></div>
         </div>
 
         <div class="col-md-4 col-sm-6 b19landingpage_box">
             <a href="personal-lines-of-credit/index.html"><img src="{{ asset('assets/frontend/globalassets/images/_replace/_filled/round7.png') }}" title="Personal Lines of Credit" alt="cash" border="0"></a>
             <div class="clearfix"></div>
-                <span><a href="personal-lines-of-credit/index.html" style="color: #25455a;">Personal Lines of Credit</a></span>
-            <div class="xhtml"><p style="color: #25455a;">Gain instant access to ready cash when you need it. We offer both personal and home equity lines of credit.</p></div>
+                <span><a href="personal-lines-of-credit/index.html">Personal Lines of Credit</a></span>
+            <div class="xhtml"><p>Gain instant access to ready cash when you need it. We offer both personal and home equity lines of credit.</p></div>
         </div>
 
         <div class="col-md-4 col-sm-6 b19landingpage_box">
             <a href="../mortgages/index.html"><img src="{{ asset('assets/frontend/globalassets/images/primary-icons/gold/places/gold-places-primary-icon-14.png') }}" title="Home Mortgage" alt="house" border="0"></a>
             <div class="clearfix"></div>
-                <span><a href="../mortgages/index.html" style="color: #25455a;">Home Mortgage</a></span>
-            <div class="xhtml"><p style="color: #25455a;">Whether it's your first-time or forever home, we offer competitive financing with local decision making.</p></div>
+                <span><a href="../mortgages/index.html">Home Mortgage</a></span>
+            <div class="xhtml"><p>Whether it's your first-time or forever home, we offer competitive financing with local decision making.</p></div>
         </div>
 
         </div>
@@ -1303,7 +1303,7 @@ Asset Management &amp; Trust                                            <i class
 
 
         <div class="b20consumer-loans-left b20showright"  style="float:right;">
-            
+
                             <div class="xhtml"><ul>
 <li>Select from several revolving lines of credit</li>
 <li>Get instant access to ready cash</li>
@@ -1873,7 +1873,7 @@ $(".b23overflow_scroll table th:nth-child(4)").text('Interest');;
         background: none !important;
     }
     .b26line_credit_main .carousel-inner { min-height:520px !important;; }
-    
+
     .white-background h2, .white-background .xhtml, .white-background .xhtml p,
     .grey-background h2, .grey-background .xhtml, .grey-background .xhtml p
     {
@@ -1957,108 +1957,108 @@ $(".b23overflow_scroll table th:nth-child(4)").text('Interest');;
 
 </div></div>
 
- 
+
 
 <div class="row-full footer">
     <div class="container">
         <div class="row">
             <div class="col-md-3 col-sm-3 col-xs-12 footerCol1">
                 <div class="footerHeader">Company</div>
-                
+
 <ul>
-    
+
         <li>
-            <a href="../../pages/about-us/index.html">About Us</a> 
+            <a href="../../pages/about-us/index.html">About Us</a>
         </li>
-    
+
         <li>
-            <a href="../../index.html">First PREMIER Bank</a> 
+            <a href="../../index.html">First PREMIER Bank</a>
         </li>
-    
+
         <li>
-            <a href="https://www.mypremiercreditcard.com/">PREMIER Bankcard</a> 
+            <a href="https://www.mypremiercreditcard.com/">PREMIER Bankcard</a>
         </li>
-    
+
         <li>
-            <a href="../../pages/about-us/leadership-team/index.html">Leadership</a> 
+            <a href="../../pages/about-us/leadership-team/index.html">Leadership</a>
         </li>
-    
+
         <li>
-            <a href="../../pages/about-us/community/index.html">Community</a> 
+            <a href="../../pages/about-us/community/index.html">Community</a>
         </li>
-    
+
         <li>
-            <a href="{{route('frontend.en.pages.about.careers')}}">Careers</a> 
+            <a href="{{route('frontend.en.pages.about.careers')}}">Careers</a>
         </li>
-    
+
 </ul>
                 <br />
             </div>
             <div class="col-md-3 col-sm-3 col-xs-12 footerCol2">
                 <div class="footerHeader">Customers</div>
-                
+
 <ul>
-    
+
         <li>
-            <a href="../../index.html">Personal Banking</a> 
+            <a href="../../index.html">Personal Banking</a>
         </li>
-    
+
         <li>
-            <a href="../../small-business/index.html">Small Business</a> 
+            <a href="../../small-business/index.html">Small Business</a>
         </li>
-    
+
         <li>
-            <a href="../../commercial/index.html">Commercial</a> 
+            <a href="../../commercial/index.html">Commercial</a>
         </li>
-    
+
 </ul>
                 <br />
             </div>
             <div class="col-md-3 col-sm-3 col-xs-12 footerCol3">
                 <div class="footerHeader">Help &amp; Contact</div>
-                
+
 <ul>
-    
+
         <li>
-            <a href="../../pages/quick-links/customer-care/index.html">Customer Care</a> 
+            <a href="../../pages/quick-links/customer-care/index.html">Customer Care</a>
         </li>
-    
+
         <li>
-            <a href="../../pages/quick-links/locations/index.html">Locations</a> 
+            <a href="../../pages/quick-links/locations/index.html">Locations</a>
         </li>
-    
+
         <li>
-            <a href="../../pages/quick-links/customer-care/index.html">BANK: 800-501-6535</a> 
+            <a href="../../pages/quick-links/customer-care/index.html">BANK: 800-501-6535</a>
         </li>
-    
+
         <li>
-            <a href="https://www.mypremiercreditcard.com/">CREDIT CARD: 800-987-5521</a> 
+            <a href="https://www.mypremiercreditcard.com/">CREDIT CARD: 800-987-5521</a>
         </li>
-    
+
         <li>
-            <a href="../../index.html">Routing Number: 091408598</a> 
+            <a href="../../index.html">Routing Number: 091408598</a>
         </li>
-    
+
 </ul>
                 <br />
             </div>
             <div class="col-md-3 col-sm-3 col-xs-12 footerCol4">
                 <div class="footerHeader">Legal Notices</div>
-                
+
 <ul>
-    
+
         <li>
-            <a href="../../pages/resources/first-premier-privacy-statement-2020/index.html">Privacy Notice &amp; Statement</a> 
+            <a href="../../pages/resources/first-premier-privacy-statement-2020/index.html">Privacy Notice &amp; Statement</a>
         </li>
-    
+
         <li>
-            <a href="../../pages/resources/legal-disclosures/index.html">Legal Disclosures</a> 
+            <a href="../../pages/resources/legal-disclosures/index.html">Legal Disclosures</a>
         </li>
-    
+
         <li>
-            <a href="../../pages/resources/cookie-policy/index.html">Cookie Policy</a> 
+            <a href="../../pages/resources/cookie-policy/index.html">Cookie Policy</a>
         </li>
-    
+
 </ul>
             </div>
         </div>
@@ -2068,9 +2068,9 @@ $(".b23overflow_scroll table th:nth-child(4)").text('Interest');;
         </div>
     </div>
 </div>
-<style>   
+<style>
     /* CHROME SAFARI FIX */
-    .form-control:hover, .form-control:active, .form-control:focus { box-shadow: none !important; -moz-box-shadow: none !important; -webkit-box-shadow: none !important; } 
+    .form-control:hover, .form-control:active, .form-control:focus { box-shadow: none !important; -moz-box-shadow: none !important; -webkit-box-shadow: none !important; }
     .form-control:hover, .form-control:active, .form-control:focus { box-shadow: none !important; -moz-box-shadow: none !important; -webkit-box-shadow: none !important; }
     a:focus, a:active {outline:none!important; border: none!important; }
     input:focus, input:active { outline: none !important; }
