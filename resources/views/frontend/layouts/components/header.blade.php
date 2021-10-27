@@ -12,7 +12,7 @@
                             <li class="navItem">800-501-6535</li>
                             <li class="navItem"><a
                                     href="{{ route('frontend.en.pages.quick-links.locations') }}">Locations</a></li>
-                            <li class="navItem"><a href="{{('frontend.en.pages.about-us')}}">About Us</a></li>
+                            <li class="navItem"><a href="{{ route('frontend.en.pages.about-us')}}">About Us</a></li>
                             <li class="navItem"><a href="{{route('frontend.en.pages.about.careers')}}">Careers</a>
                             </li>
                             <li class="navItem"><a
@@ -281,7 +281,7 @@
                                                     </div>
                                                     <div class="bg-menu_left_section col-md-6 col-xs-12 col-sm-6">
                                                         <div class="subsubitem"><a
-                                                                href="en/personal/savings-and-cds/premier-money-market/index.html">PREMIER
+                                                                href="{{ route('frontend.en.personal.savings-and-cds.premier-money-market') }}">PREMIER
                                                                 Money Market</a></div>
                                                         <p>For higher balance accounts - the bigger the balance,
                                                             the higher the rate.&nbsp;</p>
@@ -289,7 +289,7 @@
                                                     </div>
                                                     <div class="bg-menu_left_section col-md-6 col-xs-12 col-sm-6">
                                                         <div class="subsubitem"><a
-                                                                href="en/personal/savings-and-cds/certificates-of-deposit/index.html">Certificates
+                                                                href="{{ route('frontend.en.personal.savings-and-cds.certificates-of-deposit') }}">Certificates
                                                                 of Deposit</a></div>
                                                         <p>Competitive rates and an array of term options on
                                                             CDs.</p>
@@ -297,7 +297,7 @@
                                                     </div>
                                                     <div class="bg-menu_left_section col-md-6 col-xs-12 col-sm-6">
                                                         <div class="subsubitem"><a
-                                                                href="en/personal/savings-and-cds/ira-savings-and-cds/index.html">IRA
+                                                                href="{{ route('frontend.en.personal.savings-and-cds.ira-savings-and-cds') }}">IRA
                                                                 Savings &amp; CDs</a></div>
                                                         <p>A simple, tax-advantaged way to build up funds
                                                             gradually for retirement.</p>
@@ -305,7 +305,7 @@
                                                     </div>
                                                     <div class="bg-menu_left_section col-md-6 col-xs-12 col-sm-6">
                                                         <div class="subsubitem"><a
-                                                                href="en/personal/savings-and-cds/kids-savings/index.html">Kids
+                                                                href="{{ route('frontend.en.personal.savings-and-cds.kids-savings') }}">Kids
                                                                 Savings</a></div>
                                                         <p>The PREMIER Kids Club Savings account helps kids 12
                                                             and under learn the value of saving early.</p>
@@ -344,7 +344,7 @@
                                                     class="menu_left_section_main bg-menu_left_section_main col-md-12 col-sm-12 col-xs-12">
                                                     <div class="bg-menu_left_section col-md-6 col-xs-12 col-sm-6">
                                                         <div class="subsubitem"><a
-                                                                href="en/personal/loans-and-credit-lines/personal-loans/index.html">Personal
+                                                                href="{{ route('frontend.en.personal.loans-and-credit-lines.personal-loans') }}">Personal
                                                                 Loans</a></div>
                                                         <p>Competitive rates on personal, auto, home
                                                             improvement, debt consolidation loans and more.</p>
@@ -352,7 +352,7 @@
                                                     </div>
                                                     <div class="bg-menu_left_section col-md-6 col-xs-12 col-sm-6">
                                                         <div class="subsubitem"><a
-                                                                href="en/personal/loans-and-credit-lines/personal-lines-of-credit/index.html">Personal
+                                                                href="{{ route('frontend.en.personal.loans-and-credit-lines.personal-lines-of-credit') }}">Personal
                                                                 Lines of Credit</a></div>
                                                         <p>Enjoy flexible, easy access to cash when you need it
                                                             most.&nbsp; Select from several, flexible options.
@@ -361,7 +361,7 @@
                                                     </div>
                                                     <div class="bg-menu_left_section col-md-6 col-xs-12 col-sm-6">
                                                         <div class="subsubitem"><a
-                                                                href="en/personal/loans-and-credit-lines/easy-access-line-of-credit/index.html">Easy
+                                                                href="{{ route('frontend.en.personal.loans-and-credit-lines.easy-access-line-of-credit') }}">Easy
                                                                 Access Line of Credit</a></div>
                                                         <p>Get extra purchasing power and cash when you need it
                                                             with a basic, revolving line of credit.</p>
@@ -369,7 +369,7 @@
                                                     </div>
                                                     <div class="bg-menu_left_section col-md-6 col-xs-12 col-sm-6">
                                                         <div class="subsubitem"><a
-                                                                href="en/personal/loans-and-credit-lines/home-equity-line-of-credit/index.html">Home
+                                                                href="{{ route('frontend.en.personal.loans-and-credit-lines.home-equity-line-of-credit') }}">Home
                                                                 Equity Line of Credit</a></div>
                                                         <p>Fund home improvements, consolidate debt or other
                                                             expenses with this secured line of credit.</p>
@@ -377,7 +377,7 @@
                                                     </div>
                                                     <div class="bg-menu_left_section col-md-6 col-xs-12 col-sm-6">
                                                         <div class="subsubitem"><a
-                                                                href="en/personal/loans-and-credit-lines/advance-access-line-of-credit/index.html">Advance
+                                                                href="{{ route('frontend.en.personal.loans-and-credit-lines.advance-access-line-of-credit') }}">Advance
                                                                 Access Line of Credit</a></div>
                                                         <p>For higher income individuals, extra spending
                                                             flexibility and payment options you&rsquo;ll love.
@@ -386,7 +386,7 @@
                                                     </div>
                                                     <div class="bg-menu_left_section col-md-6 col-xs-12 col-sm-6">
                                                         <div class="subsubitem"><a
-                                                                href="en/personal/loans-and-credit-lines/loan-payment-options/index.html">Loan
+                                                                href="{{ route('frontend.en.personal.loans-and-credit-lines.loan-payment-options') }}">Loan
                                                                 Payment Options</a></div>
                                                         <p>When it comes to making your loan payment you have
                                                             several free and easy options.</p>
@@ -423,7 +423,7 @@
                                                     class="menu_left_section_main bg-menu_left_section_main col-md-12 col-sm-12 col-xs-12">
                                                     <div class="bg-menu_left_section col-md-6 col-xs-12 col-sm-6">
                                                         <div class="subsubitem"><a
-                                                                href="en/personal/mortgages/buying-or-building-a-home/index.html">Buying
+                                                                href="{{ route('frontend.en.personal.mortgages.buying-or-building-a-home') }}">Buying
                                                                 or Building a Home</a></div>
                                                         <p>Competitive mortgage rates with online application,
                                                             fast processing, local decisioning and personal
@@ -432,7 +432,7 @@
                                                     </div>
                                                     <div class="bg-menu_left_section col-md-6 col-xs-12 col-sm-6">
                                                         <div class="subsubitem"><a
-                                                                href="en/personal/mortgages/refinancing-a-home/index.html">Refinancing
+                                                                href="{{ route('frontend.en.personal.mortgages.refinancing-a-home') }}">Refinancing
                                                                 a Home</a></div>
                                                         <p>Leverage your home equity to help fund home projects,
                                                             gain more favorable rate and terms or consolidate
@@ -441,7 +441,7 @@
                                                     </div>
                                                     <div class="bg-menu_left_section col-md-6 col-xs-12 col-sm-6">
                                                         <div class="subsubitem"><a
-                                                                href="en/personal/mortgages/jumbo-mortgage-loans/index.html">Jumbo
+                                                                href="{{ route('frontend.en.personal.mortgages.jumbo-mortgage-loans') }}">Jumbo
                                                                 Mortgage Loans</a></div>
                                                         <p>First PREMIER Bank specializes in jumbo loans with
                                                             competitive mortgage rates and fees.</p>
@@ -449,7 +449,7 @@
                                                     </div>
                                                     <div class="bg-menu_left_section col-md-6 col-xs-12 col-sm-6">
                                                         <div class="subsubitem"><a
-                                                                href="en/personal/mortgages/apply-for-a-mortgage/index.html">Apply
+                                                                href="{{ route('frontend.en.personal.mortgages.apply-for-a-mortgage') }}">Apply
                                                                 for a Mortgage</a></div>
                                                         <p>Apply for a mortgage online today and receive fast
                                                             processing, online status reporting and personal
@@ -488,7 +488,7 @@
                                                     class="menu_left_section_main bg-menu_left_section_main col-md-12 col-sm-12 col-xs-12">
                                                     <div class="bg-menu_left_section col-md-6 col-xs-12 col-sm-6">
                                                         <div class="subsubitem"><a
-                                                                href="en/personal/investing/brokerage-services/index.html">Brokerage
+                                                                href="{{ route('frontend.en.personal.investing.brokerage-services') }}">Brokerage
                                                                 Services</a></div>
                                                         <p>Investing made easy, with turnkey online access and
                                                             personal advice and support.</p>
@@ -496,7 +496,7 @@
                                                     </div>
                                                     <div class="bg-menu_left_section col-md-6 col-xs-12 col-sm-6">
                                                         <div class="subsubitem"><a
-                                                                href="en/personal/investing/retirement-planning/index.html">Retirement
+                                                                href="{{ route('frontend.en.personal.investing.retirement-planning') }}">Retirement
                                                                 Planning</a></div>
                                                         <p>Retirement plans and plan rollover support for
                                                             individual investors.</p>
@@ -504,7 +504,7 @@
                                                     </div>
                                                     <div class="bg-menu_left_section col-md-6 col-xs-12 col-sm-6">
                                                         <div class="subsubitem"><a
-                                                                href="en/personal/investing/insurance/index.html">Insurance</a>
+                                                                href="{{ route('frontend.en.personal.investing.insurance') }}">Insurance</a>
                                                         </div>
                                                         <p>Protect yourself and provide for loved ones with life
                                                             and disability insurance.</p>
@@ -512,7 +512,7 @@
                                                     </div>
                                                     <div class="bg-menu_left_section col-md-6 col-xs-12 col-sm-6">
                                                         <div class="subsubitem"><a
-                                                                href="en/personal/investing/financial-and-investing-resources/index.html">Financial
+                                                                href="{{ route('frontend.en.personal.investing.financial-and-investing-resources') }}">Financial
                                                                 &amp; Investing Resources</a></div>
                                                         <p>An array of helpful articles, videos, presentations
                                                             and tools.</p>

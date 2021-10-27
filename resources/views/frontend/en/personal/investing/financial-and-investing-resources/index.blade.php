@@ -1,72 +1,14 @@
+@extends('frontend.layouts.app')
 
+@section('content')
 
-<!DOCTYPE html>
-<html lang="en">
-
-<!-- Mirrored from www.firstpremier.com/en/personal/investing/financial-and-investing-resources/ by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 30 Jun 2021 12:09:49 GMT -->
-<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
-<head>
-
-    <!--shape-->
-    <script type="text/javascript" src="../../../../../cds-sdkcfg.onlineaccess1.com/common0df9.js?async"
-            async></script>
-
-
-    <meta charset="utf-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=10; IE=11" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="msvalidate.01" content="B1160176C00496054ECCB3B27B970C87" />
-    
-    <title>Financial &amp; Investing Resources - Investing | First PREMIER Bank</title>
-            <meta name="description" content="A helpful array of financial articles, videos, presentations and tools, organized by topic just for you." />
-    <link rel="shortcut icon" href="../../../../favicon.ico" type="image/x-icon" />
-
-    <link href="index.html" rel="canonical" />
-    
-    <link href="../../../../Static/bootstrap/css/bootstrap.css" rel="stylesheet"/>
-<link href="../../../../Static/bootstrap/css/bootstrap-responsive.css" rel="stylesheet"/>
-<link href="../../../../Static/bootstrap/css/bootstrap.offcanvas.min.css" rel="stylesheet"/>
-<link href="../../../../Static/css/pushy.css" rel="stylesheet"/>
-<link href="../../../../Content/font-awesome.css" rel="stylesheet"/>
-<link href="../../../../Static/css/Site_20201214_V1_35.css" rel="stylesheet"/>
-<link href="../../../../Static/css/Blocks_20202302_v61.css" rel="stylesheet"/>
-<link href="../../../../Static/css/Forms_20201214.css" rel="stylesheet"/>
-
-    <script src="../../../../Static/js/jquery.min.js"></script>
-<script src="../../../../Static/js/cookieconsent.js"></script>
-<script src="../../../../Static/bootstrap/js/bootstrap3.min.js"></script>
-
-    
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-4688536-5"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'UA-4688536-5');
-</script>
-
- 
-
-    <style>
-        
-    </style>
-    <!-- Google Tag Manager (noscript) body tag -->
-    <noscript>
-        <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MWXZNLB" height="0" width="0" style="display:none;visibility:hidden"></iframe>
-    </noscript>
-    <!-- End Google Tag Manager (noscript) -->
-    <!--L&S Script-->
-    <script type="text/javascript" src="../../../../../cdn.mantl.com/assets/first_premier_bank/production-scripts/first-premier-bank-analytics-pixel.html"></script>
-<script type="text/javascript">var appInsights=window.appInsights||function(config){function t(config){i[config]=function(){var t=arguments;i.queue.push(function(){i[config].apply(i,t)})}}var i={config:config},u=document,e=window,o="script",s="AuthenticatedUserContext",h="start",c="stop",l="Track",a=l+"Event",v=l+"Page",r,f;setTimeout(function(){var t=u.createElement(o);t.src=config.url||"https://az416426.vo.msecnd.net/scripts/a/ai.0.js";u.getElementsByTagName(o)[0].parentNode.appendChild(t)});try{i.cookie=u.cookie}catch(y){}for(i.queue=[],r=["Event","Exception","Metric","PageView","Trace","Dependency"];r.length;)t("track"+r.pop());return t("set"+s),t("clear"+s),t(h+a),t(c+a),t(h+v),t(c+v),t("flush"),config.disableExceptionTracking||(r="onerror",t("_"+r),f=e[r],e[r]=function(config,t,u,e,o){var s=f&&f(config,t,u,e,o);return s!==!0&&i["_"+r](config,t,u,e,o),s}),i}({instrumentationKey:"b7dfb9a2-b012-4c83-a87f-ac7e41ce3cac",sdkExtension:"a"});window.appInsights=appInsights;appInsights.queue&&appInsights.queue.length===0&&appInsights.trackPageView();</script></head>
-
-<body class="eupopup eupopup-bottom    page-financial-and-investing-resources parent-7419">
-
-
-
-    
-    
     <div class="container">
+
+ <!--start responsive menu-->
+ @include('frontend.layouts.components.header')
+ <!-- Main Header -->
+ @include('frontend.layouts.components.navbar')
+
         
 <div class="row equal-height"><div class="block b60block  col-md-12"><!--start responsive menu-->
 <nav class="pushy pushy-right">
@@ -76,7 +18,7 @@
             <div class="panel panel-default">
                 <div class="panel-heading b60Menu">
                     <br /><br />
-                    <div style="background-color:#fff;height:72px;border:#222 1px solid;"><a href="../../../../index.html"><img src="../../../../Static/img/FPB-Investment-Logo.png" class="img-responsive" border="0" /></a><br /></div>
+                    <div style="background-color:#fff;height:72px;border:#222 1px solid;"><a href="../../../../index.html"><img src="{{asset('assets/frontend/Static/img/FPB-Investment-Logo.png')}}" class="img-responsive" border="0" /></a><br /></div>
                     <br /><center>Need help? Call (605) 978-9725</center><br />
                     <div class="ceteramenu" style="border-top:#c8c8c8 1px solid;">
 <a class="ceteralink" href="../index.html" style="color: #e4cb3f; border-bottom: 3px solid #e4cb3f; font-family: &#39;Prompt-Medium&#39;;">Investing</a><a class="ceteralink" href="../brokerage-services/index.html" style="color: #e4cb3f; border-bottom: 3px solid #e4cb3f; font-family: &#39;Prompt-Medium&#39;;">Brokerage</a><a class="ceteralink" href="../retirement-plans/index.html" style="color: #e4cb3f; border-bottom: 3px solid #e4cb3f; font-family: &#39;Prompt-Medium&#39;;">Retirement</a><a class="ceteralink" href="../insurance/index.html" style="color: #e4cb3f; border-bottom: 3px solid #e4cb3f; font-family: &#39;Prompt-Medium&#39;;">Insurance</a><a class="ceteralink" href="index.html" style="color: #e4cb3f; border-bottom: 3px solid #e4cb3f; font-family: &#39;Prompt-Medium&#39;;">Resources</a><a class="ceteralink" href="../../../pages/about-us/teams/investing-services-team/index.html" style="color: #e4cb3f; border-bottom: 3px solid #e4cb3f; font-family: &#39;Prompt-Medium&#39;;">Team</a>                    </div>
@@ -95,11 +37,11 @@
     <article class="container">
         <div class="b60desktop" style="color:#25455a;height:75px;font-family: 'Prompt-Medium';">
             <div style="float:right;color:#25455a;">Need help? Call (605) 978-9725</div>
-            <div style="padding-top:25px;"><a href="../../../../index.html"><img src="../../../../Static/img/FPB-Investment-Logo.png" class="img-responsive" border="0" style="padding-bottom:10px;" /></a></div>
+            <div style="padding-top:25px;"><a href="../../../../index.html"><img src="{{asset('assets/frontend/Static/img/FPB-Investment-Logo.png')}}" class="img-responsive" border="0" style="padding-bottom:10px;" /></a></div>
             <br/><br/>
         </div>
         <div class="b60mobile" style="display:none; position:relative;left:-20px;top:-50px;color:#25455a;visibility:hidden;font-family: 'Prompt-Medium';">
-            <a href="../../../../index.html"><img src="../../../../Static/img/FPB-Investment-Logo.png" class="img-responsive" border="0" style="padding-bottom:10px;" /></a>
+            <a href="../../../../index.html"><img src="{{asset('assets/frontend/Static/img/FPB-Investment-Logo.png')}}" class="img-responsive" border="0" style="padding-bottom:10px;" /></a>
             <center><div style="color:#25455a;">Need help? Call (605) 978-9725</div></center>
         </div>
     </article>
@@ -214,8 +156,8 @@
 
 <style>
     .b46mainlinkspan { height:50px; margin-top:24px; text-align:center;width:100%;}
-    .b46mainlink { color: #268d6e; background: url(../../../../Static/img/CustomBlocks/B20/arrow_green.png) no-repeat right 3px; padding: 0px 15px 0px 25px; vertical-align:text-bottom; margin-right: 20px; letter-spacing:1px; }
-    .b46mainanchor { color: #268d6e; background: url(../../../../Static/img/CustomBlocks/B20/arrow_green.png) no-repeat right 3px; float:left; padding: 0px 15px 0px 25px; vertical-align:text-bottom; letter-spacing:1px; }
+    .b46mainlink { color: #268d6e; background: url("{{asset('assets/frontend/Static/img/CustomBlocks/B20/arrow_green.png')}}") no-repeat right 3px; padding: 0px 15px 0px 25px; vertical-align:text-bottom; margin-right: 20px; letter-spacing:1px; }
+    .b46mainanchor { color: #268d6e; background: url("{{asset('assets/frontend/Static/img/CustomBlocks/B20/arrow_green.png')}}") no-repeat right 3px; float:left; padding: 0px 15px 0px 25px; vertical-align:text-bottom; letter-spacing:1px; }
     .b46multianchor { text-align:center; }
     .b46multianchor ul { display:inline-block; margin:0; padding:0; /* For IE, the outcast */ zoom:1; *display:inline;}
     .b46multianchor li { float:left; padding:2px 5px; }
@@ -223,13 +165,13 @@
 </style>
 <style>
     .pop_main_container_board .pop_main_container ol li ol li {  }
-    .b46productpage { float:left; width:100%; padding:80px 0px 50px 0px; text-align:center; background:#fff url(../../../../globalassets/images/backgrounds/grey-2.svg) no-repeat;}
+    .b46productpage { float:left; width:100%; padding:80px 0px 50px 0px; text-align:center; background:#fff url("{{asset('assets/frontend/globalassets/images/backgrounds/grey-2.svg')}}") no-repeat;}
 </style>
 <section class="row-full">
     <div class="b46productpage">
         <div class="container">
             <h1>Financial &amp; Investing Resources</h1>
-                <img src="../../../../contentassets/5c4cef031cc94b1f9bb8560fa11e2c3c/investing_resources.jpg" alt="First PREMIER Bank">
+                <img src="{{asset('assets/frontend/contentassets/5c4cef031cc94b1f9bb8560fa11e2c3c/investing_resources.jpg')}}" alt="First PREMIER Bank">
                         <p>&nbsp;</p>
 <p style="text-align: center;">Financial articles and resources to help you manage your money wisely. <br />For more information contact an investment advisor.</p>
 
@@ -245,7 +187,7 @@
         <div class="container">
             <h1></h1>
             <div class="col-lg-12 col-md-12 col-sm-12 no-padd">
-                <div class="b48featured_job col-lg-3 col-md-12 col-sm-12"><div style="text-align:center;"><img src="../../../../globalassets/images/secondary-icons/bright/business-finance/bright-business-_-finance-secondary-icon-11.png" alt="growth chart" /></div><div class="b48h3"><h3>Investing</h3></div><p>Investing should be easy &ndash; just buy low and sell high &ndash; but most of us have trouble following that simple advice.&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;</p><div class="clearfix"></div><a href="http://investments.firstpremier.com/resource-center/investment">Learn More</a></div><div class="b48featured_job col-lg-3 col-md-12 col-sm-12"><div style="text-align:center;"><img src="../../../../globalassets/images/secondary-icons/blue/places/blue-places-secondary-icon-5.png" alt="beach umbrella" /></div><div class="b48h3"><h3>Retirement</h3></div><p>Where will your retirement money come from? If you&rsquo;re like most people, qualified-retirement plans, Social Security, and personal savings and investments are expected to play a role.&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</p><div class="clearfix"></div><a href="http://investments.firstpremier.com/resource-center/retirement">Learn More</a></div><div class="b48featured_job col-lg-3 col-md-12 col-sm-12"><div style="text-align:center;"><img src="../../../../globalassets/images/secondary-icons/gold/object/gold-object-secondary-icon-5.png" alt="life preserver ring" /></div><div class="b48h3"><h3>Insurance</h3></div><p>Insurance transfers the financial risk of life's events to an insurance company. A sound insurance strategy can help protect your family from the financial consequences of those events.</p><div class="clearfix"></div><a href="http://investments.firstpremier.com/resource-center/insurance">Learn More</a></div><div class="b48featured_job col-lg-3 col-md-12 col-sm-12"><div style="text-align:center;"><img src="../../../../globalassets/images/secondary-icons/green/business-finance/green-business-_-finance-secondary-icon-27.png" alt="stack of coins" /></div><div class="b48h3"><h3>Money</h3></div><p>One of the keys to a sound financial strategy is spending less than you take in, and then finding a way to put your excess to work.&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;<br /><br /><br /></p><div class="clearfix"></div><a href="http://investments.firstpremier.com/resource-center/money">Learn More</a></div><div class="b48featured_job col-lg-3 col-md-12 col-sm-12"><div style="text-align:center;"><img src="../../../../globalassets/images/secondary-icons/blue/edition/blue-edition-secondary-icon-16.png" alt="binoculars " /></div><div class="b48h3"><h3>Lifestyle</h3></div><p>Creating a life map involves a close review of personal finances and an assessment of other building blocks.<br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;</p><div class="clearfix"></div><a href="http://investments.firstpremier.com/resource-center/lifestyle">Learn More</a></div><div class="b48featured_job col-lg-3 col-md-12 col-sm-12"><div style="text-align:center;"><img src="../../../../globalassets/images/secondary-icons/bright/files/bright-files-secondary-icon-5.png" alt="growth chart" /></div><div class="b48h3"><h3>Tax Strategies</h3></div><p>Understanding tax strategies and managing your tax bill should be part of any sound financial approach.<br /><br /></p><div class="clearfix"></div><a href="http://investments.firstpremier.com/resource-center/tax">Learn More</a></div><div class="b48featured_job col-lg-3 col-md-12 col-sm-12"><div style="text-align:center;"><img src="../../../../globalassets/images/secondary-icons/gold/settings/gold-settings-secondary-icon-3.png" alt="briefcase " /></div><div class="b48h3"><h3>Tax Resources</h3></div><p>Click here for forms, explanations, and other tools to help you manage your taxes.<br /><br /></p><div class="clearfix"></div><a href="http://investments.firstpremier.com/tools/tax-resources">Learn More</a></div><div class="b48featured_job col-lg-3 col-md-12 col-sm-12"><div style="text-align:center;"><img src="../../../../globalassets/images/secondary-icons/green/business-finance/green-business-_-finance-secondary-icon-18.png" alt="balanced scales" /></div><div class="b48h3"><h3>Estate</h3></div><p>Effective estate management enables you to manage your affairs during your lifetime and control the distribution of your wealth after death.</p><div class="clearfix"></div><a href="http://investments.firstpremier.com/resource-center/estate">Learn More</a></div>
+                <div class="b48featured_job col-lg-3 col-md-12 col-sm-12"><div style="text-align:center;"><img src="{{asset('assets/frontend/globalassets/images/secondary-icons/bright/business-finance/bright-business-_-finance-secondary-icon-11.png')}}" alt="growth chart" /></div><div class="b48h3"><h3>Investing</h3></div><p>Investing should be easy &ndash; just buy low and sell high &ndash; but most of us have trouble following that simple advice.&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;</p><div class="clearfix"></div><a href="http://investments.firstpremier.com/resource-center/investment">Learn More</a></div><div class="b48featured_job col-lg-3 col-md-12 col-sm-12"><div style="text-align:center;"><img src="{{asset('assets/frontend/globalassets/images/secondary-icons/blue/places/blue-places-secondary-icon-5.png')}}" alt="beach umbrella" /></div><div class="b48h3"><h3>Retirement</h3></div><p>Where will your retirement money come from? If you&rsquo;re like most people, qualified-retirement plans, Social Security, and personal savings and investments are expected to play a role.&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</p><div class="clearfix"></div><a href="http://investments.firstpremier.com/resource-center/retirement">Learn More</a></div><div class="b48featured_job col-lg-3 col-md-12 col-sm-12"><div style="text-align:center;"><img src="{{asset('assets/frontend/globalassets/images/secondary-icons/gold/object/gold-object-secondary-icon-5.png')}}" alt="life preserver ring" /></div><div class="b48h3"><h3>Insurance</h3></div><p>Insurance transfers the financial risk of life's events to an insurance company. A sound insurance strategy can help protect your family from the financial consequences of those events.</p><div class="clearfix"></div><a href="http://investments.firstpremier.com/resource-center/insurance">Learn More</a></div><div class="b48featured_job col-lg-3 col-md-12 col-sm-12"><div style="text-align:center;"><img src="{{asset('assets/frontend/globalassets/images/secondary-icons/green/business-finance/green-business-_-finance-secondary-icon-27.png')}}" alt="stack of coins" /></div><div class="b48h3"><h3>Money</h3></div><p>One of the keys to a sound financial strategy is spending less than you take in, and then finding a way to put your excess to work.&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;<br /><br /><br /></p><div class="clearfix"></div><a href="http://investments.firstpremier.com/resource-center/money">Learn More</a></div><div class="b48featured_job col-lg-3 col-md-12 col-sm-12"><div style="text-align:center;"><img src="{{asset('assets/frontend/globalassets/images/secondary-icons/blue/edition/blue-edition-secondary-icon-16.png')}}" alt="binoculars " /></div><div class="b48h3"><h3>Lifestyle</h3></div><p>Creating a life map involves a close review of personal finances and an assessment of other building blocks.<br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;</p><div class="clearfix"></div><a href="http://investments.firstpremier.com/resource-center/lifestyle">Learn More</a></div><div class="b48featured_job col-lg-3 col-md-12 col-sm-12"><div style="text-align:center;"><img src="{{asset('assets/frontend/globalassets/images/secondary-icons/bright/files/bright-files-secondary-icon-5.png')}}" alt="growth chart" /></div><div class="b48h3"><h3>Tax Strategies</h3></div><p>Understanding tax strategies and managing your tax bill should be part of any sound financial approach.<br /><br /></p><div class="clearfix"></div><a href="http://investments.firstpremier.com/resource-center/tax">Learn More</a></div><div class="b48featured_job col-lg-3 col-md-12 col-sm-12"><div style="text-align:center;"><img src="{{asset('assets/frontend/globalassets/images/secondary-icons/gold/settings/gold-settings-secondary-icon-3.png')}}" alt="briefcase " /></div><div class="b48h3"><h3>Tax Resources</h3></div><p>Click here for forms, explanations, and other tools to help you manage your taxes.<br /><br /></p><div class="clearfix"></div><a href="http://investments.firstpremier.com/tools/tax-resources">Learn More</a></div><div class="b48featured_job col-lg-3 col-md-12 col-sm-12"><div style="text-align:center;"><img src="{{asset('assets/frontend/globalassets/images/secondary-icons/green/business-finance/green-business-_-finance-secondary-icon-18.png')}}" alt="balanced scales" /></div><div class="b48h3"><h3>Estate</h3></div><p>Effective estate management enables you to manage your affairs during your lifetime and control the distribution of your wealth after death.</p><div class="clearfix"></div><a href="http://investments.firstpremier.com/resource-center/estate">Learn More</a></div>
             </div>
         </div>
     </div>
@@ -273,7 +215,7 @@
 }
 
 .b48featured_job_main .b48featured_job.col-three a {
-    background: transparent url(../../../../Static/img/CustomBlocks/B3/arrow_yellow.png) no-repeat right center;
+    background: transparent url("{{asset('assets/frontend/Static/img/CustomBlocks/B3/arrow_yellow.png')}}") no-repeat right center;
     color: #385061;
     padding-right: 18px;
     font-size: 14px;
@@ -289,10 +231,10 @@
 <script>
     $(document).ready(function () {
 
-        if ('/Static/img/CustomBlocks/B25/Background.png' != 'null' && '/Static/img/CustomBlocks/B25/Background.png' != '') {
-            $(".b25disclosure").css("background", "#245251 url(/Static/img/CustomBlocks/B25/Background.png) no-repeat");
+        if ('{{asset("assets/frontend/Static/img/CustomBlocks/B25/Background.png")}}' != 'null' && '{{asset("assets/frontend/Static/img/CustomBlocks/B25/Background.png")}}' != '') {
+            $(".b25disclosure").css("background", "#245251 url({{asset('assets/frontend/Static/img/CustomBlocks/B25/Background.png')}}) no-repeat");
             if (screen.width > 1000) {
-                $(".b25need_help_main").css("background", "#245251 url(/Static/img/CustomBlocks/B25/Background.png) no-repeat");
+                $(".b25need_help_main").css("background", "#245251 url({{asset('assets/frontend/Static/img/CustomBlocks/B25/Background.png')}}) no-repeat");
             }
 
         }
@@ -368,20 +310,20 @@
                 <div class="col-md-12 hidden-xs hidden-sm">
                     <div class="carousel" id="myCarousel-" data-interval="false">
                         <div class="carousel-inner">
-                            <div class='item active'><div class='col-lg-4 col-md-12 col-sm-12 col-xs-12 b26line_credit_loans no-pad'><div class='b26line_credit_loans_left'><img src='../../../../contentassets/cac888ce866a472688ec1ed844bd366a/b-26-promo-01-five-smart-investments.png' alt='man sitting beside window'></div><div class='b26line_credit_loans_right'><div class="b26titlerow"><a href='http://investments.firstpremier.com/resource-center/investment/5-smart-investing-principles'><h3 class='deckspan'>5 Smart Investing Principles</h3></a></div></div></div><div class='col-lg-4 col-md-12 col-sm-12 col-xs-12 b26line_credit_loans b26line_personal_loans no-pad'><div class='b26line_credit_loans_left'><img src='../../../../contentassets/ef7f0b17980e48f29d1b7fb7187c9f9e/b-26-promo-01-retirement.png' alt='retired couple'></div><div class='b26line_credit_loans_right'><div class="b26titlerow"><a href='http://investments.firstpremier.com/resource-center/retirement/rightsizing-for-retirement'><h3 class='deckspan'>Right Sizing for Retirement</h3></a></div></div></div><div class='col-lg-4 col-md-12 col-sm-12 col-xs-12 b26line_credit_loans no-pad last'><div class='b26line_credit_loans_left'><img src='../../../../contentassets/05ed981f3c8d47e4825ca2c2999cc72b/b-26-promo-01-protecting-those.png' alt='child looking up into sky'></div><div class='b26line_credit_loans_right'><div class="b26titlerow"><a href='http://investments.firstpremier.com/resource-center/insurance/protecting-those-who-matter-most'><h3 class='deckspan'>Protecting Those Who Matter Most</h3></a></div></div></div></div><div class='item'><div class='col-lg-4 col-md-12 col-sm-12 col-xs-12 b26line_credit_loans no-pad'><div class='b26line_credit_loans_left'><img src='../../../../contentassets/3dde75e10b7b43cfa07cddda4074999e/b-26-promo-01-latte-lie.png' alt='cup of coffee'></div><div class='b26line_credit_loans_right'><div class="b26titlerow"><a href='http://investments.firstpremier.com/resource-center/money/the-economic-journey-of-coffee'><h3 class='deckspan'>The Latte Lie and Other Myths</h3></a></div></div></div><div class='col-lg-4 col-md-12 col-sm-12 col-xs-12 b26line_credit_loans b26line_personal_loans no-pad'><div class='b26line_credit_loans_left'><img src='../../../../contentassets/2ca0c700e3254fb9b7766849eb8f8e14/b-26-promo-01-managing-lifestyle.png' alt='man looking at mobile phone smiling'></div><div class='b26line_credit_loans_right'><div class="b26titlerow"><a href='http://investments.firstpremier.com/resource-center/lifestyle/managing-your-lifestyle'><h3 class='deckspan'>Managing Your Lifestyle</h3></a></div></div></div></div>
+                            <div class='item active'><div class='col-lg-4 col-md-12 col-sm-12 col-xs-12 b26line_credit_loans no-pad'><div class='b26line_credit_loans_left'><img src='{{asset('assets/frontend/contentassets/cac888ce866a472688ec1ed844bd366a/b-26-promo-01-five-smart-investments.png')}}' alt='man sitting beside window'></div><div class='b26line_credit_loans_right'><div class="b26titlerow"><a href='http://investments.firstpremier.com/resource-center/investment/5-smart-investing-principles'><h3 class='deckspan'>5 Smart Investing Principles</h3></a></div></div></div><div class='col-lg-4 col-md-12 col-sm-12 col-xs-12 b26line_credit_loans b26line_personal_loans no-pad'><div class='b26line_credit_loans_left'><img src='{{asset('assets/frontend/contentassets/ef7f0b17980e48f29d1b7fb7187c9f9e/b-26-promo-01-retirement.png')}}' alt='retired couple'></div><div class='b26line_credit_loans_right'><div class="b26titlerow"><a href='http://investments.firstpremier.com/resource-center/retirement/rightsizing-for-retirement'><h3 class='deckspan'>Right Sizing for Retirement</h3></a></div></div></div><div class='col-lg-4 col-md-12 col-sm-12 col-xs-12 b26line_credit_loans no-pad last'><div class='b26line_credit_loans_left'><img src='{{('assets/frontend/contentassets/05ed981f3c8d47e4825ca2c2999cc72b/b-26-promo-01-protecting-those.png')}}' alt='child looking up into sky'></div><div class='b26line_credit_loans_right'><div class="b26titlerow"><a href='http://investments.firstpremier.com/resource-center/insurance/protecting-those-who-matter-most'><h3 class='deckspan'>Protecting Those Who Matter Most</h3></a></div></div></div></div><div class='item'><div class='col-lg-4 col-md-12 col-sm-12 col-xs-12 b26line_credit_loans no-pad'><div class='b26line_credit_loans_left'><img src='{{asset('assets/frontend/contentassets/3dde75e10b7b43cfa07cddda4074999e/b-26-promo-01-latte-lie.png')}}' alt='cup of coffee'></div><div class='b26line_credit_loans_right'><div class="b26titlerow"><a href='http://investments.firstpremier.com/resource-center/money/the-economic-journey-of-coffee'><h3 class='deckspan'>The Latte Lie and Other Myths</h3></a></div></div></div><div class='col-lg-4 col-md-12 col-sm-12 col-xs-12 b26line_credit_loans b26line_personal_loans no-pad'><div class='b26line_credit_loans_left'><img src='{{asset('assets/frontend/contentassets/2ca0c700e3254fb9b7766849eb8f8e14/b-26-promo-01-managing-lifestyle.png')}}' alt='man looking at mobile phone smiling'></div><div class='b26line_credit_loans_right'><div class="b26titlerow"><a href='http://investments.firstpremier.com/resource-center/lifestyle/managing-your-lifestyle'><h3 class='deckspan'>Managing Your Lifestyle</h3></a></div></div></div></div>
                         </div>
                     </div>
                 </div>
                 <div class="b26Mobile col-sm-6 hidden-md hidden-lg" style="left:-8px;">
                     <center>
                     <div class="b26MobileCard" style="width:345px;min-height:700px;">
-                        <div class='item'><div class='col-xs-12 col-sm-12 b26line_credit_loans b26line_personal_loans no-pad '><div><img src='../../../../contentassets/cac888ce866a472688ec1ed844bd366a/b-26-promo-01-five-smart-investments.png' alt='man sitting beside window'></div><div class='b26line_credit_loans_right'><div class="b26titlerow"><a href='http://investments.firstpremier.com/resource-center/investment/5-smart-investing-principles'><h3 class='deckspan'>5 Smart Investing Principles</h3></a></div></div></div></div><div class='item'><div class='col-xs-12 col-sm-12 b26line_credit_loans b26line_personal_loans no-pad '><div><img src='../../../../contentassets/ef7f0b17980e48f29d1b7fb7187c9f9e/b-26-promo-01-retirement.png' alt='retired couple'></div><div class='b26line_credit_loans_right'><div class="b26titlerow"><a href='http://investments.firstpremier.com/resource-center/retirement/rightsizing-for-retirement'><h3 class='deckspan'>Right Sizing for Retirement</h3></a></div></div></div></div><div class='item'><div class='col-xs-12 col-sm-12 b26line_credit_loans b26line_personal_loans no-pad '><div><img src='../../../../contentassets/05ed981f3c8d47e4825ca2c2999cc72b/b-26-promo-01-protecting-those.png' alt='child looking up into sky'></div><div class='b26line_credit_loans_right'><div class="b26titlerow"><a href='http://investments.firstpremier.com/resource-center/insurance/protecting-those-who-matter-most'><h3 class='deckspan'>Protecting Those Who Matter Most</h3></a></div></div></div></div><div class='item'><div class='col-xs-12 col-sm-12 b26line_credit_loans b26line_personal_loans no-pad '><div><img src='../../../../contentassets/3dde75e10b7b43cfa07cddda4074999e/b-26-promo-01-latte-lie.png' alt='cup of coffee'></div><div class='b26line_credit_loans_right'><div class="b26titlerow"><a href='http://investments.firstpremier.com/resource-center/money/the-economic-journey-of-coffee'><h3 class='deckspan'>The Latte Lie and Other Myths</h3></a></div></div></div></div><div class='item'><div class='col-xs-12 col-sm-12 b26line_credit_loans b26line_personal_loans no-pad '><div><img src='../../../../contentassets/2ca0c700e3254fb9b7766849eb8f8e14/b-26-promo-01-managing-lifestyle.png' alt='man looking at mobile phone smiling'></div><div class='b26line_credit_loans_right'><div class="b26titlerow"><a href='http://investments.firstpremier.com/resource-center/lifestyle/managing-your-lifestyle'><h3 class='deckspan'>Managing Your Lifestyle</h3></a></div></div></div></div>
+                        <div class='item'><div class='col-xs-12 col-sm-12 b26line_credit_loans b26line_personal_loans no-pad '><div><img src='{{asset('assets/frontend/contentassets/cac888ce866a472688ec1ed844bd366a/b-26-promo-01-five-smart-investments.png')}}' alt='man sitting beside window'></div><div class='b26line_credit_loans_right'><div class="b26titlerow"><a href='http://investments.firstpremier.com/resource-center/investment/5-smart-investing-principles'><h3 class='deckspan'>5 Smart Investing Principles</h3></a></div></div></div></div><div class='item'><div class='col-xs-12 col-sm-12 b26line_credit_loans b26line_personal_loans no-pad '><div><img src='{{asset('assets/frontend/contentassets/ef7f0b17980e48f29d1b7fb7187c9f9e/b-26-promo-01-retirement.png')}}' alt='retired couple'></div><div class='b26line_credit_loans_right'><div class="b26titlerow"><a href='http://investments.firstpremier.com/resource-center/retirement/rightsizing-for-retirement'><h3 class='deckspan'>Right Sizing for Retirement</h3></a></div></div></div></div><div class='item'><div class='col-xs-12 col-sm-12 b26line_credit_loans b26line_personal_loans no-pad '><div><img src='{{asset('assets/frontend/contentassets/05ed981f3c8d47e4825ca2c2999cc72b/b-26-promo-01-protecting-those.png')}}' alt='child looking up into sky'></div><div class='b26line_credit_loans_right'><div class="b26titlerow"><a href='http://investments.firstpremier.com/resource-center/insurance/protecting-those-who-matter-most'><h3 class='deckspan'>Protecting Those Who Matter Most</h3></a></div></div></div></div><div class='item'><div class='col-xs-12 col-sm-12 b26line_credit_loans b26line_personal_loans no-pad '><div><img src='{{asset('assets/frontend/contentassets/3dde75e10b7b43cfa07cddda4074999e/b-26-promo-01-latte-lie.png')}}' alt='cup of coffee'></div><div class='b26line_credit_loans_right'><div class="b26titlerow"><a href='http://investments.firstpremier.com/resource-center/money/the-economic-journey-of-coffee'><h3 class='deckspan'>The Latte Lie and Other Myths</h3></a></div></div></div></div><div class='item'><div class='col-xs-12 col-sm-12 b26line_credit_loans b26line_personal_loans no-pad '><div><img src='{{asset('assets/frontend/contentassets/2ca0c700e3254fb9b7766849eb8f8e14/b-26-promo-01-managing-lifestyle.png')}}' alt='man looking at mobile phone smiling'></div><div class='b26line_credit_loans_right'><div class="b26titlerow"><a href='http://investments.firstpremier.com/resource-center/lifestyle/managing-your-lifestyle'><h3 class='deckspan'>Managing Your Lifestyle</h3></a></div></div></div></div>
                     </div>
                     </center>
                 </div>
 
-                    <a class="left carousel-control" href="#myCarousel-" data-slide="prev"><img src="../../../../Static/img/CustomBlocks/B26/left_arrow.png" alt="First PREMIER Bank"></a>
-                    <a class="right carousel-control" href="#myCarousel-" data-slide="next"><img src="../../../../Static/img/CustomBlocks/B26/right_arrow.png" alt="First PREMIER Bank"></a>
+                    <a class="left carousel-control" href="#myCarousel-" data-slide="prev"><img src="{{asset('assets/frontend/Static/img/CustomBlocks/B26/left_arrow.png')}}" alt="First PREMIER Bank"></a>
+                    <a class="right carousel-control" href="#myCarousel-" data-slide="next"><img src="{{asset('assets/frontend/Static/img/CustomBlocks/B26/right_arrow.png')}}" alt="First PREMIER Bank"></a>
             </div>
         </div>
     </div>
@@ -477,7 +419,7 @@
 
  
     </div>
-    <div class="smallLogo"><a href="../../../index.html" title="First PREMIER Bank - Home"><img src="../../../../Static/gfx/Logo.png" style="max-width:100%;" /></a></div>
+    <div class="smallLogo"><a href="../../../index.html" title="First PREMIER Bank - Home"><img src="{{asset('assets/frontend/Static/gfx/Logo.png')}}" style="max-width:100%;" /></a></div>
     <script type="text/javascript" src="../../../../../dl.episerver.net/13.4.4.1/epi-util/find.js"></script>
 <script type="text/javascript">
 if(FindApi){var api = new FindApi();api.setApplicationUrl('../../../../index.html');api.setServiceApiBaseUrl('../../../../find_v2/index.html');api.processEventFromCurrentUri();api.bindWindowEvents();api.bindAClickEvent();api.sendBufferedEvents();}
@@ -485,7 +427,4 @@ if(FindApi){var api = new FindApi();api.setApplicationUrl('../../../../index.htm
 
     <script type="text/javascript" src="../../../../Static/js/pushy.js"></script>
     <script type="text/javascript" src="../../../../Static/js/Blocks_2019062002.js"></script>
-</body>
-
-<!-- Mirrored from www.firstpremier.com/en/personal/investing/financial-and-investing-resources/ by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 30 Jun 2021 12:09:57 GMT -->
-</html>
+@endsection

@@ -1,75 +1,16 @@
+@extends('frontend.layouts.app')
 
+@section('content')
 
-<!DOCTYPE html>
-<html lang="en">
-
-<!-- Mirrored from www.firstpremier.com/en/personal/investing/brokerage-services/ by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 30 Jun 2021 12:09:26 GMT -->
-<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
-<head>
-
-    <!--shape-->
-    <script type="text/javascript" src="../../../../../cds-sdkcfg.onlineaccess1.com/common0df9.js?async"
-            async></script>
-
-
-    <meta charset="utf-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=10; IE=11" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="msvalidate.01" content="B1160176C00496054ECCB3B27B970C87" />
-    
-    <title>Brokerage Services - Investing | First PREMIER Bank </title>
-            <meta name="description" content="First PREMIER Brokerage Services makes investing easy, with turnkey online access and personal support. We provide investment advice and support retirement planning and rollover support, providing helpful resources for decision-making! " />
-    <link rel="shortcut icon" href="../../../../favicon.ico" type="image/x-icon" />
-
-    <link href="index.html" rel="canonical" />
-    
-    <link href="../../../../Static/bootstrap/css/bootstrap.css" rel="stylesheet"/>
-<link href="../../../../Static/bootstrap/css/bootstrap-responsive.css" rel="stylesheet"/>
-<link href="../../../../Static/bootstrap/css/bootstrap.offcanvas.min.css" rel="stylesheet"/>
-<link href="../../../../Static/css/pushy.css" rel="stylesheet"/>
-<link href="../../../../Content/font-awesome.css" rel="stylesheet"/>
-<link href="../../../../Static/css/Site_20201214_V1_35.css" rel="stylesheet"/>
-<link href="../../../../Static/css/Blocks_20202302_v61.css" rel="stylesheet"/>
-<link href="../../../../Static/css/Forms_20201214.css" rel="stylesheet"/>
-
-    <script src="../../../../Static/js/jquery.min.js"></script>
-<script src="../../../../Static/js/cookieconsent.js"></script>
-<script src="../../../../Static/bootstrap/js/bootstrap3.min.js"></script>
-
-    
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-4688536-5"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'UA-4688536-5');
-</script>
-
- 
-
-    <style>
-        .b18block {max-height:250px;}
-    </style>
-    <!-- Google Tag Manager (noscript) body tag -->
-    <noscript>
-        <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MWXZNLB" height="0" width="0" style="display:none;visibility:hidden"></iframe>
-    </noscript>
-    <!-- End Google Tag Manager (noscript) -->
-    <!--L&S Script-->
-    <script type="text/javascript" src="../../../../../cdn.mantl.com/assets/first_premier_bank/production-scripts/first-premier-bank-analytics-pixel.html"></script>
-<script type="text/javascript">var appInsights=window.appInsights||function(config){function t(config){i[config]=function(){var t=arguments;i.queue.push(function(){i[config].apply(i,t)})}}var i={config:config},u=document,e=window,o="script",s="AuthenticatedUserContext",h="start",c="stop",l="Track",a=l+"Event",v=l+"Page",r,f;setTimeout(function(){var t=u.createElement(o);t.src=config.url||"https://az416426.vo.msecnd.net/scripts/a/ai.0.js";u.getElementsByTagName(o)[0].parentNode.appendChild(t)});try{i.cookie=u.cookie}catch(y){}for(i.queue=[],r=["Event","Exception","Metric","PageView","Trace","Dependency"];r.length;)t("track"+r.pop());return t("set"+s),t("clear"+s),t(h+a),t(c+a),t(h+v),t(c+v),t("flush"),config.disableExceptionTracking||(r="onerror",t("_"+r),f=e[r],e[r]=function(config,t,u,e,o){var s=f&&f(config,t,u,e,o);return s!==!0&&i["_"+r](config,t,u,e,o),s}),i}({instrumentationKey:"b7dfb9a2-b012-4c83-a87f-ac7e41ce3cac",sdkExtension:"a"});window.appInsights=appInsights;appInsights.queue&&appInsights.queue.length===0&&appInsights.trackPageView();</script></head>
-
-<body class="eupopup eupopup-bottom    page-brokerage-services parent-7419">
-
-
-
-    
-    
     <div class="container">
-        
+
+ <!--start responsive menu-->
+ {{-- @include('frontend.layouts.components.header') --}}
+ <!-- Main Header -->
+ @include('frontend.layouts.components.navbar')
+
     <style>
-        .b18block {max-height:250px;}
+        .b18block {max-height:302px;}
     </style>
 <div class="row equal-height"><div class="block b60block  col-md-12"><!--start responsive menu-->
 <nav class="pushy pushy-right">
@@ -79,10 +20,10 @@
             <div class="panel panel-default">
                 <div class="panel-heading b60Menu">
                     <br /><br />
-                    <div style="background-color:#fff;height:72px;border:#222 1px solid;"><a href="../../../../index.html"><img src="../../../../Static/img/FPB-Investment-Logo.png" class="img-responsive" border="0" /></a><br /></div>
+                    <div style="background-color:#fff;height:72px;border:#222 1px solid;"><a href="../../../../index.html"><img src="{{asset('assets/frontend/Static/img/FPB-Investment-Logo.png')}}" class="img-responsive" border="0" /></a><br /></div>
                     <br /><center>Need help? Call (605) 978-9725</center><br />
                     <div class="ceteramenu" style="border-top:#c8c8c8 1px solid;">
-<a class="ceteralink" href="../index.html" style="color: #e4cb3f; border-bottom: 3px solid #e4cb3f; font-family: &#39;Prompt-Medium&#39;;">Investing</a><a class="ceteralink" href="index.html" style="color: #e4cb3f; border-bottom: 3px solid #e4cb3f; font-family: &#39;Prompt-Medium&#39;;">Brokerage</a><a class="ceteralink" href="../retirement-plans/index.html" style="color: #e4cb3f; border-bottom: 3px solid #e4cb3f; font-family: &#39;Prompt-Medium&#39;;">Retirement</a><a class="ceteralink" href="../insurance/index.html" style="color: #e4cb3f; border-bottom: 3px solid #e4cb3f; font-family: &#39;Prompt-Medium&#39;;">Insurance</a><a class="ceteralink" href="../financial-and-investing-resources/index.html" style="color: #e4cb3f; border-bottom: 3px solid #e4cb3f; font-family: &#39;Prompt-Medium&#39;;">Resources</a><a class="ceteralink" href="../../../pages/about-us/teams/investing-services-team/index.html" style="color: #e4cb3f; border-bottom: 3px solid #e4cb3f; font-family: &#39;Prompt-Medium&#39;;">Team</a>                    </div>
+<a class="ceteralink" href="../index.html" style="color: #e4cb3f; border-bottom: 3px solid #e4cb3f; font-family: &#39;Prompt-Medium&#39;;">Investing</a><a class="ceteralink" href="{{ route('frontend.en.personal.investing.brokerage-services') }}" style="color: #e4cb3f; border-bottom: 3px solid #e4cb3f; font-family: &#39;Prompt-Medium&#39;;">Brokerage</a><a class="ceteralink" href="{{ route('frontend.en.personal.investing.retirement-planning') }}" style="color: #e4cb3f; border-bottom: 3px solid #e4cb3f; font-family: &#39;Prompt-Medium&#39;;">Retirement</a><a class="ceteralink" href="{{ route('frontend.en.personal.investing.insurance') }}" style="color: #e4cb3f; border-bottom: 3px solid #e4cb3f; font-family: &#39;Prompt-Medium&#39;;">Insurance</a><a class="ceteralink" href="{{ route('frontend.en.personal.investing.financial-and-investing-resources') }}" style="color: #e4cb3f; border-bottom: 3px solid #e4cb3f; font-family: &#39;Prompt-Medium&#39;;">Resources</a><a class="ceteralink" href="../../../pages/about-us/teams/investing-services-team/index.html" style="color: #e4cb3f; border-bottom: 3px solid #e4cb3f; font-family: &#39;Prompt-Medium&#39;;">Team</a>                    </div>
                 </div>
             </div>
         </div>
@@ -98,11 +39,11 @@
     <article class="container">
         <div class="b60desktop" style="color:#25455a;height:75px;font-family: 'Prompt-Medium';">
             <div style="float:right;color:#25455a;">Need help? Call (605) 978-9725</div>
-            <div style="padding-top:25px;"><a href="../../../../index.html"><img src="../../../../Static/img/FPB-Investment-Logo.png" class="img-responsive" border="0" style="padding-bottom:10px;" /></a></div>
+            <div style="padding-top:25px;"><a href="../../../../index.html"><img src="{{asset('assets/frontend/Static/img/FPB-Investment-Logo.png')}}" class="img-responsive" border="0" style="padding-bottom:10px;" /></a></div>
             <br/><br/>
         </div>
         <div class="b60mobile" style="display:none; position:relative;left:-20px;top:-50px;color:#25455a;visibility:hidden;font-family: 'Prompt-Medium';">
-            <a href="../../../../index.html"><img src="../../../../Static/img/FPB-Investment-Logo.png" class="img-responsive" border="0" style="padding-bottom:10px;" /></a>
+            <a href="../../../../index.html"><img src="{{asset('assets/frontend/Static/img/FPB-Investment-Logo.png')}}" class="img-responsive" border="0" style="padding-bottom:10px;" /></a>
             <center><div style="color:#25455a;">Need help? Call (605) 978-9725</div></center>
         </div>
     </article>
@@ -112,11 +53,11 @@
                 <article>
                     <div class="col-sm-12 SubMenuItems">
                         <ul id="ulPremierMainMenu">
-                                    <li class="SubMenu"><a class="ceteralink" href="../index.html" style="color: #e4cb3f; border-bottom: 3px solid #e4cb3f; font-family: &#39;Prompt-Medium&#39;;">Investing</a></li>
-                                    <li class="SubMenu"><a class="ceteralink" href="index.html" style="color: #e4cb3f; border-bottom: 3px solid #e4cb3f; font-family: &#39;Prompt-Medium&#39;;">Brokerage</a></li>
-                                    <li class="SubMenu"><a class="ceteralink" href="../retirement-plans/index.html" style="color: #e4cb3f; border-bottom: 3px solid #e4cb3f; font-family: &#39;Prompt-Medium&#39;;">Retirement</a></li>
-                                    <li class="SubMenu"><a class="ceteralink" href="../insurance/index.html" style="color: #e4cb3f; border-bottom: 3px solid #e4cb3f; font-family: &#39;Prompt-Medium&#39;;">Insurance</a></li>
-                                    <li class="SubMenu"><a class="ceteralink" href="../financial-and-investing-resources/index.html" style="color: #e4cb3f; border-bottom: 3px solid #e4cb3f; font-family: &#39;Prompt-Medium&#39;;">Resources</a></li>
+                                    <li class="SubMenu"><a class="ceteralink" href="{{ route('frontend.en.personal.investing') }}" style="color: #e4cb3f; border-bottom: 3px solid #e4cb3f; font-family: &#39;Prompt-Medium&#39;;">Investing</a></li>
+                                    <li class="SubMenu"><a class="ceteralink" href="{{ route('frontend.en.personal.investing.brokerage-services') }}" style="color: #e4cb3f; border-bottom: 3px solid #e4cb3f; font-family: &#39;Prompt-Medium&#39;;">Brokerage</a></li>
+                                    <li class="SubMenu"><a class="ceteralink" href="{{ route('frontend.en.personal.investing.retirement-planning') }}" style="color: #e4cb3f; border-bottom: 3px solid #e4cb3f; font-family: &#39;Prompt-Medium&#39;;">Retirement</a></li>
+                                    <li class="SubMenu"><a class="ceteralink" href="{{ route('frontend.en.personal.investing.insurance') }}" style="color: #e4cb3f; border-bottom: 3px solid #e4cb3f; font-family: &#39;Prompt-Medium&#39;;">Insurance</a></li>
+                                    <li class="SubMenu"><a class="ceteralink" href="{{ route('frontend.en.personal.investing.financial-and-investing-resources') }}" style="color: #e4cb3f; border-bottom: 3px solid #e4cb3f; font-family: &#39;Prompt-Medium&#39;;">Resources</a></li>
                                     <li class="SubMenu"><a class="ceteralink" href="../../../pages/about-us/teams/investing-services-team/index.html" style="color: #e4cb3f; border-bottom: 3px solid #e4cb3f; font-family: &#39;Prompt-Medium&#39;;">Team</a></li>
                         </ul>
                     </div>
@@ -217,8 +158,8 @@
 
 <style>
     .b46mainlinkspan { height:50px; margin-top:24px; text-align:center;width:100%;}
-    .b46mainlink { color: #268d6e; background: url(../../../../Static/img/CustomBlocks/B20/arrow_green.png) no-repeat right 3px; padding: 0px 15px 0px 25px; vertical-align:text-bottom; margin-right: 20px; letter-spacing:1px; }
-    .b46mainanchor { color: #268d6e; background: url(../../../../Static/img/CustomBlocks/B20/arrow_green.png) no-repeat right 3px; float:left; padding: 0px 15px 0px 25px; vertical-align:text-bottom; letter-spacing:1px; }
+    .b46mainlink { color: #268d6e; background: url("{{asset('assets/frontend/Static/img/CustomBlocks/B20/arrow_green.png')}}") no-repeat right 3px; padding: 0px 15px 0px 25px; vertical-align:text-bottom; margin-right: 20px; letter-spacing:1px; }
+    .b46mainanchor { color: #268d6e; background: url("{{asset('assets/frontend/Static/img/CustomBlocks/B20/arrow_green.png')}}") no-repeat right 3px; float:left; padding: 0px 15px 0px 25px; vertical-align:text-bottom; letter-spacing:1px; }
     .b46multianchor { text-align:center; }
     .b46multianchor ul { display:inline-block; margin:0; padding:0; /* For IE, the outcast */ zoom:1; *display:inline;}
     .b46multianchor li { float:left; padding:2px 5px; }
@@ -231,12 +172,11 @@
 <section class="row-full">
     <div class="b46productpage">
         <div class="container">
-            <h1>Brokerage Services</h1>
-                <img src="../../../../contentassets/41a41a811eef41f5a46d81bb71c69092/1.6.1_b-46_couplebroker-min.png" alt="First PREMIER Bank">
-                            <h2>Investing Made Easy</h2>
-            <p>A simple, easy and smart way to invest for the future, combining professional advice with turnkey online access.</p>
+            <h1>Insurance</h1>
+                <img src="{{asset('assets/frontend/contentassets/855303c2093a4651a7e597feece8f584/1.6.3_b46-hero_dad-min.png')}}" alt="First PREMIER Bank">
+                            <h2>For Life, Living &amp; Loved Ones</h2>
+            <p style="text-align: center;">Proper insurance coverage can help ensure you and your loved ones are covered in the<br />event of an unforeseen death, illness or accident.</p>
 
-                        <a href="https://myaccount.iconnect2invest.com/bankr/login.do?webcontext=iconnect" class="b46button">LOG INTO YOUR ACCOUNT</a>
 
 
         </div>
@@ -248,11 +188,11 @@
     /* Changes to Functionality -> Adding the ability to add one or more links after the main button */
     .b16basic_box_left a.b16readmore { display: inline-block; letter-spacing: 1px; background: #42967d; color: #fff; font-size: 13px; font-family: 'Prompt-Bold'; text-transform: uppercase; padding: 12px 60px; border-radius: 50px; margin-top: 25px; margin-bottom: 0px; margin-right: 30px; text-align: center; margin-left:20px !important;}
     .b16basic_box_left a.b16readmore:hover { text-decoration: none; }
-    .b16confidence_links a { text-transform: uppercase; letter-spacing: 1px; font-family: 'Prompt-SemiBold'; font-size: 13px; margin-top: 10px; color: #42967d; padding-right: 12px;    background: url(../../../../Static/img/CustomBlocks/B14/arrow_small.png) no-repeat right center; }
+    .b16confidence_links a { text-transform: uppercase; letter-spacing: 1px; font-family: 'Prompt-SemiBold'; font-size: 13px; margin-top: 10px; color: #42967d; padding-right: 12px;    background: url("{{asset('assets/frontend/Static/img/CustomBlocks/B14/arrow_small.png')}}") no-repeat right center; }
     .b16confidence_links_multiple { float:left; padding-left:30px; }
     .b16confidence_links_multiple ul { display:inline-block; margin:0; padding-top:10px; /* For IE, the outcast */ zoom:1; *display:inline; }
     .b16confidence_links_multiple li { float:left; padding:2px 5px; margin-right:20px; }
-    .b16confidence_links_multiple li > a { text-transform: uppercase; letter-spacing: 1px; font-family: 'Prompt-SemiBold'; font-size: 13px; margin-top: 10px; color: #42967d; padding-right: 12px; background: url(../../../../Static/img/CustomBlocks/B14/arrow_small.png) no-repeat right center; }
+    .b16confidence_links_multiple li > a { text-transform: uppercase; letter-spacing: 1px; font-family: 'Prompt-SemiBold'; font-size: 13px; margin-top: 10px; color: #42967d; padding-right: 12px; background: url("{{asset('assets/frontend/Static/img/CustomBlocks/B14/arrow_small.png')}}") no-repeat right center; }
 
     /* CHANGING SHADING FUNCTIONALITY */
     /*.b16wrapper{ min-height:455px;}*/
@@ -297,20 +237,21 @@
                 <div class="container">
                     <div class="b16basic_box b16basic_box_position">
                         <div class="b16basic_box_right" style="padding-right:50px;">
-                            <div class="b16imgcrop"><img src="../../../../contentassets/35b26bf9add8478fa2e5f9f40f7b1451/1.6.1_b-16-list01_alternating-1_family-min.png" title="Investing for Everyone" alt="couple looking over bank statements"></div>
+                            <div class="b16imgcrop"><img src="{{asset('assets/frontend/contentassets/1cc11c5b11ff4e5aafec25d4a2a81c59/1.6.3_b-16-list01_alternating-1_life-ins-min.png')}}" title="Life Insurance" alt="retired couple reviewing insurance policy with broker"></div>
                         </div>
                         <div class="b16basic_box_left">
-                                <h2>Investing for Everyone</h2>
+                                <h2>Life Insurance</h2>
 
-                                <div class="xhtml"><ul>
-<li>Planning for all life stages, from college to retirement</li>
-<li>Access to a range of investments</li>
-<li>One-on-one personal investment advice</li>
-<li>Access to helpful financial resources</li>
-<li>Easy online access to your accounts</li>
+                                <div class="xhtml"><p>It's hard to measure the benefits of having a simple life insurance plan to ease the transition of your loved ones at a difficult time.</p>
+<p>&nbsp;</p>
+<ul>
+<li>Choose from a variety of insurance types</li>
+<li>Replace your income</li>
+<li>Cover funeral expenses</li>
+<li>Pay off mortgage, debts and taxes</li>
 </ul></div>
                             <!-- Button and Footer Links go here ... -->
-                                        <a href="../../../pages/about-us/teams/investing-services-team/index.html" class="b16readmore">Contact Us</a>
+                                        <a href="../../../pages/about-us/teams/investing-services-team/index.html" class="b16readmore">CONTACT US</a>
                             <!-- Button and Footer Links go here ... -->
                         </div>
                     </div>
@@ -321,160 +262,67 @@
 
 <!-- View Rate [3] (within container)-->
 <!-- View Rate [3] (within container)-->
-</div><div class="block b16block  col-md-12">
-
-<!-- VIEW RATE / SPEED BUMP [2] -->
-<style>
-    /* Changes to Functionality -> Adding the ability to add one or more links after the main button */
-    .b16basic_box_left a.b16readmore { display: inline-block; letter-spacing: 1px; background: #42967d; color: #fff; font-size: 13px; font-family: 'Prompt-Bold'; text-transform: uppercase; padding: 12px 60px; border-radius: 50px; margin-top: 25px; margin-bottom: 0px; margin-right: 30px; text-align: center; margin-left:20px !important;}
-    .b16basic_box_left a.b16readmore:hover { text-decoration: none; }
-    .b16confidence_links a { text-transform: uppercase; letter-spacing: 1px; font-family: 'Prompt-SemiBold'; font-size: 13px; margin-top: 10px; color: #42967d; padding-right: 12px;    background: url(../../../../Static/img/CustomBlocks/B14/arrow_small.png) no-repeat right center; }
-    .b16confidence_links_multiple { float:left; padding-left:30px; }
-    .b16confidence_links_multiple ul { display:inline-block; margin:0; padding-top:10px; /* For IE, the outcast */ zoom:1; *display:inline; }
-    .b16confidence_links_multiple li { float:left; padding:2px 5px; margin-right:20px; }
-    .b16confidence_links_multiple li > a { text-transform: uppercase; letter-spacing: 1px; font-family: 'Prompt-SemiBold'; font-size: 13px; margin-top: 10px; color: #42967d; padding-right: 12px; background: url(../../../../Static/img/CustomBlocks/B14/arrow_small.png) no-repeat right center; }
-
-    /* CHANGING SHADING FUNCTIONALITY */
-    /*.b16wrapper{ min-height:455px;}*/
-    .b16wrapper{ min-height:400px;}
-    .b16wrapper .FirstBlock { width: 100%; background-color: #f9f9f9; height: 70px; position: absolute; bottom: -24px; z-index: 1; overflow:hidden; }
-    .ThirdBlock{ width:100%; background-color:#f9f9f9; height:70px; position:relative; z-index:2; }
-    .b16basic_box_right { position:relative; z-index:99; }
-    .b16basic_box_background{ margin-bottom:14px; }
-    .b16basic_box_left { padding-left:100px; }
-    .b16basic_box_left h2 { padding-top: 35px; }
-    .b16basic_box_main .b16basic_box .b16basic_box_left .xhtml { padding-top:10px; }
-    .b16basic_box_main .b16basic_box .b16basic_box_left .xhtml > p { margin-left:0px !important; }
-    .card_icon_bottom_right {right:15px !important;}
-	.Overdraft.Protection { width:50%;}
-
-    @media only screen and (max-width:767px) {
-        .b16confidence_links {
-            align-items: center;
-            display: flex;
-            flex-direction: column;
-        }
-        .b16confidence_links a {
-            margin-top: 20px;
-        }
+</div><div class="block b06block  col-md-12"><style>
+    .b06carousel-inner {
+        position: relative;
+        width: 60% !important;
+        overflow: hidden;
+        margin: 0 20% 0 19% !important;
+        height: 268px;
     }
+    .b06carousel-control .glyphicon-chevron-left::before, .glyphicon-chevron-right::before { content: "" !important; }
+    .b06carousel-control:focus, .b06carousel-control:hover, .b06carousel-control.left, .b06carousel-control.right { background: none !important; }
+    .b06carousel-control { z-index: 999; opacity: inherit !important; }
+    .b06carousel-inner > .item.next.left, .carousel-inner > .item.prev.right, .carousel-inner > .item.active{transform:inherit !important;}
+    .b06carousel-inner > .item{perspective:inherit !important;}
+    .b06carousel-control.left{left:-3% !important;}
 
-    @media only screen and (max-width:375px) {
-        div.b16basic_box_grey {
-            background-color: #fff !important;
-        }
+    @media only screen and (max-width:1366px) {
+    /*#region B-6*/
+    .b06carousel-inner{width:80% !important;margin:0 10% 0 10% !important;}
+    /*#endregion*/
+    }
+    @media only screen and (max-width:1000px) {
+    /*#region B-6*/
+    .b06carousel-control.left{left:0 !important;}
+    .b06carousel-control .glyphicon-chevron-left, .carousel-control .glyphicon-chevron-right, .carousel-control .icon-next, .carousel-control .icon-prev{top:50% !important;}
+    .b06carousel-control{width:10% !important;}
+    .glyphicon-chevron-left img, .glyphicon-chevron-right img{width:100%;}
+    .b06carousel-inner{height:320px;}
+    /*#endregion*/
+    }    
+    @media screen and (max-width: 767px) {
+    /*#region B-6*/
+    .b06carousel-inner{height:300px;}
+    /*#endregion*/
     }
 </style>
-<style>
-    .b16basic_box_right .b16imgcrop {  }
-</style>
-<!-- VIEW RATE / SPEED BUMP [2] -->
+<script type="text/javascript">
+    $('#b06Carousel').carousel({
+        interval: 80000,
+    })
+</script>
 
-<section class="row-full b16wrapper">
 
-        <div class="b16basic_box_right_content b16basic_box_background">
-            <div class="b16basic_box_main b16basic_box_grey">
-                <div class="container">
-                    <div class="b16basic_box">
-                        <div class="b16basic_box_right">
-                            <div class="b16imgcrop" style="margin-left:90px;"><img src="../../../../contentassets/f096e2076dc943a7bf5aacf93bf2a388/1.6.1_b-16-list01_alternating-2_lady-min.png" title="Easy Access" alt="woman filling out form"></div>
 
-                        </div>
-                        <div class="b16basic_box_left payIcon-space">
-                            <h2 style="padding-top:0px !important;">Easy Access</h2>
-                                <div class="xhtml"><ul>
-<li>Consolidated account statements</li>
-<li>Convenient execution of orders</li>
-<li>Quick confirmation reports</li>
-<li>Automated funds transfer between accounts</li>
-<li>Dividend reinvestment</li>
-</ul></div>
 
-                            <!-- Button and Footer Links go here ... -->
-                            <!-- Button and Footer Links go here ... -->
-                        </div>
-                    </div>
+
+<section class="row-full">
+    <div class="b6featured_quote_main">
+            <img src="{{asset('assets/frontend/Static/img/CustomBlocks/B6/featured_bg.png')}}" class="b6featured_bg" alt="First PREMIER Bank">
+            <img src="{{asset('assets/frontend/Static/img/CustomBlocks/B6/featured_bg_small.png')}}" class="b6featured_bg_small_bg" alt="First PREMIER Bank">
+        <div class="b6featured_bg_small carousel" id="b06Carousel" data-ride="carousel">
+            <div class="">
+                <div class="carousel-inner b06carousel-inner">
+                    <div class="item active"><div class="row b6mypadding"><div class="b6featured_quote_img col-lg-5 col-md-5"><img src="{{asset('assets/frontend/contentassets/47e707de962945c79d90171d16a21ca4/quotes-garyharmelink.png')}}" class="b6featured_img" alt="Gary Harmelink VP Investment Services"></div><div class="b6featured_quote col-lg-7 col-md-7"><p>Life insurance can also be an effective financial planning tool.  It can provide family protection for the unexpected, or be used for tax free growth to leave a legacy.</p><div class="clearfix"></div><span> - Gary Harmelink, VP, Investment Services</span></div></div></div>
+
                 </div>
             </div>
+
         </div>
+    </div>
 </section>
 
-<!-- View Rate [3] (within container)-->
-<!-- View Rate [3] (within container)-->
-</div><div class="block b16block  col-md-12">
-
-<!-- VIEW RATE / SPEED BUMP [2] -->
-<style>
-    /* Changes to Functionality -> Adding the ability to add one or more links after the main button */
-    .b16basic_box_left a.b16readmore { display: inline-block; letter-spacing: 1px; background: #42967d; color: #fff; font-size: 13px; font-family: 'Prompt-Bold'; text-transform: uppercase; padding: 12px 60px; border-radius: 50px; margin-top: 25px; margin-bottom: 0px; margin-right: 30px; text-align: center; margin-left:20px !important;}
-    .b16basic_box_left a.b16readmore:hover { text-decoration: none; }
-    .b16confidence_links a { text-transform: uppercase; letter-spacing: 1px; font-family: 'Prompt-SemiBold'; font-size: 13px; margin-top: 10px; color: #42967d; padding-right: 12px;    background: url(../../../../Static/img/CustomBlocks/B14/arrow_small.png) no-repeat right center; }
-    .b16confidence_links_multiple { float:left; padding-left:30px; }
-    .b16confidence_links_multiple ul { display:inline-block; margin:0; padding-top:10px; /* For IE, the outcast */ zoom:1; *display:inline; }
-    .b16confidence_links_multiple li { float:left; padding:2px 5px; margin-right:20px; }
-    .b16confidence_links_multiple li > a { text-transform: uppercase; letter-spacing: 1px; font-family: 'Prompt-SemiBold'; font-size: 13px; margin-top: 10px; color: #42967d; padding-right: 12px; background: url(../../../../Static/img/CustomBlocks/B14/arrow_small.png) no-repeat right center; }
-
-    /* CHANGING SHADING FUNCTIONALITY */
-    /*.b16wrapper{ min-height:455px;}*/
-    .b16wrapper{ min-height:400px;}
-    .b16wrapper .FirstBlock { width: 100%; background-color: #f9f9f9; height: 70px; position: absolute; bottom: -24px; z-index: 1; overflow:hidden; }
-    .ThirdBlock{ width:100%; background-color:#f9f9f9; height:70px; position:relative; z-index:2; }
-    .b16basic_box_right { position:relative; z-index:99; }
-    .b16basic_box_background{ margin-bottom:14px; }
-    .b16basic_box_left { padding-left:100px; }
-    .b16basic_box_left h2 { padding-top: 35px; }
-    .b16basic_box_main .b16basic_box .b16basic_box_left .xhtml { padding-top:10px; }
-    .b16basic_box_main .b16basic_box .b16basic_box_left .xhtml > p { margin-left:0px !important; }
-    .card_icon_bottom_right {right:15px !important;}
-	.Overdraft.Protection { width:50%;}
-
-    @media only screen and (max-width:767px) {
-        .b16confidence_links {
-            align-items: center;
-            display: flex;
-            flex-direction: column;
-        }
-        .b16confidence_links a {
-            margin-top: 20px;
-        }
-    }
-
-    @media only screen and (max-width:375px) {
-        div.b16basic_box_grey {
-            background-color: #fff !important;
-        }
-    }
-</style>
-<style>
-    .b16basic_box_right .b16imgcrop { margin-top:25px !important; }
-</style>
-<!-- VIEW RATE / SPEED BUMP [2] -->
-
-<section class="row-full b16wrapper">
-
-        <div class="b16basic_box_left_content b16basic_box_background">
-            <div class="b16basic_box_main">
-                <div class="container">
-                    <div class="b16basic_box b16basic_box_position">
-                        <div class="b16basic_box_right" style="padding-right:50px;">
-                            <div class="b16imgcrop"><img src="../../../../contentassets/ea280d575a2846fc8c24857a7ace1817/1.6.1_b-16-list01_alternating-3_retire-min.png" title="Retirement Planning" alt="retired couple riding bikes"></div>
-                        </div>
-                        <div class="b16basic_box_left">
-                                <h2>Retirement Planning</h2>
-
-                                <div class="xhtml"><p>Let First PREMIER professionals help you select from an array of retirement investment options. From choosing the right plan to support your retirement strategy, to helping you with consolidation or rollover, our seasoned investment team can help make your retirement goals a reality.</p></div>
-                            <!-- Button and Footer Links go here ... -->
-                                        <a href="../retirement-plans/index.html" class="b16readmore">Learn More</a>
-                            <!-- Button and Footer Links go here ... -->
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-</section>
-
-<!-- View Rate [3] (within container)-->
-<!-- View Rate [3] (within container)-->
 </div><div class="block b18block  col-md-12">
 
 <style>
@@ -512,22 +360,14 @@
 
 <section>
     <div class="b18great_feature_main">
-        <h2> We Offer: </h2>
+        <h2> Disability &amp; Long Term Care Insurance </h2>
         <div class="b18great_feature_left">
-                            <div class="b18detail xhtml"><ul>
-<li>Advisory Services</li>
-<li>Mutual Funds</li>
-<li>Life and Disability Insurance</li>
-<li>Stocks and Bonds</li>
-</ul></div>
+                <span>Disability Insurance</span>
+                            <div class="b18detail xhtml"><p>Chronic illness and disability leaves millions unable to work or care for themselves each year. If you become ill or injured during your working years, how will you pay for ongoing living expenses? Disability insurance can help cover expenses, and may also help protect your business if you are self-employed.</p></div>
                                 </div>
         <div class="b18great_feature_left b18great_feature_right payIcon-space">
-                            <div class="b18detail xhtml"><ul>
-<li>Tax-Advantaged Investments</li>
-<li>Retirement Plans</li>
-<li>Money Market Funds</li>
-<li><a href="../financial-and-investing-resources/index.html">Investing Resources</a></li>
-</ul></div>
+                <span>Long Term Care Insurance</span>
+                            <div class="b18detail xhtml"><p>In the state of South Dakota, the average cost of a single nursing home is nearly $8,000 per month. Protect yourself and your family from the high cost of long-term care with insurance that helps protect your assets and provide coverage for nursing, assisted living, hospice and more.</p></div>
                                 </div>
         <div class="clearfix">
             <center>
@@ -536,17 +376,18 @@
         </div>
 
     </div>
-    <div id="a10994286" class="modal fade" role="dialog">
+    <div id="a27861156" class="modal fade" role="dialog">
         <div class="modal-dialog pop_board">
             <div class="modal-content">
                 <div class="modal-body">
                     <div class="pop_main_container_board">
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                             <span aria-hidden="true">
-                                <img class="close_icon" src="../../../../static/img/closebutton.png" alt="First PREMIER Bank" style="height:17px !important;width:17px !important;">
+                                <img class="close_icon" src="{{asset('assets/frontend/static/img/closebutton.png')}}" alt="First PREMIER Bank" style="height:17px !important;width:17px !important;">
                             </span>
                         </button>
                         <div class="pop_main_container">
+                                <h2>Disability Insurance</h2>
                             <div class="pop_board_white">
                                 <div class="row">
                                     <div class="col-md-12" style="padding-left:40px;">
@@ -564,17 +405,18 @@
             </div>
         </div>
     </div>
-    <div id="b10994286" class="modal fade" role="dialog">
+    <div id="b27861156" class="modal fade" role="dialog">
         <div class="modal-dialog pop_board">
             <div class="modal-content">
                 <div class="modal-body">
                     <div class="pop_main_container_board">
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                             <span aria-hidden="true">
-                                <img class="close_icon" src="../../../../static/img/closebutton.png" alt="First PREMIER Bank" style="height:17px !important;width:17px !important;">
+                                <img class="close_icon" src="{{asset('assets/frontend/static/img/closebutton.png')}}" alt="First PREMIER Bank" style="height:17px !important;width:17px !important;">
                             </span>
                         </button>
                         <div class="pop_main_container">
+                                <h2>Long Term Care Insurance</h2>
                             <div class="pop_board_white">
                                 <div class="row">
                                     <div class="col-md-12" style="padding-left:40px;">
@@ -592,18 +434,18 @@
             </div>
         </div>
     </div>
-    <div id="c10994286" class="modal fade" role="dialog">
+    <div id="c27861156" class="modal fade" role="dialog">
         <div class="modal-dialog pop_board">
             <div class="modal-content">
                 <div class="modal-body">
                     <div class="pop_main_container_board">
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                             <span aria-hidden="true">
-                                <img class="close_icon" src="../../../../static/img/closebutton.png" alt="First PREMIER Bank" style="height:17px !important;width:17px !important;">
+                                <img class="close_icon" src="{{asset('assets/frontend/static/img/closebutton.png')}}" alt="First PREMIER Bank" style="height:17px !important;width:17px !important;">
                             </span>
                         </button>
                         <div class="pop_main_container">
-                                <h2>We Offer:</h2>
+                                <h2>Disability &amp; Long Term Care Insurance</h2>
                             <div class="pop_board_white">
                                 <div class="row">
                                     <div class="col-md-12" style="padding-left:40px;">
@@ -627,28 +469,21 @@
 <!-- View Rate [3] (within container)-->
 </div><div class="block b04block  col-md-12">
 <style>
-@media screen and (min-width: 767px){
-.b18great_feature_main .b18great_feature_left .b18detail:nth-child(1) {padding-left:125px;}
-.b18great_feature_left .b18deatil ul {padding-left:130px;}
-.b18great_feature_left a:nth-child(2){margin-left:125px;}
-}
 @media only screen and (max-width:470px){
-div.block.b18block.col-md-12  {min-height:400px !important;}
-}</style>
+  div.block.b18block.col-md-12  {min-height:400px !important;}
+  .b26line_credit_main .b26line_credit_loans_right {min-height:55px !important;}
+  .b26line_credit_main .b26line_credit_loans { height:55px; }
+}
+</style>
 <section class="row-full b4background">
     <div class="container">
         <div class="b4anywhere_banking" style="width:100%; ">
-                                        <div class="xhtml"><section>
-<div class="col-md-12">
-<div>&nbsp;</div>
-<div style="background-color: #fff;">
+                                        <div class="xhtml"><div style="background-color: #fff;">
 <p style="text-align: center;">&nbsp;</p>
 <p style="text-align: center;"><a class="btnGreen" href="../../../pages/about-us/teams/investing-services-team/index.html">Contact Us</a></p>
 <p style="text-align: center;">&nbsp;</p>
 <p style="text-align: center;">&nbsp;</p>
-</div>
-</div>
-</section></div>
+</div></div>
                     </div>
     </div>
 </section>
@@ -673,7 +508,70 @@ div.block.b18block.col-md-12  {min-height:400px !important;}
     .page-Our-Communities .block.b04block.col-md-12 {
     margin-top: 20px;
     }
-</style></div><div class="block b13block  col-md-12">
+</style></div><div class="block b26block  col-md-12">
+
+
+
+<style>
+    .carousel-control:focus, .carousel-control:hover, .carousel-control.left, .carousel-control.right {
+        background: none !important;
+    }
+    .b26line_credit_main .carousel-inner { ; }
+    
+    .white-background h2, .white-background .xhtml, .white-background .xhtml p,
+    .grey-background h2, .grey-background .xhtml, .grey-background .xhtml p
+    {
+        color: #000;
+    }
+</style>
+<script>
+    var alternateBackground = "False";
+    $(document).ready(function () {
+        $('#myCarousel-').carousel({
+            interval: 16000
+        })
+
+        if (alternateBackground.toLowerCase() == "true") {
+            $("#b26linecredit").addClass("alternate_background");
+        } else {
+            $("#b26linecredit").addClass("primary_background");
+        }
+    });
+
+</script>
+
+<section class="row-full">
+    <div class="b26line_credit_main" id="b26linecredit">
+        <div class="container">
+
+                <h2>Investment Resources</h2>
+
+
+            <div class="row">
+                <div class="col-md-12 hidden-xs hidden-sm">
+                    <div class="carousel" id="myCarousel-" data-interval="false">
+                        <div class="carousel-inner">
+                            <div class='item active'><div class='col-lg-4 col-md-12 col-sm-12 col-xs-12 b26line_credit_loans no-pad'><div class='b26line_credit_loans_left'><img src='{{asset("assets/frontend/contentassets/cac888ce866a472688ec1ed844bd366a/b-26-promo-01-five-smart-investments.png")}}' alt='man sitting beside window'></div><div class='b26line_credit_loans_right'><div class="b26titlerow"><a href='http://investments.firstpremier.com/resource-center/investment/5-smart-investing-principles'><h3 class='deckspan'>5 Smart Investing Principles</h3></a></div></div></div><div class='col-lg-4 col-md-12 col-sm-12 col-xs-12 b26line_credit_loans b26line_personal_loans no-pad'><div class='b26line_credit_loans_left'><img src='{{asset('assets/frontend/contentassets/ef7f0b17980e48f29d1b7fb7187c9f9e/b-26-promo-01-retirement.png')}}' alt='retired couple'></div><div class='b26line_credit_loans_right'><div class="b26titlerow"><a href='http://investments.firstpremier.com/resource-center/retirement/rightsizing-for-retirement'><h3 class='deckspan'>Right Sizing for Retirement</h3></a></div></div></div><div class='col-lg-4 col-md-12 col-sm-12 col-xs-12 b26line_credit_loans no-pad last'><div class='b26line_credit_loans_left'><img src='{{asset('assets/frontend/contentassets/05ed981f3c8d47e4825ca2c2999cc72b/b-26-promo-01-protecting-those.png')}}' alt='child looking up into sky'></div><div class='b26line_credit_loans_right'><div class="b26titlerow"><a href='http://investments.firstpremier.com/resource-center/insurance/protecting-those-who-matter-most'><h3 class='deckspan'>Protecting Those Who Matter Most</h3></a></div></div></div></div><div class='item'><div class='col-lg-4 col-md-12 col-sm-12 col-xs-12 b26line_credit_loans no-pad'><div class='b26line_credit_loans_left'><img src='{{asset('assets/frontend/contentassets/3dde75e10b7b43cfa07cddda4074999e/b-26-promo-01-latte-lie.png')}}' alt='cup of coffee'></div><div class='b26line_credit_loans_right'><div class="b26titlerow"><a href='http://investments.firstpremier.com/resource-center/money/the-economic-journey-of-coffee'><h3 class='deckspan'>The Latte Lie and Other Myths</h3></a></div></div></div><div class='col-lg-4 col-md-12 col-sm-12 col-xs-12 b26line_credit_loans b26line_personal_loans no-pad'><div class='b26line_credit_loans_left'><img src='{{asset('assets/frontend/contentassets/2ca0c700e3254fb9b7766849eb8f8e14/b-26-promo-01-managing-lifestyle.png')}}' alt='man looking at mobile phone smiling'></div><div class='b26line_credit_loans_right'><div class="b26titlerow"><a href='http://investments.firstpremier.com/resource-center/lifestyle/managing-your-lifestyle'><h3 class='deckspan'>Managing Your Lifestyle</h3></a></div></div></div></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="b26Mobile col-sm-6 hidden-md hidden-lg" style="left:-8px;">
+                    <center>
+                    <div class="b26MobileCard" style="width:345px;min-height:700px;">
+                        <div class='item'><div class='col-xs-12 col-sm-12 b26line_credit_loans b26line_personal_loans no-pad '><div><img src='{{asset('assets/frontend/contentassets/cac888ce866a472688ec1ed844bd366a/b-26-promo-01-five-smart-investments.png')}}' alt='man sitting beside window'></div><div class='b26line_credit_loans_right'><div class="b26titlerow"><a href='http://investments.firstpremier.com/resource-center/investment/5-smart-investing-principles'><h3 class='deckspan'>5 Smart Investing Principles</h3></a></div></div></div></div><div class='item'><div class='col-xs-12 col-sm-12 b26line_credit_loans b26line_personal_loans no-pad '><div><img src='{{asset('assets/frontend/contentassets/ef7f0b17980e48f29d1b7fb7187c9f9e/b-26-promo-01-retirement.png')}}' alt='retired couple'></div><div class='b26line_credit_loans_right'><div class="b26titlerow"><a href='http://investments.firstpremier.com/resource-center/retirement/rightsizing-for-retirement'><h3 class='deckspan'>Right Sizing for Retirement</h3></a></div></div></div></div><div class='item'><div class='col-xs-12 col-sm-12 b26line_credit_loans b26line_personal_loans no-pad '><div><img src='{{asset('assets/frontend/contentassets/05ed981f3c8d47e4825ca2c2999cc72b/b-26-promo-01-protecting-those.png')}}' alt='child looking up into sky'></div><div class='b26line_credit_loans_right'><div class="b26titlerow"><a href='http://investments.firstpremier.com/resource-center/insurance/protecting-those-who-matter-most'><h3 class='deckspan'>Protecting Those Who Matter Most</h3></a></div></div></div></div><div class='item'><div class='col-xs-12 col-sm-12 b26line_credit_loans b26line_personal_loans no-pad '><div><img src='{{asset('assets/frontend/contentassets/3dde75e10b7b43cfa07cddda4074999e/b-26-promo-01-latte-lie.png')}}' alt='cup of coffee'></div><div class='b26line_credit_loans_right'><div class="b26titlerow"><a href='http://investments.firstpremier.com/resource-center/money/the-economic-journey-of-coffee'><h3 class='deckspan'>The Latte Lie and Other Myths</h3></a></div></div></div></div><div class='item'><div class='col-xs-12 col-sm-12 b26line_credit_loans b26line_personal_loans no-pad '><div><img src='{{asset('assets/frontend/contentassets/2ca0c700e3254fb9b7766849eb8f8e14/b-26-promo-01-managing-lifestyle.png')}}' alt='man looking at mobile phone smiling'></div><div class='b26line_credit_loans_right'><div class="b26titlerow"><a href='http://investments.firstpremier.com/resource-center/lifestyle/managing-your-lifestyle'><h3 class='deckspan'>Managing Your Lifestyle</h3></a></div></div></div></div>
+                    </div>
+                    </center>
+                </div>
+
+                    <a class="left carousel-control" href="#myCarousel-" data-slide="prev"><img src="{{asset('assets/frontend/Static/img/CustomBlocks/B26/left_arrow.png')}}" alt="First PREMIER Bank"></a>
+                    <a class="right carousel-control" href="#myCarousel-" data-slide="next"><img src="{{asset('assets/frontend/Static/img/CustomBlocks/B26/right_arrow.png')}}" alt="First PREMIER Bank"></a>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+</div><div class="block b13block  col-md-12">
 
 <style>
 
@@ -737,7 +635,7 @@ div.block.b18block.col-md-12  {min-height:400px !important;}
     </div>
 </section>
 <script>
-    $(".header-wrap img:first").attr('src','../../../../../prod.firstpremier.com/static/img/fpb-investment-logo.png');
+    $(".header-wrap img:first").attr('src','{{asset("assets/frontend/static/img/fpb-investment-logo.png")}}');
 ;
 </script>
 
@@ -759,10 +657,15 @@ div.block.b18block.col-md-12  {min-height:400px !important;}
     margin-top: 20px;
     }
 </style></div></div>
+    <script>
+        $('#b06Carousel').carousel({
+    interval: 16000,
+})
+    </script>
 
  
     </div>
-    <div class="smallLogo"><a href="../../../index.html" title="First PREMIER Bank - Home"><img src="../../../../Static/gfx/Logo.png" style="max-width:100%;" /></a></div>
+    <div class="smallLogo"><a href="../../../index.html" title="First PREMIER Bank - Home"><img src="{{asset('assets/frontend/Static/gfx/Logo.png')}}" style="max-width:100%;" /></a></div>
     <script type="text/javascript" src="../../../../../dl.episerver.net/13.4.4.1/epi-util/find.js"></script>
 <script type="text/javascript">
 if(FindApi){var api = new FindApi();api.setApplicationUrl('../../../../index.html');api.setServiceApiBaseUrl('../../../../find_v2/index.html');api.processEventFromCurrentUri();api.bindWindowEvents();api.bindAClickEvent();api.sendBufferedEvents();}
@@ -770,7 +673,4 @@ if(FindApi){var api = new FindApi();api.setApplicationUrl('../../../../index.htm
 
     <script type="text/javascript" src="../../../../Static/js/pushy.js"></script>
     <script type="text/javascript" src="../../../../Static/js/Blocks_2019062002.js"></script>
-</body>
-
-<!-- Mirrored from www.firstpremier.com/en/personal/investing/brokerage-services/ by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 30 Jun 2021 12:09:33 GMT -->
-</html>
+@endsection

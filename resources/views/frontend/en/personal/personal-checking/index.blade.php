@@ -1126,23 +1126,23 @@ Asset Management &amp; Trust                                            <i class
         <div class="b19landingpage_box_main">
 
         <div class="col-md-4 col-sm-6 b19landingpage_box">
-            <a href="free-plus-checking/index.html"><img src="{{ asset('assets/frontend/globalassets/images/primary-icons/green/business-finance/green-business-_-finance-primary-icon-12.png') }}" title="FREE+ Checking" alt="Check" border="0" /></a>
+            <a href="{{  route('frontend.en.personal.personal-checking.free-plus-checking')  }}"><img src="{{ asset('assets/frontend/globalassets/images/primary-icons/green/business-finance/green-business-_-finance-primary-icon-12.png') }}" title="FREE+ Checking" alt="Check" border="0" /></a>
             <div class="clearfix"></div>
-                <span><a href="free-plus-checking/index.html">FREE+ Checking</a></span>
+                <span><a href="{{  route('frontend.en.personal.personal-checking.free-plus-checking')  }}">FREE+ Checking</a></span>
             <div class="xhtml"><p>No surprises, no monthly fees, plus earn interest on balances of $500 and more.</p></div>
         </div>
 
         <div class="col-md-4 col-sm-6 b19landingpage_box">
-            <a href="debit-card/index.html"><img src="{{ asset('assets/frontend/globalassets/images/primary-icons/blue/business-finance/blue-business-_-finance-primary-icon-25.png') }}" title="FREE Debit Card" alt="Credit Card" border="0"></a>
+            <a href="{{  route('frontend.en.personal.personal-checking.debit-card')  }}"><img src="{{ asset('assets/frontend/globalassets/images/primary-icons/blue/business-finance/blue-business-_-finance-primary-icon-25.png') }}" title="FREE Debit Card" alt="Credit Card" border="0"></a>
             <div class="clearfix"></div>
-                <span><a href="debit-card/index.html">FREE Debit Card</a></span>
+                <span><a href="{{  route('frontend.en.personal.personal-checking.debit-card')  }}">FREE Debit Card</a></span>
             <div class="xhtml"><p>With Zero Liability&reg; Protection, 33,000+ surcharge-free MoneyPass&reg; ATMs, Apple Pay and more.</p></div>
         </div>
 
         <div class="col-md-4 col-sm-6 b19landingpage_box">
-            <a href="../online-and-mobile/index.html"><img src="{{ asset('assets/frontend/globalassets/images/primary-icons/gold/hardware/gold-hardware-primary-icon-12.png')}}" title="Online &amp; Mobile Tools" alt="Mobile Phone" border="0"></a>
+            <a href="{{ route('frontend.en.personal.online-and-mobile') }}"><img src="{{ asset('assets/frontend/globalassets/images/primary-icons/gold/hardware/gold-hardware-primary-icon-12.png')}}" title="Online &amp; Mobile Tools" alt="Mobile Phone" border="0"></a>
             <div class="clearfix"></div>
-                <span><a href="../online-and-mobile/index.html">Online &amp; Mobile Tools</a></span>
+                <span><a href="{{ route('frontend.en.personal.online-and-mobile') }}">Online &amp; Mobile Tools</a></span>
             <div class="xhtml"><p>FREE 24/7 account access with our easy-to-use, feature rich Online and Mobile Banking.</p></div>
         </div>
 
@@ -1226,7 +1226,7 @@ Asset Management &amp; Trust                                            <i class
                             <div class="b20consumer_btn_center">
                                     <a href="../../pages/resources/forms/apply-now/index.html" class="b20mainanchor">Apply Now</a>
                                 <ul>
-                                            <li><a class="b20mainlink" href="free-plus-checking/index.html">Learn More</a></li>
+                                            <li><a class="b20mainlink" href="{{  route('frontend.en.personal.personal-checking.free-plus-checking')  }}">Learn More</a></li>
                                             <li><a class="b20mainlink" href="../../pages/about-us/teams/personal-banking-sioux-falls-team/index.html">Contact Us</a></li>
                                 </ul>
                 </div>
@@ -1246,7 +1246,7 @@ Asset Management &amp; Trust                                            <i class
                     <h3>Reward Checking</h3>
                     <div class="xhtml"><p>Maintain a monthly deposit relationship of $15,000 and gain benefits like free checks and more.</p>
 <p>&nbsp;</p></div>
-                        <a href="reward-checking/index.html">Learn More</a>
+                        <a href="{{ route('frontend.en.personal.personal-checking.reward-checking') }}">Learn More</a>
                 </div>
 
                 <div class="b22additional-lending-righ">
@@ -1375,7 +1375,7 @@ Asset Management &amp; Trust                                            <i class
 <a href="https:www.apple.com/apple-pay/"><img src="{{ asset('assets/frontend/Static/img/PayIcons/apple-pay-icon.png') }}" border="0" /></a><a href="https://pay.google.com/about/"><img src="{{ asset('assets/frontend/Static/img/PayIcons/android-pay-icon.png') }}" border="0" class="payIcon" /></a><a href="https://www.samsung.com/us/samsung-pay/"><img src="{{ asset('assets/frontend/Static/img/PayIcons/samsung-pay-icon.png') }}" border="0" class="payIcon" /></a>                </div>
 
                 <!-- Button and Footer Links go here ... -->
-                                <a href="debit-card/index.html" class="b17readmore">Learn More</a>
+                                <a href="{{  route('frontend.en.personal.personal-checking.debit-card')  }}" class="b17readmore">Learn More</a>
             </div>
 
                 <div class="b17free_mobile_banking_left right">

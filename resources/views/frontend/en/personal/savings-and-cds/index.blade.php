@@ -89,9 +89,9 @@ Savings &amp; CDs                                            <i class="fa fa-che
                                                 <div class="panel-body">
 <a href="regular-savings/index.html">Regular Savings</a>                                                </div>
                                                 <div class="panel-body">
-<a href="premier-money-market/index.html">PREMIER Money Market</a>                                                </div>
+<a href="{{ route('frontend.en.personal.savings-and-cds.premier-money-market') }}">PREMIER Money Market</a>                                                </div>
                                                 <div class="panel-body">
-<a href="certificates-of-deposit/index.html">Certificates of Deposit</a>                                                </div>
+<a href="{{ route('frontend.en.personal.savings-and-cds.certificates-of-deposit') }}">Certificates of Deposit</a>                                                </div>
                                                 <div class="panel-body">
 <a href="ira-savings-and-cds/index.html">IRA Savings &amp; CDs</a>                                                </div>
                                                 <div class="panel-body">
@@ -277,9 +277,9 @@ Savings &amp; CDs                                            <i class="fa fa-che
                                                 <div class="panel-body">
 <a href="../../small-business/savings-and-cds/regular-business-savings/index.html">Regular Business Savings</a>                                                </div>
                                                 <div class="panel-body">
-<a href="../../small-business/savings-and-cds/premier-money-market/index.html">PREMIER Money Market</a>                                                </div>
+<a href="../../small-business/savings-and-cds/{{ route('frontend.en.personal.savings-and-cds.premier-money-market') }}">PREMIER Money Market</a>                                                </div>
                                                 <div class="panel-body">
-<a href="../../small-business/savings-and-cds/certificates-of-deposit/index.html">Certificates of Deposit</a>                                                </div>
+<a href="../../small-business/savings-and-cds/{{ route('frontend.en.personal.savings-and-cds.certificates-of-deposit') }}">Certificates of Deposit</a>                                                </div>
                                         </div>
                                     </div>
                                     <div class="panel">
@@ -419,7 +419,7 @@ Savings &amp; CDs                                            <i class="fa fa-che
                                                 <div class="panel-body">
 <a href="../../commercial/savings-and-cds/traditional-savings/index.html">Traditional Savings</a>                                                </div>
                                                 <div class="panel-body">
-<a href="../../commercial/savings-and-cds/premier-money-market/index.html">PREMIER Money Market</a>                                                </div>
+<a href="../../commercial/savings-and-cds/{{ route('frontend.en.personal.savings-and-cds.premier-money-market') }}">PREMIER Money Market</a>                                                </div>
                                                 <div class="panel-body">
 <a href="../../commercial/savings-and-cds/certificate-of-deposit/index.html">Certificate of Deposit</a>                                                </div>
                                         </div>
@@ -728,12 +728,12 @@ Asset Management &amp; Trust                                            <i class
                                                                         <hr>
                                                                     </div>
                                                                     <div class="bg-menu_left_section col-md-6 col-xs-12 col-sm-6">
-                                                                        <div class="subsubitem"><a href="premier-money-market/index.html">PREMIER Money Market</a></div>
+                                                                        <div class="subsubitem"><a href="{{ route('frontend.en.personal.savings-and-cds.premier-money-market') }}">PREMIER Money Market</a></div>
                                                                         <p>For higher balance accounts - the bigger the balance, the higher the rate.&nbsp;</p>
                                                                         <hr>
                                                                     </div>
                                                                     <div class="bg-menu_left_section col-md-6 col-xs-12 col-sm-6">
-                                                                        <div class="subsubitem"><a href="certificates-of-deposit/index.html">Certificates of Deposit</a></div>
+                                                                        <div class="subsubitem"><a href="{{ route('frontend.en.personal.savings-and-cds.certificates-of-deposit') }}">Certificates of Deposit</a></div>
                                                                         <p>Competitive rates and an array of term options on CDs.</p>
                                                                         <hr>
                                                                     </div>
@@ -1125,23 +1125,23 @@ Asset Management &amp; Trust                                            <i class
         <div class="b19landingpage_box_main">
 
         <div class="col-md-4 col-sm-6 b19landingpage_box">
-            <a href="regular-savings/index.html"><img src="{{ asset('assets/frontend/globalassets/images/primary-icons/blue/business-finance/blue-business-_-finance-primary-icon-21.png') }}" title="Regular Savings" alt="stack of money" border="0" /></a>
+            <a href="{{ route('frontend.en.personal.savings-and-cds.regular-savings') }}"><img src="{{ asset('assets/frontend/globalassets/images/primary-icons/blue/business-finance/blue-business-_-finance-primary-icon-21.png') }}" title="Regular Savings" alt="stack of money" border="0" /></a>
             <div class="clearfix"></div>
-                <span><a href="regular-savings/index.html">Regular Savings</a></span>
+                <span><a href="{{ route('frontend.en.personal.savings-and-cds.regular-savings') }}">Regular Savings</a></span>
             <div class="xhtml"><p>A flexibile way to save that's perfect for everyday or initial savings plans.</p></div>
         </div>
 
         <div class="col-md-4 col-sm-6 b19landingpage_box">
-            <a href="premier-money-market/index.html"><img src="{{ asset('assets/frontend/globalassets/images/primary-icons/gold/business-finance/gold-business-_-finance-primary-icon-18.png') }}" title="PREMIER Money Market" alt="Balanced Scales" border="0"></a>
+            <a href="{{ route('frontend.en.personal.savings-and-cds.premier-money-market') }}"><img src="{{ asset('assets/frontend/globalassets/images/primary-icons/gold/business-finance/gold-business-_-finance-primary-icon-18.png') }}" title="PREMIER Money Market" alt="Balanced Scales" border="0"></a>
             <div class="clearfix"></div>
-                <span><a href="premier-money-market/index.html">PREMIER Money Market</a></span>
+                <span><a href="{{ route('frontend.en.personal.savings-and-cds.premier-money-market') }}">PREMIER Money Market</a></span>
             <div class="xhtml"><p>Get a higher rate of return on your higher balance savings, with tiered interest.</p></div>
         </div>
 
         <div class="col-md-4 col-sm-6 b19landingpage_box">
-            <a href="certificates-of-deposit/index.html"><img src="{{ asset('assets/frontend/globalassets/images/primary-icons/bright/business-finance/bright-business-_-finance-primary-icon-23.png') }}" title="Certificates of Deposit" alt="Certificate of Deposit" border="0"></a>
+            <a href="{{ route('frontend.en.personal.savings-and-cds.certificates-of-deposit') }}"><img src="{{ asset('assets/frontend/globalassets/images/primary-icons/bright/business-finance/bright-business-_-finance-primary-icon-23.png') }}" title="Certificates of Deposit" alt="Certificate of Deposit" border="0"></a>
             <div class="clearfix"></div>
-                <span><a href="certificates-of-deposit/index.html">Certificates of Deposit</a></span>
+                <span><a href="{{ route('frontend.en.personal.savings-and-cds.certificates-of-deposit') }}">Certificates of Deposit</a></span>
             <div class="xhtml"><p>Competitive rates, low opening balance and an array of terms to meet your needs.</p></div>
         </div>
 
@@ -1216,7 +1216,7 @@ Asset Management &amp; Trust                                            <i class
                             <div class="xhtml"><p>Earn a tiered interest rate on higher balances and maintain access to your money whenever you need it.&nbsp;<br /><br /></p>
 <ul>
 <li>The higher your balance, the higher the interest</li>
-<li>FREE&nbsp;<a href="../online-and-mobile/index.html">Online and Mobile Banking</a>, <a href="../online-and-mobile/bill-pay/index.html">Bill Pay</a><sup>1</sup> and more</li>
+<li>FREE&nbsp;<a href="{{ route('frontend.en.personal.online-and-mobile') }}">Online and Mobile Banking</a>, <a href="../online-and-mobile/bill-pay/index.html">Bill Pay</a><sup>1</sup> and more</li>
 <li>Use as <a href="../personal-checking/overdraft-protection/index.html">overdraft protection</a> for First PREMIER Checking<sup>1</sup></li>
 <li>Access to 33,000+ surcharge-free <a title="Moneypass" href="../../pages/quick-links/locations/index.html" target="_top">MoneyPass&reg; ATMs</a></li>
 <li>Opening minimum deposit of $500</li>
@@ -1224,7 +1224,7 @@ Asset Management &amp; Trust                                            <i class
 </ul></div>
                 <br />
                             <div class="b20consumer_btn_center">
-                                <a href="premier-money-market/index.html" class="b20mainanchor">Learn More</a>
+                                <a href="{{ route('frontend.en.personal.savings-and-cds.premier-money-market') }}" class="b20mainanchor">Learn More</a>
                 </div>
         </div>
         </div>
@@ -1241,13 +1241,13 @@ Asset Management &amp; Trust                                            <i class
                 <div class="b22additional-lending-left">
                     <h3>Regular Savings</h3>
                     <div class="xhtml"><p>Start your savings nest egg, use your account for overdraft protection<sup>1</sup> and enjoy free Online and Mobile Banking.</p></div>
-                        <a href="regular-savings/index.html">Learn More</a>
+                        <a href="{{ route('frontend.en.personal.savings-and-cds.regular-savings') }}">Learn More</a>
                 </div>
 
                 <div class="b22additional-lending-righ">
                     <h3>Certificates of Deposit</h3>
                     <div class="xhtml"><p>Lock in a great rate without locking down your money long-term. We have competitive rates and an array of term options.</p></div>
-                        <a href="certificates-of-deposit/index.html">Learn More</a>
+                        <a href="{{ route('frontend.en.personal.savings-and-cds.certificates-of-deposit') }}">Learn More</a>
                 </div>
             </div>
             <div class="b22spacer"></div>
@@ -1297,7 +1297,7 @@ Asset Management &amp; Trust                                            <i class
                                             <h4 class="Blue"></h4>
                                             <div class="b46Blue" style="text-align:left;">
 
-                                                <p><br /><a href="certificates-of-deposit/index.html" target="_blank"></a></p>
+                                                <p><br /><a href="{{ route('frontend.en.personal.savings-and-cds.certificates-of-deposit') }}" target="_blank"></a></p>
                                             </div>
                                         </div>
                                     </div>
@@ -1369,7 +1369,7 @@ Asset Management &amp; Trust                                            <i class
                 </div>
 
                 <!-- Button and Footer Links go here ... -->
-                                <a href="kids-savings/index.html" class="b17readmore">Learn More</a>
+                                <a href="{{ route('frontend.en.personal.savings-and-cds.kids-savings') }}" class="b17readmore">Learn More</a>
             </div>
 
                 <div class="b17free_mobile_banking_left right">
@@ -1426,7 +1426,7 @@ Asset Management &amp; Trust                                            <i class
                                     <h3>Certificates of Deposit</h3>
                                     <p>First PREMIER offers an array of rate and term options for certificates of deposit. With an IRA CD, you can also enjoy tax-deferred savings.</p>
                                     <div class="clearfix"></div><br />
-                                            <a href="ira-savings-and-cds/index.html">Learn More</a>
+                                            <a href="{{ route('frontend.en.personal.savings-and-cds.ira-savings-and-cds') }}">Learn More</a>
                                 </div>
                             </div>
             </div>
@@ -1595,13 +1595,13 @@ Asset Management &amp; Trust                                            <i class
                         <div class="carousel-inner">
                             <div class='item active'><div class='col-lg-4 col-md-12 col-sm-12 col-xs-12 b26line_credit_loans no-pad'><div class='b26line_credit_loans_left'><img src='{{ asset('assets/frontend/globalassets/ymabii/personal/b-17-promo-01-personal-checking.png') }}' alt='woman on couch using mobile phone'></div><div class='b26line_credit_loans_right'><div class="b26titlerow"><h3 class='deckspanNoCaret'>Personal Checking</h3></div><h3><br clear='all'/><div class="xhtml"><p>From FREE+ Checking with Online &amp; Mobile Banking, we&rsquo;ve got you covered.</p>
 <ul>
-<li><a href="../personal-checking/free-plus-checking/index.html">FREE+ Checking</a></li>
-<li><a href="../personal-checking/reward-checking/index.html">Reward Checking</a></li>
-<li><a href="../online-and-mobile/index.html">Online &amp; Mobile Banking</a></li>
+<li><a href="{{  route('frontend.en.personal.personal-checking.free-plus-checking')  }}">FREE+ Checking</a></li>
+<li><a href="{{ route('frontend.en.personal.personal-checking.reward-checking') }}">Reward Checking</a></li>
+<li><a href="{{ route('frontend.en.personal.online-and-mobile') }}">Online &amp; Mobile Banking</a></li>
 </ul></div></h3></div></div><div class='col-lg-4 col-md-12 col-sm-12 col-xs-12 b26line_credit_loans b26line_personal_loans no-pad'><div class='b26line_credit_loans_left'><img src='{{ asset('assets/frontend/globalassets/ymabii/personal/b-17-promo-01-loans-credit.png') }}' alt='couple shaking hands with banker'></div><div class='b26line_credit_loans_right'><div class="b26titlerow"><h3 class='deckspanNoCaret'>Loans & Credit Lines</h3></div><h3><br clear='all'/><div class="xhtml"><p>Competitive rates on loans of all sizes, lines of credit and more. We make our lending decisions locally.</p>
 <ul>
-<li><a href="../loans-and-credit-lines/personal-loans/index.html">Personal Loans</a></li>
-<li><a href="../loans-and-credit-lines/personal-lines-of-credit/index.html">Personal Lines of Credit</a></li>
+<li><a href="{{ route('frontend.en.personal.loans-and-credit-lines.personal-loans') }}">Personal Loans</a></li>
+<li><a href="{{ route('frontend.en.personal.loans-and-credit-lines.personal-lines-of-credit') }}">Personal Lines of Credit</a></li>
 </ul></div></h3></div></div><div class='col-lg-4 col-md-12 col-sm-12 col-xs-12 b26line_credit_loans no-pad last'><div class='b26line_credit_loans_left'><img src='{{ asset('assets/frontend/globalassets/ymabii/personal/b-17-promo-01-grow-wealth.png') }}' alt=''></div><div class='b26line_credit_loans_right'><div class="b26titlerow"><h3 class='deckspanNoCaret'>Grow Your Wealth</h3></div><h3><br clear='all'/><div class="xhtml"><p>We offer concierge-style banking for higher net worth individuals, with managed investing and more.</p>
 <ul>
 <li><a href="../wealth-management/private-banking/index.html">Private Banking</a></li>

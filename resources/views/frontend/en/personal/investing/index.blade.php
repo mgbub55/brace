@@ -1125,23 +1125,23 @@ Asset Management &amp; Trust                                            <i class
         <div class="b19landingpage_box_main">
 
         <div class="col-md-4 col-sm-6 b19landingpage_box">
-            <a href="../savings-and-cds/index.html"><img src="{{ asset('assets/frontend/globalassets/images/primary-icons/green/business-finance/green-business-_-finance-primary-icon-31.png') }}" title="Savings &amp; CDs" alt="money" border="0" /></a>
+            <a href="{{ route('frontend.en.personal.savings-and-cds') }}"><img src="{{ asset('assets/frontend/globalassets/images/primary-icons/green/business-finance/green-business-_-finance-primary-icon-31.png') }}" title="Savings &amp; CDs" alt="money" border="0" /></a>
             <div class="clearfix"></div>
-                <span><a href="../savings-and-cds/index.html">Savings &amp; CDs</a></span>
+                <span><a href="{{ route('frontend.en.personal.savings-and-cds') }}">Savings &amp; CDs</a></span>
             <div class="xhtml"><p>Put your money to work with FDIC Insured savings and certificates of deposit (CDs).</p></div>
         </div>
 
         <div class="col-md-4 col-sm-6 b19landingpage_box">
-            <a href="brokerage-services/index.html"><img src="{{ asset('assets/frontend/globalassets/images/primary-icons/blue/business-finance/blue-business-_-finance-primary-icon-11.png') }}" title="Brokerage Services" alt="growth chart" border="0"></a>
+            <a href="{{ route('frontend.en.personal.investing.brokerage-services') }}"><img src="{{ asset('assets/frontend/globalassets/images/primary-icons/blue/business-finance/blue-business-_-finance-primary-icon-11.png') }}" title="Brokerage Services" alt="growth chart" border="0"></a>
             <div class="clearfix"></div>
-                <span><a href="brokerage-services/index.html">Brokerage Services</a></span>
+                <span><a href="{{ route('frontend.en.personal.investing.brokerage-services') }}">Brokerage Services</a></span>
             <div class="xhtml"><p>Simple investing for life and retirement powered by solid advice and the latest in financial technology.</p></div>
         </div>
 
         <div class="col-md-4 col-sm-6 b19landingpage_box">
-            <a href="../wealth-management/index.html"><img src="{{ asset('assets/frontend/globalassets/images/primary-icons/gold/business-finance/gold-business-_-finance-primary-icon-22.png') }}" title="Wealth Management" alt="pie chart" border="0"></a>
+            <a href="{{ route('frontend.en.personal.wealth-management') }}"><img src="{{ asset('assets/frontend/globalassets/images/primary-icons/gold/business-finance/gold-business-_-finance-primary-icon-22.png') }}" title="Wealth Management" alt="pie chart" border="0"></a>
             <div class="clearfix"></div>
-                <span><a href="../wealth-management/index.html">Wealth Management</a></span>
+                <span><a href="{{ route('frontend.en.personal.wealth-management') }}">Wealth Management</a></span>
             <div class="xhtml"><p>Tailored, comprehensive banking, credit, investment and trust solutions addressing all your financial needs.</p></div>
         </div>
 
@@ -1225,7 +1225,7 @@ Asset Management &amp; Trust                                            <i class
 
             <div class="b20consumer_btn_center">
                 <!-- b20mainanchorL -->
-                                <a href="../savings-and-cds/index.html" class="b20mainanchorL">Learn More</a>
+                                <a href="{{ route('frontend.en.personal.savings-and-cds') }}" class="b20mainanchorL">Learn More</a>
             </div>
         </div>
                     <div class="b20consumer-loans-right"><img id="imgMainRight" alt="father filling out papers with daughter on his lap" src="{{ asset('assets/frontend/contentassets/4fd6263e21944171a7b69622b0a3adeb/1.6_b-20-1_dad-min.png') }}" class="img-responsive"></div>
@@ -1395,7 +1395,7 @@ Asset Management &amp; Trust                                            <i class
                 </div>
 
                 <!-- Button and Footer Links go here ... -->
-                                <a href="../wealth-management/index.html" class="b17readmore">LEARN MORE</a>
+                                <a href="{{ route('frontend.en.personal.wealth-management') }}" class="b17readmore">LEARN MORE</a>
             </div>
 
                 <div class="b17free_mobile_banking_left right">

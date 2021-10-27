@@ -347,6 +347,29 @@ Route::name('frontend.en.pages')->prefix('frontend/en/pages')->group(function ()
                 return view('frontend.en.personal.savings-and-cds.regular-savings.index');
             })->name('');
         });
+        Route::name('frontend.en.personal.savings-and-cds.premier-money-market')->prefix('frontend/en/personal/savings-and-cds/premier-money-market')->group(function () {
+            Route::get('/', function () {
+                return view('frontend.en.personal.savings-and-cds.premier-money-market.index');
+            })->name('');
+        });
+        Route::name('frontend.en.personal.savings-and-cds.certificates-of-deposit')->prefix('frontend/en/personal/savings-and-cds/certificates-of-deposit')->group(function () {
+            Route::get('/', function () {
+                return view('frontend.en.personal.savings-and-cds.certificates-of-deposit.index');
+            })->name('');
+        });
+        Route::name('frontend.en.personal.savings-and-cds.ira-savings-and-cds')->prefix('frontend/en/personal/savings-and-cds/ira-savings-and-cds')->group(function () {
+            Route::get('/', function () {
+                return view('frontend.en.personal.savings-and-cds.ira-savings-and-cds.index');
+            })->name('');
+        });
+        Route::name('frontend.en.personal.savings-and-cds.kids-savings')->prefix('frontend/en/personal/savings-and-cds/kids-savings')->group(function () {
+            Route::get('/', function () {
+                return view('frontend.en.personal.savings-and-cds.kids-savings.index');
+            })->name('');
+        });
+
+
+
 
         // Loans and Credit Lines
         Route::name('frontend.en.personal.loans-and-credit-lines')->prefix('frontend/en/personal/loans-and-credit-lines')->group(function () {
@@ -354,6 +377,37 @@ Route::name('frontend.en.pages')->prefix('frontend/en/pages')->group(function ()
                 return view('frontend.en.personal.loans-and-credit-lines.index');
             })->name('');
         });
+        Route::name('frontend.en.personal.loans-and-credit-lines.personal-loans')->prefix('frontend/en/personal/loans-and-credit-lines/personal-loans')->group(function () {
+            Route::get('/', function () {
+                return view('frontend.en.personal.loans-and-credit-lines.personal-loans.index');
+            })->name('');
+        });
+        Route::name('frontend.en.personal.loans-and-credit-lines.personal-lines-of-credit')->prefix('frontend/en/personal/loans-and-credit-lines/personal-lines-of-credit')->group(function () {
+            Route::get('/', function () {
+                return view('frontend.en.personal.loans-and-credit-lines.personal-lines-of-credit.index');
+            })->name('');
+        });
+        Route::name('frontend.en.personal.loans-and-credit-lines.easy-access-line-of-credit')->prefix('frontend/en/personal/loans-and-credit-lines/easy-access-line-of-credit')->group(function () {
+            Route::get('/', function () {
+                return view('frontend.en.personal.loans-and-credit-lines.easy-access-line-of-credit.index');
+            })->name('');
+        });
+        Route::name('frontend.en.personal.loans-and-credit-lines.home-equity-line-of-credit')->prefix('frontend/en/personal/loans-and-credit-lines/home-equity-line-of-credit')->group(function () {
+            Route::get('/', function () {
+                return view('frontend.en.personal.loans-and-credit-lines.home-equity-line-of-credit.index');
+            })->name('');
+        });
+        Route::name('frontend.en.personal.loans-and-credit-lines.advance-access-line-of-credit')->prefix('frontend/en/personal/loans-and-credit-lines/advance-access-line-of-credit')->group(function () {
+            Route::get('/', function () {
+                return view('frontend.en.personal.loans-and-credit-lines.advance-access-line-of-credit.index');
+            })->name('');
+        });
+        Route::name('frontend.en.personal.loans-and-credit-lines.loan-payment-options')->prefix('frontend/en/personal/loans-and-credit-lines/loan-payment-options')->group(function () {
+            Route::get('/', function () {
+                return view('frontend.en.personal.loans-and-credit-lines.loan-payment-options.index');
+            })->name('');
+        });
+
 
          // Mortages
          Route::name('frontend.en.personal.mortgages')->prefix('frontend/en/personal/mortgages')->group(function () {
@@ -361,6 +415,28 @@ Route::name('frontend.en.pages')->prefix('frontend/en/pages')->group(function ()
                 return view('frontend.en.personal.mortgages.index');
             })->name('');
         });
+        Route::name('frontend.en.personal.mortgages.buying-or-building-a-home')->prefix('frontend/en/personal/mortgages/buying-or-building-a-home')->group(function () {
+            Route::get('/', function () {
+                return view('frontend.en.personal.mortgages.buying-or-building-a-home.index');
+            })->name('');
+        });
+        Route::name('frontend.en.personal.mortgages.refinancing-a-home')->prefix('frontend/en/personal/mortgages/refinancing-a-home')->group(function () {
+            Route::get('/', function () {
+                return view('frontend.en.personal.mortgages.refinancing-a-home.index');
+            })->name('');
+        });
+        Route::name('frontend.en.personal.mortgages.jumbo-mortgage-loans')->prefix('frontend/en/personal/mortgages/jumbo-mortgage-loans')->group(function () {
+            Route::get('/', function () {
+                return view('frontend.en.personal.mortgages.jumbo-mortgage-loans.index');
+            })->name('');
+        });
+        Route::name('frontend.en.personal.mortgages.apply-for-a-mortgage')->prefix('frontend/en/personal/mortgages/apply-for-a-mortgage')->group(function () {
+            Route::get('/', function () {
+                return view('frontend.en.personal.mortgages.apply-for-a-mortgage.index');
+            })->name('');
+        });
+
+
 
          // Investing
          Route::name('frontend.en.personal.investing')->prefix('frontend/en/personal/investing')->group(function () {
@@ -368,7 +444,28 @@ Route::name('frontend.en.pages')->prefix('frontend/en/pages')->group(function ()
                 return view('frontend.en.personal.investing.index');
             })->name('');
         });
+        Route::name('frontend.en.personal.investing.brokerage-services')->prefix('frontend/en/personal/investing/brokerage-services')->group(function () {
+            Route::get('/', function () {
+                return view('frontend.en.personal.investing.brokerage-services.index');
+            })->name('');
+        });
+        Route::name('frontend.en.personal.investing.retirement-planning')->prefix('frontend/en/personal/investing/retirement-planning')->group(function () {
+            Route::get('/', function () {
+                return view('frontend.en.personal.investing.retirement-planning.index');
+            })->name('');
+        });
+        Route::name('frontend.en.personal.investing.insurance')->prefix('frontend/en/personal/investing/insurance')->group(function () {
+            Route::get('/', function () {
+                return view('frontend.en.personal.investing.insurance.index');
+            })->name('');
+        });
+        Route::name('frontend.en.personal.investing.financial-and-investing-resources')->prefix('frontend/en/personal/investing/financial-and-investing-resources')->group(function () {
+            Route::get('/', function () {
+                return view('frontend.en.personal.investing.financial-and-investing-resources.index');
+            })->name('');
+        });
 
+            
         // Wealth Management
         Route::name('frontend.en.personal.wealth-management')->prefix('frontend/en/personal/wealth-management')->group(function () {
             Route::get('/', function () {

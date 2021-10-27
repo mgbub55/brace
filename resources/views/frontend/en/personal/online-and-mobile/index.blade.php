@@ -64,9 +64,9 @@ Online &amp; Mobile                                            <i class="fa fa-c
                                                 <a href="index.html">Online &amp; Mobile</a>
                                             </div>
                                                 <div class="panel-body">
-<a href="online-banking/index.html">Online Banking</a>                                                </div>
+<a href="{{ route('frontend.en.personal.online-and-mobile.online-banking') }}">Online Banking</a>                                                </div>
                                                 <div class="panel-body">
-<a href="mobile-banking/index.html">Mobile Banking</a>                                                </div>
+<a href="{{ route('frontend.en.personal.online-and-mobile.online-banking') }}">Mobile Banking</a>                                                </div>
                                                 <div class="panel-body">
 <a href="bill-pay/index.html">Bill Pay</a>                                                </div>
                                                 <div class="panel-body">
@@ -254,9 +254,9 @@ Online &amp; Mobile                                            <i class="fa fa-c
                                                 <a href="../../small-business/online-and-mobile/index.html">Online &amp; Mobile</a>
                                             </div>
                                                 <div class="panel-body">
-<a href="../../small-business/online-and-mobile/online-banking/index.html">Business Online Banking</a>                                                </div>
+<a href="../../small-business/online-and-mobile/{{ route('frontend.en.personal.online-and-mobile.online-banking') }}">Business Online Banking</a>                                                </div>
                                                 <div class="panel-body">
-<a href="../../small-business/online-and-mobile/mobile-banking/index.html">Mobile Banking</a>                                                </div>
+<a href="../../small-business/online-and-mobile/{{ route('frontend.en.personal.online-and-mobile.online-banking') }}">Mobile Banking</a>                                                </div>
                                                 <div class="panel-body">
 <a href="../../small-business/online-and-mobile/bill-pay/index.html">Bill Pay</a>                                                </div>
                                                 <div class="panel-body">
@@ -459,7 +459,7 @@ Treasury Services                                            <i class="fa fa-che
                                                 <div class="panel-body">
                                                             <u><a href="../../commercial/treasury-services/cash-management/index.html">Cash Management</a></u>
                                                         <div style="color:#ffd800 !important;">
-<a href="../../commercial/treasury-services/manage-receivables/virtual-account-management/index.html">Virtual Account Management</a><a href="../../commercial/treasury-services/cash-management/business-online-banking/index.html">Business Online Banking</a><a href="../../commercial/treasury-services/cash-management/security-and-fraud-protection/index.html">Security &amp; Fraud Protection</a><a href="../../commercial/treasury-services/cash-management/mobile-banking/index.html">Mobile Banking</a><a href="../../commercial/treasury-services/cash-management/reporting-and-analytics/index.html">Reporting &amp; Analytics</a><a href="../../commercial/treasury-services/cash-management/mobile-wallet/index.html">Mobile Wallet</a><a href="../../commercial/treasury-services/cash-management/estatements/index.html">eStatements</a><a href="../../commercial/treasury-services/cash-management/bill-pay/index.html">Bill Pay</a>                                                        </div>
+<a href="../../commercial/treasury-services/manage-receivables/virtual-account-management/index.html">Virtual Account Management</a><a href="../../commercial/treasury-services/cash-management/business-{{ route('frontend.en.personal.online-and-mobile.online-banking') }}">Business Online Banking</a><a href="../../commercial/treasury-services/cash-management/security-and-fraud-protection/index.html">Security &amp; Fraud Protection</a><a href="../../commercial/treasury-services/cash-management/{{ route('frontend.en.personal.online-and-mobile.online-banking') }}">Mobile Banking</a><a href="../../commercial/treasury-services/cash-management/reporting-and-analytics/index.html">Reporting &amp; Analytics</a><a href="../../commercial/treasury-services/cash-management/mobile-wallet/index.html">Mobile Wallet</a><a href="../../commercial/treasury-services/cash-management/estatements/index.html">eStatements</a><a href="../../commercial/treasury-services/cash-management/bill-pay/index.html">Bill Pay</a>                                                        </div>
                                                 </div>
                                                 <div class="panel-body">
                                                             <u><a href="../../commercial/treasury-services/manage-receivables/index.html">Manage Receivables</a></u>
@@ -666,12 +666,12 @@ Asset Management &amp; Trust                                            <i class
                                                         <div class="">
                                                             <div class="menu_left_section_main bg-menu_left_section_main col-md-12 col-sm-12 col-xs-12">
                                                                     <div class="bg-menu_left_section col-md-6 col-xs-12 col-sm-6">
-                                                                        <div class="subsubitem"><a href="online-banking/index.html">Online Banking</a></div>
+                                                                        <div class="subsubitem"><a href="{{ route('frontend.en.personal.online-and-mobile.online-banking') }}">Online Banking</a></div>
                                                                         <p>Check balances, transfer funds, pay bills, view eStatements any time.</p>
                                                                         <hr>
                                                                     </div>
                                                                     <div class="bg-menu_left_section col-md-6 col-xs-12 col-sm-6">
-                                                                        <div class="subsubitem"><a href="mobile-banking/index.html">Mobile Banking</a></div>
+                                                                        <div class="subsubitem"><a href="{{ route('frontend.en.personal.online-and-mobile.online-banking') }}">Mobile Banking</a></div>
                                                                         <p>Our mobile app puts the features of Online Banking in the palm of your hand.</p>
                                                                         <hr>
                                                                     </div>
@@ -1129,23 +1129,23 @@ Asset Management &amp; Trust                                            <i class
         <div class="b19landingpage_box_main">
 
         <div class="col-md-4 col-sm-6 b19landingpage_box">
-            <a href="online-banking/index.html"><img src="{{ asset('assets/frontend/globalassets/images/primary-icons/gold/hardware/gold-hardware-primary-icon-5.png') }}" title="Online Banking" alt="computer mouse" border="0" /></a>
+            <a href="{{ route('frontend.en.personal.online-and-mobile.online-banking') }}"><img src="{{ asset('assets/frontend/globalassets/images/primary-icons/gold/hardware/gold-hardware-primary-icon-5.png') }}" title="Online Banking" alt="computer mouse" border="0" /></a>
             <div class="clearfix"></div>
-                <span><a href="online-banking/index.html">Online Banking</a></span>
+                <span><a href="{{ route('frontend.en.personal.online-and-mobile.online-banking') }}">Online Banking</a></span>
             <div class="xhtml"><p>Our state-of-the art Online Banking gives you 24/7 secure access to your accounts, Bill Pay, eStatements &amp; more.</p></div>
         </div>
 
         <div class="col-md-4 col-sm-6 b19landingpage_box">
-            <a href="mobile-banking/index.html"><img src="{{ asset('assets/frontend/globalassets/images/primary-icons/bright/hardware/bright-hardware-primary-icon-12.png') }}" title="Mobile Banking" alt="mobile phone" border="0"></a>
+            <a href="{{ route('frontend.en.personal.online-and-mobile.mobile-banking') }}"><img src="{{ asset('assets/frontend/globalassets/images/primary-icons/bright/hardware/bright-hardware-primary-icon-12.png') }}" title="Mobile Banking" alt="mobile phone" border="0"></a>
             <div class="clearfix"></div>
-                <span><a href="mobile-banking/index.html">Mobile Banking</a></span>
+                <span><a href="{{ route('frontend.en.personal.online-and-mobile.mobile-banking') }}">Mobile Banking</a></span>
             <div class="xhtml"><p>Download our App and enjoy banking flexibility on-the-go! Check balances, pay bills and deposit checks by snapping a photo.</p></div>
         </div>
 
         <div class="col-md-4 col-sm-6 b19landingpage_box">
-            <a href="mobile-wallet/index.html"><img src="{{ asset('assets/frontend/globalassets/images/primary-icons/blue/business-finance/blue-business-_-finance-primary-icon-25.png') }}" title="Mobile Wallet" alt="credit card" border="0"></a>
+            <a href="{{ route('frontend.en.personal.online-and-mobile.mobile-wallet') }}"><img src="{{ asset('assets/frontend/globalassets/images/primary-icons/blue/business-finance/blue-business-_-finance-primary-icon-25.png') }}" title="Mobile Wallet" alt="credit card" border="0"></a>
             <div class="clearfix"></div>
-                <span><a href="mobile-wallet/index.html">Mobile Wallet</a></span>
+                <span><a href="{{ route('frontend.en.personal.online-and-mobile.mobile-wallet') }}">Mobile Wallet</a></span>
             <div class="xhtml"><p>Speed your way through checkout with your mobile device. Add your First PREMIER Bank debit card to a popular mobile wallet app.</p></div>
         </div>
 
@@ -1230,7 +1230,7 @@ Asset Management &amp; Trust                                            <i class
 
             <div class="b20consumer_btn_center">
                 <!-- b20mainanchorL -->
-                                <a href="online-banking/index.html" class="b20mainanchorL">Learn More</a>
+                                <a href="{{ route('frontend.en.personal.online-and-mobile.online-banking') }}" class="b20mainanchorL">Learn More</a>
                             <span class="b20mainlinkspan">
 <a class="b20mainlink" href="https://online.firstpremier.com/FirstPremierBankOnline_AutoEnroll/enroll.html">Online Banking Enrollment</a>                            </span>
             </div>
@@ -1309,15 +1309,15 @@ Asset Management &amp; Trust                                            <i class
         <div class="b20consumer-loans-left">
                             <div class="xhtml"><ul>
 <li>User friendly mobile app available for iOS and Android</li>
-<li>Enjoy all the features of <a href="online-banking/index.html">Online Banking</a> outlined above</li>
+<li>Enjoy all the features of <a href="{{ route('frontend.en.personal.online-and-mobile.online-banking') }}">Online Banking</a> outlined above</li>
 <li>Pay anyone with a mobile number or email address<sup>1</sup></li>
 <li>Deposit checks using free <a href="mobile-deposit/index.html">Mobile Deposit</a></li>
-<li>Configure multiple <a href="mobile-wallet/index.html">Mobile Wallet</a> apps to streamline checkout</li>
+<li>Configure multiple <a href="{{ route('frontend.en.personal.online-and-mobile.mobile-wallet') }}">Mobile Wallet</a> apps to streamline checkout</li>
 </ul>
 <p>&nbsp;<br /><a title="Download on the App Store" href="https://itunes.apple.com/us/app/first-premier-bank-south-dakota/id727332747?mt=8" target="_blank" rel="noopener"><img src="{{ asset('assets/frontend/globalassets/images/store_apple-min.png') }}" alt="" width="192" height="57" /></a><a title="Download on Google Play" href="https://play.google.com/store/apps/details?id=com.firstpremierbank3390.mobile" target="_blank" rel="noopener"><img src="{{ asset('assets/frontend/globalassets/images/store_google-min.png') }}" alt="" width="194" height="58" /></a></p></div>
                 <br />
                             <div class="b20consumer_btn_center">
-                                <a href="mobile-banking/index.html" class="b20mainanchor">LEARN MORE</a>
+                                <a href="{{ route('frontend.en.personal.online-and-mobile.online-banking') }}" class="b20mainanchor">LEARN MORE</a>
                 </div>
         </div>
         </div>
