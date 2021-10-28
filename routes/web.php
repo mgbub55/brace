@@ -229,6 +229,71 @@ Route::name('frontend.en.pages')->prefix('frontend/en/pages')->group(function ()
             return view('frontend.en.pages.quick-links.customer-care.index');
         });
     });
+    // leadership team
+    Route::name('frontend.en.pages.about-us.leadership-team')->prefix('frontend/en/pages/about-us/leadership-team')->group(function () {
+        Route::get('/', function () {
+            return view('frontend.en.pages.about-us.leadership-team.index');
+        });
+    });
+    // community
+    Route::name('frontend.en.pages.about-us.community')->prefix('frontend/en/pages/about-us/community')->group(function () {
+        Route::get('/', function () {
+            return view('frontend.en.pages.about-us.community.index');
+        });
+    });
+    // resources
+    Route::name('frontend.en.pages.resources.first-premier-privacy-statement-2020')->prefix('frontend/en/pages/resources/first-premier-privacy-statement-2020')->group(function () {
+        Route::get('/', function () {
+            return view('frontend.en.pages.resources.first-premier-privacy-statement-2020.index');
+        });
+    });
+    // legal disclosures
+    Route::name('frontend.en.pages.resources.legal-disclosures')->prefix('frontend/en/pages/resources/legal-disclosures')->group(function () {
+        Route::get('/', function () {
+            return view('frontend.en.pages.resources.legal-disclosures.index');
+        });
+    });
+    // cookie policy
+    Route::name('frontend.en.pages.resources.cookie-policy')->prefix('frontend/en/pages/resources/cookie-policy')->group(function () {
+        Route::get('/', function () {
+            return view('frontend.en.pages.resources.cookie-policy.index');
+        });
+    });
+    Route::name('frontend.en.pages.about-us.teams.personal-banking-sioux-falls-team')->prefix('frontend/en/pages/about-us/teams/personal-banking-sioux-falls-team')->group(function () {
+        Route::get('/', function () {
+            return view('frontend.en.pages.about-us.teams.personal-banking-sioux-falls-team.index');
+        });
+    });
+    Route::name('frontend.en.pages.about-us.the-premier-way')->prefix('frontend/en/pages/about-us/the-premier-way')->group(function () {
+        Route::get('/', function () {
+            return view('frontend.en.pages.about-us.the-premier-way.index');
+        });
+    });
+    Route::name('frontend.en.pages.resources.sanford-health.first-premier-bank-sanford-partnership-offers')->prefix('frontend/en/pages/resources/sanford-health/first-premier-bank-sanford-partnership-offers')->group(function () {
+        Route::get('/', function () {
+            return view('frontend.en.pages.resources.sanford-health.first-premier-bank-sanford-partnership-offers.index');
+        });
+    });
+    Route::name('frontend.en.pages.about-us.community.collegiate-support.scholarship-and-internships')->prefix('frontend/en/pages/about-us/community/collegiate-support/scholarship-and-internships')->group(function () {
+        Route::get('/', function () {
+            return view('frontend.en.pages.about-us.community.collegiate-support.scholarship-and-internships.index');
+        });
+    });
+    Route::name('frontend.en.pages.resources.forms.apply-now')->prefix('frontend/en/pages/resources/forms/apply-now')->group(function () {
+        Route::get('/', function () {
+            return view('frontend.en.pages.resources.forms.apply-now.index');
+        });
+    });
+    Route::name('frontend.en.pages.about-us.community.collegiate-support')->prefix('frontend/en/pages/about-us/community/collegiate-support')->group(function () {
+        Route::get('/', function () {
+            return view('frontend.en.pages.about-us.community.collegiate-support.index');
+        });
+    });
+    
+    
+    
+    
+    
 
 
 // PERSONAL
@@ -472,11 +537,54 @@ Route::name('frontend.en.pages')->prefix('frontend/en/pages')->group(function ()
                 return view('frontend.en.personal.wealth-management.index');
             })->name('');
         });
+        Route::name('frontend.en.personal.wealth-management.private-banking')->prefix('frontend/en/personal/wealth-management/private-banking')->group(function () {
+            Route::get('/', function () {
+                return view('frontend.en.personal.wealth-management.private-banking.index');
+            })->name('');
+        });
+        Route::name('frontend.en.personal.wealth-management.financial-planning')->prefix('frontend/en/personal/wealth-management/financial-planning')->group(function () {
+            Route::get('/', function () {
+                return view('frontend.en.personal.wealth-management.financial-planning.index');
+            })->name('');
+        });
+        Route::name('frontend.en.personal.wealth-management.personal-trust-services')->prefix('frontend/en/personal/wealth-management/personal-trust-services')->group(function () {
+            Route::get('/', function () {
+                return view('frontend.en.personal.wealth-management.personal-trust-services.index');
+            })->name('');
+        });
+        Route::name('frontend.en.personal.wealth-management.managed-investing')->prefix('frontend/en/personal/wealth-management/managed-investing')->group(function () {
+            Route::get('/', function () {
+                return view('frontend.en.personal.wealth-management.managed-investing.index');
+            })->name('');
+        });
+        Route::name('frontend.en.personal.wealth-management.trusts-in-south-dakota')->prefix('frontend/en/personal/wealth-management/trusts-in-south-dakota')->group(function () {
+            Route::get('/', function () {
+                return view('frontend.en.personal.wealth-management.trusts-in-south-dakota.index');
+            })->name('');
+        });
 
         // Student & Parents
         Route::name('frontend.en.personal.students-and-parents')->prefix('frontend/en/personal/students-and-parents')->group(function () {
             Route::get('/', function () {
                 return view('frontend.en.personal.students-and-parents.index');
+            })->name('');
+        });
+        // 1
+        Route::name('frontend.en.personal.students-and-parents.university-debit-cards')->prefix('frontend/en/personal/students-and-parents/university-debit-cards')->group(function () {
+            Route::get('/', function () {
+                return view('frontend.en.personal.students-and-parents.university-debit-cards.index');
+            })->name('');
+        });
+        // 2
+        Route::name('frontend.en.personal.students-and-parents.dakota-state-university-debit-card')->prefix('frontend/en/personal/students-and-parents/dakota-state-university-debit-card')->group(function () {
+            Route::get('/', function () {
+                return view('frontend.en.personal.students-and-parents.dakota-state-university-debit-card.index');
+            })->name('');
+        });
+        // 3
+        Route::name('frontend.en.personal.students-and-parents.student-loans')->prefix('frontend/en/personal/students-and-parents/student-loans')->group(function () {
+            Route::get('/', function () {
+                return view('frontend.en.personal.students-and-parents.student-loans.index');
             })->name('');
         });
 
@@ -510,7 +618,37 @@ Route::name('frontend.en.pages')->prefix('frontend/en/pages')->group(function ()
                 return view('frontend.en.pages.about-us.index');
             });
         });
+        Route::name('frontend.en.small-business.ag-banking')->prefix('frontend/en/small-business/ag-banking')->group(function () {
+            Route::get('/', function () {
+                return view('frontend.en.small-business.ag-banking.index');
+            });
+        });
+        // small business loans
+        Route::name('frontend.en.small-business.loans-and-credit-lines.small-business-loans')->prefix('frontend/en/small-business/loans-and-credit-lines/small-business-loans')->group(function () {
+            Route::get('/', function () {
+                return view('frontend.en.small-business.loans-and-credit-lines.small-business-loans.index');
+            });
+        });
 
+        // small business Payments platforms
+        Route::name('frontend.en.small-business.online-and-mobile.mobile-wallet.apple-pay')->prefix('frontend/en/small-business/online-and-mobile/mobile-wallet/apple-pay')->group(function () {
+            Route::get('/', function () {
+                return view('frontend.en.small-business.online-and-mobile.mobile-wallet.apple-pay.index');
+            });
+        });
+        Route::name('frontend.en.small-business.online-and-mobile.mobile-wallet.samsung-pay')->prefix('frontend/en/small-business/online-and-mobile/mobile-wallet/samsung-pay')->group(function () {
+            Route::get('/', function () {
+                return view('frontend.en.small-business.online-and-mobile.mobile-wallet.samsung-pay.index');
+            });
+        });
+        Route::name('frontend.en.small-business.online-and-mobile.mobile-wallet.google-pay')->prefix('frontend/en/small-business/online-and-mobile/mobile-wallet/google-pay')->group(function () {
+            Route::get('/', function () {
+                return view('frontend.en.small-business.online-and-mobile.mobile-wallet.google-pay.index');
+            });
+        });
+        
+        
+        
 
 
 

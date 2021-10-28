@@ -811,118 +811,118 @@
 
 
 
-        <div class="row-full footer">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-3 col-sm-3 col-xs-12 footerCol1">
-                        <div class="footerHeader">Company</div>
+<div class="row-full footer">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-3 col-sm-3 col-xs-12 footerCol1">
+                <div class="footerHeader">Company</div>
 
-                        <ul>
+                <ul>
 
-                            <li>
-                                <a href="../../../pages/about-us/index.html">About Us</a>
-                            </li>
+                    <li>
+                        <a href="{{ route('frontend.en.pages.about-us')}}">About Us</a>
+                    </li>
 
-                            <li>
-                                <a href="../../../index.html">First PREMIER Bank</a>
-                            </li>
+                    <li>
+                        <a href="{{ route('frontend') }}">First PREMIER Bank</a>
+                    </li>
 
-                            <li>
-                                <a href="https://www.mypremiercreditcard.com/">PREMIER Bankcard</a>
-                            </li>
+                    <li>
+                        <a href="https://www.mypremiercreditcard.com/">PREMIER Bankcard</a>
+                    </li>
 
-                            <li>
-                                <a href="../../../pages/about-us/leadership-team/index.html">Leadership</a>
-                            </li>
+                    <li>
+                        <a href="{{ route('frontend.en.pages.about-us.leadership-team') }}">Leadership</a>
+                    </li>
 
-                            <li>
-                                <a href="../../../pages/about-us/community/index.html">Community</a>
-                            </li>
+                    <li>
+                        <a href="{{ route('frontend.en.pages.about-us.community') }}">Community</a>
+                    </li>
 
-                            <li>
-                                <a href="{{route('frontend.en.pages.about.careers')}}">Careers</a>
-                            </li>
+                    <li>
+                        <a href="{{route('frontend.en.pages.about.careers')}}">Careers</a>
+                    </li>
 
-                        </ul>
-                        <br />
-                    </div>
-                    <div class="col-md-3 col-sm-3 col-xs-12 footerCol2">
-                        <div class="footerHeader">Customers</div>
+                </ul>
+                <br />
+            </div>
+            <div class="col-md-3 col-sm-3 col-xs-12 footerCol2">
+                <div class="footerHeader">Customers</div>
 
-                        <ul>
+                <ul>
 
-                            <li>
-                                <a href="../../../index.html">Personal Banking</a>
-                            </li>
+                    <li>
+                        <a href="{{ route('frontend') }}">Personal Banking</a>
+                    </li>
 
-                            <li>
-                                <a href="../../../small-business/index.html">Small Business</a>
-                            </li>
+                    <li>
+                        <a href="{{ route('frontend.en.small-business') }}">Small Business</a>
+                    </li>
 
-                            <li>
-                                <a href="../../../commercial/index.html">Commercial</a>
-                            </li>
+                    <li>
+                        <a href="{{ route('frontend.en.commercial') }}">Commercial</a>
+                    </li>
 
-                        </ul>
-                        <br />
-                    </div>
-                    <div class="col-md-3 col-sm-3 col-xs-12 footerCol3">
-                        <div class="footerHeader">Help &amp; Contact</div>
+                </ul>
+                <br />
+            </div>
+            <div class="col-md-3 col-sm-3 col-xs-12 footerCol3">
+                <div class="footerHeader">Help &amp; Contact</div>
 
-                        <ul>
+                <ul>
 
-                            <li>
-                                <a href="../../../pages/quick-links/customer-care/index.html">Customer Care</a>
-                            </li>
+                    <li>
+                        <a href="{{ route('frontend.en.pages.quick-links.customer-care') }}">Customer Care</a>
+                    </li>
 
-                            <li>
-                                <a href="../../../pages/quick-links/locations/index.html">Locations</a>
-                            </li>
+                    <li>
+                        <a href="{{ route('frontend.en.pages.quick-links.locations') }}">Locations</a>
+                    </li>
 
-                            <li>
-                                <a href="../../../pages/quick-links/customer-care/index.html">BANK: 800-501-6535</a>
-                            </li>
+                    <li>
+                        <a href="{{ route('frontend.en.pages.quick-links.customer-care') }}">BANK: 800-501-6535</a>
+                    </li>
 
-                            <li>
-                                <a href="https://www.mypremiercreditcard.com/">CREDIT CARD: 800-987-5521</a>
-                            </li>
+                    <li>
+                        <a href="https://www.mypremiercreditcard.com/">CREDIT CARD: 800-987-5521</a>
+                    </li>
 
-                            <li>
-                                <a href="../../../index.html">Routing Number: 091408598</a>
-                            </li>
+                    <li>
+                        <a href="{{ route('frontend') }}">Routing Number: 091408598</a>
+                    </li>
 
-                        </ul>
-                        <br />
-                    </div>
-                    <div class="col-md-3 col-sm-3 col-xs-12 footerCol4">
-                        <div class="footerHeader">Legal Notices</div>
+                </ul>
+                <br />
+            </div>
+            <div class="col-md-3 col-sm-3 col-xs-12 footerCol4">
+                <div class="footerHeader">Legal Notices</div>
 
-                        <ul>
+                <ul>
 
-                            <li>
-                                <a href="../../../pages/resources/first-premier-privacy-statement-2020/index.html">Privacy
-                                    Notice &amp; Statement</a>
-                            </li>
+                    <li>
+                        <a href="{{ route('frontend.en.pages.resources.first-premier-privacy-statement-2020') }}">Privacy
+                            Notice &amp; Statement</a>
+                    </li>
 
-                            <li>
-                                <a href="../../../pages/resources/legal-disclosures/index.html">Legal Disclosures</a>
-                            </li>
+                    <li>
+                        <a href="{{ route('frontend.en.pages.resources.legal-disclosures') }}">Legal Disclosures</a>
+                    </li>
 
-                            <li>
-                                <a href="../../../pages/resources/cookie-policy/index.html">Cookie Policy</a>
-                            </li>
+                    <li>
+                        <a href="{{ route('frontend.en.pages.resources.cookie-policy') }}">Cookie Policy</a>
+                    </li>
 
-                        </ul>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-md-12" style="padding-top:50px;">
-                        <p>Member FDIC | <img src="{{asset('assets/frontend/Static/img/equalhousinglender.png')}}"
-                                alt="Equal Housing Lender" title="Equal Housing Lender" />Equal Housing Lender</p>
-                    </div>
-                </div>
+                </ul>
             </div>
         </div>
+        <div class="row">
+            <div class="col-md-12" style="padding-top:50px;">
+                <p>Member FDIC | <img src="{{asset('assets/frontend/Static/img/equalhousinglender.png')}}" alt="Equal Housing Lender"
+                        title="Equal Housing Lender" />Equal Housing Lender</p>
+            </div>
+        </div>
+    </div>
+</div>
         <style>
             /* CHROME SAFARI FIX */
             .form-control:hover,
@@ -963,7 +963,7 @@
             }
 
             .showehllogo {
-                background: url('../../../../Static/img/EHLlogo%20white.png') 230px 0px no-repeat;
+                background: url('{{asset("assets/frontend/Static/img/EHLlogo%20white.png")}}') 230px 0px no-repeat;
                 background-size: 24px 24px
             }
         </style>

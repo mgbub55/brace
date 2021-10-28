@@ -1,16 +1,15 @@
-
 @extends('frontend.layouts.app')
 
 @section('content')
     <div class="container">
-            <!--start responsive menu-->
-    @include('frontend.layouts.components.header')
-    <!-- Main Header -->
-    @include('frontend.layouts.components.navbar')
+        <!--start responsive menu-->
+        @include('frontend.layouts.components.header')
+        <!-- Main Header -->
+        @include('frontend.layouts.components.navbar')
 
 
-<!--start responsive menu-->
-{{-- <nav class="pushy pushy-right">
+        <!--start responsive menu-->
+        {{-- <nav class="pushy pushy-right">
     <div class="pushy-content">
         <button class="pushy-link close-b">X</button>
 
@@ -937,888 +936,1285 @@ Asset Management &amp; Trust                                            <i class
     </div>
 </section> --}}
 
-<script>
-
-    $(document).ready(function () {
-
+        <script>
+            $(document).ready(function() {
 
 
-        //$('#AccessAccountDropdown option[id!=selectaccount]').each(function (index, value) {
-        //    $('#signInHoverSection').append('<p>' + $(value).text() + '</p>');
-        //});
 
-        if ($(window).width() == 1024) {
-            $('#ulPremierMainMenu li.SubMenu > a').on('click touchend', function (e) {
-                $(this).find('div[id*=subdiv]').hide();
-                $(this).attr('href', 'javascript:void(0)');
-                ShowMenu(this);
-            }).focusout(function () {
-                ShowMenu(this);
-            });
-        }
-        else {
+                //$('#AccessAccountDropdown option[id!=selectaccount]').each(function (index, value) {
+                //    $('#signInHoverSection').append('<p>' + $(value).text() + '</p>');
+                //});
 
-            var timeoutId;
-            $("#ulPremierMainMenu li.SubMenu > a").hover(function () {
-                var self = this;
-                if (!timeoutId) {
-                    timeoutId = window.setTimeout(function () {
-                        timeoutId = null;
-                        ShowMenu(self);
-                    }, 50);
+                if ($(window).width() == 1024) {
+                    $('#ulPremierMainMenu li.SubMenu > a').on('click touchend', function(e) {
+                        $(this).find('div[id*=subdiv]').hide();
+                        $(this).attr('href', 'javascript:void(0)');
+                        ShowMenu(this);
+                    }).focusout(function() {
+                        ShowMenu(this);
+                    });
+                } else {
+
+                    var timeoutId;
+                    $("#ulPremierMainMenu li.SubMenu > a").hover(function() {
+                            var self = this;
+                            if (!timeoutId) {
+                                timeoutId = window.setTimeout(function() {
+                                    timeoutId = null;
+                                    ShowMenu(self);
+                                }, 50);
+                            }
+                        },
+                        function() {
+                            if (timeoutId) {
+                                window.clearTimeout(timeoutId);
+                                timeoutId = null;
+                            }
+                        });
                 }
-            },
-                function () {
-                    if (timeoutId) {
-                        window.clearTimeout(timeoutId);
-                        timeoutId = null;
+
+                if (sessionStorage.getItem('isClosed') == "true") {
+                    $(".alert").hide();
+                }
+
+                var lastID = null;
+
+                var handleMouseover = function(e) {
+                    var target = e.target || e.srcElement;
+                    lastID = target.id;
+                    className = target.className;
+                    tagName = target.localName;
+                    if (lastID != "ulPremierMainMenu" && lastID != "") {
+                        $('div[id*=subdiv]').slideUp(500);
+                        $('.SubMenuItems li > a').css('color', '#fff').css('border-bottom', '');
                     }
-                });
-        }
+                    if (className == "col-md-8 col-xs-12 col-sm-6" || className == "b1banner_text" || className ==
+                        "b1login_Box" || className == "b1banner-desc" || className == "row b1mobile" || className ==
+                        "b1banner_text" || className == "White" || className == "b1access" || className ==
+                        "header-box" || tagName == "img" || tagName == "body") {
+                        $('div[id*=subdiv]').slideUp(500);
+                        $('.SubMenuItems li > a').css('color', '#fff').css('border-bottom', '');;
+                    }
 
-        if (sessionStorage.getItem('isClosed') == "true") {
-            $(".alert").hide();
-        }
+                };
 
-        var lastID = null;
+                if (document.addEventListener) {
+                    document.addEventListener('mouseover', handleMouseover, false);
+                    document.addEventListener('mouseover', handleMouseover, false);
+                } else {
+                    document.attachEvent('onmouseover', handleMouseover);
+                }
 
-        var handleMouseover = function (e) {
-            var target = e.target || e.srcElement;
-            lastID = target.id;
-            className = target.className;
-            tagName = target.localName;
-            if (lastID != "ulPremierMainMenu" && lastID != "") {
-                $('div[id*=subdiv]').slideUp(500);
-                $('.SubMenuItems li > a').css('color', '#fff').css('border-bottom', '');
-            }
-            if (className == "col-md-8 col-xs-12 col-sm-6" || className == "b1banner_text" || className == "b1login_Box" || className == "b1banner-desc" || className == "row b1mobile" || className == "b1banner_text" || className == "White" || className == "b1access" || className == "header-box" || tagName == "img" || tagName == "body") {
-                $('div[id*=subdiv]').slideUp(500);
-                $('.SubMenuItems li > a').css('color', '#fff').css('border-bottom', '');;
-            }
-
-        };
-
-        if (document.addEventListener) {
-            document.addEventListener('mouseover', handleMouseover, false);
-            document.addEventListener('mouseover', handleMouseover, false);
-        }
-        else {
-            document.attachEvent('onmouseover', handleMouseover);
-        }
-
-    });
-    function ShowMenu(element) {
-        if ($(element).next('div[id*=subdiv]').filter(function () { return $(this).css('display') === 'block'; }).length == 0) {
-            $('div[id*=subdiv]').hide();
-            $(element).next('div[id*=subdiv]').slideDown(500);
-            $('.SubMenuItems li > a').css('color', '#fff').css('border-bottom', '');
-            $(element).css('color', '#e4cb3f').css({
-                "border-bottom-color": "#e4cb3f",
-                "border-bottom-width": "3px",
-                "border-bottom-style": "solid"
             });
-        }
-    }
-    function ShowSignInOption() {
-        if ($('#signInHoverSection').attr('data-present') == "present") {
-            $('#signInHoverSection').toggle();
-        }
-    }
-    function SearchOut() {
-        $('#txtheadsearch').attr('data-val', $('#txtheadsearch').val());
-        $('#txtheadsearch').val(null);
-    }
-    function SearchIn() {
-        var searchText = $('#txtheadsearch').attr('data-val') || '';
-        $('#txtheadsearch').val(searchText);
-    }
-</script>
-    <style>
-                @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
-            /* IE 10 & 11 CSS styles go here */
-            #signInHoverSection {
-                position:fixed;
-                z-index:9999;
-                right:auto;
-                top:48px;
+
+            function ShowMenu(element) {
+                if ($(element).next('div[id*=subdiv]').filter(function() {
+                        return $(this).css('display') === 'block';
+                    }).length == 0) {
+                    $('div[id*=subdiv]').hide();
+                    $(element).next('div[id*=subdiv]').slideDown(500);
+                    $('.SubMenuItems li > a').css('color', '#fff').css('border-bottom', '');
+                    $(element).css('color', '#e4cb3f').css({
+                        "border-bottom-color": "#e4cb3f",
+                        "border-bottom-width": "3px",
+                        "border-bottom-style": "solid"
+                    });
+                }
             }
-        }
-        @supports (-ms-accelerator:true) {
-          /* IE Edge 12+ CSS styles go here */
-            #signInHoverSection {
-                position:absolute;
-                z-index:9999;
+
+            function ShowSignInOption() {
+                if ($('#signInHoverSection').attr('data-present') == "present") {
+                    $('#signInHoverSection').toggle();
+                }
             }
-        }
-    </style>
-<div class="row equal-height"><div class="block b01block  col-md-12">
 
-<script>
-    var b01title = "_en_small-business_" + "b01-title";
-    var b01msg = "_en_small-business_" + "b01-msg";
-    var b01heroimage = "_en_small-business_" + "b01-heroimage";
-    var b01linkname = "_en_small-business_" + "b01-linkname";
-    var b01linkurl = "_en_small-business_" + "b01-linkurl";
-    var b01titlemobile = "_en_small-business_" + "b01-titlemobile";
-    var b01messagemobile = "_en_small-business_" + "b01-messagemobile";
-
-    var WelcomeObj = {
-        title: '',
-        msg: '',
-        heroimage: '',
-        linkname: '',
-        linkurl: '',
-        titlemobile: '',
-        messagemobile: ''
-    };
-
-    $(document).ready(function () {
-        var title = sessionStorage.getItem(b01title) || '';
-        if (title != '') {
-
-            var msg = sessionStorage.getItem(b01msg);
-            var heroimage = sessionStorage.getItem(b01heroimage);
-            var linkname = sessionStorage.getItem(b01linkname);
-                 sessionStorage.setItem(b01linkurl, 'loans-and-credit-lines/small-business-loans/index.html');
-          //  var linkurl = sessionStorage.getItem(b01linkurl);
-            var titlemobile = sessionStorage.getItem(b01titlemobile);
-            var messagemobile = sessionStorage.getItem(b01messagemobile);
-
-            titlemobile = titlemobile.replace('<br />', '');         // here I am removing the <br/>
-            messagemobile = messagemobile.replace('<br />', '');     // tags...
-
-            WelcomeObj.title = title;
-            WelcomeObj.msg = msg;
-            WelcomeObj.heroimage = heroimage;
-            WelcomeObj.linkname = linkname;
-          //  WelcomeObj.linkurl = linkurl;
-                WelcomeObj.linkurl = 'loans-and-credit-lines/small-business-loans/index.html';
-            WelcomeObj.titlemobile = titlemobile;
-            WelcomeObj.messagemobile = messagemobile;
-            SetWelcomeData(WelcomeObj);
-        }
-        else {
-            var wt = "<p>CARES Act <br />Business Relief </p>";
-            var wm = "<p>First PREMIER Bank is  <br />ready to assist with the  <br />Paycheck Protection Program.</p>";
-            var wtm = "<p>CARES Act Business Relief </p>";
-            var wmm = "<p>First PREMIER Bank is  ready to assist with the  Paycheck Protection Program.</p>";
-
-            sessionStorage.setItem(b01title, wt);
-            sessionStorage.setItem(b01msg, wm);
-            sessionStorage.setItem(b01heroimage, 
-            "{{ asset('assets/frontend/contentassets/613ffd6c1af74cda9bb62b96e88cac56/fpbcares-act-hero.jpg') }}"
-            );
-            sessionStorage.setItem(b01linkname, 'Learn More');
-            sessionStorage.setItem(b01linkurl, 'loans-and-credit-lines/small-business-loans/index.html');
-            sessionStorage.setItem(b01titlemobile, wtm);
-            sessionStorage.setItem(b01messagemobile, wmm);
-            WelcomeObj.title = wt;
-            WelcomeObj.msg = wm;
-            WelcomeObj.heroimage = "{{ asset('assets/frontend/contentassets/613ffd6c1af74cda9bb62b96e88cac56/fpbcares-act-hero.jpg') }}";
-            WelcomeObj.linkname = 'Learn More';
-            WelcomeObj.linkurl = 'loans-and-credit-lines/small-business-loans/index.html';
-            WelcomeObj.titlemobile = wtm;                   // These are the mobile title
-            WelcomeObj.messagemobile = wmm;                 // and mobile message.
-            SetWelcomeData(WelcomeObj);
+            function SearchOut() {
+                $('#txtheadsearch').attr('data-val', $('#txtheadsearch').val());
+                $('#txtheadsearch').val(null);
             }
-        });
 
-    function parseHtmlEntities(str) {
-        return str.replace(/&#([0-9]{1,3});/gi, function (match, numStr) {
-            var num = parseInt(numStr, 10); // read num as normal number
-            return String.fromCharCode(num);
-        });
-    }
-
-    function SetWelcomeData(wObj) {
-        // 481 or 769
-        if (window.innerWidth < 769) {
-            $('.b1banner_text h1.White').html(wObj.titlemobile);
-            $('.b1banner_text h3.White').html(wObj.messagemobile);
-            $('.b1banner_text h1.White p').attr("style", "width:100% !important; overflow-wrap: break-word;");
-        }
-        else if (window.innerWidth > 768) {
-            $('.b1banner_text h1.White').html(wObj.title);
-            $('.b1banner_text h3.White').html(wObj.msg);
-            //$('.b1banner_text h1.White').attr("style", "width:600px;");
-            //$('.b1banner_text h3.White').attr("style", "width:600px;");
-        }
-        if (wObj.heroimage)
-            $("#b1Main-Hero-banner").css('background', 'url('+wObj.heroimage+')');
-        else
-            $("#b1Main-Hero-banner").css('background', 'url(~/Static/img/CustomBlocks/B1/FPB-Hero-Personal-1A.jpg)');
-        if (wObj.linkurl != "" && wObj.linkurl != "#") {
-            // alert(wObj.linkname + wObj.linkurl);
-            $('#HeroButton').text(wObj.linkname);
-            $('#HeroButton').attr("href", wObj.linkurl);
-            $("#HeroButton").css('visibility', 'visible');
-        }
-        else {
-
-            // $("#HeroButton").css('visibility', 'hidden');
-             $("#HeroButton").css('display', 'none');
-        }
-
-    }
-</script>
+            function SearchIn() {
+                var searchText = $('#txtheadsearch').attr('data-val') || '';
+                $('#txtheadsearch').val(searchText);
+            }
+        </script>
         <style>
-.b1banner_text h1.White {font-size: 55px; font-family: &quot;Prompt-SemiBold&quot;; text-shadow: none; margin-bottom: 15px;color:#fff;}             .b1banner_text h3.White {font-size: 20px; line-height: 32px; font-family: &quot;Prompt-Regular&quot;;color:#fff;}        </style>
+            @media all and (-ms-high-contrast: none),
+            (-ms-high-contrast: active) {
 
-<section class="row-full b1">
-    <div id="b1Main-Hero-banner" class="b1hero_banner">
-        <div class="b1banner-desc">
-            <div class="container">
-                <div class="row b1mobile">
-                    <div class="col-md-8 col-xs-12 col-sm-6 mobile-show">
-                        <div class="b1banner_text">
-                            <h1 class="White"></h1>
-                            <h3 class="White"></h3>
-                            <a id="HeroButton"></a>
+                /* IE 10 & 11 CSS styles go here */
+                #signInHoverSection {
+                    position: fixed;
+                    z-index: 9999;
+                    right: auto;
+                    top: 48px;
+                }
+            }
 
-                        </div>
-                    </div>
+            @supports (-ms-accelerator:true) {
 
+                /* IE Edge 12+ CSS styles go here */
+                #signInHoverSection {
+                    position: absolute;
+                    z-index: 9999;
+                }
+            }
 
-                        <div class="col-md-4 col-xs-6 col-sm-6 mobile-show">
-                            <div class="b1login_Box">
-                                <form name="Q2OnlineLogin" action="https://online.firstpremier.com/FirstPremierBankOnline/uux.aspx" method="post">
-                                    <h3>Access Your Account</h3>
-                                    <div class="b1access">Access your First PREMIER Bank account.</div>
-                                    <div class="form-group">
-                                        <select id="AccessAccountDropdown" class="form-control">
-                                            <option value="" id="selectaccount">Select Account Type</option>
-                                            <option value="https://www.mypremiercreditcard.com/login.aspx" data-type="" id="creditcardpayment">Credit Card</option>
-                                            <option value="https://online.firstpremier.com/FirstPremierBankOnline/uux.aspx" data-type="actionitem" id="personalbanking">Personal Banking</option>
-                                            <option value="https://online.firstpremier.com/FirstPremierBankOnline/uux.aspx" data-type="actionitem" id="businessbanking">Business Banking</option>
-                                            <option value="https://firstpremier.fdecs.com/eCustService/" data-type="" id="businessrewards">Business Rewards Credit Card</option>
-                                            <option value="https://goldleafach.com/ach/signin.aspx?218264CB36" data-type="" id="achonline">ACH Online</option>
-                                            <option value="https://icp.infovisa.com/0309/" data-type="" id="trust">Trust Online</option>
-                                            <!--https ://www.mauiweb1.com/0309"-->
-                                            <option value="https://myaccount.iconnect2invest.com/bankr/login.do?webcontext=iconnect" data-type="" id="investmentservices">Brokerage Account</option>
-                                            <option value="https://firstpremier.mymortgage-online.com/?borrowerportal&siteid=9621968476" data-type="" id="mortgage">Mortgage Application</option>
-                                        </select>
-                                    </div>
-                                    <div class="hide" id="Q2Login">
-                                        <div class="form-group">
-                                            <label for="user_id" style="color:#7c91b1">Login ID</label>
-                                            <input name="user_id" class="form-control" id="user_id" placeholder="Enter Login ID" type="text" autocomplete="off">
-                                            <span class="glyphicon glyphicon-remove form-control-feedback hide"></span>
+        </style>
+        <div class="row equal-height">
+            <div class="block b01block  col-md-12">
+
+                <script>
+                    var b01title = "_en_small-business_" + "b01-title";
+                    var b01msg = "_en_small-business_" + "b01-msg";
+                    var b01heroimage = "_en_small-business_" + "b01-heroimage";
+                    var b01linkname = "_en_small-business_" + "b01-linkname";
+                    var b01linkurl = "_en_small-business_" + "b01-linkurl";
+                    var b01titlemobile = "_en_small-business_" + "b01-titlemobile";
+                    var b01messagemobile = "_en_small-business_" + "b01-messagemobile";
+
+                    var WelcomeObj = {
+                        title: '',
+                        msg: '',
+                        heroimage: '',
+                        linkname: '',
+                        linkurl: '',
+                        titlemobile: '',
+                        messagemobile: ''
+                    };
+
+                    $(document).ready(function() {
+                        var title = sessionStorage.getItem(b01title) || '';
+                        if (title != '') {
+
+                            var msg = sessionStorage.getItem(b01msg);
+                            var heroimage = sessionStorage.getItem(b01heroimage);
+                            var linkname = sessionStorage.getItem(b01linkname);
+                            sessionStorage.setItem(b01linkurl, 'loans-and-credit-lines/small-business-loans/index.html');
+                            //  var linkurl = sessionStorage.getItem(b01linkurl);
+                            var titlemobile = sessionStorage.getItem(b01titlemobile);
+                            var messagemobile = sessionStorage.getItem(b01messagemobile);
+
+                            titlemobile = titlemobile.replace('<br />', ''); // here I am removing the <br/>
+                            messagemobile = messagemobile.replace('<br />', ''); // tags...
+
+                            WelcomeObj.title = title;
+                            WelcomeObj.msg = msg;
+                            WelcomeObj.heroimage = heroimage;
+                            WelcomeObj.linkname = linkname;
+                            //  WelcomeObj.linkurl = linkurl;
+                            WelcomeObj.linkurl = 'loans-and-credit-lines/small-business-loans/index.html';
+                            WelcomeObj.titlemobile = titlemobile;
+                            WelcomeObj.messagemobile = messagemobile;
+                            SetWelcomeData(WelcomeObj);
+                        } else {
+                            var wt = "<p>CARES Act <br />Business Relief </p>";
+                            var wm =
+                                "<p>First PREMIER Bank is  <br />ready to assist with the  <br />Paycheck Protection Program.</p>";
+                            var wtm = "<p>CARES Act Business Relief </p>";
+                            var wmm = "<p>First PREMIER Bank is  ready to assist with the  Paycheck Protection Program.</p>";
+
+                            sessionStorage.setItem(b01title, wt);
+                            sessionStorage.setItem(b01msg, wm);
+                            sessionStorage.setItem(b01heroimage,
+                                "{{ asset('assets/frontend/contentassets/613ffd6c1af74cda9bb62b96e88cac56/fpbcares-act-hero.jpg') }}"
+                            );
+                            sessionStorage.setItem(b01linkname, 'Learn More');
+                            sessionStorage.setItem(b01linkurl, 'loans-and-credit-lines/small-business-loans/index.html');
+                            sessionStorage.setItem(b01titlemobile, wtm);
+                            sessionStorage.setItem(b01messagemobile, wmm);
+                            WelcomeObj.title = wt;
+                            WelcomeObj.msg = wm;
+                            WelcomeObj.heroimage =
+                                "{{ asset('assets/frontend/contentassets/613ffd6c1af74cda9bb62b96e88cac56/fpbcares-act-hero.jpg') }}";
+                            WelcomeObj.linkname = 'Learn More';
+                            WelcomeObj.linkurl = 'loans-and-credit-lines/small-business-loans/index.html';
+                            WelcomeObj.titlemobile = wtm; // These are the mobile title
+                            WelcomeObj.messagemobile = wmm; // and mobile message.
+                            SetWelcomeData(WelcomeObj);
+                        }
+                    });
+
+                    function parseHtmlEntities(str) {
+                        return str.replace(/&#([0-9]{1,3});/gi, function(match, numStr) {
+                            var num = parseInt(numStr, 10); // read num as normal number
+                            return String.fromCharCode(num);
+                        });
+                    }
+
+                    function SetWelcomeData(wObj) {
+                        // 481 or 769
+                        if (window.innerWidth < 769) {
+                            $('.b1banner_text h1.White').html(wObj.titlemobile);
+                            $('.b1banner_text h3.White').html(wObj.messagemobile);
+                            $('.b1banner_text h1.White p').attr("style", "width:100% !important; overflow-wrap: break-word;");
+                        } else if (window.innerWidth > 768) {
+                            $('.b1banner_text h1.White').html(wObj.title);
+                            $('.b1banner_text h3.White').html(wObj.msg);
+                            //$('.b1banner_text h1.White').attr("style", "width:600px;");
+                            //$('.b1banner_text h3.White').attr("style", "width:600px;");
+                        }
+                        if (wObj.heroimage)
+                            $("#b1Main-Hero-banner").css('background', 'url(' + wObj.heroimage + ')');
+                        else
+                            $("#b1Main-Hero-banner").css('background', 'url(~/Static/img/CustomBlocks/B1/FPB-Hero-Personal-1A.jpg)');
+                        if (wObj.linkurl != "" && wObj.linkurl != "#") {
+                            // alert(wObj.linkname + wObj.linkurl);
+                            $('#HeroButton').text(wObj.linkname);
+                            $('#HeroButton').attr("href", wObj.linkurl);
+                            $("#HeroButton").css('visibility', 'visible');
+                        } else {
+
+                            // $("#HeroButton").css('visibility', 'hidden');
+                            $("#HeroButton").css('display', 'none');
+                        }
+
+                    }
+                </script>
+                <style>
+                    .b1banner_text h1.White {
+                        font-size: 55px;
+                        font-family: &quot;
+                        Prompt-SemiBold&quot;
+                        ;
+                        text-shadow: none;
+                        margin-bottom: 15px;
+                        color: #fff;
+                    }
+
+                    .b1banner_text h3.White {
+                        font-size: 20px;
+                        line-height: 32px;
+                        font-family: &quot;
+                        Prompt-Regular&quot;
+                        ;
+                        color: #fff;
+                    }
+
+                </style>
+
+                <section class="row-full b1">
+                    <div id="b1Main-Hero-banner" class="b1hero_banner">
+                        <div class="b1banner-desc">
+                            <div class="container">
+                                <div class="row b1mobile">
+                                    <div class="col-md-8 col-xs-12 col-sm-6 mobile-show">
+                                        <div class="b1banner_text">
+                                            <h1 class="White"></h1>
+                                            <h3 class="White"></h3>
+                                            <a id="HeroButton"></a>
+
                                         </div>
-                                        <div class="form-group">
-                                            <label for="password" style="color:#7c91b1">Password</label>
-                                            <input name="password" class="form-control" id="password" placeholder="Enter Password" type="password" autocomplete="off">
-                                            <span class="glyphicon glyphicon-remove form-control-feedback hide"></span>
+                                    </div>
+
+
+                                    <div class="col-md-4 col-xs-6 col-sm-6 mobile-show">
+                                        <div class="b1login_Box">
+                                            <form name="Q2OnlineLogin"
+                                                action="https://online.firstpremier.com/FirstPremierBankOnline/uux.aspx"
+                                                method="post">
+                                                <h3>Access Your Account</h3>
+                                                <div class="b1access">Access your First PREMIER Bank account.</div>
+                                                <div class="form-group">
+                                                    <select id="AccessAccountDropdown" class="form-control">
+                                                        <option value="" id="selectaccount">Select Account Type</option>
+                                                        <option value="https://www.mypremiercreditcard.com/login.aspx"
+                                                            data-type="" id="creditcardpayment">Credit Card</option>
+                                                        <option
+                                                            value="https://online.firstpremier.com/FirstPremierBankOnline/uux.aspx"
+                                                            data-type="actionitem" id="personalbanking">Personal Banking
+                                                        </option>
+                                                        <option
+                                                            value="https://online.firstpremier.com/FirstPremierBankOnline/uux.aspx"
+                                                            data-type="actionitem" id="businessbanking">Business Banking
+                                                        </option>
+                                                        <option value="https://firstpremier.fdecs.com/eCustService/"
+                                                            data-type="" id="businessrewards">Business Rewards Credit Card
+                                                        </option>
+                                                        <option value="https://goldleafach.com/ach/signin.aspx?218264CB36"
+                                                            data-type="" id="achonline">ACH Online</option>
+                                                        <option value="https://icp.infovisa.com/0309/" data-type=""
+                                                            id="trust">Trust Online</option>
+                                                        <!--https ://www.mauiweb1.com/0309"-->
+                                                        <option
+                                                            value="https://myaccount.iconnect2invest.com/bankr/login.do?webcontext=iconnect"
+                                                            data-type="" id="investmentservices">Brokerage Account</option>
+                                                        <option
+                                                            value="https://firstpremier.mymortgage-online.com/?borrowerportal&siteid=9621968476"
+                                                            data-type="" id="mortgage">Mortgage Application</option>
+                                                    </select>
+                                                </div>
+                                                <div class="hide" id="Q2Login">
+                                                    <div class="form-group">
+                                                        <label for="user_id" style="color:#7c91b1">Login ID</label>
+                                                        <input name="user_id" class="form-control" id="user_id"
+                                                            placeholder="Enter Login ID" type="text" autocomplete="off">
+                                                        <span
+                                                            class="glyphicon glyphicon-remove form-control-feedback hide"></span>
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label for="password" style="color:#7c91b1">Password</label>
+                                                        <input name="password" class="form-control" id="password"
+                                                            placeholder="Enter Password" type="password" autocomplete="off">
+                                                        <span
+                                                            class="glyphicon glyphicon-remove form-control-feedback hide"></span>
+                                                    </div>
+                                                </div>
+                                                <div id="loginLine" class="text-center b1smallLine">
+                                                    <img src="{{ asset('assets/frontend/Static/img/CustomBlocks/B1/small_line.png') }}"
+                                                        alt="">
+                                                </div>
+
+                                                <button class="b1btn-login"> Login </button>
+                                            </form>
+                                            <a class="b1link_access" href="../pages/resources/enrollment/index.html">Set up
+                                                online access <img
+                                                    src="{{ asset('assets/frontend/Static/img/CustomBlocks/B1/arrow_line.png') }}"
+                                                    style="height:11px;" /></a>
+
+                                        </div>
+
+                                        <div class="b1offerbox_lg">
+                                            <div class="b1banner_flex_img">
+                                                <img src="{{ asset('assets/frontend/Static/img/CustomBlocks/B1/money_vector.png') }}"
+                                                    alt="Respond to a credit card offer">
+                                            </div>
+                                            <div class="b1banner_flex_text">
+                                                <h3>Respond to a Credit Card Offer <a class="b1learn_more"
+                                                        href="https://www.premiercardoffer.net/?mkt=8&amp;submkt=3025&amp;pid=009&amp;ptc=VCL&amp;dsc=W218">Learn
+                                                        more <img
+                                                            src="{{ asset('assets/frontend/Static/img/CustomBlocks/B1/arrow_line.png') }}"
+                                                            style="height:11px;"> </a></h3>
+                                            </div>
                                         </div>
                                     </div>
-                                    <div id="loginLine" class="text-center b1smallLine">
-                                        <img src="{{asset('assets/frontend/Static/img/CustomBlocks/B1/small_line.png')}}" alt="">
-                                    </div>
 
-                                    <button class="b1btn-login"> Login </button>
-                                </form>
-                                    <a class="b1link_access" href="../pages/resources/enrollment/index.html">Set up online access <img src="{{asset('assets/frontend/Static/img/CustomBlocks/B1/arrow_line.png')}}" style="height:11px;" /></a>
-
-                            </div>
-
-                            <div class="b1offerbox_lg">
-                                <div class="b1banner_flex_img">
-                                    <img src="{{asset('assets/frontend/Static/img/CustomBlocks/B1/money_vector.png')}}" alt="Respond to a credit card offer">
                                 </div>
-                                <div class="b1banner_flex_text">
-                                    <h3>Respond to a Credit Card Offer  <a class="b1learn_more" href="https://www.premiercardoffer.net/?mkt=8&amp;submkt=3025&amp;pid=009&amp;ptc=VCL&amp;dsc=W218">Learn more <img src="{{asset('assets/frontend/Static/img/CustomBlocks/B1/arrow_line.png')}}" style="height:11px;">  </a></h3>
-                                </div>
-                            </div>
-                        </div>
 
-                </div>
-
-                    <div class="b1offerbox col-xs-12 col-sm-12 col-md-12">
-                        <div class="b1login_Box_2">
-                            <div class="b1banner_flex_img">
-                                <img src="{{asset('assets/frontend/Static/img/CustomBlocks/B1/money_vector.png')}}" alt="Respond to a credit card offer">
-                            </div>
-                            <div class="b1banner_flex_text">
-                                <h2>Respond to a Credit Card Offer <a class="b1learn_more" href="https://www.premiercardoffer.net/?mkt=8&amp;submkt=3025&amp;pid=009&amp;ptc=VCL&amp;dsc=W218">Learn more<img src="{{asset('assets/frontend/Static/img/CustomBlocks/B1/arrow_line.png')}}"></a></h2>
-                            </div>
-                        </div>
-                    </div>
-
-            </div>
-        </div>
-    </div>
-</section>
-<script>
-    document.getElementById("user_id").value = '';
-    document.getElementById("password").value = '';
-</script></div><div class="block b04block  col-md-12">
-<style>
-</style>
-<section class="row-full b4background">
-    <div class="container">
-        <div class="b4anywhere_banking" style="width:100%; ">
-                                <h2 style="text-align:center !important;">Banking for Every Business</h2>
-                            <div class="xhtml"><p style="text-align: center;">At First PREMIER Bank, we take your success personally. Our customer-focused team of experienced</p>
-<p style="text-align: center;">business bankers work together to provide customizable financial solutions.</p>
-<p>&nbsp;</p></div>
-                    </div>
-    </div>
-</section>
-<script>
-    ;
-</script>
-
-<style>
-    .b4background.colored {
-        background-color: #25455a !important;
-    }
-
-    .b4background.colored .b15benfits_main_box {
-        margin: 0px !important;
-
-    }
-
-    .colored h2, .colored .xhtml p {
-    color: #fff !important;
-    }
-
-    .page-Our-Communities .block.b04block.col-md-12 {
-    margin-top: 20px;
-    }
-</style></div><div class="block b09block  col-md-12">
-<style>
-    .col-lg-4.col-md-12.col-sm-12.b9student_parent_main.no-pad.b9small_growth_box.last { margin-right:0px;}
-    .b9readmore {
-        text-align: center;
-        width: 185px;
-        min-width: 185px;
-        height: 40px;
-        line-height: 25.6px;
-        background: #42967d;
-        border-radius: 20px;
-        border: transparent;
-        font-family: "Prompt-Bold";
-        font-size: 12px;
-        color: #ffffff;
-        text-transform: uppercase;
-        display: block;
-        letter-spacing: 1px;
-        box-shadow: 0px 4px 8px 0px rgba(48, 64, 75, 0.09);
-        padding: 8px 0px 0px 0px !important;
-        margin-top: 20px;
-    }
-    .b9readmore:hover {
-        background: #1c7158;
-    }
-</style>
-<section>
-    <div class="b9banking_confident_main">
-        <div class="container">
-            <div class="col-lg-12 b9student_parent_main_section no-pad">
-
-
-
-                <div class="col-lg-8 col-md-12 col-sm-12 b9student_parent_main no-pad ">
-                    <div class="b9student_parent_main_img"><img src="{{asset('assets/frontend/contentassets/5ec1a3341efd49889c1a4631099a266c/jordan_huisman_think3d.jpg')}}" alt="woman small business owner in her shop"></div>
-                    <div class="b9student_parent_main_content">
-                        <div class="b9avtar"><img src="{{asset('assets/frontend/globalassets/images/_replace/_filled/round1.png')}}" title="Bank with Confidence" alt="check"></div>
-                        <div class="b9avtar_content">
-                            <span> Bank with Confidence</span>
-
-                                <div class="xhtml"><p>First PREMIER Bank provides powerful banking solutions for businesses of every size, standing beside owners and their companies as they grow and thrive.</p></div>
-                        </div>
-                    </div>
-                    <div class="b9small_growth_box_overlay">
-                        <div class="b9small_growth_boxtext b9student_parent_main no-pad">
-                            <div class="b9student_parent_main_content">
-                                <div class="b9avtar"><img src="{{asset('assets/frontend/globalassets/images/_replace/_filled/round1.png')}}" alt="Bank with Confidence"></div>
-                                <div class="b9avtar_content">
-                                    <a href="business-checking/index.html">Bank with Confidence</a>
-
-<p>First PREMIER Bank provides powerful banking solutions for businesses of every size, standing beside owners and their companies as they grow and thrive.</p>
-<ul>
-
-        <li>
-            <a href="business-checking/index.html">Business Checking</a>
-        </li>
-
-        <li>
-            <a href="business-checking/overdraft-protection/index.html">Overdraft Protection</a>
-        </li>
-
-        <li>
-            <a href="savings-and-cds/index.html">Savings &amp; CDs</a>
-        </li>
-
-        <li>
-            <a href="business-checking/security-and-fraud-protection/index.html">Security &amp; Fraud Prevention</a>
-        </li>
-
-</ul>                                    <div class="b9confidence_links">
-                                        <a href="business-checking/compare-business-checking/index.html" class="b9readmore">Compare Checking</a>
-                                        <a href="#"></a>
+                                <div class="b1offerbox col-xs-12 col-sm-12 col-md-12">
+                                    <div class="b1login_Box_2">
+                                        <div class="b1banner_flex_img">
+                                            <img src="{{ asset('assets/frontend/Static/img/CustomBlocks/B1/money_vector.png') }}"
+                                                alt="Respond to a credit card offer">
+                                        </div>
+                                        <div class="b1banner_flex_text">
+                                            <h2>Respond to a Credit Card Offer <a class="b1learn_more"
+                                                    href="https://www.premiercardoffer.net/?mkt=8&amp;submkt=3025&amp;pid=009&amp;ptc=VCL&amp;dsc=W218">Learn
+                                                    more<img
+                                                        src="{{ asset('assets/frontend/Static/img/CustomBlocks/B1/arrow_line.png') }}"></a>
+                                            </h2>
+                                        </div>
                                     </div>
                                 </div>
+
                             </div>
                         </div>
                     </div>
-                </div>
-                <div class="col-lg-4 col-md-12 col-sm-12 b9student_parent_main b9student_parent_right_main no-pad">
-                    <div class="payments_section">
-                        <span> Accept Payments</span>
-
-
-<ul>
-
-        <li>
-            <a href="business-services/merchant-card-services/index.html">Merchant Card Services</a>
-        </li>
-
-        <li>
-            <a href="business-services/lockbox-services/index.html">Lockbox Services</a>
-        </li>
-
-        <li>
-            <a href="business-services/remote-deposit/index.html">Remote Deposit</a>
-        </li>
-
-        <li>
-            <a href="online-and-mobile/mobile-deposit/index.html">Mobile Deposit</a>
-        </li>
-
-</ul>
+                </section>
+                <script>
+                    document.getElementById("user_id").value = '';
+                    document.getElementById("password").value = '';
+                </script>
+            </div>
+            <div class="block b04block  col-md-12">
+                <style>
+                </style>
+                <section class="row-full b4background">
+                    <div class="container">
+                        <div class="b4anywhere_banking" style="width:100%; ">
+                            <h2 style="text-align:center !important;">Banking for Every Business</h2>
+                            <div class="xhtml">
+                                <p style="text-align: center;">At First PREMIER Bank, we take your success personally. Our
+                                    customer-focused team of experienced</p>
+                                <p style="text-align: center;">business bankers work together to provide customizable
+                                    financial solutions.</p>
+                                <p>&nbsp;</p>
+                            </div>
+                        </div>
                     </div>
-                    <div class="payments_section">
-                        <span>Make Payments</span>
+                </section>
+                <script>
+                    ;
+                </script>
+
+                <style>
+                    .b4background.colored {
+                        background-color: #25455a !important;
+                    }
+
+                    .b4background.colored .b15benfits_main_box {
+                        margin: 0px !important;
+
+                    }
+
+                    .colored h2,
+                    .colored .xhtml p {
+                        color: #fff !important;
+                    }
+
+                    .page-Our-Communities .block.b04block.col-md-12 {
+                        margin-top: 20px;
+                    }
+
+                </style>
+            </div>
+            <div class="block b09block  col-md-12">
+                <style>
+                    .col-lg-4.col-md-12.col-sm-12.b9student_parent_main.no-pad.b9small_growth_box.last {
+                        margin-right: 0px;
+                    }
+
+                    .b9readmore {
+                        text-align: center;
+                        width: 185px;
+                        min-width: 185px;
+                        height: 40px;
+                        line-height: 25.6px;
+                        background: #42967d;
+                        border-radius: 20px;
+                        border: transparent;
+                        font-family: "Prompt-Bold";
+                        font-size: 12px;
+                        color: #ffffff;
+                        text-transform: uppercase;
+                        display: block;
+                        letter-spacing: 1px;
+                        box-shadow: 0px 4px 8px 0px rgba(48, 64, 75, 0.09);
+                        padding: 8px 0px 0px 0px !important;
+                        margin-top: 20px;
+                    }
+
+                    .b9readmore:hover {
+                        background: #1c7158;
+                    }
+
+                </style>
+                <section>
+                    <div class="b9banking_confident_main">
+                        <div class="container">
+                            <div class="col-lg-12 b9student_parent_main_section no-pad">
 
 
-<ul>
 
-        <li>
-            <a href="business-services/make-payments/index.html">ACH Payroll &amp; Account Management</a>
-        </li>
+                                <div class="col-lg-8 col-md-12 col-sm-12 b9student_parent_main no-pad ">
+                                    <div class="b9student_parent_main_img"><img
+                                            src="{{ asset('assets/frontend/contentassets/5ec1a3341efd49889c1a4631099a266c/jordan_huisman_think3d.jpg') }}"
+                                            alt="woman small business owner in her shop"></div>
+                                    <div class="b9student_parent_main_content">
+                                        <div class="b9avtar"><img
+                                                src="{{ asset('assets/frontend/globalassets/images/_replace/_filled/round1.png') }}"
+                                                title="Bank with Confidence" alt="check"></div>
+                                        <div class="b9avtar_content">
+                                            <span> Bank with Confidence</span>
 
-        <li>
-            <a href="business-services/business-rewards-mastercard/index.html">Business Rewards Mastercard</a>
-        </li>
+                                            <div class="xhtml">
+                                                <p>First PREMIER Bank provides powerful banking solutions for businesses of
+                                                    every size, standing beside owners and their companies as they grow and
+                                                    thrive.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="b9small_growth_box_overlay">
+                                        <div class="b9small_growth_boxtext b9student_parent_main no-pad">
+                                            <div class="b9student_parent_main_content">
+                                                <div class="b9avtar"><img
+                                                        src="{{ asset('assets/frontend/globalassets/images/_replace/_filled/round1.png') }}"
+                                                        alt="Bank with Confidence"></div>
+                                                <div class="b9avtar_content">
+                                                    <a href="business-checking/index.html">Bank with Confidence</a>
 
-        <li>
-            <a href="business-checking/business-debit-mastercard/index.html">Business Debit Card</a>
-        </li>
+                                                    <p>First PREMIER Bank provides powerful banking solutions for businesses
+                                                        of every size, standing beside owners and their companies as they
+                                                        grow and thrive.</p>
+                                                    <ul>
 
-        <li>
-            <a href="online-and-mobile/bill-pay/index.html">Online Bill Pay</a>
-        </li>
+                                                        <li>
+                                                            <a href="business-checking/index.html">Business Checking</a>
+                                                        </li>
 
-</ul>
+                                                        <li>
+                                                            <a href="business-checking/overdraft-protection/index.html">Overdraft
+                                                                Protection</a>
+                                                        </li>
 
+                                                        <li>
+                                                            <a href="savings-and-cds/index.html">Savings &amp; CDs</a>
+                                                        </li>
+
+                                                        <li>
+                                                            <a
+                                                                href="business-checking/security-and-fraud-protection/index.html">Security
+                                                                &amp; Fraud Prevention</a>
+                                                        </li>
+
+                                                    </ul>
+                                                    <div class="b9confidence_links">
+                                                        <a href="business-checking/compare-business-checking/index.html"
+                                                            class="b9readmore">Compare Checking</a>
+                                                        <a href="#"></a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div
+                                    class="col-lg-4 col-md-12 col-sm-12 b9student_parent_main b9student_parent_right_main no-pad">
+                                    <div class="payments_section">
+                                        <span> Accept Payments</span>
+
+
+                                        <ul>
+
+                                            <li>
+                                                <a href="business-services/merchant-card-services/index.html">Merchant Card
+                                                    Services</a>
+                                            </li>
+
+                                            <li>
+                                                <a href="business-services/lockbox-services/index.html">Lockbox Services</a>
+                                            </li>
+
+                                            <li>
+                                                <a href="business-services/remote-deposit/index.html">Remote Deposit</a>
+                                            </li>
+
+                                            <li>
+                                                <a href="online-and-mobile/mobile-deposit/index.html">Mobile Deposit</a>
+                                            </li>
+
+                                        </ul>
+                                    </div>
+                                    <div class="payments_section">
+                                        <span>Make Payments</span>
+
+
+                                        <ul>
+
+                                            <li>
+                                                <a href="business-services/make-payments/index.html">ACH Payroll &amp;
+                                                    Account Management</a>
+                                            </li>
+
+                                            <li>
+                                                <a href="business-services/business-rewards-mastercard/index.html">Business
+                                                    Rewards Mastercard</a>
+                                            </li>
+
+                                            <li>
+                                                <a href="business-checking/business-debit-mastercard/index.html">Business
+                                                    Debit Card</a>
+                                            </li>
+
+                                            <li>
+                                                <a href="online-and-mobile/bill-pay/index.html">Online Bill Pay</a>
+                                            </li>
+
+                                        </ul>
+
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-12 b9student_parent_main_section no-pad">
+                                <div class="col-lg-4 col-md-12 col-sm-12 b9student_parent_main no-pad b9small_growth_box">
+                                    <div class="b9student_parent_main_img"><img
+                                            src="{{ asset('assets/frontend/contentassets/5ec1a3341efd49889c1a4631099a266c/conf_img1.jpg') }}"
+                                            title="Finance Growth" alt="two men with hardhats looking at blueprints"></div>
+                                    <div class="b9student_parent_main_content finance_growth">
+                                        <div class="b9glow_content" style="min-height:33px;">
+                                            <h3> Finance Growth</h3>
+                                        </div>
+                                    </div>
+                                    <div class="b9small_growth_box_overlay b9bg-box-overlay">
+                                        <div class="b9small_growth_boxtext">
+                                            <h3>Finance Growth</h3>
+
+                                            <ul>
+
+                                                <li>
+                                                    <a href="loans-and-credit-lines/small-business-loans/index.html">Small
+                                                        Business Loans</a>
+                                                </li>
+
+                                                <li>
+                                                    <a href="loans-and-credit-lines/business-lines-of-credit/index.html">Business
+                                                        Lines of Credit</a>
+                                                </li>
+
+                                                <li>
+                                                    <a href="loans-and-credit-lines/commercial-real-estate/index.html">Commercial
+                                                        Real Estate</a>
+                                                </li>
+
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-4 col-md-12 col-sm-12 b9student_parent_main no-pad b9small_growth_box">
+                                    <div class="b9student_parent_main_img"><img
+                                            src="{{ asset('assets/frontend/contentassets/5ec1a3341efd49889c1a4631099a266c/conf_img2.jpg') }}"
+                                            title="Finance Growth" alt="up close image of woman"></div>
+                                    <div class="b9student_parent_main_content finance_growth">
+                                        <div class="b9glow_content" style="min-height:33px;">
+                                            <h3>Protect Your Assets</h3>
+                                        </div>
+                                    </div>
+                                    <div class="b9small_growth_box_overlay b9bg-box-overlay">
+                                        <div class="b9small_growth_boxtext">
+                                            <h3>Protect Your Assets</h3>
+
+                                            <ul>
+
+                                                <li>
+                                                    <a href="../personal/investing/insurance/index.html">Insurance</a>
+                                                </li>
+
+                                                <li>
+                                                    <a href="asset-management-and-trust/employee-benefits/index.html">Employee
+                                                        Benefits</a>
+                                                </li>
+
+                                                <li>
+                                                    <a href="business-checking/security-and-fraud-protection/index.html">Security
+                                                        &amp; Fraud Protection</a>
+                                                </li>
+
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div
+                                    class="col-lg-4 col-md-12 col-sm-12 b9student_parent_main no-pad b9small_growth_box last">
+                                    <div class="b9student_parent_main_img"><img
+                                            src="{{ asset('assets/frontend/contentassets/5ec1a3341efd49889c1a4631099a266c/conf_img3.jpg') }}"
+                                            title="Invest for the Future" alt="two business men looking at laptop"></div>
+                                    <div class="b9student_parent_main_content finance_growth">
+                                        <div class="b9glow_content" style="min-height:33px;">
+                                            <h3>Invest for the Future</h3>
+                                        </div>
+                                    </div>
+                                    <div class="b9small_growth_box_overlay b9bg-box-overlay">
+                                        <div class="b9small_growth_boxtext">
+                                            <h3>Invest for the Future</h3>
+
+                                            <ul>
+
+                                                <li>
+                                                    <a
+                                                        href="asset-management-and-trust/business-planning-investment/index.html">Business
+                                                        Planning &amp; Investment</a>
+                                                </li>
+
+                                                <li>
+                                                    <a href="asset-management-and-trust/group-retirement-plans/index.html">Group
+                                                        Retirement Plans</a>
+                                                </li>
+
+                                                <li>
+                                                    <a href="asset-management-and-trust/first-premier-at-work/index.html">PREMIER
+                                                        at Work</a>
+                                                </li>
+
+                                            </ul>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
+                </section>
+            </div>
+            <div class="block b06block  col-md-12">
+                <style>
+                    .b06carousel-inner {
+                        position: relative;
+                        width: 60% !important;
+                        overflow: hidden;
+                        margin: 0 20% 0 19% !important;
+                        height: 268px;
+                    }
+
+                    .b06carousel-control .glyphicon-chevron-left::before,
+                    .glyphicon-chevron-right::before {
+                        content: "" !important;
+                    }
+
+                    .b06carousel-control:focus,
+                    .b06carousel-control:hover,
+                    .b06carousel-control.left,
+                    .b06carousel-control.right {
+                        background: none !important;
+                    }
+
+                    .b06carousel-control {
+                        z-index: 999;
+                        opacity: inherit !important;
+                    }
+
+                    .b06carousel-inner>.item.next.left,
+                    .carousel-inner>.item.prev.right,
+                    .carousel-inner>.item.active {
+                        transform: inherit !important;
+                    }
+
+                    .b06carousel-inner>.item {
+                        perspective: inherit !important;
+                    }
+
+                    .b06carousel-control.left {
+                        left: -3% !important;
+                    }
+
+                    @media only screen and (max-width:1366px) {
+
+                        /*#region B-6*/
+                        .b06carousel-inner {
+                            width: 80% !important;
+                            margin: 0 10% 0 10% !important;
+                        }
+
+                        /*#endregion*/
+                    }
+
+                    @media only screen and (max-width:1000px) {
+
+                        /*#region B-6*/
+                        .b06carousel-control.left {
+                            left: 0 !important;
+                        }
+
+                        .b06carousel-control .glyphicon-chevron-left,
+                        .carousel-control .glyphicon-chevron-right,
+                        .carousel-control .icon-next,
+                        .carousel-control .icon-prev {
+                            top: 50% !important;
+                        }
+
+                        .b06carousel-control {
+                            width: 10% !important;
+                        }
+
+                        .glyphicon-chevron-left img,
+                        .glyphicon-chevron-right img {
+                            width: 100%;
+                        }
+
+                        .b06carousel-inner {
+                            height: 320px;
+                        }
+
+                        /*#endregion*/
+                    }
+
+                    @media screen and (max-width: 767px) {
+
+                        /*#region B-6*/
+                        .b06carousel-inner {
+                            height: 300px;
+                        }
+
+                        /*#endregion*/
+                    }
+
+                </style>
+                <script type="text/javascript">
+                    $('#b06Carousel').carousel({
+                        interval: 80000,
+                    })
+                </script>
+
+
+
+
+
+                <section class="row-full">
+                    <div class="b6featured_quote_main">
+                        <img src="{{ asset('assets/frontend/Static/img/CustomBlocks/B6/featured_bg.png') }}"
+                            class="b6featured_bg" alt="First PREMIER Bank">
+                        <img src="{{ asset('assets/frontend/Static/img/CustomBlocks/B6/featured_bg_small.png') }}"
+                            class="b6featured_bg_small_bg" alt="First PREMIER Bank">
+                        <div class="b6featured_bg_small carousel" id="b06Carousel" data-ride="carousel">
+                            <div class="">
+                                <div class="carousel-inner b06carousel-inner">
+                                    <div class="item active">
+                                        <div class="row b6mypadding">
+                                            <div class="b6featured_quote_img col-lg-5 col-md-5"><img
+                                                    src="{{ asset('assets/frontend/contentassets/47b9a906e4ae4d9586caaaad5e248d9d/quote_luke_tibbetts.jpg') }}"
+                                                    class="b6featured_img" alt="Luke Tibbetts VP of Business Banking"></div>
+                                            <div class="b6featured_quote col-lg-7 col-md-7">
+                                                <p>First PREMIER helps give small businesses a competitive edge by making
+                                                    the management of accounts payable and receivable -- and even payroll --
+                                                    a whole lot easier.</p>
+                                                <div class="clearfix"></div><span> - Luke Tibbetts, VP, Business
+                                                    Banking</span>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </section>
+
+            </div>
+            <script>
+                $('#b11Carousel').carousel({
+                    interval: 80000,
+                })
+            </script>
+
+
+
+                <div class="b11section">
+                    <section class="container">
+                        <div class="b11first_premier_main">
+                            <div class="container">
+                                <div class="row">
+                                    <div class="col-lg-12 b11firstpremier_box_main">
+                                        <div class='item active'>
+                                            <div class='col-md-4 col-sm-6 b11anytime_box'><a
+                                                    href='ag-banking/index.html'><img
+                                                        src='{{ asset('assets/frontend/globalassets/images/secondary-icons/bright/nature/bright-nature-secondary-icon-5.png') }}'
+                                                        alt='Growing Plant' border='0' /></a><span><a
+                                                        href='ag-banking/index.html'>We Know Agribusiness</a></span>
+                                                <div class="xhtml">
+                                                    <p>&nbsp;</p>
+                                                    <p>Whether you run a small family farm or a large agricultural
+                                                        operation, our Ag Bankers know how to bring the banking, finance,
+                                                        insurance and treasury solutions to help.</p>
+                                                    <p>&nbsp;</p>
+                                                </div>
+                                            </div>
+                                            <div class='col-md-4 col-sm-6 b11anytime_box'><a
+                                                    href='business-services/business-rewards-mastercard/index.html'><img
+                                                        src='{{ asset('assets/frontend/globalassets/images/secondary-icons/blue/business-finance/blue-business-_-finance-secondary-icon-25.png') }}'
+                                                        alt='Mastercard' border='0' /></a><span><a
+                                                        href='business-services/business-rewards-mastercard/index.html'>Business
+                                                        Rewards Mastercard®</a></span>
+                                                <div class="xhtml">
+                                                    <p>A great way to streamline expense management, while reaping some nice
+                                                        rewards like 1% cash back for qualified purchases, rental car and
+                                                        purchase insurance and more.</p>
+                                                </div>
+                                            </div>
+                                            <div class='col-md-4 col-sm-6 b11anytime_box'><a
+                                                    href='business-services/make-payments/index.html'><img
+                                                        src='{{ asset('assets/frontend/globalassets/images/secondary-icons/gold/business-finance/gold-business-_-finance-secondary-icon-31.png') }}'
+                                                        alt='Money' border='0' /></a><span><a
+                                                        href='business-services/make-payments/index.html'>Employee
+                                                        Payroll</a></span>
+                                                <div class="xhtml">
+                                                    <p>&nbsp;</p>
+                                                    <p>With ACH online, you can affordably set up direct deposit and manage
+                                                        employee payroll, tax payments and expense reimbursement
+                                                        electronically.</p>
+                                                    <p>&nbsp;</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+
+                    </section>
                 </div>
             </div>
-            <div class="col-lg-12 b9student_parent_main_section no-pad">
-                <div class="col-lg-4 col-md-12 col-sm-12 b9student_parent_main no-pad b9small_growth_box">
-                    <div class="b9student_parent_main_img"><img src="{{asset('assets/frontend/contentassets/5ec1a3341efd49889c1a4631099a266c/conf_img1.jpg')}}" title="Finance Growth" alt="two men with hardhats looking at blueprints"></div>
-                    <div class="b9student_parent_main_content finance_growth">
-                        <div class="b9glow_content" style="min-height:33px;">
-                            <h3> Finance Growth</h3>
+            <div class="block b10block  col-md-12">
+
+                <section class="row-full">
+
+                    <!--First Premier work start-->
+                    <div class="b10first_premier_main">
+                        <div class="container">
+                            <div class="b10first_premier">
+                                <h2>Why Bank with First PREMIER?</h2>
+                            </div>
+                            <div class="b10panel-group" id="accordion">
+                                <div class="b10panel b10panel-default">
+                                    <div class="b10panel-heading">
+                                        <h3 class="b10panel-title"><a data-toggle="collapse" data-parent="#accordion"
+                                                href="#collapse_0"><span> One of the Strongest Banks in the Nation
+                                                </span></a></h3>
+                                    </div>
+                                    <div id="collapse_0" class="b10panel-collapse collapse ">
+                                        <div class="b10panel-body">
+                                            <div class="xhtml">
+                                                <p>As a debt-free, privately owned $2 billion bank, First PREMIER is one of
+                                                    the strongest capitalized banks in the country. We ranked 17th in the
+                                                    nation for banks with more than $1 billion in assets by American Banker
+                                                    Magazine. We are consistently ranked as a top-performing banks for asset
+                                                    size by the American Banking Association's Banking Journal.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="b10panel b10panel-default">
+                                    <div class="b10panel-heading">
+                                        <h3 class="b10panel-title"><a data-toggle="collapse" data-parent="#accordion"
+                                                href="#collapse_1"><span> Serving Businesses of Every Size </span></a></h3>
+                                    </div>
+                                    <div id="collapse_1" class="b10panel-collapse collapse ">
+                                        <div class="b10panel-body">
+                                            <div class="xhtml">
+                                                <p>Our integrated business model bridges business banking with our treasury
+                                                    and asset management teams. We work together to provide market-leading
+                                                    banking, lending and treasury services solutions that are "right-sized"
+                                                    for business needs and flexible to scale for future growth.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="b10panel b10panel-default">
+                                    <div class="b10panel-heading">
+                                        <h3 class="b10panel-title"><a data-toggle="collapse" data-parent="#accordion"
+                                                href="#collapse_2"><span> Personal Service & Local Decision Making
+                                                </span></a></h3>
+                                    </div>
+                                    <div id="collapse_2" class="b10panel-collapse collapse ">
+                                        <div class="b10panel-body">
+                                            <div class="xhtml">
+                                                <p>Our bankers take the time to learn about you. Once they understand your
+                                                    business goals, they will help you find the banking products and
+                                                    financial solutions that fit your needs today, and support you as your
+                                                    business grows.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="b10panel b10panel-default">
+                                    <div class="b10panel-heading">
+                                        <h3 class="b10panel-title"><a data-toggle="collapse" data-parent="#accordion"
+                                                href="#collapse_3"><span> FREE Leading Edge Online & Mobile Tools
+                                                </span></a></h3>
+                                    </div>
+                                    <div id="collapse_3" class="b10panel-collapse collapse ">
+                                        <div class="b10panel-body">
+                                            <div class="xhtml">
+                                                <p>Our secure Online and Mobile Banking gives you 24/7 access over your
+                                                    accounts with multi-tiered security and administrative control. Enjoy
+                                                    great features including eStatements, Bill Pay, account alerts &amp;
+                                                    notifications, debit card lock and unlock, administrative controls and
+                                                    more! Our Debit Mastercard&reg; and Business Rewards Mastercard&reg;
+                                                    credit cards also work with mobile wallet technology. Best of all, First
+                                                    PREMIER Business Online and Mobile Banking are FREE of charge to First
+                                                    PREMIER Banking customers.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="b10panel b10panel-default">
+                                    <div class="b10panel-heading">
+                                        <h3 class="b10panel-title"><a data-toggle="collapse" data-parent="#accordion"
+                                                href="#collapse_4"><span> Locally Grown, Nationally Known </span></a></h3>
+                                    </div>
+                                    <div id="collapse_4" class="b10panel-collapse collapse ">
+                                        <div class="b10panel-body">
+                                            <div class="xhtml">
+                                                <p>We serve local, regional and national clients with pride. First PREMIER
+                                                    is the 14th largest ACH Originating Bank in the USA and the 12th largest
+                                                    issuer of Mastercard&reg; in the country. We are also honored to have
+                                                    served as the bank for the State of South Dakota for 20+ years (1999),
+                                                    as well as the bank for the City of Sioux Falls for 15+ years (2004).
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="b10panel b10panel-default">
+                                    <div class="b10panel-heading">
+                                        <h3 class="b10panel-title"><a data-toggle="collapse" data-parent="#accordion"
+                                                href="#collapse_5"><span> A Champion for Customers & Community </span></a>
+                                        </h3>
+                                    </div>
+                                    <div id="collapse_5" class="b10panel-collapse collapse ">
+                                        <div class="b10panel-body">
+                                            <div class="xhtml">
+                                                <p>We serve our local, regional and national clients with pride and personal
+                                                    customer care. We are active supporters of more than 600 charities and
+                                                    non-profits. Last year alone, our associates contributed over 32,000
+                                                    hours of community service. We also take care of our employees. From
+                                                    2015-2020, we were ranked as one of the Best Banks to Work For by
+                                                    American Banker and Best Companies Group.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+
+                        </div>
+
+                    </div>
+                    <!--First Premier work end-->
+                </section>
+            </div>
+            <div class="block b04block  col-md-12">
+                <style>
+                </style>
+                <section class="row-full b4background">
+                    <div class="container">
+                        <div class="b4anywhere_banking" style="width:100%; ">
                         </div>
                     </div>
-                    <div class="b9small_growth_box_overlay b9bg-box-overlay">
-                        <div class="b9small_growth_boxtext">
-                            <h3>Finance Growth</h3>
+                </section>
+                <script>
+                    $(".b9confidence_links a:nth-child(2)").css("display", "none");
+                    $(".b11firstpremier_box_main .b11anytime_box:nth-child(2) span a").text('');
+                    $(".b11firstpremier_box_main .b11anytime_box:nth-child(2) span a").html('Business Rewards Mastercard<sup>®</sup>');;
+                </script>
 
-<ul>
+                <style>
+                    .b4background.colored {
+                        background-color: #25455a !important;
+                    }
 
-        <li>
-            <a href="loans-and-credit-lines/small-business-loans/index.html">Small Business Loans</a>
-        </li>
+                    .b4background.colored .b15benfits_main_box {
+                        margin: 0px !important;
 
-        <li>
-            <a href="loans-and-credit-lines/business-lines-of-credit/index.html">Business Lines of Credit</a>
-        </li>
+                    }
 
-        <li>
-            <a href="loans-and-credit-lines/commercial-real-estate/index.html">Commercial Real Estate</a>
-        </li>
+                    .colored h2,
+                    .colored .xhtml p {
+                        color: #fff !important;
+                    }
 
-</ul>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-12 col-sm-12 b9student_parent_main no-pad b9small_growth_box">
-                    <div class="b9student_parent_main_img"><img src="{{asset('assets/frontend/contentassets/5ec1a3341efd49889c1a4631099a266c/conf_img2.jpg')}}" title="Finance Growth" alt="up close image of woman"></div>
-                    <div class="b9student_parent_main_content finance_growth">
-                        <div class="b9glow_content" style="min-height:33px;">
-                            <h3>Protect Your Assets</h3>
-                        </div>
-                    </div>
-                    <div class="b9small_growth_box_overlay b9bg-box-overlay">
-                        <div class="b9small_growth_boxtext">
-                            <h3>Protect Your Assets</h3>
+                    .page-Our-Communities .block.b04block.col-md-12 {
+                        margin-top: 20px;
+                    }
 
-<ul>
-
-        <li>
-            <a href="../personal/investing/insurance/index.html">Insurance</a>
-        </li>
-
-        <li>
-            <a href="asset-management-and-trust/employee-benefits/index.html">Employee Benefits</a>
-        </li>
-
-        <li>
-            <a href="business-checking/security-and-fraud-protection/index.html">Security &amp; Fraud Protection</a>
-        </li>
-
-</ul>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-12 col-sm-12 b9student_parent_main no-pad b9small_growth_box last">
-                    <div class="b9student_parent_main_img"><img src="{{asset('assets/frontend/contentassets/5ec1a3341efd49889c1a4631099a266c/conf_img3.jpg')}}" title="Invest for the Future" alt="two business men looking at laptop"></div>
-                    <div class="b9student_parent_main_content finance_growth">
-                        <div class="b9glow_content" style="min-height:33px;">
-                            <h3>Invest for the Future</h3>
-                        </div>
-                    </div>
-                    <div class="b9small_growth_box_overlay b9bg-box-overlay">
-                        <div class="b9small_growth_boxtext">
-                            <h3>Invest for the Future</h3>
-
-<ul>
-
-        <li>
-            <a href="asset-management-and-trust/business-planning-investment/index.html">Business Planning &amp; Investment</a>
-        </li>
-
-        <li>
-            <a href="asset-management-and-trust/group-retirement-plans/index.html">Group Retirement Plans</a>
-        </li>
-
-        <li>
-            <a href="asset-management-and-trust/first-premier-at-work/index.html">PREMIER at Work</a>
-        </li>
-
-</ul>
-
-                        </div>
-                    </div>
-                </div>
+                </style>
             </div>
         </div>
-    </div>
-</section></div><div class="block b06block  col-md-12"><style>
-    .b06carousel-inner {
-        position: relative;
-        width: 60% !important;
-        overflow: hidden;
-        margin: 0 20% 0 19% !important;
-        height: 268px;
-    }
-    .b06carousel-control .glyphicon-chevron-left::before, .glyphicon-chevron-right::before { content: "" !important; }
-    .b06carousel-control:focus, .b06carousel-control:hover, .b06carousel-control.left, .b06carousel-control.right { background: none !important; }
-    .b06carousel-control { z-index: 999; opacity: inherit !important; }
-    .b06carousel-inner > .item.next.left, .carousel-inner > .item.prev.right, .carousel-inner > .item.active{transform:inherit !important;}
-    .b06carousel-inner > .item{perspective:inherit !important;}
-    .b06carousel-control.left{left:-3% !important;}
-
-    @media only screen and (max-width:1366px) {
-    /*#region B-6*/
-    .b06carousel-inner{width:80% !important;margin:0 10% 0 10% !important;}
-    /*#endregion*/
-    }
-    @media only screen and (max-width:1000px) {
-    /*#region B-6*/
-    .b06carousel-control.left{left:0 !important;}
-    .b06carousel-control .glyphicon-chevron-left, .carousel-control .glyphicon-chevron-right, .carousel-control .icon-next, .carousel-control .icon-prev{top:50% !important;}
-    .b06carousel-control{width:10% !important;}
-    .glyphicon-chevron-left img, .glyphicon-chevron-right img{width:100%;}
-    .b06carousel-inner{height:320px;}
-    /*#endregion*/
-    }
-    @media screen and (max-width: 767px) {
-    /*#region B-6*/
-    .b06carousel-inner{height:300px;}
-    /*#endregion*/
-    }
-</style>
-<script type="text/javascript">
-    $('#b06Carousel').carousel({
-        interval: 80000,
-    })
-</script>
 
 
 
-
-
-<section class="row-full">
-    <div class="b6featured_quote_main">
-            <img src="{{ asset('assets/frontend/Static/img/CustomBlocks/B6/featured_bg.png')}}" class="b6featured_bg" alt="First PREMIER Bank">
-            <img src="{{ asset('assets/frontend/Static/img/CustomBlocks/B6/featured_bg_small.png')}}" class="b6featured_bg_small_bg" alt="First PREMIER Bank">
-        <div class="b6featured_bg_small carousel" id="b06Carousel" data-ride="carousel">
-            <div class="">
-                <div class="carousel-inner b06carousel-inner">
-                    <div class="item active"><div class="row b6mypadding"><div class="b6featured_quote_img col-lg-5 col-md-5"><img src="{{asset('assets/frontend/contentassets/47b9a906e4ae4d9586caaaad5e248d9d/quote_luke_tibbetts.jpg')}}" class="b6featured_img" alt="Luke Tibbetts VP of Business Banking"></div><div class="b6featured_quote col-lg-7 col-md-7"><p>First PREMIER helps give small businesses a competitive edge by making the management of accounts payable and receivable  -- and even payroll -- a whole lot easier.</p><div class="clearfix"></div><span> - Luke Tibbetts, VP, Business Banking</span></div></div></div>
-
-                </div>
-            </div>
-
-        </div>
-    </div>
-</section>
-
-</div><div class="block b11block  col-md-12"><script>
-    $('#b11Carousel').carousel({
-        interval: 80000,
-    })
-</script>
-
-
-
-<div class="b11section">
-    <section class="container">
-        <div class="b11first_premier_main">
+        <div class="row-full footer">
             <div class="container">
                 <div class="row">
-                    <div class="col-lg-12 b11firstpremier_box_main">
-<div class='item active'><div class='col-md-4 col-sm-6 b11anytime_box'><a href='ag-banking/index.html'><img src='{{asset('assets/frontend/globalassets/images/secondary-icons/bright/nature/bright-nature-secondary-icon-5.png')}}' alt='Growing Plant' border='0' /></a><span><a href='ag-banking/index.html'>We Know Agribusiness</a></span><div class="xhtml"><p>&nbsp;</p>
-<p>Whether you run a small family farm or a large agricultural operation, our Ag Bankers know how to bring the banking, finance, insurance and treasury solutions to help.</p>
-<p>&nbsp;</p></div></div><div class='col-md-4 col-sm-6 b11anytime_box'><a href='business-services/business-rewards-mastercard/index.html'><img src='{{asset('assets/frontend/globalassets/images/secondary-icons/blue/business-finance/blue-business-_-finance-secondary-icon-25.png')}}' alt='Mastercard' border='0' /></a><span><a href='business-services/business-rewards-mastercard/index.html'>Business Rewards Mastercard®</a></span><div class="xhtml"><p>A great way to streamline expense management, while reaping some nice rewards like 1% cash back for qualified purchases, rental car and purchase insurance and more.</p></div></div><div class='col-md-4 col-sm-6 b11anytime_box'><a href='business-services/make-payments/index.html'><img src='{{asset('assets/frontend/globalassets/images/secondary-icons/gold/business-finance/gold-business-_-finance-secondary-icon-31.png')}}' alt='Money' border='0' /></a><span><a href='business-services/make-payments/index.html'>Employee Payroll</a></span><div class="xhtml"><p>&nbsp;</p>
-<p>With ACH online, you can affordably set up direct deposit and manage employee payroll, tax payments and expense reimbursement electronically.</p>
-<p>&nbsp;</p></div></div></div>                    </div>
+                    <div class="col-md-3 col-sm-3 col-xs-12 footerCol1">
+                        <div class="footerHeader">Company</div>
+        
+                        <ul>
+        
+                            <li>
+                                <a href="{{ route('frontend.en.pages.about-us')}}">About Us</a>
+                            </li>
+        
+                            <li>
+                                <a href="{{ route('frontend') }}">First PREMIER Bank</a>
+                            </li>
+        
+                            <li>
+                                <a href="https://www.mypremiercreditcard.com/">PREMIER Bankcard</a>
+                            </li>
+        
+                            <li>
+                                <a href="{{ route('frontend.en.pages.about-us.leadership-team') }}">Leadership</a>
+                            </li>
+        
+                            <li>
+                                <a href="{{ route('frontend.en.pages.about-us.community') }}">Community</a>
+                            </li>
+        
+                            <li>
+                                <a href="{{route('frontend.en.pages.about.careers')}}">Careers</a>
+                            </li>
+        
+                        </ul>
+                        <br />
+                    </div>
+                    <div class="col-md-3 col-sm-3 col-xs-12 footerCol2">
+                        <div class="footerHeader">Customers</div>
+        
+                        <ul>
+        
+                            <li>
+                                <a href="{{ route('frontend') }}">Personal Banking</a>
+                            </li>
+        
+                            <li>
+                                <a href="{{ route('frontend.en.small-business') }}">Small Business</a>
+                            </li>
+        
+                            <li>
+                                <a href="{{ route('frontend.en.commercial') }}">Commercial</a>
+                            </li>
+        
+                        </ul>
+                        <br />
+                    </div>
+                    <div class="col-md-3 col-sm-3 col-xs-12 footerCol3">
+                        <div class="footerHeader">Help &amp; Contact</div>
+        
+                        <ul>
+        
+                            <li>
+                                <a href="{{ route('frontend.en.pages.quick-links.customer-care') }}">Customer Care</a>
+                            </li>
+        
+                            <li>
+                                <a href="{{ route('frontend.en.pages.quick-links.locations') }}">Locations</a>
+                            </li>
+        
+                            <li>
+                                <a href="{{ route('frontend.en.pages.quick-links.customer-care') }}">BANK: 800-501-6535</a>
+                            </li>
+        
+                            <li>
+                                <a href="https://www.mypremiercreditcard.com/">CREDIT CARD: 800-987-5521</a>
+                            </li>
+        
+                            <li>
+                                <a href="{{ route('frontend') }}">Routing Number: 091408598</a>
+                            </li>
+        
+                        </ul>
+                        <br />
+                    </div>
+                    <div class="col-md-3 col-sm-3 col-xs-12 footerCol4">
+                        <div class="footerHeader">Legal Notices</div>
+        
+                        <ul>
+        
+                            <li>
+                                <a href="{{ route('frontend.en.pages.resources.first-premier-privacy-statement-2020') }}">Privacy
+                                    Notice &amp; Statement</a>
+                            </li>
+        
+                            <li>
+                                <a href="{{ route('frontend.en.pages.resources.legal-disclosures') }}">Legal Disclosures</a>
+                            </li>
+        
+                            <li>
+                                <a href="{{ route('frontend.en.pages.resources.cookie-policy') }}">Cookie Policy</a>
+                            </li>
+        
+                        </ul>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12" style="padding-top:50px;">
+                        <p>Member FDIC | <img src="{{asset('assets/frontend/Static/img/equalhousinglender.png')}}" alt="Equal Housing Lender"
+                                title="Equal Housing Lender" />Equal Housing Lender</p>
+                    </div>
                 </div>
             </div>
         </div>
+        <style>
+            /* CHROME SAFARI FIX */
+            .form-control:hover,
+            .form-control:active,
+            .form-control:focus {
+                box-shadow: none !important;
+                -moz-box-shadow: none !important;
+                -webkit-box-shadow: none !important;
+            }
 
+            .form-control:hover,
+            .form-control:active,
+            .form-control:focus {
+                box-shadow: none !important;
+                -moz-box-shadow: none !important;
+                -webkit-box-shadow: none !important;
+            }
 
-    </section>
-</div></div><div class="block b10block  col-md-12">
+            a:focus,
+            a:active {
+                outline: none !important;
+                border: none !important;
+            }
 
-<section class="row-full">
+            input:focus,
+            input:active {
+                outline: none !important;
+            }
 
-    <!--First Premier work start-->
-    <div class="b10first_premier_main">
-        <div class="container">
-            <div class="b10first_premier">
-                    <h2>Why Bank with First PREMIER?</h2>
-            </div>
-            <div class="b10panel-group" id="accordion">
-                <div class="b10panel b10panel-default"><div class="b10panel-heading"><h3 class="b10panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#collapse_0"><span> One of the Strongest Banks in the Nation </span></a></h3> </div> <div id="collapse_0" class="b10panel-collapse collapse "><div class="b10panel-body"><div class="xhtml"> <p>As a debt-free, privately owned $2 billion bank, First PREMIER is one of the strongest capitalized banks in the country. We ranked 17th in the nation for banks with more than $1 billion in assets by American Banker Magazine. We are consistently ranked as a top-performing banks for asset size by the American Banking Association's Banking Journal.</p></div> </div> </div> </div><div class="b10panel b10panel-default"><div class="b10panel-heading"><h3 class="b10panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#collapse_1"><span> Serving Businesses of Every Size </span></a></h3> </div> <div id="collapse_1" class="b10panel-collapse collapse "><div class="b10panel-body"><div class="xhtml"> <p>Our integrated business model bridges business banking with our treasury and asset management teams. We work together to provide market-leading banking, lending and treasury services solutions that are "right-sized" for business needs and flexible to scale for future growth.</p></div> </div> </div> </div><div class="b10panel b10panel-default"><div class="b10panel-heading"><h3 class="b10panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#collapse_2"><span> Personal Service & Local Decision Making </span></a></h3> </div> <div id="collapse_2" class="b10panel-collapse collapse "><div class="b10panel-body"><div class="xhtml"> <p>Our bankers take the time to learn about you. Once they understand your business goals, they will help you find the banking products and financial solutions that fit your needs today, and support you as your business grows.</p></div> </div> </div> </div><div class="b10panel b10panel-default"><div class="b10panel-heading"><h3 class="b10panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#collapse_3"><span> FREE Leading Edge Online & Mobile Tools </span></a></h3> </div> <div id="collapse_3" class="b10panel-collapse collapse "><div class="b10panel-body"><div class="xhtml"> <p>Our secure Online and Mobile Banking gives you 24/7 access over your accounts with multi-tiered security and administrative control. Enjoy great features including eStatements, Bill Pay, account alerts &amp; notifications, debit card lock and unlock, administrative controls and more! Our Debit Mastercard&reg; and Business Rewards Mastercard&reg; credit cards also work with mobile wallet technology. Best of all, First PREMIER Business Online and Mobile Banking are FREE of charge to First PREMIER Banking customers.</p></div> </div> </div> </div><div class="b10panel b10panel-default"><div class="b10panel-heading"><h3 class="b10panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#collapse_4"><span> Locally Grown, Nationally Known </span></a></h3> </div> <div id="collapse_4" class="b10panel-collapse collapse "><div class="b10panel-body"><div class="xhtml"> <p>We serve local, regional and national clients with pride. First PREMIER is the 14th largest ACH Originating Bank in the USA and the 12th largest issuer of Mastercard&reg; in the country. We are also honored to have served as the bank for the State of South Dakota for 20+ years (1999), as well as the bank for the City of Sioux Falls for 15+ years (2004).</p></div> </div> </div> </div><div class="b10panel b10panel-default"><div class="b10panel-heading"><h3 class="b10panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#collapse_5"><span> A Champion for Customers & Community </span></a></h3> </div> <div id="collapse_5" class="b10panel-collapse collapse "><div class="b10panel-body"><div class="xhtml"> <p>We serve our local, regional and national clients with pride and personal customer care. We are active supporters of more than 600 charities and non-profits. Last year alone, our associates contributed over 32,000 hours of community service. We also take care of our employees. From 2015-2020, we were ranked as one of the Best Banks to Work For by American Banker and Best Companies Group.</p></div> </div> </div> </div>
-            </div>
+            textarea:focus {
+                outline: none !important;
+            }
 
+            button:focus,
+            button:active {
+                outline: none !important;
+                border: none !important;
+            }
 
-        </div>
+            .showehllogo {
+                background: url('../../Static/img/EHLlogo%20white.png') 230px 0px no-repeat;
+                background-size: 24px 24px
+            }
 
-    </div>
-    <!--First Premier work end-->
-</section>
-</div><div class="block b04block  col-md-12">
-<style>
-</style>
-<section class="row-full b4background">
-    <div class="container">
-        <div class="b4anywhere_banking" style="width:100%; ">
-                                            </div>
-    </div>
-</section>
-<script>
-    $(".b9confidence_links a:nth-child(2)").css("display","none");
-$(".b11firstpremier_box_main .b11anytime_box:nth-child(2) span a").text('');
-$(".b11firstpremier_box_main .b11anytime_box:nth-child(2) span a").html('Business Rewards Mastercard<sup>®</sup>');
-;
-</script>
+        </style>
+        <script type="text/javascript">
+            var ContentId;
+            var Name;
+            var FullName;
+            var EMail;
+            var Phone;
+            var Message;
 
-<style>
-    .b4background.colored {
-        background-color: #25455a !important;
-    }
+            function contactPersonName(value) {
+                ContentId = parseInt($(value).attr('value'));
+                Name = $(value).attr('name');
+                $("#contactWithPersonName").html("Contact " + Name);
+                FullName = "";
+                EMail = "";
+                Message = "";
+                Phone = "";
+                $("#email").val("");
+                $("#fullname").val("");
+                $('#phone').val("");
+                $("#message").val("");
+            }
 
-    .b4background.colored .b15benfits_main_box {
-        margin: 0px !important;
+            //$("#fullname").val() != "" &&
+            $("#submitButtonB28Block").click(function(event) {
+                if ($("#email").val() != "" &&
+                    $("#message").val() != "") {
+                    FullName = $("#fullname").val();
+                    EMail = $("#email").val();
+                    Phone = $("#phone").val();
+                    Message = $("#message").val();
+                    $.ajax({
+                        type: "POST",
+                        url: '/api/ContactMe?ContentId=' + ContentId + '&ContactToName=' + Name +
+                            '&ContactPersonName=' + FullName + '&ContactPersonEmail=' + EMail +
+                            '&ContactPersonPhone=' + Phone + '&ContactPersonMessage=' + encodeURIComponent(
+                                Message),
+                        contentType: "application/json",
 
-    }
+                        success: function(result) {
+                            alert(result);
+                        },
+                        error: function() {
 
-    .colored h2, .colored .xhtml p {
-    color: #fff !important;
-    }
-
-    .page-Our-Communities .block.b04block.col-md-12 {
-    margin-top: 20px;
-    }
-</style></div></div>
-
-
-
-<div class="row-full footer">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-3 col-sm-3 col-xs-12 footerCol1">
-                <div class="footerHeader">Company</div>
-
-<ul>
-
-        <li>
-            <a href="../pages/about-us/index.html">About Us</a>
-        </li>
-
-        <li>
-            <a href="../index.html">First PREMIER Bank</a>
-        </li>
-
-        <li>
-            <a href="https://www.mypremiercreditcard.com/">PREMIER Bankcard</a>
-        </li>
-
-        <li>
-            <a href="../pages/about-us/leadership-team/index.html">Leadership</a>
-        </li>
-
-        <li>
-            <a href="../pages/about-us/community/index.html">Community</a>
-        </li>
-
-        <li>
-            <a href="{{route('frontend.en.pages.about.careers')}}">Careers</a>
-        </li>
-
-</ul>
-                <br />
-            </div>
-            <div class="col-md-3 col-sm-3 col-xs-12 footerCol2">
-                <div class="footerHeader">Customers</div>
-
-<ul>
-
-        <li>
-            <a href="../index.html">Personal Banking</a>
-        </li>
-
-        <li>
-            <a href="index.html">Small Business</a>
-        </li>
-
-        <li>
-            <a href="../commercial/index.html">Commercial</a>
-        </li>
-
-</ul>
-                <br />
-            </div>
-            <div class="col-md-3 col-sm-3 col-xs-12 footerCol3">
-                <div class="footerHeader">Help &amp; Contact</div>
-
-<ul>
-
-        <li>
-            <a href="../pages/quick-links/customer-care/index.html">Customer Care</a>
-        </li>
-
-        <li>
-            <a href="../pages/quick-links/locations/index.html">Locations</a>
-        </li>
-
-        <li>
-            <a href="../pages/quick-links/customer-care/index.html">BANK: 800-501-6535</a>
-        </li>
-
-        <li>
-            <a href="https://www.mypremiercreditcard.com/">CREDIT CARD: 800-987-5521</a>
-        </li>
-
-        <li>
-            <a href="../index.html">Routing Number: 091408598</a>
-        </li>
-
-</ul>
-                <br />
-            </div>
-            <div class="col-md-3 col-sm-3 col-xs-12 footerCol4">
-                <div class="footerHeader">Legal Notices</div>
-
-<ul>
-
-        <li>
-            <a href="../pages/resources/first-premier-privacy-statement-2020/index.html">Privacy Notice &amp; Statement</a>
-        </li>
-
-        <li>
-            <a href="../pages/resources/legal-disclosures/index.html">Legal Disclosures</a>
-        </li>
-
-        <li>
-            <a href="../pages/resources/cookie-policy/index.html">Cookie Policy</a>
-        </li>
-
-</ul>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-md-12" style="padding-top:50px;">
- <p>Member FDIC | <img src="{{asset('assets/frontend/Static/img/equalhousinglender.png')}}" alt="Equal Housing Lender" title="Equal Housing Lender" />Equal Housing Lender</p>            </div>
-        </div>
-    </div>
-</div>
-<style>
-    /* CHROME SAFARI FIX */
-    .form-control:hover, .form-control:active, .form-control:focus { box-shadow: none !important; -moz-box-shadow: none !important; -webkit-box-shadow: none !important; }
-    .form-control:hover, .form-control:active, .form-control:focus { box-shadow: none !important; -moz-box-shadow: none !important; -webkit-box-shadow: none !important; }
-    a:focus, a:active {outline:none!important; border: none!important; }
-    input:focus, input:active { outline: none !important; }
-    textarea:focus { outline: none !important; }
-    button:focus, button:active { outline: none !important; border: none !important; }
-    .showehllogo { background: url('../../Static/img/EHLlogo%20white.png') 230px 0px no-repeat; background-size: 24px 24px }
-</style>
-<script type="text/javascript">
-    var ContentId;
-    var Name;
-    var FullName;
-    var EMail;
-    var Phone;
-    var Message;
-    function contactPersonName(value) {
-        ContentId = parseInt($(value).attr('value'));
-        Name = $(value).attr('name');
-        $("#contactWithPersonName").html("Contact " + Name);
-        FullName = "";
-        EMail = "";
-        Message = "";
-        Phone = "";
-        $("#email").val("");
-        $("#fullname").val("");
-        $('#phone').val("");
-        $("#message").val("");
-    }
-
-    //$("#fullname").val() != "" &&
-    $("#submitButtonB28Block").click(function (event) {
-        if ($("#email").val() != "" &&
-            $("#message").val() != "") {
-            FullName = $("#fullname").val();
-            EMail = $("#email").val();
-            Phone = $("#phone").val();
-            Message = $("#message").val();
-            $.ajax({
-                type: "POST",
-                url: '/api/ContactMe?ContentId=' + ContentId + '&ContactToName=' + Name + '&ContactPersonName=' + FullName + '&ContactPersonEmail=' + EMail + '&ContactPersonPhone=' + Phone + '&ContactPersonMessage=' + encodeURIComponent(Message),
-                contentType: "application/json",
-
-                success: function (result) {
-                    alert(result);
-                },
-                error: function () {
-
+                        }
+                    });
                 }
             });
-        }
-    });
-</script>    </div>
-    <div class="smallLogo"><a href="../index.html" title="First PREMIER Bank - Home"><img src="{{asset('assets/frontend/Static/gfx/Logo.png')}}" style="max-width:100%;" /></a></div>
+        </script>
+    </div>
+    <div class="smallLogo"><a href="../index.html" title="First PREMIER Bank - Home"><img
+                src="{{ asset('assets/frontend/Static/gfx/Logo.png') }}" style="max-width:100%;" /></a></div>
     <script type="text/javascript" src="../../../dl.episerver.net/13.4.4.1/epi-util/find.js"></script>
-<script type="text/javascript">
-if(FindApi){var api = new FindApi();api.setApplicationUrl('../../index.html');api.setServiceApiBaseUrl('../../find_v2/index.html');api.processEventFromCurrentUri();api.bindWindowEvents();api.bindAClickEvent();api.sendBufferedEvents();}
-</script>
+    <script type="text/javascript">
+        if (FindApi) {
+            var api = new FindApi();
+            api.setApplicationUrl('../../index.html');
+            api.setServiceApiBaseUrl('../../find_v2/index.html');
+            api.processEventFromCurrentUri();
+            api.bindWindowEvents();
+            api.bindAClickEvent();
+            api.sendBufferedEvents();
+        }
+    </script>
 
     <script type="text/javascript" src="../../Static/js/pushy.js"></script>
     <script type="text/javascript" src="../../Static/js/Blocks_2019062002.js"></script>
 
-    @endsection
+@endsection

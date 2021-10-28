@@ -1,17 +1,16 @@
-
 @extends('frontend.layouts.app')
 
 @section('content')
     <div class="container">
-            <!--start responsive menu-->
-    @include('frontend.layouts.components.header')
-    <!-- Main Header -->
-    @include('frontend.layouts.components.navbar')
+        <!--start responsive menu-->
+        @include('frontend.layouts.components.header')
+        <!-- Main Header -->
+        @include('frontend.layouts.components.navbar')
 
 
 
-<!--start responsive menu-->
-{{-- <nav class="pushy pushy-right">
+        <!--start responsive menu-->
+        {{-- <nav class="pushy pushy-right">
     <div class="pushy-content">
         <button class="pushy-link close-b">X</button>
 
@@ -985,367 +984,441 @@ Asset Management &amp; Trust                                            <i class
     </div>
 </section> --}}
 
- <script>
-
-    $(document).ready(function () {
-
+        <script>
+            $(document).ready(function() {
 
 
-        //$('#AccessAccountDropdown option[id!=selectaccount]').each(function (index, value) {
-        //    $('#signInHoverSection').append('<p>' + $(value).text() + '</p>');
-        //});
 
-        if ($(window).width() == 1024) {
-            $('#ulPremierMainMenu li.SubMenu > a').on('click touchend', function (e) {
-                $(this).find('div[id*=subdiv]').hide();
-                $(this).attr('href', 'javascript:void(0)');
-                ShowMenu(this);
-            }).focusout(function () {
-                ShowMenu(this);
-            });
-        }
-        else {
+                //$('#AccessAccountDropdown option[id!=selectaccount]').each(function (index, value) {
+                //    $('#signInHoverSection').append('<p>' + $(value).text() + '</p>');
+                //});
 
-            var timeoutId;
-            $("#ulPremierMainMenu li.SubMenu > a").hover(function () {
-                var self = this;
-                if (!timeoutId) {
-                    timeoutId = window.setTimeout(function () {
-                        timeoutId = null;
-                        ShowMenu(self);
-                    }, 50);
+                if ($(window).width() == 1024) {
+                    $('#ulPremierMainMenu li.SubMenu > a').on('click touchend', function(e) {
+                        $(this).find('div[id*=subdiv]').hide();
+                        $(this).attr('href', 'javascript:void(0)');
+                        ShowMenu(this);
+                    }).focusout(function() {
+                        ShowMenu(this);
+                    });
+                } else {
+
+                    var timeoutId;
+                    $("#ulPremierMainMenu li.SubMenu > a").hover(function() {
+                            var self = this;
+                            if (!timeoutId) {
+                                timeoutId = window.setTimeout(function() {
+                                    timeoutId = null;
+                                    ShowMenu(self);
+                                }, 50);
+                            }
+                        },
+                        function() {
+                            if (timeoutId) {
+                                window.clearTimeout(timeoutId);
+                                timeoutId = null;
+                            }
+                        });
                 }
-            },
-                function () {
-                    if (timeoutId) {
-                        window.clearTimeout(timeoutId);
-                        timeoutId = null;
+
+                if (sessionStorage.getItem('isClosed') == "true") {
+                    $(".alert").hide();
+                }
+
+                var lastID = null;
+
+                var handleMouseover = function(e) {
+                    var target = e.target || e.srcElement;
+                    lastID = target.id;
+                    className = target.className;
+                    tagName = target.localName;
+                    if (lastID != "ulPremierMainMenu" && lastID != "") {
+                        $('div[id*=subdiv]').slideUp(500);
+                        $('.SubMenuItems li > a').css('color', '#fff').css('border-bottom', '');
                     }
-                });
-        }
+                    if (className == "col-md-8 col-xs-12 col-sm-6" || className == "b1banner_text" || className ==
+                        "b1login_Box" || className == "b1banner-desc" || className == "row b1mobile" || className ==
+                        "b1banner_text" || className == "White" || className == "b1access" || className ==
+                        "header-box" || tagName == "img" || tagName == "body") {
+                        $('div[id*=subdiv]').slideUp(500);
+                        $('.SubMenuItems li > a').css('color', '#fff').css('border-bottom', '');;
+                    }
 
-        if (sessionStorage.getItem('isClosed') == "true") {
-            $(".alert").hide();
-        }
+                };
 
-        var lastID = null;
+                if (document.addEventListener) {
+                    document.addEventListener('mouseover', handleMouseover, false);
+                    document.addEventListener('mouseover', handleMouseover, false);
+                } else {
+                    document.attachEvent('onmouseover', handleMouseover);
+                }
 
-        var handleMouseover = function (e) {
-            var target = e.target || e.srcElement;
-            lastID = target.id;
-            className = target.className;
-            tagName = target.localName;
-            if (lastID != "ulPremierMainMenu" && lastID != "") {
-                $('div[id*=subdiv]').slideUp(500);
-                $('.SubMenuItems li > a').css('color', '#fff').css('border-bottom', '');
-            }
-            if (className == "col-md-8 col-xs-12 col-sm-6" || className == "b1banner_text" || className == "b1login_Box" || className == "b1banner-desc" || className == "row b1mobile" || className == "b1banner_text" || className == "White" || className == "b1access" || className == "header-box" || tagName == "img" || tagName == "body") {
-                $('div[id*=subdiv]').slideUp(500);
-                $('.SubMenuItems li > a').css('color', '#fff').css('border-bottom', '');;
-            }
-
-        };
-
-        if (document.addEventListener) {
-            document.addEventListener('mouseover', handleMouseover, false);
-            document.addEventListener('mouseover', handleMouseover, false);
-        }
-        else {
-            document.attachEvent('onmouseover', handleMouseover);
-        }
-
-    });
-    function ShowMenu(element) {
-        if ($(element).next('div[id*=subdiv]').filter(function () { return $(this).css('display') === 'block'; }).length == 0) {
-            $('div[id*=subdiv]').hide();
-            $(element).next('div[id*=subdiv]').slideDown(500);
-            $('.SubMenuItems li > a').css('color', '#fff').css('border-bottom', '');
-            $(element).css('color', '#e4cb3f').css({
-                "border-bottom-color": "#e4cb3f",
-                "border-bottom-width": "3px",
-                "border-bottom-style": "solid"
             });
-        }
-    }
-    function ShowSignInOption() {
-        if ($('#signInHoverSection').attr('data-present') == "present") {
-            $('#signInHoverSection').toggle();
-        }
-    }
-    function SearchOut() {
-        $('#txtheadsearch').attr('data-val', $('#txtheadsearch').val());
-        $('#txtheadsearch').val(null);
-    }
-    function SearchIn() {
-        var searchText = $('#txtheadsearch').attr('data-val') || '';
-        $('#txtheadsearch').val(searchText);
-    }
-</script>
-<div class="row equal-height"><div class="block b19block  col-md-12">
 
-<style>
-    .b19landingpage {
-        height: auto;
-        padding: 40px 0px;
-    }
-</style>
-<script>
+            function ShowMenu(element) {
+                if ($(element).next('div[id*=subdiv]').filter(function() {
+                        return $(this).css('display') === 'block';
+                    }).length == 0) {
+                    $('div[id*=subdiv]').hide();
+                    $(element).next('div[id*=subdiv]').slideDown(500);
+                    $('.SubMenuItems li > a').css('color', '#fff').css('border-bottom', '');
+                    $(element).css('color', '#e4cb3f').css({
+                        "border-bottom-color": "#e4cb3f",
+                        "border-bottom-width": "3px",
+                        "border-bottom-style": "solid"
+                    });
+                }
+            }
 
-    $(document).ready(function () {
-        if (screen.width < 767) {
-            $('.b19landingpage').css('height', '628px');
-            $('.b19landingpage').css('background', '');
-            $('.b19landingpage').css('background-color', '#1b3e43');
-        }
-        else {
-            $('.b19landingpage').css('background', 'url({{asset("assets/frontend/Static/img/svg/green-1.svg")}}) no-repeat');
-        }
-    });
+            function ShowSignInOption() {
+                if ($('#signInHoverSection').attr('data-present') == "present") {
+                    $('#signInHoverSection').toggle();
+                }
+            }
 
-    $(window).resize(function () {
-        if (screen.width < 767) {
-            $('.b19landingpage').css('height', '628px');
-            $('.b19landingpage').css('background', '');
-            $('.b19landingpage').css('background-color', '#1b3e43');
-        }
-        else {
-            $('.b19landingpage').css('background', 'url({{asset("assets/frontend/Static/img/svg/green-1.svg")}}) no-repeat');
-        }
-    });
+            function SearchOut() {
+                $('#txtheadsearch').attr('data-val', $('#txtheadsearch').val());
+                $('#txtheadsearch').val(null);
+            }
 
-</script>
+            function SearchIn() {
+                var searchText = $('#txtheadsearch').attr('data-val') || '';
+                $('#txtheadsearch').val(searchText);
+            }
+        </script>
+        <div class="row equal-height">
+            <div class="block b19block  col-md-12">
 
+                <style>
+                    .b19landingpage {
+                        height: auto;
+                        padding: 40px 0px;
+                    }
 
-<div class="b19landingpage row-full" style="padding-bottom:0px;">
-    <div class="container">
-        <h1>Mortgage &amp; Home Finance</h1>
-        <div class="xhtml"></div>
-        <div class="b19landingpage_box_main">
+                </style>
+                <script>
+                    $(document).ready(function() {
+                        if (screen.width < 767) {
+                            $('.b19landingpage').css('height', '628px');
+                            $('.b19landingpage').css('background', '');
+                            $('.b19landingpage').css('background-color', '#1b3e43');
+                        } else {
+                            $('.b19landingpage').css('background',
+                                'url({{ asset("assets/frontend/Static/img/svg/green-1.svg") }}) no-repeat');
+                        }
+                    });
 
-        <div class="col-md-4 col-sm-6 b19landingpage_box">
-            <a href="buying-or-building-a-home/index.html"><img src="{{ asset('assets/frontend/globalassets/images/primary-icons/blue/places/blue-places-primary-icon-14.png') }}" title="Buying or Building?" alt="house" border="0" /></a>
-            <div class="clearfix"></div>
-                <span><a href="buying-or-building-a-home/index.html">Buying or Building?</a></span>
-            <div class="xhtml"><p>Whether it's your first-time or forever home, we offer competitive financing with local decision making.</p></div>
-        </div>
-
-        <div class="col-md-4 col-sm-6 b19landingpage_box">
-            <a href="refinancing-a-home/index.html"><img src="{{ asset('assets/frontend/globalassets/images/primary-icons/gold/business-finance/gold-business-_-finance-primary-icon-2.png') }}" title="Refinancing" alt="coins dropping in hand" border="0"></a>
-            <div class="clearfix"></div>
-                <span><a href="refinancing-a-home/index.html">Refinancing</a></span>
-            <div class="xhtml"><p>Reduce your loan term, rate or payment, consolidate debt and more. We&rsquo;ll help with the math.</p></div>
-        </div>
-
-        <div class="col-md-4 col-sm-6 b19landingpage_box">
-            <a href="../loans-and-credit-lines/home-equity-line-of-credit/index.html"><img src="{{ asset('assets/frontend/globalassets/images/primary-icons/green/business-finance/green-business-_-finance-primary-icon-15.png') }}" title="Using Home Equity" alt="two coins" border="0"></a>
-            <div class="clearfix"></div>
-                <span><a href="../loans-and-credit-lines/home-equity-line-of-credit/index.html">Using Home Equity</a></span>
-            <div class="xhtml"><p>Access the equity in your home for debt consolidation, home improvements and more.</p></div>
-        </div>
-
-        </div>
-    </div>
-</div></div><div class="block b20block  col-md-12">
+                    $(window).resize(function() {
+                        if (screen.width < 767) {
+                            $('.b19landingpage').css('height', '628px');
+                            $('.b19landingpage').css('background', '');
+                            $('.b19landingpage').css('background-color', '#1b3e43');
+                        } else {
+                            $('.b19landingpage').css('background',
+                                'url({{ asset("assets/frontend/Static/img/svg/green-1.svg") }}) no-repeat');
+                        }
+                    });
+                </script>
 
 
-<!-- VIEW RATE / SPEED BUMP [2] -->
-<script>
-    $(document).ready(function () {
-        if ($('#imgMainRight').length <= 0) {
-            $('.b20consumer-loans-left').css('width', '100%');
-        }
-    });
-</script>
-<style>
-    .pop_main_container_board .pop_main_container ol li ol li {  }
-</style>
-<style>
-    .b20consumer-loans-left {
-        padding-top: 0px !important;
-    }
+                <div class="b19landingpage row-full" style="padding-bottom:0px;">
+                    <div class="container">
+                        <h1>Mortgage &amp; Home Finance</h1>
+                        <div class="xhtml"></div>
+                        <div class="b19landingpage_box_main">
 
-        .b20consumer-loans-left .xhtml p {
-            padding-top: 0px !important;
-        }
+                            <div class="col-md-4 col-sm-6 b19landingpage_box">
+                                <a href="{{ route('frontend.en.personal.mortgages.buying-or-building-a-home') }}"><img
+                                        src="{{ asset('assets/frontend/globalassets/images/primary-icons/blue/places/blue-places-primary-icon-14.png') }}"
+                                        title="Buying or Building?" alt="house" border="0" /></a>
+                                <div class="clearfix"></div>
+                                <span><a href="{{ route('frontend.en.personal.mortgages.buying-or-building-a-home') }}">Buying or Building?</a></span>
+                                <div class="xhtml">
+                                    <p>Whether it's your first-time or forever home, we offer competitive financing with
+                                        local decision making.</p>
+                                </div>
+                            </div>
 
-    .b17basic_box_grey {
-        background-color: #f9f9f9 !important;
-        background-image: none;
-    }
+                            <div class="col-md-4 col-sm-6 b19landingpage_box">
+                                <a href="{{ route('frontend.en.personal.mortgages.refinancing-a-home') }}"><img
+                                        src="{{ asset('assets/frontend/globalassets/images/primary-icons/gold/business-finance/gold-business-_-finance-primary-icon-2.png') }}"
+                                        title="Refinancing" alt="coins dropping in hand" border="0"></a>
+                                <div class="clearfix"></div>
+                                <span><a href="{{ route('frontend.en.personal.mortgages.refinancing-a-home') }}">Refinancing</a></span>
+                                <div class="xhtml">
+                                    <p>Reduce your loan term, rate or payment, consolidate debt and more. We&rsquo;ll help
+                                        with the math.</p>
+                                </div>
+                            </div>
 
-    .b17basic_box_white {
-        background-color: #fff !important;
-        background-image: none;
-    }
+                            <div class="col-md-4 col-sm-6 b19landingpage_box">
+                                <a href="{{ route('frontend.en.personal.loans-and-credit-lines.home-equity-line-of-credit') }}"><img
+                                        src="{{ asset('assets/frontend/globalassets/images/primary-icons/green/business-finance/green-business-_-finance-primary-icon-15.png') }}"
+                                        title="Using Home Equity" alt="two coins" border="0"></a>
+                                <div class="clearfix"></div>
+                                <span><a href="{{ route('frontend.en.personal.loans-and-credit-lines.home-equity-line-of-credit') }}">Using Home
+                                        Equity</a></span>
+                                <div class="xhtml">
+                                    <p>Access the equity in your home for debt consolidation, home improvements and more.
+                                    </p>
+                                </div>
+                            </div>
 
-    .b20consumer-loans p.sub-header {
-        padding: 0px 0px 26px 0px;
-        text-align: center;
-    }
-    @media only screen and (max-width: 767px)
-    {
-        .b20consumer_btn_center {
-            width: 100%;
-        }
-    }
-
-    @media only screen and (max-width: 470px) {
-        .b20consumer-loans .b20consumer-loans-left {
-            padding-left: 0px !important;
-        }
-    }
-    @media only screen and (max-width: 470px) {
-       .b20showright a.b20mainanchorL {
-           margin-left: 25%
-        }
-    }
-</style>
-<!-- VIEW RATE / SPEED BUMP [2] -->
-<section class="row-full">
-
-    <div class="b20consumer-loans ">
-        <div class="container">
-
-                <h2>Choosing a Mortgage</h2>
-
-
-        <div class="b20consumer-loans-left b20showright"  style="float:right;">
-
-                            <div class="xhtml"><p>Whether you&rsquo;re buying, building or simply need a bigger place to call home, we can help you find the right rates and terms. We have access to an array of loan products and use fast, state-of-the-art loan processing. Best of all, we provide personal service and support, making all of our lending decisions locally.</p></div>
-                <br />
-
-            <div class="b20consumer_btn_center">
-                <!-- b20mainanchorL -->
-                                <a href="apply-for-a-mortgage/index.html" class="b20mainanchorL">Get Started</a>
-                            <span class="b20mainlinkspan">
-<a class="b20mainlink" href="buying-or-building-a-home/index.html" title="Learn More">Learn More</a>                            </span>
-            </div>
-        </div>
-                    <div class="b20consumer-loans-right"><img id="imgMainRight" alt="family standing in front of new house" src="{{ asset('assets/frontend/contentassets/d035696d99244dcbb252f593ce79b305/1.5_b-20-content-1_familyhome-min.png') }}" class="img-responsive"></div>
-        </div>
-    </div>
-</section>
-
-<!-- View Rate [3] (within container)-->
-<!-- View Rate [3] (within container)--></div><div class="block b20block  col-md-12">
-
-
-<!-- VIEW RATE / SPEED BUMP [2] -->
-<script>
-    $(document).ready(function () {
-        if ($('#imgMainRight').length <= 0) {
-            $('.b20consumer-loans-left').css('width', '100%');
-        }
-    });
-</script>
-<style>
-    .pop_main_container_board .pop_main_container ol li ol li {  }
-</style>
-<style>
-    .b20consumer-loans-left {
-        padding-top: 0px !important;
-    }
-
-        .b20consumer-loans-left .xhtml p {
-            padding-top: 0px !important;
-        }
-
-    .b17basic_box_grey {
-        background-color: #f9f9f9 !important;
-        background-image: none;
-    }
-
-    .b17basic_box_white {
-        background-color: #fff !important;
-        background-image: none;
-    }
-
-    .b20consumer-loans p.sub-header {
-        padding: 0px 0px 26px 0px;
-        text-align: center;
-    }
-    @media only screen and (max-width: 767px)
-    {
-        .b20consumer_btn_center {
-            width: 100%;
-        }
-    }
-
-    @media only screen and (max-width: 470px) {
-        .b20consumer-loans .b20consumer-loans-left {
-            padding-left: 0px !important;
-        }
-    }
-    @media only screen and (max-width: 470px) {
-       .b20showright a.b20mainanchorL {
-           margin-left: 25%
-        }
-    }
-</style>
-<!-- VIEW RATE / SPEED BUMP [2] -->
-<section class="row-full">
-
-    <div class="b20consumer-loans ">
-        <div class="container">
-
-                <h2>Refinance Your Home</h2>
-
-
-                    <div class="b20consumer-loans-right"><img id="imgMainRight" src="{{ asset('assets/frontend/contentassets/18a1b137c195479cb075d6d27ec34c63/1.5_b-20-content-3_family-min.png') }}" alt="family playing in field" class="img-responsive"></div>
-        <div class="b20consumer-loans-left">
-                            <div class="xhtml"><p>If your home is worth more than you owe, we can help you explore the potential benefits of refinancing your existing mortgage. Our bankers can help you reduce your rate, lower your payment or simply leverage your home equity to consolidate debt or make other purchases.</p></div>
-                <br />
-                            <div class="b20consumer_btn_center">
-                                    <a href="apply-for-a-mortgage/index.html" class="b20mainanchor">Get Started</a>
-                                <span class="b20mainlinkspan">
-<a class="b20mainlink" href="refinancing-a-home/index.html" title="Learn More">Learn More</a>                                </span>
-                </div>
-        </div>
-        </div>
-    </div>
-</section>
-
-<!-- View Rate [3] (within container)-->
-<!-- View Rate [3] (within container)--></div><div class="block b22block  col-md-12">
-    <section class="row-full">
-
-        <div class="b22additional-lending">
-            <div class="container" style="">
-                    <h4 class="Blue">HOME EQUITY LOANS &amp; LINES OF CREDIT</h4>
-                <div class="b22additional-lending-left">
-                    <h3>Buying a Home</h3>
-                    <div class="xhtml"><p>There&rsquo;s a lot to know about buying a home. Our interactive module will give you the confidence to start the process off right.</p></div>
-                        <!-- HERE IS WHERE WE WILL ADD THE CODE FOR THE SPEEDBUMP 1 -->
-                        <a href="#" data-toggle="modal" data-target="#a50754015" class="b18mainanchor">Learn More</a>
-                </div>
-
-                <div class="b22additional-lending-righ">
-                    <h3>Home Equity Line of Credit</h3>
-                    <div class="xhtml"><p>Access funds any time, for any reason, including overdraft protection. Use your home equity to establish a revolving line of credit.</p></div>
-                        <a href="../loans-and-credit-lines/home-equity-line-of-credit/index.html">Learn More</a>
+                        </div>
+                    </div>
                 </div>
             </div>
-            <div class="b22spacer"></div>
-        </div>
-        <div id="a50754015" class="modal fade" role="dialog">
-            <div class="modal-dialog pop_board">
-                <div class="modal-content">
-                    <div class="modal-body">
-                        <div class="pop_main_container_board">
-                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                <span aria-hidden="true">
-                                    <img class="close_icon" src="{{ asset('assets/frontend/static/img/closebutton.png') }}" alt="First PREMIER Bank" style="height:17px !important;width:17px !important;">
-                                </span>
-                            </button>
-                            <div class="pop_main_container">
-                                    <h2>Buying a Home</h2>
-                                <div class="pop_board_white">
-                                    <div class="row">
-                                        <div class="col-md-12" style="padding-left:40px;">
-                                            <h4 class="Blue">You will be leaving firstpremier.com</h4>
-                                            <div class="b46Blue" style="text-align:left;">
-                                                <p>Please note, by clicking &ldquo;continue&rdquo; you will be redirected to a website that is not operated or controlled by PREMIER. PREMIER is not responsible for the content, links, privacy policy or security of that website. Your use of that website is subject to its terms of use and privacy policy. Thank you for visiting firstpremier.com. If you continue, we hope you find the information presented educational and useful.</p>
-                                                <p><br /><a href="https://firstpremier.everfi-next.net/student/dashboard/financialeducation-achieve/owning-a-home" target="_blank">Continue</a></p>
+            <div class="block b20block  col-md-12">
+
+
+                <!-- VIEW RATE / SPEED BUMP [2] -->
+                <script>
+                    $(document).ready(function() {
+                        if ($('#imgMainRight').length <= 0) {
+                            $('.b20consumer-loans-left').css('width', '100%');
+                        }
+                    });
+                </script>
+                <style>
+                    .pop_main_container_board .pop_main_container ol li ol li {}
+
+                </style>
+                <style>
+                    .b20consumer-loans-left {
+                        padding-top: 0px !important;
+                    }
+
+                    .b20consumer-loans-left .xhtml p {
+                        padding-top: 0px !important;
+                    }
+
+                    .b17basic_box_grey {
+                        background-color: #f9f9f9 !important;
+                        background-image: none;
+                    }
+
+                    .b17basic_box_white {
+                        background-color: #fff !important;
+                        background-image: none;
+                    }
+
+                    .b20consumer-loans p.sub-header {
+                        padding: 0px 0px 26px 0px;
+                        text-align: center;
+                    }
+
+                    @media only screen and (max-width: 767px) {
+                        .b20consumer_btn_center {
+                            width: 100%;
+                        }
+                    }
+
+                    @media only screen and (max-width: 470px) {
+                        .b20consumer-loans .b20consumer-loans-left {
+                            padding-left: 0px !important;
+                        }
+                    }
+
+                    @media only screen and (max-width: 470px) {
+                        .b20showright a.b20mainanchorL {
+                            margin-left: 25%
+                        }
+                    }
+
+                </style>
+                <!-- VIEW RATE / SPEED BUMP [2] -->
+                <section class="row-full">
+
+                    <div class="b20consumer-loans ">
+                        <div class="container">
+
+                            <h2>Choosing a Mortgage</h2>
+
+
+                            <div class="b20consumer-loans-left b20showright" style="float:right;">
+
+                                <div class="xhtml">
+                                    <p>Whether you&rsquo;re buying, building or simply need a bigger place to call home, we
+                                        can help you find the right rates and terms. We have access to an array of loan
+                                        products and use fast, state-of-the-art loan processing. Best of all, we provide
+                                        personal service and support, making all of our lending decisions locally.</p>
+                                </div>
+                                <br />
+
+                                <div class="b20consumer_btn_center">
+                                    <!-- b20mainanchorL -->
+                                    <a href="{{ route('frontend.en.personal.mortgages.apply-for-a-mortgage') }}" class="b20mainanchorL">Get Started</a>
+                                    <span class="b20mainlinkspan">
+                                        <a class="b20mainlink" href="{{ route('frontend.en.personal.mortgages.buying-or-building-a-home') }}"
+                                            title="Learn More">Learn More</a> </span>
+                                </div>
+                            </div>
+                            <div class="b20consumer-loans-right"><img id="imgMainRight"
+                                    alt="family standing in front of new house"
+                                    src="{{ asset('assets/frontend/contentassets/d035696d99244dcbb252f593ce79b305/1.5_b-20-content-1_familyhome-min.png') }}"
+                                    class="img-responsive"></div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- View Rate [3] (within container)-->
+                <!-- View Rate [3] (within container)-->
+            </div>
+            <div class="block b20block  col-md-12">
+
+
+                <!-- VIEW RATE / SPEED BUMP [2] -->
+                <script>
+                    $(document).ready(function() {
+                        if ($('#imgMainRight').length <= 0) {
+                            $('.b20consumer-loans-left').css('width', '100%');
+                        }
+                    });
+                </script>
+                <style>
+                    .pop_main_container_board .pop_main_container ol li ol li {}
+
+                </style>
+                <style>
+                    .b20consumer-loans-left {
+                        padding-top: 0px !important;
+                    }
+
+                    .b20consumer-loans-left .xhtml p {
+                        padding-top: 0px !important;
+                    }
+
+                    .b17basic_box_grey {
+                        background-color: #f9f9f9 !important;
+                        background-image: none;
+                    }
+
+                    .b17basic_box_white {
+                        background-color: #fff !important;
+                        background-image: none;
+                    }
+
+                    .b20consumer-loans p.sub-header {
+                        padding: 0px 0px 26px 0px;
+                        text-align: center;
+                    }
+
+                    @media only screen and (max-width: 767px) {
+                        .b20consumer_btn_center {
+                            width: 100%;
+                        }
+                    }
+
+                    @media only screen and (max-width: 470px) {
+                        .b20consumer-loans .b20consumer-loans-left {
+                            padding-left: 0px !important;
+                        }
+                    }
+
+                    @media only screen and (max-width: 470px) {
+                        .b20showright a.b20mainanchorL {
+                            margin-left: 25%
+                        }
+                    }
+
+                </style>
+                <!-- VIEW RATE / SPEED BUMP [2] -->
+                <section class="row-full">
+
+                    <div class="b20consumer-loans ">
+                        <div class="container">
+
+                            <h2>Refinance Your Home</h2>
+
+
+                            <div class="b20consumer-loans-right"><img id="imgMainRight"
+                                    src="{{ asset('assets/frontend/contentassets/18a1b137c195479cb075d6d27ec34c63/1.5_b-20-content-3_family-min.png') }}"
+                                    alt="family playing in field" class="img-responsive"></div>
+                            <div class="b20consumer-loans-left">
+                                <div class="xhtml">
+                                    <p>If your home is worth more than you owe, we can help you explore the potential
+                                        benefits of refinancing your existing mortgage. Our bankers can help you reduce your
+                                        rate, lower your payment or simply leverage your home equity to consolidate debt or
+                                        make other purchases.</p>
+                                </div>
+                                <br />
+                                <div class="b20consumer_btn_center">
+                                    <a href="{{ route('frontend.en.personal.mortgages.apply-for-a-mortgage') }}" class="b20mainanchor">Get Started</a>
+                                    <span class="b20mainlinkspan">
+                                        <a class="b20mainlink" href="{{ route('frontend.en.personal.mortgages.refinancing-a-home') }}"
+                                            title="Learn More">Learn More</a> </span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- View Rate [3] (within container)-->
+                <!-- View Rate [3] (within container)-->
+            </div>
+            <div class="block b22block  col-md-12">
+                <section class="row-full">
+
+                    <div class="b22additional-lending">
+                        <div class="container" style="">
+                            <h4 class="Blue">HOME EQUITY LOANS &amp; LINES OF CREDIT</h4>
+                            <div class="b22additional-lending-left">
+                                <h3>Buying a Home</h3>
+                                <div class="xhtml">
+                                    <p>There&rsquo;s a lot to know about buying a home. Our interactive module will give you
+                                        the confidence to start the process off right.</p>
+                                </div>
+                                <!-- HERE IS WHERE WE WILL ADD THE CODE FOR THE SPEEDBUMP 1 -->
+                                <a href="#" data-toggle="modal" data-target="#a50754015" class="b18mainanchor">Learn
+                                    More</a>
+                            </div>
+
+                            <div class="b22additional-lending-righ">
+                                <h3>Home Equity Line of Credit</h3>
+                                <div class="xhtml">
+                                    <p>Access funds any time, for any reason, including overdraft protection. Use your home
+                                        equity to establish a revolving line of credit.</p>
+                                </div>
+                                <a href="{{ route('frontend.en.personal.loans-and-credit-lines.home-equity-line-of-credit') }}">Learn More</a>
+                            </div>
+                        </div>
+                        <div class="b22spacer"></div>
+                    </div>
+                    <div id="a50754015" class="modal fade" role="dialog">
+                        <div class="modal-dialog pop_board">
+                            <div class="modal-content">
+                                <div class="modal-body">
+                                    <div class="pop_main_container_board">
+                                        <button type="button" class="close" data-dismiss="modal"
+                                            aria-label="Close">
+                                            <span aria-hidden="true">
+                                                <img class="close_icon"
+                                                    src="{{ asset('assets/frontend/static/img/closebutton.png') }}"
+                                                    alt="First PREMIER Bank"
+                                                    style="height:17px !important;width:17px !important;">
+                                            </span>
+                                        </button>
+                                        <div class="pop_main_container">
+                                            <h2>Buying a Home</h2>
+                                            <div class="pop_board_white">
+                                                <div class="row">
+                                                    <div class="col-md-12" style="padding-left:40px;">
+                                                        <h4 class="Blue">You will be leaving firstpremier.com</h4>
+                                                        <div class="b46Blue" style="text-align:left;">
+                                                            <p>Please note, by clicking &ldquo;continue&rdquo; you will be
+                                                                redirected to a website that is not operated or controlled
+                                                                by PREMIER. PREMIER is not responsible for the content,
+                                                                links, privacy policy or security of that website. Your use
+                                                                of that website is subject to its terms of use and privacy
+                                                                policy. Thank you for visiting firstpremier.com. If you
+                                                                continue, we hope you find the information presented
+                                                                educational and useful.</p>
+                                                            <p><br /><a
+                                                                    href="https://firstpremier.everfi-next.net/student/dashboard/financialeducation-achieve/owning-a-home"
+                                                                    target="_blank">Continue</a></p>
+                                                        </div>
+                                                    </div>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
@@ -1353,27 +1426,33 @@ Asset Management &amp; Trust                                            <i class
                             </div>
                         </div>
                     </div>
-                </div>
-            </div>
-        </div>
-        <div id="b50754015" class="modal fade" role="dialog">
-            <div class="modal-dialog pop_board">
-                <div class="modal-content">
-                    <div class="modal-body">
-                        <div class="pop_main_container_board">
-                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                <span aria-hidden="true">
-                                    <img class="close_icon" src="{{ asset('assets/frontend/static/img/closebutton.png') }}" alt="First PREMIER Bank" style="height:17px !important;width:17px !important;">
-                                </span>
-                            </button>
-                            <div class="pop_main_container">
-                                <div class="pop_board_white">
-                                    <div class="row">
-                                        <div class="col-md-12" style="padding-left:40px;">
-                                            <h4 class="Blue"></h4>
-                                            <div class="b46Blue" style="text-align:left;">
+                    <div id="b50754015" class="modal fade" role="dialog">
+                        <div class="modal-dialog pop_board">
+                            <div class="modal-content">
+                                <div class="modal-body">
+                                    <div class="pop_main_container_board">
+                                        <button type="button" class="close" data-dismiss="modal"
+                                            aria-label="Close">
+                                            <span aria-hidden="true">
+                                                <img class="close_icon"
+                                                    src="{{ asset('assets/frontend/static/img/closebutton.png') }}"
+                                                    alt="First PREMIER Bank"
+                                                    style="height:17px !important;width:17px !important;">
+                                            </span>
+                                        </button>
+                                        <div class="pop_main_container">
+                                            <div class="pop_board_white">
+                                                <div class="row">
+                                                    <div class="col-md-12" style="padding-left:40px;">
+                                                        <h4 class="Blue"></h4>
+                                                        <div class="b46Blue" style="text-align:left;">
 
-                                                <p><br /><a href="../loans-and-credit-lines/home-equity-line-of-credit/index.html" target="_blank"></a></p>
+                                                            <p><br /><a
+                                                                    href="../loans-and-credit-lines/home-equity-line-of-credit/index.html"
+                                                                    target="_blank"></a></p>
+                                                        </div>
+                                                    </div>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
@@ -1381,199 +1460,310 @@ Asset Management &amp; Trust                                            <i class
                             </div>
                         </div>
                     </div>
+                </section>
+            </div>
+            <div class="block b12block  col-md-12">
+                <style>
+                    .b12faq_main {
+                        float: left;
+                        width: 100%;
+                        padding: 100px 0px 50px 0px !important;
+                        text-align: left;
+                        background: #fff;
+                    }
+
+                </style>
+                <div class="b12faq_main">
+                    <div class="b12container">
+                        <h2>Frequently Asked Questions</h2>
+                        <!-- tabs left -->
+                        <div class="tabbable">
+                            <div class="tab-content col-md-7">
+                                <div class="tab-pane active" id="A"><span>How can I see what a monthly payment might
+                                        be?</span>
+                                    <p>
+                                    <p>We have an extensive library of <a
+                                            href="../../pages/financial-calculators/index.html">online mortgage
+                                            calculators</a> and financial tools to help you estimate payment information.
+                                        The information provided by these calculators is intended for illustrative purposes
+                                        only and is not intended to purport actual user-defined parameters.</p>
+                                    </p>
+                                </div>
+                                <div class="tab-pane" id="B"><span>Are there any loan programs that don't require a
+                                        down payment?</span>
+                                    <p>
+                                    <p>Yes, there are loan programs that do not require a down payment. If you and/or the
+                                        property you are purchasing meet certain credit, employment history, location and
+                                        other determining factors, a zero-downpayment loan may be an option for you. Contact
+                                        one of our mortgage lenders to see if this is an option for you.</p>
+                                    </p>
+                                </div>
+                                <div class="tab-pane" id="C"><span>What is private mortgage insurance?</span>
+                                    <p>
+                                    <p>Private mortgage insurance protects the lender against default and enables the lender
+                                        to make a loan. Lenders often require mortgage insurance for loans where the down
+                                        payment is less than 20% of the sale price. You may be billed monthly, annually, by
+                                        an initial lump sum, or some combination of these practices for your mortgage
+                                        insurance premium.</p>
+                                    </p>
+                                </div>
+                                <div class="tab-pane" id="D"><span>Once I submit my application online, how long will
+                                        it take before I know if I've been pre-qualified?</span>
+                                    <p>
+                                    <p>You will receive a phone call from one of our Mortgage Loan Bankers within 24 hours
+                                        (during standard business days) of submitting your application. Depending on the
+                                        complexity of your loan scenario, the pre-qualification process is fairly quick. A
+                                        "pre-qual" is a guide as you go through the home buying process. It does not
+                                        guarantee you will be approved for the mortgage.</p>
+                                    </p>
+                                </div>
+                                <div class="tab-pane" id="E"><span>Is there a fee to submit my mortgage application
+                                        online?</span>
+                                    <p>
+                                    <p>No, applying online is free.</p>
+                                    </p>
+                                </div>
+                            </div>
+                            <ul class="nav nav-pills nav-stacked col-md-5">
+                                <li class="active"><a href="#A" data-toggle="tab">How can I see what a monthly
+                                        payment might be?</a></li>
+                                <li><a href="#B" data-toggle="tab">Are there any loan programs that don't require a down
+                                        payment?</a></li>
+                                <li><a href="#C" data-toggle="tab">What is private mortgage insurance?</a></li>
+                                <li><a href="#D" data-toggle="tab">Once I submit my application online, how long will it
+                                        take before I know if I've been pre-qualified?</a></li>
+                                <li><a href="#E" data-toggle="tab">Is there a fee to submit my mortgage application
+                                        online?</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+
+
+        <div class="row-full footer">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-3 col-sm-3 col-xs-12 footerCol1">
+                        <div class="footerHeader">Company</div>
+        
+                        <ul>
+        
+                            <li>
+                                <a href="{{ route('frontend.en.pages.about-us')}}">About Us</a>
+                            </li>
+        
+                            <li>
+                                <a href="{{ route('frontend') }}">First PREMIER Bank</a>
+                            </li>
+        
+                            <li>
+                                <a href="https://www.mypremiercreditcard.com/">PREMIER Bankcard</a>
+                            </li>
+        
+                            <li>
+                                <a href="{{ route('frontend.en.pages.about-us.leadership-team') }}">Leadership</a>
+                            </li>
+        
+                            <li>
+                                <a href="{{ route('frontend.en.pages.about-us.community') }}">Community</a>
+                            </li>
+        
+                            <li>
+                                <a href="{{route('frontend.en.pages.about.careers')}}">Careers</a>
+                            </li>
+        
+                        </ul>
+                        <br />
+                    </div>
+                    <div class="col-md-3 col-sm-3 col-xs-12 footerCol2">
+                        <div class="footerHeader">Customers</div>
+        
+                        <ul>
+        
+                            <li>
+                                <a href="{{ route('frontend') }}">Personal Banking</a>
+                            </li>
+        
+                            <li>
+                                <a href="{{ route('frontend.en.small-business') }}">Small Business</a>
+                            </li>
+        
+                            <li>
+                                <a href="{{ route('frontend.en.commercial') }}">Commercial</a>
+                            </li>
+        
+                        </ul>
+                        <br />
+                    </div>
+                    <div class="col-md-3 col-sm-3 col-xs-12 footerCol3">
+                        <div class="footerHeader">Help &amp; Contact</div>
+        
+                        <ul>
+        
+                            <li>
+                                <a href="{{ route('frontend.en.pages.quick-links.customer-care') }}">Customer Care</a>
+                            </li>
+        
+                            <li>
+                                <a href="{{ route('frontend.en.pages.quick-links.locations') }}">Locations</a>
+                            </li>
+        
+                            <li>
+                                <a href="{{ route('frontend.en.pages.quick-links.customer-care') }}">BANK: 800-501-6535</a>
+                            </li>
+        
+                            <li>
+                                <a href="https://www.mypremiercreditcard.com/">CREDIT CARD: 800-987-5521</a>
+                            </li>
+        
+                            <li>
+                                <a href="{{ route('frontend') }}">Routing Number: 091408598</a>
+                            </li>
+        
+                        </ul>
+                        <br />
+                    </div>
+                    <div class="col-md-3 col-sm-3 col-xs-12 footerCol4">
+                        <div class="footerHeader">Legal Notices</div>
+        
+                        <ul>
+        
+                            <li>
+                                <a href="{{ route('frontend.en.pages.resources.first-premier-privacy-statement-2020') }}">Privacy
+                                    Notice &amp; Statement</a>
+                            </li>
+        
+                            <li>
+                                <a href="{{ route('frontend.en.pages.resources.legal-disclosures') }}">Legal Disclosures</a>
+                            </li>
+        
+                            <li>
+                                <a href="{{ route('frontend.en.pages.resources.cookie-policy') }}">Cookie Policy</a>
+                            </li>
+        
+                        </ul>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12" style="padding-top:50px;">
+                        <p>Member FDIC | <img src="{{asset('assets/frontend/Static/img/equalhousinglender.png')}}" alt="Equal Housing Lender"
+                                title="Equal Housing Lender" />Equal Housing Lender</p>
+                    </div>
                 </div>
             </div>
         </div>
-    </section></div><div class="block b12block  col-md-12">        <style>
-            .b12faq_main { float: left; width: 100%; padding:100px 0px 50px 0px !important; text-align: left; background: #fff; }
+        <style>
+            /* CHROME SAFARI FIX */
+            .form-control:hover,
+            .form-control:active,
+            .form-control:focus {
+                box-shadow: none !important;
+                -moz-box-shadow: none !important;
+                -webkit-box-shadow: none !important;
+            }
+
+            .form-control:hover,
+            .form-control:active,
+            .form-control:focus {
+                box-shadow: none !important;
+                -moz-box-shadow: none !important;
+                -webkit-box-shadow: none !important;
+            }
+
+            a:focus,
+            a:active {
+                outline: none !important;
+                border: none !important;
+            }
+
+            input:focus,
+            input:active {
+                outline: none !important;
+            }
+
+            textarea:focus {
+                outline: none !important;
+            }
+
+            button:focus,
+            button:active {
+                outline: none !important;
+                border: none !important;
+            }
+
+            .showehllogo {
+                background: url('{{asset("asset/frontend/Static/img/EHLlogo%20white.png")}}') 230px 0px no-repeat;
+                background-size: 24px 24px
+            }
+
         </style>
-        <div class="b12faq_main">
-            <div class="b12container">
-                <h2>Frequently Asked Questions</h2>
-                <!-- tabs left -->
-                <div class="tabbable">
-                    <div class="tab-content col-md-7">
-                        <div class="tab-pane active" id="A"><span>How can I see what a monthly payment might be?</span><p><p>We have an extensive library of <a href="../../pages/financial-calculators/index.html">online mortgage calculators</a> and financial tools to help you estimate payment information. The information provided by these calculators is intended for illustrative purposes only and is not intended to purport actual user-defined parameters.</p></p></div><div class="tab-pane" id="B"><span>Are there any loan programs that don't require a down payment?</span><p><p>Yes, there are loan programs that do not require a down payment. If you and/or the property you are purchasing meet certain credit, employment history, location and other determining factors, a zero-downpayment loan may be an option for you. Contact one of our mortgage lenders to see if this is an option for you.</p></p></div><div class="tab-pane" id="C"><span>What is private mortgage insurance?</span><p><p>Private mortgage insurance protects the lender against default and enables the lender to make a loan. Lenders often require mortgage insurance for loans where the down payment is less than 20% of the sale price. You may be billed monthly, annually, by an initial lump sum, or some combination of these practices for your mortgage insurance premium.</p></p></div><div class="tab-pane" id="D"><span>Once I submit my application online, how long will it take before I know if I've been pre-qualified?</span><p><p>You will receive a phone call from one of our Mortgage Loan Bankers within 24 hours (during standard business days) of submitting your application. Depending on the complexity of your loan scenario, the pre-qualification process is fairly quick. A "pre-qual" is a guide as you go through the home buying process. It does not guarantee you will be approved for the mortgage.</p></p></div><div class="tab-pane" id="E"><span>Is there a fee to submit my mortgage application online?</span><p><p>No, applying online is free.</p></p></div>
-                    </div>
-                    <ul class="nav nav-pills nav-stacked col-md-5">
-                        <li class="active"><a href="#A" data-toggle="tab">How can I see what a monthly payment might be?</a></li><li><a href="#B" data-toggle="tab">Are there any loan programs that don't require a down payment?</a></li><li><a href="#C" data-toggle="tab">What is private mortgage insurance?</a></li><li><a href="#D" data-toggle="tab">Once I submit my application online, how long will it take before I know if I've been pre-qualified?</a></li><li><a href="#E" data-toggle="tab">Is there a fee to submit my mortgage application online?</a></li>
-                    </ul>
-                </div>
-            </div>
-        </div>
+        <script type="text/javascript">
+            var ContentId;
+            var Name;
+            var FullName;
+            var EMail;
+            var Phone;
+            var Message;
 
-</div></div>
+            function contactPersonName(value) {
+                ContentId = parseInt($(value).attr('value'));
+                Name = $(value).attr('name');
+                $("#contactWithPersonName").html("Contact " + Name);
+                FullName = "";
+                EMail = "";
+                Message = "";
+                Phone = "";
+                $("#email").val("");
+                $("#fullname").val("");
+                $('#phone').val("");
+                $("#message").val("");
+            }
 
+            //$("#fullname").val() != "" &&
+            $("#submitButtonB28Block").click(function(event) {
+                if ($("#email").val() != "" &&
+                    $("#message").val() != "") {
+                    FullName = $("#fullname").val();
+                    EMail = $("#email").val();
+                    Phone = $("#phone").val();
+                    Message = $("#message").val();
+                    $.ajax({
+                        type: "POST",
+                        url: '/api/ContactMe?ContentId=' + ContentId + '&ContactToName=' + Name +
+                            '&ContactPersonName=' + FullName + '&ContactPersonEmail=' + EMail +
+                            '&ContactPersonPhone=' + Phone + '&ContactPersonMessage=' + encodeURIComponent(
+                                Message),
+                        contentType: "application/json",
 
+                        success: function(result) {
+                            alert(result);
+                        },
+                        error: function() {
 
-<div class="row-full footer">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-3 col-sm-3 col-xs-12 footerCol1">
-                <div class="footerHeader">Company</div>
-
-<ul>
-
-        <li>
-            <a href="../../pages/about-us/index.html">About Us</a>
-        </li>
-
-        <li>
-            <a href="../../index.html">First PREMIER Bank</a>
-        </li>
-
-        <li>
-            <a href="https://www.mypremiercreditcard.com/">PREMIER Bankcard</a>
-        </li>
-
-        <li>
-            <a href="../../pages/about-us/leadership-team/index.html">Leadership</a>
-        </li>
-
-        <li>
-            <a href="../../pages/about-us/community/index.html">Community</a>
-        </li>
-
-        <li>
-            <a href="{{route('frontend.en.pages.about.careers')}}">Careers</a>
-        </li>
-
-</ul>
-                <br />
-            </div>
-            <div class="col-md-3 col-sm-3 col-xs-12 footerCol2">
-                <div class="footerHeader">Customers</div>
-
-<ul>
-
-        <li>
-            <a href="../../index.html">Personal Banking</a>
-        </li>
-
-        <li>
-            <a href="../../small-business/index.html">Small Business</a>
-        </li>
-
-        <li>
-            <a href="../../commercial/index.html">Commercial</a>
-        </li>
-
-</ul>
-                <br />
-            </div>
-            <div class="col-md-3 col-sm-3 col-xs-12 footerCol3">
-                <div class="footerHeader">Help &amp; Contact</div>
-
-<ul>
-
-        <li>
-            <a href="../../pages/quick-links/customer-care/index.html">Customer Care</a>
-        </li>
-
-        <li>
-            <a href="../../pages/quick-links/locations/index.html">Locations</a>
-        </li>
-
-        <li>
-            <a href="../../pages/quick-links/customer-care/index.html">BANK: 800-501-6535</a>
-        </li>
-
-        <li>
-            <a href="https://www.mypremiercreditcard.com/">CREDIT CARD: 800-987-5521</a>
-        </li>
-
-        <li>
-            <a href="../../index.html">Routing Number: 091408598</a>
-        </li>
-
-</ul>
-                <br />
-            </div>
-            <div class="col-md-3 col-sm-3 col-xs-12 footerCol4">
-                <div class="footerHeader">Legal Notices</div>
-
-<ul>
-
-        <li>
-            <a href="../../pages/resources/first-premier-privacy-statement-2020/index.html">Privacy Notice &amp; Statement</a>
-        </li>
-
-        <li>
-            <a href="../../pages/resources/legal-disclosures/index.html">Legal Disclosures</a>
-        </li>
-
-        <li>
-            <a href="../../pages/resources/cookie-policy/index.html">Cookie Policy</a>
-        </li>
-
-</ul>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-md-12" style="padding-top:50px;">
- <p>Member FDIC | <img src="{{ asset('assets/frontend/Static/img/equalhousinglender.png') }}" alt="Equal Housing Lender" title="Equal Housing Lender" />Equal Housing Lender</p>            </div>
-        </div>
-    </div>
-</div>
-<style>
-    /* CHROME SAFARI FIX */
-    .form-control:hover, .form-control:active, .form-control:focus { box-shadow: none !important; -moz-box-shadow: none !important; -webkit-box-shadow: none !important; }
-    .form-control:hover, .form-control:active, .form-control:focus { box-shadow: none !important; -moz-box-shadow: none !important; -webkit-box-shadow: none !important; }
-    a:focus, a:active {outline:none!important; border: none!important; }
-    input:focus, input:active { outline: none !important; }
-    textarea:focus { outline: none !important; }
-    button:focus, button:active { outline: none !important; border: none !important; }
-    .showehllogo { background: url('../../../Static/img/EHLlogo%20white.png') 230px 0px no-repeat; background-size: 24px 24px }
-</style>
-<script type="text/javascript">
-    var ContentId;
-    var Name;
-    var FullName;
-    var EMail;
-    var Phone;
-    var Message;
-    function contactPersonName(value) {
-        ContentId = parseInt($(value).attr('value'));
-        Name = $(value).attr('name');
-        $("#contactWithPersonName").html("Contact " + Name);
-        FullName = "";
-        EMail = "";
-        Message = "";
-        Phone = "";
-        $("#email").val("");
-        $("#fullname").val("");
-        $('#phone').val("");
-        $("#message").val("");
-    }
-
-    //$("#fullname").val() != "" &&
-    $("#submitButtonB28Block").click(function (event) {
-        if ($("#email").val() != "" &&
-            $("#message").val() != "") {
-            FullName = $("#fullname").val();
-            EMail = $("#email").val();
-            Phone = $("#phone").val();
-            Message = $("#message").val();
-            $.ajax({
-                type: "POST",
-                url: '/api/ContactMe?ContentId=' + ContentId + '&ContactToName=' + Name + '&ContactPersonName=' + FullName + '&ContactPersonEmail=' + EMail + '&ContactPersonPhone=' + Phone + '&ContactPersonMessage=' + encodeURIComponent(Message),
-                contentType: "application/json",
-
-                success: function (result) {
-                    alert(result);
-                },
-                error: function () {
-
+                        }
+                    });
                 }
             });
-        }
-    });
-</script>    </div>
-    <div class="smallLogo"><a href="../../index.html" title="First PREMIER Bank - Home"><img src="{{ asset('assets/frontend/Static/gfx/Logo.png') }}" style="max-width:100%;" /></a></div>
+        </script>
+    </div>
+    <div class="smallLogo"><a href="../../index.html" title="First PREMIER Bank - Home"><img
+                src="{{ asset('assets/frontend/Static/gfx/Logo.png') }}" style="max-width:100%;" /></a></div>
     <script type="text/javascript" src="../../../../dl.episerver.net/13.4.4.1/epi-util/find.js"></script>
-<script type="text/javascript">
-if(FindApi){var api = new FindApi();api.setApplicationUrl('../../../index.html');api.setServiceApiBaseUrl('../../../find_v2/index.html');api.processEventFromCurrentUri();api.bindWindowEvents();api.bindAClickEvent();api.sendBufferedEvents();}
-</script>
+    <script type="text/javascript">
+        if (FindApi) {
+            var api = new FindApi();
+            api.setApplicationUrl('../../../index.html');
+            api.setServiceApiBaseUrl('../../../find_v2/index.html');
+            api.processEventFromCurrentUri();
+            api.bindWindowEvents();
+            api.bindAClickEvent();
+            api.sendBufferedEvents();
+        }
+    </script>
 
     <script type="text/javascript" src="../../../Static/js/pushy.js"></script>
     <script type="text/javascript" src="../../../Static/js/Blocks_2019062002.js"></script>

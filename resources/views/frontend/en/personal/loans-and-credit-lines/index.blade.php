@@ -4,15 +4,15 @@
 
     <div class="container">
 
-     <!--start responsive menu-->
-    @include('frontend.layouts.components.header')
-    <!-- Main Header -->
-    @include('frontend.layouts.components.navbar')
+        <!--start responsive menu-->
+        @include('frontend.layouts.components.header')
+        <!-- Main Header -->
+        @include('frontend.layouts.components.navbar')
 
 
 
-<!--start responsive menu-->
-{{-- <nav class="pushy pushy-right">
+        <!--start responsive menu-->
+        {{-- <nav class="pushy pushy-right">
     <div class="pushy-content">
         <button class="pushy-link close-b">X</button>
 
@@ -533,8 +533,8 @@ Asset Management &amp; Trust                                            <i class
         </div>
     </div>
 </nav> --}}
-<!-- Main Header -->
-{{-- <section class="header-wrap" id="container">
+        <!-- Main Header -->
+        {{-- <section class="header-wrap" id="container">
     <article class="container">
 
         <article class="row">
@@ -986,1147 +986,1595 @@ Asset Management &amp; Trust                                            <i class
     </div>
 </section> --}}
 
- <script>
-
-    $(document).ready(function () {
-
+        <script>
+            $(document).ready(function() {
 
 
-        //$('#AccessAccountDropdown option[id!=selectaccount]').each(function (index, value) {
-        //    $('#signInHoverSection').append('<p>' + $(value).text() + '</p>');
-        //});
 
-        if ($(window).width() == 1024) {
-            $('#ulPremierMainMenu li.SubMenu > a').on('click touchend', function (e) {
-                $(this).find('div[id*=subdiv]').hide();
-                $(this).attr('href', 'javascript:void(0)');
-                ShowMenu(this);
-            }).focusout(function () {
-                ShowMenu(this);
-            });
-        }
-        else {
+                //$('#AccessAccountDropdown option[id!=selectaccount]').each(function (index, value) {
+                //    $('#signInHoverSection').append('<p>' + $(value).text() + '</p>');
+                //});
 
-            var timeoutId;
-            $("#ulPremierMainMenu li.SubMenu > a").hover(function () {
-                var self = this;
-                if (!timeoutId) {
-                    timeoutId = window.setTimeout(function () {
-                        timeoutId = null;
-                        ShowMenu(self);
-                    }, 50);
+                if ($(window).width() == 1024) {
+                    $('#ulPremierMainMenu li.SubMenu > a').on('click touchend', function(e) {
+                        $(this).find('div[id*=subdiv]').hide();
+                        $(this).attr('href', 'javascript:void(0)');
+                        ShowMenu(this);
+                    }).focusout(function() {
+                        ShowMenu(this);
+                    });
+                } else {
+
+                    var timeoutId;
+                    $("#ulPremierMainMenu li.SubMenu > a").hover(function() {
+                            var self = this;
+                            if (!timeoutId) {
+                                timeoutId = window.setTimeout(function() {
+                                    timeoutId = null;
+                                    ShowMenu(self);
+                                }, 50);
+                            }
+                        },
+                        function() {
+                            if (timeoutId) {
+                                window.clearTimeout(timeoutId);
+                                timeoutId = null;
+                            }
+                        });
                 }
-            },
-                function () {
-                    if (timeoutId) {
-                        window.clearTimeout(timeoutId);
-                        timeoutId = null;
+
+                if (sessionStorage.getItem('isClosed') == "true") {
+                    $(".alert").hide();
+                }
+
+                var lastID = null;
+
+                var handleMouseover = function(e) {
+                    var target = e.target || e.srcElement;
+                    lastID = target.id;
+                    className = target.className;
+                    tagName = target.localName;
+                    if (lastID != "ulPremierMainMenu" && lastID != "") {
+                        $('div[id*=subdiv]').slideUp(500);
+                        $('.SubMenuItems li > a').css('color', '#fff').css('border-bottom', '');
                     }
-                });
-        }
+                    if (className == "col-md-8 col-xs-12 col-sm-6" || className == "b1banner_text" || className ==
+                        "b1login_Box" || className == "b1banner-desc" || className == "row b1mobile" || className ==
+                        "b1banner_text" || className == "White" || className == "b1access" || className ==
+                        "header-box" || tagName == "img" || tagName == "body") {
+                        $('div[id*=subdiv]').slideUp(500);
+                        $('.SubMenuItems li > a').css('color', '#fff').css('border-bottom', '');;
+                    }
 
-        if (sessionStorage.getItem('isClosed') == "true") {
-            $(".alert").hide();
-        }
+                };
 
-        var lastID = null;
+                if (document.addEventListener) {
+                    document.addEventListener('mouseover', handleMouseover, false);
+                    document.addEventListener('mouseover', handleMouseover, false);
+                } else {
+                    document.attachEvent('onmouseover', handleMouseover);
+                }
 
-        var handleMouseover = function (e) {
-            var target = e.target || e.srcElement;
-            lastID = target.id;
-            className = target.className;
-            tagName = target.localName;
-            if (lastID != "ulPremierMainMenu" && lastID != "") {
-                $('div[id*=subdiv]').slideUp(500);
-                $('.SubMenuItems li > a').css('color', '#fff').css('border-bottom', '');
-            }
-            if (className == "col-md-8 col-xs-12 col-sm-6" || className == "b1banner_text" || className == "b1login_Box" || className == "b1banner-desc" || className == "row b1mobile" || className == "b1banner_text" || className == "White" || className == "b1access" || className == "header-box" || tagName == "img" || tagName == "body") {
-                $('div[id*=subdiv]').slideUp(500);
-                $('.SubMenuItems li > a').css('color', '#fff').css('border-bottom', '');;
-            }
-
-        };
-
-        if (document.addEventListener) {
-            document.addEventListener('mouseover', handleMouseover, false);
-            document.addEventListener('mouseover', handleMouseover, false);
-        }
-        else {
-            document.attachEvent('onmouseover', handleMouseover);
-        }
-
-    });
-    function ShowMenu(element) {
-        if ($(element).next('div[id*=subdiv]').filter(function () { return $(this).css('display') === 'block'; }).length == 0) {
-            $('div[id*=subdiv]').hide();
-            $(element).next('div[id*=subdiv]').slideDown(500);
-            $('.SubMenuItems li > a').css('color', '#fff').css('border-bottom', '');
-            $(element).css('color', '#e4cb3f').css({
-                "border-bottom-color": "#e4cb3f",
-                "border-bottom-width": "3px",
-                "border-bottom-style": "solid"
             });
-        }
-    }
-    function ShowSignInOption() {
-        if ($('#signInHoverSection').attr('data-present') == "present") {
-            $('#signInHoverSection').toggle();
-        }
-    }
-    function SearchOut() {
-        $('#txtheadsearch').attr('data-val', $('#txtheadsearch').val());
-        $('#txtheadsearch').val(null);
-    }
-    function SearchIn() {
-        var searchText = $('#txtheadsearch').attr('data-val') || '';
-        $('#txtheadsearch').val(searchText);
-    }
-</script>
-    <style>
-        .b18great_feature_main{display:block;margin-top:-100px !important;}
-.b20consumer-loans .b20consumer-loans-left {padding-left:100px !important;}
-.b15benfits_main_box {padding-top:20px;}
-    </style>
-<div class="row equal-height"><div class="block b19block  col-md-12">
 
-<style>
-    .b19landingpage {
-        height: auto;
-        padding: 40px 0px;
-    }
-</style>
-<script>
+            function ShowMenu(element) {
+                if ($(element).next('div[id*=subdiv]').filter(function() {
+                        return $(this).css('display') === 'block';
+                    }).length == 0) {
+                    $('div[id*=subdiv]').hide();
+                    $(element).next('div[id*=subdiv]').slideDown(500);
+                    $('.SubMenuItems li > a').css('color', '#fff').css('border-bottom', '');
+                    $(element).css('color', '#e4cb3f').css({
+                        "border-bottom-color": "#e4cb3f",
+                        "border-bottom-width": "3px",
+                        "border-bottom-style": "solid"
+                    });
+                }
+            }
 
-    $(document).ready(function () {
-        if (screen.width < 767) {
-            $('.b19landingpage').css('height', '628px');
-            $('.b19landingpage').css('background', '');
-            $('.b19landingpage').css('background-color', '#1b3e43');
-        }
-        else {
-            $('.b19landingpage').css('background', 'url({{asset("assets/frontend/Static/img/svg/green-1.svg")}}) no-repeat');
-        }
-    });
+            function ShowSignInOption() {
+                if ($('#signInHoverSection').attr('data-present') == "present") {
+                    $('#signInHoverSection').toggle();
+                }
+            }
 
-    $(window).resize(function () {
-        if (screen.width < 767) {
-            $('.b19landingpage').css('height', '628px');
-            $('.b19landingpage').css('background', '');
-            $('.b19landingpage').css('background-color', '#1b3e43');
-        }
-        else {
-            $('.b19landingpage').css('background', 'url({{asset("assets/frontend/Static/img/svg/green-1.svg")}}) no-repeat');
-        }
-    });
+            function SearchOut() {
+                $('#txtheadsearch').attr('data-val', $('#txtheadsearch').val());
+                $('#txtheadsearch').val(null);
+            }
 
-</script>
+            function SearchIn() {
+                var searchText = $('#txtheadsearch').attr('data-val') || '';
+                $('#txtheadsearch').val(searchText);
+            }
+        </script>
+        <style>
+            .b18great_feature_main {
+                display: block;
+                margin-top: -100px !important;
+            }
 
+            .b20consumer-loans .b20consumer-loans-left {
+                padding-left: 100px !important;
+            }
 
-<div class="b19landingpage row-full" style="padding-bottom:0px;">
-    <div class="container">
-        <h1>Loans &amp; Credit Lines</h1>
-        <div class="xhtml"></div>
-        <div class="b19landingpage_box_main">
+            .b15benfits_main_box {
+                padding-top: 20px;
+            }
 
-        <div class="col-md-4 col-sm-6 b19landingpage_box">
-            <a href="personal-loans/index.html"><img src="{{ asset('assets/frontend/globalassets/images/_replace/_filled/round6.png') }}" title="Personal Loans" alt="money" border="0" /></a>
-            <div class="clearfix"></div>
-                <span><a href="personal-loans/index.html">Personal Loans</a></span>
-            <div class="xhtml"><p>Consolidating debt, financing a special purchase or remodeling your home? Let us help.</p></div>
-        </div>
-
-        <div class="col-md-4 col-sm-6 b19landingpage_box">
-            <a href="personal-lines-of-credit/index.html"><img src="{{ asset('assets/frontend/globalassets/images/_replace/_filled/round7.png') }}" title="Personal Lines of Credit" alt="cash" border="0"></a>
-            <div class="clearfix"></div>
-                <span><a href="personal-lines-of-credit/index.html">Personal Lines of Credit</a></span>
-            <div class="xhtml"><p>Gain instant access to ready cash when you need it. We offer both personal and home equity lines of credit.</p></div>
-        </div>
-
-        <div class="col-md-4 col-sm-6 b19landingpage_box">
-            <a href="../mortgages/index.html"><img src="{{ asset('assets/frontend/globalassets/images/primary-icons/gold/places/gold-places-primary-icon-14.png') }}" title="Home Mortgage" alt="house" border="0"></a>
-            <div class="clearfix"></div>
-                <span><a href="../mortgages/index.html">Home Mortgage</a></span>
-            <div class="xhtml"><p>Whether it's your first-time or forever home, we offer competitive financing with local decision making.</p></div>
-        </div>
-
-        </div>
-    </div>
-</div></div><div class="block b20block  col-md-12">
-
-
-<!-- VIEW RATE / SPEED BUMP [2] -->
-<script>
-    $(document).ready(function () {
-        if ($('#imgMainRight').length <= 0) {
-            $('.b20consumer-loans-left').css('width', '100%');
-        }
-    });
-</script>
-<style>
-    .pop_main_container_board .pop_main_container ol li ol li {  }
-</style>
-<style>
-    .b20consumer-loans-left {
-        padding-top: 0px !important;
-    }
-
-        .b20consumer-loans-left .xhtml p {
-            padding-top: 0px !important;
-        }
-
-    .b17basic_box_grey {
-        background-color: #f9f9f9 !important;
-        background-image: none;
-    }
-
-    .b17basic_box_white {
-        background-color: #fff !important;
-        background-image: none;
-    }
-
-    .b20consumer-loans p.sub-header {
-        padding: 0px 0px 26px 0px;
-        text-align: center;
-    }
-    @media only screen and (max-width: 767px)
-    {
-        .b20consumer_btn_center {
-            width: 100%;
-        }
-    }
-
-    @media only screen and (max-width: 470px) {
-        .b20consumer-loans .b20consumer-loans-left {
-            padding-left: 0px !important;
-        }
-    }
-    @media only screen and (max-width: 470px) {
-       .b20showright a.b20mainanchorL {
-           margin-left: 25%
-        }
-    }
-</style>
-<!-- VIEW RATE / SPEED BUMP [2] -->
-<section class="row-full">
-
-    <div class="b20consumer-loans ">
-        <div class="container">
-
-                <h2>Lending is Always Personal</h2>
-
-
-                    <div class="b20consumer-loans-right"><img id="imgMainRight" src="{{ asset('assets/frontend/contentassets/f656f76b55584dd29a81c5b3b85c369e/1.4_b-20_promo_01_billslady-min.png') }}" alt="woman working with papers and laptop" class="img-responsive"></div>
-        <div class="b20consumer-loans-left">
-                            <div class="xhtml"><ul>
-<li>Competitive fixed rates</li>
-<li>No pre-payment penalties</li>
-<li>Consolidate debt&nbsp;</li>
-<li>Repair or remodel your home</li>
-<li>Purchase a new or used auto<br /><br /></li>
-</ul></div>
-                <br />
-                            <div class="b20consumer_btn_center">
-                                    <a href="https://umnasg7.umonitor.com/consumerloan/uLoan/welcome.do?auth=aa902f55464cde74" class="b20mainanchor">APPLY NOW</a>
-                                <ul>
-                                            <li><a class="b20mainlink" href="personal-loans/index.html">Learn More</a></li>
-                                            <li><a class="b20mainlink" href="../../pages/about-us/teams/personal-banking-sioux-falls-team/index.html">Contact Us</a></li>
-                                </ul>
-                </div>
-        </div>
-        </div>
-    </div>
-</section>
-
-<!-- View Rate [3] (within container)-->
-<!-- View Rate [3] (within container)--></div><div class="block b20block  col-md-12">
-
-
-<!-- VIEW RATE / SPEED BUMP [2] -->
-<script>
-    $(document).ready(function () {
-        if ($('#imgMainRight').length <= 0) {
-            $('.b20consumer-loans-left').css('width', '100%');
-        }
-    });
-</script>
-<style>
-    .pop_main_container_board .pop_main_container ol li ol li {  }
-</style>
-<style>
-    .b20consumer-loans-left {
-        padding-top: 0px !important;
-    }
-
-        .b20consumer-loans-left .xhtml p {
-            padding-top: 0px !important;
-        }
-
-    .b17basic_box_grey {
-        background-color: #f9f9f9 !important;
-        background-image: none;
-    }
-
-    .b17basic_box_white {
-        background-color: #fff !important;
-        background-image: none;
-    }
-
-    .b20consumer-loans p.sub-header {
-        padding: 0px 0px 26px 0px;
-        text-align: center;
-    }
-    @media only screen and (max-width: 767px)
-    {
-        .b20consumer_btn_center {
-            width: 100%;
-        }
-    }
-
-    @media only screen and (max-width: 470px) {
-        .b20consumer-loans .b20consumer-loans-left {
-            padding-left: 0px !important;
-        }
-    }
-    @media only screen and (max-width: 470px) {
-       .b20showright a.b20mainanchorL {
-           margin-left: 25%
-        }
-    }
-</style>
-<!-- VIEW RATE / SPEED BUMP [2] -->
-<section class="row-full">
-
-    <div class="b20consumer-loans ">
-        <div class="container">
-
-                <h2>Personal Lines of Credit</h2>
-
-
-        <div class="b20consumer-loans-left b20showright"  style="float:right;">
-
-                            <div class="xhtml"><ul>
-<li>Select from several revolving lines of credit</li>
-<li>Get instant access to ready cash</li>
-<li>Secured or unsecured</li>
-<li>Fixed or variable interest rates</li>
-<li>Available as optional <a href="../personal-checking/overdraft-protection/index.html">overdraft protection</a></li>
-</ul>
-<p>&nbsp;</p></div>
-                <br />
-
-            <div class="b20consumer_btn_center">
-                <!-- b20mainanchorL -->
-                                <a href="personal-lines-of-credit/index.html" class="b20mainanchorL">Learn More</a>
-            </div>
-        </div>
-                    <div class="b20consumer-loans-right"><img id="imgMainRight" alt="couple looking at receipts" src="{{ asset('assets/frontend/contentassets/dbed55fba49142b6919198a18b68d42c/1.4_b-20-promo_02_couplepaperwork-min.png') }}" class="img-responsive"></div>
-        </div>
-    </div>
-</section>
-
-<!-- View Rate [3] (within container)-->
-<!-- View Rate [3] (within container)--></div><div class="block b15block  col-md-12">
-<section style="padding-left:0px;">
-    <div class="b15benfits_main_box">
-        <div class="container">
-            <div class="b15student_parent_main_content b15-bg-student_parent_main_content">  <div class="b15avtar"><img src="{{ asset('assets/frontend/contentassets/cb6319a21d01411bbd2b8a3f5f67e7d8/everfi-loans-and-payments.png') }}" title="Loans & Payments" alt="coins falling into hand" height ="116px" width="116px"></div>  <div class="b15avtar_content">    <h3>Loans & Payments</h3><p>Are you looking to better understand payment options for your lifestyle? Our interactive module will help you understand different payment and payoff options.</p>    <div class="clearfix"></div><br/>      <a href="#" data-toggle="modal" data-target="#a22817800Q8" class="b15learnmore">Learn More</a>      <div id="a22817800Q8" class="modal fade" role="dialog">         <div class="modal-dialog pop_board">            <div class="modal-content">               <div class="modal-body">                  <div class="pop_main_container_board">                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">                        <span aria-hidden="true">                           <img class="close_icon" src="../../../static/img/closebutton.png" alt="First PREMIER Bank" style="height:17px !important;width:17px !important;">                        </span>                     </button>                     <div class="pop_main_container">                    <h2>Loans & Payments</h2>                        <div class="pop_board_white">                           <div class="row">                              <div class="col-md-12" style="padding-left:40px;">                                 <h4 class="Blue">You will be leaving firstpremier.com</h4>                                 <div class="b13points b46Blue" style="text-align:left;"><p>Please note, by clicking &ldquo;continue&rdquo; you will be redirected to a website that is not operated or controlled by PREMIER. PREMIER is not responsible for the content, links, privacy policy or security of that website. Your use of that website is subject to its terms of use and privacy policy. Thank you for visiting firstpremier.com. If you continue, we hope you find the information presented educational and useful.</p>                                    <p><br/><a href="https://firstpremier.everfi-next.net/student/dashboard/financialeducation-achieve/financial-foundations/1687#car-loans/getting-started" target="_blank">Continue</a></p>                                 </div>                              </div>                           </div>                        </div>                     </div>                  </div>               </div>            </div>         </div>      </div>  </div></div><div class="b15student_parent_main_content b15-bg-student_parent_main_content">  <div class="b15avtar"><img src="{{ asset('assets/frontend/globalassets/images/secondary-icons/gold/places/gold-places-secondary-icon-14.png') }}" title="Home Mortgage" alt="house" height ="116px" width="116px"></div>  <div class="b15avtar_content">    <h3>Home Mortgage</h3><p>Whether you're buying or building a new home or refinancing to extract equity or consolidate debt, we can help.&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;</p>    <div class="clearfix"></div><br/>      <a href="../mortgages/index.html">Learn More</a>  </div></div>
-        </div>
-    </div>
-</section>
-
-<style>
-    .b4background.colored {
-        background-color: #25455a !important;
-    }
-
-        .b4background.colored .b15benfits_main_box {
-            margin: 0px !important;
-        }
-</style></div><div class="block b12block  col-md-12">        <style>
-            .b12faq_main { float: left; width: 100%; padding:100px 0px 50px 0px !important; text-align: left; background: #fff; }
         </style>
-        <div class="b12faq_main">
-            <div class="b12container">
-                <h2>Frequently Asked Questions</h2>
-                <!-- tabs left -->
-                <div class="tabbable">
-                    <div class="tab-content col-md-7">
-                        <div class="tab-pane active" id="A"><span>I paid off my loan so where is my title/lien release?</span><p><p>Titles/ lien releases are mailed out through general mail 10-20 day after the loan is paid off to the address we have for you on file or to the address specified on documents sent in with the pay off. IE: Your insurance agent requested we send it to them. If a loan is paid off through wire transfer, the information is released the next business day.</p></p></div><div class="tab-pane" id="B"><span>What do I need to do a wire loan payment?</span><p><p>Contact your bank for wires. You will need your loan account number and the routing number for First PREMIER Bank 091408598. They can add additional releasing instructions at that time to accompany the wire. Any additional payment over your pay off amount will be mailed back to you via check.</p></p></div><div class="tab-pane" id="C"><span> I lost my lien release/ title. What do I do? </span><p><p>We are able to provide a new lien release for paid off loans if needed. Please have the Year, Make, and VIN handy for reference if you don&rsquo;t have your loan number. However, we are unable to provide new titles. If you need a new title, please, contact your state DMV with additional questions.</p></p></div><div class="tab-pane" id="D"><span>How can I pay off my loan?</span><p><p>Paying off your loan is as simple as issuing a payment equivalent to the loan payoff amount. To ensure your final payment amount is accurate, please contact Customer Care during normal business hours for an accurate loan payoff amount.</p></p></div><div class="tab-pane" id="E"><span>How can I make a loan payment?</span><p><p>You can make a loan payment by logging into Online or Mobile Banking (note: enrollment and/or download may be required for initial use) and transferring payment from a First PREMIER Bank account to your loan. You can also call our Customer Care team at 800-501-6535.</p></p></div>
-                    </div>
-                    <ul class="nav nav-pills nav-stacked col-md-5">
-                        <li class="active"><a href="#A" data-toggle="tab">I paid off my loan so where is my title/lien release?</a></li><li><a href="#B" data-toggle="tab">What do I need to do a wire loan payment?</a></li><li><a href="#C" data-toggle="tab"> I lost my lien release/ title. What do I do? </a></li><li><a href="#D" data-toggle="tab">How can I pay off my loan?</a></li><li><a href="#E" data-toggle="tab">How can I make a loan payment?</a></li>
-                    </ul>
-                </div>
-            </div>
-        </div>
+        <div class="row equal-height">
+            <div class="block b19block  col-md-12">
 
-</div><div class="block b23block  col-md-12"><style>
-    .b23financial_calculator_main {
-        padding-top: 50px !important;
-    }
+                <style>
+                    .b19landingpage {
+                        height: auto;
+                        padding: 40px 0px;
+                    }
 
-        .b23financial_calculator_main h2 {
-            text-align: center;
-        }
-</style>
-<section class="row-full">
+                </style>
+                <script>
+                    $(document).ready(function() {
+                        if (screen.width < 767) {
+                            $('.b19landingpage').css('height', '628px');
+                            $('.b19landingpage').css('background', '');
+                            $('.b19landingpage').css('background-color', '#1b3e43');
+                        } else {
+                            $('.b19landingpage').css('background',
+                                'url({{ asset("assets/frontend/Static/img/svg/green-1.svg") }}) no-repeat');
+                        }
+                    });
 
-    <div class="b23financial_calculator_main">
-        <div class="container">
-                <h2>Financial Calculators</h2>
-            <div class="b23financial_calculator">
+                    $(window).resize(function() {
+                        if (screen.width < 767) {
+                            $('.b19landingpage').css('height', '628px');
+                            $('.b19landingpage').css('background', '');
+                            $('.b19landingpage').css('background-color', '#1b3e43');
+                        } else {
+                            $('.b19landingpage').css('background',
+                                'url({{ asset("assets/frontend/Static/img/svg/green-1.svg") }}) no-repeat');
+                        }
+                    });
+                </script>
 
-                <div class="b23financial_calculator_left">
-                        <h3>How much will my loan payments be?</h3>
-                                            <p>Use this calculator to estimate how much your loan payment will be. </p>
-                                            <h4 class="Blue">YOUR LOAN PAYMENT WILL BE</h4>
-                    <h5 id="calculatedValuetoBind"></h5>
-                        <a type="button" href="#" class="" data-toggle="modal" data-target="#myModal">Show Schedule</a>
-                </div>
 
-                <div class="b23financial_calculator_right">
-                    <div class="form-group">
-                        <label>Purchase Amount</label>
-                        <input type="text" value="$ 35,000" id="purchaseAmount" onkeyup="this.value=Comma(this.value)" maxlength="14" />
-                    </div>
-                    <div class="form-group">
-                        <label>Down Payment Amount</label>
-                        <input type="text" value="$ 5,000" id="downPaymentAmount" onkeyup="this.value=Comma(this.value)" maxlength="14" />
-                    </div>
-                    <div class="form-group">
-                        <label>Loan Term (yrs)</label>
-                        <input type="text" value="5" id="loanTerm" maxlength="5" />
-                    </div>
-                    <div class="form-group">
-                        <label>Interest Rate</label>
-                        <input type="text" value="3.00%" id="interestRate" maxlength="7" />
-                    </div>
-                </div>
-                <div class="b23financial_calculator_left b23mobile_cal">
-                        <h3>YOUR LOAN PAYMENT WILL BE</h3>
-                    <h4 id="calculatedValuetoBind"></h4>
-                        <a type="button" href="#" class="" data-toggle="modal" data-target="#myModal">Show Schedule</a>
-                </div>
+                <div class="b19landingpage row-full" style="padding-bottom:0px;">
+                    <div class="container">
+                        <h1>Loans &amp; Credit Lines</h1>
+                        <div class="xhtml"></div>
+                        <div class="b19landingpage_box_main">
 
-            </div>
+                            <div class="col-md-4 col-sm-6 b19landingpage_box">
+                                <a href="{{ route('frontend.en.personal.loans-and-credit-lines.personal-loans') }}"><img
+                                        src="{{ asset('assets/frontend/globalassets/images/_replace/_filled/round6.png') }}"
+                                        title="Personal Loans" alt="money" border="0" /></a>
+                                <div class="clearfix"></div>
+                                <span><a href="{{ route('frontend.en.personal.loans-and-credit-lines.personal-loans') }}">Personal Loans</a></span>
+                                <div class="xhtml">
+                                    <p>Consolidating debt, financing a special purchase or remodeling your home? Let us
+                                        help.</p>
+                                </div>
+                            </div>
 
-            <!--Pop up content starts-->
-            <div id="myModal" class="modal fade" role="dialog">
-                <div class="modal-dialog b23pop_board">
-                    <div class="modal-content">
-                        <div class="modal-body">
-                            <div class="b23pop_main_container_board">
-                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                    <span aria-hidden="true">
-                                        <img class="close_icon" src="../../../Static/img/CustomBlocks/B23/close.png" alt="First PREMIER Bank">
-                                    </span>
-                                </button>
-                                <div class="b23pop_main_container">
-                                    <h3>Payment Summary</h3>
-                                    <table class="table table-striped">
-                                        <thead>
-                                            <tr>
-                                                <th>Event</th>
-                                                <th>Amount</th>
-                                                <th>Term</th>
-                                                <th>Period</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                            <!-- <tr>
-                                        <td>Loan</td>
-                                        <td>$30,000</td>
-                                        <td>1</td>
-                                        <td>Monthly</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Loan</td>
-                                        <td>$30,000</td>
-                                        <td>1</td>
-                                        <td>Monthly</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Loan</td>
-                                        <td>$30,000</td>
-                                        <td>1</td>
-                                        <td>Monthly</td>
-                                    </tr> -->
-                                        </tbody>
-                                    </table>
-                                    <h3>Payment Schedule</h3>
-                                    <div class="b23overflow_scroll">
-                                        <table class="table table-striped">
-                                            <thead>
-                                                <tr>
-                                                    <th>Event</th>
-                                                    <th>Loan</th>
-                                                    <th>Payment</th>
-                                                    <th>Interest</th>
-                                                    <th>Principal</th>
-                                                    <th>Balance</th>
-                                                </tr>
-                                            </thead>
-                                            <tbody>
-                                                <!-- <tr>
-                                            <td>Loan</td>
-                                            <td>$30,000</td>
-                                            <td>$567.00</td>
-                                            <td>$567.00</td>
-                                            <td>$567.00</td>
-                                            <td>$30,000</td>
-                                        </tr>
-                                        <tr>
-                                            <td>Loan</td>
-                                            <td>$30,000</td>
-                                            <td>$567.00</td>
-                                            <td>$567.00</td>
-                                            <td>$567.00</td>
-                                            <td>$30,000</td>
-                                        </tr>
-                                        <tr>
-                                            <td>Loan</td>
-                                            <td>$30,000</td>
-                                            <td>$567.00</td>
-                                            <td>$567.00</td>
-                                            <td>$567.00</td>
-                                            <td>$30,000</td>
-                                        </tr>
-                                        <tr>
-                                            <td>Loan</td>
-                                            <td>$30,000</td>
-                                            <td>$567.00</td>
-                                            <td>$567.00</td>
-                                            <td>$567.00</td>
-                                            <td>$30,000</td>
-                                        </tr>
-                                        <tr>
-                                            <td>Loan</td>
-                                            <td>$30,000</td>
-                                            <td>$567.00</td>
-                                            <td>$567.00</td>
-                                            <td>$567.00</td>
-                                            <td>$30,000</td>
-                                        </tr>
-                                        <tr>
-                                            <td>Loan</td>
-                                            <td>$30,000</td>
-                                            <td>$567.00</td>
-                                            <td>$567.00</td>
-                                            <td>$567.00</td>
-                                            <td>$30,000</td>
-                                        </tr>
-                                        <tr>
-                                            <td>Loan</td>
-                                            <td>$30,000</td>
-                                            <td>$567.00</td>
-                                            <td>$567.00</td>
-                                            <td>$567.00</td>
-                                            <td>$30,000</td>
-                                        </tr>
-                                        <tr>
-                                            <td>Loan</td>
-                                            <td>$30,000</td>
-                                            <td>$567.00</td>
-                                            <td>$567.00</td>
-                                            <td>$567.00</td>
-                                            <td>$30,000</td>
-                                        </tr>
-                                        <tr>
-                                            <td>Loan</td>
-                                            <td>$30,000</td>
-                                            <td>$567.00</td>
-                                            <td>$567.00</td>
-                                            <td>$567.00</td>
-                                            <td>$30,000</td>
-                                        </tr>
-                                        <tr>
-                                            <td>Loan</td>
-                                            <td>$30,000</td>
-                                            <td>$567.00</td>
-                                            <td>$567.00</td>
-                                            <td>$567.00</td>
-                                            <td>$30,000</td>
-                                        </tr>
-                                        <tr>
-                                            <td>Loan</td>
-                                            <td>$30,000</td>
-                                            <td>$567.00</td>
-                                            <td>$567.00</td>
-                                            <td>$567.00</td>
-                                            <td>$30,000</td>
-                                        </tr> -->
-                                            </tbody>
-                                        </table>
-                                    </div>
+                            <div class="col-md-4 col-sm-6 b19landingpage_box">
+                                <a href="{{ route('frontend.en.personal.loans-and-credit-lines.personal-lines-of-credit') }}"><img
+                                        src="{{ asset('assets/frontend/globalassets/images/_replace/_filled/round7.png') }}"
+                                        title="Personal Lines of Credit" alt="cash" border="0"></a>
+                                <div class="clearfix"></div>
+                                <span><a href="{{ route('frontend.en.personal.loans-and-credit-lines.personal-lines-of-credit') }}">Personal Lines of Credit</a></span>
+                                <div class="xhtml">
+                                    <p>Gain instant access to ready cash when you need it. We offer both personal and home
+                                        equity lines of credit.</p>
+                                </div>
+                            </div>
+
+                            <div class="col-md-4 col-sm-6 b19landingpage_box">
+                                <a href="{{ route('frontend.en.personal.mortgages') }}"><img
+                                        src="{{ asset('assets/frontend/globalassets/images/primary-icons/gold/places/gold-places-primary-icon-14.png') }}"
+                                        title="Home Mortgage" alt="house" border="0"></a>
+                                <div class="clearfix"></div>
+                                <span><a href="{{ route('frontend.en.personal.mortgages') }}">Home Mortgage</a></span>
+                                <div class="xhtml">
+                                    <p>Whether it's your first-time or forever home, we offer competitive financing with
+                                        local decision making.</p>
                                 </div>
                             </div>
 
                         </div>
                     </div>
                 </div>
-                <!--Pop up content End-->
             </div>
-        </div>
-    </div>
-</section>
-
-<script>
-    var AmortizationTable = [];
-    var monthValue = [0.08, 0.16, 0.25, 0.33, 0.41, 0.50, 0.58, 0.66, 0.75, 0.83, 0.91, 0];
-    function Comma(Num) { //function to add commas to textboxes
-        Num += '';
-        Num = Num.replace(',', ''); Num = Num.replace(',', ''); Num = Num.replace(',', '');
-        Num = Num.replace(',', ''); Num = Num.replace(',', ''); Num = Num.replace(',', '');
-        x = Num.split('.');
-        x1 = x[0];
-        x2 = x.length > 1 ? '.' + x[1] : '';
-        var rgx = /(\d+)(\d{3})/;
-        while (rgx.test(x1))
-            x1 = x1.replace(rgx, '$1' + ',' + '$2');
-        return x1 + x2;
-    }
-    $(document).ready(function () {
-        $("#purchaseAmount").keydown(function (e) {
-            var oldvalue = $(this).val();
-            var field = this;
-            setTimeout(function () {
-                if (field.value.indexOf('$ ') !== 0) {
-                    $(field).val(oldvalue);
-                }
-            }, 1);
-        });
-
-        $("#purchaseAmount").keypress(function (e) {
-            if (e.which != 8 && e.which != 0 && (e.which < 48 || e.which > 57) && e.which != 44 && e.which != 46) {
-                return false;
-            }
-        });
-
-        $("#downPaymentAmount").keydown(function (e) {
-            var oldvalue = $(this).val();
-            var field = this;
-            setTimeout(function () {
-                if (field.value.indexOf('$ ') !== 0) {
-                    $(field).val(oldvalue);
-                }
-            }, 1);
-        });
-
-        $("#downPaymentAmount").keypress(function (e) {
-            if (e.which != 8 && e.which != 0 && (e.which < 48 || e.which > 57) && e.which != 44 && e.which != 46) {
-                return false;
-            }
-        });
-
-        $("#loanTerm").keypress(function (e) {
-            if (e.which != 8 && e.which != 0 && (e.which < 48 || e.which > 57) && e.which != 46) {
-                return false;
-            }
-        });
-
-        $('#interestRate').keyup(function () {
-            var oldstr = $('#interestRate').val();
-            var str = oldstr.replace('%', '');
-            $('#interestRate').val(str + '%');
-        });
-        $("#interestRate").keypress(function (e) {
-            if (e.which != 8 && e.which != 0 && (e.which < 48 || e.which > 57) && e.which != 46) {
-                return false;
-            }
-        });
-
-        $("#purchaseAmount").focusout(function () {
-            if (CalculatePaymentAmountBasedOnInput() != null && CalculatePaymentAmountBasedOnInput() != "" && CalculatePaymentAmountBasedOnInput() != undefined && CalculatePaymentAmountBasedOnInput() != "NaN" && CalculatePaymentAmountBasedOnInput() != NaN) {
-                $("#calculatedValuetoBind").html("$ " + numberWithCommas(CalculatePaymentAmountBasedOnInput().toFixed(2)));
-            }
-        });
-
-        $("#downPaymentAmount").focusout(function () {
-            if (CalculatePaymentAmountBasedOnInput() != null && CalculatePaymentAmountBasedOnInput() != "" && CalculatePaymentAmountBasedOnInput() != undefined && CalculatePaymentAmountBasedOnInput() != "NaN" && CalculatePaymentAmountBasedOnInput() != NaN) {
-                $("#calculatedValuetoBind").html("$ " + numberWithCommas(CalculatePaymentAmountBasedOnInput().toFixed(2)));
-            }
-        });
-        $("#loanTerm").focusout(function () {
-            if (parseFloat($("#loanTerm").val()).toFixed(2) > 30.00) {
-                alert('Invalid Loan Terms.Maximum value is 30 Years.');
-                $("#loanTerm").val(5);
-                return;
-            }
-            else {
-                if (CalculatePaymentAmountBasedOnInput() != null && CalculatePaymentAmountBasedOnInput() != "" && CalculatePaymentAmountBasedOnInput() != undefined && CalculatePaymentAmountBasedOnInput() != "NaN" && CalculatePaymentAmountBasedOnInput() != NaN) {
-                    $("#calculatedValuetoBind").html("$ " + numberWithCommas(CalculatePaymentAmountBasedOnInput().toFixed(2)));
-                }
-            }
-        });
-        $("#interestRate").focusout(function () {
-            if (parseFloat($("#interestRate").val()).toFixed(2) > 100.00) {
-                alert('Invalid Loan Interest Rate.Maximum value is 100 Percent.');
-                $("#interestRate").val("3.00%");
-                return;
-            }
-            else {
-                if (CalculatePaymentAmountBasedOnInput() != null && CalculatePaymentAmountBasedOnInput() != "" && CalculatePaymentAmountBasedOnInput() != undefined && CalculatePaymentAmountBasedOnInput() != "NaN" && CalculatePaymentAmountBasedOnInput() != NaN) {
-                    $("#calculatedValuetoBind").html("$ " + numberWithCommas(CalculatePaymentAmountBasedOnInput().toFixed(2)));
-                }
-            }
-        });
+            <div class="block b20block  col-md-12">
 
 
+                <!-- VIEW RATE / SPEED BUMP [2] -->
+                <script>
+                    $(document).ready(function() {
+                        if ($('#imgMainRight').length <= 0) {
+                            $('.b20consumer-loans-left').css('width', '100%');
+                        }
+                    });
+                </script>
+                <style>
+                    .pop_main_container_board .pop_main_container ol li ol li {}
+
+                </style>
+                <style>
+                    .b20consumer-loans-left {
+                        padding-top: 0px !important;
+                    }
+
+                    .b20consumer-loans-left .xhtml p {
+                        padding-top: 0px !important;
+                    }
+
+                    .b17basic_box_grey {
+                        background-color: #f9f9f9 !important;
+                        background-image: none;
+                    }
+
+                    .b17basic_box_white {
+                        background-color: #fff !important;
+                        background-image: none;
+                    }
+
+                    .b20consumer-loans p.sub-header {
+                        padding: 0px 0px 26px 0px;
+                        text-align: center;
+                    }
+
+                    @media only screen and (max-width: 767px) {
+                        .b20consumer_btn_center {
+                            width: 100%;
+                        }
+                    }
+
+                    @media only screen and (max-width: 470px) {
+                        .b20consumer-loans .b20consumer-loans-left {
+                            padding-left: 0px !important;
+                        }
+                    }
+
+                    @media only screen and (max-width: 470px) {
+                        .b20showright a.b20mainanchorL {
+                            margin-left: 25%
+                        }
+                    }
+
+                </style>
+                <!-- VIEW RATE / SPEED BUMP [2] -->
+                <section class="row-full">
+
+                    <div class="b20consumer-loans ">
+                        <div class="container">
+
+                            <h2>Lending is Always Personal</h2>
 
 
-        function CalculatePaymentAmountBasedOnInput() {
-            var purchaseAmount = parseFloat($("#purchaseAmount").val().replace("$", "").replace(/,/g, "")).toFixed(2);
-            if (purchaseAmount == "NaN" || purchaseAmount == "0.00" || purchaseAmount == NaN) {
-                alert("Please enter valid Purchase Amount");
-                $("#purchaseAmount").val("$ 35,000");
-                return;
-            }
-            var downPaymentAmount = parseFloat($("#downPaymentAmount").val().replace("$", "").replace(/,/g, "")).toFixed(2);
-            if (downPaymentAmount == "NaN" || downPaymentAmount == NaN) {
-                alert("Please enter valid Down Payment Amount");
-                $("#downPaymentAmount").val("$ 5,000");
-                return;
-            }
-            if ((purchaseAmount - downPaymentAmount) < 0) {
-                alert("Down payment amount must be less than or equal to Purchase amount");
-                $("#purchaseAmount").val("$ 35,000");
-                $("#downPaymentAmount").val("$ 5,000");
-                return;
-            }
-            var loanAmount = -(purchaseAmount - downPaymentAmount);
-            var rateValue = parseFloat($("#interestRate").val().replace("%", "")).toFixed(3);
-            if (rateValue == "NaN" || rateValue == NaN) {
-                alert("Please enter valid Interest Rate");
-                $("#interestRate").val("3.00%");
-                return;
-            }
-            var actualRateWeCanPass = rateValue / 1200;
-            if (monthValue.indexOf(Number(parseFloat($("#loanTerm").val() % 1).toFixed(2))) == -1 && Number(parseFloat($("#loanTerm").val() / 1).toFixed(2)) < 30) {
-                alert("Please enter valid Loan Term");
-                $("#loanTerm").val("5");
-                return;
-            }
-            var numberOfMonth = parseFloat($("#loanTerm").val()).toFixed(2) * 12;
-            numberOfMonth = Math.ceil(numberOfMonth);
-            if (numberOfMonth == "NaN" || numberOfMonth === 0 || numberOfMonth == NaN) {
-                alert("Please enter valid Loan Term");
-                $("#loanTerm").val("5");
-                return;
-            }
+                            <div class="b20consumer-loans-right"><img id="imgMainRight"
+                                    src="{{ asset('assets/frontend/contentassets/f656f76b55584dd29a81c5b3b85c369e/1.4_b-20_promo_01_billslady-min.png') }}"
+                                    alt="woman working with papers and laptop" class="img-responsive"></div>
+                            <div class="b20consumer-loans-left">
+                                <div class="xhtml">
+                                    <ul>
+                                        <li>Competitive fixed rates</li>
+                                        <li>No pre-payment penalties</li>
+                                        <li>Consolidate debt&nbsp;</li>
+                                        <li>Repair or remodel your home</li>
+                                        <li>Purchase a new or used auto<br /><br /></li>
+                                    </ul>
+                                </div>
+                                <br />
+                                <div class="b20consumer_btn_center">
+                                    <a href="https://umnasg7.umonitor.com/consumerloan/uLoan/welcome.do?auth=aa902f55464cde74"
+                                        class="b20mainanchor">APPLY NOW</a>
+                                    <ul>
+                                        <li><a class="b20mainlink" href="{{ route('frontend.en.personal.loans-and-credit-lines.personal-loans') }}">Learn More</a></li>
+                                        <li><a class="b20mainlink"
+                                                href="{{ route('frontend.en.pages.about-us.teams.personal-banking-sioux-falls-team') }}">Contact
+                                                Us</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- View Rate [3] (within container)-->
+                <!-- View Rate [3] (within container)-->
+            </div>
+            <div class="block b20block  col-md-12">
 
 
-            var MonthlyPayment = PMT(actualRateWeCanPass, numberOfMonth, loanAmount, 0, 0);
-            CalculateAmortization(loanAmount, rateValue, MonthlyPayment, numberOfMonth);
-            PopulateAmortizationSummaryData(loanAmount, MonthlyPayment);
-            PopulateAmortizationData(loanAmount);
-            return MonthlyPayment;
-        }
-        $("#calculatedValuetoBind").html("$ " + numberWithCommas(CalculatePaymentAmountBasedOnInput().toFixed(2)));
+                <!-- VIEW RATE / SPEED BUMP [2] -->
+                <script>
+                    $(document).ready(function() {
+                        if ($('#imgMainRight').length <= 0) {
+                            $('.b20consumer-loans-left').css('width', '100%');
+                        }
+                    });
+                </script>
+                <style>
+                    .pop_main_container_board .pop_main_container ol li ol li {}
 
-    });
+                </style>
+                <style>
+                    .b20consumer-loans-left {
+                        padding-top: 0px !important;
+                    }
 
-    function PMT(rate, nperiod, pv, fv, type) {
-        if (!fv) fv = 0;
-        if (!type) type = 0;
+                    .b20consumer-loans-left .xhtml p {
+                        padding-top: 0px !important;
+                    }
 
-        if (rate == 0) return -(pv + fv) / nperiod;
+                    .b17basic_box_grey {
+                        background-color: #f9f9f9 !important;
+                        background-image: none;
+                    }
 
-        var pvif = Math.pow(1 + rate, nperiod);
-        var pmt = rate / (pvif - 1) * -(pv * pvif + fv);
+                    .b17basic_box_white {
+                        background-color: #fff !important;
+                        background-image: none;
+                    }
 
-        if (type == 1) {
-            pmt /= (1 + rate);
-        };
+                    .b20consumer-loans p.sub-header {
+                        padding: 0px 0px 26px 0px;
+                        text-align: center;
+                    }
 
-        return pmt;
-    }
-    function numberWithCommas(x) {
-        return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
-    }
-    function CalculateAmortization(loanAmount, rateValue, MonthlyPayment, numberOfMonth) {
-        AmortizationTable = [];
-        var loanAmountForAmortization = -loanAmount;
-        var rateValueForAmortization = parseFloat(rateValue).toFixed(3) / 1200;
-        var monthlyPayment = MonthlyPayment.toFixed(2);
-        var FirstMonthPayment = {
-            MonthCount: 1,
-            StartingBalance: (loanAmountForAmortization).toFixed(2),
-            Interest: (loanAmountForAmortization * rateValueForAmortization).toFixed(2),
-            Principal: (monthlyPayment - (loanAmountForAmortization * rateValueForAmortization).toFixed(2)).toFixed(2),
-            EndingBalance: (loanAmountForAmortization.toFixed(2) - (monthlyPayment - (loanAmountForAmortization * rateValueForAmortization).toFixed(2))).toFixed(2),
-            TotalInterest: (loanAmountForAmortization.toFixed(2) * rateValueForAmortization).toFixed(2),
-            MonthlyPaymentAmount: monthlyPayment
-        };
-        AmortizationTable.push(FirstMonthPayment);
-        for (var k = 1; k < numberOfMonth; k++) {
-            var MonthlyWisePayment = {
-                MonthCount: (k + 1),
-                StartingBalance: AmortizationTable[k - 1].EndingBalance,
-                Interest: (AmortizationTable[k - 1].EndingBalance * rateValueForAmortization).toFixed(2),
-                Principal: (monthlyPayment - (AmortizationTable[k - 1].EndingBalance * rateValueForAmortization)).toFixed(2),
-                EndingBalance: (AmortizationTable[k - 1].EndingBalance - (monthlyPayment - (AmortizationTable[k - 1].EndingBalance * rateValueForAmortization))).toFixed(2),
-                TotalInterest: (parseFloat(AmortizationTable[k - 1].TotalInterest) + (AmortizationTable[k - 1].EndingBalance * rateValueForAmortization)).toFixed(2),
-                MonthlyPaymentAmount: monthlyPayment
-            }
-            AmortizationTable.push(MonthlyWisePayment);
-        }
+                    @media only screen and (max-width: 767px) {
+                        .b20consumer_btn_center {
+                            width: 100%;
+                        }
+                    }
 
-        var amortizationLastPayment = AmortizationTable.pop();
-        if (amortizationLastPayment.EndingBalance != 0) {
-            amortizationLastPayment.MonthlyPaymentAmount = (parseFloat(amortizationLastPayment.MonthlyPaymentAmount) + parseFloat(amortizationLastPayment.EndingBalance)).toFixed(2);
-            amortizationLastPayment.Principal = (parseFloat(amortizationLastPayment.Principal) + parseFloat(amortizationLastPayment.EndingBalance)).toFixed(2);
-            amortizationLastPayment.EndingBalance = "0.00";
-        }
-        AmortizationTable.push(amortizationLastPayment);
-        //alert("Jay Jalaram");
+                    @media only screen and (max-width: 470px) {
+                        .b20consumer-loans .b20consumer-loans-left {
+                            padding-left: 0px !important;
+                        }
+                    }
+
+                    @media only screen and (max-width: 470px) {
+                        .b20showright a.b20mainanchorL {
+                            margin-left: 25%
+                        }
+                    }
+
+                </style>
+                <!-- VIEW RATE / SPEED BUMP [2] -->
+                <section class="row-full">
+
+                    <div class="b20consumer-loans ">
+                        <div class="container">
+
+                            <h2>Personal Lines of Credit</h2>
 
 
-    }
+                            <div class="b20consumer-loans-left b20showright" style="float:right;">
 
-    function PopulateAmortizationSummaryData(loanAmount, MonthlyPayment) {
-        var actualLoanAmount = -loanAmount;
-        var firstTableHTML;
-        if (Number(AmortizationTable[AmortizationTable.length - 1].MonthlyPaymentAmount) != Number(MonthlyPayment.toFixed(2))) {
-            firstTableHTML = "<tr><td>Loan</td><td>$" + Comma(actualLoanAmount.toFixed(2)) + "</td><td>1</td><td></td></tr>";
-            firstTableHTML += "<tr><td>Payment</td><td>$" + Comma(MonthlyPayment.toFixed(2)) + "</td><td>" + (AmortizationTable.length - 1) + "</td><td>Monthly</td></tr>";
-            firstTableHTML += "<tr><td>Payment</td><td>$" + Comma(AmortizationTable[AmortizationTable.length - 1].MonthlyPaymentAmount) + "</td><td>1</td><td></td></tr>";
-        }
-        else {
-            firstTableHTML = "<tr><td>Loan</td><td>$" + Comma(actualLoanAmount.toFixed(2)) + "</td><td>1</td><td></td></tr>";
-            firstTableHTML += "<tr><td>Loan</td><td>$" + Comma(MonthlyPayment.toFixed(2)) + "</td><td>" + AmortizationTable.length + "</td><td>Monthly</td></tr>";
-        }
-        $('.b23pop_main_container table tbody').eq(0).html(firstTableHTML);
+                                <div class="xhtml">
+                                    <ul>
+                                        <li>Select from several revolving lines of credit</li>
+                                        <li>Get instant access to ready cash</li>
+                                        <li>Secured or unsecured</li>
+                                        <li>Fixed or variable interest rates</li>
+                                        <li>Available as optional <a
+                                                href="../personal-checking/overdraft-protection/index.html">overdraft
+                                                protection</a></li>
+                                    </ul>
+                                    <p>&nbsp;</p>
+                                </div>
+                                <br />
 
+                                <div class="b20consumer_btn_center">
+                                    <!-- b20mainanchorL -->
+                                    <a href="{{ route('frontend.en.personal.loans-and-credit-lines.personal-lines-of-credit') }}" class="b20mainanchorL">Learn More</a>
+                                </div>
+                            </div>
+                            <div class="b20consumer-loans-right"><img id="imgMainRight" alt="couple looking at receipts"
+                                    src="{{ asset('assets/frontend/contentassets/dbed55fba49142b6919198a18b68d42c/1.4_b-20-promo_02_couplepaperwork-min.png') }}"
+                                    class="img-responsive"></div>
+                        </div>
+                    </div>
+                </section>
 
-    }
-
-    function PopulateAmortizationData(loanAmount) {
-        var actualLoanAmount = -loanAmount;
-        var secondTableHTML = "<tr><td>Loan 1</td><td>$" + Comma(actualLoanAmount.toFixed(2)) + "</td><td></td><td>$0.00</td><td>$0.00</td><td>$" + Comma(actualLoanAmount.toFixed(2)) + "</td></tr>";
-        for (var p = 0; p < AmortizationTable.length; p++) {
-            var rowHTML = "";
-            rowHTML += "<tr><td>Payment " + AmortizationTable[p].MonthCount + "</td><td></td>";
-            rowHTML += "<td>$" + Comma(AmortizationTable[p].MonthlyPaymentAmount) + "</td>";
-            rowHTML += "<td>$" + Comma(AmortizationTable[p].Interest) + "</td>";
-            rowHTML += "<td>$" + Comma(AmortizationTable[p].Principal) + "</td>";
-            rowHTML += "<td>$" + Comma(AmortizationTable[p].EndingBalance) + "</td></tr>";
-            secondTableHTML += rowHTML;
-        }
-        var SumValues = amortizationTableTotal();
-        secondTableHTML += "<tr style='font-weight: bold;background-color:#FFFFFF;'><td style='border-top: 2px solid #dee2e6;'>Grand Total</td><td style='border-top: 2px solid #dee2e6;'>$" + Comma(actualLoanAmount.toFixed(2)) + "</td><td style='border-top: 2px solid #dee2e6;'>$" + Comma(SumValues.MonthlyPaymentSum.toFixed(2)) + "</td><td style='border-top: 2px solid #dee2e6;'>$" + Comma(SumValues.InterestSum.toFixed(2)) + "</td><td style='border-top: 2px solid #dee2e6;'>$" + Comma(SumValues.PrincipalSum.toFixed(2)) + "</td><td>$0.00</td></tr>";
-        $('.b23pop_main_container table tbody').eq(1).html(secondTableHTML);
-    }
-
-    function amortizationTableTotal() {
-        return {
-            MonthlyPaymentSum: AmortizationTable.reduce(function (s, a) {
-                return s + Number(a.MonthlyPaymentAmount);
-            }, 0),
-            InterestSum: AmortizationTable.reduce(function (s, a) {
-                return s + Number(a.Interest);
-            }, 0),
-            PrincipalSum: AmortizationTable.reduce(function (s, a) {
-                return s + Number(a.Principal);
-            }, 0)
-        }
-
-    }
-
-
-</script></div><div class="block b04block  col-md-12">
-<style>
-</style>
-<section class="row-full b4background">
-    <div class="container">
-        <div class="b4anywhere_banking" style="width:100%; ">
+                <!-- View Rate [3] (within container)-->
+                <!-- View Rate [3] (within container)-->
+            </div>
+            <div class="block b15block  col-md-12">
+                <section style="padding-left:0px;">
+                    <div class="b15benfits_main_box">
+                        <div class="container">
+                            <div class="b15student_parent_main_content b15-bg-student_parent_main_content">
+                                <div class="b15avtar"><img
+                                        src="{{ asset('assets/frontend/contentassets/cb6319a21d01411bbd2b8a3f5f67e7d8/everfi-loans-and-payments.png') }}"
+                                        title="Loans & Payments" alt="coins falling into hand" height="116px" width="116px">
+                                </div>
+                                <div class="b15avtar_content">
+                                    <h3>Loans & Payments</h3>
+                                    <p>Are you looking to better understand payment options for your lifestyle? Our
+                                        interactive module will help you understand different payment and payoff options.
+                                    </p>
+                                    <div class="clearfix"></div><br /> <a href="#" data-toggle="modal"
+                                        data-target="#a22817800Q8" class="b15learnmore">Learn More</a>
+                                    <div id="a22817800Q8" class="modal fade" role="dialog">
+                                        <div class="modal-dialog pop_board">
+                                            <div class="modal-content">
+                                                <div class="modal-body">
+                                                    <div class="pop_main_container_board"> <button type="button"
+                                                            class="close" data-dismiss="modal" aria-label="Close">
+                                                            <span aria-hidden="true"> <img class="close_icon"
+                                                                    src="../../../static/img/closebutton.png"
+                                                                    alt="First PREMIER Bank"
+                                                                    style="height:17px !important;width:17px !important;">
+                                                            </span> </button>
+                                                        <div class="pop_main_container">
+                                                            <h2>Loans & Payments</h2>
+                                                            <div class="pop_board_white">
+                                                                <div class="row">
+                                                                    <div class="col-md-12" style="padding-left:40px;">
+                                                                        <h4 class="Blue">You will be leaving
+                                                                            firstpremier.com</h4>
+                                                                        <div class="b13points b46Blue"
+                                                                            style="text-align:left;">
+                                                                            <p>Please note, by clicking
+                                                                                &ldquo;continue&rdquo; you will be
+                                                                                redirected to a website that is not operated
+                                                                                or controlled by PREMIER. PREMIER is not
+                                                                                responsible for the content, links, privacy
+                                                                                policy or security of that website. Your use
+                                                                                of that website is subject to its terms of
+                                                                                use and privacy policy. Thank you for
+                                                                                visiting firstpremier.com. If you continue,
+                                                                                we hope you find the information presented
+                                                                                educational and useful.</p>
+                                                                            <p><br /><a
+                                                                                    href="https://firstpremier.everfi-next.net/student/dashboard/financialeducation-achieve/financial-foundations/1687#car-loans/getting-started"
+                                                                                    target="_blank">Continue</a></p>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
                                             </div>
-    </div>
-</section>
-<script>
-    $(".b23financial_calculator_left p:first").text('Use this calculator to estimate how much your loan payment will be.');
-$(".b23overflow_scroll table th:nth-child(4)").text('Interest');;
-</script>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="b15student_parent_main_content b15-bg-student_parent_main_content">
+                                <div class="b15avtar"><img
+                                        src="{{ asset('assets/frontend/globalassets/images/secondary-icons/gold/places/gold-places-secondary-icon-14.png') }}"
+                                        title="Home Mortgage" alt="house" height="116px" width="116px"></div>
+                                <div class="b15avtar_content">
+                                    <h3>Home Mortgage</h3>
+                                    <p>Whether you're buying or building a new home or refinancing to extract equity or
+                                        consolidate debt, we can help.&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+                                        &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+                                        &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;
+                                    </p>
+                                    <div class="clearfix"></div><br /> <a href="{{ route('frontend.en.personal.mortgages') }}">Learn
+                                        More</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
 
-<style>
-    .b4background.colored {
-        background-color: #25455a !important;
-    }
+                <style>
+                    .b4background.colored {
+                        background-color: #25455a !important;
+                    }
 
-    .b4background.colored .b15benfits_main_box {
-        margin: 0px !important;
+                    .b4background.colored .b15benfits_main_box {
+                        margin: 0px !important;
+                    }
 
-    }
+                </style>
+            </div>
+            <div class="block b12block  col-md-12">
+                <style>
+                    .b12faq_main {
+                        float: left;
+                        width: 100%;
+                        padding: 100px 0px 50px 0px !important;
+                        text-align: left;
+                        background: #fff;
+                    }
 
-    .colored h2, .colored .xhtml p {
-    color: #fff !important;
-    }
-
-    .page-Our-Communities .block.b04block.col-md-12 {
-    margin-top: 20px;
-    }
-</style></div><div class="block b26block  col-md-12">
-
-
-
-<style>
-    .carousel-control:focus, .carousel-control:hover, .carousel-control.left, .carousel-control.right {
-        background: none !important;
-    }
-    .b26line_credit_main .carousel-inner { min-height:520px !important;; }
-
-    .white-background h2, .white-background .xhtml, .white-background .xhtml p,
-    .grey-background h2, .grey-background .xhtml, .grey-background .xhtml p
-    {
-        color: #000;
-    }
-</style>
-<script>
-    var alternateBackground = "False";
-    $(document).ready(function () {
-        $('#myCarousel-').carousel({
-            interval: 16000
-        })
-
-        if (alternateBackground.toLowerCase() == "true") {
-            $("#b26linecredit").addClass("alternate_background");
-        } else {
-            $("#b26linecredit").addClass("primary_background");
-        }
-    });
-
-</script>
-
-<section class="row-full">
-    <div class="b26line_credit_main" id="b26linecredit">
-        <div class="container">
-
-                <h2>You May Also Be Interested In</h2>
-
-
-            <div class="row">
-                <div class="col-md-12 hidden-xs hidden-sm">
-                    <div class="carousel" id="myCarousel-" data-interval="false">
-                        <div class="carousel-inner">
-                            <div class='item active'><div class='col-lg-4 col-md-12 col-sm-12 col-xs-12 b26line_credit_loans no-pad'><div class='b26line_credit_loans_left'><img src='{{ asset('assets/frontend/globalassets/ymabii/personal/b-17-promo-01-personal-checking.png') }}' alt='woman on couch using mobile phone'></div><div class='b26line_credit_loans_right'><div class="b26titlerow"><h3 class='deckspanNoCaret'>Personal Checking</h3></div><h3><br clear='all'/><div class="xhtml"><p>From FREE+ Checking with Online &amp; Mobile Banking, we&rsquo;ve got you covered.</p>
-<ul>
-<li><a href="../personal-checking/free-plus-checking/index.html">FREE+ Checking</a></li>
-<li><a href="../personal-checking/reward-checking/index.html">Reward Checking</a></li>
-<li><a href="../online-and-mobile/index.html">Online &amp; Mobile Banking</a></li>
-</ul></div></h3></div></div><div class='col-lg-4 col-md-12 col-sm-12 col-xs-12 b26line_credit_loans b26line_personal_loans no-pad'><div class='b26line_credit_loans_left'><img src='{{ asset('assets/frontend/globalassets/ymabii/personal/b-17-promo-01-grow-wealth.png') }}' alt=''></div><div class='b26line_credit_loans_right'><div class="b26titlerow"><h3 class='deckspanNoCaret'>Grow Your Wealth</h3></div><h3><br clear='all'/><div class="xhtml"><p>We offer concierge-style banking for higher net worth individuals, with managed investing and more.</p>
-<ul>
-<li><a href="../wealth-management/private-banking/index.html">Private Banking</a></li>
-<li><a href="../wealth-management/managed-investing/index.html">Managed Investing</a></li>
-<li><a href="../wealth-management/personal-trust-services/index.html">Personal Trust Services</a></li>
-</ul></div></h3></div></div><div class='col-lg-4 col-md-12 col-sm-12 col-xs-12 b26line_credit_loans no-pad last'><div class='b26line_credit_loans_left'><img src='{{ asset('assets/frontend/globalassets/ymabii/personal/b-17-promo-01-why-bank-with-us.png') }}' alt='Sioux Falls South Dakota'></div><div class='b26line_credit_loans_right'><div class="b26titlerow"><h3 class='deckspanNoCaret'>Why Bank with Us?</h3></div><h3><br clear='all'/><div class="xhtml"><p>As one of the nation&rsquo;s strongest capitalized banks, we&rsquo;re also debt-free. Learn more!</p>
-<ul>
-<li><a href="../../pages/about-us/index.html">About Us</a></li>
-<li><a href="../../pages/about-us/the-premier-way/index.html">The PREMIER Way</a></li>
-<li><a href="../../pages/resources/sanford-health/first-premier-bank-sanford-partnership-offers/index.html">Giving Back to Community</a></li>
-</ul></div></h3></div></div></div>
+                </style>
+                <div class="b12faq_main">
+                    <div class="b12container">
+                        <h2>Frequently Asked Questions</h2>
+                        <!-- tabs left -->
+                        <div class="tabbable">
+                            <div class="tab-content col-md-7">
+                                <div class="tab-pane active" id="A"><span>I paid off my loan so where is my title/lien
+                                        release?</span>
+                                    <p>
+                                    <p>Titles/ lien releases are mailed out through general mail 10-20 day after the loan is
+                                        paid off to the address we have for you on file or to the address specified on
+                                        documents sent in with the pay off. IE: Your insurance agent requested we send it to
+                                        them. If a loan is paid off through wire transfer, the information is released the
+                                        next business day.</p>
+                                    </p>
+                                </div>
+                                <div class="tab-pane" id="B"><span>What do I need to do a wire loan payment?</span>
+                                    <p>
+                                    <p>Contact your bank for wires. You will need your loan account number and the routing
+                                        number for First PREMIER Bank 091408598. They can add additional releasing
+                                        instructions at that time to accompany the wire. Any additional payment over your
+                                        pay off amount will be mailed back to you via check.</p>
+                                    </p>
+                                </div>
+                                <div class="tab-pane" id="C"><span> I lost my lien release/ title. What do I do?
+                                    </span>
+                                    <p>
+                                    <p>We are able to provide a new lien release for paid off loans if needed. Please have
+                                        the Year, Make, and VIN handy for reference if you don&rsquo;t have your loan
+                                        number. However, we are unable to provide new titles. If you need a new title,
+                                        please, contact your state DMV with additional questions.</p>
+                                    </p>
+                                </div>
+                                <div class="tab-pane" id="D"><span>How can I pay off my loan?</span>
+                                    <p>
+                                    <p>Paying off your loan is as simple as issuing a payment equivalent to the loan payoff
+                                        amount. To ensure your final payment amount is accurate, please contact Customer
+                                        Care during normal business hours for an accurate loan payoff amount.</p>
+                                    </p>
+                                </div>
+                                <div class="tab-pane" id="E"><span>How can I make a loan payment?</span>
+                                    <p>
+                                    <p>You can make a loan payment by logging into Online or Mobile Banking (note:
+                                        enrollment and/or download may be required for initial use) and transferring payment
+                                        from a First PREMIER Bank account to your loan. You can also call our Customer Care
+                                        team at 800-501-6535.</p>
+                                    </p>
+                                </div>
+                            </div>
+                            <ul class="nav nav-pills nav-stacked col-md-5">
+                                <li class="active"><a href="#A" data-toggle="tab">I paid off my loan so where is my
+                                        title/lien release?</a></li>
+                                <li><a href="#B" data-toggle="tab">What do I need to do a wire loan payment?</a></li>
+                                <li><a href="#C" data-toggle="tab"> I lost my lien release/ title. What do I do? </a></li>
+                                <li><a href="#D" data-toggle="tab">How can I pay off my loan?</a></li>
+                                <li><a href="#E" data-toggle="tab">How can I make a loan payment?</a></li>
+                            </ul>
                         </div>
                     </div>
                 </div>
-                <div class="b26Mobile col-sm-6 hidden-md hidden-lg" style="left:-8px;">
-                    <center>
-                    <div class="b26MobileCard" style="width:345px;min-height:700px;">
-                        <div class='item'><div class='col-xs-12 col-sm-12 b26AltClass b26line_credit_loans b26line_personal_loans no-pad '><div><img src='../../../globalassets/ymabii/personal/b-17-promo-01-personal-checking.png' alt='woman on couch using mobile phone'></div><div class='b26line_credit_loans_right'><div class="b26titlerow"><h3 class='deckspanNoCaret'>Personal Checking</h3></div><h3><br clear='all'/><div class="xhtml"><p>From FREE+ Checking with Online &amp; Mobile Banking, we&rsquo;ve got you covered.</p>
-<ul>
-<li><a href="../personal-checking/free-plus-checking/index.html">FREE+ Checking</a></li>
-<li><a href="../personal-checking/reward-checking/index.html">Reward Checking</a></li>
-<li><a href="../online-and-mobile/index.html">Online &amp; Mobile Banking</a></li>
-</ul></div></h3></div></div></div><div class='item'><div class='col-xs-12 col-sm-12 b26AltClass b26line_credit_loans b26line_personal_loans no-pad '><div><img src='../../../globalassets/ymabii/personal/b-17-promo-01-grow-wealth.png' alt=''></div><div class='b26line_credit_loans_right'><div class="b26titlerow"><h3 class='deckspanNoCaret'>Grow Your Wealth</h3></div><h3><br clear='all'/><div class="xhtml"><p>We offer concierge-style banking for higher net worth individuals, with managed investing and more.</p>
-<ul>
-<li><a href="../wealth-management/private-banking/index.html">Private Banking</a></li>
-<li><a href="../wealth-management/managed-investing/index.html">Managed Investing</a></li>
-<li><a href="../wealth-management/personal-trust-services/index.html">Personal Trust Services</a></li>
-</ul></div></h3></div></div></div><div class='item'><div class='col-xs-12 col-sm-12 b26AltClass b26line_credit_loans b26line_personal_loans no-pad '><div><img src='../../../globalassets/ymabii/personal/b-17-promo-01-why-bank-with-us.png' alt='Sioux Falls South Dakota'></div><div class='b26line_credit_loans_right'><div class="b26titlerow"><h3 class='deckspanNoCaret'>Why Bank with Us?</h3></div><h3><br clear='all'/><div class="xhtml"><p>As one of the nation&rsquo;s strongest capitalized banks, we&rsquo;re also debt-free. Learn more!</p>
-<ul>
-<li><a href="../../pages/about-us/index.html">About Us</a></li>
-<li><a href="../../pages/about-us/the-premier-way/index.html">The PREMIER Way</a></li>
-<li><a href="../../pages/resources/sanford-health/first-premier-bank-sanford-partnership-offers/index.html">Giving Back to Community</a></li>
-</ul></div></h3></div></div></div>
+
+            </div>
+            <div class="block b23block  col-md-12">
+                <style>
+                    .b23financial_calculator_main {
+                        padding-top: 50px !important;
+                    }
+
+                    .b23financial_calculator_main h2 {
+                        text-align: center;
+                    }
+
+                </style>
+                <section class="row-full">
+
+                    <div class="b23financial_calculator_main">
+                        <div class="container">
+                            <h2>Financial Calculators</h2>
+                            <div class="b23financial_calculator">
+
+                                <div class="b23financial_calculator_left">
+                                    <h3>How much will my loan payments be?</h3>
+                                    <p>Use this calculator to estimate how much your loan payment will be. </p>
+                                    <h4 class="Blue">YOUR LOAN PAYMENT WILL BE</h4>
+                                    <h5 id="calculatedValuetoBind"></h5>
+                                    <a type="button" href="#" class="" data-toggle="modal"
+                                        data-target="#myModal">Show Schedule</a>
+                                </div>
+
+                                <div class="b23financial_calculator_right">
+                                    <div class="form-group">
+                                        <label>Purchase Amount</label>
+                                        <input type="text" value="$ 35,000" id="purchaseAmount"
+                                            onkeyup="this.value=Comma(this.value)" maxlength="14" />
+                                    </div>
+                                    <div class="form-group">
+                                        <label>Down Payment Amount</label>
+                                        <input type="text" value="$ 5,000" id="downPaymentAmount"
+                                            onkeyup="this.value=Comma(this.value)" maxlength="14" />
+                                    </div>
+                                    <div class="form-group">
+                                        <label>Loan Term (yrs)</label>
+                                        <input type="text" value="5" id="loanTerm" maxlength="5" />
+                                    </div>
+                                    <div class="form-group">
+                                        <label>Interest Rate</label>
+                                        <input type="text" value="3.00%" id="interestRate" maxlength="7" />
+                                    </div>
+                                </div>
+                                <div class="b23financial_calculator_left b23mobile_cal">
+                                    <h3>YOUR LOAN PAYMENT WILL BE</h3>
+                                    <h4 id="calculatedValuetoBind"></h4>
+                                    <a type="button" href="#" class="" data-toggle="modal"
+                                        data-target="#myModal">Show Schedule</a>
+                                </div>
+
+                            </div>
+
+                            <!--Pop up content starts-->
+                            <div id="myModal" class="modal fade" role="dialog">
+                                <div class="modal-dialog b23pop_board">
+                                    <div class="modal-content">
+                                        <div class="modal-body">
+                                            <div class="b23pop_main_container_board">
+                                                <button type="button" class="close" data-dismiss="modal"
+                                                    aria-label="Close">
+                                                    <span aria-hidden="true">
+                                                        <img class="close_icon"
+                                                            src="../../../Static/img/CustomBlocks/B23/close.png"
+                                                            alt="First PREMIER Bank">
+                                                    </span>
+                                                </button>
+                                                <div class="b23pop_main_container">
+                                                    <h3>Payment Summary</h3>
+                                                    <table class="table table-striped">
+                                                        <thead>
+                                                            <tr>
+                                                                <th>Event</th>
+                                                                <th>Amount</th>
+                                                                <th>Term</th>
+                                                                <th>Period</th>
+                                                            </tr>
+                                                        </thead>
+                                                        <tbody>
+                                                            <!-- <tr>
+                                            <td>Loan</td>
+                                            <td>$30,000</td>
+                                            <td>1</td>
+                                            <td>Monthly</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Loan</td>
+                                            <td>$30,000</td>
+                                            <td>1</td>
+                                            <td>Monthly</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Loan</td>
+                                            <td>$30,000</td>
+                                            <td>1</td>
+                                            <td>Monthly</td>
+                                        </tr> -->
+                                                        </tbody>
+                                                    </table>
+                                                    <h3>Payment Schedule</h3>
+                                                    <div class="b23overflow_scroll">
+                                                        <table class="table table-striped">
+                                                            <thead>
+                                                                <tr>
+                                                                    <th>Event</th>
+                                                                    <th>Loan</th>
+                                                                    <th>Payment</th>
+                                                                    <th>Interest</th>
+                                                                    <th>Principal</th>
+                                                                    <th>Balance</th>
+                                                                </tr>
+                                                            </thead>
+                                                            <tbody>
+                                                                <!-- <tr>
+                                                <td>Loan</td>
+                                                <td>$30,000</td>
+                                                <td>$567.00</td>
+                                                <td>$567.00</td>
+                                                <td>$567.00</td>
+                                                <td>$30,000</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Loan</td>
+                                                <td>$30,000</td>
+                                                <td>$567.00</td>
+                                                <td>$567.00</td>
+                                                <td>$567.00</td>
+                                                <td>$30,000</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Loan</td>
+                                                <td>$30,000</td>
+                                                <td>$567.00</td>
+                                                <td>$567.00</td>
+                                                <td>$567.00</td>
+                                                <td>$30,000</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Loan</td>
+                                                <td>$30,000</td>
+                                                <td>$567.00</td>
+                                                <td>$567.00</td>
+                                                <td>$567.00</td>
+                                                <td>$30,000</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Loan</td>
+                                                <td>$30,000</td>
+                                                <td>$567.00</td>
+                                                <td>$567.00</td>
+                                                <td>$567.00</td>
+                                                <td>$30,000</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Loan</td>
+                                                <td>$30,000</td>
+                                                <td>$567.00</td>
+                                                <td>$567.00</td>
+                                                <td>$567.00</td>
+                                                <td>$30,000</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Loan</td>
+                                                <td>$30,000</td>
+                                                <td>$567.00</td>
+                                                <td>$567.00</td>
+                                                <td>$567.00</td>
+                                                <td>$30,000</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Loan</td>
+                                                <td>$30,000</td>
+                                                <td>$567.00</td>
+                                                <td>$567.00</td>
+                                                <td>$567.00</td>
+                                                <td>$30,000</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Loan</td>
+                                                <td>$30,000</td>
+                                                <td>$567.00</td>
+                                                <td>$567.00</td>
+                                                <td>$567.00</td>
+                                                <td>$30,000</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Loan</td>
+                                                <td>$30,000</td>
+                                                <td>$567.00</td>
+                                                <td>$567.00</td>
+                                                <td>$567.00</td>
+                                                <td>$30,000</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Loan</td>
+                                                <td>$30,000</td>
+                                                <td>$567.00</td>
+                                                <td>$567.00</td>
+                                                <td>$567.00</td>
+                                                <td>$30,000</td>
+                                            </tr> -->
+                                                            </tbody>
+                                                        </table>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </div>
+                                <!--Pop up content End-->
+                            </div>
+                        </div>
                     </div>
-                    </center>
+                </section>
+
+                <script>
+                    var AmortizationTable = [];
+                    var monthValue = [0.08, 0.16, 0.25, 0.33, 0.41, 0.50, 0.58, 0.66, 0.75, 0.83, 0.91, 0];
+
+                    function Comma(Num) { //function to add commas to textboxes
+                        Num += '';
+                        Num = Num.replace(',', '');
+                        Num = Num.replace(',', '');
+                        Num = Num.replace(',', '');
+                        Num = Num.replace(',', '');
+                        Num = Num.replace(',', '');
+                        Num = Num.replace(',', '');
+                        x = Num.split('.');
+                        x1 = x[0];
+                        x2 = x.length > 1 ? '.' + x[1] : '';
+                        var rgx = /(\d+)(\d{3})/;
+                        while (rgx.test(x1))
+                            x1 = x1.replace(rgx, '$1' + ',' + '$2');
+                        return x1 + x2;
+                    }
+                    $(document).ready(function() {
+                        $("#purchaseAmount").keydown(function(e) {
+                            var oldvalue = $(this).val();
+                            var field = this;
+                            setTimeout(function() {
+                                if (field.value.indexOf('$ ') !== 0) {
+                                    $(field).val(oldvalue);
+                                }
+                            }, 1);
+                        });
+
+                        $("#purchaseAmount").keypress(function(e) {
+                            if (e.which != 8 && e.which != 0 && (e.which < 48 || e.which > 57) && e.which != 44 && e
+                                .which != 46) {
+                                return false;
+                            }
+                        });
+
+                        $("#downPaymentAmount").keydown(function(e) {
+                            var oldvalue = $(this).val();
+                            var field = this;
+                            setTimeout(function() {
+                                if (field.value.indexOf('$ ') !== 0) {
+                                    $(field).val(oldvalue);
+                                }
+                            }, 1);
+                        });
+
+                        $("#downPaymentAmount").keypress(function(e) {
+                            if (e.which != 8 && e.which != 0 && (e.which < 48 || e.which > 57) && e.which != 44 && e
+                                .which != 46) {
+                                return false;
+                            }
+                        });
+
+                        $("#loanTerm").keypress(function(e) {
+                            if (e.which != 8 && e.which != 0 && (e.which < 48 || e.which > 57) && e.which != 46) {
+                                return false;
+                            }
+                        });
+
+                        $('#interestRate').keyup(function() {
+                            var oldstr = $('#interestRate').val();
+                            var str = oldstr.replace('%', '');
+                            $('#interestRate').val(str + '%');
+                        });
+                        $("#interestRate").keypress(function(e) {
+                            if (e.which != 8 && e.which != 0 && (e.which < 48 || e.which > 57) && e.which != 46) {
+                                return false;
+                            }
+                        });
+
+                        $("#purchaseAmount").focusout(function() {
+                            if (CalculatePaymentAmountBasedOnInput() != null && CalculatePaymentAmountBasedOnInput() !=
+                                "" && CalculatePaymentAmountBasedOnInput() != undefined &&
+                                CalculatePaymentAmountBasedOnInput() != "NaN" && CalculatePaymentAmountBasedOnInput() !=
+                                NaN) {
+                                $("#calculatedValuetoBind").html("$ " + numberWithCommas(
+                                    CalculatePaymentAmountBasedOnInput().toFixed(2)));
+                            }
+                        });
+
+                        $("#downPaymentAmount").focusout(function() {
+                            if (CalculatePaymentAmountBasedOnInput() != null && CalculatePaymentAmountBasedOnInput() !=
+                                "" && CalculatePaymentAmountBasedOnInput() != undefined &&
+                                CalculatePaymentAmountBasedOnInput() != "NaN" && CalculatePaymentAmountBasedOnInput() !=
+                                NaN) {
+                                $("#calculatedValuetoBind").html("$ " + numberWithCommas(
+                                    CalculatePaymentAmountBasedOnInput().toFixed(2)));
+                            }
+                        });
+                        $("#loanTerm").focusout(function() {
+                            if (parseFloat($("#loanTerm").val()).toFixed(2) > 30.00) {
+                                alert('Invalid Loan Terms.Maximum value is 30 Years.');
+                                $("#loanTerm").val(5);
+                                return;
+                            } else {
+                                if (CalculatePaymentAmountBasedOnInput() != null &&
+                                CalculatePaymentAmountBasedOnInput() != "" && CalculatePaymentAmountBasedOnInput() !=
+                                    undefined && CalculatePaymentAmountBasedOnInput() != "NaN" &&
+                                    CalculatePaymentAmountBasedOnInput() != NaN) {
+                                    $("#calculatedValuetoBind").html("$ " + numberWithCommas(
+                                        CalculatePaymentAmountBasedOnInput().toFixed(2)));
+                                }
+                            }
+                        });
+                        $("#interestRate").focusout(function() {
+                            if (parseFloat($("#interestRate").val()).toFixed(2) > 100.00) {
+                                alert('Invalid Loan Interest Rate.Maximum value is 100 Percent.');
+                                $("#interestRate").val("3.00%");
+                                return;
+                            } else {
+                                if (CalculatePaymentAmountBasedOnInput() != null &&
+                                CalculatePaymentAmountBasedOnInput() != "" && CalculatePaymentAmountBasedOnInput() !=
+                                    undefined && CalculatePaymentAmountBasedOnInput() != "NaN" &&
+                                    CalculatePaymentAmountBasedOnInput() != NaN) {
+                                    $("#calculatedValuetoBind").html("$ " + numberWithCommas(
+                                        CalculatePaymentAmountBasedOnInput().toFixed(2)));
+                                }
+                            }
+                        });
+
+
+
+
+                        function CalculatePaymentAmountBasedOnInput() {
+                            var purchaseAmount = parseFloat($("#purchaseAmount").val().replace("$", "").replace(/,/g, ""))
+                                .toFixed(2);
+                            if (purchaseAmount == "NaN" || purchaseAmount == "0.00" || purchaseAmount == NaN) {
+                                alert("Please enter valid Purchase Amount");
+                                $("#purchaseAmount").val("$ 35,000");
+                                return;
+                            }
+                            var downPaymentAmount = parseFloat($("#downPaymentAmount").val().replace("$", "").replace(/,/g, ""))
+                                .toFixed(2);
+                            if (downPaymentAmount == "NaN" || downPaymentAmount == NaN) {
+                                alert("Please enter valid Down Payment Amount");
+                                $("#downPaymentAmount").val("$ 5,000");
+                                return;
+                            }
+                            if ((purchaseAmount - downPaymentAmount) < 0) {
+                                alert("Down payment amount must be less than or equal to Purchase amount");
+                                $("#purchaseAmount").val("$ 35,000");
+                                $("#downPaymentAmount").val("$ 5,000");
+                                return;
+                            }
+                            var loanAmount = -(purchaseAmount - downPaymentAmount);
+                            var rateValue = parseFloat($("#interestRate").val().replace("%", "")).toFixed(3);
+                            if (rateValue == "NaN" || rateValue == NaN) {
+                                alert("Please enter valid Interest Rate");
+                                $("#interestRate").val("3.00%");
+                                return;
+                            }
+                            var actualRateWeCanPass = rateValue / 1200;
+                            if (monthValue.indexOf(Number(parseFloat($("#loanTerm").val() % 1).toFixed(2))) == -1 && Number(
+                                    parseFloat($("#loanTerm").val() / 1).toFixed(2)) < 30) {
+                                alert("Please enter valid Loan Term");
+                                $("#loanTerm").val("5");
+                                return;
+                            }
+                            var numberOfMonth = parseFloat($("#loanTerm").val()).toFixed(2) * 12;
+                            numberOfMonth = Math.ceil(numberOfMonth);
+                            if (numberOfMonth == "NaN" || numberOfMonth === 0 || numberOfMonth == NaN) {
+                                alert("Please enter valid Loan Term");
+                                $("#loanTerm").val("5");
+                                return;
+                            }
+
+
+                            var MonthlyPayment = PMT(actualRateWeCanPass, numberOfMonth, loanAmount, 0, 0);
+                            CalculateAmortization(loanAmount, rateValue, MonthlyPayment, numberOfMonth);
+                            PopulateAmortizationSummaryData(loanAmount, MonthlyPayment);
+                            PopulateAmortizationData(loanAmount);
+                            return MonthlyPayment;
+                        }
+                        $("#calculatedValuetoBind").html("$ " + numberWithCommas(CalculatePaymentAmountBasedOnInput().toFixed(
+                            2)));
+
+                    });
+
+                    function PMT(rate, nperiod, pv, fv, type) {
+                        if (!fv) fv = 0;
+                        if (!type) type = 0;
+
+                        if (rate == 0) return -(pv + fv) / nperiod;
+
+                        var pvif = Math.pow(1 + rate, nperiod);
+                        var pmt = rate / (pvif - 1) * -(pv * pvif + fv);
+
+                        if (type == 1) {
+                            pmt /= (1 + rate);
+                        };
+
+                        return pmt;
+                    }
+
+                    function numberWithCommas(x) {
+                        return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+                    }
+
+                    function CalculateAmortization(loanAmount, rateValue, MonthlyPayment, numberOfMonth) {
+                        AmortizationTable = [];
+                        var loanAmountForAmortization = -loanAmount;
+                        var rateValueForAmortization = parseFloat(rateValue).toFixed(3) / 1200;
+                        var monthlyPayment = MonthlyPayment.toFixed(2);
+                        var FirstMonthPayment = {
+                            MonthCount: 1,
+                            StartingBalance: (loanAmountForAmortization).toFixed(2),
+                            Interest: (loanAmountForAmortization * rateValueForAmortization).toFixed(2),
+                            Principal: (monthlyPayment - (loanAmountForAmortization * rateValueForAmortization).toFixed(2)).toFixed(
+                                2),
+                            EndingBalance: (loanAmountForAmortization.toFixed(2) - (monthlyPayment - (loanAmountForAmortization *
+                                rateValueForAmortization).toFixed(2))).toFixed(2),
+                            TotalInterest: (loanAmountForAmortization.toFixed(2) * rateValueForAmortization).toFixed(2),
+                            MonthlyPaymentAmount: monthlyPayment
+                        };
+                        AmortizationTable.push(FirstMonthPayment);
+                        for (var k = 1; k < numberOfMonth; k++) {
+                            var MonthlyWisePayment = {
+                                MonthCount: (k + 1),
+                                StartingBalance: AmortizationTable[k - 1].EndingBalance,
+                                Interest: (AmortizationTable[k - 1].EndingBalance * rateValueForAmortization).toFixed(2),
+                                Principal: (monthlyPayment - (AmortizationTable[k - 1].EndingBalance * rateValueForAmortization))
+                                    .toFixed(2),
+                                EndingBalance: (AmortizationTable[k - 1].EndingBalance - (monthlyPayment - (AmortizationTable[k - 1]
+                                    .EndingBalance * rateValueForAmortization))).toFixed(2),
+                                TotalInterest: (parseFloat(AmortizationTable[k - 1].TotalInterest) + (AmortizationTable[k - 1]
+                                    .EndingBalance * rateValueForAmortization)).toFixed(2),
+                                MonthlyPaymentAmount: monthlyPayment
+                            }
+                            AmortizationTable.push(MonthlyWisePayment);
+                        }
+
+                        var amortizationLastPayment = AmortizationTable.pop();
+                        if (amortizationLastPayment.EndingBalance != 0) {
+                            amortizationLastPayment.MonthlyPaymentAmount = (parseFloat(amortizationLastPayment.MonthlyPaymentAmount) +
+                                parseFloat(amortizationLastPayment.EndingBalance)).toFixed(2);
+                            amortizationLastPayment.Principal = (parseFloat(amortizationLastPayment.Principal) + parseFloat(
+                                amortizationLastPayment.EndingBalance)).toFixed(2);
+                            amortizationLastPayment.EndingBalance = "0.00";
+                        }
+                        AmortizationTable.push(amortizationLastPayment);
+                        //alert("Jay Jalaram");
+
+
+                    }
+
+                    function PopulateAmortizationSummaryData(loanAmount, MonthlyPayment) {
+                        var actualLoanAmount = -loanAmount;
+                        var firstTableHTML;
+                        if (Number(AmortizationTable[AmortizationTable.length - 1].MonthlyPaymentAmount) != Number(MonthlyPayment
+                                .toFixed(2))) {
+                            firstTableHTML = "<tr><td>Loan</td><td>$" + Comma(actualLoanAmount.toFixed(2)) +
+                                "</td><td>1</td><td></td></tr>";
+                            firstTableHTML += "<tr><td>Payment</td><td>$" + Comma(MonthlyPayment.toFixed(2)) + "</td><td>" + (
+                                AmortizationTable.length - 1) + "</td><td>Monthly</td></tr>";
+                            firstTableHTML += "<tr><td>Payment</td><td>$" + Comma(AmortizationTable[AmortizationTable.length - 1]
+                                .MonthlyPaymentAmount) + "</td><td>1</td><td></td></tr>";
+                        } else {
+                            firstTableHTML = "<tr><td>Loan</td><td>$" + Comma(actualLoanAmount.toFixed(2)) +
+                                "</td><td>1</td><td></td></tr>";
+                            firstTableHTML += "<tr><td>Loan</td><td>$" + Comma(MonthlyPayment.toFixed(2)) + "</td><td>" +
+                                AmortizationTable.length + "</td><td>Monthly</td></tr>";
+                        }
+                        $('.b23pop_main_container table tbody').eq(0).html(firstTableHTML);
+
+
+                    }
+
+                    function PopulateAmortizationData(loanAmount) {
+                        var actualLoanAmount = -loanAmount;
+                        var secondTableHTML = "<tr><td>Loan 1</td><td>$" + Comma(actualLoanAmount.toFixed(2)) +
+                            "</td><td></td><td>$0.00</td><td>$0.00</td><td>$" + Comma(actualLoanAmount.toFixed(2)) + "</td></tr>";
+                        for (var p = 0; p < AmortizationTable.length; p++) {
+                            var rowHTML = "";
+                            rowHTML += "<tr><td>Payment " + AmortizationTable[p].MonthCount + "</td><td></td>";
+                            rowHTML += "<td>$" + Comma(AmortizationTable[p].MonthlyPaymentAmount) + "</td>";
+                            rowHTML += "<td>$" + Comma(AmortizationTable[p].Interest) + "</td>";
+                            rowHTML += "<td>$" + Comma(AmortizationTable[p].Principal) + "</td>";
+                            rowHTML += "<td>$" + Comma(AmortizationTable[p].EndingBalance) + "</td></tr>";
+                            secondTableHTML += rowHTML;
+                        }
+                        var SumValues = amortizationTableTotal();
+                        secondTableHTML +=
+                            "<tr style='font-weight: bold;background-color:#FFFFFF;'><td style='border-top: 2px solid #dee2e6;'>Grand Total</td><td style='border-top: 2px solid #dee2e6;'>$" +
+                            Comma(actualLoanAmount.toFixed(2)) + "</td><td style='border-top: 2px solid #dee2e6;'>$" + Comma(SumValues
+                                .MonthlyPaymentSum.toFixed(2)) + "</td><td style='border-top: 2px solid #dee2e6;'>$" + Comma(SumValues
+                                .InterestSum.toFixed(2)) + "</td><td style='border-top: 2px solid #dee2e6;'>$" + Comma(SumValues
+                                .PrincipalSum.toFixed(2)) + "</td><td>$0.00</td></tr>";
+                        $('.b23pop_main_container table tbody').eq(1).html(secondTableHTML);
+                    }
+
+                    function amortizationTableTotal() {
+                        return {
+                            MonthlyPaymentSum: AmortizationTable.reduce(function(s, a) {
+                                return s + Number(a.MonthlyPaymentAmount);
+                            }, 0),
+                            InterestSum: AmortizationTable.reduce(function(s, a) {
+                                return s + Number(a.Interest);
+                            }, 0),
+                            PrincipalSum: AmortizationTable.reduce(function(s, a) {
+                                return s + Number(a.Principal);
+                            }, 0)
+                        }
+
+                    }
+                </script>
+            </div>
+            <div class="block b04block  col-md-12">
+                <style>
+                </style>
+                <section class="row-full b4background">
+                    <div class="container">
+                        <div class="b4anywhere_banking" style="width:100%; ">
+                        </div>
+                    </div>
+                </section>
+                <script>
+                    $(".b23financial_calculator_left p:first").text(
+                        'Use this calculator to estimate how much your loan payment will be.');
+                    $(".b23overflow_scroll table th:nth-child(4)").text('Interest');;
+                </script>
+
+                <style>
+                    .b4background.colored {
+                        background-color: #25455a !important;
+                    }
+
+                    .b4background.colored .b15benfits_main_box {
+                        margin: 0px !important;
+
+                    }
+
+                    .colored h2,
+                    .colored .xhtml p {
+                        color: #fff !important;
+                    }
+
+                    .page-Our-Communities .block.b04block.col-md-12 {
+                        margin-top: 20px;
+                    }
+
+                </style>
+            </div>
+            <div class="block b26block  col-md-12">
+
+
+
+                <style>
+                    .carousel-control:focus,
+                    .carousel-control:hover,
+                    .carousel-control.left,
+                    .carousel-control.right {
+                        background: none !important;
+                    }
+
+                    .b26line_credit_main .carousel-inner {
+                        min-height: 520px !important;
+                        ;
+                    }
+
+                    .white-background h2,
+                    .white-background .xhtml,
+                    .white-background .xhtml p,
+                    .grey-background h2,
+                    .grey-background .xhtml,
+                    .grey-background .xhtml p {
+                        color: #000;
+                    }
+
+                </style>
+                <script>
+                    var alternateBackground = "False";
+                    $(document).ready(function() {
+                        $('#myCarousel-').carousel({
+                            interval: 16000
+                        })
+
+                        if (alternateBackground.toLowerCase() == "true") {
+                            $("#b26linecredit").addClass("alternate_background");
+                        } else {
+                            $("#b26linecredit").addClass("primary_background");
+                        }
+                    });
+                </script>
+
+                <section class="row-full">
+                    <div class="b26line_credit_main" id="b26linecredit">
+                        <div class="container">
+
+                            <h2>You May Also Be Interested In</h2>
+
+
+                            <div class="row">
+                                <div class="col-md-12 hidden-xs hidden-sm">
+                                    <div class="carousel" id="myCarousel-" data-interval="false">
+                                        <div class="carousel-inner">
+                                            <div class='item active'>
+                                                <div
+                                                    class='col-lg-4 col-md-12 col-sm-12 col-xs-12 b26line_credit_loans no-pad'>
+                                                    <div class='b26line_credit_loans_left'><img
+                                                            src='{{ asset('assets/frontend/globalassets/ymabii/personal/b-17-promo-01-personal-checking.png') }}'
+                                                            alt='woman on couch using mobile phone'></div>
+                                                    <div class='b26line_credit_loans_right'>
+                                                        <div class="b26titlerow">
+                                                            <h3 class='deckspanNoCaret'>Personal Checking</h3>
+                                                        </div>
+                                                        <h3><br clear='all' />
+                                                            <div class="xhtml">
+                                                                <p>From FREE+ Checking with Online &amp; Mobile Banking,
+                                                                    we&rsquo;ve got you covered.</p>
+                                                                <ul>
+                                                                    <li><a
+                                                                            href="{{  route('frontend.en.personal.personal-checking.free-plus-checking')  }}">FREE+
+                                                                            Checking</a></li>
+                                                                    <li><a
+                                                                            href="{{ route('frontend.en.personal.personal-checking.reward-checking') }}">Reward
+                                                                            Checking</a></li>
+                                                                    <li><a href="{{ route('frontend.en.personal.online-and-mobile') }}">Online
+                                                                            &amp; Mobile Banking</a></li>
+                                                                </ul>
+                                                            </div>
+                                                        </h3>
+                                                    </div>
+                                                </div>
+                                                <div
+                                                    class='col-lg-4 col-md-12 col-sm-12 col-xs-12 b26line_credit_loans b26line_personal_loans no-pad'>
+                                                    <div class='b26line_credit_loans_left'><img
+                                                            src='{{ asset('assets/frontend/globalassets/ymabii/personal/b-17-promo-01-grow-wealth.png') }}'
+                                                            alt=''></div>
+                                                    <div class='b26line_credit_loans_right'>
+                                                        <div class="b26titlerow">
+                                                            <h3 class='deckspanNoCaret'>Grow Your Wealth</h3>
+                                                        </div>
+                                                        <h3><br clear='all' />
+                                                            <div class="xhtml">
+                                                                <p>We offer concierge-style banking for higher net worth
+                                                                    individuals, with managed investing and more.</p>
+                                                                <ul>
+                                                                    <li><a
+                                                                            href="{{ route('frontend.en.personal.wealth-management.private-banking') }}">Private
+                                                                            Banking</a></li>
+                                                                    <li><a
+                                                                            href="{{ route('frontend.en.personal.wealth-management.managed-investing') }}">Managed
+                                                                            Investing</a></li>
+                                                                    <li><a
+                                                                            href="{{ route('frontend.en.personal.wealth-management.trusts-in-south-dakota') }}">Personal
+                                                                            Trust Services</a></li>
+                                                                </ul>
+                                                            </div>
+                                                        </h3>
+                                                    </div>
+                                                </div>
+                                                <div
+                                                    class='col-lg-4 col-md-12 col-sm-12 col-xs-12 b26line_credit_loans no-pad last'>
+                                                    <div class='b26line_credit_loans_left'><img
+                                                            src='{{ asset('assets/frontend/globalassets/ymabii/personal/b-17-promo-01-why-bank-with-us.png') }}'
+                                                            alt='Sioux Falls South Dakota'></div>
+                                                    <div class='b26line_credit_loans_right'>
+                                                        <div class="b26titlerow">
+                                                            <h3 class='deckspanNoCaret'>Why Bank with Us?</h3>
+                                                        </div>
+                                                        <h3><br clear='all' />
+                                                            <div class="xhtml">
+                                                                <p>As one of the nation&rsquo;s strongest capitalized banks,
+                                                                    we&rsquo;re also debt-free. Learn more!</p>
+                                                                <ul>
+                                                                    <li><a href="{{ route('frontend.en.pages.about-us')}}">About
+                                                                            Us</a></li>
+                                                                    <li><a
+                                                                            href="{{ route('frontend.en.pages.about-us.the-premier-way') }}">The
+                                                                            PREMIER Way</a></li>
+                                                                    <li><a
+                                                                            href="{{ route('frontend.en.pages.resources.sanford-health.first-premier-bank-sanford-partnership-offers') }}">Giving
+                                                                            Back to Community</a></li>
+                                                                </ul>
+                                                            </div>
+                                                        </h3>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="b26Mobile col-sm-6 hidden-md hidden-lg" style="left:-8px;">
+                                    <center>
+                                        <div class="b26MobileCard" style="width:345px;min-height:700px;">
+                                            <div class='item'>
+                                                <div
+                                                    class='col-xs-12 col-sm-12 b26AltClass b26line_credit_loans b26line_personal_loans no-pad '>
+                                                    <div><img
+                                                            src='../../../globalassets/ymabii/personal/b-17-promo-01-personal-checking.png'
+                                                            alt='woman on couch using mobile phone'></div>
+                                                    <div class='b26line_credit_loans_right'>
+                                                        <div class="b26titlerow">
+                                                            <h3 class='deckspanNoCaret'>Personal Checking</h3>
+                                                        </div>
+                                                        <h3><br clear='all' />
+                                                            <div class="xhtml">
+                                                                <p>From FREE+ Checking with Online &amp; Mobile Banking,
+                                                                    we&rsquo;ve got you covered.</p>
+                                                                <ul>
+                                                                    <li><a
+                                                                            href="../personal-checking/free-plus-checking/index.html">FREE+
+                                                                            Checking</a></li>
+                                                                    <li><a
+                                                                            href="../personal-checking/reward-checking/index.html">Reward
+                                                                            Checking</a></li>
+                                                                    <li><a href="../online-and-mobile/index.html">Online
+                                                                            &amp; Mobile Banking</a></li>
+                                                                </ul>
+                                                            </div>
+                                                        </h3>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class='item'>
+                                                <div
+                                                    class='col-xs-12 col-sm-12 b26AltClass b26line_credit_loans b26line_personal_loans no-pad '>
+                                                    <div><img
+                                                            src='../../../globalassets/ymabii/personal/b-17-promo-01-grow-wealth.png'
+                                                            alt=''></div>
+                                                    <div class='b26line_credit_loans_right'>
+                                                        <div class="b26titlerow">
+                                                            <h3 class='deckspanNoCaret'>Grow Your Wealth</h3>
+                                                        </div>
+                                                        <h3><br clear='all' />
+                                                            <div class="xhtml">
+                                                                <p>We offer concierge-style banking for higher net worth
+                                                                    individuals, with managed investing and more.</p>
+                                                                <ul>
+                                                                    <li><a
+                                                                            href="../wealth-management/private-banking/index.html">Private
+                                                                            Banking</a></li>
+                                                                    <li><a
+                                                                            href="../wealth-management/managed-investing/index.html">Managed
+                                                                            Investing</a></li>
+                                                                    <li><a
+                                                                            href="../wealth-management/personal-trust-services/index.html">Personal
+                                                                            Trust Services</a></li>
+                                                                </ul>
+                                                            </div>
+                                                        </h3>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class='item'>
+                                                <div
+                                                    class='col-xs-12 col-sm-12 b26AltClass b26line_credit_loans b26line_personal_loans no-pad '>
+                                                    <div><img
+                                                            src='../../../globalassets/ymabii/personal/b-17-promo-01-why-bank-with-us.png'
+                                                            alt='Sioux Falls South Dakota'></div>
+                                                    <div class='b26line_credit_loans_right'>
+                                                        <div class="b26titlerow">
+                                                            <h3 class='deckspanNoCaret'>Why Bank with Us?</h3>
+                                                        </div>
+                                                        <h3><br clear='all' />
+                                                            <div class="xhtml">
+                                                                <p>As one of the nation&rsquo;s strongest capitalized banks,
+                                                                    we&rsquo;re also debt-free. Learn more!</p>
+                                                                <ul>
+                                                                    <li><a href="../../pages/about-us/index.html">About
+                                                                            Us</a></li>
+                                                                    <li><a
+                                                                            href="../../pages/about-us/the-premier-way/index.html">The
+                                                                            PREMIER Way</a></li>
+                                                                    <li><a
+                                                                            href="../../pages/resources/sanford-health/first-premier-bank-sanford-partnership-offers/index.html">Giving
+                                                                            Back to Community</a></li>
+                                                                </ul>
+                                                            </div>
+                                                        </h3>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </center>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+
+            </div>
+        </div>
+
+
+
+        <div class="row-full footer">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-3 col-sm-3 col-xs-12 footerCol1">
+                        <div class="footerHeader">Company</div>
+        
+                        <ul>
+        
+                            <li>
+                                <a href="{{ route('frontend.en.pages.about-us')}}">About Us</a>
+                            </li>
+        
+                            <li>
+                                <a href="{{ route('frontend') }}">First PREMIER Bank</a>
+                            </li>
+        
+                            <li>
+                                <a href="https://www.mypremiercreditcard.com/">PREMIER Bankcard</a>
+                            </li>
+        
+                            <li>
+                                <a href="{{ route('frontend.en.pages.about-us.leadership-team') }}">Leadership</a>
+                            </li>
+        
+                            <li>
+                                <a href="{{ route('frontend.en.pages.about-us.community') }}">Community</a>
+                            </li>
+        
+                            <li>
+                                <a href="{{route('frontend.en.pages.about.careers')}}">Careers</a>
+                            </li>
+        
+                        </ul>
+                        <br />
+                    </div>
+                    <div class="col-md-3 col-sm-3 col-xs-12 footerCol2">
+                        <div class="footerHeader">Customers</div>
+        
+                        <ul>
+        
+                            <li>
+                                <a href="{{ route('frontend') }}">Personal Banking</a>
+                            </li>
+        
+                            <li>
+                                <a href="{{ route('frontend.en.small-business') }}">Small Business</a>
+                            </li>
+        
+                            <li>
+                                <a href="{{ route('frontend.en.commercial') }}">Commercial</a>
+                            </li>
+        
+                        </ul>
+                        <br />
+                    </div>
+                    <div class="col-md-3 col-sm-3 col-xs-12 footerCol3">
+                        <div class="footerHeader">Help &amp; Contact</div>
+        
+                        <ul>
+        
+                            <li>
+                                <a href="{{ route('frontend.en.pages.quick-links.customer-care') }}">Customer Care</a>
+                            </li>
+        
+                            <li>
+                                <a href="{{ route('frontend.en.pages.quick-links.locations') }}">Locations</a>
+                            </li>
+        
+                            <li>
+                                <a href="{{ route('frontend.en.pages.quick-links.customer-care') }}">BANK: 800-501-6535</a>
+                            </li>
+        
+                            <li>
+                                <a href="https://www.mypremiercreditcard.com/">CREDIT CARD: 800-987-5521</a>
+                            </li>
+        
+                            <li>
+                                <a href="{{ route('frontend') }}">Routing Number: 091408598</a>
+                            </li>
+        
+                        </ul>
+                        <br />
+                    </div>
+                    <div class="col-md-3 col-sm-3 col-xs-12 footerCol4">
+                        <div class="footerHeader">Legal Notices</div>
+        
+                        <ul>
+        
+                            <li>
+                                <a href="{{ route('frontend.en.pages.resources.first-premier-privacy-statement-2020') }}">Privacy
+                                    Notice &amp; Statement</a>
+                            </li>
+        
+                            <li>
+                                <a href="{{ route('frontend.en.pages.resources.legal-disclosures') }}">Legal Disclosures</a>
+                            </li>
+        
+                            <li>
+                                <a href="{{ route('frontend.en.pages.resources.cookie-policy') }}">Cookie Policy</a>
+                            </li>
+        
+                        </ul>
+                    </div>
                 </div>
-
+                <div class="row">
+                    <div class="col-md-12" style="padding-top:50px;">
+                        <p>Member FDIC | <img src="{{asset('assets/frontend/Static/img/equalhousinglender.png')}}" alt="Equal Housing Lender"
+                                title="Equal Housing Lender" />Equal Housing Lender</p>
+                    </div>
+                </div>
             </div>
         </div>
-    </div>
-</section>
+        <style>
+            /* CHROME SAFARI FIX */
+            .form-control:hover,
+            .form-control:active,
+            .form-control:focus {
+                box-shadow: none !important;
+                -moz-box-shadow: none !important;
+                -webkit-box-shadow: none !important;
+            }
 
+            .form-control:hover,
+            .form-control:active,
+            .form-control:focus {
+                box-shadow: none !important;
+                -moz-box-shadow: none !important;
+                -webkit-box-shadow: none !important;
+            }
 
-</div></div>
+            a:focus,
+            a:active {
+                outline: none !important;
+                border: none !important;
+            }
 
+            input:focus,
+            input:active {
+                outline: none !important;
+            }
 
+            textarea:focus {
+                outline: none !important;
+            }
 
-<div class="row-full footer">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-3 col-sm-3 col-xs-12 footerCol1">
-                <div class="footerHeader">Company</div>
+            button:focus,
+            button:active {
+                outline: none !important;
+                border: none !important;
+            }
 
-<ul>
+            .showehllogo {
+                background: url('{{asset("assets/frontend/Static/img/EHLlogo%20white.png")}}') 230px 0px no-repeat;
+                background-size: 24px 24px
+            }
 
-        <li>
-            <a href="../../pages/about-us/index.html">About Us</a>
-        </li>
+        </style>
+        <script type="text/javascript">
+            var ContentId;
+            var Name;
+            var FullName;
+            var EMail;
+            var Phone;
+            var Message;
 
-        <li>
-            <a href="../../index.html">First PREMIER Bank</a>
-        </li>
+            function contactPersonName(value) {
+                ContentId = parseInt($(value).attr('value'));
+                Name = $(value).attr('name');
+                $("#contactWithPersonName").html("Contact " + Name);
+                FullName = "";
+                EMail = "";
+                Message = "";
+                Phone = "";
+                $("#email").val("");
+                $("#fullname").val("");
+                $('#phone').val("");
+                $("#message").val("");
+            }
 
-        <li>
-            <a href="https://www.mypremiercreditcard.com/">PREMIER Bankcard</a>
-        </li>
+            //$("#fullname").val() != "" &&
+            $("#submitButtonB28Block").click(function(event) {
+                if ($("#email").val() != "" &&
+                    $("#message").val() != "") {
+                    FullName = $("#fullname").val();
+                    EMail = $("#email").val();
+                    Phone = $("#phone").val();
+                    Message = $("#message").val();
+                    $.ajax({
+                        type: "POST",
+                        url: '/api/ContactMe?ContentId=' + ContentId + '&ContactToName=' + Name +
+                            '&ContactPersonName=' + FullName + '&ContactPersonEmail=' + EMail +
+                            '&ContactPersonPhone=' + Phone + '&ContactPersonMessage=' + encodeURIComponent(
+                                Message),
+                        contentType: "application/json",
 
-        <li>
-            <a href="../../pages/about-us/leadership-team/index.html">Leadership</a>
-        </li>
+                        success: function(result) {
+                            alert(result);
+                        },
+                        error: function() {
 
-        <li>
-            <a href="../../pages/about-us/community/index.html">Community</a>
-        </li>
-
-        <li>
-            <a href="{{route('frontend.en.pages.about.careers')}}">Careers</a>
-        </li>
-
-</ul>
-                <br />
-            </div>
-            <div class="col-md-3 col-sm-3 col-xs-12 footerCol2">
-                <div class="footerHeader">Customers</div>
-
-<ul>
-
-        <li>
-            <a href="../../index.html">Personal Banking</a>
-        </li>
-
-        <li>
-            <a href="../../small-business/index.html">Small Business</a>
-        </li>
-
-        <li>
-            <a href="../../commercial/index.html">Commercial</a>
-        </li>
-
-</ul>
-                <br />
-            </div>
-            <div class="col-md-3 col-sm-3 col-xs-12 footerCol3">
-                <div class="footerHeader">Help &amp; Contact</div>
-
-<ul>
-
-        <li>
-            <a href="../../pages/quick-links/customer-care/index.html">Customer Care</a>
-        </li>
-
-        <li>
-            <a href="../../pages/quick-links/locations/index.html">Locations</a>
-        </li>
-
-        <li>
-            <a href="../../pages/quick-links/customer-care/index.html">BANK: 800-501-6535</a>
-        </li>
-
-        <li>
-            <a href="https://www.mypremiercreditcard.com/">CREDIT CARD: 800-987-5521</a>
-        </li>
-
-        <li>
-            <a href="../../index.html">Routing Number: 091408598</a>
-        </li>
-
-</ul>
-                <br />
-            </div>
-            <div class="col-md-3 col-sm-3 col-xs-12 footerCol4">
-                <div class="footerHeader">Legal Notices</div>
-
-<ul>
-
-        <li>
-            <a href="../../pages/resources/first-premier-privacy-statement-2020/index.html">Privacy Notice &amp; Statement</a>
-        </li>
-
-        <li>
-            <a href="../../pages/resources/legal-disclosures/index.html">Legal Disclosures</a>
-        </li>
-
-        <li>
-            <a href="../../pages/resources/cookie-policy/index.html">Cookie Policy</a>
-        </li>
-
-</ul>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-md-12" style="padding-top:50px;">
- <p>Member FDIC | <img src="{{ asset('assets/frontend/Static/img/equalhousinglender.png') }}" alt="Equal Housing Lender" title="Equal Housing Lender" />Equal Housing Lender</p>            </div>
-        </div>
-    </div>
-</div>
-<style>
-    /* CHROME SAFARI FIX */
-    .form-control:hover, .form-control:active, .form-control:focus { box-shadow: none !important; -moz-box-shadow: none !important; -webkit-box-shadow: none !important; }
-    .form-control:hover, .form-control:active, .form-control:focus { box-shadow: none !important; -moz-box-shadow: none !important; -webkit-box-shadow: none !important; }
-    a:focus, a:active {outline:none!important; border: none!important; }
-    input:focus, input:active { outline: none !important; }
-    textarea:focus { outline: none !important; }
-    button:focus, button:active { outline: none !important; border: none !important; }
-    .showehllogo { background: url('../../../Static/img/EHLlogo%20white.png') 230px 0px no-repeat; background-size: 24px 24px }
-</style>
-<script type="text/javascript">
-    var ContentId;
-    var Name;
-    var FullName;
-    var EMail;
-    var Phone;
-    var Message;
-    function contactPersonName(value) {
-        ContentId = parseInt($(value).attr('value'));
-        Name = $(value).attr('name');
-        $("#contactWithPersonName").html("Contact " + Name);
-        FullName = "";
-        EMail = "";
-        Message = "";
-        Phone = "";
-        $("#email").val("");
-        $("#fullname").val("");
-        $('#phone').val("");
-        $("#message").val("");
-    }
-
-    //$("#fullname").val() != "" &&
-    $("#submitButtonB28Block").click(function (event) {
-        if ($("#email").val() != "" &&
-            $("#message").val() != "") {
-            FullName = $("#fullname").val();
-            EMail = $("#email").val();
-            Phone = $("#phone").val();
-            Message = $("#message").val();
-            $.ajax({
-                type: "POST",
-                url: '/api/ContactMe?ContentId=' + ContentId + '&ContactToName=' + Name + '&ContactPersonName=' + FullName + '&ContactPersonEmail=' + EMail + '&ContactPersonPhone=' + Phone + '&ContactPersonMessage=' + encodeURIComponent(Message),
-                contentType: "application/json",
-
-                success: function (result) {
-                    alert(result);
-                },
-                error: function () {
-
+                        }
+                    });
                 }
             });
-        }
-    });
-</script>    </div>
-    <div class="smallLogo"><a href="../../index.html" title="First PREMIER Bank - Home"><img src="../../../Static/gfx/Logo.png" style="max-width:100%;" /></a></div>
+        </script>
+    </div>
+    <div class="smallLogo"><a href="../../index.html" title="First PREMIER Bank - Home"><img
+                src="../../../Static/gfx/Logo.png" style="max-width:100%;" /></a></div>
     <script type="text/javascript" src="../../../../dl.episerver.net/13.4.4.1/epi-util/find.js"></script>
-<script type="text/javascript">
-if(FindApi){var api = new FindApi();api.setApplicationUrl('../../../index.html');api.setServiceApiBaseUrl('../../../find_v2/index.html');api.processEventFromCurrentUri();api.bindWindowEvents();api.bindAClickEvent();api.sendBufferedEvents();}
-</script>
+    <script type="text/javascript">
+        if (FindApi) {
+            var api = new FindApi();
+            api.setApplicationUrl('../../../index.html');
+            api.setServiceApiBaseUrl('../../../find_v2/index.html');
+            api.processEventFromCurrentUri();
+            api.bindWindowEvents();
+            api.bindAClickEvent();
+            api.sendBufferedEvents();
+        }
+    </script>
 
     <script type="text/javascript" src="../../../Static/js/pushy.js"></script>
     <script type="text/javascript" src="../../../Static/js/Blocks_2019062002.js"></script>

@@ -6,14 +6,14 @@
 
     <div class="container">
 
- <!--start responsive menu-->
- @include('frontend.layouts.components.header')
- <!-- Main Header -->
- @include('frontend.layouts.components.navbar')
+        <!--start responsive menu-->
+        @include('frontend.layouts.components.header')
+        <!-- Main Header -->
+        @include('frontend.layouts.components.navbar')
 
 
-<!--start responsive menu-->
-{{-- <nav class="pushy pushy-right">
+        <!--start responsive menu-->
+        {{-- <nav class="pushy pushy-right">
     <div class="pushy-content">
         <button class="pushy-link close-b">X</button>
 
@@ -988,739 +988,1081 @@ Asset Management &amp; Trust                                            <i class
     </div>
 </section> --}}
 
- <script>
-
-    $(document).ready(function () {
-
+        <script>
+            $(document).ready(function() {
 
 
-        //$('#AccessAccountDropdown option[id!=selectaccount]').each(function (index, value) {
-        //    $('#signInHoverSection').append('<p>' + $(value).text() + '</p>');
-        //});
 
-        if ($(window).width() == 1024) {
-            $('#ulPremierMainMenu li.SubMenu > a').on('click touchend', function (e) {
-                $(this).find('div[id*=subdiv]').hide();
-                $(this).attr('href', 'javascript:void(0)');
-                ShowMenu(this);
-            }).focusout(function () {
-                ShowMenu(this);
-            });
-        }
-        else {
+                //$('#AccessAccountDropdown option[id!=selectaccount]').each(function (index, value) {
+                //    $('#signInHoverSection').append('<p>' + $(value).text() + '</p>');
+                //});
 
-            var timeoutId;
-            $("#ulPremierMainMenu li.SubMenu > a").hover(function () {
-                var self = this;
-                if (!timeoutId) {
-                    timeoutId = window.setTimeout(function () {
-                        timeoutId = null;
-                        ShowMenu(self);
-                    }, 50);
+                if ($(window).width() == 1024) {
+                    $('#ulPremierMainMenu li.SubMenu > a').on('click touchend', function(e) {
+                        $(this).find('div[id*=subdiv]').hide();
+                        $(this).attr('href', 'javascript:void(0)');
+                        ShowMenu(this);
+                    }).focusout(function() {
+                        ShowMenu(this);
+                    });
+                } else {
+
+                    var timeoutId;
+                    $("#ulPremierMainMenu li.SubMenu > a").hover(function() {
+                            var self = this;
+                            if (!timeoutId) {
+                                timeoutId = window.setTimeout(function() {
+                                    timeoutId = null;
+                                    ShowMenu(self);
+                                }, 50);
+                            }
+                        },
+                        function() {
+                            if (timeoutId) {
+                                window.clearTimeout(timeoutId);
+                                timeoutId = null;
+                            }
+                        });
                 }
-            },
-                function () {
-                    if (timeoutId) {
-                        window.clearTimeout(timeoutId);
-                        timeoutId = null;
+
+                if (sessionStorage.getItem('isClosed') == "true") {
+                    $(".alert").hide();
+                }
+
+                var lastID = null;
+
+                var handleMouseover = function(e) {
+                    var target = e.target || e.srcElement;
+                    lastID = target.id;
+                    className = target.className;
+                    tagName = target.localName;
+                    if (lastID != "ulPremierMainMenu" && lastID != "") {
+                        $('div[id*=subdiv]').slideUp(500);
+                        $('.SubMenuItems li > a').css('color', '#fff').css('border-bottom', '');
                     }
-                });
-        }
+                    if (className == "col-md-8 col-xs-12 col-sm-6" || className == "b1banner_text" || className ==
+                        "b1login_Box" || className == "b1banner-desc" || className == "row b1mobile" || className ==
+                        "b1banner_text" || className == "White" || className == "b1access" || className ==
+                        "header-box" || tagName == "img" || tagName == "body") {
+                        $('div[id*=subdiv]').slideUp(500);
+                        $('.SubMenuItems li > a').css('color', '#fff').css('border-bottom', '');;
+                    }
 
-        if (sessionStorage.getItem('isClosed') == "true") {
-            $(".alert").hide();
-        }
+                };
 
-        var lastID = null;
+                if (document.addEventListener) {
+                    document.addEventListener('mouseover', handleMouseover, false);
+                    document.addEventListener('mouseover', handleMouseover, false);
+                } else {
+                    document.attachEvent('onmouseover', handleMouseover);
+                }
 
-        var handleMouseover = function (e) {
-            var target = e.target || e.srcElement;
-            lastID = target.id;
-            className = target.className;
-            tagName = target.localName;
-            if (lastID != "ulPremierMainMenu" && lastID != "") {
-                $('div[id*=subdiv]').slideUp(500);
-                $('.SubMenuItems li > a').css('color', '#fff').css('border-bottom', '');
-            }
-            if (className == "col-md-8 col-xs-12 col-sm-6" || className == "b1banner_text" || className == "b1login_Box" || className == "b1banner-desc" || className == "row b1mobile" || className == "b1banner_text" || className == "White" || className == "b1access" || className == "header-box" || tagName == "img" || tagName == "body") {
-                $('div[id*=subdiv]').slideUp(500);
-                $('.SubMenuItems li > a').css('color', '#fff').css('border-bottom', '');;
-            }
-
-        };
-
-        if (document.addEventListener) {
-            document.addEventListener('mouseover', handleMouseover, false);
-            document.addEventListener('mouseover', handleMouseover, false);
-        }
-        else {
-            document.attachEvent('onmouseover', handleMouseover);
-        }
-
-    });
-    function ShowMenu(element) {
-        if ($(element).next('div[id*=subdiv]').filter(function () { return $(this).css('display') === 'block'; }).length == 0) {
-            $('div[id*=subdiv]').hide();
-            $(element).next('div[id*=subdiv]').slideDown(500);
-            $('.SubMenuItems li > a').css('color', '#fff').css('border-bottom', '');
-            $(element).css('color', '#e4cb3f').css({
-                "border-bottom-color": "#e4cb3f",
-                "border-bottom-width": "3px",
-                "border-bottom-style": "solid"
             });
-        }
-    }
-    function ShowSignInOption() {
-        if ($('#signInHoverSection').attr('data-present') == "present") {
-            $('#signInHoverSection').toggle();
-        }
-    }
-    function SearchOut() {
-        $('#txtheadsearch').attr('data-val', $('#txtheadsearch').val());
-        $('#txtheadsearch').val(null);
-    }
-    function SearchIn() {
-        var searchText = $('#txtheadsearch').attr('data-val') || '';
-        $('#txtheadsearch').val(searchText);
-    }
-</script>
-    <style>
-        .b54main h2{color:#fff;}
-    </style>
-<div class="row equal-height"><div class="block b19block  col-md-12">
 
-<style>
-    .b19landingpage {
-        height: auto;
-        padding: 40px 0px;
-    }
-</style>
-<script>
+            function ShowMenu(element) {
+                if ($(element).next('div[id*=subdiv]').filter(function() {
+                        return $(this).css('display') === 'block';
+                    }).length == 0) {
+                    $('div[id*=subdiv]').hide();
+                    $(element).next('div[id*=subdiv]').slideDown(500);
+                    $('.SubMenuItems li > a').css('color', '#fff').css('border-bottom', '');
+                    $(element).css('color', '#e4cb3f').css({
+                        "border-bottom-color": "#e4cb3f",
+                        "border-bottom-width": "3px",
+                        "border-bottom-style": "solid"
+                    });
+                }
+            }
 
-    $(document).ready(function () {
-        if (screen.width < 767) {
-            $('.b19landingpage').css('height', '628px');
-            $('.b19landingpage').css('background', '');
-            $('.b19landingpage').css('background-color', '#1b3e43');
-        }
-        else {
-            $('.b19landingpage').css('background', 'url({{asset("assets/frontend/Static/img/svg/green-1.svg")}}) no-repeat');
-        }
-    });
+            function ShowSignInOption() {
+                if ($('#signInHoverSection').attr('data-present') == "present") {
+                    $('#signInHoverSection').toggle();
+                }
+            }
 
-    $(window).resize(function () {
-        if (screen.width < 767) {
-            $('.b19landingpage').css('height', '628px');
-            $('.b19landingpage').css('background', '');
-            $('.b19landingpage').css('background-color', '#1b3e43');
-        }
-        else {
-            $('.b19landingpage').css('background', 'url({{asset("assets/frontend/Static/img/svg/green-1.svg")}}) no-repeat');
-        }
-    });
+            function SearchOut() {
+                $('#txtheadsearch').attr('data-val', $('#txtheadsearch').val());
+                $('#txtheadsearch').val(null);
+            }
 
-</script>
+            function SearchIn() {
+                var searchText = $('#txtheadsearch').attr('data-val') || '';
+                $('#txtheadsearch').val(searchText);
+            }
+        </script>
+        <style>
+            .b54main h2 {
+                color: #fff;
+            }
 
-
-<div class="b19landingpage row-full" style="padding-bottom:0px;">
-    <div class="container">
-        <h1>FREE Online &amp; Mobile Banking</h1>
-        <div class="xhtml"></div>
-        <div class="b19landingpage_box_main">
-
-        <div class="col-md-4 col-sm-6 b19landingpage_box">
-            <a href="{{ route('frontend.en.personal.online-and-mobile.online-banking') }}"><img src="{{ asset('assets/frontend/globalassets/images/primary-icons/gold/hardware/gold-hardware-primary-icon-5.png') }}" title="Online Banking" alt="computer mouse" border="0" /></a>
-            <div class="clearfix"></div>
-                <span><a href="{{ route('frontend.en.personal.online-and-mobile.online-banking') }}">Online Banking</a></span>
-            <div class="xhtml"><p>Our state-of-the art Online Banking gives you 24/7 secure access to your accounts, Bill Pay, eStatements &amp; more.</p></div>
-        </div>
-
-        <div class="col-md-4 col-sm-6 b19landingpage_box">
-            <a href="{{ route('frontend.en.personal.online-and-mobile.mobile-banking') }}"><img src="{{ asset('assets/frontend/globalassets/images/primary-icons/bright/hardware/bright-hardware-primary-icon-12.png') }}" title="Mobile Banking" alt="mobile phone" border="0"></a>
-            <div class="clearfix"></div>
-                <span><a href="{{ route('frontend.en.personal.online-and-mobile.mobile-banking') }}">Mobile Banking</a></span>
-            <div class="xhtml"><p>Download our App and enjoy banking flexibility on-the-go! Check balances, pay bills and deposit checks by snapping a photo.</p></div>
-        </div>
-
-        <div class="col-md-4 col-sm-6 b19landingpage_box">
-            <a href="{{ route('frontend.en.personal.online-and-mobile.mobile-wallet') }}"><img src="{{ asset('assets/frontend/globalassets/images/primary-icons/blue/business-finance/blue-business-_-finance-primary-icon-25.png') }}" title="Mobile Wallet" alt="credit card" border="0"></a>
-            <div class="clearfix"></div>
-                <span><a href="{{ route('frontend.en.personal.online-and-mobile.mobile-wallet') }}">Mobile Wallet</a></span>
-            <div class="xhtml"><p>Speed your way through checkout with your mobile device. Add your First PREMIER Bank debit card to a popular mobile wallet app.</p></div>
-        </div>
-
-        </div>
-    </div>
-</div></div><div class="block b20block  col-md-12">
-
-
-<!-- VIEW RATE / SPEED BUMP [2] -->
-<script>
-    $(document).ready(function () {
-        if ($('#imgMainRight').length <= 0) {
-            $('.b20consumer-loans-left').css('width', '100%');
-        }
-    });
-</script>
-<style>
-    .pop_main_container_board .pop_main_container ol li ol li {  }
-</style>
-<style>
-    .b20consumer-loans-left {
-        padding-top: 0px !important;
-    }
-
-        .b20consumer-loans-left .xhtml p {
-            padding-top: 0px !important;
-        }
-
-    .b17basic_box_grey {
-        background-color: #f9f9f9 !important;
-        background-image: none;
-    }
-
-    .b17basic_box_white {
-        background-color: #fff !important;
-        background-image: none;
-    }
-
-    .b20consumer-loans p.sub-header {
-        padding: 0px 0px 26px 0px;
-        text-align: center;
-    }
-    @media only screen and (max-width: 767px)
-    {
-        .b20consumer_btn_center {
-            width: 100%;
-        }
-    }
-
-    @media only screen and (max-width: 470px) {
-        .b20consumer-loans .b20consumer-loans-left {
-            padding-left: 0px !important;
-        }
-    }
-    @media only screen and (max-width: 470px) {
-       .b20showright a.b20mainanchorL {
-           margin-left: 25%
-        }
-    }
-</style>
-<!-- VIEW RATE / SPEED BUMP [2] -->
-<section class="row-full">
-
-    <div class="b20consumer-loans ">
-        <div class="container">
-
-                <h2>FREE Online Banking</h2>
-
-
-        <div class="b20consumer-loans-left b20showright"  style="float:right;">
-
-                            <div class="xhtml"><ul>
-<li>Enjoy secure, 24/7 access to your accounts</li>
-<li>Check balances and transfer funds with ease</li>
-<li>Schedule and make payments with <a title="Online Bill Pay" href="bill-pay/index.html">Online Bill Pay</a></li>
-<li>Receive paperless monthly <a title="Electronic Statements" href="estatements/index.html">eStatements&nbsp;</a></li>
-<li>Plan your budget with free <a href="personal-financial-management/index.html">spending analysis tools</a></li>
-<li>Lock and unlock lost or stolen <a title="Debit Card" href="../personal-checking/debit-card/index.html" target="_top">debit cards</a></li>
-<li>Monitor spending and balances&nbsp;<br /><br /></li>
-</ul></div>
-                <br />
-
-            <div class="b20consumer_btn_center">
-                <!-- b20mainanchorL -->
-                                <a href="{{ route('frontend.en.personal.online-and-mobile.online-banking') }}" class="b20mainanchorL">Learn More</a>
-                            <span class="b20mainlinkspan">
-<a class="b20mainlink" href="https://online.firstpremier.com/FirstPremierBankOnline_AutoEnroll/enroll.html">Online Banking Enrollment</a>                            </span>
-            </div>
-        </div>
-                    <div class="b20consumer-loans-right"><img id="imgMainRight" alt="woman looking at credit card" src="{{ asset('assets/frontend/contentassets/beadf40cc16f4f3b956dfb8a5820f672/1.2-b-20-content-01-product-benefits-1-womancard-min1.png') }}" class="img-responsive"></div>
-        </div>
-    </div>
-</section>
-
-<!-- View Rate [3] (within container)-->
-<!-- View Rate [3] (within container)--></div><div class="block b20block  col-md-12">
-
-
-<!-- VIEW RATE / SPEED BUMP [2] -->
-<script>
-    $(document).ready(function () {
-        if ($('#imgMainRight').length <= 0) {
-            $('.b20consumer-loans-left').css('width', '100%');
-        }
-    });
-</script>
-<style>
-    .pop_main_container_board .pop_main_container ol li ol li {  }
-</style>
-<style>
-    .b20consumer-loans-left {
-        padding-top: 0px !important;
-    }
-
-        .b20consumer-loans-left .xhtml p {
-            padding-top: 0px !important;
-        }
-
-    .b17basic_box_grey {
-        background-color: #f9f9f9 !important;
-        background-image: none;
-    }
-
-    .b17basic_box_white {
-        background-color: #fff !important;
-        background-image: none;
-    }
-
-    .b20consumer-loans p.sub-header {
-        padding: 0px 0px 26px 0px;
-        text-align: center;
-    }
-    @media only screen and (max-width: 767px)
-    {
-        .b20consumer_btn_center {
-            width: 100%;
-        }
-    }
-
-    @media only screen and (max-width: 470px) {
-        .b20consumer-loans .b20consumer-loans-left {
-            padding-left: 0px !important;
-        }
-    }
-    @media only screen and (max-width: 470px) {
-       .b20showright a.b20mainanchorL {
-           margin-left: 25%
-        }
-    }
-</style>
-<!-- VIEW RATE / SPEED BUMP [2] -->
-<section class="row-full">
-
-    <div class="b20consumer-loans ">
-        <div class="container">
-
-                <h2>FREE Mobile Banking</h2>
-
-
-                    <div class="b20consumer-loans-right"><img id="imgMainRight" src="{{ asset('assets/frontend/contentassets/e988605e48b9488fbef9b3e35e1f63cb/1.2-b-20-content-01-product-benefits-2-womanphone-min.png') }}" alt="woman looking at mobile phone" class="img-responsive"></div>
-        <div class="b20consumer-loans-left">
-                            <div class="xhtml"><ul>
-<li>User friendly mobile app available for iOS and Android</li>
-<li>Enjoy all the features of <a href="{{ route('frontend.en.personal.online-and-mobile.online-banking') }}">Online Banking</a> outlined above</li>
-<li>Pay anyone with a mobile number or email address<sup>1</sup></li>
-<li>Deposit checks using free <a href="mobile-deposit/index.html">Mobile Deposit</a></li>
-<li>Configure multiple <a href="{{ route('frontend.en.personal.online-and-mobile.mobile-wallet') }}">Mobile Wallet</a> apps to streamline checkout</li>
-</ul>
-<p>&nbsp;<br /><a title="Download on the App Store" href="https://itunes.apple.com/us/app/first-premier-bank-south-dakota/id727332747?mt=8" target="_blank" rel="noopener"><img src="{{ asset('assets/frontend/globalassets/images/store_apple-min.png') }}" alt="" width="192" height="57" /></a><a title="Download on Google Play" href="https://play.google.com/store/apps/details?id=com.firstpremierbank3390.mobile" target="_blank" rel="noopener"><img src="{{ asset('assets/frontend/globalassets/images/store_google-min.png') }}" alt="" width="194" height="58" /></a></p></div>
-                <br />
-                            <div class="b20consumer_btn_center">
-                                <a href="{{ route('frontend.en.personal.online-and-mobile.online-banking') }}" class="b20mainanchor">LEARN MORE</a>
-                </div>
-        </div>
-        </div>
-    </div>
-</section>
-
-<!-- View Rate [3] (within container)-->
-<!-- View Rate [3] (within container)--></div><div class="block b54block  col-md-12"><section class="b54block row-full">
-        <div class="b54blue">Bank by Phone</div>
-                <div class="b54main"><h2 style="text-align: center;">Call us at <br />800-315-6350</h2>
-<p style="text-align: center;">Bank-by-Phone is another free, convenient and secure way to access your First PREMIER Bank accounts wherever and whenever you want. You can make transfers or loan payments, check balances and more.</p></div>
-</section></div><div class="block b12block  col-md-12">        <style>
-            .b12faq_main { float: left; width: 100%; padding:100px 0px 50px 0px !important; text-align: left; background: #fff; }
         </style>
-        <div class="b12faq_main">
-            <div class="b12container">
-                <h2>Frequently Asked Questions</h2>
-                <!-- tabs left -->
-                <div class="tabbable">
-                    <div class="tab-content col-md-7">
-                        <div class="tab-pane active" id="A"><span>What is Online Banking?</span><p><p>Online Banking is a FREE service that allows you to access your First PREMIER Bank account information 24 hours a day, 7 days a week. With Online Banking, you can view transactions made on your accounts, transfer funds between accounts, make payments to certain types of loans, and even export account information to software like Microsoft Money&reg; or Quicken&reg;.</p></p></div><div class="tab-pane" id="B"><span>Do I need to enroll for Online Banking before enrolling in Mobile Banking?</span><p><p>No, you can download our Mobile Banking App from one of the App Stores and enroll directly by choosing the "For New Online Customer Enrollment Only" link.</p></p></div><div class="tab-pane" id="C"><span>How often is my account information updated within Online Banking?</span><p><p>Debit card transactions and ATM activity will reflect as a pending transaction&nbsp;near real-time&nbsp;within online banking. All other account activity will update nightly Monday through Friday, with the exception of Federal holidays.</p></p></div>
+        <div class="row equal-height">
+            <div class="block b19block  col-md-12">
+
+                <style>
+                    .b19landingpage {
+                        height: auto;
+                        padding: 40px 0px;
+                    }
+
+                </style>
+                <script>
+                    $(document).ready(function() {
+                        if (screen.width < 767) {
+                            $('.b19landingpage').css('height', '628px');
+                            $('.b19landingpage').css('background', '');
+                            $('.b19landingpage').css('background-color', '#1b3e43');
+                        } else {
+                            $('.b19landingpage').css('background',
+                                'url({{ asset("assets/frontend/Static/img/svg/green-1.svg") }}) no-repeat');
+                        }
+                    });
+
+                    $(window).resize(function() {
+                        if (screen.width < 767) {
+                            $('.b19landingpage').css('height', '628px');
+                            $('.b19landingpage').css('background', '');
+                            $('.b19landingpage').css('background-color', '#1b3e43');
+                        } else {
+                            $('.b19landingpage').css('background',
+                                'url({{ asset("assets/frontend/Static/img/svg/green-1.svg") }}) no-repeat');
+                        }
+                    });
+                </script>
+
+
+                <div class="b19landingpage row-full" style="padding-bottom:0px;">
+                    <div class="container">
+                        <h1>FREE Online &amp; Mobile Banking</h1>
+                        <div class="xhtml"></div>
+                        <div class="b19landingpage_box_main">
+
+                            <div class="col-md-4 col-sm-6 b19landingpage_box">
+                                <a href="{{ route('frontend.en.personal.online-and-mobile.online-banking') }}"><img
+                                        src="{{ asset('assets/frontend/globalassets/images/primary-icons/gold/hardware/gold-hardware-primary-icon-5.png') }}"
+                                        title="Online Banking" alt="computer mouse" border="0" /></a>
+                                <div class="clearfix"></div>
+                                <span><a href="{{ route('frontend.en.personal.online-and-mobile.online-banking') }}">Online
+                                        Banking</a></span>
+                                <div class="xhtml">
+                                    <p>Our state-of-the art Online Banking gives you 24/7 secure access to your accounts,
+                                        Bill Pay, eStatements &amp; more.</p>
+                                </div>
+                            </div>
+
+                            <div class="col-md-4 col-sm-6 b19landingpage_box">
+                                <a href="{{ route('frontend.en.personal.online-and-mobile.mobile-banking') }}"><img
+                                        src="{{ asset('assets/frontend/globalassets/images/primary-icons/bright/hardware/bright-hardware-primary-icon-12.png') }}"
+                                        title="Mobile Banking" alt="mobile phone" border="0"></a>
+                                <div class="clearfix"></div>
+                                <span><a href="{{ route('frontend.en.personal.online-and-mobile.mobile-banking') }}">Mobile
+                                        Banking</a></span>
+                                <div class="xhtml">
+                                    <p>Download our App and enjoy banking flexibility on-the-go! Check balances, pay bills
+                                        and deposit checks by snapping a photo.</p>
+                                </div>
+                            </div>
+
+                            <div class="col-md-4 col-sm-6 b19landingpage_box">
+                                <a href="{{ route('frontend.en.personal.online-and-mobile.mobile-wallet') }}"><img
+                                        src="{{ asset('assets/frontend/globalassets/images/primary-icons/blue/business-finance/blue-business-_-finance-primary-icon-25.png') }}"
+                                        title="Mobile Wallet" alt="credit card" border="0"></a>
+                                <div class="clearfix"></div>
+                                <span><a href="{{ route('frontend.en.personal.online-and-mobile.mobile-wallet') }}">Mobile
+                                        Wallet</a></span>
+                                <div class="xhtml">
+                                    <p>Speed your way through checkout with your mobile device. Add your First PREMIER Bank
+                                        debit card to a popular mobile wallet app.</p>
+                                </div>
+                            </div>
+
+                        </div>
                     </div>
-                    <ul class="nav nav-pills nav-stacked col-md-5">
-                        <li class="active"><a href="#A" data-toggle="tab">What is Online Banking?</a></li><li><a href="#B" data-toggle="tab">Do I need to enroll for Online Banking before enrolling in Mobile Banking?</a></li><li><a href="#C" data-toggle="tab">How often is my account information updated within Online Banking?</a></li>
-                    </ul>
                 </div>
             </div>
-        </div>
+            <div class="block b20block  col-md-12">
 
-</div><div class="block b17block  col-md-12">﻿
-<!-- VIEW RATE / SPEED BUMP [2] -->
-<style>
-    .pop_main_container_board .pop_main_container ol li ol li {  }
-</style>
-<style>
-    /* Changes to Functionality -> Adding the ability to add one or more links after the main button */
 
-    /* B-17 Specific (Added functionality for multiple links) */
-    .b17ButtonLinksSingle .b17link {
-        padding-left: 15px;
-    }
+                <!-- VIEW RATE / SPEED BUMP [2] -->
+                <script>
+                    $(document).ready(function() {
+                        if ($('#imgMainRight').length <= 0) {
+                            $('.b20consumer-loans-left').css('width', '100%');
+                        }
+                    });
+                </script>
+                <style>
+                    .pop_main_container_board .pop_main_container ol li ol li {}
 
-    .b17ButtonLinksMultiple .b17link {
-        float: left;
-        margin-right: 25px;
-    }
+                </style>
+                <style>
+                    .b20consumer-loans-left {
+                        padding-top: 0px !important;
+                    }
 
-    .b17cards {
-        position: relative;
-        z-index: 99;
-        top: -203px !important;
-    }
+                    .b20consumer-loans-left .xhtml p {
+                        padding-top: 0px !important;
+                    }
 
-    .b17basic_box_grey {
-        background-color: #f9f9f9;
-        background-image: none;
-    }
+                    .b17basic_box_grey {
+                        background-color: #f9f9f9 !important;
+                        background-image: none;
+                    }
 
-    .about-us-small-image .b17block {
-        /* max-height: 779px;*/
-    }
+                    .b17basic_box_white {
+                        background-color: #fff !important;
+                        background-image: none;
+                    }
 
-    .b17free_mobile_banking_left.right > img {
-        float: right;
-    }
+                    .b20consumer-loans p.sub-header {
+                        padding: 0px 0px 26px 0px;
+                        text-align: center;
+                    }
 
-    @media only screen and (max-width: 470px) {
-        .b17free_mobile_banking h2 {
-            /* margin-left: 6%;*/
-            margin-top: 5%;
-            text-align: center;
-            width: 100%;
-        }
-}
-</style>
+                    @media only screen and (max-width: 767px) {
+                        .b20consumer_btn_center {
+                            width: 100%;
+                        }
+                    }
 
-<!-- VIEW RATE / SPEED BUMP [2] -->
-<section class="row-full b17promo">
+                    @media only screen and (max-width: 470px) {
+                        .b20consumer-loans .b20consumer-loans-left {
+                            padding-left: 0px !important;
+                        }
+                    }
 
-    <div class="b17free_mobile_banking ">
-        <div class="container">
-            <h2>Mobile Wallet</h2>
+                    @media only screen and (max-width: 470px) {
+                        .b20showright a.b20mainanchorL {
+                            margin-left: 25%
+                        }
+                    }
 
-            <div class="b17free_mobile_banking_right">
-                    <h3><p>Faster Checkout with Your Mobile Device</p></h3>
-                                <div class="xhtml"><p>Speed your way through checkout by linking your First PREMIER Bank Debit Mastercard&reg; to popular mobile wallet apps and streamline checkout with your phone or mobile device. We support:</p>
-<ul>
-<li>&nbsp;<a title="Samsung Pay" href="../../small-business/online-and-mobile/mobile-wallet/samsung-pay/index.html">Samsung Pay</a></li>
-<li>&nbsp;<a title="Android Pay" href="../../small-business/online-and-mobile/mobile-wallet/google-pay/index.html">Google Pay</a></li>
-<li>&nbsp;<a title="Apple Pay" href="../../small-business/online-and-mobile/mobile-wallet/apple-pay/index.html">Apple Pay</a></li>
-</ul></div>
-                <div class="b17PayLinks payIcon-space">
-<a href="https://www.apple.com/apple-pay/"><img src="{{ asset('assets/frontend/Static/img/PayIcons/apple-pay-icon.png') }}" border="0" /></a><a href="https://pay.google.com/about/"><img src="{{ asset('assets/frontend/Static/img/PayIcons/android-pay-icon.png') }}" border="0" class="payIcon" /></a><a href="https://www.samsung.com/us/samsung-pay/"><img src="{{ asset('assets/frontend/Static/img/PayIcons/samsung-pay-icon.png') }}" border="0" class="payIcon" /></a>                </div>
+                </style>
+                <!-- VIEW RATE / SPEED BUMP [2] -->
+                <section class="row-full">
 
-                <!-- Button and Footer Links go here ... -->
-                                <a href="../../small-business/online-and-mobile/mobile-wallet/index.html" class="b17readmore">Learn More</a>
+                    <div class="b20consumer-loans ">
+                        <div class="container">
+
+                            <h2>FREE Online Banking</h2>
+
+
+                            <div class="b20consumer-loans-left b20showright" style="float:right;">
+
+                                <div class="xhtml">
+                                    <ul>
+                                        <li>Enjoy secure, 24/7 access to your accounts</li>
+                                        <li>Check balances and transfer funds with ease</li>
+                                        <li>Schedule and make payments with <a title="Online Bill Pay"
+                                                href="bill-pay/index.html">Online Bill Pay</a></li>
+                                        <li>Receive paperless monthly <a title="Electronic Statements"
+                                                href="estatements/index.html">eStatements&nbsp;</a></li>
+                                        <li>Plan your budget with free <a
+                                                href="personal-financial-management/index.html">spending analysis tools</a>
+                                        </li>
+                                        <li>Lock and unlock lost or stolen <a title="Debit Card"
+                                                href="../personal-checking/debit-card/index.html" target="_top">debit
+                                                cards</a></li>
+                                        <li>Monitor spending and balances&nbsp;<br /><br /></li>
+                                    </ul>
+                                </div>
+                                <br />
+
+                                <div class="b20consumer_btn_center">
+                                    <!-- b20mainanchorL -->
+                                    <a href="{{ route('frontend.en.personal.online-and-mobile.online-banking') }}"
+                                        class="b20mainanchorL">Learn More</a>
+                                    <span class="b20mainlinkspan">
+                                        <a class="b20mainlink"
+                                            href="https://online.firstpremier.com/FirstPremierBankOnline_AutoEnroll/enroll.html">Online
+                                            Banking Enrollment</a> </span>
+                                </div>
+                            </div>
+                            <div class="b20consumer-loans-right"><img id="imgMainRight" alt="woman looking at credit card"
+                                    src="{{ asset('assets/frontend/contentassets/beadf40cc16f4f3b956dfb8a5820f672/1.2-b-20-content-01-product-benefits-1-womancard-min1.png') }}"
+                                    class="img-responsive"></div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- View Rate [3] (within container)-->
+                <!-- View Rate [3] (within container)-->
             </div>
+            <div class="block b20block  col-md-12">
 
-                <div class="b17free_mobile_banking_left right">
-                    <img class="img-responsive" id="imgMainImage" style="border-radius:50%" src="{{ asset('assets/frontend/contentassets/b140f48dc3fa4b7491e42cd9f6169bfb/fpb_mobile_wallet.png') }}" alt="First PREMIER Bank">
+
+                <!-- VIEW RATE / SPEED BUMP [2] -->
+                <script>
+                    $(document).ready(function() {
+                        if ($('#imgMainRight').length <= 0) {
+                            $('.b20consumer-loans-left').css('width', '100%');
+                        }
+                    });
+                </script>
+                <style>
+                    .pop_main_container_board .pop_main_container ol li ol li {}
+
+                </style>
+                <style>
+                    .b20consumer-loans-left {
+                        padding-top: 0px !important;
+                    }
+
+                    .b20consumer-loans-left .xhtml p {
+                        padding-top: 0px !important;
+                    }
+
+                    .b17basic_box_grey {
+                        background-color: #f9f9f9 !important;
+                        background-image: none;
+                    }
+
+                    .b17basic_box_white {
+                        background-color: #fff !important;
+                        background-image: none;
+                    }
+
+                    .b20consumer-loans p.sub-header {
+                        padding: 0px 0px 26px 0px;
+                        text-align: center;
+                    }
+
+                    @media only screen and (max-width: 767px) {
+                        .b20consumer_btn_center {
+                            width: 100%;
+                        }
+                    }
+
+                    @media only screen and (max-width: 470px) {
+                        .b20consumer-loans .b20consumer-loans-left {
+                            padding-left: 0px !important;
+                        }
+                    }
+
+                    @media only screen and (max-width: 470px) {
+                        .b20showright a.b20mainanchorL {
+                            margin-left: 25%
+                        }
+                    }
+
+                </style>
+                <!-- VIEW RATE / SPEED BUMP [2] -->
+                <section class="row-full">
+
+                    <div class="b20consumer-loans ">
+                        <div class="container">
+
+                            <h2>FREE Mobile Banking</h2>
+
+
+                            <div class="b20consumer-loans-right"><img id="imgMainRight"
+                                    src="{{ asset('assets/frontend/contentassets/e988605e48b9488fbef9b3e35e1f63cb/1.2-b-20-content-01-product-benefits-2-womanphone-min.png') }}"
+                                    alt="woman looking at mobile phone" class="img-responsive"></div>
+                            <div class="b20consumer-loans-left">
+                                <div class="xhtml">
+                                    <ul>
+                                        <li>User friendly mobile app available for iOS and Android</li>
+                                        <li>Enjoy all the features of <a
+                                                href="{{ route('frontend.en.personal.online-and-mobile.online-banking') }}">Online
+                                                Banking</a> outlined above</li>
+                                        <li>Pay anyone with a mobile number or email address<sup>1</sup></li>
+                                        <li>Deposit checks using free <a href="{{ route('frontend.en.personal.online-and-mobile.mobile-deposit') }}">Mobile Deposit</a>
+                                        </li>
+                                        <li>Configure multiple <a
+                                                href="{{ route('frontend.en.personal.online-and-mobile.mobile-wallet') }}">Mobile
+                                                Wallet</a> apps to streamline checkout</li>
+                                    </ul>
+                                    <p>&nbsp;<br /><a title="Download on the App Store"
+                                            href="https://itunes.apple.com/us/app/first-premier-bank-south-dakota/id727332747?mt=8"
+                                            target="_blank" rel="noopener"><img
+                                                src="{{ asset('assets/frontend/globalassets/images/store_apple-min.png') }}"
+                                                alt="" width="192" height="57" /></a><a title="Download on Google Play"
+                                            href="https://play.google.com/store/apps/details?id=com.firstpremierbank3390.mobile"
+                                            target="_blank" rel="noopener"><img
+                                                src="{{ asset('assets/frontend/globalassets/images/store_google-min.png') }}"
+                                                alt="" width="194" height="58" /></a></p>
+                                </div>
+                                <br />
+                                <div class="b20consumer_btn_center">
+                                    <a href="{{ route('frontend.en.personal.online-and-mobile.online-banking') }}"
+                                        class="b20mainanchor">LEARN MORE</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- View Rate [3] (within container)-->
+                <!-- View Rate [3] (within container)-->
+            </div>
+            <div class="block b54block  col-md-12">
+                <section class="b54block row-full">
+                    <div class="b54blue">Bank by Phone</div>
+                    <div class="b54main">
+                        <h2 style="text-align: center;">Call us at <br />800-315-6350</h2>
+                        <p style="text-align: center;">Bank-by-Phone is another free, convenient and secure way to access
+                            your First PREMIER Bank accounts wherever and whenever you want. You can make transfers or loan
+                            payments, check balances and more.</p>
+                    </div>
+                </section>
+            </div>
+            <div class="block b12block  col-md-12">
+                <style>
+                    .b12faq_main {
+                        float: left;
+                        width: 100%;
+                        padding: 100px 0px 50px 0px !important;
+                        text-align: left;
+                        background: #fff;
+                    }
+
+                </style>
+                <div class="b12faq_main">
+                    <div class="b12container">
+                        <h2>Frequently Asked Questions</h2>
+                        <!-- tabs left -->
+                        <div class="tabbable">
+                            <div class="tab-content col-md-7">
+                                <div class="tab-pane active" id="A"><span>What is Online Banking?</span>
+                                    <p>
+                                    <p>Online Banking is a FREE service that allows you to access your First PREMIER Bank
+                                        account information 24 hours a day, 7 days a week. With Online Banking, you can view
+                                        transactions made on your accounts, transfer funds between accounts, make payments
+                                        to certain types of loans, and even export account information to software like
+                                        Microsoft Money&reg; or Quicken&reg;.</p>
+                                    </p>
+                                </div>
+                                <div class="tab-pane" id="B"><span>Do I need to enroll for Online Banking before
+                                        enrolling in Mobile Banking?</span>
+                                    <p>
+                                    <p>No, you can download our Mobile Banking App from one of the App Stores and enroll
+                                        directly by choosing the "For New Online Customer Enrollment Only" link.</p>
+                                    </p>
+                                </div>
+                                <div class="tab-pane" id="C"><span>How often is my account information updated within
+                                        Online Banking?</span>
+                                    <p>
+                                    <p>Debit card transactions and ATM activity will reflect as a pending
+                                        transaction&nbsp;near real-time&nbsp;within online banking. All other account
+                                        activity will update nightly Monday through Friday, with the exception of Federal
+                                        holidays.</p>
+                                    </p>
+                                </div>
+                            </div>
+                            <ul class="nav nav-pills nav-stacked col-md-5">
+                                <li class="active"><a href="#A" data-toggle="tab">What is Online Banking?</a></li>
+                                <li><a href="#B" data-toggle="tab">Do I need to enroll for Online Banking before enrolling
+                                        in Mobile Banking?</a></li>
+                                <li><a href="#C" data-toggle="tab">How often is my account information updated within Online
+                                        Banking?</a></li>
+                            </ul>
+                        </div>
+                    </div>
                 </div>
-        </div>
-    </div>
+
+            </div>
+            <div class="block b17block  col-md-12">﻿
+                <!-- VIEW RATE / SPEED BUMP [2] -->
+                <style>
+                    .pop_main_container_board .pop_main_container ol li ol li {}
+
+                </style>
+                <style>
+                    /* Changes to Functionality -> Adding the ability to add one or more links after the main button */
+
+                    /* B-17 Specific (Added functionality for multiple links) */
+                    .b17ButtonLinksSingle .b17link {
+                        padding-left: 15px;
+                    }
+
+                    .b17ButtonLinksMultiple .b17link {
+                        float: left;
+                        margin-right: 25px;
+                    }
+
+                    .b17cards {
+                        position: relative;
+                        z-index: 99;
+                        top: -203px !important;
+                    }
+
+                    .b17basic_box_grey {
+                        background-color: #f9f9f9;
+                        background-image: none;
+                    }
+
+                    .about-us-small-image .b17block {
+                        /* max-height: 779px;*/
+                    }
+
+                    .b17free_mobile_banking_left.right>img {
+                        float: right;
+                    }
+
+                    @media only screen and (max-width: 470px) {
+                        .b17free_mobile_banking h2 {
+                            /* margin-left: 6%;*/
+                            margin-top: 5%;
+                            text-align: center;
+                            width: 100%;
+                        }
+                    }
+
+                </style>
+
+                <!-- VIEW RATE / SPEED BUMP [2] -->
+                <section class="row-full b17promo">
+
+                    <div class="b17free_mobile_banking ">
+                        <div class="container">
+                            <h2>Mobile Wallet</h2>
+
+                            <div class="b17free_mobile_banking_right">
+                                <h3>
+                                    <p>Faster Checkout with Your Mobile Device</p>
+                                </h3>
+                                <div class="xhtml">
+                                    <p>Speed your way through checkout by linking your First PREMIER Bank Debit
+                                        Mastercard&reg; to popular mobile wallet apps and streamline checkout with your
+                                        phone or mobile device. We support:</p>
+                                    <ul>
+                                        <li>&nbsp;<a title="Samsung Pay"
+                                                href="{{ route('frontend.en.small-business.online-and-mobile.mobile-wallet.samsung-pay') }}">Samsung
+                                                Pay</a></li>
+                                        <li>&nbsp;<a title="Android Pay"
+                                                href="{{ route('frontend.en.small-business.online-and-mobile.mobile-wallet.google-pay') }}">Google
+                                                Pay</a></li>
+                                        <li>&nbsp;<a title="Apple Pay"
+                                                href="{{ route('frontend.en.small-business.online-and-mobile.mobile-wallet.apple-pay') }}">Apple
+                                                Pay</a></li>
+                                    </ul>
+                                </div>
+                                <div class="b17PayLinks payIcon-space">
+                                    <a href="https://www.apple.com/apple-pay/"><img
+                                            src="{{ asset('assets/frontend/Static/img/PayIcons/apple-pay-icon.png') }}"
+                                            border="0" /></a><a href="https://pay.google.com/about/"><img
+                                            src="{{ asset('assets/frontend/Static/img/PayIcons/android-pay-icon.png') }}"
+                                            border="0" class="payIcon" /></a><a
+                                        href="https://www.samsung.com/us/samsung-pay/"><img
+                                            src="{{ asset('assets/frontend/Static/img/PayIcons/samsung-pay-icon.png') }}"
+                                            border="0" class="payIcon" /></a>
+                                </div>
+
+                                <!-- Button and Footer Links go here ... -->
+                                <a href="{{ route('frontend.en.personal.online-and-mobile.mobile-wallet') }}"
+                                    class="b17readmore">Learn More</a>
+                            </div>
+
+                            <div class="b17free_mobile_banking_left right">
+                                <img class="img-responsive" id="imgMainImage" style="border-radius:50%"
+                                    src="{{ asset('assets/frontend/contentassets/b140f48dc3fa4b7491e42cd9f6169bfb/fpb_mobile_wallet.png') }}"
+                                    alt="First PREMIER Bank">
+                            </div>
+                        </div>
+                    </div>
 
 
-    <div id="a31917527" class="modal fade" role="dialog">
-        <div class="modal-dialog pop_board">
-            <div class="modal-content">
-                <div class="modal-body">
-                    <div class="pop_main_container_board">
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                            <span aria-hidden="true">
-                                <img class="close_icon" src="{{ asset('assets/frontend/static/img/closebutton.png') }}" alt="First PREMIER Bank" style="height:17px !important;width:17px !important;">
-                            </span>
-                        </button>
-                        <div class="pop_main_container">
-                                <h2>Mobile Wallet</h2>
-                            <div class="pop_board_white">
-                                <div class="row">
-                                    <div class="col-md-12" style="padding-left:40px;">
-                                        <h4 class="Blue"></h4>
-                                        <div class="b46Blue" style="text-align:left;">
+                    <div id="a31917527" class="modal fade" role="dialog">
+                        <div class="modal-dialog pop_board">
+                            <div class="modal-content">
+                                <div class="modal-body">
+                                    <div class="pop_main_container_board">
+                                        <button type="button" class="close" data-dismiss="modal"
+                                            aria-label="Close">
+                                            <span aria-hidden="true">
+                                                <img class="close_icon"
+                                                    src="{{ asset('assets/frontend/static/img/closebutton.png') }}"
+                                                    alt="First PREMIER Bank"
+                                                    style="height:17px !important;width:17px !important;">
+                                            </span>
+                                        </button>
+                                        <div class="pop_main_container">
+                                            <h2>Mobile Wallet</h2>
+                                            <div class="pop_board_white">
+                                                <div class="row">
+                                                    <div class="col-md-12" style="padding-left:40px;">
+                                                        <h4 class="Blue"></h4>
+                                                        <div class="b46Blue" style="text-align:left;">
 
-                                            <p><br /><a href="../../small-business/online-and-mobile/mobile-wallet/index.html" target="_blank"></a></p>
+                                                            <p><br /><a
+                                                                    href="../../small-business/online-and-mobile/mobile-wallet/index.html"
+                                                                    target="_blank"></a></p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                </div>
+                </section>
+
+                <!-- View Rate [3] (within container)-->
+                <!-- View Rate [3] (within container)-->
+                <script>
+                    $('.modal-backdrop').remove();
+                </script>
             </div>
-        </div>
-    </div>
-</section>
-
-<!-- View Rate [3] (within container)-->
-<!-- View Rate [3] (within container)-->
-<script>
-    $('.modal-backdrop').remove();
-</script></div><div class="block b26block  col-md-12">
+            <div class="block b26block  col-md-12">
 
 
 
-<style>
-    .carousel-control:focus, .carousel-control:hover, .carousel-control.left, .carousel-control.right {
-        background: none !important;
-    }
-    .b26line_credit_main .carousel-inner { min-height:520px !important;; }
+                <style>
+                    .carousel-control:focus,
+                    .carousel-control:hover,
+                    .carousel-control.left,
+                    .carousel-control.right {
+                        background: none !important;
+                    }
 
-    .white-background h2, .white-background .xhtml, .white-background .xhtml p,
-    .grey-background h2, .grey-background .xhtml, .grey-background .xhtml p
-    {
-        color: #000;
-    }
-</style>
-<script>
-    var alternateBackground = "True";
-    $(document).ready(function () {
-        $('#myCarousel-').carousel({
-            interval: 16000
-        })
+                    .b26line_credit_main .carousel-inner {
+                        min-height: 520px !important;
+                        ;
+                    }
 
-        if (alternateBackground.toLowerCase() == "true") {
-            $("#b26linecredit").addClass("alternate_background");
-        } else {
-            $("#b26linecredit").addClass("primary_background");
-        }
-    });
+                    .white-background h2,
+                    .white-background .xhtml,
+                    .white-background .xhtml p,
+                    .grey-background h2,
+                    .grey-background .xhtml,
+                    .grey-background .xhtml p {
+                        color: #000;
+                    }
 
-</script>
+                </style>
+                <script>
+                    var alternateBackground = "True";
+                    $(document).ready(function() {
+                        $('#myCarousel-').carousel({
+                            interval: 16000
+                        })
 
-<section class="row-full">
-    <div class="b26line_credit_main" id="b26linecredit">
-        <div class="container">
+                        if (alternateBackground.toLowerCase() == "true") {
+                            $("#b26linecredit").addClass("alternate_background");
+                        } else {
+                            $("#b26linecredit").addClass("primary_background");
+                        }
+                    });
+                </script>
 
-                <h2>You May Also Be Interested In</h2>
+                <section class="row-full">
+                    <div class="b26line_credit_main" id="b26linecredit">
+                        <div class="container">
+
+                            <h2>You May Also Be Interested In</h2>
 
 
-            <div class="row">
-                <div class="col-md-12 hidden-xs hidden-sm">
-                    <div class="carousel" id="myCarousel-" data-interval="false">
-                        <div class="carousel-inner">
-                            <div class='item active'><div class='col-lg-4 col-md-12 col-sm-12 col-xs-12 b26line_credit_loans no-pad'><div class='b26line_credit_loans_left'><img src='{{ asset('assets/frontend/globalassets/ymabii/personal/b-17-promo-01-personal-checking.png') }}' alt='woman on couch using mobile phone'></div><div class='b26line_credit_loans_right'><div class="b26titlerow"><h3 class='deckspanNoCaret'>Personal Checking</h3></div><h3><br clear='all'/><div class="xhtml"><p>From FREE+ Checking with Online &amp; Mobile Banking, we&rsquo;ve got you covered.</p>
-<ul>
-<li><a href="../personal-checking/free-plus-checking/index.html">FREE+ Checking</a></li>
-<li><a href="../personal-checking/reward-checking/index.html">Reward Checking</a></li>
-<li><a href="index.html">Online &amp; Mobile Banking</a></li>
-</ul></div></h3></div></div><div class='col-lg-4 col-md-12 col-sm-12 col-xs-12 b26line_credit_loans b26line_personal_loans no-pad'><div class='b26line_credit_loans_left'><img src='{{ asset('assets/frontend/globalassets/ymabii/personal/b-17-promo-01-loans-credit.png') }}' alt='couple shaking hands with banker'></div><div class='b26line_credit_loans_right'><div class="b26titlerow"><h3 class='deckspanNoCaret'>Loans & Credit Lines</h3></div><h3><br clear='all'/><div class="xhtml"><p>Competitive rates on loans of all sizes, lines of credit and more. We make our lending decisions locally.</p>
-<ul>
-<li><a href="../loans-and-credit-lines/personal-loans/index.html">Personal Loans</a></li>
-<li><a href="../loans-and-credit-lines/personal-lines-of-credit/index.html">Personal Lines of Credit</a></li>
-</ul></div></h3></div></div><div class='col-lg-4 col-md-12 col-sm-12 col-xs-12 b26line_credit_loans no-pad last'><div class='b26line_credit_loans_left'><img src='{{ asset('assets/frontend/globalassets/ymabii/personal/b-17-promo-01-save-future.png') }}' alt='couple looking over document'></div><div class='b26line_credit_loans_right'><div class="b26titlerow"><h3 class='deckspanNoCaret'>Save for the Future</h3></div><h3><br clear='all'/><div class="xhtml"><p>We can help you invest wisely with solid investment advice and access to an array of funds.</p>
-<ul>
-<li><a href="../savings-and-cds/index.html">Savings &amp; CDs</a></li>
-<li><a href="../investing/index.html">Investing</a></li>
-<li><a href="../investing/retirement-planning/index.html">Retirement Planning</a></li>
-</ul></div></h3></div></div></div>
+                            <div class="row">
+                                <div class="col-md-12 hidden-xs hidden-sm">
+                                    <div class="carousel" id="myCarousel-" data-interval="false">
+                                        <div class="carousel-inner">
+                                            <div class='item active'>
+                                                <div
+                                                    class='col-lg-4 col-md-12 col-sm-12 col-xs-12 b26line_credit_loans no-pad'>
+                                                    <div class='b26line_credit_loans_left'><img
+                                                            src='{{ asset('assets/frontend/globalassets/ymabii/personal/b-17-promo-01-personal-checking.png') }}'
+                                                            alt='woman on couch using mobile phone'></div>
+                                                    <div class='b26line_credit_loans_right'>
+                                                        <div class="b26titlerow">
+                                                            <h3 class='deckspanNoCaret'>Personal Checking</h3>
+                                                        </div>
+                                                        <h3><br clear='all' />
+                                                            <div class="xhtml">
+                                                                <p>From FREE+ Checking with Online &amp; Mobile Banking,
+                                                                    we&rsquo;ve got you covered.</p>
+                                                                <ul>
+                                                                    <li><a
+                                                                            href="{{  route('frontend.en.personal.personal-checking.free-plus-checking')  }}">FREE+
+                                                                            Checking</a></li>
+                                                                    <li><a
+                                                                            href="{{ route('frontend.en.personal.personal-checking.reward-checking') }}">Reward
+                                                                            Checking</a></li>
+                                                                    <li><a href="{{ route('frontend.en') }}">Online &amp; Mobile Banking</a>
+                                                                    </li>
+                                                                </ul>
+                                                            </div>
+                                                        </h3>
+                                                    </div>
+                                                </div>
+                                                <div
+                                                    class='col-lg-4 col-md-12 col-sm-12 col-xs-12 b26line_credit_loans b26line_personal_loans no-pad'>
+                                                    <div class='b26line_credit_loans_left'><img
+                                                            src='{{ asset('assets/frontend/globalassets/ymabii/personal/b-17-promo-01-loans-credit.png') }}'
+                                                            alt='couple shaking hands with banker'></div>
+                                                    <div class='b26line_credit_loans_right'>
+                                                        <div class="b26titlerow">
+                                                            <h3 class='deckspanNoCaret'>Loans & Credit Lines</h3>
+                                                        </div>
+                                                        <h3><br clear='all' />
+                                                            <div class="xhtml">
+                                                                <p>Competitive rates on loans of all sizes, lines of credit
+                                                                    and more. We make our lending decisions locally.</p>
+                                                                <ul>
+                                                                    <li><a
+                                                                            href="{{ route('frontend.en.personal.loans-and-credit-lines.personal-loans') }}">Personal
+                                                                            Loans</a></li>
+                                                                    <li><a
+                                                                            href="{{ route('frontend.en.personal.loans-and-credit-lines.personal-lines-of-credit') }}">Personal
+                                                                            Lines of Credit</a></li>
+                                                                </ul>
+                                                            </div>
+                                                        </h3>
+                                                    </div>
+                                                </div>
+                                                <div
+                                                    class='col-lg-4 col-md-12 col-sm-12 col-xs-12 b26line_credit_loans no-pad last'>
+                                                    <div class='b26line_credit_loans_left'><img
+                                                            src='{{ asset('assets/frontend/globalassets/ymabii/personal/b-17-promo-01-save-future.png') }}'
+                                                            alt='couple looking over document'></div>
+                                                    <div class='b26line_credit_loans_right'>
+                                                        <div class="b26titlerow">
+                                                            <h3 class='deckspanNoCaret'>Save for the Future</h3>
+                                                        </div>
+                                                        <h3><br clear='all' />
+                                                            <div class="xhtml">
+                                                                <p>We can help you invest wisely with solid investment
+                                                                    advice and access to an array of funds.</p>
+                                                                <ul>
+                                                                    <li><a href="{{ route('frontend.en.personal.savings-and-cds') }}">Savings
+                                                                            &amp; CDs</a></li>
+                                                                    <li><a href="{{ route('frontend.en.personal.investing') }}">Investing</a></li>
+                                                                    <li><a
+                                                                            href="{{ route('frontend.en.personal.investing.retirement-planning') }}">Retirement
+                                                                            Planning</a></li>
+                                                                </ul>
+                                                            </div>
+                                                        </h3>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="b26Mobile col-sm-6 hidden-md hidden-lg" style="left:-8px;">
+                                    <center>
+                                        <div class="b26MobileCard" style="width:345px;min-height:700px;">
+                                            <div class='item'>
+                                                <div
+                                                    class='col-xs-12 col-sm-12 b26AltClass b26line_credit_loans b26line_personal_loans no-pad '>
+                                                    <div><img
+                                                            src='../../../globalassets/ymabii/personal/b-17-promo-01-personal-checking.png'
+                                                            alt='woman on couch using mobile phone'></div>
+                                                    <div class='b26line_credit_loans_right'>
+                                                        <div class="b26titlerow">
+                                                            <h3 class='deckspanNoCaret'>Personal Checking</h3>
+                                                        </div>
+                                                        <h3><br clear='all' />
+                                                            <div class="xhtml">
+                                                                <p>From FREE+ Checking with Online &amp; Mobile Banking,
+                                                                    we&rsquo;ve got you covered.</p>
+                                                                <ul>
+                                                                    <li><a
+                                                                            href="../personal-checking/free-plus-checking/index.html">FREE+
+                                                                            Checking</a></li>
+                                                                    <li><a
+                                                                            href="../personal-checking/reward-checking/index.html">Reward
+                                                                            Checking</a></li>
+                                                                    <li><a href="index.html">Online &amp; Mobile Banking</a>
+                                                                    </li>
+                                                                </ul>
+                                                            </div>
+                                                        </h3>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class='item'>
+                                                <div
+                                                    class='col-xs-12 col-sm-12 b26AltClass b26line_credit_loans b26line_personal_loans no-pad '>
+                                                    <div><img
+                                                            src='../../../globalassets/ymabii/personal/b-17-promo-01-loans-credit.png'
+                                                            alt='couple shaking hands with banker'></div>
+                                                    <div class='b26line_credit_loans_right'>
+                                                        <div class="b26titlerow">
+                                                            <h3 class='deckspanNoCaret'>Loans & Credit Lines</h3>
+                                                        </div>
+                                                        <h3><br clear='all' />
+                                                            <div class="xhtml">
+                                                                <p>Competitive rates on loans of all sizes, lines of credit
+                                                                    and more. We make our lending decisions locally.</p>
+                                                                <ul>
+                                                                    <li><a
+                                                                            href="../loans-and-credit-lines/personal-loans/index.html">Personal
+                                                                            Loans</a></li>
+                                                                    <li><a
+                                                                            href="../loans-and-credit-lines/personal-lines-of-credit/index.html">Personal
+                                                                            Lines of Credit</a></li>
+                                                                </ul>
+                                                            </div>
+                                                        </h3>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class='item'>
+                                                <div
+                                                    class='col-xs-12 col-sm-12 b26AltClass b26line_credit_loans b26line_personal_loans no-pad '>
+                                                    <div><img
+                                                            src='../../../globalassets/ymabii/personal/b-17-promo-01-save-future.png'
+                                                            alt='couple looking over document'></div>
+                                                    <div class='b26line_credit_loans_right'>
+                                                        <div class="b26titlerow">
+                                                            <h3 class='deckspanNoCaret'>Save for the Future</h3>
+                                                        </div>
+                                                        <h3><br clear='all' />
+                                                            <div class="xhtml">
+                                                                <p>We can help you invest wisely with solid investment
+                                                                    advice and access to an array of funds.</p>
+                                                                <ul>
+                                                                    <li><a href="../savings-and-cds/index.html">Savings
+                                                                            &amp; CDs</a></li>
+                                                                    <li><a href="../investing/index.html">Investing</a></li>
+                                                                    <li><a
+                                                                            href="../investing/retirement-planning/index.html">Retirement
+                                                                            Planning</a></li>
+                                                                </ul>
+                                                            </div>
+                                                        </h3>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </center>
+                                </div>
+
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div class="b26Mobile col-sm-6 hidden-md hidden-lg" style="left:-8px;">
-                    <center>
-                    <div class="b26MobileCard" style="width:345px;min-height:700px;">
-                        <div class='item'><div class='col-xs-12 col-sm-12 b26AltClass b26line_credit_loans b26line_personal_loans no-pad '><div><img src='../../../globalassets/ymabii/personal/b-17-promo-01-personal-checking.png' alt='woman on couch using mobile phone'></div><div class='b26line_credit_loans_right'><div class="b26titlerow"><h3 class='deckspanNoCaret'>Personal Checking</h3></div><h3><br clear='all'/><div class="xhtml"><p>From FREE+ Checking with Online &amp; Mobile Banking, we&rsquo;ve got you covered.</p>
-<ul>
-<li><a href="../personal-checking/free-plus-checking/index.html">FREE+ Checking</a></li>
-<li><a href="../personal-checking/reward-checking/index.html">Reward Checking</a></li>
-<li><a href="index.html">Online &amp; Mobile Banking</a></li>
-</ul></div></h3></div></div></div><div class='item'><div class='col-xs-12 col-sm-12 b26AltClass b26line_credit_loans b26line_personal_loans no-pad '><div><img src='../../../globalassets/ymabii/personal/b-17-promo-01-loans-credit.png' alt='couple shaking hands with banker'></div><div class='b26line_credit_loans_right'><div class="b26titlerow"><h3 class='deckspanNoCaret'>Loans & Credit Lines</h3></div><h3><br clear='all'/><div class="xhtml"><p>Competitive rates on loans of all sizes, lines of credit and more. We make our lending decisions locally.</p>
-<ul>
-<li><a href="../loans-and-credit-lines/personal-loans/index.html">Personal Loans</a></li>
-<li><a href="../loans-and-credit-lines/personal-lines-of-credit/index.html">Personal Lines of Credit</a></li>
-</ul></div></h3></div></div></div><div class='item'><div class='col-xs-12 col-sm-12 b26AltClass b26line_credit_loans b26line_personal_loans no-pad '><div><img src='../../../globalassets/ymabii/personal/b-17-promo-01-save-future.png' alt='couple looking over document'></div><div class='b26line_credit_loans_right'><div class="b26titlerow"><h3 class='deckspanNoCaret'>Save for the Future</h3></div><h3><br clear='all'/><div class="xhtml"><p>We can help you invest wisely with solid investment advice and access to an array of funds.</p>
-<ul>
-<li><a href="../savings-and-cds/index.html">Savings &amp; CDs</a></li>
-<li><a href="../investing/index.html">Investing</a></li>
-<li><a href="../investing/retirement-planning/index.html">Retirement Planning</a></li>
-</ul></div></h3></div></div></div>
+                </section>
+
+
+            </div>
+        </div>
+
+
+
+        <div class="row-full footer">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-3 col-sm-3 col-xs-12 footerCol1">
+                        <div class="footerHeader">Company</div>
+        
+                        <ul>
+        
+                            <li>
+                                <a href="{{ route('frontend.en.pages.about-us')}}">About Us</a>
+                            </li>
+        
+                            <li>
+                                <a href="{{ route('frontend') }}">First PREMIER Bank</a>
+                            </li>
+        
+                            <li>
+                                <a href="https://www.mypremiercreditcard.com/">PREMIER Bankcard</a>
+                            </li>
+        
+                            <li>
+                                <a href="{{ route('frontend.en.pages.about-us.leadership-team') }}">Leadership</a>
+                            </li>
+        
+                            <li>
+                                <a href="{{ route('frontend.en.pages.about-us.community') }}">Community</a>
+                            </li>
+        
+                            <li>
+                                <a href="{{route('frontend.en.pages.about.careers')}}">Careers</a>
+                            </li>
+        
+                        </ul>
+                        <br />
                     </div>
-                    </center>
+                    <div class="col-md-3 col-sm-3 col-xs-12 footerCol2">
+                        <div class="footerHeader">Customers</div>
+        
+                        <ul>
+        
+                            <li>
+                                <a href="{{ route('frontend') }}">Personal Banking</a>
+                            </li>
+        
+                            <li>
+                                <a href="{{ route('frontend.en.small-business') }}">Small Business</a>
+                            </li>
+        
+                            <li>
+                                <a href="{{ route('frontend.en.commercial') }}">Commercial</a>
+                            </li>
+        
+                        </ul>
+                        <br />
+                    </div>
+                    <div class="col-md-3 col-sm-3 col-xs-12 footerCol3">
+                        <div class="footerHeader">Help &amp; Contact</div>
+        
+                        <ul>
+        
+                            <li>
+                                <a href="{{ route('frontend.en.pages.quick-links.customer-care') }}">Customer Care</a>
+                            </li>
+        
+                            <li>
+                                <a href="{{ route('frontend.en.pages.quick-links.locations') }}">Locations</a>
+                            </li>
+        
+                            <li>
+                                <a href="{{ route('frontend.en.pages.quick-links.customer-care') }}">BANK: 800-501-6535</a>
+                            </li>
+        
+                            <li>
+                                <a href="https://www.mypremiercreditcard.com/">CREDIT CARD: 800-987-5521</a>
+                            </li>
+        
+                            <li>
+                                <a href="{{ route('frontend') }}">Routing Number: 091408598</a>
+                            </li>
+        
+                        </ul>
+                        <br />
+                    </div>
+                    <div class="col-md-3 col-sm-3 col-xs-12 footerCol4">
+                        <div class="footerHeader">Legal Notices</div>
+        
+                        <ul>
+        
+                            <li>
+                                <a href="{{ route('frontend.en.pages.resources.first-premier-privacy-statement-2020') }}">Privacy
+                                    Notice &amp; Statement</a>
+                            </li>
+        
+                            <li>
+                                <a href="{{ route('frontend.en.pages.resources.legal-disclosures') }}">Legal Disclosures</a>
+                            </li>
+        
+                            <li>
+                                <a href="{{ route('frontend.en.pages.resources.cookie-policy') }}">Cookie Policy</a>
+                            </li>
+        
+                        </ul>
+                    </div>
                 </div>
-
+                <div class="row">
+                    <div class="col-md-12" style="padding-top:50px;">
+                        <p>Member FDIC | <img src="{{asset('assets/frontend/Static/img/equalhousinglender.png')}}" alt="Equal Housing Lender"
+                                title="Equal Housing Lender" />Equal Housing Lender</p>
+                    </div>
+                </div>
             </div>
         </div>
-    </div>
-</section>
+        <style>
+            /* CHROME SAFARI FIX */
+            .form-control:hover,
+            .form-control:active,
+            .form-control:focus {
+                box-shadow: none !important;
+                -moz-box-shadow: none !important;
+                -webkit-box-shadow: none !important;
+            }
 
+            .form-control:hover,
+            .form-control:active,
+            .form-control:focus {
+                box-shadow: none !important;
+                -moz-box-shadow: none !important;
+                -webkit-box-shadow: none !important;
+            }
 
-</div></div>
+            a:focus,
+            a:active {
+                outline: none !important;
+                border: none !important;
+            }
 
+            input:focus,
+            input:active {
+                outline: none !important;
+            }
 
+            textarea:focus {
+                outline: none !important;
+            }
 
-<div class="row-full footer">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-3 col-sm-3 col-xs-12 footerCol1">
-                <div class="footerHeader">Company</div>
+            button:focus,
+            button:active {
+                outline: none !important;
+                border: none !important;
+            }
 
-<ul>
+            .showehllogo {
+                background: url('{{asset("assets/frontend/Static/img/EHLlogo%20white.png")}}') 230px 0px no-repeat;
+                background-size: 24px 24px
+            }
 
-        <li>
-            <a href="../../pages/about-us/index.html">About Us</a>
-        </li>
+        </style>
+        <script type="text/javascript">
+            var ContentId;
+            var Name;
+            var FullName;
+            var EMail;
+            var Phone;
+            var Message;
 
-        <li>
-            <a href="../../index.html">First PREMIER Bank</a>
-        </li>
+            function contactPersonName(value) {
+                ContentId = parseInt($(value).attr('value'));
+                Name = $(value).attr('name');
+                $("#contactWithPersonName").html("Contact " + Name);
+                FullName = "";
+                EMail = "";
+                Message = "";
+                Phone = "";
+                $("#email").val("");
+                $("#fullname").val("");
+                $('#phone').val("");
+                $("#message").val("");
+            }
 
-        <li>
-            <a href="https://www.mypremiercreditcard.com/">PREMIER Bankcard</a>
-        </li>
+            //$("#fullname").val() != "" &&
+            $("#submitButtonB28Block").click(function(event) {
+                if ($("#email").val() != "" &&
+                    $("#message").val() != "") {
+                    FullName = $("#fullname").val();
+                    EMail = $("#email").val();
+                    Phone = $("#phone").val();
+                    Message = $("#message").val();
+                    $.ajax({
+                        type: "POST",
+                        url: '/api/ContactMe?ContentId=' + ContentId + '&ContactToName=' + Name +
+                            '&ContactPersonName=' + FullName + '&ContactPersonEmail=' + EMail +
+                            '&ContactPersonPhone=' + Phone + '&ContactPersonMessage=' + encodeURIComponent(
+                                Message),
+                        contentType: "application/json",
 
-        <li>
-            <a href="../../pages/about-us/leadership-team/index.html">Leadership</a>
-        </li>
+                        success: function(result) {
+                            alert(result);
+                        },
+                        error: function() {
 
-        <li>
-            <a href="../../pages/about-us/community/index.html">Community</a>
-        </li>
-
-        <li>
-            <a href="{{route('frontend.en.pages.about.careers')}}">Careers</a>
-        </li>
-
-</ul>
-                <br />
-            </div>
-            <div class="col-md-3 col-sm-3 col-xs-12 footerCol2">
-                <div class="footerHeader">Customers</div>
-
-<ul>
-
-        <li>
-            <a href="../../index.html">Personal Banking</a>
-        </li>
-
-        <li>
-            <a href="../../small-business/index.html">Small Business</a>
-        </li>
-
-        <li>
-            <a href="../../commercial/index.html">Commercial</a>
-        </li>
-
-</ul>
-                <br />
-            </div>
-            <div class="col-md-3 col-sm-3 col-xs-12 footerCol3">
-                <div class="footerHeader">Help &amp; Contact</div>
-
-<ul>
-
-        <li>
-            <a href="../../pages/quick-links/customer-care/index.html">Customer Care</a>
-        </li>
-
-        <li>
-            <a href="../../pages/quick-links/locations/index.html">Locations</a>
-        </li>
-
-        <li>
-            <a href="../../pages/quick-links/customer-care/index.html">BANK: 800-501-6535</a>
-        </li>
-
-        <li>
-            <a href="https://www.mypremiercreditcard.com/">CREDIT CARD: 800-987-5521</a>
-        </li>
-
-        <li>
-            <a href="../../index.html">Routing Number: 091408598</a>
-        </li>
-
-</ul>
-                <br />
-            </div>
-            <div class="col-md-3 col-sm-3 col-xs-12 footerCol4">
-                <div class="footerHeader">Legal Notices</div>
-
-<ul>
-
-        <li>
-            <a href="../../pages/resources/first-premier-privacy-statement-2020/index.html">Privacy Notice &amp; Statement</a>
-        </li>
-
-        <li>
-            <a href="../../pages/resources/legal-disclosures/index.html">Legal Disclosures</a>
-        </li>
-
-        <li>
-            <a href="../../pages/resources/cookie-policy/index.html">Cookie Policy</a>
-        </li>
-
-</ul>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-md-12" style="padding-top:50px;">
- <p>Member FDIC | <img src="{{ asset('assets/frontend/Static/img/equalhousinglender.png') }}" alt="Equal Housing Lender" title="Equal Housing Lender" />Equal Housing Lender</p>            </div>
-        </div>
-    </div>
-</div>
-<style>
-    /* CHROME SAFARI FIX */
-    .form-control:hover, .form-control:active, .form-control:focus { box-shadow: none !important; -moz-box-shadow: none !important; -webkit-box-shadow: none !important; }
-    .form-control:hover, .form-control:active, .form-control:focus { box-shadow: none !important; -moz-box-shadow: none !important; -webkit-box-shadow: none !important; }
-    a:focus, a:active {outline:none!important; border: none!important; }
-    input:focus, input:active { outline: none !important; }
-    textarea:focus { outline: none !important; }
-    button:focus, button:active { outline: none !important; border: none !important; }
-    .showehllogo { background: url('../../../Static/img/EHLlogo%20white.png') 230px 0px no-repeat; background-size: 24px 24px }
-</style>
-<script type="text/javascript">
-    var ContentId;
-    var Name;
-    var FullName;
-    var EMail;
-    var Phone;
-    var Message;
-    function contactPersonName(value) {
-        ContentId = parseInt($(value).attr('value'));
-        Name = $(value).attr('name');
-        $("#contactWithPersonName").html("Contact " + Name);
-        FullName = "";
-        EMail = "";
-        Message = "";
-        Phone = "";
-        $("#email").val("");
-        $("#fullname").val("");
-        $('#phone').val("");
-        $("#message").val("");
-    }
-
-    //$("#fullname").val() != "" &&
-    $("#submitButtonB28Block").click(function (event) {
-        if ($("#email").val() != "" &&
-            $("#message").val() != "") {
-            FullName = $("#fullname").val();
-            EMail = $("#email").val();
-            Phone = $("#phone").val();
-            Message = $("#message").val();
-            $.ajax({
-                type: "POST",
-                url: '/api/ContactMe?ContentId=' + ContentId + '&ContactToName=' + Name + '&ContactPersonName=' + FullName + '&ContactPersonEmail=' + EMail + '&ContactPersonPhone=' + Phone + '&ContactPersonMessage=' + encodeURIComponent(Message),
-                contentType: "application/json",
-
-                success: function (result) {
-                    alert(result);
-                },
-                error: function () {
-
+                        }
+                    });
                 }
             });
-        }
-    });
-</script>    </div>
-    <div class="smallLogo"><a href="../../index.html" title="First PREMIER Bank - Home"><img src="../../../Static/gfx/Logo.png" style="max-width:100%;" /></a></div>
+        </script>
+    </div>
+    <div class="smallLogo"><a href="../../index.html" title="First PREMIER Bank - Home"><img
+                src="../../../Static/gfx/Logo.png" style="max-width:100%;" /></a></div>
     <script type="text/javascript" src="../../../../dl.episerver.net/13.4.4.1/epi-util/find.js"></script>
-<script type="text/javascript">
-if(FindApi){var api = new FindApi();api.setApplicationUrl('../../../index.html');api.setServiceApiBaseUrl('../../../find_v2/index.html');api.processEventFromCurrentUri();api.bindWindowEvents();api.bindAClickEvent();api.sendBufferedEvents();}
-</script>
+    <script type="text/javascript">
+        if (FindApi) {
+            var api = new FindApi();
+            api.setApplicationUrl('../../../index.html');
+            api.setServiceApiBaseUrl('../../../find_v2/index.html');
+            api.processEventFromCurrentUri();
+            api.bindWindowEvents();
+            api.bindAClickEvent();
+            api.sendBufferedEvents();
+        }
+    </script>
 
     <script type="text/javascript" src="../../../Static/js/pushy.js"></script>
     <script type="text/javascript" src="../../../Static/js/Blocks_2019062002.js"></script>
 
-    @endsection
+@endsection

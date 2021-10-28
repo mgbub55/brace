@@ -28,6 +28,7 @@
                     z-index: 9999;
                 }
             }
+
         </style>
         <div class="row equal-height">
             <div class="block b01block  col-md-12">
@@ -51,7 +52,7 @@
                         messagemobile: ''
                     };
 
-                    $(document).ready(function () {
+                    $(document).ready(function() {
                         var title = sessionStorage.getItem(b01title) || '';
                         if (title != '') {
 
@@ -63,8 +64,8 @@
                             var titlemobile = sessionStorage.getItem(b01titlemobile);
                             var messagemobile = sessionStorage.getItem(b01messagemobile);
 
-                            titlemobile = titlemobile.replace('<br />', '');         // here I am removing the <br/>
-                            messagemobile = messagemobile.replace('<br />', '');     // tags...
+                            titlemobile = titlemobile.replace('<br />', ''); // here I am removing the <br/>
+                            messagemobile = messagemobile.replace('<br />', ''); // tags...
 
                             WelcomeObj.title = title;
                             WelcomeObj.msg = msg;
@@ -75,17 +76,18 @@
                             WelcomeObj.titlemobile = titlemobile;
                             WelcomeObj.messagemobile = messagemobile;
                             SetWelcomeData(WelcomeObj);
-                        }
-                        else {
+                        } else {
                             var wt = "<p>Our Size is <br />Our Strength</p>";
-                            var wm = "<p>As the 14th largest provider of ACH services <br />in the nation, First PREMIER offers a robust <br />suite of banking, treasury, investment and <br />trust solutions for commercial clients.</p>";
+                            var wm =
+                                "<p>As the 14th largest provider of ACH services <br />in the nation, First PREMIER offers a robust <br />suite of banking, treasury, investment and <br />trust solutions for commercial clients.</p>";
                             var wtm = "<p>Our Size is Our Strength</p>";
-                            var wmm = "<p>As the 14th largest provider of ACH services in the nation, First PREMIER offers a robust suite of banking, treasury, investment and trust solutions for commercial clients.</p>";
+                            var wmm =
+                                "<p>As the 14th largest provider of ACH services in the nation, First PREMIER offers a robust suite of banking, treasury, investment and trust solutions for commercial clients.</p>";
 
                             sessionStorage.setItem(b01title, wt);
                             sessionStorage.setItem(b01msg, wm);
                             sessionStorage.setItem(b01heroimage,
-                            "{{asset('assets/frontend/contentassets/ff24904b95014a8e8f84aaa316689356/fpb_hero_summer_our_size_is_strength.jpg')}}"
+                                "{{ asset('assets/frontend/contentassets/ff24904b95014a8e8f84aaa316689356/fpb_hero_summer_our_size_is_strength.jpg') }}"
                             );
                             sessionStorage.setItem(b01linkname, 'Learn More');
                             sessionStorage.setItem(b01linkurl, 'treasury-services/index.html');
@@ -93,17 +95,18 @@
                             sessionStorage.setItem(b01messagemobile, wmm);
                             WelcomeObj.title = wt;
                             WelcomeObj.msg = wm;
-                            WelcomeObj.heroimage = "{{asset('assets/frontend/contentassets/ff24904b95014a8e8f84aaa316689356/fpb_hero_summer_our_size_is_strength.jpg')}}";
+                            WelcomeObj.heroimage =
+                                "{{ asset('assets/frontend/contentassets/ff24904b95014a8e8f84aaa316689356/fpb_hero_summer_our_size_is_strength.jpg') }}";
                             WelcomeObj.linkname = 'Learn More';
                             WelcomeObj.linkurl = 'treasury-services/index.html';
-                            WelcomeObj.titlemobile = wtm;                   // These are the mobile title
-                            WelcomeObj.messagemobile = wmm;                 // and mobile message.
+                            WelcomeObj.titlemobile = wtm; // These are the mobile title
+                            WelcomeObj.messagemobile = wmm; // and mobile message.
                             SetWelcomeData(WelcomeObj);
                         }
                     });
 
                     function parseHtmlEntities(str) {
-                        return str.replace(/&#([0-9]{1,3});/gi, function (match, numStr) {
+                        return str.replace(/&#([0-9]{1,3});/gi, function(match, numStr) {
                             var num = parseInt(numStr, 10); // read num as normal number
                             return String.fromCharCode(num);
                         });
@@ -115,8 +118,7 @@
                             $('.b1banner_text h1.White').html(wObj.titlemobile);
                             $('.b1banner_text h3.White').html(wObj.messagemobile);
                             $('.b1banner_text h1.White p').attr("style", "width:100% !important; overflow-wrap: break-word;");
-                        }
-                        else if (window.innerWidth > 768) {
+                        } else if (window.innerWidth > 768) {
                             $('.b1banner_text h1.White').html(wObj.title);
                             $('.b1banner_text h3.White').html(wObj.msg);
                             //$('.b1banner_text h1.White').attr("style", "width:600px;");
@@ -131,8 +133,7 @@
                             $('#HeroButton').text(wObj.linkname);
                             $('#HeroButton').attr("href", wObj.linkurl);
                             $("#HeroButton").css('visibility', 'visible');
-                        }
-                        else {
+                        } else {
 
                             // $("#HeroButton").css('visibility', 'hidden');
                             $("#HeroButton").css('display', 'none');
@@ -157,6 +158,7 @@
                         Prompt-Regular&quot;
                         ;
                     }
+
                 </style>
 
                 <section class="row-full b1">
@@ -196,8 +198,7 @@
                                                         <option value="https://firstpremier.fdecs.com/eCustService/"
                                                             data-type="" id="businessrewards">Business Rewards Credit
                                                             Card</option>
-                                                        <option
-                                                            value="https://goldleafach.com/ach/signin.aspx?218264CB36"
+                                                        <option value="https://goldleafach.com/ach/signin.aspx?218264CB36"
                                                             data-type="" id="achonline">ACH Online</option>
                                                         <option value="https://icp.infovisa.com/0309/" data-type=""
                                                             id="trust">Trust Online</option>
@@ -222,21 +223,21 @@
                                                     <div class="form-group">
                                                         <label for="password" style="color:#7c91b1">Password</label>
                                                         <input name="password" class="form-control" id="password"
-                                                            placeholder="Enter Password" type="password"
-                                                            autocomplete="off">
+                                                            placeholder="Enter Password" type="password" autocomplete="off">
                                                         <span
                                                             class="glyphicon glyphicon-remove form-control-feedback hide"></span>
                                                     </div>
                                                 </div>
                                                 <div id="loginLine" class="text-center b1smallLine">
-                                                    <img src="{{asset('assets/frontend/Static/img/CustomBlocks/B1/small_line.png')}}" alt="">
+                                                    <img src="{{ asset('assets/frontend/Static/img/CustomBlocks/B1/small_line.png') }}"
+                                                        alt="">
                                                 </div>
 
                                                 <button class="b1btn-login"> Login </button>
                                             </form>
                                             <a class="b1link_access" href="../pages/resources/enrollment/index.html">Set
                                                 up online access <img
-                                                    src="{{asset('assets/frontend/Static/img/CustomBlocks/B1/arrow_line.png')}}"
+                                                    src="{{ asset('assets/frontend/Static/img/CustomBlocks/B1/arrow_line.png') }}"
                                                     style="height:11px;" /></a>
 
                                         </div>
@@ -296,6 +297,7 @@
                     .page-Our-Communities .block.b04block.col-md-12 {
                         margin-top: 20px;
                     }
+
                 </style>
             </div>
             <div class="block b09block  col-md-12">
@@ -327,6 +329,7 @@
                     .b9readmore:hover {
                         background: #1c7158;
                     }
+
                 </style>
                 <section>
                     <div class="b9banking_confident_main">
@@ -337,11 +340,11 @@
 
                                 <div class="col-lg-8 col-md-12 col-sm-12 b9student_parent_main no-pad ">
                                     <div class="b9student_parent_main_img"><img
-                                            src="{{asset('assets/frontend/contentassets/47328a63aadd4df4b89ee94ca2928d37/keith_miller_luke_tibbets_lewis.jpg')}}"
+                                            src="{{ asset('assets/frontend/contentassets/47328a63aadd4df4b89ee94ca2928d37/keith_miller_luke_tibbets_lewis.jpg') }}"
                                             alt="woman business owner"></div>
                                     <div class="b9student_parent_main_content">
                                         <div class="b9avtar"><img
-                                                src="{{asset('assets/frontend/globalassets/images/_replace/_filled/round1.png')}}"
+                                                src="{{ asset('assets/frontend/globalassets/images/_replace/_filled/round1.png') }}"
                                                 title="Commercial Banking" alt="check"></div>
                                         <div class="b9avtar_content">
                                             <span> Commercial Banking</span>
@@ -358,7 +361,7 @@
                                         <div class="b9small_growth_boxtext b9student_parent_main no-pad">
                                             <div class="b9student_parent_main_content">
                                                 <div class="b9avtar"><img
-                                                        src="{{asset('assets/frontend/globalassets/images/_replace/_filled/round1.png')}}"
+                                                        src="{{ asset('assets/frontend/globalassets/images/_replace/_filled/round1.png') }}"
                                                         alt="Commercial Banking"></div>
                                                 <div class="b9avtar_content">
                                                     <a href="business-checking/index.html">Commercial Banking</a>
@@ -460,10 +463,9 @@
                                 </div>
                             </div>
                             <div class="col-lg-12 b9student_parent_main_section no-pad">
-                                <div
-                                    class="col-lg-4 col-md-12 col-sm-12 b9student_parent_main no-pad b9small_growth_box">
+                                <div class="col-lg-4 col-md-12 col-sm-12 b9student_parent_main no-pad b9small_growth_box">
                                     <div class="b9student_parent_main_img"><img
-                                            src="{{asset('assets/frontend/contentassets/47328a63aadd4df4b89ee94ca2928d37/conf_img1.jpg')}}"
+                                            src="{{ asset('assets/frontend/contentassets/47328a63aadd4df4b89ee94ca2928d37/conf_img1.jpg') }}"
                                             title="Finance Growth" alt="male contractors looking at blueprints"></div>
                                     <div class="b9student_parent_main_content finance_growth">
                                         <div class="b9glow_content" style="min-height:33px;">
@@ -496,10 +498,9 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div
-                                    class="col-lg-4 col-md-12 col-sm-12 b9student_parent_main no-pad b9small_growth_box">
+                                <div class="col-lg-4 col-md-12 col-sm-12 b9student_parent_main no-pad b9small_growth_box">
                                     <div class="b9student_parent_main_img"><img
-                                            src="{{asset('assets/frontend/contentassets/47328a63aadd4df4b89ee94ca2928d37/conf_img2.jpg')}}"
+                                            src="{{ asset('assets/frontend/contentassets/47328a63aadd4df4b89ee94ca2928d37/conf_img2.jpg') }}"
                                             title="Finance Growth" alt="business woman"></div>
                                     <div class="b9student_parent_main_content finance_growth">
                                         <div class="b9glow_content" style="min-height:33px;">
@@ -513,8 +514,7 @@
                                             <ul>
 
                                                 <li>
-                                                    <a
-                                                        href="asset-management-and-trust/group-retirement-plans/index.html">Group
+                                                    <a href="asset-management-and-trust/group-retirement-plans/index.html">Group
                                                         Retirement Plans</a>
                                                 </li>
 
@@ -524,8 +524,7 @@
                                                 </li>
 
                                                 <li>
-                                                    <a
-                                                        href="asset-management-and-trust/first-premier-at-work/index.html">PREMIER
+                                                    <a href="asset-management-and-trust/first-premier-at-work/index.html">PREMIER
                                                         at Work</a>
                                                 </li>
 
@@ -536,7 +535,7 @@
                                 <div
                                     class="col-lg-4 col-md-12 col-sm-12 b9student_parent_main no-pad b9small_growth_box last">
                                     <div class="b9student_parent_main_img"><img
-                                            src="{{asset('assets/frontend/contentassets/47328a63aadd4df4b89ee94ca2928d37/conf_img3.jpg')}}"
+                                            src="{{ asset('assets/frontend/contentassets/47328a63aadd4df4b89ee94ca2928d37/conf_img3.jpg') }}"
                                             title="Protect Your Assets" alt="male meeting with banker"></div>
                                     <div class="b9student_parent_main_content finance_growth">
                                         <div class="b9glow_content" style="min-height:33px;">
@@ -579,6 +578,7 @@
                 <!-- VIEW RATE / SPEED BUMP [2] -->
                 <style>
                     .pop_main_container_board .pop_main_container ol li ol li {}
+
                 </style>
                 <style>
                     /* Changes to Functionality -> Adding the ability to add one or more links after the main button */
@@ -620,6 +620,7 @@
                             width: 100%;
                         }
                     }
+
                 </style>
 
                 <!-- VIEW RATE / SPEED BUMP [2] -->
@@ -650,7 +651,7 @@
 
                             <div class="b17free_mobile_banking_left right">
                                 <img class="img-responsive" id="imgMainImage" style="border-radius:50%"
-                                    src="{{asset('assets/frontend/contentassets/5361b85864674586ba157dfd4db88f1b/2.2.1_b-17_promo_woman.png')}}"
+                                    src="{{ asset('assets/frontend/contentassets/5361b85864674586ba157dfd4db88f1b/2.2.1_b-17_promo_woman.png') }}"
                                     alt="First PREMIER Bank">
                             </div>
                         </div>
@@ -660,7 +661,7 @@
                         <div class="container">
                             <div class="b15student_parent_main_content b15-bg-student_parent_main_content">
                                 <div class="b15avtar">
-                                    <img src="{{asset('assets/frontend/globalassets/images/primary-icons/blue/bookmarks-tags/blue-bookmarks-_-tags-primary-icon-2.png')}}"
+                                    <img src="{{ asset('assets/frontend/globalassets/images/primary-icons/blue/bookmarks-tags/blue-bookmarks-_-tags-primary-icon-2.png') }}"
                                         title="Integrated Receivables" alt="woman looking at laptop" width="116px"
                                         height="116px">
                                 </div>
@@ -675,7 +676,7 @@
                             </div>
                             <div class="b15student_parent_main_content b15-bg-student_parent_main_content">
                                 <div class="b15avtar">
-                                    <img src="{{asset('assets/frontend/globalassets/images/primary-icons/bright/business-finance/bright-business-_-finance-primary-icon-11.png')}}"
+                                    <img src="{{ asset('assets/frontend/globalassets/images/primary-icons/bright/business-finance/bright-business-_-finance-primary-icon-11.png') }}"
                                         title="Payables &amp; Payroll" alt="woman looking at laptop" width="116px"
                                         height="116px">
                                 </div>
@@ -696,9 +697,11 @@
                             <div class="modal-content">
                                 <div class="modal-body">
                                     <div class="pop_main_container_board">
-                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                        <button type="button" class="close" data-dismiss="modal"
+                                            aria-label="Close">
                                             <span aria-hidden="true">
-                                                <img class="close_icon" src="{{asset('assets/frontend/static/img/closebutton.png')}}"
+                                                <img class="close_icon"
+                                                    src="{{ asset('assets/frontend/static/img/closebutton.png') }}"
                                                     alt="First PREMIER Bank"
                                                     style="height:17px !important;width:17px !important;">
                                             </span>
@@ -899,102 +902,102 @@
                 <div class="row">
                     <div class="col-md-3 col-sm-3 col-xs-12 footerCol1">
                         <div class="footerHeader">Company</div>
-
+        
                         <ul>
-
+        
                             <li>
-                                <a href="../pages/about-us/index.html">About Us</a>
+                                <a href="{{ route('frontend.en.pages.about-us')}}">About Us</a>
                             </li>
-
+        
                             <li>
-                                <a href="../index.html">First PREMIER Bank</a>
+                                <a href="{{ route('frontend') }}">First PREMIER Bank</a>
                             </li>
-
+        
                             <li>
                                 <a href="https://www.mypremiercreditcard.com/">PREMIER Bankcard</a>
                             </li>
-
+        
                             <li>
-                                <a href="../pages/about-us/leadership-team/index.html">Leadership</a>
+                                <a href="{{ route('frontend.en.pages.about-us.leadership-team') }}">Leadership</a>
                             </li>
-
+        
                             <li>
-                                <a href="../pages/about-us/community/index.html">Community</a>
+                                <a href="{{ route('frontend.en.pages.about-us.community') }}">Community</a>
                             </li>
-
+        
                             <li>
                                 <a href="{{route('frontend.en.pages.about.careers')}}">Careers</a>
                             </li>
-
+        
                         </ul>
                         <br />
                     </div>
                     <div class="col-md-3 col-sm-3 col-xs-12 footerCol2">
                         <div class="footerHeader">Customers</div>
-
+        
                         <ul>
-
+        
                             <li>
-                                <a href="../index.html">Personal Banking</a>
+                                <a href="{{ route('frontend') }}">Personal Banking</a>
                             </li>
-
+        
                             <li>
-                                <a href="../small-business/index.html">Small Business</a>
+                                <a href="{{ route('frontend.en.small-business') }}">Small Business</a>
                             </li>
-
+        
                             <li>
-                                <a href="index.html">Commercial</a>
+                                <a href="{{ route('frontend.en.commercial') }}">Commercial</a>
                             </li>
-
+        
                         </ul>
                         <br />
                     </div>
                     <div class="col-md-3 col-sm-3 col-xs-12 footerCol3">
                         <div class="footerHeader">Help &amp; Contact</div>
-
+        
                         <ul>
-
+        
                             <li>
-                                <a href="../pages/quick-links/customer-care/index.html">Customer Care</a>
+                                <a href="{{ route('frontend.en.pages.quick-links.customer-care') }}">Customer Care</a>
                             </li>
-
+        
                             <li>
-                                <a href="../pages/quick-links/locations/index.html">Locations</a>
+                                <a href="{{ route('frontend.en.pages.quick-links.locations') }}">Locations</a>
                             </li>
-
+        
                             <li>
-                                <a href="../pages/quick-links/customer-care/index.html">BANK: 800-501-6535</a>
+                                <a href="{{ route('frontend.en.pages.quick-links.customer-care') }}">BANK: 800-501-6535</a>
                             </li>
-
+        
                             <li>
                                 <a href="https://www.mypremiercreditcard.com/">CREDIT CARD: 800-987-5521</a>
                             </li>
-
+        
                             <li>
-                                <a href="../index.html">Routing Number: 091408598</a>
+                                <a href="{{ route('frontend') }}">Routing Number: 091408598</a>
                             </li>
-
+        
                         </ul>
                         <br />
                     </div>
                     <div class="col-md-3 col-sm-3 col-xs-12 footerCol4">
                         <div class="footerHeader">Legal Notices</div>
-
+        
                         <ul>
-
+        
                             <li>
-                                <a href="../pages/resources/first-premier-privacy-statement-2020/index.html">Privacy
+                                <a href="{{ route('frontend.en.pages.resources.first-premier-privacy-statement-2020') }}">Privacy
                                     Notice &amp; Statement</a>
                             </li>
-
+        
                             <li>
-                                <a href="../pages/resources/legal-disclosures/index.html">Legal Disclosures</a>
+                                <a href="{{ route('frontend.en.pages.resources.legal-disclosures') }}">Legal Disclosures</a>
                             </li>
-
+        
                             <li>
-                                <a href="../pages/resources/cookie-policy/index.html">Cookie Policy</a>
+                                <a href="{{ route('frontend.en.pages.resources.cookie-policy') }}">Cookie Policy</a>
                             </li>
-
+        
                         </ul>
                     </div>
                 </div>
@@ -1046,9 +1049,10 @@
             }
 
             .showehllogo {
-                background: url('../../Static/img/EHLlogo%20white.png') 230px 0px no-repeat;
+                background: url('{{asset("assets/frontend/Static/img/EHLlogo%20white.png")}}') 230px 0px no-repeat;
                 background-size: 24px 24px
             }
+
         </style>
         <script type="text/javascript">
             var ContentId;
@@ -1057,6 +1061,7 @@
             var EMail;
             var Phone;
             var Message;
+
             function contactPersonName(value) {
                 ContentId = parseInt($(value).attr('value'));
                 Name = $(value).attr('name');
@@ -1072,7 +1077,7 @@
             }
 
             //$("#fullname").val() != "" &&
-            $("#submitButtonB28Block").click(function (event) {
+            $("#submitButtonB28Block").click(function(event) {
                 if ($("#email").val() != "" &&
                     $("#message").val() != "") {
                     FullName = $("#fullname").val();
@@ -1081,13 +1086,16 @@
                     Message = $("#message").val();
                     $.ajax({
                         type: "POST",
-                        url: '/api/ContactMe?ContentId=' + ContentId + '&ContactToName=' + Name + '&ContactPersonName=' + FullName + '&ContactPersonEmail=' + EMail + '&ContactPersonPhone=' + Phone + '&ContactPersonMessage=' + encodeURIComponent(Message),
+                        url: '/api/ContactMe?ContentId=' + ContentId + '&ContactToName=' + Name +
+                            '&ContactPersonName=' + FullName + '&ContactPersonEmail=' + EMail +
+                            '&ContactPersonPhone=' + Phone + '&ContactPersonMessage=' + encodeURIComponent(
+                                Message),
                         contentType: "application/json",
 
-                        success: function (result) {
+                        success: function(result) {
                             alert(result);
                         },
-                        error: function () {
+                        error: function() {
 
                         }
                     });

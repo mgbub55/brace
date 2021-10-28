@@ -550,7 +550,7 @@
                                                     class="menu_left_section_main bg-menu_left_section_main col-md-12 col-sm-12 col-xs-12">
                                                     <div class="bg-menu_left_section col-md-6 col-xs-12 col-sm-6">
                                                         <div class="subsubitem"><a
-                                                                href="en/personal/wealth-management/private-banking/index.html">Private
+                                                                href="{{ route('frontend.en.personal.wealth-management.private-banking') }}">Private
                                                                 Banking</a></div>
                                                         <p>Concierge-style, private banking for higher net-worth
                                                             individuals.</p>
@@ -558,7 +558,7 @@
                                                     </div>
                                                     <div class="bg-menu_left_section col-md-6 col-xs-12 col-sm-6">
                                                         <div class="subsubitem"><a
-                                                                href="en/personal/wealth-management/financial-planning/index.html">Financial
+                                                                href="{{ route('frontend.en.personal.wealth-management.financial-planning') }}">Financial
                                                                 Planning</a></div>
                                                         <p>Comprehensive financial and investment planning
                                                             services.</p>
@@ -566,7 +566,7 @@
                                                     </div>
                                                     <div class="bg-menu_left_section col-md-6 col-xs-12 col-sm-6">
                                                         <div class="subsubitem"><a
-                                                                href="en/personal/wealth-management/personal-trust-services/index.html">Personal
+                                                                href="{{ route('frontend.en.personal.wealth-management.personal-trust-services') }}">Personal
                                                                 Trust Services</a></div>
                                                         <p>Protect your assets and provide for the people and
                                                             causes you care most about with an estate plan or
@@ -575,7 +575,7 @@
                                                     </div>
                                                     <div class="bg-menu_left_section col-md-6 col-xs-12 col-sm-6">
                                                         <div class="subsubitem"><a
-                                                                href="en/personal/wealth-management/managed-investing/index.html">Managed
+                                                                href="{{ route('frontend.en.personal.wealth-management.managed-investing') }}">Managed
                                                                 Investing</a></div>
                                                         <p>Hands-on investment management from seasoned,
                                                             experienced investment specialists.</p>
@@ -583,7 +583,7 @@
                                                     </div>
                                                     <div class="bg-menu_left_section col-md-6 col-xs-12 col-sm-6">
                                                         <div class="subsubitem"><a
-                                                                href="en/personal/wealth-management/trusts-in-south-dakota/index.html">Trusts
+                                                                href="{{ route('frontend.en.personal.wealth-management.trusts-in-south-dakota') }}">Trusts
                                                                 in South Dakota</a></div>
                                                         <p>Learn about the unique opportunities and benefits
                                                             realized by establishing your trust in the state of
@@ -622,7 +622,7 @@
                                                     class="menu_left_section_main bg-menu_left_section_main col-md-12 col-sm-12 col-xs-12">
                                                     <div class="bg-menu_left_section col-md-6 col-xs-12 col-sm-6">
                                                         <div class="subsubitem"><a
-                                                                href="en/personal/students-and-parents/university-debit-cards/index.html">University
+                                                                href="{{ route('frontend.en.personal.students-and-parents.university-debit-cards') }}">University
                                                                 Debit Cards</a></div>
                                                         <p>Show your school pride with a Dakota State University
                                                             or University of South Dakota branded First PREMIER
@@ -631,7 +631,7 @@
                                                     </div>
                                                     <div class="bg-menu_left_section col-md-6 col-xs-12 col-sm-6">
                                                         <div class="subsubitem"><a
-                                                                href="en/personal/students-and-parents/dakota-state-university-debit-card/index.html">Dakota
+                                                                href="{{ route('frontend.en.personal.students-and-parents.dakota-state-university-debit-card') }}">Dakota
                                                                 State University Debit Card</a></div>
                                                         <p>Show your love for Dakota State University and give
                                                             back to the university&rsquo;s foundation with a
@@ -640,7 +640,7 @@
                                                     </div>
                                                     <div class="bg-menu_left_section col-md-6 col-xs-12 col-sm-6">
                                                         <div class="subsubitem"><a
-                                                                href="en/personal/students-and-parents/student-loans/index.html">Student
+                                                                href="{{ route('frontend.en.personal.students-and-parents.student-loans') }}">Student
                                                                 Loans</a></div>
                                                         <p>Undergraduate and Graduate Student Loan options
                                                             through our partner, Ascent. No application fee and

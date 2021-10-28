@@ -1,17 +1,16 @@
-
 @extends('frontend.layouts.app')
 
 @section('content')
 
     <div class="container">
 
- <!--start responsive menu-->
- @include('frontend.layouts.components.header')
- <!-- Main Header -->
- @include('frontend.layouts.components.navbar')
+        <!--start responsive menu-->
+        @include('frontend.layouts.components.header')
+        <!-- Main Header -->
+        @include('frontend.layouts.components.navbar')
 
-<!--start responsive menu-->
-{{-- <nav class="pushy pushy-right">
+        <!--start responsive menu-->
+        {{-- <nav class="pushy pushy-right">
     <div class="pushy-content">
         <button class="pushy-link close-b">X</button>
 
@@ -987,289 +986,346 @@ Asset Management &amp; Trust                                            <i class
     </div>
 </section> --}}
 
- <script>
-
-    $(document).ready(function () {
-
+        <script>
+            $(document).ready(function() {
 
 
-        //$('#AccessAccountDropdown option[id!=selectaccount]').each(function (index, value) {
-        //    $('#signInHoverSection').append('<p>' + $(value).text() + '</p>');
-        //});
 
-        if ($(window).width() == 1024) {
-            $('#ulPremierMainMenu li.SubMenu > a').on('click touchend', function (e) {
-                $(this).find('div[id*=subdiv]').hide();
-                $(this).attr('href', 'javascript:void(0)');
-                ShowMenu(this);
-            }).focusout(function () {
-                ShowMenu(this);
-            });
-        }
-        else {
+                //$('#AccessAccountDropdown option[id!=selectaccount]').each(function (index, value) {
+                //    $('#signInHoverSection').append('<p>' + $(value).text() + '</p>');
+                //});
 
-            var timeoutId;
-            $("#ulPremierMainMenu li.SubMenu > a").hover(function () {
-                var self = this;
-                if (!timeoutId) {
-                    timeoutId = window.setTimeout(function () {
-                        timeoutId = null;
-                        ShowMenu(self);
-                    }, 50);
+                if ($(window).width() == 1024) {
+                    $('#ulPremierMainMenu li.SubMenu > a').on('click touchend', function(e) {
+                        $(this).find('div[id*=subdiv]').hide();
+                        $(this).attr('href', 'javascript:void(0)');
+                        ShowMenu(this);
+                    }).focusout(function() {
+                        ShowMenu(this);
+                    });
+                } else {
+
+                    var timeoutId;
+                    $("#ulPremierMainMenu li.SubMenu > a").hover(function() {
+                            var self = this;
+                            if (!timeoutId) {
+                                timeoutId = window.setTimeout(function() {
+                                    timeoutId = null;
+                                    ShowMenu(self);
+                                }, 50);
+                            }
+                        },
+                        function() {
+                            if (timeoutId) {
+                                window.clearTimeout(timeoutId);
+                                timeoutId = null;
+                            }
+                        });
                 }
-            },
-                function () {
-                    if (timeoutId) {
-                        window.clearTimeout(timeoutId);
-                        timeoutId = null;
+
+                if (sessionStorage.getItem('isClosed') == "true") {
+                    $(".alert").hide();
+                }
+
+                var lastID = null;
+
+                var handleMouseover = function(e) {
+                    var target = e.target || e.srcElement;
+                    lastID = target.id;
+                    className = target.className;
+                    tagName = target.localName;
+                    if (lastID != "ulPremierMainMenu" && lastID != "") {
+                        $('div[id*=subdiv]').slideUp(500);
+                        $('.SubMenuItems li > a').css('color', '#fff').css('border-bottom', '');
                     }
-                });
-        }
+                    if (className == "col-md-8 col-xs-12 col-sm-6" || className == "b1banner_text" || className ==
+                        "b1login_Box" || className == "b1banner-desc" || className == "row b1mobile" || className ==
+                        "b1banner_text" || className == "White" || className == "b1access" || className ==
+                        "header-box" || tagName == "img" || tagName == "body") {
+                        $('div[id*=subdiv]').slideUp(500);
+                        $('.SubMenuItems li > a').css('color', '#fff').css('border-bottom', '');;
+                    }
 
-        if (sessionStorage.getItem('isClosed') == "true") {
-            $(".alert").hide();
-        }
+                };
 
-        var lastID = null;
+                if (document.addEventListener) {
+                    document.addEventListener('mouseover', handleMouseover, false);
+                    document.addEventListener('mouseover', handleMouseover, false);
+                } else {
+                    document.attachEvent('onmouseover', handleMouseover);
+                }
 
-        var handleMouseover = function (e) {
-            var target = e.target || e.srcElement;
-            lastID = target.id;
-            className = target.className;
-            tagName = target.localName;
-            if (lastID != "ulPremierMainMenu" && lastID != "") {
-                $('div[id*=subdiv]').slideUp(500);
-                $('.SubMenuItems li > a').css('color', '#fff').css('border-bottom', '');
-            }
-            if (className == "col-md-8 col-xs-12 col-sm-6" || className == "b1banner_text" || className == "b1login_Box" || className == "b1banner-desc" || className == "row b1mobile" || className == "b1banner_text" || className == "White" || className == "b1access" || className == "header-box" || tagName == "img" || tagName == "body") {
-                $('div[id*=subdiv]').slideUp(500);
-                $('.SubMenuItems li > a').css('color', '#fff').css('border-bottom', '');;
-            }
-
-        };
-
-        if (document.addEventListener) {
-            document.addEventListener('mouseover', handleMouseover, false);
-            document.addEventListener('mouseover', handleMouseover, false);
-        }
-        else {
-            document.attachEvent('onmouseover', handleMouseover);
-        }
-
-    });
-    function ShowMenu(element) {
-        if ($(element).next('div[id*=subdiv]').filter(function () { return $(this).css('display') === 'block'; }).length == 0) {
-            $('div[id*=subdiv]').hide();
-            $(element).next('div[id*=subdiv]').slideDown(500);
-            $('.SubMenuItems li > a').css('color', '#fff').css('border-bottom', '');
-            $(element).css('color', '#e4cb3f').css({
-                "border-bottom-color": "#e4cb3f",
-                "border-bottom-width": "3px",
-                "border-bottom-style": "solid"
             });
-        }
-    }
-    function ShowSignInOption() {
-        if ($('#signInHoverSection').attr('data-present') == "present") {
-            $('#signInHoverSection').toggle();
-        }
-    }
-    function SearchOut() {
-        $('#txtheadsearch').attr('data-val', $('#txtheadsearch').val());
-        $('#txtheadsearch').val(null);
-    }
-    function SearchIn() {
-        var searchText = $('#txtheadsearch').attr('data-val') || '';
-        $('#txtheadsearch').val(searchText);
-    }
-</script>
-<div class="row equal-height"><div class="block b19block  col-md-12">
 
-<style>
-    .b19landingpage {
-        height: auto;
-        padding: 40px 0px;
-    }
-</style>
-<script>
+            function ShowMenu(element) {
+                if ($(element).next('div[id*=subdiv]').filter(function() {
+                        return $(this).css('display') === 'block';
+                    }).length == 0) {
+                    $('div[id*=subdiv]').hide();
+                    $(element).next('div[id*=subdiv]').slideDown(500);
+                    $('.SubMenuItems li > a').css('color', '#fff').css('border-bottom', '');
+                    $(element).css('color', '#e4cb3f').css({
+                        "border-bottom-color": "#e4cb3f",
+                        "border-bottom-width": "3px",
+                        "border-bottom-style": "solid"
+                    });
+                }
+            }
 
-    $(document).ready(function () {
-        if (screen.width < 767) {
-            $('.b19landingpage').css('height', '628px');
-            $('.b19landingpage').css('background', '');
-            $('.b19landingpage').css('background-color', '#1b3e43');
-        }
-        else {
-            $('.b19landingpage').css('background', 'url({{asset("assets/frontend/Static/img/svg/green-1.svg")}}) no-repeat');
-        }
-    });
+            function ShowSignInOption() {
+                if ($('#signInHoverSection').attr('data-present') == "present") {
+                    $('#signInHoverSection').toggle();
+                }
+            }
 
-    $(window).resize(function () {
-        if (screen.width < 767) {
-            $('.b19landingpage').css('height', '628px');
-            $('.b19landingpage').css('background', '');
-            $('.b19landingpage').css('background-color', '#1b3e43');
-        }
-        else {
-            $('.b19landingpage').css('background', 'url({{asset("assets/frontend/Static/img/svg/green-1.svg")}}) no-repeat');
-        }
-    });
+            function SearchOut() {
+                $('#txtheadsearch').attr('data-val', $('#txtheadsearch').val());
+                $('#txtheadsearch').val(null);
+            }
 
-</script>
+            function SearchIn() {
+                var searchText = $('#txtheadsearch').attr('data-val') || '';
+                $('#txtheadsearch').val(searchText);
+            }
+        </script>
+        <div class="row equal-height">
+            <div class="block b19block  col-md-12">
 
+                <style>
+                    .b19landingpage {
+                        height: auto;
+                        padding: 40px 0px;
+                    }
 
-<div class="b19landingpage row-full" style="padding-bottom:0px;">
-    <div class="container">
-        <h1>Savings &amp; CDs</h1>
-        <div class="xhtml"></div>
-        <div class="b19landingpage_box_main">
+                </style>
+                <script>
+                    $(document).ready(function() {
+                        if (screen.width < 767) {
+                            $('.b19landingpage').css('height', '628px');
+                            $('.b19landingpage').css('background', '');
+                            $('.b19landingpage').css('background-color', '#1b3e43');
+                        } else {
+                            $('.b19landingpage').css('background',
+                                'url({{ asset("assets/frontend/Static/img/svg/green-1.svg") }}) no-repeat');
+                        }
+                    });
 
-        <div class="col-md-4 col-sm-6 b19landingpage_box">
-            <a href="{{ route('frontend.en.personal.savings-and-cds.regular-savings') }}"><img src="{{ asset('assets/frontend/globalassets/images/primary-icons/blue/business-finance/blue-business-_-finance-primary-icon-21.png') }}" title="Regular Savings" alt="stack of money" border="0" /></a>
-            <div class="clearfix"></div>
-                <span><a href="{{ route('frontend.en.personal.savings-and-cds.regular-savings') }}">Regular Savings</a></span>
-            <div class="xhtml"><p>A flexibile way to save that's perfect for everyday or initial savings plans.</p></div>
-        </div>
-
-        <div class="col-md-4 col-sm-6 b19landingpage_box">
-            <a href="{{ route('frontend.en.personal.savings-and-cds.premier-money-market') }}"><img src="{{ asset('assets/frontend/globalassets/images/primary-icons/gold/business-finance/gold-business-_-finance-primary-icon-18.png') }}" title="PREMIER Money Market" alt="Balanced Scales" border="0"></a>
-            <div class="clearfix"></div>
-                <span><a href="{{ route('frontend.en.personal.savings-and-cds.premier-money-market') }}">PREMIER Money Market</a></span>
-            <div class="xhtml"><p>Get a higher rate of return on your higher balance savings, with tiered interest.</p></div>
-        </div>
-
-        <div class="col-md-4 col-sm-6 b19landingpage_box">
-            <a href="{{ route('frontend.en.personal.savings-and-cds.certificates-of-deposit') }}"><img src="{{ asset('assets/frontend/globalassets/images/primary-icons/bright/business-finance/bright-business-_-finance-primary-icon-23.png') }}" title="Certificates of Deposit" alt="Certificate of Deposit" border="0"></a>
-            <div class="clearfix"></div>
-                <span><a href="{{ route('frontend.en.personal.savings-and-cds.certificates-of-deposit') }}">Certificates of Deposit</a></span>
-            <div class="xhtml"><p>Competitive rates, low opening balance and an array of terms to meet your needs.</p></div>
-        </div>
-
-        </div>
-    </div>
-</div></div><div class="block b20block  col-md-12">
+                    $(window).resize(function() {
+                        if (screen.width < 767) {
+                            $('.b19landingpage').css('height', '628px');
+                            $('.b19landingpage').css('background', '');
+                            $('.b19landingpage').css('background-color', '#1b3e43');
+                        } else {
+                            $('.b19landingpage').css('background',
+                                'url({{ asset("assets/frontend/Static/img/svg/green-1.svg") }}) no-repeat');
+                        }
+                    });
+                </script>
 
 
-<!-- VIEW RATE / SPEED BUMP [2] -->
-<script>
-    $(document).ready(function () {
-        if ($('#imgMainRight').length <= 0) {
-            $('.b20consumer-loans-left').css('width', '100%');
-        }
-    });
-</script>
-<style>
-    .pop_main_container_board .pop_main_container ol li ol li {  }
-</style>
-<style>
-    .b20consumer-loans-left {
-        padding-top: 0px !important;
-    }
+                <div class="b19landingpage row-full" style="padding-bottom:0px;">
+                    <div class="container">
+                        <h1>Savings &amp; CDs</h1>
+                        <div class="xhtml"></div>
+                        <div class="b19landingpage_box_main">
 
-        .b20consumer-loans-left .xhtml p {
-            padding-top: 0px !important;
-        }
+                            <div class="col-md-4 col-sm-6 b19landingpage_box">
+                                <a href="{{ route('frontend.en.personal.savings-and-cds.regular-savings') }}"><img
+                                        src="{{ asset('assets/frontend/globalassets/images/primary-icons/blue/business-finance/blue-business-_-finance-primary-icon-21.png') }}"
+                                        title="Regular Savings" alt="stack of money" border="0" /></a>
+                                <div class="clearfix"></div>
+                                <span><a href="{{ route('frontend.en.personal.savings-and-cds.regular-savings') }}">Regular
+                                        Savings</a></span>
+                                <div class="xhtml">
+                                    <p>A flexibile way to save that's perfect for everyday or initial savings plans.</p>
+                                </div>
+                            </div>
 
-    .b17basic_box_grey {
-        background-color: #f9f9f9 !important;
-        background-image: none;
-    }
+                            <div class="col-md-4 col-sm-6 b19landingpage_box">
+                                <a href="{{ route('frontend.en.personal.savings-and-cds.premier-money-market') }}"><img
+                                        src="{{ asset('assets/frontend/globalassets/images/primary-icons/gold/business-finance/gold-business-_-finance-primary-icon-18.png') }}"
+                                        title="PREMIER Money Market" alt="Balanced Scales" border="0"></a>
+                                <div class="clearfix"></div>
+                                <span><a href="{{ route('frontend.en.personal.savings-and-cds.premier-money-market') }}">PREMIER
+                                        Money Market</a></span>
+                                <div class="xhtml">
+                                    <p>Get a higher rate of return on your higher balance savings, with tiered interest.</p>
+                                </div>
+                            </div>
 
-    .b17basic_box_white {
-        background-color: #fff !important;
-        background-image: none;
-    }
+                            <div class="col-md-4 col-sm-6 b19landingpage_box">
+                                <a href="{{ route('frontend.en.personal.savings-and-cds.certificates-of-deposit') }}"><img
+                                        src="{{ asset('assets/frontend/globalassets/images/primary-icons/bright/business-finance/bright-business-_-finance-primary-icon-23.png') }}"
+                                        title="Certificates of Deposit" alt="Certificate of Deposit" border="0"></a>
+                                <div class="clearfix"></div>
+                                <span><a
+                                        href="{{ route('frontend.en.personal.savings-and-cds.certificates-of-deposit') }}">Certificates
+                                        of Deposit</a></span>
+                                <div class="xhtml">
+                                    <p>Competitive rates, low opening balance and an array of terms to meet your needs.</p>
+                                </div>
+                            </div>
 
-    .b20consumer-loans p.sub-header {
-        padding: 0px 0px 26px 0px;
-        text-align: center;
-    }
-    @media only screen and (max-width: 767px)
-    {
-        .b20consumer_btn_center {
-            width: 100%;
-        }
-    }
-
-    @media only screen and (max-width: 470px) {
-        .b20consumer-loans .b20consumer-loans-left {
-            padding-left: 0px !important;
-        }
-    }
-    @media only screen and (max-width: 470px) {
-       .b20showright a.b20mainanchorL {
-           margin-left: 25%
-        }
-    }
-</style>
-<!-- VIEW RATE / SPEED BUMP [2] -->
-<section class="row-full">
-
-    <div class="b20consumer-loans ">
-        <div class="container">
-
-                <h2>PREMIER Money Market</h2>
-
-
-                    <div class="b20consumer-loans-right"><img id="imgMainRight" src="{{ asset('assets/frontend/contentassets/3e52be1b70ac44b98576c4a7d0e661b5/1.3_b-20_maturecouple-min-right.png') }}" alt="couple looking at laptop" class="img-responsive"></div>
-        <div class="b20consumer-loans-left">
-                            <div class="xhtml"><p>Earn a tiered interest rate on higher balances and maintain access to your money whenever you need it.&nbsp;<br /><br /></p>
-<ul>
-<li>The higher your balance, the higher the interest</li>
-<li>FREE&nbsp;<a href="{{ route('frontend.en.personal.online-and-mobile') }}">Online and Mobile Banking</a>, <a href="../online-and-mobile/bill-pay/index.html">Bill Pay</a><sup>1</sup> and more</li>
-<li>Use as <a href="../personal-checking/overdraft-protection/index.html">overdraft protection</a> for First PREMIER Checking<sup>1</sup></li>
-<li>Access to 33,000+ surcharge-free <a title="Moneypass" href="../../pages/quick-links/locations/index.html" target="_top">MoneyPass&reg; ATMs</a></li>
-<li>Opening minimum deposit of $500</li>
-<li>No minimum monthly balance&nbsp;<br /><br /></li>
-</ul></div>
-                <br />
-                            <div class="b20consumer_btn_center">
-                                <a href="{{ route('frontend.en.personal.savings-and-cds.premier-money-market') }}" class="b20mainanchor">Learn More</a>
-                </div>
-        </div>
-        </div>
-    </div>
-</section>
-
-<!-- View Rate [3] (within container)-->
-<!-- View Rate [3] (within container)--></div><div class="block b22block  col-md-12">
-    <section class="row-full">
-
-        <div class="b22additional-lending">
-            <div class="container" style="">
-                    <h4 class="Blue">Additional Options</h4>
-                <div class="b22additional-lending-left">
-                    <h3>Regular Savings</h3>
-                    <div class="xhtml"><p>Start your savings nest egg, use your account for overdraft protection<sup>1</sup> and enjoy free Online and Mobile Banking.</p></div>
-                        <a href="{{ route('frontend.en.personal.savings-and-cds.regular-savings') }}">Learn More</a>
-                </div>
-
-                <div class="b22additional-lending-righ">
-                    <h3>Certificates of Deposit</h3>
-                    <div class="xhtml"><p>Lock in a great rate without locking down your money long-term. We have competitive rates and an array of term options.</p></div>
-                        <a href="{{ route('frontend.en.personal.savings-and-cds.certificates-of-deposit') }}">Learn More</a>
+                        </div>
+                    </div>
                 </div>
             </div>
-            <div class="b22spacer"></div>
-        </div>
-        <div id="a24792446" class="modal fade" role="dialog">
-            <div class="modal-dialog pop_board">
-                <div class="modal-content">
-                    <div class="modal-body">
-                        <div class="pop_main_container_board">
-                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                <span aria-hidden="true">
-                                    <img class="close_icon" src="{{ asset('asset/frontend/Static/img/closebutton.png') }}" alt="First PREMIER Bank" style="height:17px !important;width:17px !important;">
-                                </span>
-                            </button>
-                            <div class="pop_main_container">
-                                <div class="pop_board_white">
-                                    <div class="row">
-                                        <div class="col-md-12" style="padding-left:40px;">
-                                            <h4 class="Blue"></h4>
-                                            <div class="b46Blue" style="text-align:left;">
+            <div class="block b20block  col-md-12">
 
-                                                <p><br /><a href="regular-savings/index.html" target="_blank"></a></p>
+
+                <!-- VIEW RATE / SPEED BUMP [2] -->
+                <script>
+                    $(document).ready(function() {
+                        if ($('#imgMainRight').length <= 0) {
+                            $('.b20consumer-loans-left').css('width', '100%');
+                        }
+                    });
+                </script>
+                <style>
+                    .pop_main_container_board .pop_main_container ol li ol li {}
+
+                </style>
+                <style>
+                    .b20consumer-loans-left {
+                        padding-top: 0px !important;
+                    }
+
+                    .b20consumer-loans-left .xhtml p {
+                        padding-top: 0px !important;
+                    }
+
+                    .b17basic_box_grey {
+                        background-color: #f9f9f9 !important;
+                        background-image: none;
+                    }
+
+                    .b17basic_box_white {
+                        background-color: #fff !important;
+                        background-image: none;
+                    }
+
+                    .b20consumer-loans p.sub-header {
+                        padding: 0px 0px 26px 0px;
+                        text-align: center;
+                    }
+
+                    @media only screen and (max-width: 767px) {
+                        .b20consumer_btn_center {
+                            width: 100%;
+                        }
+                    }
+
+                    @media only screen and (max-width: 470px) {
+                        .b20consumer-loans .b20consumer-loans-left {
+                            padding-left: 0px !important;
+                        }
+                    }
+
+                    @media only screen and (max-width: 470px) {
+                        .b20showright a.b20mainanchorL {
+                            margin-left: 25%
+                        }
+                    }
+
+                </style>
+                <!-- VIEW RATE / SPEED BUMP [2] -->
+                <section class="row-full">
+
+                    <div class="b20consumer-loans ">
+                        <div class="container">
+
+                            <h2>PREMIER Money Market</h2>
+
+
+                            <div class="b20consumer-loans-right"><img id="imgMainRight"
+                                    src="{{ asset('assets/frontend/contentassets/3e52be1b70ac44b98576c4a7d0e661b5/1.3_b-20_maturecouple-min-right.png') }}"
+                                    alt="couple looking at laptop" class="img-responsive"></div>
+                            <div class="b20consumer-loans-left">
+                                <div class="xhtml">
+                                    <p>Earn a tiered interest rate on higher balances and maintain access to your money
+                                        whenever you need it.&nbsp;<br /><br /></p>
+                                    <ul>
+                                        <li>The higher your balance, the higher the interest</li>
+                                        <li>FREE&nbsp;<a
+                                                href="{{ route('frontend.en.personal.online-and-mobile') }}">Online and
+                                                Mobile Banking</a>, <a href="{{ route('frontend.en.personal.online-and-mobile.bill-pay') }}">Bill
+                                                Pay</a><sup>1</sup> and more</li>
+                                        <li>Use as <a href="{{ route('frontend.en.personal.personal-checking.overdraft-protection') }}">overdraft
+                                                protection</a> for First PREMIER Checking<sup>1</sup></li>
+                                        <li>Access to 33,000+ surcharge-free <a title="Moneypass"
+                                                href="{{ route('frontend.en.pages.quick-links.locations') }}"
+                                                target="_top">MoneyPass&reg; ATMs</a></li>
+                                        <li>Opening minimum deposit of $500</li>
+                                        <li>No minimum monthly balance&nbsp;<br /><br /></li>
+                                    </ul>
+                                </div>
+                                <br />
+                                <div class="b20consumer_btn_center">
+                                    <a href="{{ route('frontend.en.personal.savings-and-cds.premier-money-market') }}"
+                                        class="b20mainanchor">Learn More</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- View Rate [3] (within container)-->
+                <!-- View Rate [3] (within container)-->
+            </div>
+            <div class="block b22block  col-md-12">
+                <section class="row-full">
+
+                    <div class="b22additional-lending">
+                        <div class="container" style="">
+                            <h4 class="Blue">Additional Options</h4>
+                            <div class="b22additional-lending-left">
+                                <h3>Regular Savings</h3>
+                                <div class="xhtml">
+                                    <p>Start your savings nest egg, use your account for overdraft protection<sup>1</sup>
+                                        and enjoy free Online and Mobile Banking.</p>
+                                </div>
+                                <a href="{{ route('frontend.en.personal.savings-and-cds.regular-savings') }}">Learn
+                                    More</a>
+                            </div>
+
+                            <div class="b22additional-lending-righ">
+                                <h3>Certificates of Deposit</h3>
+                                <div class="xhtml">
+                                    <p>Lock in a great rate without locking down your money long-term. We have competitive
+                                        rates and an array of term options.</p>
+                                </div>
+                                <a href="{{ route('frontend.en.personal.savings-and-cds.certificates-of-deposit') }}">Learn
+                                    More</a>
+                            </div>
+                        </div>
+                        <div class="b22spacer"></div>
+                    </div>
+                    <div id="a24792446" class="modal fade" role="dialog">
+                        <div class="modal-dialog pop_board">
+                            <div class="modal-content">
+                                <div class="modal-body">
+                                    <div class="pop_main_container_board">
+                                        <button type="button" class="close" data-dismiss="modal"
+                                            aria-label="Close">
+                                            <span aria-hidden="true">
+                                                <img class="close_icon"
+                                                    src="{{ asset('asset/frontend/Static/img/closebutton.png') }}"
+                                                    alt="First PREMIER Bank"
+                                                    style="height:17px !important;width:17px !important;">
+                                            </span>
+                                        </button>
+                                        <div class="pop_main_container">
+                                            <div class="pop_board_white">
+                                                <div class="row">
+                                                    <div class="col-md-12" style="padding-left:40px;">
+                                                        <h4 class="Blue"></h4>
+                                                        <div class="b46Blue" style="text-align:left;">
+
+                                                            <p><br /><a href="regular-savings/index.html"
+                                                                    target="_blank"></a></p>
+                                                        </div>
+                                                    </div>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
@@ -1277,27 +1333,33 @@ Asset Management &amp; Trust                                            <i class
                             </div>
                         </div>
                     </div>
-                </div>
-            </div>
-        </div>
-        <div id="b24792446" class="modal fade" role="dialog">
-            <div class="modal-dialog pop_board">
-                <div class="modal-content">
-                    <div class="modal-body">
-                        <div class="pop_main_container_board">
-                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                <span aria-hidden="true">
-                                    <img class="close_icon" src="{{ asset('assets/frontend/Static/img/closebutton.png') }}" alt="First PREMIER Bank" style="height:17px !important;width:17px !important;">
-                                </span>
-                            </button>
-                            <div class="pop_main_container">
-                                <div class="pop_board_white">
-                                    <div class="row">
-                                        <div class="col-md-12" style="padding-left:40px;">
-                                            <h4 class="Blue"></h4>
-                                            <div class="b46Blue" style="text-align:left;">
+                    <div id="b24792446" class="modal fade" role="dialog">
+                        <div class="modal-dialog pop_board">
+                            <div class="modal-content">
+                                <div class="modal-body">
+                                    <div class="pop_main_container_board">
+                                        <button type="button" class="close" data-dismiss="modal"
+                                            aria-label="Close">
+                                            <span aria-hidden="true">
+                                                <img class="close_icon"
+                                                    src="{{ asset('assets/frontend/Static/img/closebutton.png') }}"
+                                                    alt="First PREMIER Bank"
+                                                    style="height:17px !important;width:17px !important;">
+                                            </span>
+                                        </button>
+                                        <div class="pop_main_container">
+                                            <div class="pop_board_white">
+                                                <div class="row">
+                                                    <div class="col-md-12" style="padding-left:40px;">
+                                                        <h4 class="Blue"></h4>
+                                                        <div class="b46Blue" style="text-align:left;">
 
-                                                <p><br /><a href="{{ route('frontend.en.personal.savings-and-cds.certificates-of-deposit') }}" target="_blank"></a></p>
+                                                            <p><br /><a
+                                                                    href="{{ route('frontend.en.personal.savings-and-cds.certificates-of-deposit') }}"
+                                                                    target="_blank"></a></p>
+                                                        </div>
+                                                    </div>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
@@ -1305,110 +1367,142 @@ Asset Management &amp; Trust                                            <i class
                             </div>
                         </div>
                     </div>
-                </div>
+                </section>
             </div>
-        </div>
-    </section></div><div class="block b17block  col-md-12">﻿
-<!-- VIEW RATE / SPEED BUMP [2] -->
-<style>
-    .pop_main_container_board .pop_main_container ol li ol li {  }
-</style>
-<style>
-    /* Changes to Functionality -> Adding the ability to add one or more links after the main button */
+            <div class="block b17block  col-md-12">﻿
+                <!-- VIEW RATE / SPEED BUMP [2] -->
+                <style>
+                    .pop_main_container_board .pop_main_container ol li ol li {}
 
-    /* B-17 Specific (Added functionality for multiple links) */
-    .b17ButtonLinksSingle .b17link {
-        padding-left: 15px;
-    }
+                </style>
+                <style>
+                    /* Changes to Functionality -> Adding the ability to add one or more links after the main button */
 
-    .b17ButtonLinksMultiple .b17link {
-        float: left;
-        margin-right: 25px;
-    }
+                    /* B-17 Specific (Added functionality for multiple links) */
+                    .b17ButtonLinksSingle .b17link {
+                        padding-left: 15px;
+                    }
 
-    .b17cards {
-        position: relative;
-        z-index: 99;
-        top: -203px !important;
-    }
+                    .b17ButtonLinksMultiple .b17link {
+                        float: left;
+                        margin-right: 25px;
+                    }
 
-    .b17basic_box_grey {
-        background-color: #f9f9f9;
-        background-image: none;
-    }
+                    .b17cards {
+                        position: relative;
+                        z-index: 99;
+                        top: -203px !important;
+                    }
 
-    .about-us-small-image .b17block {
-        /* max-height: 779px;*/
-    }
+                    .b17basic_box_grey {
+                        background-color: #f9f9f9;
+                        background-image: none;
+                    }
 
-    .b17free_mobile_banking_left.right > img {
-        float: right;
-    }
+                    .about-us-small-image .b17block {
+                        /* max-height: 779px;*/
+                    }
 
-    @media only screen and (max-width: 470px) {
-        .b17free_mobile_banking h2 {
-            /* margin-left: 6%;*/
-            margin-top: 5%;
-            text-align: center;
-            width: 100%;
-        }
-}
-</style>
+                    .b17free_mobile_banking_left.right>img {
+                        float: right;
+                    }
 
-<!-- VIEW RATE / SPEED BUMP [2] -->
-<section class="row-full b17promo">
+                    @media only screen and (max-width: 470px) {
+                        .b17free_mobile_banking h2 {
+                            /* margin-left: 6%;*/
+                            margin-top: 5%;
+                            text-align: center;
+                            width: 100%;
+                        }
+                    }
 
-    <div class="b17free_mobile_banking ">
-        <div class="container">
-            <h2>Specialized Savings</h2>
+                </style>
 
-            <div class="b17free_mobile_banking_right">
-                    <h3><p><strong>PREMIER Kids Club Savings</strong></p></h3>
-                                <div class="xhtml"><p>Teaching children the value of saving early can help support their future financial success. With the PREMIER Kids Club Savings account learning is also fun! The PREMIER Kids Club comes with a free mobile app that includes age-appropriate games and lessons. Start your child&rsquo;s savings story today!</p></div>
-                <div class="b17PayLinks payIcon-space">
-                </div>
+                <!-- VIEW RATE / SPEED BUMP [2] -->
+                <section class="row-full b17promo">
 
-                <!-- Button and Footer Links go here ... -->
-                                <a href="{{ route('frontend.en.personal.savings-and-cds.kids-savings') }}" class="b17readmore">Learn More</a>
-            </div>
+                    <div class="b17free_mobile_banking ">
+                        <div class="container">
+                            <h2>Specialized Savings</h2>
 
-                <div class="b17free_mobile_banking_left right">
-                    <img class="img-responsive" id="imgMainImage" style="border-radius:50%" src="{{ asset('assets/frontend/contentassets/cef4f6fd58bf49f4896a9b4c7dca6f6b/specialized-savings.jpg') }}" alt="First PREMIER Bank">
-                </div>
-        </div>
-    </div>
+                            <div class="b17free_mobile_banking_right">
+                                <h3>
+                                    <p><strong>PREMIER Kids Club Savings</strong></p>
+                                </h3>
+                                <div class="xhtml">
+                                    <p>Teaching children the value of saving early can help support their future financial
+                                        success. With the PREMIER Kids Club Savings account learning is also fun! The
+                                        PREMIER Kids Club comes with a free mobile app that includes age-appropriate games
+                                        and lessons. Start your child&rsquo;s savings story today!</p>
+                                </div>
+                                <div class="b17PayLinks payIcon-space">
+                                </div>
 
-        <div class="b15benfits_main_box b17cards">
-            <div class="container">
+                                <!-- Button and Footer Links go here ... -->
+                                <a href="{{ route('frontend.en.personal.savings-and-cds.kids-savings') }}"
+                                    class="b17readmore">Learn More</a>
+                            </div>
+
+                            <div class="b17free_mobile_banking_left right">
+                                <img class="img-responsive" id="imgMainImage" style="border-radius:50%"
+                                    src="{{ asset('assets/frontend/contentassets/cef4f6fd58bf49f4896a9b4c7dca6f6b/specialized-savings.jpg') }}"
+                                    alt="First PREMIER Bank">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="b15benfits_main_box b17cards">
+                        <div class="container">
                             <div class="b15student_parent_main_content b15-bg-student_parent_main_content">
                                 <div class="b15avtar">
-                                <img src="{{ asset('assets/frontend/contentassets/91e0c22afbb74afeac98b7e89391ab1b/everfi-money-basics.png') }}" title="Financial Foundations" alt="child putting coins in piggy bank" width="116px" height="116px"></div>
+                                    <img src="{{ asset('assets/frontend/contentassets/91e0c22afbb74afeac98b7e89391ab1b/everfi-money-basics.png') }}"
+                                        title="Financial Foundations" alt="child putting coins in piggy bank" width="116px"
+                                        height="116px">
+                                </div>
                                 <div class="b15avtar_content">
                                     <h3>Financial Foundations</h3>
-                                    <p>Our interactive module will help you understand key financial concepts and make better money management decisions.</p>
+                                    <p>Our interactive module will help you understand key financial concepts and make
+                                        better money management decisions.</p>
                                     <div class="clearfix"></div><br />
-                                            <a href="#" data-toggle="modal" data-target="#a30814047YA" data-backdrop="false" class="b15learnmore">Learn More</a>
-                                            <div id="a30814047YA" class="modal fade" role="dialog">
-                                                <div class="modal-dialog pop_board">
-                                                    <div class="modal-content">
-                                                        <div class="modal-body">
-                                                            <div class="pop_main_container_board">
-                                                                <button type="button" class="close" data-dismiss="modal" area-label="Close">
-                                                                    <span aria-hidden="true">
-                                                                        <img class="close_icon" src="{{ asset('assets/frontend/Static/img/closebutton-2.png') }}" alt="First PREMIER Bank" style="height:17px !important; width:17px !important;" />
-                                                                    </span>
-                                                                </button>
-                                                                <div class="pop_main_container">
-                                                                        <h2>Financial Foundations</h2>
-                                                                    <div class="pop_board_white">
-                                                                        <div class="row">
-                                                                            <div class="col-md-12" style="padding-left:40px;">
-                                                                                <h4 class="Blue">You will be leaving firstpremier.com</h4>
-                                                                                <div class="b46Blue" style="text-align:left;">
-                                                                                    <p>Please note, by clicking &ldquo;continue&rdquo; you will be redirected to a website that is not operated or controlled by PREMIER. PREMIER is not responsible for the content, links, privacy policy or security of that website. Your use of that website is subject to its terms of use and privacy policy. Thank you for visiting firstpremier.com. If you continue, we hope you find the information presented educational and useful.</p>
-                                                                                    <p><br /><a href="https://firstpremier.everfi-next.net/student/dashboard/financialeducation-achieve/financial-foundations" target="_blank">Continue</a></p>
-                                                                                </div>
-                                                                            </div>
+                                    <a href="#" data-toggle="modal" data-target="#a30814047YA" data-backdrop="false"
+                                        class="b15learnmore">Learn More</a>
+                                    <div id="a30814047YA" class="modal fade" role="dialog">
+                                        <div class="modal-dialog pop_board">
+                                            <div class="modal-content">
+                                                <div class="modal-body">
+                                                    <div class="pop_main_container_board">
+                                                        <button type="button" class="close" data-dismiss="modal"
+                                                            area-label="Close">
+                                                            <span aria-hidden="true">
+                                                                <img class="close_icon"
+                                                                    src="{{ asset('assets/frontend/Static/img/closebutton-2.png') }}"
+                                                                    alt="First PREMIER Bank"
+                                                                    style="height:17px !important; width:17px !important;" />
+                                                            </span>
+                                                        </button>
+                                                        <div class="pop_main_container">
+                                                            <h2>Financial Foundations</h2>
+                                                            <div class="pop_board_white">
+                                                                <div class="row">
+                                                                    <div class="col-md-12" style="padding-left:40px;">
+                                                                        <h4 class="Blue">You will be leaving
+                                                                            firstpremier.com</h4>
+                                                                        <div class="b46Blue"
+                                                                            style="text-align:left;">
+                                                                            <p>Please note, by clicking
+                                                                                &ldquo;continue&rdquo; you will be
+                                                                                redirected to a website that is not operated
+                                                                                or controlled by PREMIER. PREMIER is not
+                                                                                responsible for the content, links, privacy
+                                                                                policy or security of that website. Your use
+                                                                                of that website is subject to its terms of
+                                                                                use and privacy policy. Thank you for
+                                                                                visiting firstpremier.com. If you continue,
+                                                                                we hope you find the information presented
+                                                                                educational and useful.</p>
+                                                                            <p><br /><a
+                                                                                    href="https://firstpremier.everfi-next.net/student/dashboard/financialeducation-achieve/financial-foundations"
+                                                                                    target="_blank">Continue</a></p>
                                                                         </div>
                                                                     </div>
                                                                 </div>
@@ -1417,400 +1511,686 @@ Asset Management &amp; Trust                                            <i class
                                                     </div>
                                                 </div>
                                             </div>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                             <div class="b15student_parent_main_content b15-bg-student_parent_main_content">
                                 <div class="b15avtar">
-                                <img src="{{ asset('assets/frontend/globalassets/images/secondary-icons/gold/business-finance/gold-business-_-finance-secondary-icon-10.png') }}" title="Certificates of Deposit" alt="child putting coins in piggy bank" width="116px" height="116px"></div>
+                                    <img src="{{ asset('assets/frontend/globalassets/images/secondary-icons/gold/business-finance/gold-business-_-finance-secondary-icon-10.png') }}"
+                                        title="Certificates of Deposit" alt="child putting coins in piggy bank"
+                                        width="116px" height="116px">
+                                </div>
                                 <div class="b15avtar_content">
                                     <h3>Certificates of Deposit</h3>
-                                    <p>First PREMIER offers an array of rate and term options for certificates of deposit. With an IRA CD, you can also enjoy tax-deferred savings.</p>
+                                    <p>First PREMIER offers an array of rate and term options for certificates of deposit.
+                                        With an IRA CD, you can also enjoy tax-deferred savings.</p>
                                     <div class="clearfix"></div><br />
-                                            <a href="{{ route('frontend.en.personal.savings-and-cds.ira-savings-and-cds') }}">Learn More</a>
+                                    <a href="{{ route('frontend.en.personal.savings-and-cds.ira-savings-and-cds') }}">Learn
+                                        More</a>
                                 </div>
                             </div>
-            </div>
-        </div>
+                        </div>
+                    </div>
 
-    <div id="a30814047" class="modal fade" role="dialog">
-        <div class="modal-dialog pop_board">
-            <div class="modal-content">
-                <div class="modal-body">
-                    <div class="pop_main_container_board">
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                            <span aria-hidden="true">
-                                <img class="close_icon" src="{{ asset('assets/frontend/static/img/closebutton.png') }}" alt="First PREMIER Bank" style="height:17px !important;width:17px !important;">
-                            </span>
-                        </button>
-                        <div class="pop_main_container">
-                                <h2>Specialized Savings</h2>
-                            <div class="pop_board_white">
-                                <div class="row">
-                                    <div class="col-md-12" style="padding-left:40px;">
-                                        <h4 class="Blue"></h4>
-                                        <div class="b46Blue" style="text-align:left;">
+                    <div id="a30814047" class="modal fade" role="dialog">
+                        <div class="modal-dialog pop_board">
+                            <div class="modal-content">
+                                <div class="modal-body">
+                                    <div class="pop_main_container_board">
+                                        <button type="button" class="close" data-dismiss="modal"
+                                            aria-label="Close">
+                                            <span aria-hidden="true">
+                                                <img class="close_icon"
+                                                    src="{{ asset('assets/frontend/static/img/closebutton.png') }}"
+                                                    alt="First PREMIER Bank"
+                                                    style="height:17px !important;width:17px !important;">
+                                            </span>
+                                        </button>
+                                        <div class="pop_main_container">
+                                            <h2>Specialized Savings</h2>
+                                            <div class="pop_board_white">
+                                                <div class="row">
+                                                    <div class="col-md-12" style="padding-left:40px;">
+                                                        <h4 class="Blue"></h4>
+                                                        <div class="b46Blue" style="text-align:left;">
 
-                                            <p><br /><a href="kids-savings/index.html" target="_blank"></a></p>
+                                                            <p><br /><a href="kids-savings/index.html" target="_blank"></a>
+                                                            </p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                </div>
+                </section>
+
+                <!-- View Rate [3] (within container)-->
+                <!-- View Rate [3] (within container)-->
+                <script>
+                    $('.modal-backdrop').remove();
+                </script>
             </div>
-        </div>
-    </div>
-</section>
+            <div class="block b25block  col-md-12">
+                <script>
+                    $(document).ready(function() {
 
-<!-- View Rate [3] (within container)-->
-<!-- View Rate [3] (within container)-->
-<script>
-    $('.modal-backdrop').remove();
-</script></div><div class="block b25block  col-md-12">
-<script>
-    $(document).ready(function () {
+                        if ('{{asset("assets/frontend/Static/img/CustomBlocks/B25/Background.png")}}' != 'null' &&
+                            '{{asset("assets/frontend/Static/img/CustomBlocks/B25/Background.png")}}' != '') {
+                            $(".b25disclosure").css("background",
+                                "#245251 url({{asset('assets/frontend/Static/img/CustomBlocks/B25/Background.png')}}) no-repeat");
+                            if (screen.width > 1000) {
+                                $(".b25need_help_main").css("background",
+                                    "#245251 url({{asset('assets/frontend/Static/img/CustomBlocks/B25/Background.png')}}) no-repeat");
+                            }
 
-        if ('/Static/img/CustomBlocks/B25/Background.png' != 'null' && '/Static/img/CustomBlocks/B25/Background.png' != '') {
-            $(".b25disclosure").css("background", "#245251 url(/Static/img/CustomBlocks/B25/Background.png) no-repeat");
-            if (screen.width > 1000) {
-                $(".b25need_help_main").css("background", "#245251 url(/Static/img/CustomBlocks/B25/Background.png) no-repeat");
-            }
+                        }
 
-        }
+                    });
+                </script>
+                <style>
+                    /*.b25need_help_main .White { margin-bottom: 20px !important; }
+        */
+                    .b25need_help_main .xhtml h2 {
+                        color: #e4cb34;
+                    }
 
-    });
-</script>
-<style>
-    /*.b25need_help_main .White { margin-bottom: 20px !important; }
-    */
-    .b25need_help_main .xhtml h2 {
-        color: #e4cb34;
-    }
-    /*.b25need_help_main { margin-top: -24px; } */
-    @media only screen and (max-width:1024px){
-        .b25need_help_main {background-color:#245251 !important;}
-        .page-about-us .b25need_help_main, .parent-5384 .b25need_help_main { background-color:#1f3848 !important; }
-    }
-</style>
-<section class="row-full">
+                    /*.b25need_help_main { margin-top: -24px; } */
+                    @media only screen and (max-width:1024px) {
+                        .b25need_help_main {
+                            background-color: #245251 !important;
+                        }
 
-        <div class="b25need_help_main">
-            <div class="container">
-                <h2 class="White">Get Started!</h2>
-                <div class="xhtml"><p>Speak to a First PREMIER Personal Banker to discuss your needs.</p></div>
-                <div class="b25bottom" style="">
-                    <center>
-                    <a href="../../pages/about-us/teams/personal-banking-sioux-falls-team/index.html" class="b25mainanchor">CONTACT US</a><br clear="all"/>
-                    </center>
-                </div>
-            </div>
-        </div>
+                        .page-about-us .b25need_help_main,
+                        .parent-5384 .b25need_help_main {
+                            background-color: #1f3848 !important;
+                        }
+                    }
 
-</section></div><div class="block b12block  col-md-12">        <style>
-            .b12faq_main { float: left; width: 100%; padding:100px 0px 50px 0px !important; text-align: left; background: #fff; }
-        </style>
-        <div class="b12faq_main">
-            <div class="b12container">
-                <h2>Frequently Asked Questions</h2>
-                <!-- tabs left -->
-                <div class="tabbable">
-                    <div class="tab-content col-md-7">
-                        <div class="tab-pane active" id="A"><span>Is there a minimum opening deposit to open a savings account?</span><p><p>There is a $50 minimum opening deposit for most of our personal accounts.</p></p></div><div class="tab-pane" id="B"><span>Is there a limit on withdrawals I can make from my savings account?</span><p><p>Savings withdrawals are generally limited to six per month. You may make an unlimited number of withdrawals when made in person, by mail or at an automated teller machine (ATM). If the monthly withdrawal limit is exceeded, a fee of $1 for each excess withdrawal will be assessed.</p></p></div><div class="tab-pane" id="C"><span>How can I open a Regular Savings Account?</span><p><p>If you are a resident of South Dakota, Iowa, Nebraska or Minnesota, you can open an account online. Otherwise you can visit one of our convenient First PREMIER Bank locations.</p></p></div>
+                </style>
+                <section class="row-full">
+
+                    <div class="b25need_help_main">
+                        <div class="container">
+                            <h2 class="White">Get Started!</h2>
+                            <div class="xhtml">
+                                <p>Speak to a First PREMIER Personal Banker to discuss your needs.</p>
+                            </div>
+                            <div class="b25bottom" style="">
+                                <center>
+                                    <a href="{{ route('frontend.en.pages.about-us.teams.personal-banking-sioux-falls-team') }}"
+                                        class="b25mainanchor">CONTACT US</a><br clear="all" />
+                                </center>
+                            </div>
+                        </div>
                     </div>
-                    <ul class="nav nav-pills nav-stacked col-md-5">
-                        <li class="active"><a href="#A" data-toggle="tab">Is there a minimum opening deposit to open a savings account?</a></li><li><a href="#B" data-toggle="tab">Is there a limit on withdrawals I can make from my savings account?</a></li><li><a href="#C" data-toggle="tab">How can I open a Regular Savings Account?</a></li>
-                    </ul>
-                </div>
+
+                </section>
             </div>
-        </div>
+            <div class="block b12block  col-md-12">
+                <style>
+                    .b12faq_main {
+                        float: left;
+                        width: 100%;
+                        padding: 100px 0px 50px 0px !important;
+                        text-align: left;
+                        background: #fff;
+                    }
 
-</div><div class="block b13block  col-md-12">
-
-<style>
-
-    .b13what_you_know_main ol li p { padding: 0 10px 0 34px; list-style: none;  margin: 0px 0px 0px 0px; font-size:14px; text-align:left;}
-    .b13what_you_know_main ol li { width:100% }
-    .b13what_you_know_main ol li ol li{ width:50%; }
-    .b13what_you_know_main_white ol li ol li { width:50%; }
-</style>
-<script>
-    $(document).ready(function () {
-        //GetDisclosurePoints();
-        GetDisclosurePointsBrackets();
-    });
-</script>
-<section class="row-full">
-        <div class="b13what_you_know_main">
-            <div class="container" style="background-color:#182e39 !important;">
-
-                <h4> Disclosure </h4>
-                <div class="b13points">
-                    <p>{1} Savings withdrawals are generally limited to six per month. You may make an unlimited number of withdrawals when made in person, by mail or at an automated teller machine (ATM). If the monthly withdrawal limit is exceeded, a fee of $1 for each excess withdrawal will be assessed. Fees can reduce earnings on the account.</p>
-                </div>
-            </div>
-        </div>
-</section></div><div class="block b26block  col-md-12">
-
-
-
-<style>
-    .carousel-control:focus, .carousel-control:hover, .carousel-control.left, .carousel-control.right {
-        background: none !important;
-    }
-    .b26line_credit_main .carousel-inner { min-height:520px !important;; }
-
-    .white-background h2, .white-background .xhtml, .white-background .xhtml p,
-    .grey-background h2, .grey-background .xhtml, .grey-background .xhtml p
-    {
-        color: #000;
-    }
-</style>
-<script>
-    var alternateBackground = "True";
-    $(document).ready(function () {
-        $('#myCarousel-').carousel({
-            interval: 16000
-        })
-
-        if (alternateBackground.toLowerCase() == "true") {
-            $("#b26linecredit").addClass("alternate_background");
-        } else {
-            $("#b26linecredit").addClass("primary_background");
-        }
-    });
-
-</script>
-
-<section class="row-full">
-    <div class="b26line_credit_main" id="b26linecredit">
-        <div class="container">
-
-                <h2>You May Also Be Interested In</h2>
-
-
-            <div class="row">
-                <div class="col-md-12 hidden-xs hidden-sm">
-                    <div class="carousel" id="myCarousel-" data-interval="false">
-                        <div class="carousel-inner">
-                            <div class='item active'><div class='col-lg-4 col-md-12 col-sm-12 col-xs-12 b26line_credit_loans no-pad'><div class='b26line_credit_loans_left'><img src='{{ asset('assets/frontend/globalassets/ymabii/personal/b-17-promo-01-personal-checking.png') }}' alt='woman on couch using mobile phone'></div><div class='b26line_credit_loans_right'><div class="b26titlerow"><h3 class='deckspanNoCaret'>Personal Checking</h3></div><h3><br clear='all'/><div class="xhtml"><p>From FREE+ Checking with Online &amp; Mobile Banking, we&rsquo;ve got you covered.</p>
-<ul>
-<li><a href="{{  route('frontend.en.personal.personal-checking.free-plus-checking')  }}">FREE+ Checking</a></li>
-<li><a href="{{ route('frontend.en.personal.personal-checking.reward-checking') }}">Reward Checking</a></li>
-<li><a href="{{ route('frontend.en.personal.online-and-mobile') }}">Online &amp; Mobile Banking</a></li>
-</ul></div></h3></div></div><div class='col-lg-4 col-md-12 col-sm-12 col-xs-12 b26line_credit_loans b26line_personal_loans no-pad'><div class='b26line_credit_loans_left'><img src='{{ asset('assets/frontend/globalassets/ymabii/personal/b-17-promo-01-loans-credit.png') }}' alt='couple shaking hands with banker'></div><div class='b26line_credit_loans_right'><div class="b26titlerow"><h3 class='deckspanNoCaret'>Loans & Credit Lines</h3></div><h3><br clear='all'/><div class="xhtml"><p>Competitive rates on loans of all sizes, lines of credit and more. We make our lending decisions locally.</p>
-<ul>
-<li><a href="{{ route('frontend.en.personal.loans-and-credit-lines.personal-loans') }}">Personal Loans</a></li>
-<li><a href="{{ route('frontend.en.personal.loans-and-credit-lines.personal-lines-of-credit') }}">Personal Lines of Credit</a></li>
-</ul></div></h3></div></div><div class='col-lg-4 col-md-12 col-sm-12 col-xs-12 b26line_credit_loans no-pad last'><div class='b26line_credit_loans_left'><img src='{{ asset('assets/frontend/globalassets/ymabii/personal/b-17-promo-01-grow-wealth.png') }}' alt=''></div><div class='b26line_credit_loans_right'><div class="b26titlerow"><h3 class='deckspanNoCaret'>Grow Your Wealth</h3></div><h3><br clear='all'/><div class="xhtml"><p>We offer concierge-style banking for higher net worth individuals, with managed investing and more.</p>
-<ul>
-<li><a href="../wealth-management/private-banking/index.html">Private Banking</a></li>
-<li><a href="../wealth-management/managed-investing/index.html">Managed Investing</a></li>
-<li><a href="../wealth-management/personal-trust-services/index.html">Personal Trust Services</a></li>
-</ul></div></h3></div></div></div>
+                </style>
+                <div class="b12faq_main">
+                    <div class="b12container">
+                        <h2>Frequently Asked Questions</h2>
+                        <!-- tabs left -->
+                        <div class="tabbable">
+                            <div class="tab-content col-md-7">
+                                <div class="tab-pane active" id="A"><span>Is there a minimum opening deposit to open a
+                                        savings account?</span>
+                                    <p>
+                                    <p>There is a $50 minimum opening deposit for most of our personal accounts.</p>
+                                    </p>
+                                </div>
+                                <div class="tab-pane" id="B"><span>Is there a limit on withdrawals I can make from my
+                                        savings account?</span>
+                                    <p>
+                                    <p>Savings withdrawals are generally limited to six per month. You may make an unlimited
+                                        number of withdrawals when made in person, by mail or at an automated teller machine
+                                        (ATM). If the monthly withdrawal limit is exceeded, a fee of $1 for each excess
+                                        withdrawal will be assessed.</p>
+                                    </p>
+                                </div>
+                                <div class="tab-pane" id="C"><span>How can I open a Regular Savings Account?</span>
+                                    <p>
+                                    <p>If you are a resident of South Dakota, Iowa, Nebraska or Minnesota, you can open an
+                                        account online. Otherwise you can visit one of our convenient First PREMIER Bank
+                                        locations.</p>
+                                    </p>
+                                </div>
+                            </div>
+                            <ul class="nav nav-pills nav-stacked col-md-5">
+                                <li class="active"><a href="#A" data-toggle="tab">Is there a minimum opening
+                                        deposit to open a savings account?</a></li>
+                                <li><a href="#B" data-toggle="tab">Is there a limit on withdrawals I can make from my
+                                        savings account?</a></li>
+                                <li><a href="#C" data-toggle="tab">How can I open a Regular Savings Account?</a></li>
+                            </ul>
                         </div>
                     </div>
                 </div>
-                <div class="b26Mobile col-sm-6 hidden-md hidden-lg" style="left:-8px;">
-                    <center>
-                    <div class="b26MobileCard" style="width:345px;min-height:700px;">
-                        <div class='item'><div class='col-xs-12 col-sm-12 b26AltClass b26line_credit_loans b26line_personal_loans no-pad '><div><img src='../../../globalassets/ymabii/personal/b-17-promo-01-personal-checking.png' alt='woman on couch using mobile phone'></div><div class='b26line_credit_loans_right'><div class="b26titlerow"><h3 class='deckspanNoCaret'>Personal Checking</h3></div><h3><br clear='all'/><div class="xhtml"><p>From FREE+ Checking with Online &amp; Mobile Banking, we&rsquo;ve got you covered.</p>
-<ul>
-<li><a href="../personal-checking/free-plus-checking/index.html">FREE+ Checking</a></li>
-<li><a href="../personal-checking/reward-checking/index.html">Reward Checking</a></li>
-<li><a href="../online-and-mobile/index.html">Online &amp; Mobile Banking</a></li>
-</ul></div></h3></div></div></div><div class='item'><div class='col-xs-12 col-sm-12 b26AltClass b26line_credit_loans b26line_personal_loans no-pad '><div><img src='../../../globalassets/ymabii/personal/b-17-promo-01-loans-credit.png' alt='couple shaking hands with banker'></div><div class='b26line_credit_loans_right'><div class="b26titlerow"><h3 class='deckspanNoCaret'>Loans & Credit Lines</h3></div><h3><br clear='all'/><div class="xhtml"><p>Competitive rates on loans of all sizes, lines of credit and more. We make our lending decisions locally.</p>
-<ul>
-<li><a href="../loans-and-credit-lines/personal-loans/index.html">Personal Loans</a></li>
-<li><a href="../loans-and-credit-lines/personal-lines-of-credit/index.html">Personal Lines of Credit</a></li>
-</ul></div></h3></div></div></div><div class='item'><div class='col-xs-12 col-sm-12 b26AltClass b26line_credit_loans b26line_personal_loans no-pad '><div><img src='../../../globalassets/ymabii/personal/b-17-promo-01-grow-wealth.png' alt=''></div><div class='b26line_credit_loans_right'><div class="b26titlerow"><h3 class='deckspanNoCaret'>Grow Your Wealth</h3></div><h3><br clear='all'/><div class="xhtml"><p>We offer concierge-style banking for higher net worth individuals, with managed investing and more.</p>
-<ul>
-<li><a href="../wealth-management/private-banking/index.html">Private Banking</a></li>
-<li><a href="../wealth-management/managed-investing/index.html">Managed Investing</a></li>
-<li><a href="../wealth-management/personal-trust-services/index.html">Personal Trust Services</a></li>
-</ul></div></h3></div></div></div>
+
+            </div>
+            <div class="block b13block  col-md-12">
+
+                <style>
+                    .b13what_you_know_main ol li p {
+                        padding: 0 10px 0 34px;
+                        list-style: none;
+                        margin: 0px 0px 0px 0px;
+                        font-size: 14px;
+                        text-align: left;
+                    }
+
+                    .b13what_you_know_main ol li {
+                        width: 100%
+                    }
+
+                    .b13what_you_know_main ol li ol li {
+                        width: 50%;
+                    }
+
+                    .b13what_you_know_main_white ol li ol li {
+                        width: 50%;
+                    }
+
+                </style>
+                <script>
+                    $(document).ready(function() {
+                        //GetDisclosurePoints();
+                        GetDisclosurePointsBrackets();
+                    });
+                </script>
+                <section class="row-full">
+                    <div class="b13what_you_know_main">
+                        <div class="container" style="background-color:#182e39 !important;">
+
+                            <h4> Disclosure </h4>
+                            <div class="b13points">
+                                <p>{1} Savings withdrawals are generally limited to six per month. You may make an unlimited
+                                    number of withdrawals when made in person, by mail or at an automated teller machine
+                                    (ATM). If the monthly withdrawal limit is exceeded, a fee of $1 for each excess
+                                    withdrawal will be assessed. Fees can reduce earnings on the account.</p>
+                            </div>
+                        </div>
                     </div>
-                    </center>
+                </section>
+            </div>
+            <div class="block b26block  col-md-12">
+
+
+
+                <style>
+                    .carousel-control:focus,
+                    .carousel-control:hover,
+                    .carousel-control.left,
+                    .carousel-control.right {
+                        background: none !important;
+                    }
+
+                    .b26line_credit_main .carousel-inner {
+                        min-height: 520px !important;
+                        ;
+                    }
+
+                    .white-background h2,
+                    .white-background .xhtml,
+                    .white-background .xhtml p,
+                    .grey-background h2,
+                    .grey-background .xhtml,
+                    .grey-background .xhtml p {
+                        color: #000;
+                    }
+
+                </style>
+                <script>
+                    var alternateBackground = "True";
+                    $(document).ready(function() {
+                        $('#myCarousel-').carousel({
+                            interval: 16000
+                        })
+
+                        if (alternateBackground.toLowerCase() == "true") {
+                            $("#b26linecredit").addClass("alternate_background");
+                        } else {
+                            $("#b26linecredit").addClass("primary_background");
+                        }
+                    });
+                </script>
+
+                <section class="row-full">
+                    <div class="b26line_credit_main" id="b26linecredit">
+                        <div class="container">
+
+                            <h2>You May Also Be Interested In</h2>
+
+
+                            <div class="row">
+                                <div class="col-md-12 hidden-xs hidden-sm">
+                                    <div class="carousel" id="myCarousel-" data-interval="false">
+                                        <div class="carousel-inner">
+                                            <div class='item active'>
+                                                <div
+                                                    class='col-lg-4 col-md-12 col-sm-12 col-xs-12 b26line_credit_loans no-pad'>
+                                                    <div class='b26line_credit_loans_left'><img
+                                                            src='{{ asset('assets/frontend/globalassets/ymabii/personal/b-17-promo-01-personal-checking.png') }}'
+                                                            alt='woman on couch using mobile phone'></div>
+                                                    <div class='b26line_credit_loans_right'>
+                                                        <div class="b26titlerow">
+                                                            <h3 class='deckspanNoCaret'>Personal Checking</h3>
+                                                        </div>
+                                                        <h3><br clear='all' />
+                                                            <div class="xhtml">
+                                                                <p>From FREE+ Checking with Online &amp; Mobile Banking,
+                                                                    we&rsquo;ve got you covered.</p>
+                                                                <ul>
+                                                                    <li><a
+                                                                            href="{{ route('frontend.en.personal.personal-checking.free-plus-checking') }}">FREE+
+                                                                            Checking</a></li>
+                                                                    <li><a
+                                                                            href="{{ route('frontend.en.personal.personal-checking.reward-checking') }}">Reward
+                                                                            Checking</a></li>
+                                                                    <li><a
+                                                                            href="{{ route('frontend.en.personal.online-and-mobile') }}">Online
+                                                                            &amp; Mobile Banking</a></li>
+                                                                </ul>
+                                                            </div>
+                                                        </h3>
+                                                    </div>
+                                                </div>
+                                                <div
+                                                    class='col-lg-4 col-md-12 col-sm-12 col-xs-12 b26line_credit_loans b26line_personal_loans no-pad'>
+                                                    <div class='b26line_credit_loans_left'><img
+                                                            src='{{ asset('assets/frontend/globalassets/ymabii/personal/b-17-promo-01-loans-credit.png') }}'
+                                                            alt='couple shaking hands with banker'></div>
+                                                    <div class='b26line_credit_loans_right'>
+                                                        <div class="b26titlerow">
+                                                            <h3 class='deckspanNoCaret'>Loans & Credit Lines</h3>
+                                                        </div>
+                                                        <h3><br clear='all' />
+                                                            <div class="xhtml">
+                                                                <p>Competitive rates on loans of all sizes, lines of credit
+                                                                    and more. We make our lending decisions locally.</p>
+                                                                <ul>
+                                                                    <li><a
+                                                                            href="{{ route('frontend.en.personal.loans-and-credit-lines.personal-loans') }}">Personal
+                                                                            Loans</a></li>
+                                                                    <li><a
+                                                                            href="{{ route('frontend.en.personal.loans-and-credit-lines.personal-lines-of-credit') }}">Personal
+                                                                            Lines of Credit</a></li>
+                                                                </ul>
+                                                            </div>
+                                                        </h3>
+                                                    </div>
+                                                </div>
+                                                <div
+                                                    class='col-lg-4 col-md-12 col-sm-12 col-xs-12 b26line_credit_loans no-pad last'>
+                                                    <div class='b26line_credit_loans_left'><img
+                                                            src='{{ asset('assets/frontend/globalassets/ymabii/personal/b-17-promo-01-grow-wealth.png') }}'
+                                                            alt=''></div>
+                                                    <div class='b26line_credit_loans_right'>
+                                                        <div class="b26titlerow">
+                                                            <h3 class='deckspanNoCaret'>Grow Your Wealth</h3>
+                                                        </div>
+                                                        <h3><br clear='all' />
+                                                            <div class="xhtml">
+                                                                <p>We offer concierge-style banking for higher net worth
+                                                                    individuals, with managed investing and more.</p>
+                                                                <ul>
+                                                                    <li><a
+                                                                            href="{{ route('frontend.en.personal.wealth-management.private-banking') }}">Private
+                                                                            Banking</a></li>
+                                                                    <li><a
+                                                                            href="{{ route('frontend.en.personal.wealth-management.managed-investing') }}">Managed
+                                                                            Investing</a></li>
+                                                                    <li><a
+                                                                            href="{{ route('frontend.en.personal.wealth-management.personal-trust-services') }}">Personal
+                                                                            Trust Services</a></li>
+                                                                </ul>
+                                                            </div>
+                                                        </h3>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="b26Mobile col-sm-6 hidden-md hidden-lg" style="left:-8px;">
+                                    <center>
+                                        <div class="b26MobileCard" style="width:345px;min-height:700px;">
+                                            <div class='item'>
+                                                <div
+                                                    class='col-xs-12 col-sm-12 b26AltClass b26line_credit_loans b26line_personal_loans no-pad '>
+                                                    <div><img
+                                                            src='../../../globalassets/ymabii/personal/b-17-promo-01-personal-checking.png'
+                                                            alt='woman on couch using mobile phone'></div>
+                                                    <div class='b26line_credit_loans_right'>
+                                                        <div class="b26titlerow">
+                                                            <h3 class='deckspanNoCaret'>Personal Checking</h3>
+                                                        </div>
+                                                        <h3><br clear='all' />
+                                                            <div class="xhtml">
+                                                                <p>From FREE+ Checking with Online &amp; Mobile Banking,
+                                                                    we&rsquo;ve got you covered.</p>
+                                                                <ul>
+                                                                    <li><a
+                                                                            href="../personal-checking/free-plus-checking/index.html">FREE+
+                                                                            Checking</a></li>
+                                                                    <li><a
+                                                                            href="../personal-checking/reward-checking/index.html">Reward
+                                                                            Checking</a></li>
+                                                                    <li><a href="../online-and-mobile/index.html">Online
+                                                                            &amp; Mobile Banking</a></li>
+                                                                </ul>
+                                                            </div>
+                                                        </h3>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class='item'>
+                                                <div
+                                                    class='col-xs-12 col-sm-12 b26AltClass b26line_credit_loans b26line_personal_loans no-pad '>
+                                                    <div><img
+                                                            src='../../../globalassets/ymabii/personal/b-17-promo-01-loans-credit.png'
+                                                            alt='couple shaking hands with banker'></div>
+                                                    <div class='b26line_credit_loans_right'>
+                                                        <div class="b26titlerow">
+                                                            <h3 class='deckspanNoCaret'>Loans & Credit Lines</h3>
+                                                        </div>
+                                                        <h3><br clear='all' />
+                                                            <div class="xhtml">
+                                                                <p>Competitive rates on loans of all sizes, lines of credit
+                                                                    and more. We make our lending decisions locally.</p>
+                                                                <ul>
+                                                                    <li><a
+                                                                            href="../loans-and-credit-lines/personal-loans/index.html">Personal
+                                                                            Loans</a></li>
+                                                                    <li><a
+                                                                            href="../loans-and-credit-lines/personal-lines-of-credit/index.html">Personal
+                                                                            Lines of Credit</a></li>
+                                                                </ul>
+                                                            </div>
+                                                        </h3>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class='item'>
+                                                <div
+                                                    class='col-xs-12 col-sm-12 b26AltClass b26line_credit_loans b26line_personal_loans no-pad '>
+                                                    <div><img
+                                                            src='../../../globalassets/ymabii/personal/b-17-promo-01-grow-wealth.png'
+                                                            alt=''></div>
+                                                    <div class='b26line_credit_loans_right'>
+                                                        <div class="b26titlerow">
+                                                            <h3 class='deckspanNoCaret'>Grow Your Wealth</h3>
+                                                        </div>
+                                                        <h3><br clear='all' />
+                                                            <div class="xhtml">
+                                                                <p>We offer concierge-style banking for higher net worth
+                                                                    individuals, with managed investing and more.</p>
+                                                                <ul>
+                                                                    <li><a
+                                                                            href="../wealth-management/private-banking/index.html">Private
+                                                                            Banking</a></li>
+                                                                    <li><a
+                                                                            href="../wealth-management/managed-investing/index.html">Managed
+                                                                            Investing</a></li>
+                                                                    <li><a
+                                                                            href="../wealth-management/personal-trust-services/index.html">Personal
+                                                                            Trust Services</a></li>
+                                                                </ul>
+                                                            </div>
+                                                        </h3>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </center>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+
+            </div>
+        </div>
+
+
+
+        <div class="row-full footer">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-3 col-sm-3 col-xs-12 footerCol1">
+                        <div class="footerHeader">Company</div>
+        
+                        <ul>
+        
+                            <li>
+                                <a href="{{ route('frontend.en.pages.about-us')}}">About Us</a>
+                            </li>
+        
+                            <li>
+                                <a href="{{ route('frontend') }}">First PREMIER Bank</a>
+                            </li>
+        
+                            <li>
+                                <a href="https://www.mypremiercreditcard.com/">PREMIER Bankcard</a>
+                            </li>
+        
+                            <li>
+                                <a href="{{ route('frontend.en.pages.about-us.leadership-team') }}">Leadership</a>
+                            </li>
+        
+                            <li>
+                                <a href="{{ route('frontend.en.pages.about-us.community') }}">Community</a>
+                            </li>
+        
+                            <li>
+                                <a href="{{route('frontend.en.pages.about.careers')}}">Careers</a>
+                            </li>
+        
+                        </ul>
+                        <br />
+                    </div>
+                    <div class="col-md-3 col-sm-3 col-xs-12 footerCol2">
+                        <div class="footerHeader">Customers</div>
+        
+                        <ul>
+        
+                            <li>
+                                <a href="{{ route('frontend') }}">Personal Banking</a>
+                            </li>
+        
+                            <li>
+                                <a href="{{ route('frontend.en.small-business') }}">Small Business</a>
+                            </li>
+        
+                            <li>
+                                <a href="{{ route('frontend.en.commercial') }}">Commercial</a>
+                            </li>
+        
+                        </ul>
+                        <br />
+                    </div>
+                    <div class="col-md-3 col-sm-3 col-xs-12 footerCol3">
+                        <div class="footerHeader">Help &amp; Contact</div>
+        
+                        <ul>
+        
+                            <li>
+                                <a href="{{ route('frontend.en.pages.quick-links.customer-care') }}">Customer Care</a>
+                            </li>
+        
+                            <li>
+                                <a href="{{ route('frontend.en.pages.quick-links.locations') }}">Locations</a>
+                            </li>
+        
+                            <li>
+                                <a href="{{ route('frontend.en.pages.quick-links.customer-care') }}">BANK: 800-501-6535</a>
+                            </li>
+        
+                            <li>
+                                <a href="https://www.mypremiercreditcard.com/">CREDIT CARD: 800-987-5521</a>
+                            </li>
+        
+                            <li>
+                                <a href="{{ route('frontend') }}">Routing Number: 091408598</a>
+                            </li>
+        
+                        </ul>
+                        <br />
+                    </div>
+                    <div class="col-md-3 col-sm-3 col-xs-12 footerCol4">
+                        <div class="footerHeader">Legal Notices</div>
+        
+                        <ul>
+        
+                            <li>
+                                <a href="{{ route('frontend.en.pages.resources.first-premier-privacy-statement-2020') }}">Privacy
+                                    Notice &amp; Statement</a>
+                            </li>
+        
+                            <li>
+                                <a href="{{ route('frontend.en.pages.resources.legal-disclosures') }}">Legal Disclosures</a>
+                            </li>
+        
+                            <li>
+                                <a href="{{ route('frontend.en.pages.resources.cookie-policy') }}">Cookie Policy</a>
+                            </li>
+        
+                        </ul>
+                    </div>
                 </div>
-
+                <div class="row">
+                    <div class="col-md-12" style="padding-top:50px;">
+                        <p>Member FDIC | <img src="{{asset('assets/frontend/Static/img/equalhousinglender.png')}}" alt="Equal Housing Lender"
+                                title="Equal Housing Lender" />Equal Housing Lender</p>
+                    </div>
+                </div>
             </div>
         </div>
-    </div>
-</section>
+        <style>
+            /* CHROME SAFARI FIX */
+            .form-control:hover,
+            .form-control:active,
+            .form-control:focus {
+                box-shadow: none !important;
+                -moz-box-shadow: none !important;
+                -webkit-box-shadow: none !important;
+            }
 
+            .form-control:hover,
+            .form-control:active,
+            .form-control:focus {
+                box-shadow: none !important;
+                -moz-box-shadow: none !important;
+                -webkit-box-shadow: none !important;
+            }
 
-</div></div>
+            a:focus,
+            a:active {
+                outline: none !important;
+                border: none !important;
+            }
 
+            input:focus,
+            input:active {
+                outline: none !important;
+            }
 
+            textarea:focus {
+                outline: none !important;
+            }
 
-<div class="row-full footer">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-3 col-sm-3 col-xs-12 footerCol1">
-                <div class="footerHeader">Company</div>
+            button:focus,
+            button:active {
+                outline: none !important;
+                border: none !important;
+            }
 
-<ul>
+            .showehllogo {
+                background: url('{{asset("assets/frontend/Static/img/EHLlogo%20white.png")}}') 230px 0px no-repeat;
+                background-size: 24px 24px
+            }
 
-        <li>
-            <a href="../../pages/about-us/index.html">About Us</a>
-        </li>
+        </style>
+        <script type="text/javascript">
+            var ContentId;
+            var Name;
+            var FullName;
+            var EMail;
+            var Phone;
+            var Message;
 
-        <li>
-            <a href="../../index.html">First PREMIER Bank</a>
-        </li>
+            function contactPersonName(value) {
+                ContentId = parseInt($(value).attr('value'));
+                Name = $(value).attr('name');
+                $("#contactWithPersonName").html("Contact " + Name);
+                FullName = "";
+                EMail = "";
+                Message = "";
+                Phone = "";
+                $("#email").val("");
+                $("#fullname").val("");
+                $('#phone').val("");
+                $("#message").val("");
+            }
 
-        <li>
-            <a href="https://www.mypremiercreditcard.com/">PREMIER Bankcard</a>
-        </li>
+            //$("#fullname").val() != "" &&
+            $("#submitButtonB28Block").click(function(event) {
+                if ($("#email").val() != "" &&
+                    $("#message").val() != "") {
+                    FullName = $("#fullname").val();
+                    EMail = $("#email").val();
+                    Phone = $("#phone").val();
+                    Message = $("#message").val();
+                    $.ajax({
+                        type: "POST",
+                        url: '/api/ContactMe?ContentId=' + ContentId + '&ContactToName=' + Name +
+                            '&ContactPersonName=' + FullName + '&ContactPersonEmail=' + EMail +
+                            '&ContactPersonPhone=' + Phone + '&ContactPersonMessage=' + encodeURIComponent(
+                                Message),
+                        contentType: "application/json",
 
-        <li>
-            <a href="../../pages/about-us/leadership-team/index.html">Leadership</a>
-        </li>
+                        success: function(result) {
+                            alert(result);
+                        },
+                        error: function() {
 
-        <li>
-            <a href="../../pages/about-us/community/index.html">Community</a>
-        </li>
-
-        <li>
-            <a href="{{route('frontend.en.pages.about.careers')}}">Careers</a>
-        </li>
-
-</ul>
-                <br />
-            </div>
-            <div class="col-md-3 col-sm-3 col-xs-12 footerCol2">
-                <div class="footerHeader">Customers</div>
-
-<ul>
-
-        <li>
-            <a href="../../index.html">Personal Banking</a>
-        </li>
-
-        <li>
-            <a href="../../small-business/index.html">Small Business</a>
-        </li>
-
-        <li>
-            <a href="../../commercial/index.html">Commercial</a>
-        </li>
-
-</ul>
-                <br />
-            </div>
-            <div class="col-md-3 col-sm-3 col-xs-12 footerCol3">
-                <div class="footerHeader">Help &amp; Contact</div>
-
-<ul>
-
-        <li>
-            <a href="../../pages/quick-links/customer-care/index.html">Customer Care</a>
-        </li>
-
-        <li>
-            <a href="../../pages/quick-links/locations/index.html">Locations</a>
-        </li>
-
-        <li>
-            <a href="../../pages/quick-links/customer-care/index.html">BANK: 800-501-6535</a>
-        </li>
-
-        <li>
-            <a href="https://www.mypremiercreditcard.com/">CREDIT CARD: 800-987-5521</a>
-        </li>
-
-        <li>
-            <a href="../../index.html">Routing Number: 091408598</a>
-        </li>
-
-</ul>
-                <br />
-            </div>
-            <div class="col-md-3 col-sm-3 col-xs-12 footerCol4">
-                <div class="footerHeader">Legal Notices</div>
-
-<ul>
-
-        <li>
-            <a href="../../pages/resources/first-premier-privacy-statement-2020/index.html">Privacy Notice &amp; Statement</a>
-        </li>
-
-        <li>
-            <a href="../../pages/resources/legal-disclosures/index.html">Legal Disclosures</a>
-        </li>
-
-        <li>
-            <a href="../../pages/resources/cookie-policy/index.html">Cookie Policy</a>
-        </li>
-
-</ul>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-md-12" style="padding-top:50px;">
- <p>Member FDIC | <img src="{{ asset('assets/frontend/Static/img/equalhousinglender.png') }}" alt="Equal Housing Lender" title="Equal Housing Lender" />Equal Housing Lender</p>            </div>
-        </div>
-    </div>
-</div>
-<style>
-    /* CHROME SAFARI FIX */
-    .form-control:hover, .form-control:active, .form-control:focus { box-shadow: none !important; -moz-box-shadow: none !important; -webkit-box-shadow: none !important; }
-    .form-control:hover, .form-control:active, .form-control:focus { box-shadow: none !important; -moz-box-shadow: none !important; -webkit-box-shadow: none !important; }
-    a:focus, a:active {outline:none!important; border: none!important; }
-    input:focus, input:active { outline: none !important; }
-    textarea:focus { outline: none !important; }
-    button:focus, button:active { outline: none !important; border: none !important; }
-    .showehllogo { background: url('../../../Static/img/EHLlogo%20white.png') 230px 0px no-repeat; background-size: 24px 24px }
-</style>
-<script type="text/javascript">
-    var ContentId;
-    var Name;
-    var FullName;
-    var EMail;
-    var Phone;
-    var Message;
-    function contactPersonName(value) {
-        ContentId = parseInt($(value).attr('value'));
-        Name = $(value).attr('name');
-        $("#contactWithPersonName").html("Contact " + Name);
-        FullName = "";
-        EMail = "";
-        Message = "";
-        Phone = "";
-        $("#email").val("");
-        $("#fullname").val("");
-        $('#phone').val("");
-        $("#message").val("");
-    }
-
-    //$("#fullname").val() != "" &&
-    $("#submitButtonB28Block").click(function (event) {
-        if ($("#email").val() != "" &&
-            $("#message").val() != "") {
-            FullName = $("#fullname").val();
-            EMail = $("#email").val();
-            Phone = $("#phone").val();
-            Message = $("#message").val();
-            $.ajax({
-                type: "POST",
-                url: '/api/ContactMe?ContentId=' + ContentId + '&ContactToName=' + Name + '&ContactPersonName=' + FullName + '&ContactPersonEmail=' + EMail + '&ContactPersonPhone=' + Phone + '&ContactPersonMessage=' + encodeURIComponent(Message),
-                contentType: "application/json",
-
-                success: function (result) {
-                    alert(result);
-                },
-                error: function () {
-
+                        }
+                    });
                 }
             });
-        }
-    });
-</script>    </div>
-    <div class="smallLogo"><a href="../../index.html" title="First PREMIER Bank - Home"><img src="{{ asset('assets/frontend/Static/gfx/Logo.png') }}" style="max-width:100%;" /></a></div>
+        </script>
+    </div>
+    <div class="smallLogo"><a href="../../index.html" title="First PREMIER Bank - Home"><img
+                src="{{ asset('assets/frontend/Static/gfx/Logo.png') }}" style="max-width:100%;" /></a></div>
     <script type="text/javascript" src="../../../../dl.episerver.net/13.4.4.1/epi-util/find.js"></script>
-<script type="text/javascript">
-if(FindApi){var api = new FindApi();api.setApplicationUrl('../../../index.html');api.setServiceApiBaseUrl('../../../find_v2/index.html');api.processEventFromCurrentUri();api.bindWindowEvents();api.bindAClickEvent();api.sendBufferedEvents();}
-</script>
+    <script type="text/javascript">
+        if (FindApi) {
+            var api = new FindApi();
+            api.setApplicationUrl('../../../index.html');
+            api.setServiceApiBaseUrl('../../../find_v2/index.html');
+            api.processEventFromCurrentUri();
+            api.bindWindowEvents();
+            api.bindAClickEvent();
+            api.sendBufferedEvents();
+        }
+    </script>
 
     <script type="text/javascript" src="../../../Static/js/pushy.js"></script>
     <script type="text/javascript" src="../../../Static/js/Blocks_2019062002.js"></script>
